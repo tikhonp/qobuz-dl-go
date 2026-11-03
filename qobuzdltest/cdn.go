@@ -194,6 +194,13 @@ func (s *Server) serveCDN(w http.ResponseWriter, r *http.Request, rest string) {
 
 // serveStatic answers a cover for .jpg and a booklet for .pdf.
 func (s *Server) serveStatic(w http.ResponseWriter, r *http.Request, p string) {
+	s.mu.Lock()
+	down := s.sw.staticDown
+	s.mu.Unlock()
+	if down {
+		http.NotFound(w, r)
+		return
+	}
 	var name, contentType string
 	switch strings.ToLower(path.Ext(p)) {
 	case ".jpg", ".jpeg":

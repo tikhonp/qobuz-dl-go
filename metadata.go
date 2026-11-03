@@ -636,9 +636,10 @@ func composerTag(item *pyDict) (any, error) {
 	return oneOrList(composers), nil
 }
 
-// genreTag is the GENRE part of _get_tags_to_add. Like Python it writes the
-// main genre into the album's genres_list, which gives the same list on
-// every call.
+// genreTag is the GENRE part of _get_tags_to_add. Python writes the main
+// genre into the album's genres_list; every call writes the same value, so
+// a copy gives the same tags without a data race between the workers that
+// tag one album's tracks.
 func genreTag(album *pyDict) (any, error) {
 	genre, err := album.dict("genre")
 	if err != nil {
@@ -663,7 +664,9 @@ func genreTag(album *pyDict) (any, error) {
 		if pyTruthy(rawGenres) {
 			switch t := rawGenres.(type) {
 			case []any:
+				t = slices.Clone(t)
 				t[0] = main
+				rawGenres = t
 			case *pyDict:
 				// d[0] = main adds an int key, which the join below refuses.
 				return nil, pyErr(pyTypeError, "sequence item %d: expected str instance, int found", len(t.keys))
@@ -931,6 +934,10 @@ func TagMP3(log *slog.Logger, filename, rootDir, finalName string, d, album *pyD
 		return err
 	}
 	if err := t.Close(); err != nil {
+		return err
+	}
+	// id3v2 saves through a new file, which takes the umask's mode.
+	if err := os.Chmod(filename, 0o644); err != nil {
 		return err
 	}
 	return os.Rename(filename, finalName)

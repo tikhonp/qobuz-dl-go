@@ -709,3 +709,24 @@ func TestFakeSwitchesUnderConcurrency(t *testing.T) {
 	}
 	<-done
 }
+
+func TestFakeFailStatic(t *testing.T) {
+	s := New(t)
+	u := s.URL + staticPrefix + "images/covers/a/b/cover_org.jpg"
+	if resp, _, _ := get(t, s, u, ""); resp.StatusCode != http.StatusOK {
+		t.Fatalf("cover: %d", resp.StatusCode)
+	}
+	s.FailStatic()
+	for _, p := range []string{u, s.URL + staticPrefix + "goodies/1/booklet.pdf"} {
+		if resp, _, _ := get(t, s, p, ""); resp.StatusCode != http.StatusNotFound {
+			t.Errorf("%s: %d", p, resp.StatusCode)
+		}
+	}
+	if resp, _, _ := get(t, s, s.cdnURL("7", 7), ""); resp.StatusCode != http.StatusPartialContent && resp.StatusCode != http.StatusOK {
+		t.Errorf("the CDN: %d", resp.StatusCode)
+	}
+	s.Reset()
+	if resp, _, _ := get(t, s, u, ""); resp.StatusCode != http.StatusOK {
+		t.Errorf("after Reset: %d", resp.StatusCode)
+	}
+}

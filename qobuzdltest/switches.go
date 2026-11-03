@@ -14,6 +14,7 @@ type switches struct {
 	restrict    map[trackFormat]bool
 	deliver     map[string]int
 	expired     bool
+	staticDown  bool
 }
 
 type failure struct{ left, status int }
@@ -102,6 +103,13 @@ func (s *Server) Deliver(trackID string, fmtID int) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	s.sw.deliver[trackID] = fmtID
+}
+
+// FailStatic makes every cover and goody under /static/ answer 404.
+func (s *Server) FailStatic() {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	s.sw.staticDown = true
 }
 
 // ExpireToken makes every API call answer 401, as Qobuz does once a token

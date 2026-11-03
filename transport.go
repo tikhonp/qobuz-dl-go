@@ -123,3 +123,16 @@ func callError(ctx, callCtx context.Context, t Timeouts, op string, err error) e
 	}
 	return &requestError{op: op, err: err}
 }
+
+// isRequestError is `except requests.exceptions.RequestException`: a
+// failed request, a timeout or an HTTP error status. InvalidAppSecretError
+// is not one in Python, so the 400 of a signed call doesn't match.
+func isRequestError(err error) bool {
+	if errors.Is(err, ErrInvalidAppSecret) {
+		return false
+	}
+	var te *timeoutError
+	var re *requestError
+	var ae *APIError
+	return errors.As(err, &te) || errors.As(err, &re) || errors.As(err, &ae)
+}
