@@ -1,0 +1,37 @@
+# Names pathvalidate treats as reserved, in any case, with extensions and inside longer names.
+CON
+con
+Con
+PRN
+AUX
+CLOCK$
+NUL
+COM0
+COM1
+COM9
+LPT0
+LPT1
+LPT9
+COM¹
+COM²
+LPT³
+com1
+lpt9
+CON.txt
+con.tar.gz
+NUL.
+NUL 
+ NUL
+AUX:
+CON CON
+xCON
+CONSOLE
+CON.CON
+aux.aux
+$MFT
+$Extend
+$Mft
+:
+a:b
+nul/con
+.git

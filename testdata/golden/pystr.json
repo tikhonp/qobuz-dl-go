@@ -1,0 +1,446 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "int 0",
+   "input": {
+    "py": "int",
+    "v": 0
+   },
+   "output": "0"
+  },
+  {
+   "name": "int 1",
+   "input": {
+    "py": "int",
+    "v": 1
+   },
+   "output": "1"
+  },
+  {
+   "name": "int -1",
+   "input": {
+    "py": "int",
+    "v": -1
+   },
+   "output": "-1"
+  },
+  {
+   "name": "int 7",
+   "input": {
+    "py": "int",
+    "v": 7
+   },
+   "output": "7"
+  },
+  {
+   "name": "int 96",
+   "input": {
+    "py": "int",
+    "v": 96
+   },
+   "output": "96"
+  },
+  {
+   "name": "int 192",
+   "input": {
+    "py": "int",
+    "v": 192
+   },
+   "output": "192"
+  },
+  {
+   "name": "int 2147483648",
+   "input": {
+    "py": "int",
+    "v": 2147483648
+   },
+   "output": "2147483648"
+  },
+  {
+   "name": "int -2147483648",
+   "input": {
+    "py": "int",
+    "v": -2147483648
+   },
+   "output": "-2147483648"
+  },
+  {
+   "name": "int 9223372036854775807",
+   "input": {
+    "py": "int",
+    "v": 9223372036854775807
+   },
+   "output": "9223372036854775807"
+  },
+  {
+   "name": "int -9223372036854775808",
+   "input": {
+    "py": "int",
+    "v": -9223372036854775808
+   },
+   "output": "-9223372036854775808"
+  },
+  {
+   "name": "float 0.0",
+   "input": {
+    "py": "float",
+    "v": 0.0
+   },
+   "output": "0.0"
+  },
+  {
+   "name": "float -0.0",
+   "input": {
+    "py": "float",
+    "v": -0.0
+   },
+   "output": "-0.0"
+  },
+  {
+   "name": "float 1.0",
+   "input": {
+    "py": "float",
+    "v": 1.0
+   },
+   "output": "1.0"
+  },
+  {
+   "name": "float -1.0",
+   "input": {
+    "py": "float",
+    "v": -1.0
+   },
+   "output": "-1.0"
+  },
+  {
+   "name": "float 96.0",
+   "input": {
+    "py": "float",
+    "v": 96.0
+   },
+   "output": "96.0"
+  },
+  {
+   "name": "float 192.0",
+   "input": {
+    "py": "float",
+    "v": 192.0
+   },
+   "output": "192.0"
+  },
+  {
+   "name": "float 44.1",
+   "input": {
+    "py": "float",
+    "v": 44.1
+   },
+   "output": "44.1"
+  },
+  {
+   "name": "float 88.2",
+   "input": {
+    "py": "float",
+    "v": 88.2
+   },
+   "output": "88.2"
+  },
+  {
+   "name": "float 176.4",
+   "input": {
+    "py": "float",
+    "v": 176.4
+   },
+   "output": "176.4"
+  },
+  {
+   "name": "float 352.8",
+   "input": {
+    "py": "float",
+    "v": 352.8
+   },
+   "output": "352.8"
+  },
+  {
+   "name": "float 48.0",
+   "input": {
+    "py": "float",
+    "v": 48.0
+   },
+   "output": "48.0"
+  },
+  {
+   "name": "float 22.05",
+   "input": {
+    "py": "float",
+    "v": 22.05
+   },
+   "output": "22.05"
+  },
+  {
+   "name": "float 0.1",
+   "input": {
+    "py": "float",
+    "v": 0.1
+   },
+   "output": "0.1"
+  },
+  {
+   "name": "float 0.2",
+   "input": {
+    "py": "float",
+    "v": 0.2
+   },
+   "output": "0.2"
+  },
+  {
+   "name": "float 0.30000000000000004",
+   "input": {
+    "py": "float",
+    "v": 0.30000000000000004
+   },
+   "output": "0.30000000000000004"
+  },
+  {
+   "name": "float 0.3333333333333333",
+   "input": {
+    "py": "float",
+    "v": 0.3333333333333333
+   },
+   "output": "0.3333333333333333"
+  },
+  {
+   "name": "float 0.6666666666666666",
+   "input": {
+    "py": "float",
+    "v": 0.6666666666666666
+   },
+   "output": "0.6666666666666666"
+  },
+  {
+   "name": "float 0.5",
+   "input": {
+    "py": "float",
+    "v": 0.5
+   },
+   "output": "0.5"
+  },
+  {
+   "name": "float 100.0",
+   "input": {
+    "py": "float",
+    "v": 100.0
+   },
+   "output": "100.0"
+  },
+  {
+   "name": "float 123.456",
+   "input": {
+    "py": "float",
+    "v": 123.456
+   },
+   "output": "123.456"
+  },
+  {
+   "name": "float 0.0001",
+   "input": {
+    "py": "float",
+    "v": 0.0001
+   },
+   "output": "0.0001"
+  },
+  {
+   "name": "float 0.0001234",
+   "input": {
+    "py": "float",
+    "v": 0.0001234
+   },
+   "output": "0.0001234"
+  },
+  {
+   "name": "float 9.999e-05",
+   "input": {
+    "py": "float",
+    "v": 9.999e-05
+   },
+   "output": "9.999e-05"
+  },
+  {
+   "name": "float 1e-05",
+   "input": {
+    "py": "float",
+    "v": 1e-05
+   },
+   "output": "1e-05"
+  },
+  {
+   "name": "float 1.5e-05",
+   "input": {
+    "py": "float",
+    "v": 1.5e-05
+   },
+   "output": "1.5e-05"
+  },
+  {
+   "name": "float 5e-324",
+   "input": {
+    "py": "float",
+    "v": 5e-324
+   },
+   "output": "5e-324"
+  },
+  {
+   "name": "float 2.2250738585072014e-308",
+   "input": {
+    "py": "float",
+    "v": 2.2250738585072014e-308
+   },
+   "output": "2.2250738585072014e-308"
+  },
+  {
+   "name": "float 1000000000000000.0",
+   "input": {
+    "py": "float",
+    "v": 1000000000000000.0
+   },
+   "output": "1000000000000000.0"
+  },
+  {
+   "name": "float 999999999999999.9",
+   "input": {
+    "py": "float",
+    "v": 999999999999999.9
+   },
+   "output": "999999999999999.9"
+  },
+  {
+   "name": "float 9999999999999998.0",
+   "input": {
+    "py": "float",
+    "v": 9999999999999998.0
+   },
+   "output": "9999999999999998.0"
+  },
+  {
+   "name": "float 1e+16",
+   "input": {
+    "py": "float",
+    "v": 1e+16
+   },
+   "output": "1e+16"
+  },
+  {
+   "name": "float 1.5e+16",
+   "input": {
+    "py": "float",
+    "v": 1.5e+16
+   },
+   "output": "1.5e+16"
+  },
+  {
+   "name": "float 1.2345678901234568e+16",
+   "input": {
+    "py": "float",
+    "v": 1.2345678901234568e+16
+   },
+   "output": "1.2345678901234568e+16"
+  },
+  {
+   "name": "float 1.2345678901234568e+17",
+   "input": {
+    "py": "float",
+    "v": 1.2345678901234568e+17
+   },
+   "output": "1.2345678901234568e+17"
+  },
+  {
+   "name": "float 1e+21",
+   "input": {
+    "py": "float",
+    "v": 1e+21
+   },
+   "output": "1e+21"
+  },
+  {
+   "name": "float 1e+22",
+   "input": {
+    "py": "float",
+    "v": 1e+22
+   },
+   "output": "1e+22"
+  },
+  {
+   "name": "float 1e+100",
+   "input": {
+    "py": "float",
+    "v": 1e+100
+   },
+   "output": "1e+100"
+  },
+  {
+   "name": "float 1.7976931348623157e+308",
+   "input": {
+    "py": "float",
+    "v": 1.7976931348623157e+308
+   },
+   "output": "1.7976931348623157e+308"
+  },
+  {
+   "name": "float -1e+16",
+   "input": {
+    "py": "float",
+    "v": -1e+16
+   },
+   "output": "-1e+16"
+  },
+  {
+   "name": "float -1e-05",
+   "input": {
+    "py": "float",
+    "v": -1e-05
+   },
+   "output": "-1e-05"
+  },
+  {
+   "name": "float inf",
+   "input": {
+    "py": "float",
+    "v": "inf"
+   },
+   "output": "inf"
+  },
+  {
+   "name": "float -inf",
+   "input": {
+    "py": "float",
+    "v": "-inf"
+   },
+   "output": "-inf"
+  },
+  {
+   "name": "float nan",
+   "input": {
+    "py": "float",
+    "v": "nan"
+   },
+   "output": "nan"
+  },
+  {
+   "name": "NoneType None",
+   "input": {
+    "py": "none"
+   },
+   "output": "None"
+  },
+  {
+   "name": "bool True",
+   "input": true,
+   "output": "True"
+  },
+  {
+   "name": "bool False",
+   "input": false,
+   "output": "False"
+  }
+ ]
+}

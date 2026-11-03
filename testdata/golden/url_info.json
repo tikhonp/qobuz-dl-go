@@ -1,0 +1,456 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "url:1 'https://www.qobuz.com/us-en/album/ummagumma-pink-floyd/evz7usmruz35a'",
+   "input": "https://www.qobuz.com/us-en/album/ummagumma-pink-floyd/evz7usmruz35a",
+   "output": [
+    "album",
+    "evz7usmruz35a"
+   ]
+  },
+  {
+   "name": "url:2 'https://www.qobuz.com/album/ummagumma-pink-floyd/evz7usmruz35a'",
+   "input": "https://www.qobuz.com/album/ummagumma-pink-floyd/evz7usmruz35a",
+   "output": [
+    "album",
+    "evz7usmruz35a"
+   ]
+  },
+  {
+   "name": "url:3 'https://www.qobuz.com/gb-en/album/begin-again-norah-jones/k43q1q3kx88fa'",
+   "input": "https://www.qobuz.com/gb-en/album/begin-again-norah-jones/k43q1q3kx88fa",
+   "output": [
+    "album",
+    "k43q1q3kx88fa"
+   ]
+  },
+  {
+   "name": "url:4 'https://open.qobuz.com/album/evz7usmruz35a'",
+   "input": "https://open.qobuz.com/album/evz7usmruz35a",
+   "output": [
+    "album",
+    "evz7usmruz35a"
+   ]
+  },
+  {
+   "name": "url:5 'https://play.qobuz.com/album/evz7usmruz35a'",
+   "input": "https://play.qobuz.com/album/evz7usmruz35a",
+   "output": [
+    "album",
+    "evz7usmruz35a"
+   ]
+  },
+  {
+   "name": "url:6 'https://open.qobuz.com/album/0634904080853'",
+   "input": "https://open.qobuz.com/album/0634904080853",
+   "output": [
+    "album",
+    "0634904080853"
+   ]
+  },
+  {
+   "name": "url:7 'https://play.qobuz.com/track/20273753'",
+   "input": "https://play.qobuz.com/track/20273753",
+   "output": [
+    "track",
+    "20273753"
+   ]
+  },
+  {
+   "name": "url:8 'https://open.qobuz.com/track/20273753'",
+   "input": "https://open.qobuz.com/track/20273753",
+   "output": [
+    "track",
+    "20273753"
+   ]
+  },
+  {
+   "name": "url:9 'https://www.qobuz.com/us-en/track/so-what/20273753'",
+   "input": "https://www.qobuz.com/us-en/track/so-what/20273753",
+   "output": [
+    "track",
+    "20273753"
+   ]
+  },
+  {
+   "name": "url:10 'https://play.qobuz.com/playlist/2082798'",
+   "input": "https://play.qobuz.com/playlist/2082798",
+   "output": [
+    "playlist",
+    "2082798"
+   ]
+  },
+  {
+   "name": "url:11 'https://open.qobuz.com/playlist/2082798'",
+   "input": "https://open.qobuz.com/playlist/2082798",
+   "output": [
+    "playlist",
+    "2082798"
+   ]
+  },
+  {
+   "name": "url:12 'https://www.qobuz.com/us-en/playlists/top-10-operas/2082798'",
+   "input": "https://www.qobuz.com/us-en/playlists/top-10-operas/2082798",
+   "error": "AttributeError"
+  },
+  {
+   "name": "url:13 'https://www.qobuz.com/us-en/playlist/top-10-operas/2082798'",
+   "input": "https://www.qobuz.com/us-en/playlist/top-10-operas/2082798",
+   "output": [
+    "playlist",
+    "2082798"
+   ]
+  },
+  {
+   "name": "url:14 'https://play.qobuz.com/artist/50782'",
+   "input": "https://play.qobuz.com/artist/50782",
+   "output": [
+    "artist",
+    "50782"
+   ]
+  },
+  {
+   "name": "url:15 'https://www.qobuz.com/us-en/artist/tord-gustavsen-trio/50782'",
+   "input": "https://www.qobuz.com/us-en/artist/tord-gustavsen-trio/50782",
+   "output": [
+    "artist",
+    "50782"
+   ]
+  },
+  {
+   "name": "url:16 'https://www.qobuz.com/us-en/interpreter/tord-gustavsen-trio/50782'",
+   "input": "https://www.qobuz.com/us-en/interpreter/tord-gustavsen-trio/50782",
+   "error": "AttributeError"
+  },
+  {
+   "name": "url:17 'https://www.qobuz.com/fr-fr/interpreter/tord-gustavsen-trio/download-streaming-albums/50782'",
+   "input": "https://www.qobuz.com/fr-fr/interpreter/tord-gustavsen-trio/download-streaming-albums/50782",
+   "error": "AttributeError"
+  },
+  {
+   "name": "url:18 'https://play.qobuz.com/label/572190'",
+   "input": "https://play.qobuz.com/label/572190",
+   "output": [
+    "label",
+    "572190"
+   ]
+  },
+  {
+   "name": "url:19 'https://www.qobuz.com/us-en/label/naked-jain-records/572190'",
+   "input": "https://www.qobuz.com/us-en/label/naked-jain-records/572190",
+   "output": [
+    "label",
+    "572190"
+   ]
+  },
+  {
+   "name": "url:20 'https://www.qobuz.com/us-en/label/naked-jain-records/download-streaming-albums/572190'",
+   "input": "https://www.qobuz.com/us-en/label/naked-jain-records/download-streaming-albums/572190",
+   "output": [
+    "label",
+    "download"
+   ]
+  },
+  {
+   "name": "url:21 '/us-en/album/-/evz7usmruz35a'",
+   "input": "/us-en/album/-/evz7usmruz35a",
+   "output": [
+    "album",
+    "evz7usmruz35a"
+   ]
+  },
+  {
+   "name": "url:22 '/album/evz7usmruz35a'",
+   "input": "/album/evz7usmruz35a",
+   "output": [
+    "album",
+    "evz7usmruz35a"
+   ]
+  },
+  {
+   "name": "url:23 '/album/-/evz7usmruz35a'",
+   "input": "/album/-/evz7usmruz35a",
+   "output": [
+    "album",
+    "evz7usmruz35a"
+   ]
+  },
+  {
+   "name": "url:24 'album/evz7usmruz35a'",
+   "input": "album/evz7usmruz35a",
+   "error": "AttributeError"
+  },
+  {
+   "name": "url:25 'https://www.qobuz.com/de-de/album/mahler-symphonie-nr-2/xf2zfbfjz0w1b'",
+   "input": "https://www.qobuz.com/de-de/album/mahler-symphonie-nr-2/xf2zfbfjz0w1b",
+   "output": [
+    "album",
+    "xf2zfbfjz0w1b"
+   ]
+  },
+  {
+   "name": "url:26 'https://www.qobuz.com/ru-ru/album/русский-слаг/abc123'",
+   "input": "https://www.qobuz.com/ru-ru/album/русский-слаг/abc123",
+   "output": [
+    "album",
+    "abc123"
+   ]
+  },
+  {
+   "name": "url:27 'https://www.qobuz.com/jp-ja/album/日本語のアルバム/0060254795443'",
+   "input": "https://www.qobuz.com/jp-ja/album/日本語のアルバム/0060254795443",
+   "output": [
+    "album",
+    "0060254795443"
+   ]
+  },
+  {
+   "name": "url:28 'https://www.qobuz.com/us-en/album/ümlaut-slug/ïd'",
+   "input": "https://www.qobuz.com/us-en/album/ümlaut-slug/ïd",
+   "output": [
+    "album",
+    "ïd"
+   ]
+  },
+  {
+   "name": "url:29 'https://www.qobuz.com/us-en/album/slug/id٣'",
+   "input": "https://www.qobuz.com/us-en/album/slug/id٣",
+   "output": [
+    "album",
+    "id٣"
+   ]
+  },
+  {
+   "name": "url:30 'https://www.qobuz.com/us-en/album/slug/ab-cd'",
+   "input": "https://www.qobuz.com/us-en/album/slug/ab-cd",
+   "output": [
+    "album",
+    "ab"
+   ]
+  },
+  {
+   "name": "url:31 'https://www.qobuz.com/us-en/album/slug.with.dots/abc'",
+   "input": "https://www.qobuz.com/us-en/album/slug.with.dots/abc",
+   "output": [
+    "album",
+    "slug"
+   ]
+  },
+  {
+   "name": "url:32 'https://www.qobuz.com/us-en/album/slug_with_underscores/id_with_underscore'",
+   "input": "https://www.qobuz.com/us-en/album/slug_with_underscores/id_with_underscore",
+   "output": [
+    "album",
+    "id_with_underscore"
+   ]
+  },
+  {
+   "name": "url:33 'https://www.qobuz.com/us-en/album/slug/%E2%80%A6'",
+   "input": "https://www.qobuz.com/us-en/album/slug/%E2%80%A6",
+   "output": [
+    "album",
+    "slug"
+   ]
+  },
+  {
+   "name": "url:34 'https://www.qobuz.com/us-en/album/evz7usmruz35a?utm_source=x'",
+   "input": "https://www.qobuz.com/us-en/album/evz7usmruz35a?utm_source=x",
+   "output": [
+    "album",
+    "evz7usmruz35a"
+   ]
+  },
+  {
+   "name": "url:35 'https://www.qobuz.com/us-en/album/ummagumma/evz7usmruz35a?utm_source=x&b=1'",
+   "input": "https://www.qobuz.com/us-en/album/ummagumma/evz7usmruz35a?utm_source=x&b=1",
+   "output": [
+    "album",
+    "evz7usmruz35a"
+   ]
+  },
+  {
+   "name": "url:36 'https://www.qobuz.com/us-en/album/ummagumma/evz7usmruz35a/'",
+   "input": "https://www.qobuz.com/us-en/album/ummagumma/evz7usmruz35a/",
+   "output": [
+    "album",
+    "evz7usmruz35a"
+   ]
+  },
+  {
+   "name": "url:37 'https://www.qobuz.com/us-en/album/ummagumma/evz7usmruz35a#fragment'",
+   "input": "https://www.qobuz.com/us-en/album/ummagumma/evz7usmruz35a#fragment",
+   "output": [
+    "album",
+    "evz7usmruz35a"
+   ]
+  },
+  {
+   "name": "url:38 'https://www.qobuz.com/us-en/album/name/123/extra'",
+   "input": "https://www.qobuz.com/us-en/album/name/123/extra",
+   "output": [
+    "album",
+    "123"
+   ]
+  },
+  {
+   "name": "url:39 'https://www.qobuz.com/us-en/album/'",
+   "input": "https://www.qobuz.com/us-en/album/",
+   "error": "AttributeError"
+  },
+  {
+   "name": "url:40 'https://www.qobuz.com/US-EN/album/x/y'",
+   "input": "https://www.qobuz.com/US-EN/album/x/y",
+   "output": [
+    "album",
+    "y"
+   ]
+  },
+  {
+   "name": "url:41 'https://www.qobuz.com/usa-en/album/x/y'",
+   "input": "https://www.qobuz.com/usa-en/album/x/y",
+   "output": [
+    "album",
+    "y"
+   ]
+  },
+  {
+   "name": "url:42 'https://www.qobuz.com/u-en/album/x/y'",
+   "input": "https://www.qobuz.com/u-en/album/x/y",
+   "output": [
+    "album",
+    "y"
+   ]
+  },
+  {
+   "name": "url:43 'http://www.qobuz.com/us-en/album/x/abc'",
+   "input": "http://www.qobuz.com/us-en/album/x/abc",
+   "output": [
+    "album",
+    "abc"
+   ]
+  },
+  {
+   "name": "url:44 'https://qobuz.com/us-en/album/x/abc'",
+   "input": "https://qobuz.com/us-en/album/x/abc",
+   "output": [
+    "album",
+    "abc"
+   ]
+  },
+  {
+   "name": "url:45 'https://www2.qobuz.com/us-en/album/x/abc'",
+   "input": "https://www2.qobuz.com/us-en/album/x/abc",
+   "output": [
+    "album",
+    "abc"
+   ]
+  },
+  {
+   "name": "url:46 'https://www.qobuz.com/us-en/Album/x/abc'",
+   "input": "https://www.qobuz.com/us-en/Album/x/abc",
+   "error": "AttributeError"
+  },
+  {
+   "name": "url:47 'https://www.qobuz.com/us-en/albums/x/abc'",
+   "input": "https://www.qobuz.com/us-en/albums/x/abc",
+   "error": "AttributeError"
+  },
+  {
+   "name": "url:48 ' https://play.qobuz.com/album/abc'",
+   "input": " https://play.qobuz.com/album/abc",
+   "output": [
+    "album",
+    "abc"
+   ]
+  },
+  {
+   "name": "url:49 'https://play.qobuz.com/album/abc '",
+   "input": "https://play.qobuz.com/album/abc ",
+   "output": [
+    "album",
+    "abc"
+   ]
+  },
+  {
+   "name": "url:50 'https://play.qobuz.com/album/abc\\n'",
+   "input": "https://play.qobuz.com/album/abc\n",
+   "output": [
+    "album",
+    "abc"
+   ]
+  },
+  {
+   "name": "url:51 'see https://play.qobuz.com/album/abc for details'",
+   "input": "see https://play.qobuz.com/album/abc for details",
+   "output": [
+    "album",
+    "abc"
+   ]
+  },
+  {
+   "name": "url:52 'https://play.qobuz.com/album/abc https://play.qobuz.com/track/123'",
+   "input": "https://play.qobuz.com/album/abc https://play.qobuz.com/track/123",
+   "output": [
+    "album",
+    "abc"
+   ]
+  },
+  {
+   "name": "url:53 'https://example.com/album/123'",
+   "input": "https://example.com/album/123",
+   "output": [
+    "album",
+    "123"
+   ]
+  },
+  {
+   "name": "url:54 'https://play.qobuz.com/discover'",
+   "input": "https://play.qobuz.com/discover",
+   "error": "AttributeError"
+  },
+  {
+   "name": "url:55 'https://play.qobuz.com/user/library/favorites'",
+   "input": "https://play.qobuz.com/user/library/favorites",
+   "error": "AttributeError"
+  },
+  {
+   "name": "url:56 'track'",
+   "input": "track",
+   "error": "AttributeError"
+  },
+  {
+   "name": "url:57 '/track/'",
+   "input": "/track/",
+   "error": "AttributeError"
+  },
+  {
+   "name": "url:58 '/track/123'",
+   "input": "/track/123",
+   "output": [
+    "track",
+    "123"
+   ]
+  },
+  {
+   "name": "url:59 'junk'",
+   "input": "junk",
+   "error": "AttributeError"
+  },
+  {
+   "name": "url:60 'https://play.qobuz.com/album/'",
+   "input": "https://play.qobuz.com/album/",
+   "error": "AttributeError"
+  },
+  {
+   "name": "url:61 'https://www.qobuz.com/us-en/album/-/-'",
+   "input": "https://www.qobuz.com/us-en/album/-/-",
+   "error": "AttributeError"
+  },
+  {
+   "name": "empty",
+   "input": "",
+   "error": "AttributeError"
+  }
+ ]
+}

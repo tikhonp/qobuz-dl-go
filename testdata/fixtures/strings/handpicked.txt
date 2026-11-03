@@ -1,0 +1,135 @@
+# Hand-picked inputs for the string goldens, one per line. Escapes: \\ is a
+# backslash, \uXXXX and \UXXXXXXXX are code points. Lines starting with # are
+# comments; a leading # in an input is written #. Blank lines are skipped.
+Hello, World
+A  B   C
+AC/DC
+A/B/C
+Live at the BBC (Remastered)
+Title ()
+Title (  )
+Title (...)
+Title [—]
+Title {!?}
+Title <-->
+Title (, Live)
+Title (Live ,)
+Title [ _ Bonus]
+Title (Bonus . )
+(, ,)
+a..b
+a...b
+a. . .b
+a,,b
+a_ _b
+a - b
+a -- b
+a - - b
+a / - b
+a::b
+a ; ; b
+a\\\\b
+a | | b
+trailing.
+trailing...
+trailing . . .
+ .leading
+.hidden
+...
+.
+..
+   
+Pulse 
+ Pulse
+Für Elise
+Für Elise
+Ça va?
+What?
+A*B
+Say "Hi"
+<tag>
+a|b
+back\\slash
+tab\u0009here
+new\u000aline
+cr\u000dlf
+cr\u000d\u000alf
+nbsp here
+ideographic　space
+zero​width
+line sep
+para sep
+info\u001cseps\u001d\u001e\u001f
+next\u0085line
+vt\u000bff\u000c
+del\u007fchar
+c1\u0080\u009b\u009fchars
+nul\u0000char
+bell\u0007
+《Title》
+〈 〉
+「、」
+『Hello』
+（Live）
+［2019］
+【Remix】
+（ ）
+Title 【 , Bonus 】
+Title 《 . 》 End
+日本語のタイトル
+東京事変 — 群青日和
+Русское название
+ПЕСНЯ о Тревоге
+العنوان العربي
+עברית
+ελληνικά ΣΑΣ
+Emoji 🎵 Music 🎶
+👍🏽 skin tone
+家族 👨‍👩‍👧
+flag 🇯🇵
+Ǆ ǅ ǆ digraphs
+ß straße
+İstanbul ı
+ﬁ ﬂ ligatures
+½ ² ³ ٣ ໓ ⑦ digits
+Ⅻ ⅻ roman
+123
+٣٤٥
+²³
+1st
+o'neil
+O'NEIL's
+x́y
+_underscore_
+a_b
+__init__
+Song (feat. X)
+Vol. 1
+Op. 67, No. 5
+No. 1: I. Allegro
+Mahler : Symphony No.8
+Com Lag: 2+2=5
+...‘Til We Meet Again
+Wish You Were Here 50
+Beethoven: Symphony No. 5, Op. 67 & "Komm, Hoffnung" from Fidelio
+Forever Young (Super Deluxe Edition) [2019 Remaster]
+Livre Numérique
+#hashtag
+a\u0009b\u0009c
+  leading and trailing  
+mixed. , ; spaces
+hello-world_foo.bar
+he said: "what?" / she said: <no>
+*?*?*
+:::
+///
+\\\\\\
+"""
+|||
+<<>>
+a<b>c
+x (y) [z] {w}
+(((nested)))
+[(x)]
+( a ) [ b ]
+word(1)
