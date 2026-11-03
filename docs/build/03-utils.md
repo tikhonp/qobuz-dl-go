@@ -85,4 +85,32 @@ type APIError struct{ Endpoint string; Status int; Body string }
 
 ## As built
 
-Filled in at the end of the step.
+Done on 2026-11-03. `make check` and `make lint` pass: 0 golangci-lint issues, no vulnerabilities.
+
+### Differences from the contract
+
+- `getAlbumArtist(log *slog.Logger, album *pyDict) ([]any, error)`. The names come back as the API holds them, because downstream `", ".join(names)` and `str(name)` act on their types. The logger gets Python's `Error getting album artist: ...` line when the try block fails.
+- `sanitize_filepath` passes `max_len=-1`, which becomes the universal platform's 260, so each entry of a path is cut to 260 bytes, not 255.
+- `sanitize_filepath` ends by validating the joined path, and the port does the same. A blank entry empties a relative path. `\u00a0.` sanitizes to the entry `\u00a0`, which Python's `strip()` sees as blank. Absolute paths stop at the absolute-path check first, and an earlier entry with another error, such as `CON_. `, stops the check too. `FileNameValidator.validate` is `pvValidateFilename`, which returns the reason of the one error it raises; both sanitizers act on that reason.
+- `pyNFC` in `pystr.go`. x/text's `norm` is Unicode 17.0 and gives 34 code points new in 17.0 a combining class, so `norm.NFC` reorders and composes across them. Python sees them as unassigned starters. `pyNFC` normalizes the text between them piece by piece. `TestStringMethodsGolden` now checks the `nfc` key of `strings.json` with `pyNFC`.
+- New helpers in `pyvalue.go`: `pyGetItem`, `pyEqual`, `pyLess` and `pyMinMax`, with Python's exact comparison of ints and floats. `utils.go` has `pyContains` and `pyExceptionStr`.
+- Python's IGNORECASE matches `i` with `ı` and `İ`, and RE2's case folding doesn't, so the extras pattern spells `i` as `[iı\x{130}]`. The other letters in the two patterns fold the same in both; `ſ` matches `s` in both.
+- `newAPIError(endpoint, status, body, secrets...)` builds an `APIError`. It replaces each secret with `[redacted]` before cutting at 200 bytes on a character boundary, and turns invalid UTF-8 into U+FFFD. Without a body, `Error()` ends after the status.
+- A fourth new golden, `settings.json`, holds `vars(QobuzDLSettings())` with the alias set sorted. `TestDefaultSettingsMatchPython` fails when upstream adds an attribute that is neither ported nor in its not-ported list.
+- `handpicked.txt` has 12 new strings with separators inside brackets next to non-Latin words, so the `strings`, `clean_filename`, `pathvalidate`, `name_length` and `textwrap` goldens grew. `gen.py`'s path list has UNC paths, odd drives such as `::` and `é:`, and blank entries.
+- The step-4 scanner in `pyre.go` is `subSeparatorAfterOpener` and `subSeparatorBeforeCloser`, both on `matchSeparatorRun`, which tries the two greedy `\s*` in a backtracking engine's order.
+- Extra tests: `TestGetURLInfoRejectsInterpreter`, `TestGetAlbumArtistLogsTheError`, `TestFormatDuration`, `TestPosixNormpath`, `TestNTSplitDrive`, `TestPyCompareLikePython`, `TestPyGetItem`, `TestPyNFCLeavesCharactersPythonDoesNotKnow`, `TestAPIErrorBodyCutKeepsUTF8`.
+
+### Checks
+
+Throwaway differential runs against the venv's Python, not committed: 530,000 random strings over brackets, separators, Python whitespace, reserved names, drives and long runs, through `clean_filename` both ways and both sanitizers with both replacements; 200,000 random URLs through `get_url_info`. The first run found the blank-entry rule above; after the fix there are no differences.
+
+### Notes for later steps
+
+- Step 4: `normalizeJSONStrings` must use `pyNFC`, not `norm.NFC`.
+- Step 4: `GetAlbumArtist(*Album)` turns the `[]any` into strings; `getAlbumArtist` keeps whatever the API sent.
+- Step 7: `_flatten_artists` joins the names with `", ".join`, a TypeError for a non-string name, so check the types of `getAlbumArtist`'s result there.
+- Step 7: `format_release_type` is in `release_type.json`, and `TestFormatReleaseTypeGolden` comes with `formatReleaseType`.
+- Step 9: `handle_url` catches nothing around `smart_discography_filter`, so its errors leave `HandleURL` in `ErrUnhandled`. No helper for that wrapping exists yet.
+- Step 9: `createAndReturnDir` normalizes with `posixNormpath`, which keeps a leading `//` as Python does.
+- `format_duration` is never called upstream; the port has `FormatDuration` because the contract asks for it.

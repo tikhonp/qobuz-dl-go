@@ -129,7 +129,7 @@ A Python exception that nothing catches would crash the Python CLI. In Go it lea
 | `s.isdigit()` | `pyIsDigit` | Unicode digits, `²` included |
 | `s.split(sep)` | `strings.Split` | with `sep` given they agree |
 | `s.ljust(n)`, `f"{s:<60}"` | `pyLjust` | pads by code points |
-| `unicodedata.normalize("NFC", s)` | `norm.NFC.String` | |
+| `unicodedata.normalize("NFC", s)` | `pyNFC` | `norm.NFC` between the code points Unicode 17.0 added, which Python sees as unassigned starters |
 
 ### Regular expressions
 
@@ -171,7 +171,7 @@ func sanitizeFilename(name, replacement string) string
 func sanitizeFilepath(path, replacement string) string
 ```
 
-The port follows pathvalidate's source: invalid characters, reserved names, trailing spaces and dots, and the cut to 255 UTF-8 bytes. Goldens over a corpus with random Unicode, control characters, reserved names in any case and with extensions, and names up to 1,000 bytes decide the details.
+The port follows pathvalidate's source: invalid characters, reserved names, trailing spaces and dots, and the cut to 255 UTF-8 bytes, 260 per entry in a path. The port also has the validation `sanitize_filepath` ends with, which empties a relative path that has a blank entry. Goldens over a corpus with random Unicode, control characters, reserved names in any case and with extensions, and names up to 1,000 bytes decide the details.
 
 ### textwrap
 
@@ -392,7 +392,10 @@ type APIError struct {
     Body     string // at most 200 bytes, with the token and secrets cut out
 }
 func (e *APIError) Error() string // "qobuzdl: album/get: HTTP 404: <body>"
+func newAPIError(endpoint string, status int, body []byte, secrets ...string) *APIError
 ```
+
+`newAPIError` replaces each secret with `[redacted]` before it cuts the body at 200 bytes, so no prefix of a secret survives the cut.
 
 A 400 from the signed endpoints wraps `ErrInvalidAppSecret` around an `*APIError`, so both `errors.Is` and `errors.As` work. Errors never contain the token, a secret, a signature or a CDN query string.
 

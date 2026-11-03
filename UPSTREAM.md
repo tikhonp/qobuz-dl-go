@@ -19,10 +19,10 @@
 | `core.py` | `core.go` | planned |
 | `downloader.py` | `downloader.go` | planned |
 | `metadata.py` | `metadata.go` | planned |
-| `utils.py` | `utils.go` | planned |
-| `settings.py` | `settings.go` | planned |
-| `constants.py` | `constants.go` | planned |
-| `exceptions.py` | `errors.go` | planned |
+| `utils.py` | `utils.go` | ported, but for `make_m3u` |
+| `settings.py` | `settings.go` | ported |
+| `constants.py` | `constants.go` | ported |
+| `exceptions.py` | `errors.go` | ported |
 | `db.py` | `downloadsdb/` | planned |
 | `cli.py`, `commands.py`, `color.py`, `__main__.py`, `radar.py`, `sync.py`, `sync_playlist.py`, `retro_tagger.py`, `lastfm_parser.py`, `lyrics_engine.py` | none | not ported, see below |
 
@@ -115,13 +115,13 @@ When two Python modules have private functions with the same name, the Go name g
 | `format_duration` | `FormatDuration` |
 | `create_and_return_dir` | `createAndReturnDir` |
 | `get_url_info` | `GetURLInfo` |
-| `get_album_artist` | `getAlbumArtist`, and `GetAlbumArtist` over a typed `Album` |
+| `get_album_artist` | `getAlbumArtist`, which returns the names as `[]any` and logs the caught error; `GetAlbumArtist` over a typed `Album` |
 | `apply_legacy_charmap` | `applyLegacyCharmap` |
 | `clean_filename` | `CleanFilename` |
 | `invalid_chars_to_fullwidth` | `invalidCharsToFullwidth` |
 | `read_config_file`, `label_matches`, `PartialFormatter` | not ported; `PartialFormatter` is never used upstream, `label_matches` serves `filter_label` |
 | `str.format` | `pyFormat` in `format.go` |
-| `pathvalidate.sanitize_filename`, `sanitize_filepath` 3.3.1 | `sanitizeFilename`, `sanitizeFilepath` in `pathvalidate.go` |
+| `pathvalidate.sanitize_filename`, `sanitize_filepath` 3.3.1 | `sanitizeFilename`, `sanitizeFilepath` in `pathvalidate.go`; `FileNameValidator.validate` is `pvValidateFilename` |
 | `textwrap.fill` | `textwrapFill` in `textwrap.go` |
 
 ### Python built-ins
@@ -136,13 +136,17 @@ These port no qobuz-dl file. They stand in for CPython 3.14 behavior the port re
 | `str.lower`, `upper`, `casefold`, `title`, `capitalize`, `strip`, `lstrip`, `rstrip`, `isdigit`, `ljust`, `len`, slicing | `pyLower`, `pyUpper`, `pyCasefold`, `pyTitle`, `pyCapitalize`, `pyStrip`, `pyLstrip`, `pyRstrip`, `pyIsDigit`, `pyLjust`, `pyLen`, `pySlice` |
 | `re`'s `\w`, `\s`, `\d` and their negations | `reW`, `reS`, `reD`, `reNotW`, `reNotS`, `reNotD` in `pyre.go` |
 | `format(value, spec)` | `pyFormatValue` |
+| `unicodedata.normalize("NFC", s)` | `pyNFC` |
+| `v[key]` on any value, `==`, `<`, `min`, `max`, `x in container` | `pyGetItem`, `pyEqual`, `pyLess`, `pyMinMax`, `pyContains` |
+| `str(e)` of an exception | `pyExceptionStr` |
+| `posixpath.normpath`, `posixpath.basename`, `ntpath.splitdrive`, `ntpath.isabs`, `os.path.expanduser` | `posixNormpath`, `posixBasename`, `ntSplitDrive`, `ntIsAbs`, `expandUser` |
 
 ### settings.py, constants.py, exceptions.py, db.py
 
 | Python | Go |
 | --- | --- |
 | `QobuzDLSettings` | `Settings`, with `DefaultSettings()` |
-| `parse_aliases` | `parseAliases` |
+| `parse_aliases` | `ParseAliases`, a slice in first-seen order where Python returns a set |
 | `from_arguments_configparser` | not ported |
 | `DEFAULT_FOLDER`, `DEFAULT_TRACK`, `DEFAULT_MULTIPLE_DISC_TRACK`, `DEFAULT_VARIOUS_ARTISTS_ALIASES`, `OK_MAX_CHARACTER_LENGTH` | the same names in Go style |
 | `AuthenticationError`, `IneligibleError`, `InvalidAppIdError`, `InvalidAppSecretError`, `InvalidQuality`, `NonStreamable` | `ErrAuthentication`, `ErrIneligible`, `ErrInvalidAppID`, `ErrInvalidAppSecret`, `ErrInvalidQuality`, `ErrNonStreamable` |

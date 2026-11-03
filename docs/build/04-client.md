@@ -71,7 +71,7 @@ func deriveSessionKey(secret, infos string) ([]byte, error)
 func unwrapTrackKey(sessionKey []byte, key string) ([]byte, error)
 func normalizeJSONStrings(v any) any
 
-func GetAlbumArtist(a *Album) []string   // get_album_artist over the typed view
+func GetAlbumArtist(a *Album) []string   // get_album_artist over the typed view; getAlbumArtist returns []any, the names as the API holds them
 func albumFromDict(d *pyDict) (*Album, error)   // and trackFromDict, playlistFromPages, artistFromPages, labelFromPages, trackURLFromDict
 
 func apiContext(ctx context.Context, t Timeouts) (context.Context, context.CancelFunc)

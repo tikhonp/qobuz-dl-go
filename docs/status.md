@@ -2,9 +2,9 @@
 
 ## Now
 
-Steps 1 and 2 are done: the module, CI, goldens and fixtures, and the Python compatibility layer (values, string methods, regex classes, `str.format`, `textwrap.fill`). No qobuz-dl file is ported yet.
+Steps 1 to 3 are done: the module, CI, goldens and fixtures, the Python compatibility layer, and the first ported files, `constants.py`, `exceptions.py`, `settings.py` and `utils.py` without `make_m3u`, with pathvalidate's sanitizers.
 
-Next: step 3, [utils, settings, errors, pathvalidate](build/03-utils.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
+Next: step 4, [bundle and API client](build/04-client.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
 
 ## Steps
 
@@ -12,8 +12,8 @@ Next: step 3, [utils, settings, errors, pathvalidate](build/03-utils.md). Start 
 | --- | --- | --- |
 | 1 | [golden generator and fixtures](build/01-golden.md) | done |
 | 2 | [Python compatibility layer](build/02-pycompat.md) | done |
-| 3 | [utils, settings, errors, pathvalidate](build/03-utils.md) | next |
-| 4 | [bundle and API client](build/04-client.md) | |
+| 3 | [utils, settings, errors, pathvalidate](build/03-utils.md) | done |
+| 4 | [bundle and API client](build/04-client.md) | next |
 | 5 | [tags](build/05-tags.md) | |
 | 6 | [fake Qobuz](build/06-fake.md) | |
 | 7 | [downloader, direct path](build/07-downloader.md) | |
@@ -62,3 +62,5 @@ Filled in by the parity run in step 11.
 - For shelf: `docs/sources/qobuz.md` says the module fetches the bundle once, which holds only while the bundle's app ID isn't `798273057`. `get_url_info` reads label URLs with an extra segment, such as `/label/<slug>/download-streaming-albums/<id>`, as the ID `download`.
 - Step 2. `pyvalue.go`, `pystr.go`, `pyre.go`, `format.go` and `textwrap.go` with their tests; every case of `pystr`, `format`, `strings`, `textwrap` and `regex` passes. A new golden, `unicode.json`, checks every code point's properties and case mappings against Python. Go and x/text are on Unicode 17.0 and Python 3.14 on 16.0; `newerThanPython` and three small fixes close the gap. Details are in [02-pycompat.md](build/02-pycompat.md) under As built.
 - design.md had combining marks in `\w`, which Python's `\w` lacks, and said textwrap collapses whitespace runs, which it doesn't. Both now follow the source. UPSTREAM.md has three new deliberate differences: template attributes, a cap on format widths, and JSON ints beyond int64.
+- Step 3. `constants.go`, `errors.go`, `settings.go`, `pathvalidate.go` and `utils.go` without `MakeM3U`, with their tests; every case of `clean_filename`, `pathvalidate`, `url_info`, `album_artist`, `smart_discography` and `settings` passes. Four new goldens: `album_artist.json`, `smart_discography.json`, `release_type.json` and `settings.json`. Details are in [03-utils.md](build/03-utils.md) under As built.
+- `sanitize_filepath` cuts each entry to 260 bytes and empties a relative path with a blank entry; design.md and port-spec.md now say so. design.md's NFC row now names `pyNFC`, since x/text's Unicode 17.0 tables give 34 new code points a combining class that Python doesn't know.

@@ -367,7 +367,7 @@ In folder names, `bit_depth` and `sampling_rate` come from the release gate and 
 `\w`, `\W`, `\s` and `\b` are Python's Unicode classes, and step 4 uses lookbehind and lookahead. The callers then apply pathvalidate 3.3.1:
 
 - `sanitize_filename(name, replacement_text)`, for the universal platform, which removes or replaces invalid characters, appends `_` to reserved names such as `CON` or `NUL.txt`, strips trailing spaces and dots, and cuts to 255 bytes of UTF-8.
-- `sanitize_filepath(path, replacement_text)` for folder parts, which also normalizes the path.
+- `sanitize_filepath(path, replacement_text)` for folder parts, which also normalizes the path. It keeps a drive such as `C:` as it is, sanitizes each entry as a file name cut to 260 bytes, and validates the joined path: an entry left blank, such as `\u00a0` from `\u00a0.`, empties a relative path unless an earlier entry fails validation for another reason. Absolute paths skip that check.
 
 Which wrapper and which replacement apply where:
 
