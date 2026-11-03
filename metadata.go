@@ -20,13 +20,14 @@ import (
 )
 
 const (
-	copyrightSign      = "©"
-	phonCopyrightSign  = "℗"
-	flacMaxCoverSize   = 16777215 // FLAC_MAX_BLOCKSIZE: a bigger cover can't fit a block
-	embCoverName       = "embed_cover.jpg"
-	flacSavePadding    = 8192
-	errCoverTooLarge   = "downloaded cover size too large to embed. lower `embedded_art_size` (e.g. 600) to avoid error"
-	musicBrainzAlbumTy = "MusicBrainz Album Type"
+	copyrightSign     = "\u00a9"
+	phonCopyrightSign = "\u2117"
+	// flacMaxCoverSize is FLAC_MAX_BLOCKSIZE: a bigger cover can't fit a block.
+	flacMaxCoverSize     = flacMaxBlockSize
+	embCoverName         = "embed_cover.jpg"
+	flacSavePadding      = 8192
+	coverTooLargeMsg     = "downloaded cover size too large to embed. lower `embedded_art_size` (e.g. 600) to avoid error"
+	musicBrainzAlbumType = "MusicBrainz Album Type"
 )
 
 // id3Legend is ID3_LEGEND: tag keys, looked up lower-cased first, to frame IDs.
@@ -797,7 +798,7 @@ func embedFLACImg(log *slog.Logger, rootDir string, audio *flacBlocks) {
 		return
 	}
 	if st.Size() > flacMaxCoverSize {
-		fail(errCoverTooLarge)
+		fail(coverTooLargeMsg)
 		return
 	}
 	data, err := os.ReadFile(cover)
@@ -869,7 +870,7 @@ func TagMP3(log *slog.Logger, filename, rootDir, finalName string, d, album *pyD
 		if err != nil {
 			return err
 		}
-		t.AddFrame("TXXX", id3UserText{enc: id3UTF16, desc: musicBrainzAlbumTy, values: splitNUL(strings.Join(strs, ","))})
+		t.AddFrame("TXXX", id3UserText{enc: id3UTF16, desc: musicBrainzAlbumType, values: splitNUL(strings.Join(strs, ","))})
 	}
 
 	for _, k := range tags.keys {

@@ -580,7 +580,7 @@ func TestEmbedCoverLogs(t *testing.T) {
 	embedFLACImg(log, root, b)
 	want := []string{
 		"DEBUG Cover image not found to embed: " + filepath.Join(filepath.Dir(root), embCoverName),
-		"ERROR Error embedding image: " + errCoverTooLarge,
+		"ERROR Error embedding image: " + coverTooLargeMsg,
 	}
 	if !slices.Equal(lines, want) {
 		t.Errorf("logged %q, want %q", lines, want)
