@@ -1,0 +1,341 @@
+{
+ "maximum_bit_depth": 24,
+ "image": {
+  "small": "https://static.qobuz.com/images/covers/bc/c8/el3qez8zpc8bc_230.jpg",
+  "thumbnail": "https://static.qobuz.com/images/covers/bc/c8/el3qez8zpc8bc_50.jpg",
+  "large": "https://static.qobuz.com/images/covers/bc/c8/el3qez8zpc8bc_600.jpg",
+  "back": null
+ },
+ "media_count": 1,
+ "artist": {
+  "image": null,
+  "name": "Iván Fischer",
+  "id": 32425,
+  "albums_count": 92,
+  "slug": "ivan-fischer",
+  "picture": null
+ },
+ "artists": [
+  {
+   "id": 32425,
+   "name": "Iván Fischer",
+   "roles": [
+    "main-artist",
+    "conductor"
+   ]
+  },
+  {
+   "id": 37552,
+   "name": "Budapest Festival Orchestra",
+   "roles": [
+    "main-artist",
+    "orchestra"
+   ]
+  }
+ ],
+ "upc": "0723385465249",
+ "released_at": 1712268000,
+ "label": {
+  "name": "Channel Classics",
+  "id": 4246334,
+  "albums_count": 523,
+  "supplier_id": 129,
+  "slug": "channel-classics"
+ },
+ "title": "Beethoven: Symphony No. 3 \"Eroica\" & Coriolan Overture",
+ "qobuz_id": 252278713,
+ "version": null,
+ "url": "https://www.qobuz.com/fr-fr/album/beethoven-symphony-no-3-eroica-coriolan-overture-ivan-fischer-and-budapest-festival-orchestra/el3qez8zpc8bc",
+ "slug": "beethoven-symphony-no-3-eroica-coriolan-overture-ivan-fischer-and-budapest-festival-orchestra",
+ "duration": 3634,
+ "parental_warning": false,
+ "popularity": 0,
+ "tracks_count": 5,
+ "genre": {
+  "path": [
+   10,
+   37
+  ],
+  "color": "#0070ef",
+  "name": "Symphonic Music",
+  "id": 37,
+  "slug": "musique-orchestrale"
+ },
+ "maximum_channel_count": 2,
+ "id": "el3qez8zpc8bc",
+ "maximum_sampling_rate": 192,
+ "articles": [],
+ "release_date_original": "2024-04-05",
+ "release_date_download": "2024-04-05",
+ "release_date_stream": "2024-04-05",
+ "purchasable": true,
+ "streamable": true,
+ "previewable": true,
+ "sampleable": true,
+ "downloadable": true,
+ "displayable": true,
+ "purchasable_at": 1784502000,
+ "streamable_at": 1784502000,
+ "hires": true,
+ "hires_streamable": true,
+ "ai_generated": false,
+ "awards": [],
+ "description": "Beethoven's Symphony No. 3 in E flat major, Op. 55 (\"Eroica\"), certainly does not lack for recordings, but it has been a while since there has been one like this one from conductor Iván Fischer and the Budapest Festival Orchestra, two entities that know each other well. This is old-school Beethoven, with no historical performance influence in earshot, that may, given its Hungarian provenance, remind one of the great George Szell. The orchestral strings are flawless. The balances among the instruments are a carefully sculpted set of levels and transitions that will reveal small details even in this most familiar of symphonies. The overall feeling of the interpretation is sober, warm, noble, never extreme or tumultuous. Perhaps best of all, Fischer's finale is really extraordinary. This set of variations, which started life as a piano work before being heavily modified to serve as the symphony's finale, can seem inadequate to the task in the wrong hands. In Fischer's, it is transcendent, a sequence of sparkling bits of pure imagination that feels like a resolution of the drama in the first three movements. Even those listeners resistant to the idea of another \"Eroica\" symphony owe it to themselves to hear this movement, which represents Fischer at his best. Channel Classics' sound, from a Budapest synagogue, has a clear, glassy quality that actually serves Fischer's aims well. A delightful release that made classical best-seller lists in the spring of 2024.<br /><br />&copy James Manheim /TiVo",
+ "description_language": "en",
+ "goodies": [
+  {
+   "id": 168983,
+   "file_format_id": 21,
+   "name": "Livret Numérique",
+   "description": "Iván Fischer and Budapest Festival Orchestra - Beethoven: Symphony No. 3 \"Eroica\" & Coriolan Overture",
+   "url": "https://static.qobuz.com/goodies/38/000168983.pdf",
+   "original_url": "https://static.qobuz.com/goodies/38/000168983.pdf"
+  }
+ ],
+ "area": null,
+ "catchline": "",
+ "composer": {
+  "id": 38,
+  "name": "Ludwig van Beethoven",
+  "slug": "ludwig-van-beethoven",
+  "albums_count": 27395,
+  "picture": null,
+  "image": null
+ },
+ "created_at": 0,
+ "genres_list": [
+  "Classique",
+  "Classique→Musique symphonique"
+ ],
+ "period": null,
+ "copyright": "2024 Channel Classics Records / Outhere Music France 2024 Channel Classics Records / Outhere Music France",
+ "is_official": true,
+ "maximum_technical_specifications": "24 bits / 192.0 kHz - Stereo",
+ "product_sales_factors_monthly": 0,
+ "product_sales_factors_weekly": 0,
+ "product_sales_factors_yearly": 0,
+ "product_type": "single",
+ "product_url": "/fr-fr/album/beethoven-symphony-no-3-eroica-coriolan-overture-ivan-fischer-and-budapest-festival-orchestra/el3qez8zpc8bc",
+ "recording_information": "",
+ "relative_url": "/album/beethoven-symphony-no-3-eroica-coriolan-overture-ivan-fischer-and-budapest-festival-orchestra/el3qez8zpc8bc",
+ "release_tags": [],
+ "release_type": "album",
+ "subtitle": "Iván Fischer and Budapest Festival Orchestra",
+ "tracks": {
+  "offset": 0,
+  "limit": 500,
+  "total": 5,
+  "items": [
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "2024 Channel Classics Records / Outhere Music France 2024 Channel Classics Records / Outhere Music France",
+    "performers": "Ludwig van Beethoven, Composer - Copyright Control, MusicPublisher - Ivan Fischer, Conductor, MainArtist - Budapest Festival Orchestra, Orchestra, MainArtist - Jared Sacks, MasteringEngineer, AAndRAdministrator, RecordingEngineer, SoundEngineer, ExecutiveProducer, SoundEditor - Gert Jan Boeke, AssistantRecordingEngineer",
+    "audio_info": {
+     "replaygain_track_peak": 0.894257,
+     "replaygain_track_gain": -0.25
+    },
+    "performer": {
+     "name": "Budapest Festival Orchestra",
+     "id": 37552
+    },
+    "work": "Symphony No. 3, Op. 55, \"Eroica\"",
+    "composer": {
+     "name": "Ludwig van Beethoven",
+     "id": 38
+    },
+    "isrc": "NLA460915406",
+    "title": "I. Allegro con brio",
+    "version": null,
+    "duration": 1097,
+    "parental_warning": false,
+    "track_number": 1,
+    "maximum_channel_count": 2,
+    "id": 252278714,
+    "media_number": 1,
+    "maximum_sampling_rate": 192,
+    "release_date_original": "2024-04-05",
+    "release_date_download": "2024-04-05",
+    "release_date_stream": "2024-04-05",
+    "release_date_purchase": "2024-04-05",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1784502000,
+    "streamable_at": 1784502000,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "2024 Channel Classics Records / Outhere Music France 2024 Channel Classics Records / Outhere Music France",
+    "performers": "Ludwig van Beethoven, Composer - Copyright Control, MusicPublisher - Ivan Fischer, Conductor, MainArtist - Budapest Festival Orchestra, Orchestra, MainArtist - Jared Sacks, MasteringEngineer, AAndRAdministrator, RecordingEngineer, SoundEngineer, ExecutiveProducer, SoundEditor - Gert Jan Boeke, AssistantRecordingEngineer",
+    "audio_info": {
+     "replaygain_track_peak": 0.999969,
+     "replaygain_track_gain": -1
+    },
+    "performer": {
+     "name": "Budapest Festival Orchestra",
+     "id": 37552
+    },
+    "work": "Symphony No. 3, Op. 55, \"Eroica\"",
+    "composer": {
+     "name": "Ludwig van Beethoven",
+     "id": 38
+    },
+    "isrc": "NLA460915407",
+    "title": "II. Marcia funebre. Adagio assai",
+    "version": null,
+    "duration": 991,
+    "parental_warning": false,
+    "track_number": 2,
+    "maximum_channel_count": 2,
+    "id": 252278715,
+    "media_number": 1,
+    "maximum_sampling_rate": 192,
+    "release_date_original": "2024-04-05",
+    "release_date_download": "2024-04-05",
+    "release_date_stream": "2024-04-05",
+    "release_date_purchase": "2024-04-05",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1784502000,
+    "streamable_at": 1784502000,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "2024 Channel Classics Records / Outhere Music France 2024 Channel Classics Records / Outhere Music France",
+    "performers": "Ludwig van Beethoven, Composer - Copyright Control, MusicPublisher - Ivan Fischer, Conductor, MainArtist - Budapest Festival Orchestra, Orchestra, MainArtist - Jared Sacks, MasteringEngineer, AAndRAdministrator, RecordingEngineer, SoundEngineer, ExecutiveProducer, SoundEditor - Gert Jan Boeke, AssistantRecordingEngineer",
+    "audio_info": {
+     "replaygain_track_peak": 0.928558,
+     "replaygain_track_gain": -0.36
+    },
+    "performer": {
+     "name": "Budapest Festival Orchestra",
+     "id": 37552
+    },
+    "work": "Symphony No. 3, Op. 55, \"Eroica\"",
+    "composer": {
+     "name": "Ludwig van Beethoven",
+     "id": 38
+    },
+    "isrc": "NLA460915408",
+    "title": "III. Scherzo. Allegro vivace - Trio",
+    "version": null,
+    "duration": 355,
+    "parental_warning": false,
+    "track_number": 3,
+    "maximum_channel_count": 2,
+    "id": 252278716,
+    "media_number": 1,
+    "maximum_sampling_rate": 192,
+    "release_date_original": "2024-04-05",
+    "release_date_download": "2024-04-05",
+    "release_date_stream": "2024-04-05",
+    "release_date_purchase": "2024-04-05",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1784502000,
+    "streamable_at": 1784502000,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "2024 Channel Classics Records / Outhere Music France 2024 Channel Classics Records / Outhere Music France",
+    "performers": "Ludwig van Beethoven, Composer - Copyright Control, MusicPublisher - Ivan Fischer, Conductor, MainArtist - Budapest Festival Orchestra, Orchestra, MainArtist - Jared Sacks, MasteringEngineer, AAndRAdministrator, RecordingEngineer, SoundEngineer, ExecutiveProducer, SoundEditor - Gert Jan Boeke, AssistantRecordingEngineer",
+    "audio_info": {
+     "replaygain_track_peak": 0.921143,
+     "replaygain_track_gain": -0.29
+    },
+    "performer": {
+     "name": "Budapest Festival Orchestra",
+     "id": 37552
+    },
+    "work": "Symphony No. 3, Op. 55, \"Eroica\"",
+    "composer": {
+     "name": "Ludwig van Beethoven",
+     "id": 38
+    },
+    "isrc": "NLA460915409",
+    "title": "IV. Finale. Allegro molto",
+    "version": null,
+    "duration": 732,
+    "parental_warning": false,
+    "track_number": 4,
+    "maximum_channel_count": 2,
+    "id": 252278717,
+    "media_number": 1,
+    "maximum_sampling_rate": 192,
+    "release_date_original": "2024-04-05",
+    "release_date_download": "2024-04-05",
+    "release_date_stream": "2024-04-05",
+    "release_date_purchase": "2024-04-05",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1784502000,
+    "streamable_at": 1784502000,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "2024 Channel Classics Records / Outhere Music France 2024 Channel Classics Records / Outhere Music France",
+    "performers": "Ludwig van Beethoven, Composer - Copyright Control, MusicPublisher - Ivan Fischer, Conductor, MainArtist - Budapest Festival Orchestra, Orchestra, MainArtist - Jared Sacks, MasteringEngineer, AAndRAdministrator, RecordingEngineer, SoundEngineer, ExecutiveProducer, SoundEditor - Gert Jan Boeke, AssistantRecordingEngineer",
+    "audio_info": {
+     "replaygain_track_peak": 0.934753,
+     "replaygain_track_gain": -1.67
+    },
+    "performer": {
+     "name": "Budapest Festival Orchestra",
+     "id": 37552
+    },
+    "work": null,
+    "composer": {
+     "name": "Ludwig van Beethoven",
+     "id": 38
+    },
+    "isrc": "NLA460915410",
+    "title": "Coriolan, Op. 62",
+    "version": null,
+    "duration": 459,
+    "parental_warning": false,
+    "track_number": 5,
+    "maximum_channel_count": 2,
+    "id": 252278718,
+    "media_number": 1,
+    "maximum_sampling_rate": 192,
+    "release_date_original": "2024-04-05",
+    "release_date_download": "2024-04-05",
+    "release_date_stream": "2024-04-05",
+    "release_date_purchase": "2024-04-05",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1784502000,
+    "streamable_at": 1784502000,
+    "hires": true,
+    "hires_streamable": true
+   }
+  ]
+ }
+}

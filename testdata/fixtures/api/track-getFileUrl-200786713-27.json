@@ -1,0 +1,10 @@
+{
+ "track_id": 200786713,
+ "duration": 2060,
+ "url": "{{CDN}}/file/200786713/27",
+ "format_id": 27,
+ "mime_type": "audio/flac",
+ "sampling_rate": 192,
+ "bit_depth": 24,
+ "blob": "{{BLOB}}"
+}

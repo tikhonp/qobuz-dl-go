@@ -1,0 +1,10 @@
+{
+ "track_id": 47683525,
+ "duration": 40,
+ "url": "{{CDN}}/file/47683525/5",
+ "format_id": 5,
+ "mime_type": "audio/mpeg",
+ "sampling_rate": 44.1,
+ "bit_depth": 16,
+ "blob": "{{BLOB}}"
+}

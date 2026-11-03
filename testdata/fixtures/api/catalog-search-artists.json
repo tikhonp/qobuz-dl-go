@@ -1,0 +1,2441 @@
+{
+ "query": "miles davis",
+ "albums": {
+  "analytics": {
+   "search_external_id": "9ed155deaa471c3ccf1430145b4bd61c"
+  },
+  "total": 1000,
+  "items": []
+ },
+ "tracks": {
+  "analytics": {
+   "search_external_id": "b0189039ca19695be9607da3bb1be7fb"
+  },
+  "total": 1000,
+  "items": []
+ },
+ "artists": {
+  "limit": 10,
+  "offset": 0,
+  "analytics": {
+   "search_external_id": "d4935b8f7b5b365d6a3da0efd844921c"
+  },
+  "total": 186,
+  "items": [
+   {
+    "picture": "https://static.qobuz.com/images/artists/covers/small/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+    "image": {
+     "small": "https://static.qobuz.com/images/artists/covers/small/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+     "medium": "https://static.qobuz.com/images/artists/covers/medium/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+     "large": "https://static.qobuz.com/images/artists/covers/large/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+     "extralarge": "https://static.qobuz.com/images/artists/covers/large/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+     "mega": "https://static.qobuz.com/images/artists/covers/large/33a9c9bc1f351aa593ac0f7658299e27.jpg"
+    },
+    "name": "Miles Davis",
+    "slug": "miles-davis",
+    "albums_count": 5880,
+    "id": 6760
+   },
+   {
+    "picture": "https://static.qobuz.com/images/artists/covers/small/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+    "image": {
+     "small": "https://static.qobuz.com/images/artists/covers/small/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+     "medium": "https://static.qobuz.com/images/artists/covers/medium/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+     "large": "https://static.qobuz.com/images/artists/covers/large/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+     "extralarge": "https://static.qobuz.com/images/artists/covers/large/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+     "mega": "https://static.qobuz.com/images/artists/covers/large/cf5e1961e8386b7b549d4260d4d9e570.jpg"
+    },
+    "name": "Miles Davis Quintet",
+    "slug": "miles-davis-quintet",
+    "albums_count": 405,
+    "id": 50709
+   },
+   {
+    "picture": null,
+    "image": null,
+    "name": "Miles Davis (trumpet), Barney Wilen (tenor sax), Rene Urtreger (piano), Pierre Michelot (bass), Kenny Clarke (drums)",
+    "slug": "miles-davis-trumpet-barney-wilen-tenor-sax-rene-urtreger-piano-pierre-michelot-bass-kenny-clarke-drums",
+    "albums_count": 1,
+    "id": 8720258
+   },
+   {
+    "picture": "https://static.qobuz.com/images/artists/covers/small/e8312df4c6188b27a7b08dbb2bcf1bf9.jpg",
+    "image": {
+     "small": "https://static.qobuz.com/images/artists/covers/small/e8312df4c6188b27a7b08dbb2bcf1bf9.jpg",
+     "medium": "https://static.qobuz.com/images/artists/covers/medium/e8312df4c6188b27a7b08dbb2bcf1bf9.jpg",
+     "large": "https://static.qobuz.com/images/artists/covers/large/e8312df4c6188b27a7b08dbb2bcf1bf9.jpg",
+     "extralarge": "https://static.qobuz.com/images/artists/covers/large/e8312df4c6188b27a7b08dbb2bcf1bf9.jpg",
+     "mega": "https://static.qobuz.com/images/artists/covers/large/e8312df4c6188b27a7b08dbb2bcf1bf9.jpg"
+    },
+    "name": "Miles Davis, John Coltrane",
+    "slug": "miles-davis-john-coltrane-4",
+    "albums_count": 7,
+    "id": 496443
+   },
+   {
+    "picture": "https://static.qobuz.com/images/artists/covers/small/4169339a29efc2ee028d8e78db7fd959.jpg",
+    "image": {
+     "small": "https://static.qobuz.com/images/artists/covers/small/4169339a29efc2ee028d8e78db7fd959.jpg",
+     "medium": "https://static.qobuz.com/images/artists/covers/medium/4169339a29efc2ee028d8e78db7fd959.jpg",
+     "large": "https://static.qobuz.com/images/artists/covers/large/4169339a29efc2ee028d8e78db7fd959.jpg",
+     "extralarge": "https://static.qobuz.com/images/artists/covers/large/4169339a29efc2ee028d8e78db7fd959.jpg",
+     "mega": "https://static.qobuz.com/images/artists/covers/large/4169339a29efc2ee028d8e78db7fd959.jpg"
+    },
+    "name": "Charlie Parker and Miles Davis",
+    "slug": "charlie-parker-and-miles-davis",
+    "albums_count": 7,
+    "id": 833836
+   },
+   {
+    "picture": null,
+    "image": null,
+    "name": "Miles Davis and the Modern Jazz Giants",
+    "slug": "miles-davis-and-the-modern-jazz-giants",
+    "albums_count": 4,
+    "id": 1756721
+   },
+   {
+    "picture": "https://static.qobuz.com/images/artists/covers/small/b52a5f4bc1371240940c280a70cdfda0.jpg",
+    "image": {
+     "small": "https://static.qobuz.com/images/artists/covers/small/b52a5f4bc1371240940c280a70cdfda0.jpg",
+     "medium": "https://static.qobuz.com/images/artists/covers/medium/b52a5f4bc1371240940c280a70cdfda0.jpg",
+     "large": "https://static.qobuz.com/images/artists/covers/large/b52a5f4bc1371240940c280a70cdfda0.jpg",
+     "extralarge": "https://static.qobuz.com/images/artists/covers/large/b52a5f4bc1371240940c280a70cdfda0.jpg",
+     "mega": "https://static.qobuz.com/images/artists/covers/large/b52a5f4bc1371240940c280a70cdfda0.jpg"
+    },
+    "name": "Miles Davis & John Coltrane",
+    "slug": "miles-davis-john-coltrane-6",
+    "albums_count": 7,
+    "id": 35606
+   },
+   {
+    "picture": null,
+    "image": null,
+    "name": "Miles Davis & Gil Evans Orchestra",
+    "slug": "miles-davis-gil-evans-orchestra",
+    "albums_count": 2,
+    "id": 972894
+   },
+   {
+    "picture": null,
+    "image": null,
+    "name": "Miles Davis and his favorite Tenors",
+    "slug": "miles-davis-and-his-favorite-tenors",
+    "albums_count": 20,
+    "id": 7846586
+   },
+   {
+    "picture": null,
+    "image": null,
+    "name": "Miles Davis, Yo-Yo Ma, Carlo Maria Giulini, Dave Brubeck",
+    "slug": "milesdavisyo-yomacarlomariagiulinidavebrubeck-10003535435",
+    "albums_count": 1,
+    "id": 3535435
+   }
+  ]
+ },
+ "playlists": {
+  "analytics": {
+   "search_external_id": "dc7e84fe5757dc6cc167e67ca79d4817"
+  },
+  "total": 898,
+  "items": []
+ },
+ "stories": {
+  "analytics": {
+   "search_external_id": "8d22bb04b08227f8e9783411cde1b991"
+  },
+  "total": 12,
+  "items": []
+ },
+ "most_popular": {
+  "limit": 30,
+  "offset": 0,
+  "analytics": {
+   "search_external_id": "5b02fb3d8bf8fc7744fe9012e7c04314"
+  },
+  "total": 1000,
+  "items": [
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/33a9c9bc1f351aa593ac0f7658299e27.jpg"
+     },
+     "name": "Miles Davis",
+     "slug": "miles-davis",
+     "albums_count": 5880,
+     "id": 6760
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/cf5e1961e8386b7b549d4260d4d9e570.jpg"
+     },
+     "name": "Miles Davis Quintet",
+     "slug": "miles-davis-quintet",
+     "albums_count": 405,
+     "id": 50709
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/28/24/5099749522428_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/28/24/5099749522428_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/28/24/5099749522428_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "5099749522428",
+     "released_at": -327459600,
+     "label": {
+      "name": "Columbia",
+      "id": 4592,
+      "albums_count": 28225,
+      "supplier_id": 23,
+      "slug": "columbia"
+     },
+     "title": "Kind Of Blue",
+     "qobuz_id": 13176082,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-miles-davis/5099749522428",
+     "slug": "kind-of-blue-miles-davis",
+     "duration": 2723,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "5099749522428",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/fa/90/ld7wpvuga90fa_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/fa/90/ld7wpvuga90fa_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/fa/90/ld7wpvuga90fa_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0196872683493",
+     "released_at": 1734044400,
+     "label": {
+      "name": "Columbia",
+      "id": 4592,
+      "albums_count": 28199,
+      "supplier_id": 23,
+      "slug": "columbia"
+     },
+     "title": "Birth of the Blue",
+     "qobuz_id": 307607130,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/birth-of-the-blue-miles-davis/ld7wpvuga90fa",
+     "slug": "birth-of-the-blue-miles-davis",
+     "duration": 1937,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 4,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "ld7wpvuga90fa",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "2024-12-13",
+     "release_date_download": "2024-12-13",
+     "release_date_stream": "2024-12-13",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786057200,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": false
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/28/44/0886443874428_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/28/44/0886443874428_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/28/44/0886443874428_600.jpg",
+      "back": null
+     },
+     "media_count": 2,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0886443874428",
+     "released_at": 7599600,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2406,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Bitches Brew",
+     "qobuz_id": 38359942,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/bitches-brew-miles-davis/0886443874428",
+     "slug": "bitches-brew-miles-davis",
+     "duration": 5644,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 6,
+     "genre": {
+      "path": [
+       80,
+       86
+      ],
+      "color": "#0070ef",
+      "name": "Jazz Fusion & Jazz Rock",
+      "id": 86,
+      "slug": "jazz-fusion-jazz-rock"
+     },
+     "maximum_channel_count": 2,
+     "id": "0886443874428",
+     "maximum_sampling_rate": 96,
+     "articles": [],
+     "release_date_original": "1970-03-30",
+     "release_date_download": "1970-03-30",
+     "release_date_stream": "1970-03-30",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/21/56/0696998655621_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/21/56/0696998655621_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/21/56/0696998655621_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0696998655621",
+     "released_at": -13395600,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2406,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "In A Silent Way",
+     "qobuz_id": 5046209,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/in-a-silent-way-miles-davis/0696998655621",
+     "slug": "in-a-silent-way-miles-davis",
+     "duration": 2290,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 2,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0696998655621",
+     "maximum_sampling_rate": 176.4,
+     "articles": [],
+     "release_date_original": "1969-07-30",
+     "release_date_download": "1969-07-30",
+     "release_date_stream": "1969-07-30",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/21/53/0886444505321_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/21/53/0886444505321_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/21/53/0886444505321_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0886444505321",
+     "released_at": -298429200,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2406,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Sketches of Spain",
+     "qobuz_id": 15124903,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/sketches-of-spain-miles-davis-arranged-and-conducted-by-gil-evans/0886444505321",
+     "slug": "sketches-of-spain-miles-davis-arranged-and-conducted-by-gil-evans",
+     "duration": 2515,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0886444505321",
+     "maximum_sampling_rate": 88.2,
+     "articles": [],
+     "release_date_original": "1960-07-18",
+     "release_date_download": "1960-07-18",
+     "release_date_stream": "1960-07-18",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/20/61/0603497936120_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/20/61/0603497936120_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/20/61/0603497936120_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0603497936120",
+     "released_at": 1286748000,
+     "label": {
+      "name": "Rhino/Warner Records",
+      "id": 10623293,
+      "albums_count": 750,
+      "supplier_id": 5,
+      "slug": "rhinowarner-records"
+     },
+     "title": "Tutu",
+     "qobuz_id": 6005241,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/tutu-miles-davis/0603497936120",
+     "slug": "tutu-miles-davis",
+     "duration": 2563,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 8,
+     "genre": {
+      "path": [
+       80,
+       86
+      ],
+      "color": "#0070ef",
+      "name": "Jazz Fusion & Jazz Rock",
+      "id": 86,
+      "slug": "jazz-fusion-jazz-rock"
+     },
+     "maximum_channel_count": 2,
+     "id": "0603497936120",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "2010-10-11",
+     "release_date_download": "2010-10-11",
+     "release_date_stream": "2010-10-11",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/17/39/0886444333917_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/17/39/0886444333917_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/17/39/0886444333917_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0886444333917",
+     "released_at": -404701200,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2405,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "'Round About Midnight",
+     "qobuz_id": 15124896,
+     "version": "Mono Version",
+     "url": "https://www.qobuz.com/fr-fr/album/round-about-midnight-miles-davis/0886444333917",
+     "slug": "round-about-midnight-miles-davis",
+     "duration": 2362,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 6,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0886444333917",
+     "maximum_sampling_rate": 96,
+     "articles": [],
+     "release_date_original": "1957-03-06",
+     "release_date_download": "1957-03-06",
+     "release_date_stream": "1957-03-06",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/46/90/0088807239046_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/46/90/0088807239046_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/46/90/0088807239046_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis Quintet",
+      "id": 50709,
+      "albums_count": 405,
+      "slug": "miles-davis-quintet",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 50709,
+       "name": "Miles Davis Quintet",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0088807239046",
+     "released_at": -373597200,
+     "label": {
+      "name": "Prestige",
+      "id": 1249,
+      "albums_count": 521,
+      "supplier_id": 1,
+      "slug": "prestige"
+     },
+     "title": "Relaxin' With The Miles Davis Quintet",
+     "qobuz_id": 30174105,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/relaxin-with-the-miles-davis-quintet-the-miles-davis-quintet/0088807239046",
+     "slug": "relaxin-with-the-miles-davis-quintet-the-miles-davis-quintet",
+     "duration": 2209,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 6,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0088807239046",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "1958-03-01",
+     "release_date_download": "1958-03-01",
+     "release_date_stream": "1958-03-01",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1787612400,
+     "streamable_at": 1787526000,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/bc/q8/jocsw4ybgq8bc_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/bc/q8/jocsw4ybgq8bc_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/bc/q8/jocsw4ybgq8bc_600.jpg",
+      "back": null
+     },
+     "media_count": 5,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0196872335613",
+     "released_at": 1731020400,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2400,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Miles in France 1963 & 1964 - Miles Davis Quintet: The Bootleg Series, Vol. 8",
+     "qobuz_id": 287872345,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/miles-in-france-1963-1964-miles-davis-quintet-the-bootleg-series-vol-8-miles-davis/jocsw4ybgq8bc",
+     "slug": "miles-in-france-1963-1964-miles-davis-quintet-the-bootleg-series-vol-8-miles-davis",
+     "duration": 20778,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 35,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "jocsw4ybgq8bc",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2024-11-08",
+     "release_date_download": "2024-11-08",
+     "release_date_stream": "2024-11-08",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786057200,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": false
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/23/82/5099706568223_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/23/82/5099706568223_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/23/82/5099706568223_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "5099706568223",
+     "released_at": -94698000,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2405,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Miles Smiles",
+     "qobuz_id": 12873,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/miles-smiles-miles-davis-quintet/5099706568223",
+     "slug": "miles-smiles-miles-davis-quintet",
+     "duration": 2503,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 6,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "5099706568223",
+     "maximum_sampling_rate": 176.4,
+     "articles": [],
+     "release_date_original": "1967-01-01",
+     "release_date_download": "1967-01-01",
+     "release_date_stream": "1967-01-01",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/ze/m3/y5ze2lnjhm3ze_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/ze/m3/y5ze2lnjhm3ze_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/ze/m3/y5ze2lnjhm3ze_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0888072745667",
+     "released_at": 1781820000,
+     "label": {
+      "name": "Craft Recordings",
+      "id": 247707,
+      "albums_count": 2664,
+      "supplier_id": 1,
+      "slug": "craft-recordings-1"
+     },
+     "title": "Miles '56 - The Prestige Recordings",
+     "qobuz_id": 426087832,
+     "version": "Remastered 2026",
+     "url": "https://www.qobuz.com/fr-fr/album/miles-56-the-prestige-recordings-miles-davis/y5ze2lnjhm3ze",
+     "slug": "miles-56-the-prestige-recordings-miles-davis",
+     "duration": 10511,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 29,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "y5ze2lnjhm3ze",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "2026-06-19",
+     "release_date_download": "2026-06-19",
+     "release_date_stream": "2026-06-19",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1791414000,
+     "streamable_at": 1791414000,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": false
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/za/m3/ros3v5qcfm3za_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/za/m3/ros3v5qcfm3za_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/za/m3/ros3v5qcfm3za_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0888072682443",
+     "released_at": 1755813600,
+     "label": {
+      "name": "Craft Recordings",
+      "id": 247707,
+      "albums_count": 2664,
+      "supplier_id": 1,
+      "slug": "craft-recordings-1"
+     },
+     "title": "Miles '55 - The Prestige Recordings",
+     "qobuz_id": 352113037,
+     "version": "Remastered 2025",
+     "url": "https://www.qobuz.com/fr-fr/album/miles-55-the-prestige-recordings-miles-davis/ros3v5qcfm3za",
+     "slug": "miles-55-the-prestige-recordings-miles-davis",
+     "duration": 6039,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 16,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "ros3v5qcfm3za",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "2025-08-22",
+     "release_date_download": "2025-08-22",
+     "release_date_stream": "2025-08-22",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1785020400,
+     "streamable_at": 1784934000,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": false
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/um/b5/fa0u15yxlb5um_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/um/b5/fa0u15yxlb5um_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/um/b5/fa0u15yxlb5um_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis Quintet",
+      "id": 50709,
+      "albums_count": 405,
+      "slug": "miles-davis-quintet",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 50709,
+       "name": "Miles Davis Quintet",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0888072735712",
+     "released_at": -394592400,
+     "label": {
+      "name": "Craft Recordings",
+      "id": 247707,
+      "albums_count": 2694,
+      "supplier_id": 1,
+      "slug": "craft-recordings-1"
+     },
+     "title": "Cookin' With The Miles Davis Quintet",
+     "qobuz_id": 441696526,
+     "version": "Remastered 2026",
+     "url": "https://www.qobuz.com/fr-fr/album/cookin-with-the-miles-davis-quintet-the-miles-davis-quintet/fa0u15yxlb5um",
+     "slug": "cookin-with-the-miles-davis-quintet-the-miles-davis-quintet",
+     "duration": 2003,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 4,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "fa0u15yxlb5um",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "1957-07-01",
+     "release_date_download": "1957-07-01",
+     "release_date_stream": "1957-07-01",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786662000,
+     "streamable_at": 1786662000,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": false
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/62/30/0886446473062_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/62/30/0886446473062_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/62/30/0886446473062_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0886446473062",
+     "released_at": -384915600,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2400,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Miles Ahead",
+     "qobuz_id": 40047996,
+     "version": "Mono Version",
+     "url": "https://www.qobuz.com/fr-fr/album/miles-ahead-miles-davis/0886446473062",
+     "slug": "miles-ahead-miles-davis",
+     "duration": 2239,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 10,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0886446473062",
+     "maximum_sampling_rate": 96,
+     "articles": [],
+     "release_date_original": "1957-10-21",
+     "release_date_download": "1957-10-21",
+     "release_date_stream": "1957-10-21",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1782687600,
+     "streamable_at": 1782601200,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/q3/w3/yppqe44oqw3q3_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/q3/w3/yppqe44oqw3q3_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/q3/w3/yppqe44oqw3q3_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Gregory Hutchinson",
+      "id": 343853,
+      "albums_count": 6,
+      "slug": "gregory-hutchinson",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 343853,
+       "name": "Gregory Hutchinson",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "5021732990570",
+     "released_at": 1775167200,
+     "label": {
+      "name": "Warner Music Central Europe",
+      "id": 4765661,
+      "albums_count": 1488,
+      "supplier_id": 5,
+      "slug": "warner-music-central-europe"
+     },
+     "title": "Kind of Now - The Pulse of Miles Davis",
+     "qobuz_id": 387647585,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/kind-of-now-the-pulse-of-miles-davis-gregory-hutchinson/yppqe44oqw3q3",
+     "slug": "kind-of-now-the-pulse-of-miles-davis-gregory-hutchinson",
+     "duration": 3439,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 13,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "yppqe44oqw3q3",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2026-04-03",
+     "release_date_download": "2026-04-03",
+     "release_date_stream": "2026-04-03",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1777244400,
+     "streamable_at": 1777244400,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": false
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/6a/jp/d9xt2qqt4jp6a_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/6a/jp/d9xt2qqt4jp6a_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/6a/jp/d9xt2qqt4jp6a_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis Quintet",
+      "id": 50709,
+      "albums_count": 405,
+      "slug": "miles-davis-quintet",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 50709,
+       "name": "Miles Davis Quintet",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0888072474901",
+     "released_at": -326163600,
+     "label": {
+      "name": "Craft Recordings",
+      "id": 247707,
+      "albums_count": 2694,
+      "supplier_id": 1,
+      "slug": "craft-recordings-1"
+     },
+     "title": "Workin' With The Miles Davis Quintet",
+     "qobuz_id": 210083458,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/workin-with-the-miles-davis-quintet-the-miles-davis-quintet/d9xt2qqt4jp6a",
+     "slug": "workin-with-the-miles-davis-quintet-the-miles-davis-quintet",
+     "duration": 2546,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 8,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "d9xt2qqt4jp6a",
+     "maximum_sampling_rate": 96,
+     "articles": [],
+     "release_date_original": "1959-09-01",
+     "release_date_download": "1959-09-01",
+     "release_date_stream": "1959-09-01",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1784847600,
+     "streamable_at": 1784761200,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/39/90/0088807239039_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/39/90/0088807239039_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/39/90/0088807239039_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis Quintet",
+      "id": 50709,
+      "albums_count": 405,
+      "slug": "miles-davis-quintet",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 50709,
+       "name": "Miles Davis Quintet",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0088807239039",
+     "released_at": -394592400,
+     "label": {
+      "name": "Prestige",
+      "id": 1249,
+      "albums_count": 521,
+      "supplier_id": 1,
+      "slug": "prestige"
+     },
+     "title": "Cookin' With The Miles Davis Quintet",
+     "qobuz_id": 30148703,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/cookin-with-the-miles-davis-quintet-the-miles-davis-quintet/0088807239039",
+     "slug": "cookin-with-the-miles-davis-quintet-the-miles-davis-quintet",
+     "duration": 2002,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 4,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0088807239039",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "1957-07-01",
+     "release_date_download": "1957-07-01",
+     "release_date_stream": "1957-07-01",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1784588400,
+     "streamable_at": 1784588400,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/zb/yz/n080q28xhyzzb_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/zb/yz/n080q28xhyzzb_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/zb/yz/n080q28xhyzzb_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0888072602106",
+     "released_at": 1732230000,
+     "label": {
+      "name": "Craft Recordings",
+      "id": 247707,
+      "albums_count": 2664,
+      "supplier_id": 1,
+      "slug": "craft-recordings-1"
+     },
+     "title": "Miles '54: The Prestige Recordings",
+     "qobuz_id": 301922410,
+     "version": "Remastered 2024",
+     "url": "https://www.qobuz.com/fr-fr/album/miles-54-the-prestige-recordings-miles-davis/n080q28xhyzzb",
+     "slug": "miles-54-the-prestige-recordings-miles-davis",
+     "duration": 8537,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 20,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "n080q28xhyzzb",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "2024-11-22",
+     "release_date_download": "2024-11-22",
+     "release_date_stream": "2024-11-22",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1785020400,
+     "streamable_at": 1784934000,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": false
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "Originally released 1957. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, Associated Performer, Composer, Main Artist\r - Gil Evans, Arranger, Conductor\r - Ernie Royal, Trumpet\r - Bernie Glow, Trumpet\r - Louis Mucci, Trumpet\r - Taft Jordan, Trumpet\r - Johnny Carisi, Trumpet\r - Frank Rehak, Trombone\r - Jimmy Cleveland, Trombone\r - Joe Bennett, Trombone\r - Tom Mitchell, Trombone\r - Willie Ruff, French Horn\r - Tony Miranda, French Horn\r - Bill Barber, Tuba\r - Romeo Penque, Flute\r - Sid Cooper, Flute\r - Lee Konitz, Alto Saxophone\r - Danny Bank, Bass Clarinet\r - Paul Chambers, Bass\r - Arthur Taylor, Drums\r - George Avakian, Producer\r - Harold Chapman, Recording Engineer\r - Fred Plaut, Recording Engineer",
+     "audio_info": {
+      "replaygain_track_peak": 0.927277,
+      "replaygain_track_gain": -0.61
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 95751436,
+      "SMR": 95751437,
+      "SM2": 338318423
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/62/30/0886446473062_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/62/30/0886446473062_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/62/30/0886446473062_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5857,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0886446473062",
+      "released_at": -384915600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2261,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Miles Ahead",
+      "qobuz_id": 40047996,
+      "version": "Mono Version",
+      "duration": 2239,
+      "parental_warning": false,
+      "tracks_count": 10,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0886446473062",
+      "maximum_sampling_rate": 96,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1782601200,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1957-10-21",
+      "release_date_download": "1957-10-21",
+      "release_date_stream": "1957-10-21",
+      "release_date_purchase": "1957-10-21",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM15700083",
+     "title": "Miles Ahead",
+     "version": "Mono Version",
+     "duration": 213,
+     "parental_warning": false,
+     "track_number": 5,
+     "maximum_channel_count": 2,
+     "id": 40048001,
+     "media_number": 1,
+     "maximum_sampling_rate": 96,
+     "articles": [
+      {
+       "id": 95751436,
+       "url": "/order/95751436",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 95751437,
+       "url": "/order/95751437",
+       "price": 2.19,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "1957-10-21",
+     "release_date_download": "1957-10-21",
+     "release_date_stream": "1957-10-21",
+     "release_date_purchase": "1957-10-21",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1782601200,
+     "streamable_at": 1782601200,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/97/90/0088807239097_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/97/90/0088807239097_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/97/90/0088807239097_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis Quintet",
+      "id": 50709,
+      "albums_count": 405,
+      "slug": "miles-davis-quintet",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 50709,
+       "name": "Miles Davis Quintet",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0088807239097",
+     "released_at": -273632400,
+     "label": {
+      "name": "Prestige",
+      "id": 1249,
+      "albums_count": 521,
+      "supplier_id": 1,
+      "slug": "prestige"
+     },
+     "title": "Steamin' With The Miles Davis Quintet",
+     "qobuz_id": 30331015,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/steamin-with-the-miles-davis-quintet-the-miles-davis-quintet/0088807239097",
+     "slug": "steamin-with-the-miles-davis-quintet-the-miles-davis-quintet",
+     "duration": 2404,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 6,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0088807239097",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "1961-05-01",
+     "release_date_download": "1961-05-01",
+     "release_date_stream": "1961-05-01",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1784588400,
+     "streamable_at": 1784502000,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/28/21/0074646512128_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/28/21/0074646512128_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/28/21/0074646512128_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0074646512128",
+     "released_at": -384915600,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2405,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Miles Ahead",
+     "qobuz_id": 3890173,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/miles-ahead-miles-davis-gil-evans/0074646512128",
+     "slug": "miles-ahead-miles-davis-gil-evans",
+     "duration": 3109,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 14,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0074646512128",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "1957-10-21",
+     "release_date_download": "1957-10-21",
+     "release_date_stream": "1957-10-21",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/42/90/0088807239042_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/42/90/0088807239042_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/42/90/0088807239042_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5858,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      },
+      {
+       "id": 977906,
+       "name": "The Modern Jazz Giants",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0088807239042",
+     "released_at": -342061200,
+     "label": {
+      "name": "Prestige",
+      "id": 1249,
+      "albums_count": 521,
+      "supplier_id": 1,
+      "slug": "prestige"
+     },
+     "title": "Miles Davis And The Modern Jazz Giants",
+     "qobuz_id": 30174089,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/miles-davis-and-the-modern-jazz-giants-miles-davis-and-the-modern-jazz-giants/0088807239042",
+     "slug": "miles-davis-and-the-modern-jazz-giants-miles-davis-and-the-modern-jazz-giants",
+     "duration": 2528,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0088807239042",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "1959-03-01",
+     "release_date_download": "1959-03-01",
+     "release_date_stream": "1959-03-01",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1784588400,
+     "streamable_at": 1784502000,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "Originally released 1970. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, Associated Performer, Composer, Main Artist, Trumpet\r - Teo Macero, Producer\r - John McLaughlin, Guitar\r - Dave Holland, Bass Guitar\r - Harvey Brooks, Bass Guitar\r - Lenny White, Percussion\r - Don Alias, Drums\r - Jack DeJohnette, Drums\r - Jumma Santos, Congas\r - Joe Zawinul, Piano\r - Chick Corea, Piano\r - Wayne Shorter, Soprano Saxophone\r - Bennie Maupin, Bass Clarinet",
+     "audio_info": {
+      "replaygain_track_peak": 0.802093,
+      "replaygain_track_gain": -2.33
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 91591246,
+      "SMR": 91591247,
+      "SM2": 336876960
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/28/44/0886443874428_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/28/44/0886443874428_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/28/44/0886443874428_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 2,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5875,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0886443874428",
+      "released_at": 7599600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2405,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Bitches Brew",
+      "qobuz_id": 38359942,
+      "version": null,
+      "duration": 5644,
+      "parental_warning": false,
+      "tracks_count": 6,
+      "genre": {
+       "path": [
+        80,
+        86
+       ],
+       "name": "Jazz Fusion & Jazz Rock",
+       "id": 86,
+       "slug": "jazz-fusion-jazz-rock"
+      },
+      "maximum_channel_count": 2,
+      "id": "0886443874428",
+      "maximum_sampling_rate": 96,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1792623600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1970-03-30",
+      "release_date_download": "1970-03-30",
+      "release_date_stream": "1970-03-30",
+      "release_date_purchase": "1970-03-30",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM16900319",
+     "title": "Miles Runs the Voodoo Down",
+     "version": null,
+     "duration": 846,
+     "parental_warning": false,
+     "track_number": 3,
+     "maximum_channel_count": 2,
+     "id": 38359947,
+     "media_number": 2,
+     "maximum_sampling_rate": 96,
+     "articles": [],
+     "release_date_original": "1970-03-30",
+     "release_date_download": "1970-03-30",
+     "release_date_stream": "1970-03-30",
+     "release_date_purchase": "1970-03-30",
+     "purchasable": false,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": false,
+     "displayable": true,
+     "purchasable_at": null,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/80/00/0088807230080_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/80/00/0088807230080_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/80/00/0088807230080_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis Quintet",
+      "id": 50709,
+      "albums_count": 405,
+      "slug": "miles-davis-quintet",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 50709,
+       "name": "Miles Davis Quintet",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0088807230080",
+     "released_at": -326163600,
+     "label": {
+      "name": "Prestige",
+      "id": 1249,
+      "albums_count": 521,
+      "supplier_id": 1,
+      "slug": "prestige"
+     },
+     "title": "Workin' With The Miles Davis Quintet (Rudy Van Gelder Remaster)",
+     "qobuz_id": 3236531,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/workin-with-the-miles-davis-quintet-rudy-van-gelder-remaster-the-miles-davis-quintet/0088807230080",
+     "slug": "workin-with-the-miles-davis-quintet-rudy-van-gelder-remaster-the-miles-davis-quintet",
+     "duration": 2517,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 8,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0088807230080",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "1959-09-01",
+     "release_date_download": "1959-09-01",
+     "release_date_stream": "1959-09-01",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1782774000,
+     "streamable_at": 1782860400,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/36/51/0088807235136_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/36/51/0088807235136_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/36/51/0088807235136_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis Quintet",
+      "id": 50709,
+      "albums_count": 405,
+      "slug": "miles-davis-quintet",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 50709,
+       "name": "Miles Davis Quintet",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0088807235136",
+     "released_at": -394592400,
+     "label": {
+      "name": "Prestige",
+      "id": 1249,
+      "albums_count": 521,
+      "supplier_id": 1,
+      "slug": "prestige"
+     },
+     "title": "Cookin' With The Miles Davis Quintet",
+     "qobuz_id": 14908697,
+     "version": "Rudy Van Gelder Remaster",
+     "url": "https://www.qobuz.com/fr-fr/album/cookin-with-the-miles-davis-quintet-the-miles-davis-quintet/0088807235136",
+     "slug": "cookin-with-the-miles-davis-quintet-the-miles-davis-quintet",
+     "duration": 2042,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 4,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0088807235136",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "1957-07-01",
+     "release_date_download": "1957-07-01",
+     "release_date_stream": "1957-07-01",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/20/46/0603497944620_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/20/46/0603497944620_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/20/46/0603497944620_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      },
+      {
+       "id": 4520956,
+       "name": "Miles Davis & Quincy Jones",
+       "roles": [
+        "main-artist"
+       ]
+      },
+      {
+       "id": 39098,
+       "name": "Quincy Jones",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0603497944620",
+     "released_at": 744933600,
+     "label": {
+      "name": "Rhino - Warner Records",
+      "id": 323970,
+      "albums_count": 2421,
+      "supplier_id": 5,
+      "slug": "rhino-warner-records"
+     },
+     "title": "Miles & Quincy Live at Montreux",
+     "qobuz_id": 3139087,
+     "version": "Live Version",
+     "url": "https://www.qobuz.com/fr-fr/album/miles-quincy-live-at-montreux-miles-davis-quincy-jones/0603497944620",
+     "slug": "miles-quincy-live-at-montreux-miles-davis-quincy-jones",
+     "duration": 3394,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 16,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0603497944620",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "1993-08-10",
+     "release_date_download": "1993-08-10",
+     "release_date_stream": "1993-08-10",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1782169200,
+     "streamable_at": 1779145200,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/88/34/0886443373488_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/88/34/0886443373488_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/88/34/0886443373488_600.jpg",
+      "back": null
+     },
+     "media_count": 6,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      },
+      {
+       "id": 7841,
+       "name": "Gil Evans",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0886443373488",
+     "released_at": 838850400,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2400,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Miles Davis - Gil Evans - The Complete Columbia Studio Recordings",
+     "qobuz_id": 15124909,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/miles-davis-gil-evans-the-complete-columbia-studio-recordings-miles-davis-gil-evans/0886443373488",
+     "slug": "miles-davis-gil-evans-the-complete-columbia-studio-recordings-miles-davis-gil-evans",
+     "duration": 26526,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 127,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0886443373488",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "1996-08-01",
+     "release_date_download": "1996-08-01",
+     "release_date_stream": "1996-08-01",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1787353200,
+     "streamable_at": 1787353200,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/22/09/0074646790922_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/22/09/0074646790922_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/22/09/0074646790922_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Bill Laswell",
+      "id": 59300,
+      "albums_count": 131,
+      "slug": "bill-laswell",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0074646790922",
+     "released_at": 881103600,
+     "label": {
+      "name": "Columbia",
+      "id": 4592,
+      "albums_count": 28084,
+      "supplier_id": 23,
+      "slug": "columbia"
+     },
+     "title": "Panthalassa: The Music Of Miles Davis 1969-1974 Reconstruction & Mix Translation By Bill Laswell",
+     "qobuz_id": 84302,
+     "version": "Album Version",
+     "url": "https://www.qobuz.com/fr-fr/album/panthalassa-the-music-of-miles-davis-1969-1974-reconstruction-mix-translation-by-bill-laswell-miles-davis/0074646790922",
+     "slug": "panthalassa-the-music-of-miles-davis-1969-1974-reconstruction-mix-translation-by-bill-laswell-miles-davis",
+     "duration": 3578,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 4,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0074646790922",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "1997-12-03",
+     "release_date_download": "1997-12-03",
+     "release_date_stream": "1997-12-03",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1777417200,
+     "streamable_at": 1777417200,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   }
+  ]
+ }
+}

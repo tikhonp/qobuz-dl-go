@@ -1,0 +1,405 @@
+{
+ "maximum_bit_depth": 24,
+ "image": {
+  "small": "https://static.qobuz.com/images/covers/fa/88/k43q1q3kx88fa_230.jpg",
+  "thumbnail": "https://static.qobuz.com/images/covers/fa/88/k43q1q3kx88fa_50.jpg",
+  "large": "https://static.qobuz.com/images/covers/fa/88/k43q1q3kx88fa_600.jpg",
+  "back": null
+ },
+ "media_count": 1,
+ "artist": {
+  "image": null,
+  "name": "Norah Jones",
+  "id": 34525,
+  "albums_count": 319,
+  "slug": "norah-jones",
+  "picture": null
+ },
+ "artists": [
+  {
+   "id": 34525,
+   "name": "Norah Jones",
+   "roles": [
+    "main-artist"
+   ]
+  }
+ ],
+ "upc": "0602577440397",
+ "released_at": 1555020000,
+ "label": {
+  "name": "Blue Note Records",
+  "id": 47868,
+  "albums_count": 3584,
+  "supplier_id": 1,
+  "slug": "blue-note-1"
+ },
+ "title": "Begin Again",
+ "qobuz_id": 58780540,
+ "version": null,
+ "url": "https://www.qobuz.com/fr-fr/album/begin-again-norah-jones/k43q1q3kx88fa",
+ "slug": "begin-again-norah-jones",
+ "duration": 1735,
+ "parental_warning": false,
+ "popularity": 0,
+ "tracks_count": 7,
+ "genre": {
+  "path": [
+   112
+  ],
+  "color": "#0070ef",
+  "name": "Pop/Rock",
+  "id": 112,
+  "slug": "pop-rock"
+ },
+ "maximum_channel_count": 2,
+ "id": "k43q1q3kx88fa",
+ "maximum_sampling_rate": 96,
+ "articles": [],
+ "release_date_original": "2019-04-12",
+ "release_date_download": "2019-04-12",
+ "release_date_stream": "2019-04-12",
+ "purchasable": true,
+ "streamable": true,
+ "previewable": true,
+ "sampleable": true,
+ "downloadable": true,
+ "displayable": true,
+ "purchasable_at": 1782514800,
+ "streamable_at": 1782514800,
+ "hires": true,
+ "hires_streamable": true,
+ "ai_generated": null,
+ "awards": [],
+ "description": "<p>Labels have never been her thing… Jazz, pop, country, folk, world, Norah Jones has always played music that she has to blur boundaries. And that her collaborators include legends of jazz like Wayne Shorter, of soul like Ray Charles, of country like Willie Nelson, of rap like Q-Tip and of rock’n’roll like Keith Richards, this American has worked tirelessly to, above all, be herself. A serene and beautifully nonchalant voice capable of inhabiting her own themes as well as revisiting any song. Three years after the ambitious <em>Day Breaks</em>, this brief <em>Begin Again</em> (28 minutes, 7 tracks) is more than just a thrown-together collection of tracks. Instead, it’s a new self-portrait, alternating between assumed pop (<em>My Heart is Full</em>), expressive soul (<em>It was You</em>) and up-tempo jazz (<em>Begin Again</em>). To stay amongst people of taste, Jeff Tweedy from Wilco made appearances on the magnificent <em>A Song with No Name</em> and <em>Wintertime</em>. Surrounded as always by the finest musicians (Brian Blade's velvet drums are wonderful), Norah Jones masterfully guides us through this no-man’s land of a little bit of jazz, a bit pop, a bit soul. And it's as enjoyable as ever. © Clotilde Maréchal/Qobuz</p>",
+ "description_language": "en",
+ "goodies": [],
+ "area": null,
+ "catchline": "",
+ "composer": {
+  "id": 573076,
+  "name": "Various Composers",
+  "slug": "various-composers",
+  "albums_count": 17174684,
+  "picture": null,
+  "image": null
+ },
+ "created_at": 0,
+ "genres_list": [
+  "Pop/Rock"
+ ],
+ "period": null,
+ "copyright": "© 2019 Capitol Records, LLC ℗ 2019 Capitol Records, LLC",
+ "is_official": true,
+ "maximum_technical_specifications": "24 bits / 96.0 kHz - Stereo",
+ "product_sales_factors_monthly": 0,
+ "product_sales_factors_weekly": 0,
+ "product_sales_factors_yearly": 0,
+ "product_type": "album",
+ "product_url": "/fr-fr/album/begin-again-norah-jones/k43q1q3kx88fa",
+ "recording_information": "",
+ "relative_url": "/album/begin-again-norah-jones/k43q1q3kx88fa",
+ "release_tags": [],
+ "release_type": "album",
+ "subtitle": "Norah Jones",
+ "tracks": {
+  "offset": 0,
+  "limit": 500,
+  "total": 7,
+  "items": [
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2018 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, AssociatedPerformer, Vocals, ComposerLyricist - Thomas Bartlett, Producer, AssociatedPerformer, Keyboards, StudioPersonnel, Engineer, ComposerLyricist - Patrick Dillett, StudioPersonnel, Mixer - Chris Gehringer, StudioPersonnel, Mastering Engineer - Will Quinnell, StudioPersonnel, Assistant Mastering Engineer",
+    "audio_info": {
+     "replaygain_track_peak": 0.97934,
+     "replaygain_track_gain": -5.07
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Thomas Bartlett",
+     "id": 687168
+    },
+    "isrc": "USUM71807619",
+    "title": "My Heart Is Full",
+    "version": null,
+    "duration": 186,
+    "parental_warning": false,
+    "track_number": 1,
+    "maximum_channel_count": 2,
+    "id": 58780541,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2019-04-12",
+    "release_date_download": "2019-04-12",
+    "release_date_stream": "2019-04-12",
+    "release_date_purchase": "2019-04-12",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782514800,
+    "streamable_at": 1782514800,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2019 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist - Brandon Bost, StudioPersonnel, Mix Engineer - Tom Elmhirst, StudioPersonnel, Mixer - Brian Blade, AssociatedPerformer, Drums - Christopher Thomas, AssociatedPerformer, Bass (Vocal) - Pete Remm, AssociatedPerformer, Hammond B3 - Chris Gehringer, StudioPersonnel, Mastering Engineer - Will Quinnell, StudioPersonnel, Assistant Mastering Engineer - James Yost, StudioPersonnel, Asst. Recording Engineer - Patrick Dillett, StudioPersonnel, Recording Engineer - Emily Fiskio, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.968506,
+     "replaygain_track_gain": -6.96
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "isrc": "USUM71900510",
+    "title": "Begin Again",
+    "version": null,
+    "duration": 229,
+    "parental_warning": false,
+    "track_number": 2,
+    "maximum_channel_count": 2,
+    "id": 58780542,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2019-04-12",
+    "release_date_download": "2019-04-12",
+    "release_date_stream": "2019-04-12",
+    "release_date_purchase": "2019-04-12",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782514800,
+    "streamable_at": 1782514800,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2018 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist - Patrick Dillett, StudioPersonnel, Recording Engineer - Jens Jungkurth, StudioPersonnel, Recording Engineer - Andy Taub, StudioPersonnel, Recording Engineer - James Yost, StudioPersonnel, Asst. Recording Engineer - Genevieve Nelson, StudioPersonnel, Asst. Recording Engineer - Tom Elmhirst, StudioPersonnel, Mixer - Brandon Bost, StudioPersonnel, Assistant Mixer - Brian Blade, AssociatedPerformer, Drums - Christopher Thomas, AssociatedPerformer, Bass (Vocal) - Dave Guy, AssociatedPerformer - Leon Michels, AssociatedPerformer, Tenor Saxophone - Pete Remm, AssociatedPerformer - Chris Gehringer, StudioPersonnel, Mastering Engineer - Will Quinnell, StudioPersonnel, Assistant Mastering Engineer",
+    "audio_info": {
+     "replaygain_track_peak": 0.894073,
+     "replaygain_track_gain": -4.12
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "isrc": "USUM71809474",
+    "title": "It Was You",
+    "version": null,
+    "duration": 330,
+    "parental_warning": false,
+    "track_number": 3,
+    "maximum_channel_count": 2,
+    "id": 58780543,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2019-04-12",
+    "release_date_download": "2019-04-12",
+    "release_date_stream": "2019-04-12",
+    "release_date_purchase": "2019-04-12",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782514800,
+    "streamable_at": 1782514800,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2018 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, AssociatedPerformer, Acoustic Guitar, Vocals, ComposerLyricist - Jeff Tweedy, Producer, AssociatedPerformer, Acoustic Guitar, Electric Guitar, ComposerLyricist - Mark Greenberg, StudioPersonnel, Assistant Mixer, Asst. Recording Engineer - TOM SCHICK, StudioPersonnel, Mixer, Recording Engineer - Chris Gehringer, StudioPersonnel, Mastering Engineer - Will Quinnell, StudioPersonnel, Assistant Mastering Engineer",
+    "audio_info": {
+     "replaygain_track_peak": 0.890381,
+     "replaygain_track_gain": -2.94
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Jeff Tweedy",
+     "id": 256648
+    },
+    "isrc": "USUM71812934",
+    "title": "A Song With No Name",
+    "version": null,
+    "duration": 243,
+    "parental_warning": false,
+    "track_number": 4,
+    "maximum_channel_count": 2,
+    "id": 58780544,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2019-04-12",
+    "release_date_download": "2019-04-12",
+    "release_date_stream": "2019-04-12",
+    "release_date_purchase": "2019-04-12",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782514800,
+    "streamable_at": 1782514800,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2019 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, AssociatedPerformer, Drums, Vocals, ComposerLyricist - Thomas Bartlett, Producer, AssociatedPerformer, Drum Programming, Keyboards, StudioPersonnel, Recording Engineer - Patrick Dillett, StudioPersonnel, Mixer - Chris Gehringer, StudioPersonnel, Mastering Engineer - Will Quinnell, StudioPersonnel, Assistant Mastering Engineer - Thomas Wayland Bartlett, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.881042,
+     "replaygain_track_gain": -2.52
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "isrc": "USUM71900509",
+    "title": "Uh Oh",
+    "version": null,
+    "duration": 217,
+    "parental_warning": false,
+    "track_number": 5,
+    "maximum_channel_count": 2,
+    "id": 58780545,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2019-04-12",
+    "release_date_download": "2019-04-12",
+    "release_date_stream": "2019-04-12",
+    "release_date_purchase": "2019-04-12",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782514800,
+    "streamable_at": 1782514800,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2018 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, AssociatedPerformer, Vocals, ComposerLyricist - Jeff Tweedy, Producer, AssociatedPerformer, Bass (Vocal), ComposerLyricist - TOM SCHICK, StudioPersonnel, Mixer, Recording Engineer - Mark Greenberg, StudioPersonnel, Assistant Mixer, Asst. Recording Engineer - Spencer Tweedy, AssociatedPerformer, Drums - Chris Gehringer, StudioPersonnel, Mastering Engineer - Will Quinnell, StudioPersonnel, Assistant Mastering Engineer",
+    "audio_info": {
+     "replaygain_track_peak": 0.894409,
+     "replaygain_track_gain": -3.24
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Jeff Tweedy",
+     "id": 256648
+    },
+    "isrc": "USUM71817240",
+    "title": "Wintertime",
+    "version": null,
+    "duration": 228,
+    "parental_warning": false,
+    "track_number": 6,
+    "maximum_channel_count": 2,
+    "id": 58780546,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2019-04-12",
+    "release_date_download": "2019-04-12",
+    "release_date_stream": "2019-04-12",
+    "release_date_purchase": "2019-04-12",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782514800,
+    "streamable_at": 1782514800,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2019 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist - James Yost, StudioPersonnel, Assistant Mixer, Asst. Recording Engineer - Patrick Dillett, StudioPersonnel, Mixer, Recording Engineer - Brian Blade, AssociatedPerformer, Drums, ComposerLyricist - Christopher Thomas, AssociatedPerformer, Bass (Vocal), ComposerLyricist - Dave Guy, AssociatedPerformer - Leon Michels, AssociatedPerformer, Tenor Saxophone - Chris Gehringer, StudioPersonnel, Mastering Engineer - Will Quinnell, StudioPersonnel, Assistant Mastering Engineer - Homer Steinweiss, StudioPersonnel, Recording Engineer - Sarah Oda, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.883636,
+     "replaygain_track_gain": -2.87
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "isrc": "USUM71900511",
+    "title": "Just A Little Bit",
+    "version": null,
+    "duration": 302,
+    "parental_warning": false,
+    "track_number": 7,
+    "maximum_channel_count": 2,
+    "id": 58780547,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2019-04-12",
+    "release_date_download": "2019-04-12",
+    "release_date_stream": "2019-04-12",
+    "release_date_purchase": "2019-04-12",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782514800,
+    "streamable_at": 1782514800,
+    "hires": true,
+    "hires_streamable": true
+   }
+  ]
+ }
+}

@@ -1,0 +1,4208 @@
+{
+ "query": "so what miles davis",
+ "albums": {
+  "analytics": {
+   "search_external_id": "bf942c05c4406b5a68d209146c4fc80d"
+  },
+  "total": 32,
+  "items": []
+ },
+ "tracks": {
+  "limit": 10,
+  "offset": 0,
+  "analytics": {
+   "search_external_id": "32089babfd69ff7f27ab43aa053cdf99"
+  },
+  "total": 1000,
+  "items": [
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+    "performers": "Miles Davis, Associated Performer, Main Artist, Trumpet, Associated Performer, Trumpet\r - Irving Townsend, Producer\r - Jimmy Cobb, Drums\r - M. Davis, Composer, Lyricist\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone",
+    "audio_info": {
+     "replaygain_track_peak": 0.877747,
+     "replaygain_track_gain": 0.13
+    },
+    "performer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/28/24/5099749522428_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/28/24/5099749522428_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/28/24/5099749522428_600.jpg"
+     },
+     "maximum_bit_depth": 24,
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "upc": "5099749522428",
+     "released_at": -327459600,
+     "label": {
+      "name": "Columbia",
+      "id": 4592,
+      "albums_count": 28225,
+      "supplier_id": 23,
+      "slug": "columbia"
+     },
+     "title": "Kind Of Blue",
+     "qobuz_id": 13176082,
+     "version": null,
+     "duration": 2723,
+     "parental_warning": false,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "5099749522428",
+     "maximum_sampling_rate": 192,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1792623600,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "hires": true,
+     "hires_streamable": true
+    },
+    "work": null,
+    "composer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "isrc": "USSM15900113",
+    "title": "So What",
+    "version": null,
+    "duration": 547,
+    "parental_warning": false,
+    "track_number": 1,
+    "maximum_channel_count": 2,
+    "id": 13176083,
+    "media_number": 1,
+    "maximum_sampling_rate": 192,
+    "release_date_original": "1959-08-17",
+    "release_date_download": "1959-08-17",
+    "release_date_stream": "1959-08-17",
+    "release_date_purchase": "1959-08-17",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1792623600,
+    "streamable_at": 1792623600,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 16,
+    "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+    "performers": "Jimmy Cobb, Drums - Bill Evans, Piano - Irving Townsend, Producer - M. Davis, Lyricist - M. Davis, Composer - Paul Chambers, Bass - John Coltrane, Tenor Saxophone - Julian Cannonball Adderley, Alto Saxophone - Miles Davis, Performer - Miles Davis, Trumpet - ",
+    "audio_info": {
+     "replaygain_track_peak": 1,
+     "replaygain_track_gain": -1
+    },
+    "performer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/69/60/0888880696069_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/69/60/0888880696069_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/69/60/0888880696069_600.jpg"
+     },
+     "maximum_bit_depth": 16,
+     "media_count": 2,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "upc": "0888880696069",
+     "released_at": 1231974000,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2405,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Kind Of Blue (Legacy Edition)",
+     "qobuz_id": 13273,
+     "version": null,
+     "duration": 7237,
+     "parental_warning": false,
+     "tracks_count": 21,
+     "genre": {
+      "path": [
+       80
+      ],
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0888880696069",
+     "maximum_sampling_rate": 44.1,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1792623600,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2009-01-15",
+     "release_date_download": "2009-01-15",
+     "release_date_stream": "2009-01-15",
+     "release_date_purchase": "2009-01-15",
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    },
+    "work": null,
+    "composer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "isrc": "USSM15900113",
+    "title": "So What",
+    "version": "Album Version",
+    "duration": 562,
+    "parental_warning": false,
+    "track_number": 1,
+    "maximum_channel_count": 2,
+    "id": 13274,
+    "media_number": 1,
+    "maximum_sampling_rate": 44.1,
+    "release_date_original": "2009-01-15",
+    "release_date_download": "2009-01-15",
+    "release_date_stream": "2009-01-15",
+    "release_date_purchase": "2009-01-15",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1792623600,
+    "streamable_at": 1792623600,
+    "hires": false,
+    "hires_streamable": false,
+    "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+   },
+   {
+    "maximum_bit_depth": 16,
+    "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+    "performers": "Miles Davis, MainArtist, AssociatedPerformer, Soloist, Trumpet, Composer - John Coltrane, FeaturedArtist, AssociatedPerformer, Soloist, Tenor Saxophone - Cannonball Adderley, FeaturedArtist, Alto Saxophone, AssociatedPerformer, Soloist - Bill Evans, FeaturedArtist, AssociatedPerformer, Piano, Soloist - Miles Davis feat. John Coltrane, Cannonball Adderley & Bill Evans, AssociatedPerformer - Paul Chambers, Bass - Jimmy Cobb, Drums - Irving Townsend, Producer - Fred Plaut, Recording Engineer",
+    "audio_info": {
+     "replaygain_track_peak": 1,
+     "replaygain_track_gain": -1
+    },
+    "performer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_600.jpg"
+     },
+     "maximum_bit_depth": 16,
+     "media_count": 2,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5864,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "upc": "0888880983541",
+     "released_at": 1521759600,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2356,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Kind Of Blue (Legacy Edition)",
+     "qobuz_id": 48097769,
+     "version": null,
+     "duration": 7237,
+     "parental_warning": false,
+     "tracks_count": 21,
+     "genre": {
+      "path": [
+       80
+      ],
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "pmm9oz4jkwbsc",
+     "maximum_sampling_rate": 44.1,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1786143600,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2018-03-23",
+     "release_date_download": "2018-03-23",
+     "release_date_stream": "2018-03-23",
+     "release_date_purchase": "2018-03-23",
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    },
+    "work": null,
+    "composer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "isrc": "USSM15900113",
+    "title": "So What",
+    "version": null,
+    "duration": 562,
+    "parental_warning": false,
+    "track_number": 1,
+    "maximum_channel_count": 2,
+    "id": 48097770,
+    "media_number": 1,
+    "maximum_sampling_rate": 44.1,
+    "release_date_original": "2018-03-23",
+    "release_date_download": "2018-03-23",
+    "release_date_stream": "2018-03-23",
+    "release_date_purchase": "2018-03-23",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1786143600,
+    "streamable_at": 1786143600,
+    "hires": false,
+    "hires_streamable": false,
+    "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+    "performers": "Miles Davis, Associated Performer, Composer, Main Artist, Trumpet\r - Jimmy Cobb, Drums\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone\r - Irving Townsend, Producer",
+    "audio_info": {
+     "replaygain_track_peak": 0.824371,
+     "replaygain_track_gain": 0.24
+    },
+    "performer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/47/07/0886444350747_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/47/07/0886444350747_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/47/07/0886444350747_600.jpg"
+     },
+     "maximum_bit_depth": 24,
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "upc": "0886444350747",
+     "released_at": -327459600,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2405,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Kind of Blue (Mono)",
+     "qobuz_id": 20273752,
+     "version": "Mono Version",
+     "duration": 2729,
+     "parental_warning": false,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0886444350747",
+     "maximum_sampling_rate": 96,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1792623600,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "hires": true,
+     "hires_streamable": true
+    },
+    "work": null,
+    "composer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "isrc": "USSM11304993",
+    "title": "So What",
+    "version": "Mono Version",
+    "duration": 547,
+    "parental_warning": false,
+    "track_number": 1,
+    "maximum_channel_count": 2,
+    "id": 20273753,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "1959-08-17",
+    "release_date_download": "1959-08-17",
+    "release_date_stream": "1959-08-17",
+    "release_date_purchase": "1959-08-17",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1792623600,
+    "streamable_at": 1792623600,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+    "performers": "Miles Davis, Associated Performer, Composer, Main Artist, Trumpet\r - Jimmy Cobb, Drums\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone\r - Irving Townsend, Producer",
+    "audio_info": {
+     "replaygain_track_peak": 0.841888,
+     "replaygain_track_gain": 0.07
+    },
+    "performer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/61/07/0886444350761_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/61/07/0886444350761_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/61/07/0886444350761_600.jpg"
+     },
+     "maximum_bit_depth": 24,
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5864,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "upc": "0886444350761",
+     "released_at": -327459600,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2356,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Kind of Blue (Mono)",
+     "qobuz_id": 20273758,
+     "version": "Mono Version",
+     "duration": 2729,
+     "parental_warning": false,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0886444350761",
+     "maximum_sampling_rate": 192,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1786143600,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "hires": true,
+     "hires_streamable": true
+    },
+    "work": null,
+    "composer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "isrc": "USSM11304993",
+    "title": "So What",
+    "version": "Mono Version",
+    "duration": 547,
+    "parental_warning": false,
+    "track_number": 1,
+    "maximum_channel_count": 2,
+    "id": 20273759,
+    "media_number": 1,
+    "maximum_sampling_rate": 192,
+    "release_date_original": "1959-08-17",
+    "release_date_download": "1959-08-17",
+    "release_date_stream": "1959-08-17",
+    "release_date_purchase": "1959-08-17",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1786143600,
+    "streamable_at": 1786143600,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 16,
+    "copyright": "Originally recorded 1959 & released 2008. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+    "performers": "Miles Davis, MainArtist, AssociatedPerformer, Trumpet, Composer - John Coltrane, Tenor Saxophone - Cannonball Adderley, Alto Saxophone - Bill Evans, Piano, Soloist - Paul Chambers, Bass, Soloist - Jimmy Cobb, Drums - Irving Townsend, Producer - Fred Plaut, Recording Engineer",
+    "audio_info": {
+     "replaygain_track_peak": 0.33609,
+     "replaygain_track_gain": 8.47
+    },
+    "performer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_600.jpg"
+     },
+     "maximum_bit_depth": 16,
+     "media_count": 2,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5864,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "upc": "0888880983541",
+     "released_at": 1521759600,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2356,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Kind Of Blue (Legacy Edition)",
+     "qobuz_id": 48097769,
+     "version": null,
+     "duration": 7237,
+     "parental_warning": false,
+     "tracks_count": 21,
+     "genre": {
+      "path": [
+       80
+      ],
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "pmm9oz4jkwbsc",
+     "maximum_sampling_rate": 44.1,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1786143600,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2018-03-23",
+     "release_date_download": "2018-03-23",
+     "release_date_stream": "2018-03-23",
+     "release_date_purchase": "2018-03-23",
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    },
+    "work": null,
+    "composer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "isrc": "USSM10802764",
+    "title": "So What",
+    "version": "Studio Sequence 1",
+    "duration": 114,
+    "parental_warning": false,
+    "track_number": 10,
+    "maximum_channel_count": 2,
+    "id": 48097779,
+    "media_number": 1,
+    "maximum_sampling_rate": 44.1,
+    "release_date_original": "2018-03-23",
+    "release_date_download": "2018-03-23",
+    "release_date_stream": "2018-03-23",
+    "release_date_purchase": "2018-03-23",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1786143600,
+    "streamable_at": 1786143600,
+    "hires": false,
+    "hires_streamable": false,
+    "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "2010 RevOla Records 2010 RevOla Records",
+    "performers": "Miles Davis, MainArtist - Kobalt Music, MusicPublisher",
+    "audio_info": {
+     "replaygain_track_peak": 0.953156,
+     "replaygain_track_gain": -0.58
+    },
+    "performer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_600.jpg"
+     },
+     "maximum_bit_depth": 24,
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5872,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "upc": "5056321626073",
+     "released_at": -327459600,
+     "label": {
+      "name": "RevOla",
+      "id": 5626722,
+      "albums_count": 2683,
+      "supplier_id": 249,
+      "slug": "revola-1"
+     },
+     "title": "Kind of Blue",
+     "qobuz_id": 238062269,
+     "version": "Remastered",
+     "duration": 2768,
+     "parental_warning": false,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "fdasb7heir98a",
+     "maximum_sampling_rate": 44.1,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1789167600,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "hires": true,
+     "hires_streamable": true
+    },
+    "work": null,
+    "isrc": "UKPFB1891850",
+    "title": "So What?",
+    "version": "Remastered",
+    "duration": 567,
+    "parental_warning": false,
+    "track_number": 1,
+    "maximum_channel_count": 2,
+    "id": 238062270,
+    "media_number": 1,
+    "maximum_sampling_rate": 44.1,
+    "release_date_original": "1959-08-17",
+    "release_date_download": "1959-08-17",
+    "release_date_stream": "1959-08-17",
+    "release_date_purchase": "1959-08-17",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1789167600,
+    "streamable_at": 1789167600,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 16,
+    "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+    "performers": "Miles Davis, Associated Performer, Main Artist, Trumpet, Associated Performer, Trumpet\r - Irving Townsend, Producer\r - Jimmy Cobb, Drums\r - M. Davis, Composer, Lyricist\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone",
+    "audio_info": {
+     "replaygain_track_peak": 0.944153,
+     "replaygain_track_gain": -2.82
+    },
+    "performer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/24/29/0696998682924_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/24/29/0696998682924_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/24/29/0696998682924_600.jpg"
+     },
+     "maximum_bit_depth": 16,
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5864,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "upc": "0696998682924",
+     "released_at": 1031004000,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2356,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "The Best Of Miles Davis",
+     "qobuz_id": 15124586,
+     "version": null,
+     "duration": 4312,
+     "parental_warning": false,
+     "tracks_count": 11,
+     "genre": {
+      "path": [
+       80
+      ],
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0696998682924",
+     "maximum_sampling_rate": 44.1,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1786143600,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2002-09-03",
+     "release_date_download": "2002-09-03",
+     "release_date_stream": "2002-09-03",
+     "release_date_purchase": "2002-09-03",
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    },
+    "work": null,
+    "composer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "isrc": "USSM15900113",
+    "title": "So What",
+    "version": null,
+    "duration": 561,
+    "parental_warning": false,
+    "track_number": 3,
+    "maximum_channel_count": 2,
+    "id": 15124594,
+    "media_number": 1,
+    "maximum_sampling_rate": 44.1,
+    "release_date_original": "2002-09-03",
+    "release_date_download": "2002-09-03",
+    "release_date_stream": "2002-09-03",
+    "release_date_purchase": "2002-09-03",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1786143600,
+    "streamable_at": 1786143600,
+    "hires": false,
+    "hires_streamable": false,
+    "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "2009 RevOla Records 2010 RevOla Records",
+    "performers": "Miles Davis, MainArtist - Downtown Music, MusicPublisher",
+    "audio_info": {
+     "replaygain_track_peak": 1,
+     "replaygain_track_gain": -2.83
+    },
+    "performer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/ra/ub/kbabn6g4zubra_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/ra/ub/kbabn6g4zubra_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/ra/ub/kbabn6g4zubra_600.jpg"
+     },
+     "maximum_bit_depth": 24,
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5872,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "upc": "5056321643032",
+     "released_at": 1627596000,
+     "label": {
+      "name": "RevOla",
+      "id": 5626722,
+      "albums_count": 2683,
+      "supplier_id": 249,
+      "slug": "revola-1"
+     },
+     "title": "A Touch Of Blue",
+     "qobuz_id": 238180373,
+     "version": "Remastered",
+     "duration": 3313,
+     "parental_warning": false,
+     "tracks_count": 6,
+     "genre": {
+      "path": [
+       80
+      ],
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "kbabn6g4zubra",
+     "maximum_sampling_rate": 96,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1789167600,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2021-07-30",
+     "release_date_download": "2021-07-30",
+     "release_date_stream": "2021-07-30",
+     "release_date_purchase": "2021-07-30",
+     "hires": true,
+     "hires_streamable": true
+    },
+    "work": null,
+    "isrc": "UKPFB2004872",
+    "title": "So What?",
+    "version": "Remastered",
+    "duration": 562,
+    "parental_warning": false,
+    "track_number": 1,
+    "maximum_channel_count": 2,
+    "id": 238180374,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-07-30",
+    "release_date_download": "2021-07-30",
+    "release_date_stream": "2021-07-30",
+    "release_date_purchase": "2021-07-30",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1789167600,
+    "streamable_at": 1789167600,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 16,
+    "copyright": "(C) 2009 Saland Publishing (P) 2009 Saland Publishing",
+    "performers": "Davis, Composer - Miles Davis, MainArtist - Copyright Control, MusicPublisher",
+    "audio_info": {
+     "replaygain_track_peak": 1,
+     "replaygain_track_gain": -1
+    },
+    "performer": {
+     "name": "Miles Davis",
+     "id": 6760
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/54/16/5060122331654_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/54/16/5060122331654_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/54/16/5060122331654_600.jpg"
+     },
+     "maximum_bit_depth": 16,
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5839,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "upc": "5060122331654",
+     "released_at": 1234134000,
+     "label": {
+      "name": "Past Classics Jazz",
+      "id": 12114,
+      "albums_count": 249,
+      "supplier_id": 17,
+      "slug": "past-classics-jazz"
+     },
+     "title": "The Essential Miles Davis Collection",
+     "qobuz_id": 4047585,
+     "version": null,
+     "duration": 3374,
+     "parental_warning": false,
+     "tracks_count": 12,
+     "genre": {
+      "path": [
+       80
+      ],
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "5060122331654",
+     "maximum_sampling_rate": 44.1,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1778713200,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2009-02-09",
+     "release_date_download": "2009-02-09",
+     "release_date_stream": "2009-02-09",
+     "release_date_purchase": "2009-02-09",
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    },
+    "work": null,
+    "composer": {
+     "name": "Davis",
+     "id": 74813
+    },
+    "isrc": "GBMNA0910857",
+    "title": "So What",
+    "version": null,
+    "duration": 560,
+    "parental_warning": false,
+    "track_number": 12,
+    "maximum_channel_count": 2,
+    "id": 4047597,
+    "media_number": 1,
+    "maximum_sampling_rate": 44.1,
+    "release_date_original": "2009-02-09",
+    "release_date_download": "2009-02-09",
+    "release_date_stream": "2009-02-09",
+    "release_date_purchase": "2009-02-09",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778713200,
+    "streamable_at": 1778713200,
+    "hires": false,
+    "hires_streamable": false,
+    "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+   }
+  ]
+ },
+ "artists": {
+  "analytics": {
+   "search_external_id": "27b52a8a66b80cad4a29a3deabcdf0aa"
+  },
+  "total": 0,
+  "items": []
+ },
+ "playlists": {
+  "analytics": {
+   "search_external_id": "cd20520186ff0c0d386fcad86549996c"
+  },
+  "total": 54,
+  "items": []
+ },
+ "stories": {
+  "analytics": {
+   "search_external_id": "318288a7a98b0f6f919ef97556be985b"
+  },
+  "total": 0,
+  "items": []
+ },
+ "most_popular": {
+  "limit": 30,
+  "offset": 0,
+  "analytics": {
+   "search_external_id": "9277eef40ccce878b4e177609d520eed"
+  },
+  "total": 301,
+  "items": [
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, Associated Performer, Main Artist, Trumpet, Associated Performer, Trumpet\r - Irving Townsend, Producer\r - Jimmy Cobb, Drums\r - M. Davis, Composer, Lyricist\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone",
+     "audio_info": {
+      "replaygain_track_peak": 0.877747,
+      "replaygain_track_gain": 0.13
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 31993560,
+      "SMR": 31993561,
+      "SM2": 316766655
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/28/24/5099749522428_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/28/24/5099749522428_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/28/24/5099749522428_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5875,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "5099749522428",
+      "released_at": -327459600,
+      "label": {
+       "name": "Columbia",
+       "id": 4592,
+       "albums_count": 28225,
+       "supplier_id": 23,
+       "slug": "columbia"
+      },
+      "title": "Kind Of Blue",
+      "qobuz_id": 13176082,
+      "version": null,
+      "duration": 2723,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "5099749522428",
+      "maximum_sampling_rate": 192,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1792623600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM15900113",
+     "title": "So What",
+     "version": null,
+     "duration": 547,
+     "parental_warning": false,
+     "track_number": 1,
+     "maximum_channel_count": 2,
+     "id": 13176083,
+     "media_number": 1,
+     "maximum_sampling_rate": 192,
+     "articles": [
+      {
+       "id": 31993560,
+       "url": "/order/31993560",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 31993561,
+       "url": "/order/31993561",
+       "price": 2.19,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      },
+      {
+       "id": 316766655,
+       "url": "/order/316766655",
+       "price": 2.99,
+       "currency": "GBP",
+       "type": "sm2",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 192 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 16,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Jimmy Cobb, Drums - Bill Evans, Piano - Irving Townsend, Producer - M. Davis, Lyricist - M. Davis, Composer - Paul Chambers, Bass - John Coltrane, Tenor Saxophone - Julian Cannonball Adderley, Alto Saxophone - Miles Davis, Performer - Miles Davis, Trumpet - ",
+     "audio_info": {
+      "replaygain_track_peak": 1,
+      "replaygain_track_gain": -1
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 8430233,
+      "SMR": 16891861,
+      "SM2": 305046583
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/69/60/0888880696069_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/69/60/0888880696069_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/69/60/0888880696069_600.jpg"
+      },
+      "maximum_bit_depth": 16,
+      "media_count": 2,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5875,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0888880696069",
+      "released_at": 1231974000,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2405,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind Of Blue (Legacy Edition)",
+      "qobuz_id": 13273,
+      "version": null,
+      "duration": 7237,
+      "parental_warning": false,
+      "tracks_count": 21,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0888880696069",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1792623600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2009-01-15",
+      "release_date_download": "2009-01-15",
+      "release_date_stream": "2009-01-15",
+      "release_date_purchase": "2009-01-15",
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM15900113",
+     "title": "So What",
+     "version": "Album Version",
+     "duration": 562,
+     "parental_warning": false,
+     "track_number": 1,
+     "maximum_channel_count": 2,
+     "id": 13274,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 8430233,
+       "url": "/order/8430233",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2009-01-15",
+     "release_date_download": "2009-01-15",
+     "release_date_stream": "2009-01-15",
+     "release_date_purchase": "2009-01-15",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, Associated Performer, Composer, Main Artist, Trumpet\r - Jimmy Cobb, Drums\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone\r - Irving Townsend, Producer",
+     "audio_info": {
+      "replaygain_track_peak": 0.824371,
+      "replaygain_track_gain": 0.24
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 48154118,
+      "SMR": 48154119,
+      "SM2": 322082177
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/47/07/0886444350747_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/47/07/0886444350747_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/47/07/0886444350747_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5875,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0886444350747",
+      "released_at": -327459600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2405,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind of Blue (Mono)",
+      "qobuz_id": 20273752,
+      "version": "Mono Version",
+      "duration": 2729,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0886444350747",
+      "maximum_sampling_rate": 96,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1792623600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM11304993",
+     "title": "So What",
+     "version": "Mono Version",
+     "duration": 547,
+     "parental_warning": false,
+     "track_number": 1,
+     "maximum_channel_count": 2,
+     "id": 20273753,
+     "media_number": 1,
+     "maximum_sampling_rate": 96,
+     "articles": [
+      {
+       "id": 48154118,
+       "url": "/order/48154118",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 48154119,
+       "url": "/order/48154119",
+       "price": 2.19,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 16,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, MainArtist, AssociatedPerformer, Soloist, Trumpet, Composer - John Coltrane, FeaturedArtist, AssociatedPerformer, Soloist, Tenor Saxophone - Cannonball Adderley, FeaturedArtist, Alto Saxophone, AssociatedPerformer, Soloist - Bill Evans, FeaturedArtist, AssociatedPerformer, Piano, Soloist - Miles Davis feat. John Coltrane, Cannonball Adderley & Bill Evans, AssociatedPerformer - Paul Chambers, Bass - Jimmy Cobb, Drums - Irving Townsend, Producer - Fred Plaut, Recording Engineer",
+     "audio_info": {
+      "replaygain_track_peak": 1,
+      "replaygain_track_gain": -1
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 117880246,
+      "SMR": 117880247,
+      "SM2": 346186569
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_600.jpg"
+      },
+      "maximum_bit_depth": 16,
+      "media_count": 2,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5864,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0888880983541",
+      "released_at": 1521759600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2356,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind Of Blue (Legacy Edition)",
+      "qobuz_id": 48097769,
+      "version": null,
+      "duration": 7237,
+      "parental_warning": false,
+      "tracks_count": 21,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "pmm9oz4jkwbsc",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1786143600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2018-03-23",
+      "release_date_download": "2018-03-23",
+      "release_date_stream": "2018-03-23",
+      "release_date_purchase": "2018-03-23",
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM15900113",
+     "title": "So What",
+     "version": null,
+     "duration": 562,
+     "parental_warning": false,
+     "track_number": 1,
+     "maximum_channel_count": 2,
+     "id": 48097770,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 117880246,
+       "url": "/order/117880246",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2018-03-23",
+     "release_date_download": "2018-03-23",
+     "release_date_stream": "2018-03-23",
+     "release_date_purchase": "2018-03-23",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786143600,
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, Associated Performer, Composer, Main Artist, Trumpet\r - Jimmy Cobb, Drums\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone\r - Irving Townsend, Producer",
+     "audio_info": {
+      "replaygain_track_peak": 0.841888,
+      "replaygain_track_gain": 0.07
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 48154136,
+      "SMR": 48154137,
+      "SM2": 322082184
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/61/07/0886444350761_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/61/07/0886444350761_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/61/07/0886444350761_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5864,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0886444350761",
+      "released_at": -327459600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2356,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind of Blue (Mono)",
+      "qobuz_id": 20273758,
+      "version": "Mono Version",
+      "duration": 2729,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0886444350761",
+      "maximum_sampling_rate": 192,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1786143600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM11304993",
+     "title": "So What",
+     "version": "Mono Version",
+     "duration": 547,
+     "parental_warning": false,
+     "track_number": 1,
+     "maximum_channel_count": 2,
+     "id": 20273759,
+     "media_number": 1,
+     "maximum_sampling_rate": 192,
+     "articles": [
+      {
+       "id": 48154136,
+       "url": "/order/48154136",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 48154137,
+       "url": "/order/48154137",
+       "price": 2.19,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      },
+      {
+       "id": 322082184,
+       "url": "/order/322082184",
+       "price": 2.99,
+       "currency": "GBP",
+       "type": "sm2",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 192 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786143600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/bc/q8/jocsw4ybgq8bc_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/bc/q8/jocsw4ybgq8bc_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/bc/q8/jocsw4ybgq8bc_600.jpg",
+      "back": null
+     },
+     "media_count": 5,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0196872335613",
+     "released_at": 1731020400,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2400,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Miles in France 1963 & 1964 - Miles Davis Quintet: The Bootleg Series, Vol. 8",
+     "qobuz_id": 287872345,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/miles-in-france-1963-1964-miles-davis-quintet-the-bootleg-series-vol-8-miles-davis/jocsw4ybgq8bc",
+     "slug": "miles-in-france-1963-1964-miles-davis-quintet-the-bootleg-series-vol-8-miles-davis",
+     "duration": 20778,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 35,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "jocsw4ybgq8bc",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2024-11-08",
+     "release_date_download": "2024-11-08",
+     "release_date_stream": "2024-11-08",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786057200,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": false
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/rc/os/x3w2o4n0eosrc_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/rc/os/x3w2o4n0eosrc_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/rc/os/x3w2o4n0eosrc_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Fred Hersch",
+      "id": 10559,
+      "albums_count": 111,
+      "slug": "fred-hersch",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 10559,
+       "name": "Fred Hersch",
+       "roles": [
+        "main-artist"
+       ]
+      },
+      {
+       "id": 52576,
+       "name": "Mike Stern",
+       "roles": [
+        "main-artist"
+       ]
+      },
+      {
+       "id": 40234,
+       "name": "Larry Coryell",
+       "roles": [
+        "main-artist"
+       ]
+      },
+      {
+       "id": 35587,
+       "name": "Ron Carter",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "4895241448836",
+     "released_at": 1531432800,
+     "label": {
+      "name": "Chesky Records",
+      "id": 7653182,
+      "albums_count": 532,
+      "supplier_id": 93,
+      "slug": "chesky-records-2"
+     },
+     "title": "Chesky Records Audiophile Tribute to Miles Davis",
+     "qobuz_id": 347954508,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/chesky-records-audiophile-tribute-to-miles-davis-jimmy-cobb-mike-stern-ron-carter/x3w2o4n0eosrc",
+     "slug": "chesky-records-audiophile-tribute-to-miles-davis-jimmy-cobb-mike-stern-ron-carter",
+     "duration": 5155,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 12,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "x3w2o4n0eosrc",
+     "maximum_sampling_rate": 96,
+     "articles": [],
+     "release_date_original": "2018-07-13",
+     "release_date_download": "2018-07-13",
+     "release_date_stream": "2018-07-13",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1789340400,
+     "streamable_at": 1789340400,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": false
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/27/06/0696998710627_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/27/06/0696998710627_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/27/06/0696998710627_600.jpg",
+      "back": null
+     },
+     "media_count": 4,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0696998710627",
+     "released_at": -274323600,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2405,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Miles Davis : At The Blackhawk (Complete)",
+     "qobuz_id": 15124818,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/miles-davis-at-the-blackhawk-complete-miles-davis-in-person-friday-and-saturday-nights-/0696998710627",
+     "slug": "miles-davis-at-the-blackhawk-complete-miles-davis-in-person-friday-and-saturday-nights-",
+     "duration": 14476,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 29,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0696998710627",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "1961-04-23",
+     "release_date_download": "1961-04-23",
+     "release_date_stream": "1961-04-23",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/81/08/0060254730881_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/81/08/0060254730881_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/81/08/0060254730881_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Herbie Hancock",
+      "id": 10118,
+      "albums_count": 1326,
+      "slug": "herbie-hancock",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 10118,
+       "name": "Herbie Hancock",
+       "roles": [
+        "main-artist"
+       ]
+      },
+      {
+       "id": 39346,
+       "name": "Michael Brecker",
+       "roles": [
+        "main-artist"
+       ]
+      },
+      {
+       "id": 39375,
+       "name": "Roy Hargrove",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0060254730881",
+     "released_at": 1009839600,
+     "label": {
+      "name": "Verve",
+      "id": 1157,
+      "albums_count": 1790,
+      "supplier_id": 1,
+      "slug": "verve"
+     },
+     "title": "Directions In Music: Live At Massey Hall -  Celebrating Miles Davis & John Coltrane",
+     "qobuz_id": 23865282,
+     "version": "Live At Massey Hall / 2001",
+     "url": "https://www.qobuz.com/fr-fr/album/directions-in-music-live-at-massey-hall-celebrating-miles-davis-john-coltrane-herbie-hancock-roy-hargrove-michael-brecker/0060254730881",
+     "slug": "directions-in-music-live-at-massey-hall-celebrating-miles-davis-john-coltrane-herbie-hancock-roy-hargrove-michael-brecker",
+     "duration": 4703,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 8,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0060254730881",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "2002-01-01",
+     "release_date_download": "2002-01-01",
+     "release_date_stream": "2002-01-01",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1785970800,
+     "streamable_at": 1785884400,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "Originally recorded 1960 & released 2017. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, MainArtist, AssociatedPerformer, Soloist, Trumpet, Composer - John Coltrane, MainArtist, AssociatedPerformer, Soloist, Tenor Saxophone - Miles Davis & John Coltrane, AssociatedPerformer - Wynton Kelly, Piano, Soloist - Paul Chambers, Bass - Jimmy Cobb, Drums",
+     "audio_info": {
+      "replaygain_track_peak": 0.876129,
+      "replaygain_track_gain": -0.42
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 110799723,
+      "SMR": 110799724,
+      "SM2": 343638500
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/64/65/0886446656564_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/64/65/0886446656564_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/64/65/0886446656564_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 4,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5873,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0886446656564",
+      "released_at": 1521759600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2399,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "The Final Tour: The Bootleg Series, Vol. 6",
+      "qobuz_id": 45708842,
+      "version": null,
+      "duration": 13246,
+      "parental_warning": false,
+      "tracks_count": 23,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0886446656564",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1791414000,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2018-03-23",
+      "release_date_download": "2018-03-23",
+      "release_date_stream": "2018-03-23",
+      "release_date_purchase": "2018-03-23",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM11704564",
+     "title": "So What",
+     "version": "Live from Olympia Theatre, Paris - March 1960",
+     "duration": 805,
+     "parental_warning": false,
+     "track_number": 2,
+     "maximum_channel_count": 2,
+     "id": 45708844,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2018-03-23",
+     "release_date_download": "2018-03-23",
+     "release_date_stream": "2018-03-23",
+     "release_date_purchase": "2018-03-23",
+     "purchasable": false,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": false,
+     "displayable": true,
+     "purchasable_at": null,
+     "streamable_at": 1791414000,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "2010 RevOla Records 2010 RevOla Records",
+     "performers": "Miles Davis, MainArtist - Kobalt Music, MusicPublisher",
+     "audio_info": {
+      "replaygain_track_peak": 0.953156,
+      "replaygain_track_gain": -0.58
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 883114583,
+      "SMR": 883114584
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5872,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "5056321626073",
+      "released_at": -327459600,
+      "label": {
+       "name": "RevOla",
+       "id": 5626722,
+       "albums_count": 2683,
+       "supplier_id": 249,
+       "slug": "revola-1"
+      },
+      "title": "Kind of Blue",
+      "qobuz_id": 238062269,
+      "version": "Remastered",
+      "duration": 2768,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "fdasb7heir98a",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1789167600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "isrc": "UKPFB1891850",
+     "title": "So What?",
+     "version": "Remastered",
+     "duration": 567,
+     "parental_warning": false,
+     "track_number": 1,
+     "maximum_channel_count": 2,
+     "id": 238062270,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 883114583,
+       "url": "/order/883114583",
+       "price": 1.35,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 883114584,
+       "url": "/order/883114584",
+       "price": 1.68,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1789167600,
+     "streamable_at": 1789167600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/32/83/0007464658332_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/32/83/0007464658332_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/32/83/0007464658332_600.jpg",
+      "back": null
+     },
+     "media_count": 6,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5869,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0007464658332",
+     "released_at": 940888800,
+     "label": {
+      "name": "Columbia - Legacy",
+      "id": 4637,
+      "albums_count": 2306,
+      "supplier_id": 23,
+      "slug": "columbia-legacy"
+     },
+     "title": "The Complete Columbia Recordings of Miles Davis with John Coltrane",
+     "qobuz_id": 12943,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/the-complete-columbia-recordings-of-miles-davis-with-john-coltrane-miles-davis-john-coltrane/0007464658332",
+     "slug": "the-complete-columbia-recordings-of-miles-davis-with-john-coltrane-miles-davis-john-coltrane",
+     "duration": 23033,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 58,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0007464658332",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "1999-10-26",
+     "release_date_download": "1999-10-26",
+     "release_date_stream": "1999-10-26",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1777503600,
+     "streamable_at": 1777503600,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "2009 RevOla Records 2010 RevOla Records",
+     "performers": "Miles Davis, MainArtist - Downtown Music, MusicPublisher",
+     "audio_info": {
+      "replaygain_track_peak": 1,
+      "replaygain_track_gain": -2.83
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 883347802,
+      "SMR": 883347803
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/ra/ub/kbabn6g4zubra_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/ra/ub/kbabn6g4zubra_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/ra/ub/kbabn6g4zubra_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5872,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "5056321643032",
+      "released_at": 1627596000,
+      "label": {
+       "name": "RevOla",
+       "id": 5626722,
+       "albums_count": 2683,
+       "supplier_id": 249,
+       "slug": "revola-1"
+      },
+      "title": "A Touch Of Blue",
+      "qobuz_id": 238180373,
+      "version": "Remastered",
+      "duration": 3313,
+      "parental_warning": false,
+      "tracks_count": 6,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "kbabn6g4zubra",
+      "maximum_sampling_rate": 96,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1789167600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2021-07-30",
+      "release_date_download": "2021-07-30",
+      "release_date_stream": "2021-07-30",
+      "release_date_purchase": "2021-07-30",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "isrc": "UKPFB2004872",
+     "title": "So What?",
+     "version": "Remastered",
+     "duration": 562,
+     "parental_warning": false,
+     "track_number": 1,
+     "maximum_channel_count": 2,
+     "id": 238180374,
+     "media_number": 1,
+     "maximum_sampling_rate": 96,
+     "articles": [
+      {
+       "id": 883347802,
+       "url": "/order/883347802",
+       "price": 1.35,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 883347803,
+       "url": "/order/883347803",
+       "price": 1.68,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2021-07-30",
+     "release_date_download": "2021-07-30",
+     "release_date_stream": "2021-07-30",
+     "release_date_purchase": "2021-07-30",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1789167600,
+     "streamable_at": 1789167600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/bb/80/fnnc6mgrw80bb_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/bb/80/fnnc6mgrw80bb_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/bb/80/fnnc6mgrw80bb_600.jpg",
+      "back": null
+     },
+     "media_count": 6,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0074646583326",
+     "released_at": 940888800,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2400,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "The Complete Miles Davis Featuring John Coltrane",
+     "qobuz_id": 57595904,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/the-complete-miles-davis-featuring-john-coltrane-miles-davis/fnnc6mgrw80bb",
+     "slug": "the-complete-miles-davis-featuring-john-coltrane-miles-davis",
+     "duration": 23033,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 58,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "fnnc6mgrw80bb",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "1999-10-26",
+     "release_date_download": "1999-10-26",
+     "release_date_stream": "1999-10-26",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786143600,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": false
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "(P) 2024 Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, MainArtist, AssociatedPerformer, Trumpet, Composer - George Coleman, Tenor Saxophone - HERBIE HANCOCK, Piano - Ron Carter, Bass - Tony Williams, Drums - Steve Berkowitz, Producer - Michael Cuscuna, Producer - Richard Seidel, Producer - Vic Anesini, Mastering Engineer",
+     "audio_info": {
+      "replaygain_track_peak": 0.949158,
+      "replaygain_track_gain": -0.55
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 994110215,
+      "SMR": 994110216
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/bc/q8/jocsw4ybgq8bc_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/bc/q8/jocsw4ybgq8bc_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/bc/q8/jocsw4ybgq8bc_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 5,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5864,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0196872335613",
+      "released_at": 1731020400,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2356,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Miles in France 1963 & 1964 - Miles Davis Quintet: The Bootleg Series, Vol. 8",
+      "qobuz_id": 287872345,
+      "version": null,
+      "duration": 20778,
+      "parental_warning": false,
+      "tracks_count": 35,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "jocsw4ybgq8bc",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1786057200,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2024-11-08",
+      "release_date_download": "2024-11-08",
+      "release_date_stream": "2024-11-08",
+      "release_date_purchase": "2024-11-08",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM12405128",
+     "title": "So What",
+     "version": "Live at Festival Mondial Du Jazz Antibes/Juan-Les-Pins, France - July 26, 1963",
+     "duration": 586,
+     "parental_warning": false,
+     "track_number": 2,
+     "maximum_channel_count": 2,
+     "id": 287872347,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 994110215,
+       "url": "/order/994110215",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 994110216,
+       "url": "/order/994110216",
+       "price": 2.19,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2024-11-08",
+     "release_date_download": "2024-11-08",
+     "release_date_stream": "2024-11-08",
+     "release_date_purchase": "2024-11-08",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786057200,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 16,
+     "copyright": "Originally recorded 1959 & released 2008. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, MainArtist, AssociatedPerformer, Trumpet, Composer - John Coltrane, Tenor Saxophone - Cannonball Adderley, Alto Saxophone - Bill Evans, Piano, Soloist - Paul Chambers, Bass, Soloist - Jimmy Cobb, Drums - Irving Townsend, Producer - Fred Plaut, Recording Engineer",
+     "audio_info": {
+      "replaygain_track_peak": 0.33609,
+      "replaygain_track_gain": 8.47
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 117880273,
+      "SMR": 117880274,
+      "SM2": 346186578
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_600.jpg"
+      },
+      "maximum_bit_depth": 16,
+      "media_count": 2,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5864,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0888880983541",
+      "released_at": 1521759600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2356,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind Of Blue (Legacy Edition)",
+      "qobuz_id": 48097769,
+      "version": null,
+      "duration": 7237,
+      "parental_warning": false,
+      "tracks_count": 21,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "pmm9oz4jkwbsc",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1786143600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2018-03-23",
+      "release_date_download": "2018-03-23",
+      "release_date_stream": "2018-03-23",
+      "release_date_purchase": "2018-03-23",
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM10802764",
+     "title": "So What",
+     "version": "Studio Sequence 1",
+     "duration": 114,
+     "parental_warning": false,
+     "track_number": 10,
+     "maximum_channel_count": 2,
+     "id": 48097779,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 117880273,
+       "url": "/order/117880273",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2018-03-23",
+     "release_date_download": "2018-03-23",
+     "release_date_stream": "2018-03-23",
+     "release_date_purchase": "2018-03-23",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786143600,
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/54/16/5060122331654_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/54/16/5060122331654_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/54/16/5060122331654_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5839,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "5060122331654",
+     "released_at": 1234134000,
+     "label": {
+      "name": "Past Classics Jazz",
+      "id": 12114,
+      "albums_count": 249,
+      "supplier_id": 17,
+      "slug": "past-classics-jazz"
+     },
+     "title": "The Essential Miles Davis Collection",
+     "qobuz_id": 4047585,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/the-essential-miles-davis-collection-miles-davis/5060122331654",
+     "slug": "the-essential-miles-davis-collection-miles-davis",
+     "duration": 3374,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 12,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "5060122331654",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2009-02-09",
+     "release_date_download": "2009-02-09",
+     "release_date_stream": "2009-02-09",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1778713200,
+     "streamable_at": 1778713200,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "Originally Recorded 1966. All rights reserved by SONY BMG MUSIC ENTERTAINMENT",
+     "performers": "Herbie Hancock, Piano - Ron Carter, Bass - Teo Macero, Producer - M. Davis, Lyricist - M. Davis, Composer - George Coleman, Tenor Saxophone - Tony Williams, Drums - Miles Davis, Performer - Miles Davis, Trumpet - ",
+     "audio_info": {
+      "replaygain_track_peak": 0.897888,
+      "replaygain_track_gain": -3.3
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 8433089,
+      "SMR": 21645591,
+      "SM2": 305045903
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/25/95/0827969359525_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/25/95/0827969359525_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/25/95/0827969359525_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5864,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0827969359525",
+      "released_at": -124851600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2356,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "\"Four\" & More",
+      "qobuz_id": 12609,
+      "version": "2022 Remaster",
+      "duration": 3245,
+      "parental_warning": false,
+      "tracks_count": 8,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0827969359525",
+      "maximum_sampling_rate": 192,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1786143600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1966-01-17",
+      "release_date_download": "1966-01-17",
+      "release_date_stream": "1966-01-17",
+      "release_date_purchase": "1966-01-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM16400955",
+     "title": "So What",
+     "version": "Live",
+     "duration": 550,
+     "parental_warning": false,
+     "track_number": 1,
+     "maximum_channel_count": 2,
+     "id": 12610,
+     "media_number": 1,
+     "maximum_sampling_rate": 192,
+     "articles": [
+      {
+       "id": 8433089,
+       "url": "/order/8433089",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 21645591,
+       "url": "/order/21645591",
+       "price": 2.19,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      },
+      {
+       "id": 305045903,
+       "url": "/order/305045903",
+       "price": 2.99,
+       "currency": "GBP",
+       "type": "sm2",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 192 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "1966-01-17",
+     "release_date_download": "1966-01-17",
+     "release_date_stream": "1966-01-17",
+     "release_date_purchase": "1966-01-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786143600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 16,
+     "copyright": "(C) 2009 Saland Publishing (P) 2009 Saland Publishing",
+     "performers": "Davis, Composer - Miles Davis, MainArtist - Copyright Control, MusicPublisher",
+     "audio_info": {
+      "replaygain_track_peak": 1,
+      "replaygain_track_gain": -1
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 10835925,
+      "SMR": 23851201,
+      "SM2": 309124128
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/54/16/5060122331654_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/54/16/5060122331654_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/54/16/5060122331654_600.jpg"
+      },
+      "maximum_bit_depth": 16,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5839,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "5060122331654",
+      "released_at": 1234134000,
+      "label": {
+       "name": "Past Classics Jazz",
+       "id": 12114,
+       "albums_count": 249,
+       "supplier_id": 17,
+       "slug": "past-classics-jazz"
+      },
+      "title": "The Essential Miles Davis Collection",
+      "qobuz_id": 4047585,
+      "version": null,
+      "duration": 3374,
+      "parental_warning": false,
+      "tracks_count": 12,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "5060122331654",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1778713200,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2009-02-09",
+      "release_date_download": "2009-02-09",
+      "release_date_stream": "2009-02-09",
+      "release_date_purchase": "2009-02-09",
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     "work": null,
+     "composer": {
+      "name": "Davis",
+      "id": 74813
+     },
+     "isrc": "GBMNA0910857",
+     "title": "So What",
+     "version": null,
+     "duration": 560,
+     "parental_warning": false,
+     "track_number": 12,
+     "maximum_channel_count": 2,
+     "id": 4047597,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 10835925,
+       "url": "/order/10835925",
+       "price": 1.49,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2009-02-09",
+     "release_date_download": "2009-02-09",
+     "release_date_stream": "2009-02-09",
+     "release_date_purchase": "2009-02-09",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1778713200,
+     "streamable_at": 1778713200,
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/24/96/0827969359624_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/24/96/0827969359624_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/24/96/0827969359624_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0827969359624",
+     "released_at": -172544400,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2400,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Miles In Tokyo - Miles Davis Live In Concert",
+     "qobuz_id": 12618,
+     "version": "Live at Kohseinenken Hall, Tokyo, Japan - July 1964",
+     "url": "https://www.qobuz.com/fr-fr/album/miles-in-tokyo-miles-davis-live-in-concert-miles-davis/0827969359624",
+     "slug": "miles-in-tokyo-miles-davis-live-in-concert-miles-davis",
+     "duration": 3247,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 7,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0827969359624",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "1964-07-14",
+     "release_date_download": "1964-07-14",
+     "release_date_stream": "1964-07-14",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786143600,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/23/27/0074646502723_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/23/27/0074646502723_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/23/27/0074646502723_600.jpg",
+      "back": null
+     },
+     "media_count": 2,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0074646502723",
+     "released_at": -252464400,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2400,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Miles Davis At Carnegie Hall- The Complete Concert",
+     "qobuz_id": 5041974,
+     "version": "Live",
+     "url": "https://www.qobuz.com/fr-fr/album/miles-davis-at-carnegie-hall-the-complete-concert-miles-davis/0074646502723",
+     "slug": "miles-davis-at-carnegie-hall-the-complete-concert-miles-davis",
+     "duration": 5181,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 11,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0074646502723",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "1962-01-01",
+     "release_date_download": "1962-01-01",
+     "release_date_stream": "1962-01-01",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1785711600,
+     "streamable_at": 1785711600,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 16,
+     "copyright": "Originally recorded 1959 & released 2008. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Paul Chambers, Bass - Irving Townsend, Producer - Fred Plaut, Recording Engineer - Bill Evans, Piano - M. Davis, Lyricist - M. Davis, Composer - Miles Davis, Trumpet - Miles Davis, Performer - John Coltrane, Tenor Saxophone - Cannonball Adderley, Alto Saxophone - Jimmy Cobb, Drums - ",
+     "audio_info": {
+      "replaygain_track_peak": 0.33609,
+      "replaygain_track_gain": 8.47
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 8430248,
+      "SMR": 16891916,
+      "SM2": 305046592
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/69/60/0888880696069_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/69/60/0888880696069_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/69/60/0888880696069_600.jpg"
+      },
+      "maximum_bit_depth": 16,
+      "media_count": 2,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5875,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0888880696069",
+      "released_at": 1231974000,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2405,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind Of Blue (Legacy Edition)",
+      "qobuz_id": 13273,
+      "version": null,
+      "duration": 7237,
+      "parental_warning": false,
+      "tracks_count": 21,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0888880696069",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1792623600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2009-01-15",
+      "release_date_download": "2009-01-15",
+      "release_date_stream": "2009-01-15",
+      "release_date_purchase": "2009-01-15",
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM10802764",
+     "title": "So What",
+     "version": "Studio Sequence 1",
+     "duration": 114,
+     "parental_warning": false,
+     "track_number": 10,
+     "maximum_channel_count": 2,
+     "id": 13283,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 8430248,
+       "url": "/order/8430248",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2009-01-15",
+     "release_date_download": "2009-01-15",
+     "release_date_stream": "2009-01-15",
+     "release_date_purchase": "2009-01-15",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/20/75/0696998547520_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/20/75/0696998547520_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/20/75/0696998547520_600.jpg",
+      "back": null
+     },
+     "media_count": 2,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0696998547520",
+     "released_at": 989877600,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2400,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "The Essential Miles Davis",
+     "qobuz_id": 15124609,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/the-essential-miles-davis-miles-davis/0696998547520",
+     "slug": "the-essential-miles-davis-miles-davis",
+     "duration": 8936,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 23,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0696998547520",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2001-05-15",
+     "release_date_download": "2001-05-15",
+     "release_date_stream": "2001-05-15",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786143600,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "Originally recorded 1960 & released 2017. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, MainArtist, AssociatedPerformer, Soloist, Trumpet, Composer, Lyricist - John Coltrane, MainArtist, AssociatedPerformer, Soloist, Tenor Saxophone - Miles Davis & John Coltrane, AssociatedPerformer - Wynton Kelly, Piano, Soloist - Paul Chambers, Bass - Jimmy Cobb, Drums",
+     "audio_info": {
+      "replaygain_track_peak": 0.798889,
+      "replaygain_track_gain": -1.59
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 110799747,
+      "SMR": 110799748,
+      "SM2": 343638508
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/64/65/0886446656564_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/64/65/0886446656564_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/64/65/0886446656564_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 4,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5873,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0886446656564",
+      "released_at": 1521759600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2399,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "The Final Tour: The Bootleg Series, Vol. 6",
+      "qobuz_id": 45708842,
+      "version": null,
+      "duration": 13246,
+      "parental_warning": false,
+      "tracks_count": 23,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0886446656564",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1791414000,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2018-03-23",
+      "release_date_download": "2018-03-23",
+      "release_date_stream": "2018-03-23",
+      "release_date_purchase": "2018-03-23",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM11706647",
+     "title": "So What",
+     "version": "Live from Tivolis Koncertsal, Copenhagen - March 1960",
+     "duration": 876,
+     "parental_warning": false,
+     "track_number": 6,
+     "maximum_channel_count": 2,
+     "id": 45708852,
+     "media_number": 2,
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2018-03-23",
+     "release_date_download": "2018-03-23",
+     "release_date_stream": "2018-03-23",
+     "release_date_purchase": "2018-03-23",
+     "purchasable": false,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": false,
+     "displayable": true,
+     "purchasable_at": null,
+     "streamable_at": 1791414000,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/41/63/0886445126341_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/41/63/0886445126341_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/41/63/0886445126341_600.jpg",
+      "back": null
+     },
+     "media_count": 4,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0886445126341",
+     "released_at": 1437084000,
+     "label": {
+      "name": "Columbia - Legacy",
+      "id": 4637,
+      "albums_count": 2298,
+      "supplier_id": 23,
+      "slug": "columbia-legacy"
+     },
+     "title": "Miles Davis at Newport: 1955-1975: The Bootleg Series, Vol. 4",
+     "qobuz_id": 24514534,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/miles-davis-at-newport-1955-1975-the-bootleg-series-vol-4-miles-davis/0886445126341",
+     "slug": "miles-davis-at-newport-1955-1975-the-bootleg-series-vol-4-miles-davis",
+     "duration": 17747,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 40,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0886445126341",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2015-07-17",
+     "release_date_download": "2015-07-17",
+     "release_date_stream": "2015-07-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1791414000,
+     "streamable_at": 1791414000,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/ia/dh/qmszv1y7vdhia_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/ia/dh/qmszv1y7vdhia_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/ia/dh/qmszv1y7vdhia_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Yuko Mabuchi",
+      "id": 3263930,
+      "albums_count": 16,
+      "slug": "yukomabuchi-10003263930",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 3263930,
+       "name": "Yuko Mabuchi",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0193428786905",
+     "released_at": 1557439200,
+     "label": {
+      "name": "Yarlung Records",
+      "id": 7373426,
+      "albums_count": 66,
+      "supplier_id": 41,
+      "slug": "yarlung-records-2"
+     },
+     "title": "Yuko Mabuchi Plays Miles Davis (Yarlung 15th Anniversary Edition) [Live]",
+     "qobuz_id": 303400995,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/yuko-mabuchi-plays-miles-davis-yarlung-15th-anniversary-edition-live-yuko-mabuchi/qmszv1y7vdhia",
+     "slug": "yuko-mabuchi-plays-miles-davis-yarlung-15th-anniversary-edition-live-yuko-mabuchi",
+     "duration": 3689,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 8,
+     "genre": {
+      "path": [
+       80,
+       85
+      ],
+      "color": "#0070ef",
+      "name": "Contemporary Jazz",
+      "id": 85,
+      "slug": "jazz-contemporain"
+     },
+     "maximum_channel_count": 2,
+     "id": "qmszv1y7vdhia",
+     "maximum_sampling_rate": 96,
+     "articles": [],
+     "release_date_original": "2019-05-10",
+     "release_date_download": "2019-05-10",
+     "release_date_stream": "2019-05-10",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1783033200,
+     "streamable_at": 1783033200,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": false
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/41/86/0191018878641_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/41/86/0191018878641_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/41/86/0191018878641_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Solo Sounds",
+      "id": 3272149,
+      "albums_count": 89,
+      "slug": "solosounds-10003272149",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 3272149,
+       "name": "Solo Sounds",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0191018878641",
+     "released_at": 1489705200,
+     "label": {
+      "name": "Solo Sounds",
+      "id": 157517,
+      "albums_count": 95,
+      "supplier_id": 17,
+      "slug": "solo-sounds"
+     },
+     "title": "Solo Wurlitzer Electric Piano: Miles Davis' Kind of Blue",
+     "qobuz_id": 39429719,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/solo-wurlitzer-electric-piano-miles-davis-kind-of-blue-solo-sounds/0191018878641",
+     "slug": "solo-wurlitzer-electric-piano-miles-davis-kind-of-blue-solo-sounds",
+     "duration": 1152,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0191018878641",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "2017-03-17",
+     "release_date_download": "2017-03-17",
+     "release_date_stream": "2017-03-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1778281200,
+     "streamable_at": 1778281200,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "2018 Chesky Records, a label of Evolution Media Ltd. 2018 Chesky Records, a label of Evolution Media Ltd.",
+     "performers": "Miles Davis, Composer, Lyricist - Victor Bailey, MainArtist - LARRY CORYELL, MainArtist - Lenny White, MainArtist",
+     "audio_info": {
+      "replaygain_track_peak": 1,
+      "replaygain_track_gain": -1
+     },
+     "performer": {
+      "name": "Larry Coryell",
+      "id": 40234
+     },
+     "article_ids": {
+      "LLS": 1124417345,
+      "SMR": 1124417346
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/rc/os/x3w2o4n0eosrc_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/rc/os/x3w2o4n0eosrc_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/rc/os/x3w2o4n0eosrc_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Fred Hersch",
+       "id": 10559,
+       "albums_count": 111,
+       "slug": "fred-hersch",
+       "picture": null
+      },
+      "upc": "4895241448836",
+      "released_at": 1531432800,
+      "label": {
+       "name": "Chesky Records",
+       "id": 7653182,
+       "albums_count": 530,
+       "supplier_id": 93,
+       "slug": "chesky-records-2"
+      },
+      "title": "Chesky Records Audiophile Tribute to Miles Davis",
+      "qobuz_id": 347954508,
+      "version": null,
+      "duration": 5155,
+      "parental_warning": false,
+      "tracks_count": 12,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "x3w2o4n0eosrc",
+      "maximum_sampling_rate": 96,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1789340400,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2018-07-13",
+      "release_date_download": "2018-07-13",
+      "release_date_stream": "2018-07-13",
+      "release_date_purchase": "2018-07-13",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "US99C0530803",
+     "title": "So What",
+     "version": null,
+     "duration": 376,
+     "parental_warning": false,
+     "track_number": 3,
+     "maximum_channel_count": 2,
+     "id": 347954511,
+     "media_number": 1,
+     "maximum_sampling_rate": 96,
+     "articles": [
+      {
+       "id": 1124417345,
+       "url": "/order/1124417345",
+       "price": 1.35,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 1124417346,
+       "url": "/order/1124417346",
+       "price": 1.68,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2018-07-13",
+     "release_date_download": "2018-07-13",
+     "release_date_stream": "2018-07-13",
+     "release_date_purchase": "2018-07-13",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1789340400,
+     "streamable_at": 1789340400,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "℗ 2002 The Verve Music Group, a Division of UMG Recordings, Inc.",
+     "performers": "HERBIE HANCOCK, MainArtist - Michael Brecker, MainArtist, Producer - Roy Hargrove, MainArtist - Todd Fraracci, Producer - Miles Davis, ComposerLyricist - John Coltrane, ComposerLyricist",
+     "audio_info": {
+      "replaygain_track_peak": 1,
+      "replaygain_track_gain": -6.32
+     },
+     "performer": {
+      "name": "Herbie Hancock",
+      "id": 10118
+     },
+     "article_ids": {
+      "LLS": 57937550,
+      "SMR": 57937551,
+      "SM2": 325049868
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/81/08/0060254730881_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/81/08/0060254730881_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/81/08/0060254730881_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Herbie Hancock",
+       "id": 10118,
+       "albums_count": 1315,
+       "slug": "herbie-hancock",
+       "picture": null
+      },
+      "upc": "0060254730881",
+      "released_at": 1009839600,
+      "label": {
+       "name": "Verve",
+       "id": 1157,
+       "albums_count": 1772,
+       "supplier_id": 1,
+       "slug": "verve"
+      },
+      "title": "Directions In Music: Live At Massey Hall -  Celebrating Miles Davis & John Coltrane",
+      "qobuz_id": 23865282,
+      "version": "Live At Massey Hall / 2001",
+      "duration": 4703,
+      "parental_warning": false,
+      "tracks_count": 8,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0060254730881",
+      "maximum_sampling_rate": 192,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1785884400,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2002-01-01",
+      "release_date_download": "2002-01-01",
+      "release_date_stream": "2002-01-01",
+      "release_date_purchase": "2002-01-01",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USGR10200196",
+     "title": "So What / Impressions",
+     "version": "Live At Massey Hall / 2001",
+     "duration": 772,
+     "parental_warning": false,
+     "track_number": 3,
+     "maximum_channel_count": 2,
+     "id": 23865285,
+     "media_number": 1,
+     "maximum_sampling_rate": 192,
+     "articles": {
+      "CA": [
+       {
+        "id": 57937550,
+        "url": "/order/57937550",
+        "price": 1.99,
+        "currency": "CAD",
+        "type": "lls",
+        "label": "CD-quality",
+        "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+       },
+       {
+        "id": 57937551,
+        "url": "/order/57937551",
+        "price": 2.49,
+        "currency": "CAD",
+        "type": "smr",
+        "label": "Hi-Res",
+        "description": "Up to 24 bits 96 kHz (FLAC)"
+       },
+       {
+        "id": 325049868,
+        "url": "/order/325049868",
+        "price": 2.79,
+        "currency": "CAD",
+        "type": "sm2",
+        "label": "Hi-Res",
+        "description": "Up to 24 bits 192 kHz (FLAC)"
+       }
+      ],
+      "US": [
+       {
+        "id": 57937550,
+        "url": "/order/57937550",
+        "price": 1.99,
+        "currency": "USD",
+        "type": "lls",
+        "label": "CD-quality",
+        "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+       },
+       {
+        "id": 57937551,
+        "url": "/order/57937551",
+        "price": 2.49,
+        "currency": "USD",
+        "type": "smr",
+        "label": "Hi-Res",
+        "description": "Up to 24 bits 96 kHz (FLAC)"
+       },
+       {
+        "id": 325049868,
+        "url": "/order/325049868",
+        "price": 2.79,
+        "currency": "USD",
+        "type": "sm2",
+        "label": "Hi-Res",
+        "description": "Up to 24 bits 192 kHz (FLAC)"
+       }
+      ]
+     },
+     "release_date_original": "2002-01-01",
+     "release_date_download": "2002-01-01",
+     "release_date_stream": "2002-01-01",
+     "release_date_purchase": "2002-01-01",
+     "purchasable": false,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": false,
+     "displayable": true,
+     "purchasable_at": null,
+     "streamable_at": 1785884400,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 16,
+     "copyright": "Originally released 1962. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Bernie Glow, Trumpet\r - Bob Swisshelm, French Horn\r - Bobby Rosengarden, Percussion\r - Dick Hixon, Trombone\r - Ernie Royal, Trumpet\r - Frank Rehak, Trombone\r - Gil Evans, Arranger\r - Gil Evans, Conductor\r - Gil Evans, Performer\r - Hank Mobley, Performer\r - Hank Mobley, Tenor Saxophone\r - Janet Putnam, Harp\r - Jimmy Cobb, Drums\r - Jimmy Cobb, Performer\r - Jimmy Knepper, Trombone\r - Johnny Coles, Trumpet\r - Julius Watkins, French Horn\r - Louis Mucci, Trumpet\r - M. Davis, Composer\r - Mark Wilder, Mastering Engineer\r - Miles Davis, Performer\r - Miles Davis, Trumpet\r - Paul Chambers, Bass\r - Paul Chambers, Performer\r - Paul Ingraham, French Horn\r - Teo Macero, Producer\r - Winton Kelly, Performer\r - Wynton Kelly, Piano\r",
+     "audio_info": {
+      "replaygain_track_peak": 1,
+      "replaygain_track_gain": -1.12
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 11476799,
+      "SMR": 24167213,
+      "SM2": 310012592
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/23/27/0074646502723_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/23/27/0074646502723_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/23/27/0074646502723_600.jpg"
+      },
+      "maximum_bit_depth": 16,
+      "media_count": 2,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5860,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0074646502723",
+      "released_at": -252464400,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2351,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Miles Davis At Carnegie Hall- The Complete Concert",
+      "qobuz_id": 5041974,
+      "version": "Live",
+      "duration": 5181,
+      "parental_warning": false,
+      "tracks_count": 11,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0074646502723",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1785711600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1962-01-01",
+      "release_date_download": "1962-01-01",
+      "release_date_stream": "1962-01-01",
+      "release_date_purchase": "1962-01-01",
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM16100276",
+     "title": "So What",
+     "version": "Live",
+     "duration": 721,
+     "parental_warning": false,
+     "track_number": 1,
+     "maximum_channel_count": 2,
+     "id": 5041975,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "1962-01-01",
+     "release_date_download": "1962-01-01",
+     "release_date_stream": "1962-01-01",
+     "release_date_purchase": "1962-01-01",
+     "purchasable": false,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": false,
+     "displayable": true,
+     "purchasable_at": null,
+     "streamable_at": 1785711600,
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    }
+   }
+  ]
+ }
+}

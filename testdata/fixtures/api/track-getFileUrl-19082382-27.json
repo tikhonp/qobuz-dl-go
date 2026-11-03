@@ -1,0 +1,15 @@
+{
+ "track_id": 19082382,
+ "duration": 193,
+ "url": "{{CDN}}/file/19082382/27",
+ "format_id": 7,
+ "mime_type": "audio/flac",
+ "restrictions": [
+  {
+   "code": "FormatRestrictedByFormatAvailability"
+  }
+ ],
+ "sampling_rate": 96,
+ "bit_depth": 24,
+ "blob": "{{BLOB}}"
+}

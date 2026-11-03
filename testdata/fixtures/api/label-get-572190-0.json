@@ -1,0 +1,1123 @@
+{
+ "id": 572190,
+ "name": "Naked Jain Records",
+ "slug": "naked-jain-records",
+ "supplier_id": 17,
+ "albums_count": 15,
+ "image": null,
+ "description": null,
+ "albums": {
+  "offset": 0,
+  "limit": 50,
+  "total": 15,
+  "items": [
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/ha/nb/u7bw21slwnbha_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/ha/nb/u7bw21slwnbha_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/ha/nb/u7bw21slwnbha_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Jacqui J Brown",
+     "id": 22039831,
+     "albums_count": 6,
+     "slug": "jacqui-j-brown",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 26820331,
+      "name": "Dey Martin",
+      "roles": [
+       "main-artist"
+      ]
+     },
+     {
+      "id": 22039831,
+      "name": "Jacqui J Brown",
+      "roles": [
+       "featured-artist"
+      ]
+     }
+    ],
+    "upc": "0199538329087",
+    "released_at": 1755208800,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Dancing Barefoot",
+    "qobuz_id": 349987462,
+    "version": null,
+    "url": "/gb-en/album/dancing-barefoot-dey-martin/u7bw21slwnbha",
+    "slug": "dancing-barefoot-dey-martin",
+    "duration": 232,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 1,
+    "genre": {
+     "path": [
+      112,
+      119,
+      113
+     ],
+     "color": "#0070ef",
+     "name": "Alternative & Indie",
+     "id": 113,
+     "slug": "alternatif-et-inde"
+    },
+    "maximum_channel_count": 2,
+    "id": "u7bw21slwnbha",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2025-08-15",
+    "release_date_download": "2025-08-15",
+    "release_date_stream": "2025-08-15",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778540400,
+    "streamable_at": 1778540400,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": false
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/xc/wo/uivxqdei1woxc_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/xc/wo/uivxqdei1woxc_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/xc/wo/uivxqdei1woxc_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Dey Martin",
+     "id": 26820331,
+     "albums_count": 2,
+     "slug": "dey-martin",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 26820331,
+      "name": "Dey Martin",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0646189315247",
+    "released_at": 1741993200,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Berlin Wall",
+    "qobuz_id": 333799692,
+    "version": null,
+    "url": "/gb-en/album/berlin-wall-dey-martin/uivxqdei1woxc",
+    "slug": "berlin-wall-dey-martin",
+    "duration": 1080,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 4,
+    "genre": {
+     "path": [
+      116,
+      115
+     ],
+     "color": "#0070ef",
+     "name": "Hard Rock",
+     "id": 115,
+     "slug": "hard-rock"
+    },
+    "maximum_channel_count": 2,
+    "id": "uivxqdei1woxc",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2025-03-15",
+    "release_date_download": "2025-03-15",
+    "release_date_stream": "2025-03-15",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778713200,
+    "streamable_at": 1778713200,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": false
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/lb/sv/rl03iycrisvlb_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/lb/sv/rl03iycrisvlb_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/lb/sv/rl03iycrisvlb_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Woodpecker",
+     "id": 3877888,
+     "albums_count": 46,
+     "slug": "woodpecker-10003877888",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 3877888,
+      "name": "Woodpecker",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0646189430520",
+    "released_at": 1114725600,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Supermodel Horse Auction",
+    "qobuz_id": 72779505,
+    "version": null,
+    "url": "/gb-en/album/supermodel-horse-auction-woodpecker/rl03iycrisvlb",
+    "slug": "supermodel-horse-auction-woodpecker",
+    "duration": 1989,
+    "parental_warning": true,
+    "popularity": 0,
+    "tracks_count": 12,
+    "genre": {
+     "path": [
+      112,
+      119
+     ],
+     "color": "#0070ef",
+     "name": "Rock",
+     "id": 119,
+     "slug": "rock"
+    },
+    "maximum_channel_count": 2,
+    "id": "rl03iycrisvlb",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2005-04-29",
+    "release_date_download": "2005-04-29",
+    "release_date_stream": "2005-04-29",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778281200,
+    "streamable_at": 1778281200,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/9a/e1/pdipmsg4pe19a_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/9a/e1/pdipmsg4pe19a_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/9a/e1/pdipmsg4pe19a_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Furious IV",
+     "id": 966767,
+     "albums_count": 3,
+     "slug": "furious-iv",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 966767,
+      "name": "Furious IV",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0646189315520",
+    "released_at": 1110841200,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Goodbye Forever, Again....",
+    "qobuz_id": 72780727,
+    "version": null,
+    "url": "/gb-en/album/goodbye-forever-again-furious-iv/pdipmsg4pe19a",
+    "slug": "goodbye-forever-again-furious-iv",
+    "duration": 2574,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 12,
+    "genre": {
+     "path": [
+      112,
+      119,
+      118
+     ],
+     "color": "#0070ef",
+     "name": "Punk / New Wave",
+     "id": 118,
+     "slug": "punk-new-wave"
+    },
+    "maximum_channel_count": 2,
+    "id": "pdipmsg4pe19a",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2005-03-15",
+    "release_date_download": "2005-03-15",
+    "release_date_stream": "2005-03-15",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778367600,
+    "streamable_at": 1778367600,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/la/xb/s1re73kv2xbla_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/la/xb/s1re73kv2xbla_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/la/xb/s1re73kv2xbla_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Fallback",
+     "id": 5402183,
+     "albums_count": 8,
+     "slug": "fallback",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 5402183,
+      "name": "Fallback",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0646189031727",
+    "released_at": 1072911600,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Fallback",
+    "qobuz_id": 72792656,
+    "version": null,
+    "url": "/gb-en/album/fallback-fallback/s1re73kv2xbla",
+    "slug": "fallback-fallback",
+    "duration": 1204,
+    "parental_warning": true,
+    "popularity": 0,
+    "tracks_count": 7,
+    "genre": {
+     "path": [
+      112,
+      119,
+      118
+     ],
+     "color": "#0070ef",
+     "name": "Punk / New Wave",
+     "id": 118,
+     "slug": "punk-new-wave"
+    },
+    "maximum_channel_count": 2,
+    "id": "s1re73kv2xbla",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2004-01-01",
+    "release_date_download": "2004-01-01",
+    "release_date_stream": "2004-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778886000,
+    "streamable_at": 1778886000,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/bb/oh/l5yynyhh2ohbb_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/bb/oh/l5yynyhh2ohbb_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/bb/oh/l5yynyhh2ohbb_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Furious IV",
+     "id": 966767,
+     "albums_count": 3,
+     "slug": "furious-iv",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 966767,
+      "name": "Furious IV",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0646189325321",
+    "released_at": 1041375600,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Is That You?",
+    "qobuz_id": 72785110,
+    "version": null,
+    "url": "/gb-en/album/is-that-you-furious-iv/l5yynyhh2ohbb",
+    "slug": "is-that-you-furious-iv",
+    "duration": 2407,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 15,
+    "genre": {
+     "path": [
+      112,
+      119,
+      118
+     ],
+     "color": "#0070ef",
+     "name": "Punk / New Wave",
+     "id": 118,
+     "slug": "punk-new-wave"
+    },
+    "maximum_channel_count": 2,
+    "id": "l5yynyhh2ohbb",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2003-01-01",
+    "release_date_download": "2003-01-01",
+    "release_date_stream": "2003-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778799600,
+    "streamable_at": 1778799600,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/hb/bn/vshd448jcbnhb_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/hb/bn/vshd448jcbnhb_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/hb/bn/vshd448jcbnhb_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "The Strap-Ons",
+     "id": 5402179,
+     "albums_count": 14,
+     "slug": "the-strap-ons",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 5402179,
+      "name": "The Strap-Ons",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0646189715320",
+    "released_at": 1041375600,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Four Dollar Whore",
+    "qobuz_id": 72782782,
+    "version": null,
+    "url": "/gb-en/album/four-dollar-whore-the-strap-ons/vshd448jcbnhb",
+    "slug": "four-dollar-whore-the-strap-ons",
+    "duration": 1649,
+    "parental_warning": true,
+    "popularity": 0,
+    "tracks_count": 16,
+    "genre": {
+     "path": [
+      112,
+      119,
+      118
+     ],
+     "color": "#0070ef",
+     "name": "Punk / New Wave",
+     "id": 118,
+     "slug": "punk-new-wave"
+    },
+    "maximum_channel_count": 2,
+    "id": "vshd448jcbnhb",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2003-01-01",
+    "release_date_download": "2003-01-01",
+    "release_date_stream": "2003-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1779058800,
+    "streamable_at": 1779058800,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/xa/ce/ha9y21ympcexa_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/xa/ce/ha9y21ympcexa_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/xa/ce/ha9y21ympcexa_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Lewinski",
+     "id": 5402182,
+     "albums_count": 2,
+     "slug": "lewinski",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 5402182,
+      "name": "Lewinski",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0646189110521",
+    "released_at": 1009839600,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Only When I'm Punk",
+    "qobuz_id": 72793670,
+    "version": null,
+    "url": "/gb-en/album/only-when-im-punk-lewinski/ha9y21ympcexa",
+    "slug": "only-when-im-punk-lewinski",
+    "duration": 877,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 6,
+    "genre": {
+     "path": [
+      112,
+      119,
+      118
+     ],
+     "color": "#0070ef",
+     "name": "Punk / New Wave",
+     "id": 118,
+     "slug": "punk-new-wave"
+    },
+    "maximum_channel_count": 2,
+    "id": "ha9y21ympcexa",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2002-01-01",
+    "release_date_download": "2002-01-01",
+    "release_date_stream": "2002-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778108400,
+    "streamable_at": 1778108400,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/4b/hj/zcs2h686vhj4b_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/4b/hj/zcs2h686vhj4b_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/4b/hj/zcs2h686vhj4b_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Various Artists",
+     "id": 145383,
+     "albums_count": 1531313,
+     "slug": "various-artists",
+     "picture": null
+    },
+    "artists": [],
+    "upc": "0646189100126",
+    "released_at": 1009839600,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Now That's Not What I Call Music",
+    "qobuz_id": 72775582,
+    "version": null,
+    "url": "/gb-en/album/now-thats-not-what-i-call-music-various-artists/zcs2h686vhj4b",
+    "slug": "now-thats-not-what-i-call-music-various-artists",
+    "duration": 4131,
+    "parental_warning": true,
+    "popularity": 0,
+    "tracks_count": 20,
+    "genre": {
+     "path": [
+      112,
+      119,
+      118
+     ],
+     "color": "#0070ef",
+     "name": "Punk / New Wave",
+     "id": 118,
+     "slug": "punk-new-wave"
+    },
+    "maximum_channel_count": 2,
+    "id": "zcs2h686vhj4b",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2002-01-01",
+    "release_date_download": "2002-01-01",
+    "release_date_stream": "2002-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778886000,
+    "streamable_at": 1778886000,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/gb/7w/xrdm5aqhh7wgb_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/gb/7w/xrdm5aqhh7wgb_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/gb/7w/xrdm5aqhh7wgb_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Lung Cookie",
+     "id": 5402066,
+     "albums_count": 2,
+     "slug": "lung-cookie",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 5402066,
+      "name": "Lung Cookie",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0646189617419",
+    "released_at": 1009839600,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Super Mediocrity",
+    "qobuz_id": 72773778,
+    "version": null,
+    "url": "/gb-en/album/super-mediocrity-lung-cookie/xrdm5aqhh7wgb",
+    "slug": "super-mediocrity-lung-cookie",
+    "duration": 2827,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 13,
+    "genre": {
+     "path": [
+      112,
+      119,
+      118
+     ],
+     "color": "#0070ef",
+     "name": "Punk / New Wave",
+     "id": 118,
+     "slug": "punk-new-wave"
+    },
+    "maximum_channel_count": 2,
+    "id": "xrdm5aqhh7wgb",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2002-01-01",
+    "release_date_download": "2002-01-01",
+    "release_date_stream": "2002-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778108400,
+    "streamable_at": 1778108400,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/la/m6/uikdnnhdjm6la_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/la/m6/uikdnnhdjm6la_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/la/m6/uikdnnhdjm6la_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "The Strap-Ons",
+     "id": 5402179,
+     "albums_count": 14,
+     "slug": "the-strap-ons",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 5402179,
+      "name": "The Strap-Ons",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0750458276129",
+    "released_at": 946681200,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Geeking Dream",
+    "qobuz_id": 72787672,
+    "version": null,
+    "url": "/gb-en/album/geeking-dream-the-strap-ons/uikdnnhdjm6la",
+    "slug": "geeking-dream-the-strap-ons",
+    "duration": 2432,
+    "parental_warning": true,
+    "popularity": 0,
+    "tracks_count": 25,
+    "genre": {
+     "path": [
+      112,
+      119,
+      118
+     ],
+     "color": "#0070ef",
+     "name": "Punk / New Wave",
+     "id": 118,
+     "slug": "punk-new-wave"
+    },
+    "maximum_channel_count": 2,
+    "id": "uikdnnhdjm6la",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2000-01-01",
+    "release_date_download": "2000-01-01",
+    "release_date_stream": "2000-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778367600,
+    "streamable_at": 1778367600,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/lb/33/nv0s9jqve33lb_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/lb/33/nv0s9jqve33lb_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/lb/33/nv0s9jqve33lb_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Jalopy Kinfolk",
+     "id": 5402184,
+     "albums_count": 1,
+     "slug": "jalopy-kinfolk",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 5402184,
+      "name": "Jalopy Kinfolk",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0646189115151",
+    "released_at": 946681200,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Surf",
+    "qobuz_id": 72779137,
+    "version": null,
+    "url": "/gb-en/album/surf-jalopy-kinfolk/nv0s9jqve33lb",
+    "slug": "surf-jalopy-kinfolk",
+    "duration": 2018,
+    "parental_warning": true,
+    "popularity": 0,
+    "tracks_count": 15,
+    "genre": {
+     "path": [
+      112,
+      119,
+      118
+     ],
+     "color": "#0070ef",
+     "name": "Punk / New Wave",
+     "id": 118,
+     "slug": "punk-new-wave"
+    },
+    "maximum_channel_count": 2,
+    "id": "nv0s9jqve33lb",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2000-01-01",
+    "release_date_download": "2000-01-01",
+    "release_date_stream": "2000-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778799600,
+    "streamable_at": 1778799600,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/db/ue/bvl3ng40juedb_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/db/ue/bvl3ng40juedb_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/db/ue/bvl3ng40juedb_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Brown Sox",
+     "id": 5402187,
+     "albums_count": 1,
+     "slug": "brown-sox",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 5402187,
+      "name": "Brown Sox",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0665066433423",
+    "released_at": 915145200,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Lucky 13",
+    "qobuz_id": 72786062,
+    "version": null,
+    "url": "/gb-en/album/lucky-13-brown-sox/bvl3ng40juedb",
+    "slug": "lucky-13-brown-sox",
+    "duration": 3363,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 13,
+    "genre": {
+     "path": [
+      112,
+      119,
+      118
+     ],
+     "color": "#0070ef",
+     "name": "Punk / New Wave",
+     "id": 118,
+     "slug": "punk-new-wave"
+    },
+    "maximum_channel_count": 2,
+    "id": "bvl3ng40juedb",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "1999-01-01",
+    "release_date_download": "1999-01-01",
+    "release_date_stream": "1999-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778972400,
+    "streamable_at": 1778972400,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/fc/h7/clob4mi8ah7fc_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/fc/h7/clob4mi8ah7fc_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/fc/h7/clob4mi8ah7fc_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Lung Cookie",
+     "id": 5402066,
+     "albums_count": 2,
+     "slug": "lung-cookie",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 5402066,
+      "name": "Lung Cookie",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0646189598121",
+    "released_at": 883609200,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Zymurgy",
+    "qobuz_id": 72777316,
+    "version": null,
+    "url": "/gb-en/album/zymurgy-lung-cookie/clob4mi8ah7fc",
+    "slug": "zymurgy-lung-cookie",
+    "duration": 3293,
+    "parental_warning": true,
+    "popularity": 0,
+    "tracks_count": 16,
+    "genre": {
+     "path": [
+      112,
+      119,
+      118
+     ],
+     "color": "#0070ef",
+     "name": "Punk / New Wave",
+     "id": 118,
+     "slug": "punk-new-wave"
+    },
+    "maximum_channel_count": 2,
+    "id": "clob4mi8ah7fc",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "1998-01-01",
+    "release_date_download": "1998-01-01",
+    "release_date_stream": "1998-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778454000,
+    "streamable_at": 1778454000,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/rb/qg/czl4l1y85qgrb_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/rb/qg/czl4l1y85qgrb_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/rb/qg/czl4l1y85qgrb_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Woodpecker",
+     "id": 3877888,
+     "albums_count": 47,
+     "slug": "woodpecker-10003877888",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 3877888,
+      "name": "Woodpecker",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0646189897125",
+    "released_at": 852073200,
+    "label": {
+     "name": "Naked Jain Records",
+     "id": 572190,
+     "albums_count": 15,
+     "supplier_id": 17,
+     "slug": "naked-jain-records"
+    },
+    "title": "Uno",
+    "qobuz_id": 72789190,
+    "version": null,
+    "url": "/gb-en/album/uno-woodpecker/czl4l1y85qgrb",
+    "slug": "uno-woodpecker",
+    "duration": 2967,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 13,
+    "genre": {
+     "path": [
+      112,
+      119,
+      118
+     ],
+     "color": "#0070ef",
+     "name": "Punk / New Wave",
+     "id": 118,
+     "slug": "punk-new-wave"
+    },
+    "maximum_channel_count": 2,
+    "id": "czl4l1y85qgrb",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "1997-01-01",
+    "release_date_download": "1997-01-01",
+    "release_date_stream": "1997-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778886000,
+    "streamable_at": 1778886000,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   }
+  ]
+ }
+}

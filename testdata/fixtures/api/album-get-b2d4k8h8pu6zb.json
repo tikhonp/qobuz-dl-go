@@ -1,0 +1,703 @@
+{
+ "maximum_bit_depth": 24,
+ "image": {
+  "small": "https://static.qobuz.com/images/covers/zb/u6/b2d4k8h8pu6zb_230.jpg",
+  "thumbnail": "https://static.qobuz.com/images/covers/zb/u6/b2d4k8h8pu6zb_50.jpg",
+  "large": "https://static.qobuz.com/images/covers/zb/u6/b2d4k8h8pu6zb_600.jpg",
+  "back": null
+ },
+ "media_count": 1,
+ "artist": {
+  "image": null,
+  "name": "Norah Jones",
+  "id": 34525,
+  "albums_count": 319,
+  "slug": "norah-jones",
+  "picture": null
+ },
+ "artists": [
+  {
+   "id": 34525,
+   "name": "Norah Jones",
+   "roles": [
+    "main-artist"
+   ]
+  }
+ ],
+ "upc": "0602435689821",
+ "released_at": 1618524000,
+ "label": {
+  "name": "Blue Note Records",
+  "id": 47868,
+  "albums_count": 3584,
+  "supplier_id": 1,
+  "slug": "blue-note-1"
+ },
+ "title": "...‘Til We Meet Again",
+ "qobuz_id": 115851706,
+ "version": "Live",
+ "url": "https://www.qobuz.com/fr-fr/album/til-we-meet-again-norah-jones/b2d4k8h8pu6zb",
+ "slug": "til-we-meet-again-norah-jones",
+ "duration": 4544,
+ "parental_warning": false,
+ "popularity": 0,
+ "tracks_count": 14,
+ "genre": {
+  "path": [
+   112,
+   117
+  ],
+  "color": "#0070ef",
+  "name": "Pop",
+  "id": 117,
+  "slug": "pop"
+ },
+ "maximum_channel_count": 2,
+ "id": "b2d4k8h8pu6zb",
+ "maximum_sampling_rate": 96,
+ "articles": [],
+ "release_date_original": "2021-04-16",
+ "release_date_download": "2021-04-16",
+ "release_date_stream": "2021-04-16",
+ "purchasable": true,
+ "streamable": true,
+ "previewable": true,
+ "sampleable": true,
+ "downloadable": true,
+ "displayable": true,
+ "purchasable_at": 1782601200,
+ "streamable_at": 1782601200,
+ "hires": true,
+ "hires_streamable": true,
+ "ai_generated": null,
+ "awards": [],
+ "description": "<p>Over the course of her 20-year career, Norah Jones may have performed thousands of concerts, but she has never delivered a live album. For <em>...’Til We Meet Again</em>, released almost two decades after her hit first album <em>Come Away With Me</em>, she opts for the trio and quartet setups, undoubtedly the configurations that best suit her voice and piano. The setlist includes songs recorded between May 2017 and December 2019 in the United States, France, Italy, Brazil and Argentina, with organist Pete Remm, bassists Christopher Thomas and Jesse Murphy, drummers and percussionists Brian Blade and Marcelo Costa, guitarist Jesse Harris and flautist Jorge Continentino.</p><br /><p>In order to show she’s a major-league performer capable of fully owning everything she sings, Jones shifts seamlessly from the legendary country of <em>Cold Cold Heart</em> by Hank Williams to <em>Black Hole Sun</em> by grunge group Soundgarden (a posthumous tribute to singer Chris Cornell recorded a few days after his death), not to mention her own songs… With false nonchalance but genuine melancholy, Jones picks through her albums <em>Come Away With Me</em> (<em>Don’t Know Why, I’ve Got To See You Again, Cold, Cold Heart</em>), <em>Feels Like Home</em> (<em>Sunrise, Those Sweet Words</em>), <em>Little Broken Hearts</em> (<em>After The Fall</em>) and <em>Day Breaks</em> (<em>Flipside, Tragedy</em>), as well as her most recent series of singles (<em>It Was You, Begin Again, Just A Little Bit</em>). Everything is fluid and coherent. Her piano playing is nicely matured and the chemistry with the exceptional Blade (what a drummer!) reaches real heights here. You’ve got to surrender yourself to this smoky bar jazz (even if you can't smoke in bars anymore…), to the silky velvet blues, deeper and richer than a casual listening might indicate. Then there’s that magical voice with its instantly recognisable timbre, capable of being moving without being weepy, as in the tribute to Cornell that closes this beautiful live set. © Marc Zisman/Qobuz</p>",
+ "description_language": "en",
+ "goodies": [],
+ "area": null,
+ "catchline": "",
+ "composer": {
+  "id": 573076,
+  "name": "Various Composers",
+  "slug": "various-composers",
+  "albums_count": 17174684,
+  "picture": null,
+  "image": null
+ },
+ "created_at": 0,
+ "genres_list": [
+  "Pop/Rock",
+  "Pop/Rock→Pop"
+ ],
+ "period": null,
+ "copyright": "© 2021 Capitol Records, LLC ℗ 2021 Capitol Records, LLC",
+ "is_official": true,
+ "maximum_technical_specifications": "24 bits / 96.0 kHz - Stereo",
+ "product_sales_factors_monthly": 0,
+ "product_sales_factors_weekly": 0,
+ "product_sales_factors_yearly": 0,
+ "product_type": "album",
+ "product_url": "/fr-fr/album/til-we-meet-again-norah-jones/b2d4k8h8pu6zb",
+ "recording_information": "",
+ "relative_url": "/album/til-we-meet-again-norah-jones/b2d4k8h8pu6zb",
+ "release_tags": [
+  "live"
+ ],
+ "release_type": "album",
+ "subtitle": "Norah Jones",
+ "tracks": {
+  "offset": 0,
+  "limit": 500,
+  "total": 14,
+  "items": [
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2021 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals - Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer - Brian Blade, AssociatedPerformer, Drums - Pete Remm, AssociatedPerformer - Christopher Thomas, AssociatedPerformer, Upright Bass - Alexander Fedrizzi, StudioPersonnel, Asst. Recording Engineer - Steve Fallone, StudioPersonnel, Mastering Engineer - Hank Williams, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.971405,
+     "replaygain_track_gain": -6.42
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Hank Williams",
+     "id": 22062
+    },
+    "isrc": "USUM72100326",
+    "title": "Cold, Cold Heart",
+    "version": "Live",
+    "duration": 324,
+    "parental_warning": false,
+    "track_number": 1,
+    "maximum_channel_count": 2,
+    "id": 115851707,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-04-16",
+    "release_date_download": "2021-04-16",
+    "release_date_stream": "2021-04-16",
+    "release_date_purchase": "2021-04-16",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782601200,
+    "streamable_at": 1782601200,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2021 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist - Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer - Brian Blade, AssociatedPerformer, Drums - Christopher Thomas, AssociatedPerformer, Electric Bass - Pete Remm, AssociatedPerformer - Alexander Fedrizzi, StudioPersonnel, Asst. Recording Engineer - Steve Fallone, StudioPersonnel, Mastering Engineer",
+    "audio_info": {
+     "replaygain_track_peak": 0.976868,
+     "replaygain_track_gain": -7.99
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "isrc": "USUM72100328",
+    "title": "It Was You",
+    "version": "Live",
+    "duration": 337,
+    "parental_warning": false,
+    "track_number": 2,
+    "maximum_channel_count": 2,
+    "id": 115851708,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-04-16",
+    "release_date_download": "2021-04-16",
+    "release_date_stream": "2021-04-16",
+    "release_date_purchase": "2021-04-16",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782601200,
+    "streamable_at": 1782601200,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2021 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist - Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer - Brian Blade, AssociatedPerformer, Drums - Christopher Thomas, AssociatedPerformer, Upright Bass - Pete Remm, AssociatedPerformer - Alexander Fedrizzi, StudioPersonnel, Asst. Recording Engineer - Steve Fallone, StudioPersonnel, Mastering Engineer - Emily Fiskio, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.974457,
+     "replaygain_track_gain": -6.88
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "isrc": "USUM72100321",
+    "title": "Begin Again",
+    "version": "Live",
+    "duration": 256,
+    "parental_warning": false,
+    "track_number": 3,
+    "maximum_channel_count": 2,
+    "id": 115851709,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-04-16",
+    "release_date_download": "2021-04-16",
+    "release_date_stream": "2021-04-16",
+    "release_date_purchase": "2021-04-16",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782601200,
+    "streamable_at": 1782601200,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2021 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals - Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer - Marcelo Costa, AssociatedPerformer - Brian Blade, AssociatedPerformer, Drums - Jesse Murphy, AssociatedPerformer, Upright Bass - Mike Bradley, StudioPersonnel, Asst. Recording Engineer - Steve Fallone, StudioPersonnel, Mastering Engineer - Lee Alexander, ComposerLyricist - Richard Julian, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.966705,
+     "replaygain_track_gain": -6.41
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Alexander Lee",
+     "id": 49652
+    },
+    "isrc": "USUM72100332",
+    "title": "Those Sweet Words",
+    "version": "Live",
+    "duration": 230,
+    "parental_warning": false,
+    "track_number": 4,
+    "maximum_channel_count": 2,
+    "id": 115851710,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-04-16",
+    "release_date_download": "2021-04-16",
+    "release_date_stream": "2021-04-16",
+    "release_date_purchase": "2021-04-16",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782601200,
+    "streamable_at": 1782601200,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2021 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals - Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer - Brian Blade, AssociatedPerformer, Drums - Christopher Thomas, AssociatedPerformer, Upright Bass - Pete Remm, AssociatedPerformer - Alexander Fedrizzi, StudioPersonnel, Asst. Recording Engineer - Steve Fallone, StudioPersonnel, Mastering Engineer - Jesse Harris, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.977234,
+     "replaygain_track_gain": -6.45
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Jesse Harris",
+     "id": 39923
+    },
+    "isrc": "USUM72100327",
+    "title": "I've Got To See You Again",
+    "version": "Live",
+    "duration": 453,
+    "parental_warning": false,
+    "track_number": 5,
+    "maximum_channel_count": 2,
+    "id": 115851711,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-04-16",
+    "release_date_download": "2021-04-16",
+    "release_date_stream": "2021-04-16",
+    "release_date_purchase": "2021-04-16",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782601200,
+    "streamable_at": 1782601200,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2021 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist - Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer - Brian Blade, AssociatedPerformer, Drums - Christopher Thomas, AssociatedPerformer, Electric Bass - Alexander Fedrizzi, StudioPersonnel, Asst. Recording Engineer - Steve Fallone, StudioPersonnel, Mastering Engineer - Brian Burton, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.983673,
+     "replaygain_track_gain": -7.05
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "isrc": "USUM72100324",
+    "title": "After The Fall",
+    "version": "Live",
+    "duration": 333,
+    "parental_warning": false,
+    "track_number": 6,
+    "maximum_channel_count": 2,
+    "id": 115851712,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-04-16",
+    "release_date_download": "2021-04-16",
+    "release_date_stream": "2021-04-16",
+    "release_date_purchase": "2021-04-16",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782601200,
+    "streamable_at": 1782601200,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2021 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals - Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer - Brian Blade, AssociatedPerformer, Drums, Vocals - Jesse Murphy, AssociatedPerformer, Electric Bass, Vocals - Mike Bradley, StudioPersonnel, Asst. Recording Engineer - Steve Fallone, StudioPersonnel, Mastering Engineer - Pete Remm, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.989471,
+     "replaygain_track_gain": -7.28
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Pete Remm",
+     "id": 954433
+    },
+    "isrc": "USUM72100325",
+    "title": "I'll Be Gone",
+    "version": "Live",
+    "duration": 288,
+    "parental_warning": false,
+    "track_number": 7,
+    "maximum_channel_count": 2,
+    "id": 115851713,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-04-16",
+    "release_date_download": "2021-04-16",
+    "release_date_stream": "2021-04-16",
+    "release_date_purchase": "2021-04-16",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782601200,
+    "streamable_at": 1782601200,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2021 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist - Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer - Brian Blade, AssociatedPerformer, Drums, ComposerLyricist - Jesse Murphy, AssociatedPerformer, Electric Bass - Jorge Continentino, AssociatedPerformer, Alto Flute - Mike Bradley, StudioPersonnel, Asst. Recording Engineer - Steve Fallone, StudioPersonnel, Mastering Engineer - Sarah Oda, ComposerLyricist - Christopher Thomas, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.966431,
+     "replaygain_track_gain": -7.54
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "isrc": "USUM72100333",
+    "title": "Just A Little Bit",
+    "version": "Live",
+    "duration": 329,
+    "parental_warning": false,
+    "track_number": 8,
+    "maximum_channel_count": 2,
+    "id": 115851714,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-04-16",
+    "release_date_download": "2021-04-16",
+    "release_date_stream": "2021-04-16",
+    "release_date_purchase": "2021-04-16",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782601200,
+    "streamable_at": 1782601200,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2021 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist - Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer - Brian Blade, AssociatedPerformer, Drums - Jesse Murphy, AssociatedPerformer, Upright Bass - Jesse Harris, AssociatedPerformer, Acoustic Guitar - Mike Bradley, StudioPersonnel, Asst. Recording Engineer - Steve Fallone, StudioPersonnel, Mastering Engineer - Rodrigo Amarante, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 1,
+     "replaygain_track_gain": -5.71
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "isrc": "USUM72100323",
+    "title": "Falling",
+    "version": "Live",
+    "duration": 275,
+    "parental_warning": false,
+    "track_number": 9,
+    "maximum_channel_count": 2,
+    "id": 115851715,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-04-16",
+    "release_date_download": "2021-04-16",
+    "release_date_stream": "2021-04-16",
+    "release_date_purchase": "2021-04-16",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782601200,
+    "streamable_at": 1782601200,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2021 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist - Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer - Brian Blade, AssociatedPerformer, Drums - Jesse Murphy, AssociatedPerformer, Electric Bass - Mike Bradley, StudioPersonnel, Asst. Recording Engineer - Steve Fallone, StudioPersonnel, Mastering Engineer - Sarah Oda, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.9888,
+     "replaygain_track_gain": -7.02
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "isrc": "USUM72100334",
+    "title": "Tragedy",
+    "version": "Live",
+    "duration": 304,
+    "parental_warning": false,
+    "track_number": 10,
+    "maximum_channel_count": 2,
+    "id": 115851716,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-04-16",
+    "release_date_download": "2021-04-16",
+    "release_date_stream": "2021-04-16",
+    "release_date_purchase": "2021-04-16",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782601200,
+    "streamable_at": 1782601200,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2021 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist - Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer - Brian Blade, AssociatedPerformer, Drums, Vocals - Jesse Murphy, AssociatedPerformer, Upright Bass, Vocals - Mike Bradley, StudioPersonnel, Asst. Recording Engineer - Steve Fallone, StudioPersonnel, Mastering Engineer - Lee Alexander, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.965118,
+     "replaygain_track_gain": -7.25
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "isrc": "USUM72100331",
+    "title": "Sunrise",
+    "version": "Live",
+    "duration": 272,
+    "parental_warning": false,
+    "track_number": 11,
+    "maximum_channel_count": 2,
+    "id": 115851717,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-04-16",
+    "release_date_download": "2021-04-16",
+    "release_date_stream": "2021-04-16",
+    "release_date_purchase": "2021-04-16",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782601200,
+    "streamable_at": 1782601200,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2021 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist - Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer - Brian Blade, AssociatedPerformer, Drums - Jesse Murphy, AssociatedPerformer, Electric Bass - Mike Bradley, StudioPersonnel, Asst. Recording Engineer - Steve Fallone, StudioPersonnel, Mastering Engineer - Pete Remm, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.998016,
+     "replaygain_track_gain": -7.37
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "isrc": "USUM72100330",
+    "title": "Flipside",
+    "version": "Live",
+    "duration": 407,
+    "parental_warning": false,
+    "track_number": 12,
+    "maximum_channel_count": 2,
+    "id": 115851718,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-04-16",
+    "release_date_download": "2021-04-16",
+    "release_date_stream": "2021-04-16",
+    "release_date_purchase": "2021-04-16",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782601200,
+    "streamable_at": 1782601200,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2021 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals - Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer - Brian Blade, AssociatedPerformer, Drums - Christopher Thomas, AssociatedPerformer, Upright Bass - Pete Remm, AssociatedPerformer - Alexander Fedrizzi, StudioPersonnel, Asst. Recording Engineer - Steve Fallone, StudioPersonnel, Mastering Engineer - Jesse Harris, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.977814,
+     "replaygain_track_gain": -8.19
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Jesse Harris",
+     "id": 39923
+    },
+    "isrc": "USUM72100329",
+    "title": "Don't Know Why",
+    "version": "Live",
+    "duration": 305,
+    "parental_warning": false,
+    "track_number": 13,
+    "maximum_channel_count": 2,
+    "id": 115851719,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-04-16",
+    "release_date_download": "2021-04-16",
+    "release_date_stream": "2021-04-16",
+    "release_date_purchase": "2021-04-16",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782601200,
+    "streamable_at": 1782601200,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "℗ 2021 Capitol Records, LLC",
+    "performers": "Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals - Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer - Alexander Fedrizzi, StudioPersonnel, Asst. Recording Engineer - Steve Fallone, StudioPersonnel, Mastering Engineer - Chris Cornell, ComposerLyricist",
+    "audio_info": {
+     "replaygain_track_peak": 1,
+     "replaygain_track_gain": -6.15
+    },
+    "performer": {
+     "name": "Norah Jones",
+     "id": 34525
+    },
+    "work": null,
+    "composer": {
+     "name": "Chris Cornell",
+     "id": 53678
+    },
+    "isrc": "USUM72100322",
+    "title": "Black Hole Sun",
+    "version": "Live",
+    "duration": 431,
+    "parental_warning": false,
+    "track_number": 14,
+    "maximum_channel_count": 2,
+    "id": 115851720,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2021-04-16",
+    "release_date_download": "2021-04-16",
+    "release_date_stream": "2021-04-16",
+    "release_date_purchase": "2021-04-16",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782601200,
+    "streamable_at": 1782601200,
+    "hires": true,
+    "hires_streamable": true
+   }
+  ]
+ }
+}

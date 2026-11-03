@@ -1,0 +1,15 @@
+{
+ "track_id": 58780547,
+ "duration": 302,
+ "url": "{{CDN}}/file/58780547/27",
+ "format_id": 7,
+ "mime_type": "audio/flac",
+ "restrictions": [
+  {
+   "code": "FormatRestrictedByFormatAvailability"
+  }
+ ],
+ "sampling_rate": 96,
+ "bit_depth": 24,
+ "blob": "{{BLOB}}"
+}

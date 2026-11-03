@@ -1,0 +1,15 @@
+{
+ "track_id": 27145224,
+ "duration": 226,
+ "url": "{{CDN}}/file/27145224/27",
+ "format_id": 7,
+ "mime_type": "audio/flac",
+ "restrictions": [
+  {
+   "code": "FormatRestrictedByFormatAvailability"
+  }
+ ],
+ "sampling_rate": 96,
+ "bit_depth": 24,
+ "blob": "{{BLOB}}"
+}
