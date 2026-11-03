@@ -1,0 +1,165 @@
+# Upstream
+
+## Ported version
+
+| | |
+| --- | --- |
+| Repository | https://github.com/Sei969/qobuz-dl |
+| Tag | `v2.5.9` |
+| Commit | `e21f92a`, 2026-10-07 |
+| PyPI | `qobuz-dl-ultimate` 2.5.9 |
+| Ported in | qobuz-dl-go `v0.1.0`, not tagged yet |
+
+## Files
+
+| Python | Go | State |
+| --- | --- | --- |
+| `bundle.py` | `bundle.go` | planned |
+| `qopy.py` | `qopy.go` | planned |
+| `core.py` | `core.go` | planned |
+| `downloader.py` | `downloader.go` | planned |
+| `metadata.py` | `metadata.go` | planned |
+| `utils.py` | `utils.go`, with `PartialFormatter` in `format.go` | planned |
+| `settings.py` | `settings.go` | planned |
+| `constants.py` | `constants.go` | planned |
+| `exceptions.py` | `errors.go` | planned |
+| `db.py` | `downloadsdb/` | planned |
+| `cli.py`, `commands.py`, `color.py`, `__main__.py`, `radar.py`, `sync.py`, `sync_playlist.py`, `retro_tagger.py`, `lastfm_parser.py`, `lyrics_engine.py` | none | not ported, see below |
+
+## Functions
+
+When two Python modules have private functions with the same name, the Go name gets the module as a prefix. Today that is only `_get_title`, in `downloader.py` and `metadata.py`.
+
+### bundle.py
+
+| Python | Go |
+| --- | --- |
+| `Bundle.__init__` | `FetchBundle(ctx, hc)` |
+| `Bundle.get_app_id` | `(*Bundle).AppID` |
+| `Bundle.get_secrets` | `(*Bundle).Secrets`, ordered by timezone as in Python |
+
+### qopy.py
+
+| Python | Go |
+| --- | --- |
+| `Client.__init__` | `NewClient(ctx, ClientOptions)`, which also runs `auth` and `cfg_setup` |
+| `_normalize_json_strings` | `normalizeJSONStrings` |
+| `auth` | `(*Client).auth` |
+| `_modern_sig` | `modernSig` |
+| `_b64url_decode` | `b64urlDecode` |
+| `_derive_session_key` | `deriveSessionKey` |
+| `_unwrap_track_key` | `unwrapTrackKey` |
+| `api_call` | `(*Client).apiCall`, plus the typed methods below |
+| `multi_meta` | `(*Client).MultiMeta` |
+| `get_track_meta` | `(*Client).GetTrackMeta` |
+| `get_album_meta`, `get_artist_meta`, `get_plist_meta`, `get_label_meta` | `GetAlbumMeta`, `GetArtistMeta`, `GetPlaylistMeta`, `GetLabelMeta` |
+| `search_albums`, `search_tracks`, `search_artists`, `search_playlists` | `SearchAlbums`, `SearchTracks`, `SearchArtists`, `SearchPlaylists` |
+| `get_track_url` | `(*Client).GetTrackURL` |
+| `cfg_setup` | `(*Client).cfgSetup` |
+| `get_track_ids_from_list`, `get_favorites`, `add_favorite_album` | not ported |
+
+### core.py
+
+| Python | Go |
+| --- | --- |
+| `QobuzDL.__init__` | `New(Options) *DL` |
+| `initialize_client` | `(*DL).InitializeClient` |
+| `get_tokens` | `(*DL).GetTokens` |
+| `download_from_id` | `(*DL).DownloadFromID` |
+| `handle_url` | `(*DL).HandleURL` |
+| `search_by_type` | `(*DL).SearchByType` |
+| `_align_text`, `mark_url_done_in_file`, `download_list_of_urls`, `download_from_txt_file`, `lucky_mode`, `interactive`, `download_lastfm_pl` | not ported |
+
+### downloader.py
+
+| Python | Go |
+| --- | --- |
+| `format_release_type` | `formatReleaseType` |
+| `_is_name_too_long`, `_shorten_utf8`, `_fit_name` | `isNameTooLong`, `shortenUTF8`, `fitName` |
+| `process_folder_format_with_subdirs` | `processFolderFormatWithSubdirs` |
+| `Download` | `download` |
+| `download_id_by_type`, `download_release`, `download_track` | `downloadIDByType`, `downloadRelease`, `downloadTrack` |
+| `_download_and_tag` | `downloadAndTag` |
+| `_get_filename_attr`, `_get_track_attr`, `_get_album_attr` | `getFilenameAttr`, `getTrackAttr`, `getAlbumAttr` |
+| `_get_format`, `_determine_formats` | `getFormat`, `determineFormats` |
+| `_generate_tracklist` | `generateTracklist` |
+| `_get_description`, `_get_title`, `_get_extra`, `_clean_format_str`, `_safe_get` | `getDescription`, `downloaderGetTitle`, `getExtra`, `cleanFormatStr`, `safeGet` |
+| `tqdm_download` | `transfer` |
+| `tqdm_download_segments` with `get_seg_size`, `fetch_segment_fluid` | `transferSegments` |
+| `_get_qobuz_segment_uuid`, `_decrypt_qobuz_segment` | `qobuzSegmentUUID`, `decryptQobuzSegment` |
+| `_download_goodies`, `_clean_embed_art` | `downloadGoodies`, `cleanEmbedArt` |
+| `safe_print`, `_append_lyrics_to_booklet` | not ported |
+
+### metadata.py
+
+| Python | Go |
+| --- | --- |
+| `_get_title_with_version`, `_get_title` | `getTitleWithVersion`, `metadataGetTitle` |
+| `_various_artists_aliases`, `_is_various_artists`, `_release_types`, `_disc_track_total` | `variousArtistsAliases`, `isVariousArtists`, `releaseTypes`, `discTrackTotal` |
+| `_format_copyright`, `_format_genres` | `formatCopyright`, `formatGenres` |
+| `_embed_flac_img`, `_embed_id3_img` | `embedFLACImg`, `embedID3Img` |
+| `tag_flac`, `tag_mp3` | `TagFLAC`, `TagMP3` |
+| `_get_tags_to_add` | `getTagsToAdd` |
+
+### utils.py
+
+| Python | Go |
+| --- | --- |
+| `PartialFormatter` | `partialFormatter` in `format.go` |
+| `make_m3u` | `MakeM3U` |
+| `label_matches` | `labelMatches` |
+| `smart_discography_filter` | `SmartDiscographyFilter` |
+| `format_duration` | `FormatDuration` |
+| `create_and_return_dir` | `createAndReturnDir` |
+| `get_url_info` | `GetURLInfo` |
+| `get_album_artist` | `GetAlbumArtist` |
+| `apply_legacy_charmap` | `applyLegacyCharmap` |
+| `clean_filename` | `CleanFilename` |
+| `invalid_chars_to_fullwidth` | `invalidCharsToFullwidth` |
+| `read_config_file` | not ported |
+
+### settings.py, constants.py, exceptions.py, db.py
+
+| Python | Go |
+| --- | --- |
+| `QobuzDLSettings` | `Settings`, with `DefaultSettings()` |
+| `parse_aliases` | `parseAliases` |
+| `from_arguments_configparser` | not ported |
+| `DEFAULT_FOLDER`, `DEFAULT_TRACK`, `DEFAULT_MULTIPLE_DISC_TRACK`, `DEFAULT_VARIOUS_ARTISTS_ALIASES`, `OK_MAX_CHARACTER_LENGTH` | the same names in Go style |
+| `AuthenticationError`, `IneligibleError`, `InvalidAppIdError`, `InvalidAppSecretError`, `InvalidQuality`, `NonStreamable` | `ErrAuthentication`, `ErrIneligible`, `ErrInvalidAppID`, `ErrInvalidAppSecret`, `ErrInvalidQuality`, `ErrNonStreamable` |
+| `create_db` | `downloadsdb.Open` |
+| `handle_download_id` | `(*downloadsdb.DB).Has` and `Add` |
+| `get_stats` | not ported |
+
+## Deliberate differences
+
+| Difference | Why |
+| --- | --- |
+| Every network call takes a `context.Context` and has a timeout. Python's API calls have none. | A stalled call must not block a server forever. |
+| Errors are returned. Python calls `sys.exit` on a 401 during auth and only logs most other failures. | A library must not exit. |
+| Secrets are a list, scraped once by `GetTokens`. | The old bot passed a comma-joined string and scraped up to three times. |
+| The `Progress` interface replaces tqdm, `safe_print` and colored log lines. | Callers show progress their own way. |
+| Download functions return the final folder and an outcome per track. Python only logs them. | Callers need the result. |
+| Temp files `~tmp_NN.tmp` are removed when a track fails. Python leaves them for the CLI to clean. | Nothing else cleans up after a library. |
+| `SearchAlbums` and the other search methods take an offset. | Paging in a UI. |
+| Every request, transfers included, uses the caller's `*http.Client`. Python makes a new session per transfer attempt and reads proxies from the environment. | The caller decides about proxies and connection reuse. |
+| Private functions with clashing names get the module as a prefix. | One Go package holds several Python modules. |
+
+## Not ported
+
+- The CLI and its helpers: `cli.py`, `commands.py`, `color.py`, `__main__.py`, `read_config_file`, `from_arguments_configparser`. `cmd/qobuz-dl` has its own small CLI for parity runs.
+- Lyrics: `lyrics_engine.py` and `_append_lyrics_to_booklet`. Music Shelf runs with lyrics off.
+- Sync and imports: `sync.py`, `sync_playlist.py`, `retro_tagger.py`, `radar.py`, `lastfm_parser.py`, `get_track_ids_from_list`.
+- Interactive and lucky modes, batch downloads from text files, favorites, the blacklist, and booklet-only downloads.
+- `get_stats`.
+
+Any of these can be ported later in the same file-by-file way.
+
+## Updating
+
+1. `make upstream-diff TO=<tag>` prints what changed in the ported files since the tag above.
+2. Port each change into the Go file with the same base name. A change to something not ported gets a line under Not ported, or a port.
+3. If new functions need golden data, extend `testdata/gen/gen.py`. Install the new version in `testdata/gen/.venv` and run `make golden`.
+4. Run `make check` and `make parity` on the reference albums.
+5. Update this file: the tag, the commit, the function map and the differences.
+6. Tag a new qobuz-dl-go version, then bump it in Music Shelf.

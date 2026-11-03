@@ -1,0 +1,13 @@
+/qobuz-dl
+/bin/
+/out/
+/tmp/
+.upstream/
+testdata/gen/.venv/
+*.db
+*.db-shm
+*.db-wal
+.DS_Store
+*.swp
+.idea/
+.vscode/
