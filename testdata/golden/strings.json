@@ -2774,6 +2774,258 @@
    }
   },
   {
+   "name": "handpicked:132",
+   "input": "(, Песня)",
+   "output": {
+    "lower": "(, песня)",
+    "upper": "(, ПЕСНЯ)",
+    "casefold": "(, песня)",
+    "title": "(, Песня)",
+    "capitalize": "(, песня)",
+    "strip": "(, Песня)",
+    "strip_chars": "(, Песня)",
+    "lstrip_chars": "(, Песня)",
+    "rstrip_chars": "(, Песня)",
+    "isdigit": false,
+    "len": {
+     "py": "int",
+     "v": 9
+    },
+    "nfc": "(, Песня)"
+   }
+  },
+  {
+   "name": "handpicked:133",
+   "input": "(Песня ,)",
+   "output": {
+    "lower": "(песня ,)",
+    "upper": "(ПЕСНЯ ,)",
+    "casefold": "(песня ,)",
+    "title": "(Песня ,)",
+    "capitalize": "(песня ,)",
+    "strip": "(Песня ,)",
+    "strip_chars": "(Песня ,)",
+    "lstrip_chars": "(Песня ,)",
+    "rstrip_chars": "(Песня ,)",
+    "isdigit": false,
+    "len": {
+     "py": "int",
+     "v": 9
+    },
+    "nfc": "(Песня ,)"
+   }
+  },
+  {
+   "name": "handpicked:134",
+   "input": "【, 音楽】",
+   "output": {
+    "lower": "【, 音楽】",
+    "upper": "【, 音楽】",
+    "casefold": "【, 音楽】",
+    "title": "【, 音楽】",
+    "capitalize": "【, 音楽】",
+    "strip": "【, 音楽】",
+    "strip_chars": "【, 音楽】",
+    "lstrip_chars": "【, 音楽】",
+    "rstrip_chars": "【, 音楽】",
+    "isdigit": false,
+    "len": {
+     "py": "int",
+     "v": 6
+    },
+    "nfc": "【, 音楽】"
+   }
+  },
+  {
+   "name": "handpicked:135",
+   "input": "［音楽 /］",
+   "output": {
+    "lower": "［音楽 /］",
+    "upper": "［音楽 /］",
+    "casefold": "［音楽 /］",
+    "title": "［音楽 /］",
+    "capitalize": "［音楽 /］",
+    "strip": "［音楽 /］",
+    "strip_chars": "［音楽 /］",
+    "lstrip_chars": "［音楽 /］",
+    "rstrip_chars": "［音楽 /］",
+    "isdigit": false,
+    "len": {
+     "py": "int",
+     "v": 6
+    },
+    "nfc": "［音楽 /］"
+   }
+  },
+  {
+   "name": "handpicked:136",
+   "input": "(_Ελληνικά)",
+   "output": {
+    "lower": "(_ελληνικά)",
+    "upper": "(_ΕΛΛΗΝΙΚΆ)",
+    "casefold": "(_ελληνικά)",
+    "title": "(_Ελληνικά)",
+    "capitalize": "(_ελληνικά)",
+    "strip": "(_Ελληνικά)",
+    "strip_chars": "(_Ελληνικά)",
+    "lstrip_chars": "(_Ελληνικά)",
+    "rstrip_chars": "(_Ελληνικά)",
+    "isdigit": false,
+    "len": {
+     "py": "int",
+     "v": 11
+    },
+    "nfc": "(_Ελληνικά)"
+   }
+  },
+  {
+   "name": "handpicked:137",
+   "input": "(Ελληνικά_)",
+   "output": {
+    "lower": "(ελληνικά_)",
+    "upper": "(ΕΛΛΗΝΙΚΆ_)",
+    "casefold": "(ελληνικά_)",
+    "title": "(Ελληνικά_)",
+    "capitalize": "(ελληνικά_)",
+    "strip": "(Ελληνικά_)",
+    "strip_chars": "(Ελληνικά_)",
+    "lstrip_chars": "(Ελληνικά_)",
+    "rstrip_chars": "(Ελληνικά_)",
+    "isdigit": false,
+    "len": {
+     "py": "int",
+     "v": 11
+    },
+    "nfc": "(Ελληνικά_)"
+   }
+  },
+  {
+   "name": "handpicked:138",
+   "input": "(_ Ελληνικά _)",
+   "output": {
+    "lower": "(_ ελληνικά _)",
+    "upper": "(_ ΕΛΛΗΝΙΚΆ _)",
+    "casefold": "(_ ελληνικά _)",
+    "title": "(_ Ελληνικά _)",
+    "capitalize": "(_ ελληνικά _)",
+    "strip": "(_ Ελληνικά _)",
+    "strip_chars": "(_ Ελληνικά _)",
+    "lstrip_chars": "(_ Ελληνικά _)",
+    "rstrip_chars": "(_ Ελληνικά _)",
+    "isdigit": false,
+    "len": {
+     "py": "int",
+     "v": 14
+    },
+    "nfc": "(_ Ελληνικά _)"
+   }
+  },
+  {
+   "name": "handpicked:139",
+   "input": "「. 中文」",
+   "output": {
+    "lower": "「. 中文」",
+    "upper": "「. 中文」",
+    "casefold": "「. 中文」",
+    "title": "「. 中文」",
+    "capitalize": "「. 中文」",
+    "strip": "「. 中文」",
+    "strip_chars": "「. 中文」",
+    "lstrip_chars": "「. 中文」",
+    "rstrip_chars": "「. 中文」",
+    "isdigit": false,
+    "len": {
+     "py": "int",
+     "v": 6
+    },
+    "nfc": "「. 中文」"
+   }
+  },
+  {
+   "name": "handpicked:140",
+   "input": "[中文 ;]",
+   "output": {
+    "lower": "[中文 ;]",
+    "upper": "[中文 ;]",
+    "casefold": "[中文 ;]",
+    "title": "[中文 ;]",
+    "capitalize": "[中文 ;]",
+    "strip": "[中文 ;]",
+    "strip_chars": "[中文 ;]",
+    "lstrip_chars": "[中文 ;]",
+    "rstrip_chars": "[中文 ;]",
+    "isdigit": false,
+    "len": {
+     "py": "int",
+     "v": 6
+    },
+    "nfc": "[中文 ;]"
+   }
+  },
+  {
+   "name": "handpicked:141",
+   "input": "Title (| Ünïcode |) x",
+   "output": {
+    "lower": "title (| ünïcode |) x",
+    "upper": "TITLE (| ÜNÏCODE |) X",
+    "casefold": "title (| ünïcode |) x",
+    "title": "Title (| Ünïcode |) X",
+    "capitalize": "Title (| ünïcode |) x",
+    "strip": "Title (| Ünïcode |) x",
+    "strip_chars": "Title (| Ünïcode |) x",
+    "lstrip_chars": "Title (| Ünïcode |) x",
+    "rstrip_chars": "Title (| Ünïcode |) x",
+    "isdigit": false,
+    "len": {
+     "py": "int",
+     "v": 21
+    },
+    "nfc": "Title (| Ünïcode |) x"
+   }
+  },
+  {
+   "name": "handpicked:142",
+   "input": "(,é)",
+   "output": {
+    "lower": "(,é)",
+    "upper": "(,É)",
+    "casefold": "(,é)",
+    "title": "(,É)",
+    "capitalize": "(,é)",
+    "strip": "(,é)",
+    "strip_chars": "(,é)",
+    "lstrip_chars": "(,é)",
+    "rstrip_chars": "(,é)",
+    "isdigit": false,
+    "len": {
+     "py": "int",
+     "v": 4
+    },
+    "nfc": "(,é)"
+   }
+  },
+  {
+   "name": "handpicked:143",
+   "input": "(, ½)",
+   "output": {
+    "lower": "(, ½)",
+    "upper": "(, ½)",
+    "casefold": "(, ½)",
+    "title": "(, ½)",
+    "capitalize": "(, ½)",
+    "strip": "(, ½)",
+    "strip_chars": "(, ½)",
+    "lstrip_chars": "(, ½)",
+    "rstrip_chars": "(, ½)",
+    "isdigit": false,
+    "len": {
+     "py": "int",
+     "v": 5
+    },
+    "nfc": "(, ½)"
+   }
+  },
+  {
    "name": "reserved:1",
    "input": "CON",
    "output": {

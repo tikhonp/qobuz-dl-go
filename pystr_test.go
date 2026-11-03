@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"testing"
 	"unicode"
-
-	"golang.org/x/text/unicode/norm"
 )
 
 func TestStringMethodsGolden(t *testing.T) {
@@ -24,7 +22,7 @@ func TestStringMethodsGolden(t *testing.T) {
 			"rstrip_chars": pyRstrip(s, ` ."-_'`),
 			"isdigit":      pyIsDigit(s),
 			"len":          int64(pyLen(s)),
-			"nfc":          norm.NFC.String(s),
+			"nfc":          pyNFC(s),
 		}
 		for _, k := range want.keysInOrder() {
 			g, ok := got[k]
@@ -200,5 +198,21 @@ func TestPyLjustPadsByCodePoint(t *testing.T) {
 	}
 	if got := pyLjust("abcdef", 4); got != "abcdef" {
 		t.Errorf("got %q", got)
+	}
+}
+
+func TestPyNFCLeavesCharactersPythonDoesNotKnow(t *testing.T) {
+	// From Python 3.14, Unicode 16.0. U+1ADD is a combining mark in 17.0;
+	// Python sees an unassigned starter, so U+0301 can't reach the e.
+	cases := map[string]string{
+		"e᫝́":  "e᫝́",
+		"é᫝́": "é᫝́",
+		"é":   "é",
+		"᫝":    "᫝",
+	}
+	for in, want := range cases {
+		if got := pyNFC(in); got != want {
+			t.Errorf("pyNFC(%+q) = %+q, want %+q", in, got, want)
+		}
 	}
 }

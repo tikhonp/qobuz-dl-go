@@ -4754,6 +4754,438 @@
    "output": "word(1)"
   },
   {
+   "name": "sanitize_filename handpicked:132 repl=''",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "(, Песня)",
+    "replacement": ""
+   },
+   "output": "(, Песня)"
+  },
+  {
+   "name": "sanitize_filepath handpicked:132 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "(, Песня)",
+    "replacement": ""
+   },
+   "output": "(, Песня)"
+  },
+  {
+   "name": "sanitize_filename handpicked:132 repl='_'",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "(, Песня)",
+    "replacement": "_"
+   },
+   "output": "(, Песня)"
+  },
+  {
+   "name": "sanitize_filepath handpicked:132 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "(, Песня)",
+    "replacement": "_"
+   },
+   "output": "(, Песня)"
+  },
+  {
+   "name": "sanitize_filename handpicked:133 repl=''",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "(Песня ,)",
+    "replacement": ""
+   },
+   "output": "(Песня ,)"
+  },
+  {
+   "name": "sanitize_filepath handpicked:133 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "(Песня ,)",
+    "replacement": ""
+   },
+   "output": "(Песня ,)"
+  },
+  {
+   "name": "sanitize_filename handpicked:133 repl='_'",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "(Песня ,)",
+    "replacement": "_"
+   },
+   "output": "(Песня ,)"
+  },
+  {
+   "name": "sanitize_filepath handpicked:133 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "(Песня ,)",
+    "replacement": "_"
+   },
+   "output": "(Песня ,)"
+  },
+  {
+   "name": "sanitize_filename handpicked:134 repl=''",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "【, 音楽】",
+    "replacement": ""
+   },
+   "output": "【, 音楽】"
+  },
+  {
+   "name": "sanitize_filepath handpicked:134 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "【, 音楽】",
+    "replacement": ""
+   },
+   "output": "【, 音楽】"
+  },
+  {
+   "name": "sanitize_filename handpicked:134 repl='_'",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "【, 音楽】",
+    "replacement": "_"
+   },
+   "output": "【, 音楽】"
+  },
+  {
+   "name": "sanitize_filepath handpicked:134 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "【, 音楽】",
+    "replacement": "_"
+   },
+   "output": "【, 音楽】"
+  },
+  {
+   "name": "sanitize_filename handpicked:135 repl=''",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "［音楽 /］",
+    "replacement": ""
+   },
+   "output": "［音楽 ］"
+  },
+  {
+   "name": "sanitize_filepath handpicked:135 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "［音楽 /］",
+    "replacement": ""
+   },
+   "output": "［音楽/］"
+  },
+  {
+   "name": "sanitize_filename handpicked:135 repl='_'",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "［音楽 /］",
+    "replacement": "_"
+   },
+   "output": "［音楽 _］"
+  },
+  {
+   "name": "sanitize_filepath handpicked:135 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "［音楽 /］",
+    "replacement": "_"
+   },
+   "output": "［音楽/］"
+  },
+  {
+   "name": "sanitize_filename handpicked:136 repl=''",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "(_Ελληνικά)",
+    "replacement": ""
+   },
+   "output": "(_Ελληνικά)"
+  },
+  {
+   "name": "sanitize_filepath handpicked:136 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "(_Ελληνικά)",
+    "replacement": ""
+   },
+   "output": "(_Ελληνικά)"
+  },
+  {
+   "name": "sanitize_filename handpicked:136 repl='_'",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "(_Ελληνικά)",
+    "replacement": "_"
+   },
+   "output": "(_Ελληνικά)"
+  },
+  {
+   "name": "sanitize_filepath handpicked:136 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "(_Ελληνικά)",
+    "replacement": "_"
+   },
+   "output": "(_Ελληνικά)"
+  },
+  {
+   "name": "sanitize_filename handpicked:137 repl=''",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "(Ελληνικά_)",
+    "replacement": ""
+   },
+   "output": "(Ελληνικά_)"
+  },
+  {
+   "name": "sanitize_filepath handpicked:137 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "(Ελληνικά_)",
+    "replacement": ""
+   },
+   "output": "(Ελληνικά_)"
+  },
+  {
+   "name": "sanitize_filename handpicked:137 repl='_'",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "(Ελληνικά_)",
+    "replacement": "_"
+   },
+   "output": "(Ελληνικά_)"
+  },
+  {
+   "name": "sanitize_filepath handpicked:137 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "(Ελληνικά_)",
+    "replacement": "_"
+   },
+   "output": "(Ελληνικά_)"
+  },
+  {
+   "name": "sanitize_filename handpicked:138 repl=''",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "(_ Ελληνικά _)",
+    "replacement": ""
+   },
+   "output": "(_ Ελληνικά _)"
+  },
+  {
+   "name": "sanitize_filepath handpicked:138 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "(_ Ελληνικά _)",
+    "replacement": ""
+   },
+   "output": "(_ Ελληνικά _)"
+  },
+  {
+   "name": "sanitize_filename handpicked:138 repl='_'",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "(_ Ελληνικά _)",
+    "replacement": "_"
+   },
+   "output": "(_ Ελληνικά _)"
+  },
+  {
+   "name": "sanitize_filepath handpicked:138 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "(_ Ελληνικά _)",
+    "replacement": "_"
+   },
+   "output": "(_ Ελληνικά _)"
+  },
+  {
+   "name": "sanitize_filename handpicked:139 repl=''",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "「. 中文」",
+    "replacement": ""
+   },
+   "output": "「. 中文」"
+  },
+  {
+   "name": "sanitize_filepath handpicked:139 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "「. 中文」",
+    "replacement": ""
+   },
+   "output": "「. 中文」"
+  },
+  {
+   "name": "sanitize_filename handpicked:139 repl='_'",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "「. 中文」",
+    "replacement": "_"
+   },
+   "output": "「. 中文」"
+  },
+  {
+   "name": "sanitize_filepath handpicked:139 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "「. 中文」",
+    "replacement": "_"
+   },
+   "output": "「. 中文」"
+  },
+  {
+   "name": "sanitize_filename handpicked:140 repl=''",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "[中文 ;]",
+    "replacement": ""
+   },
+   "output": "[中文 ;]"
+  },
+  {
+   "name": "sanitize_filepath handpicked:140 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "[中文 ;]",
+    "replacement": ""
+   },
+   "output": "[中文 ;]"
+  },
+  {
+   "name": "sanitize_filename handpicked:140 repl='_'",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "[中文 ;]",
+    "replacement": "_"
+   },
+   "output": "[中文 ;]"
+  },
+  {
+   "name": "sanitize_filepath handpicked:140 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "[中文 ;]",
+    "replacement": "_"
+   },
+   "output": "[中文 ;]"
+  },
+  {
+   "name": "sanitize_filename handpicked:141 repl=''",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "Title (| Ünïcode |) x",
+    "replacement": ""
+   },
+   "output": "Title ( Ünïcode ) x"
+  },
+  {
+   "name": "sanitize_filepath handpicked:141 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "Title (| Ünïcode |) x",
+    "replacement": ""
+   },
+   "output": "Title ( Ünïcode ) x"
+  },
+  {
+   "name": "sanitize_filename handpicked:141 repl='_'",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "Title (| Ünïcode |) x",
+    "replacement": "_"
+   },
+   "output": "Title (_ Ünïcode _) x"
+  },
+  {
+   "name": "sanitize_filepath handpicked:141 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "Title (| Ünïcode |) x",
+    "replacement": "_"
+   },
+   "output": "Title (_ Ünïcode _) x"
+  },
+  {
+   "name": "sanitize_filename handpicked:142 repl=''",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "(,é)",
+    "replacement": ""
+   },
+   "output": "(,é)"
+  },
+  {
+   "name": "sanitize_filepath handpicked:142 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "(,é)",
+    "replacement": ""
+   },
+   "output": "(,é)"
+  },
+  {
+   "name": "sanitize_filename handpicked:142 repl='_'",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "(,é)",
+    "replacement": "_"
+   },
+   "output": "(,é)"
+  },
+  {
+   "name": "sanitize_filepath handpicked:142 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "(,é)",
+    "replacement": "_"
+   },
+   "output": "(,é)"
+  },
+  {
+   "name": "sanitize_filename handpicked:143 repl=''",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "(, ½)",
+    "replacement": ""
+   },
+   "output": "(, ½)"
+  },
+  {
+   "name": "sanitize_filepath handpicked:143 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "(, ½)",
+    "replacement": ""
+   },
+   "output": "(, ½)"
+  },
+  {
+   "name": "sanitize_filename handpicked:143 repl='_'",
+   "input": {
+    "func": "sanitize_filename",
+    "name": "(, ½)",
+    "replacement": "_"
+   },
+   "output": "(, ½)"
+  },
+  {
+   "name": "sanitize_filepath handpicked:143 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "(, ½)",
+    "replacement": "_"
+   },
+   "output": "(, ½)"
+  },
+  {
    "name": "sanitize_filename reserved:1 repl=''",
    "input": {
     "func": "sanitize_filename",
@@ -34776,6 +35208,366 @@
     "replacement": "_"
    },
    "output": "dddddddddddddddddddddddddddddddddddddddddddddddddd/dddddddddddddddddddddddddddddddddddddddddddddddddd/dddddddddddddddddddddddddddddddddddddddddddddddddd/dddddddddddddddddddddddddddddddddddddddddddddddddd/dddddddddddddddddddddddddddddddddddddddddddddddddd/dddddddddddddddddddddddddddddddddddddddddddddddddd/dddddddddddddddddddddddddddddddddddddddddddddddddd/dddddddddddddddddddddddddddddddddddddddddddddddddd/dddddddddddddddddddddddddddddddddddddddddddddddddd/dddddddddddddddddddddddddddddddddddddddddddddddddd"
+  },
+  {
+   "name": "sanitize_filepath path:27 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "\\\\server\\share\\x",
+    "replacement": ""
+   },
+   "output": "\\\\server\\share/x"
+  },
+  {
+   "name": "sanitize_filepath path:27 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "\\\\server\\share\\x",
+    "replacement": "_"
+   },
+   "output": "\\\\server\\share/x"
+  },
+  {
+   "name": "sanitize_filepath path:28 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "//server/share/x",
+    "replacement": ""
+   },
+   "output": "//server/share/x"
+  },
+  {
+   "name": "sanitize_filepath path:28 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "//server/share/x",
+    "replacement": "_"
+   },
+   "output": "//server/share/x"
+  },
+  {
+   "name": "sanitize_filepath path:29 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "\\\\server",
+    "replacement": ""
+   },
+   "output": "\\\\server"
+  },
+  {
+   "name": "sanitize_filepath path:29 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "\\\\server",
+    "replacement": "_"
+   },
+   "output": "\\\\server"
+  },
+  {
+   "name": "sanitize_filepath path:30 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "\\\\?\\UNC\\s\\sh\\x",
+    "replacement": ""
+   },
+   "output": "\\\\?\\UNC\\s\\sh/x"
+  },
+  {
+   "name": "sanitize_filepath path:30 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "\\\\?\\UNC\\s\\sh\\x",
+    "replacement": "_"
+   },
+   "output": "\\\\?\\UNC\\s\\sh/x"
+  },
+  {
+   "name": "sanitize_filepath path:31 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a:b/c",
+    "replacement": ""
+   },
+   "output": "a:/b/c"
+  },
+  {
+   "name": "sanitize_filepath path:31 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a:b/c",
+    "replacement": "_"
+   },
+   "output": "a:/b/c"
+  },
+  {
+   "name": "sanitize_filepath path:32 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "::",
+    "replacement": ""
+   },
+   "output": "::"
+  },
+  {
+   "name": "sanitize_filepath path:32 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "::",
+    "replacement": "_"
+   },
+   "output": "::"
+  },
+  {
+   "name": "sanitize_filepath path:33 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "*:x",
+    "replacement": ""
+   },
+   "output": "*:/x"
+  },
+  {
+   "name": "sanitize_filepath path:33 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "*:x",
+    "replacement": "_"
+   },
+   "output": "*:/x"
+  },
+  {
+   "name": "sanitize_filepath path:34 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "é:/x",
+    "replacement": ""
+   },
+   "output": "é:/x"
+  },
+  {
+   "name": "sanitize_filepath path:34 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "é:/x",
+    "replacement": "_"
+   },
+   "output": "é:/x"
+  },
+  {
+   "name": "sanitize_filepath path:35 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": " /x",
+    "replacement": ""
+   },
+   "output": "/x"
+  },
+  {
+   "name": "sanitize_filepath path:35 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": " /x",
+    "replacement": "_"
+   },
+   "output": "/x"
+  },
+  {
+   "name": "sanitize_filepath path:36 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "x/ ",
+    "replacement": ""
+   },
+   "output": "x"
+  },
+  {
+   "name": "sanitize_filepath path:36 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "x/ ",
+    "replacement": "_"
+   },
+   "output": "x"
+  },
+  {
+   "name": "sanitize_filepath path:37 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a/ /b",
+    "replacement": ""
+   },
+   "output": "a/b"
+  },
+  {
+   "name": "sanitize_filepath path:37 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a/ /b",
+    "replacement": "_"
+   },
+   "output": "a/b"
+  },
+  {
+   "name": "sanitize_filepath path:38 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a/./../../b",
+    "replacement": ""
+   },
+   "output": "../b"
+  },
+  {
+   "name": "sanitize_filepath path:38 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a/./../../b",
+    "replacement": "_"
+   },
+   "output": "../b"
+  },
+  {
+   "name": "sanitize_filepath path:39 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a/CON./b",
+    "replacement": ""
+   },
+   "output": "a/CON_./b"
+  },
+  {
+   "name": "sanitize_filepath path:39 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a/CON./b",
+    "replacement": "_"
+   },
+   "output": "a/CON_./b"
+  },
+  {
+   "name": "sanitize_filepath path:40 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a/ x /b",
+    "replacement": ""
+   },
+   "output": "a/x/b"
+  },
+  {
+   "name": "sanitize_filepath path:40 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a/ x /b",
+    "replacement": "_"
+   },
+   "output": "a/x/b"
+  },
+  {
+   "name": "sanitize_filepath path:41 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": " ./x",
+    "replacement": ""
+   },
+   "output": ""
+  },
+  {
+   "name": "sanitize_filepath path:41 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": " ./x",
+    "replacement": "_"
+   },
+   "output": ""
+  },
+  {
+   "name": "sanitize_filepath path:42 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a/ ./b",
+    "replacement": ""
+   },
+   "output": ""
+  },
+  {
+   "name": "sanitize_filepath path:42 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a/ ./b",
+    "replacement": "_"
+   },
+   "output": ""
+  },
+  {
+   "name": "sanitize_filepath path:43 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "/a/ ./b",
+    "replacement": ""
+   },
+   "output": "/a/ /b"
+  },
+  {
+   "name": "sanitize_filepath path:43 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "/a/ ./b",
+    "replacement": "_"
+   },
+   "output": "/a/ /b"
+  },
+  {
+   "name": "sanitize_filepath path:44 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": " .",
+    "replacement": ""
+   },
+   "output": ""
+  },
+  {
+   "name": "sanitize_filepath path:44 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": " .",
+    "replacement": "_"
+   },
+   "output": ""
+  },
+  {
+   "name": "sanitize_filepath path:45 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a/CON. / ./b",
+    "replacement": ""
+   },
+   "output": "a/CON_. / /b"
+  },
+  {
+   "name": "sanitize_filepath path:45 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a/CON. / ./b",
+    "replacement": "_"
+   },
+   "output": "a/CON_. / /b"
+  },
+  {
+   "name": "sanitize_filepath path:46 repl=''",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a/con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con./ ./b",
+    "replacement": ""
+   },
+   "output": "a/con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_./ /b"
+  },
+  {
+   "name": "sanitize_filepath path:46 repl='_'",
+   "input": {
+    "func": "sanitize_filepath",
+    "name": "a/con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con.con./ ./b",
+    "replacement": "_"
+   },
+   "output": "a/con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_.con_./ /b"
   }
  ]
 }

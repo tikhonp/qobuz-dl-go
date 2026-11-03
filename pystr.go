@@ -11,6 +11,7 @@ import (
 
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
+	"golang.org/x/text/unicode/norm"
 )
 
 // newerThanPython holds the code points that Go's Unicode 17.0 tables assign
@@ -445,4 +446,27 @@ func pyLjust(s string, width int) string {
 		return s
 	}
 	return s + strings.Repeat(" ", width-n)
+}
+
+// pyNFC is unicodedata.normalize("NFC", s). x/text's tables are Unicode 17.0
+// and give some characters new in 17.0 a combining class, so norm.NFC would
+// reorder and compose across them. Python sees them as unassigned starters
+// that nothing composes with, which is what normalizing the text between
+// them, piece by piece, gives.
+func pyNFC(s string) string {
+	if strings.IndexFunc(s, func(r rune) bool { return !inPython(r) }) < 0 {
+		return norm.NFC.String(s)
+	}
+	var b strings.Builder
+	start := 0
+	for i, r := range s {
+		if inPython(r) {
+			continue
+		}
+		b.WriteString(norm.NFC.String(s[start:i]))
+		b.WriteRune(r)
+		start = i + utf8.RuneLen(r)
+	}
+	b.WriteString(norm.NFC.String(s[start:]))
+	return b.String()
 }

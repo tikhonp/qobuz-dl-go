@@ -1982,6 +1982,402 @@
    "output": "(((n...d)))"
   },
   {
+   "name": "handpicked:132 max=3",
+   "input": {
+    "name": "(, Песня)",
+    "max_bytes": {
+     "py": "int",
+     "v": 3
+    }
+   },
+   "output": "..."
+  },
+  {
+   "name": "handpicked:132 max=4",
+   "input": {
+    "name": "(, Песня)",
+    "max_bytes": {
+     "py": "int",
+     "v": 4
+    }
+   },
+   "output": "(..."
+  },
+  {
+   "name": "handpicked:132 max=10",
+   "input": {
+    "name": "(, Песня)",
+    "max_bytes": {
+     "py": "int",
+     "v": 10
+    }
+   },
+   "output": "(,...ня)"
+  },
+  {
+   "name": "handpicked:132 max=13",
+   "input": {
+    "name": "(, Песня)",
+    "max_bytes": {
+     "py": "int",
+     "v": 13
+    }
+   },
+   "output": "(, П...ня)"
+  },
+  {
+   "name": "handpicked:133 max=3",
+   "input": {
+    "name": "(Песня ,)",
+    "max_bytes": {
+     "py": "int",
+     "v": 3
+    }
+   },
+   "output": "..."
+  },
+  {
+   "name": "handpicked:133 max=4",
+   "input": {
+    "name": "(Песня ,)",
+    "max_bytes": {
+     "py": "int",
+     "v": 4
+    }
+   },
+   "output": "(..."
+  },
+  {
+   "name": "handpicked:133 max=10",
+   "input": {
+    "name": "(Песня ,)",
+    "max_bytes": {
+     "py": "int",
+     "v": 10
+    }
+   },
+   "output": "(Пе...,)"
+  },
+  {
+   "name": "handpicked:133 max=13",
+   "input": {
+    "name": "(Песня ,)",
+    "max_bytes": {
+     "py": "int",
+     "v": 13
+    }
+   },
+   "output": "(Пес...,)"
+  },
+  {
+   "name": "handpicked:134 max=3",
+   "input": {
+    "name": "【, 音楽】",
+    "max_bytes": {
+     "py": "int",
+     "v": 3
+    }
+   },
+   "output": "..."
+  },
+  {
+   "name": "handpicked:134 max=4",
+   "input": {
+    "name": "【, 音楽】",
+    "max_bytes": {
+     "py": "int",
+     "v": 4
+    }
+   },
+   "output": "..."
+  },
+  {
+   "name": "handpicked:134 max=10",
+   "input": {
+    "name": "【, 音楽】",
+    "max_bytes": {
+     "py": "int",
+     "v": 10
+    }
+   },
+   "output": "【,...】"
+  },
+  {
+   "name": "handpicked:134 max=13",
+   "input": {
+    "name": "【, 音楽】",
+    "max_bytes": {
+     "py": "int",
+     "v": 13
+    }
+   },
+   "output": "【,...楽】"
+  },
+  {
+   "name": "handpicked:135 max=3",
+   "input": {
+    "name": "［音楽 /］",
+    "max_bytes": {
+     "py": "int",
+     "v": 3
+    }
+   },
+   "output": "..."
+  },
+  {
+   "name": "handpicked:135 max=4",
+   "input": {
+    "name": "［音楽 /］",
+    "max_bytes": {
+     "py": "int",
+     "v": 4
+    }
+   },
+   "output": "..."
+  },
+  {
+   "name": "handpicked:135 max=10",
+   "input": {
+    "name": "［音楽 /］",
+    "max_bytes": {
+     "py": "int",
+     "v": 10
+    }
+   },
+   "output": "［...］"
+  },
+  {
+   "name": "handpicked:135 max=13",
+   "input": {
+    "name": "［音楽 /］",
+    "max_bytes": {
+     "py": "int",
+     "v": 13
+    }
+   },
+   "output": "［音.../］"
+  },
+  {
+   "name": "handpicked:136 max=3",
+   "input": {
+    "name": "(_Ελληνικά)",
+    "max_bytes": {
+     "py": "int",
+     "v": 3
+    }
+   },
+   "output": "..."
+  },
+  {
+   "name": "handpicked:136 max=4",
+   "input": {
+    "name": "(_Ελληνικά)",
+    "max_bytes": {
+     "py": "int",
+     "v": 4
+    }
+   },
+   "output": "(..."
+  },
+  {
+   "name": "handpicked:136 max=10",
+   "input": {
+    "name": "(_Ελληνικά)",
+    "max_bytes": {
+     "py": "int",
+     "v": 10
+    }
+   },
+   "output": "(_Ε...ά)"
+  },
+  {
+   "name": "handpicked:136 max=18",
+   "input": {
+    "name": "(_Ελληνικά)",
+    "max_bytes": {
+     "py": "int",
+     "v": 18
+    }
+   },
+   "output": "(_Ελλ...ικά)"
+  },
+  {
+   "name": "handpicked:137 max=3",
+   "input": {
+    "name": "(Ελληνικά_)",
+    "max_bytes": {
+     "py": "int",
+     "v": 3
+    }
+   },
+   "output": "..."
+  },
+  {
+   "name": "handpicked:137 max=4",
+   "input": {
+    "name": "(Ελληνικά_)",
+    "max_bytes": {
+     "py": "int",
+     "v": 4
+    }
+   },
+   "output": "(..."
+  },
+  {
+   "name": "handpicked:137 max=10",
+   "input": {
+    "name": "(Ελληνικά_)",
+    "max_bytes": {
+     "py": "int",
+     "v": 10
+    }
+   },
+   "output": "(Ελ...)"
+  },
+  {
+   "name": "handpicked:137 max=18",
+   "input": {
+    "name": "(Ελληνικά_)",
+    "max_bytes": {
+     "py": "int",
+     "v": 18
+    }
+   },
+   "output": "(Ελλη...κά_)"
+  },
+  {
+   "name": "handpicked:138 max=3",
+   "input": {
+    "name": "(_ Ελληνικά _)",
+    "max_bytes": {
+     "py": "int",
+     "v": 3
+    }
+   },
+   "output": "..."
+  },
+  {
+   "name": "handpicked:138 max=4",
+   "input": {
+    "name": "(_ Ελληνικά _)",
+    "max_bytes": {
+     "py": "int",
+     "v": 4
+    }
+   },
+   "output": "(..."
+  },
+  {
+   "name": "handpicked:138 max=10",
+   "input": {
+    "name": "(_ Ελληνικά _)",
+    "max_bytes": {
+     "py": "int",
+     "v": 10
+    }
+   },
+   "output": "(_ Ε...)"
+  },
+  {
+   "name": "handpicked:138 max=21",
+   "input": {
+    "name": "(_ Ελληνικά _)",
+    "max_bytes": {
+     "py": "int",
+     "v": 21
+    }
+   },
+   "output": "(_ Ελλ...ικά _)"
+  },
+  {
+   "name": "handpicked:139 max=3",
+   "input": {
+    "name": "「. 中文」",
+    "max_bytes": {
+     "py": "int",
+     "v": 3
+    }
+   },
+   "output": "..."
+  },
+  {
+   "name": "handpicked:139 max=4",
+   "input": {
+    "name": "「. 中文」",
+    "max_bytes": {
+     "py": "int",
+     "v": 4
+    }
+   },
+   "output": "..."
+  },
+  {
+   "name": "handpicked:139 max=10",
+   "input": {
+    "name": "「. 中文」",
+    "max_bytes": {
+     "py": "int",
+     "v": 10
+    }
+   },
+   "output": "「...」"
+  },
+  {
+   "name": "handpicked:139 max=13",
+   "input": {
+    "name": "「. 中文」",
+    "max_bytes": {
+     "py": "int",
+     "v": 13
+    }
+   },
+   "output": "「...文」"
+  },
+  {
+   "name": "handpicked:141 max=3",
+   "input": {
+    "name": "Title (| Ünïcode |) x",
+    "max_bytes": {
+     "py": "int",
+     "v": 3
+    }
+   },
+   "output": "..."
+  },
+  {
+   "name": "handpicked:141 max=4",
+   "input": {
+    "name": "Title (| Ünïcode |) x",
+    "max_bytes": {
+     "py": "int",
+     "v": 4
+    }
+   },
+   "output": "T..."
+  },
+  {
+   "name": "handpicked:141 max=10",
+   "input": {
+    "name": "Title (| Ünïcode |) x",
+    "max_bytes": {
+     "py": "int",
+     "v": 10
+    }
+   },
+   "output": "Titl...) x"
+  },
+  {
+   "name": "handpicked:141 max=22",
+   "input": {
+    "name": "Title (| Ünïcode |) x",
+    "max_bytes": {
+     "py": "int",
+     "v": 22
+    }
+   },
+   "output": "Title (|...code |) x"
+  },
+  {
    "name": "random:2 max=3",
    "input": {
     "name": " I〉]/G]R|[Á-）",

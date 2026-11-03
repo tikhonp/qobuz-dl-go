@@ -1,0 +1,98 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "defaults",
+   "input": {},
+   "output": {
+    "email": {
+     "py": "none"
+    },
+    "password": {
+     "py": "none"
+    },
+    "default_folder": "QobuzDownloads",
+    "default_quality": {
+     "py": "int",
+     "v": 6
+    },
+    "default_limit": {
+     "py": "int",
+     "v": 20
+    },
+    "no_m3u": false,
+    "albums_only": false,
+    "no_fallback": true,
+    "no_database": false,
+    "app_id": {
+     "py": "none"
+    },
+    "secrets": {
+     "py": "none"
+    },
+    "folder_format": {
+     "py": "none"
+    },
+    "fallback_folder_format": "{album_artist} - {album_title} ({year}) [{format} {bit_depth}]",
+    "track_format": {
+     "py": "none"
+    },
+    "smart_discography": false,
+    "legacy_charmap": false,
+    "no_album_artist_tag": false,
+    "no_album_title_tag": false,
+    "no_track_artist_tag": false,
+    "no_track_title_tag": false,
+    "no_release_date_tag": false,
+    "no_media_type_tag": false,
+    "no_genre_tag": false,
+    "no_track_number_tag": false,
+    "no_track_total_tag": false,
+    "no_disc_number_tag": false,
+    "no_disc_total_tag": false,
+    "no_composer_tag": false,
+    "no_conductor_tag": false,
+    "no_ensemble_tag": false,
+    "no_work_tag": false,
+    "no_explicit_tag": false,
+    "no_copyright_tag": false,
+    "no_label_tag": false,
+    "no_upc_tag": false,
+    "no_isrc_tag": false,
+    "no_replaygain_tag": false,
+    "no_album_url_tag": false,
+    "lrc_files": true,
+    "embed_lyrics": true,
+    "multi_value_tags": false,
+    "disable_smart_truncation": false,
+    "various_artists_aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ],
+    "embed_art": false,
+    "cover_og_quality": false,
+    "no_cover": false,
+    "embedded_art_size": "600",
+    "saved_art_size": "org",
+    "multiple_disc_prefix": "CD",
+    "multiple_disc_one_dir": false,
+    "multiple_disc_track_format": "{disc_number}.{track_number} - {track_title_base}",
+    "max_workers": {
+     "py": "int",
+     "v": 3
+    },
+    "user_auth_token": "",
+    "delay": {
+     "py": "int",
+     "v": 0
+    }
+   }
+  }
+ ]
+}

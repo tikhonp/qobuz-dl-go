@@ -110,3 +110,94 @@ func subtractNewer(rs []runeRange) []runeRange {
 	}
 	return out
 }
+
+// pyIsWordAt reports whether rs[i] is a word character; outside rs it is not.
+func pyIsWordAt(rs []rune, i int) bool {
+	return i >= 0 && i < len(rs) && pyIsWord(rs[i])
+}
+
+// pyBoundary is Python's Unicode \b at position i of rs.
+func pyBoundary(rs []rune, i int) bool {
+	if len(rs) == 0 {
+		return false
+	}
+	return pyIsWordAt(rs, i-1) != pyIsWordAt(rs, i)
+}
+
+// cleanSeparator is the separator class [,\.\:\;\|/\\_] of clean_filename.
+func cleanSeparator(r rune) bool {
+	return strings.ContainsRune(`,.:;|/\_`, r)
+}
+
+// spaceRun is the length of the run of Python whitespace at rs[i:].
+func spaceRun(rs []rune, i int) int {
+	n := 0
+	for i+n < len(rs) && pyIsSpace(rs[i+n]) {
+		n++
+	}
+	return n
+}
+
+// matchSeparatorRun tries \s*[,\.\:\;\|/\\_]\s* at p, both \s* greedy, and
+// returns the first end a backtracking engine would accept.
+func matchSeparatorRun(rs []rune, p int, accept func(end int) bool) (int, bool) {
+	for lead := spaceRun(rs, p); lead >= 0; lead-- {
+		q := p + lead
+		if q >= len(rs) || !cleanSeparator(rs[q]) {
+			continue
+		}
+		for trail := spaceRun(rs, q+1); trail >= 0; trail-- {
+			if end := q + 1 + trail; accept(end) {
+				return end, true
+			}
+		}
+	}
+	return 0, false
+}
+
+// subSeparatorRuns is re.sub(pattern, "", s) for a pattern of the shape
+// <before>(\s*[,\.\:\;\|/\\_]\s*)<after>, where before checks the start and
+// after the end, both against the original string as Python's sub does.
+func subSeparatorRuns(s string, before, after func(rs []rune, i int) bool) string {
+	rs := []rune(s)
+	var b strings.Builder
+	for p := 0; p < len(rs); {
+		if before(rs, p) {
+			if end, ok := matchSeparatorRun(rs, p, func(end int) bool { return after(rs, end) }); ok {
+				p = end
+				continue
+			}
+		}
+		b.WriteRune(rs[p])
+		p++
+	}
+	return b.String()
+}
+
+// Openers and closers of clean_filename's step 4.
+const (
+	cleanOpeners = `([{<《〈「『（［【`
+	cleanClosers = `】］）』」〉》>}])`
+)
+
+// subSeparatorAfterOpener is clean_filename's
+//
+//	re.sub(r'(?<=[\(\[\{<《〈「『（［【])(\s*[,\.\:\;\|/\\_]\s*)\b', '', s)
+//
+// which RE2 can't run: it has lookbehind and Unicode \b.
+func subSeparatorAfterOpener(s string) string {
+	return subSeparatorRuns(s,
+		func(rs []rune, i int) bool { return i > 0 && strings.ContainsRune(cleanOpeners, rs[i-1]) },
+		pyBoundary)
+}
+
+// subSeparatorBeforeCloser is clean_filename's
+//
+//	re.sub(r'\b(\s*[,\.\:\;\|/\\_]\s*)(?=[】］）』」〉》>\}\]\)])', '', s)
+//
+// which RE2 can't run: it has lookahead and Unicode \b.
+func subSeparatorBeforeCloser(s string) string {
+	return subSeparatorRuns(s,
+		pyBoundary,
+		func(rs []rune, i int) bool { return i < len(rs) && strings.ContainsRune(cleanClosers, rs[i]) })
+}

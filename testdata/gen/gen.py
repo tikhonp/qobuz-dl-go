@@ -28,6 +28,7 @@ import pathvalidate
 from pathvalidate import sanitize_filename, sanitize_filepath
 
 from qobuz_dl import constants, downloader, utils
+from qobuz_dl.settings import QobuzDLSettings
 from qobuz_dl.downloader import Download
 from qobuz_dl.qopy import Client
 
@@ -557,6 +558,9 @@ def gen_pathvalidate(corpus, recorded):
         "a/b", "/abs/path", "a//b", "a/./b", "a/../b", "../x", "./x", "x/", "/", "//", "C:\\x\\y",
         "C:", "C:/x", "a\\b", "CON/x", "x/NUL", "x/nul.txt", "a/ b /c", "a/b./c", "$MFT", "a/$MFT/b",
         "a/:/b", "a/*/b", "a/?/b", "dir/" + "z" * 300, "/".join(["d" * 50] * 10),
+        "\\\\server\\share\\x", "//server/share/x", "\\\\server", "\\\\?\\UNC\\s\\sh\\x",
+        "a:b/c", "::", "*:x", "\u00e9:/x", " /x", "x/ ", "a/ /b", "a/./../../b", "a/CON./b", "a/ x /b",
+        "\u00a0./x", "a/\u00a0./b", "/a/\u00a0./b", "\u2028.", "a/CON. /\u00a0./b", "a/" + "con." * 70 + "/\u00a0./b",
     ]
     for name, s in names:
         for repl in ("", "_"):
@@ -642,6 +646,173 @@ def gen_name_length(corpus):
     g.write()
 
 
+def album_dicts(index, raw):
+    """Every album dict in the fixtures, as the downloader gets them."""
+    out = []
+    items = index["items"]
+    for kind, album_id in items["albums"].items():
+        out.append((f"album/{kind}", normalize(raw[f"album-get-{album_id}.json"])))
+    track = normalize(raw[f"track-get-{items['track']}.json"])
+    out.append((f"track/{items['track']}/album", track["album"]))
+    for page_kind, file in (("playlist", f"playlist-get-{items['playlist']}-0.json"),):
+        for t in normalize(raw[file])["tracks"]["items"]:
+            out.append((f"{page_kind}/{t['id']}/album", t["album"]))
+    for page_kind, file in (("artist", f"artist-get-{items['artist']}-0.json"), ("label", f"label-get-{items['label']}-0.json")):
+        for a in normalize(raw[file])["albums"]["items"]:
+            out.append((f"{page_kind}/{a['id']}", a))
+    return out
+
+
+def gen_album_artist(index, raw):
+    g = Golden("album_artist")
+    x = {"name": "X"}
+    main = lambda name, *roles: {"name": name, "roles": ["main-artist", *roles]}
+    built = [
+        ("empty", {}),
+        ("artist only", {"artist": x}),
+        ("artists empty", {"artists": [], "artist": x}),
+        ("artists None", {"artists": None, "artist": x}),
+        ("several main artists", {"artists": [main("A"), {"name": "B", "roles": ["featured-artist"]}, main("C", "composer")], "artist": x}),
+        ("one main artist", {"artists": [main("A")], "artist": x}),
+        ("no main artist", {"artists": [{"name": "B", "roles": ["featured-artist"]}], "artist": x}),
+        ("no main artist, no artist", {"artists": [{"name": "B", "roles": ["featured-artist"]}]}),
+        ("roles missing", {"artists": [{"name": "B"}], "artist": x}),
+        ("roles a string", {"artists": [{"name": "B", "roles": "main-artist, composer"}], "artist": x}),
+        ("roles a dict", {"artists": [{"name": "B", "roles": {"main-artist": 1}}], "artist": x}),
+        ("roles None", {"artists": [{"name": "B", "roles": None}], "artist": x}),
+        ("roles a number", {"artists": [{"name": "B", "roles": 3}], "artist": x}),
+        ("artists item a string", {"artists": ["main-artist"], "artist": x}),
+        ("main artist without a name", {"artists": [main("A"), {"roles": ["main-artist"]}], "artist": x}),
+        ("main artist name None", {"artists": [{"name": None, "roles": ["main-artist"]}], "artist": x}),
+        ("main artist name a number", {"artists": [{"name": 7, "roles": ["main-artist"]}], "artist": x}),
+        ("artists a number", {"artists": 5, "artist": x}),
+        ("artists a string", {"artists": "abc", "artist": x}),
+        ("artists a dict", {"artists": {"name": "A"}, "artist": x}),
+        ("artist None", {"artist": None}),
+        ("artist None after an error", {"artists": 5, "artist": None}),
+        ("artist a string", {"artist": "X"}),
+        ("artist name None", {"artist": {"name": None}}),
+        ("artist name empty", {"artist": {"name": ""}}),
+        ("artist name a number", {"artist": {"name": 5}}),
+        ("artist name zero", {"artist": {"name": 0}}),
+        ("artist without a name", {"artist": {"id": 1}}),
+    ]
+    for name, album in built + album_dicts(index, raw):
+        g.case(name, album, lambda album=album: utils.get_album_artist(album))
+    g.write()
+
+
+def _sd_album(id, title, depth=24, rate=96.0, artist="Artist", version=None, **extra):
+    a = {"id": id, "title": title, "version": version, "maximum_bit_depth": depth,
+         "maximum_sampling_rate": rate, "artist": {"name": artist}}
+    a.update(extra)
+    return a
+
+
+def _sd_page(items, name="Artist"):
+    return {"name": name, "albums": {"items": items}}
+
+
+def smart_discography_inputs(index, raw):
+    A = _sd_album
+    items = index["items"]
+    yield "recorded artist", [normalize(raw[f"artist-get-{items['artist']}-0.json"])]
+    yield "recorded label", [normalize(raw[f"label-get-{items['label']}-0.json"])]
+    yield "grouping by essence", [_sd_page([
+        A("a1", "Kind of Blue", 16, 44.1), A("a2", "Kind of Blue (Legacy Edition)", 24, 192),
+        A("a3", "  KIND OF BLUE  ", 24, 96), A("a4", "Kind of Blue [Mono]", 24, 96),
+        A("a5", "Kind of Blues", 24, 48)])]
+    yield "leading parentheses", [_sd_page([
+        A("b1", "(What's the Story) Morning Glory?", 16, 44.1),
+        A("b2", "(What's The Story) Morning Glory? (Remastered)", 24, 96),
+        A("b3", " (a) (b) Morning Glory?", 24, 48),
+        A("b4", "(Live)", 24, 96), A("b5", "(Live", 24, 96), A("b6", "()", 24, 96), A("b7", "", 24, 96),
+        A("b8", "(x)\n(y)\nTitle", 24, 96)])]
+    yield "best depth then rate", [_sd_page([
+        A("c1", "Album", 16, 192), A("c2", "Album", 24, 44.1), A("c3", "Album", 24, 96),
+        A("c4", "Album", 24, 192), A("c5", "Album", 24, 48)])]
+    yield "first of equals", [_sd_page([A("d1", "Same", 24, 96), A("d2", "Same", 24, 96.0), A("d3", "Same", 24.0, 96)])]
+    yield "other artists dropped", [_sd_page([
+        A("e1", "Collab", 24, 96, artist="Someone Else"), A("e2", "Collab", 16, 44.1),
+        A("e3", "Solo", 24, 96, artist="artist"), A("e4", "Solo2", 24, 96)])]
+    yield "remasters preferred", [_sd_page([
+        A("f1", "Album", 24, 96), A("f2", "Album", 24, 96, version="Remastered 2011"),
+        A("f3", "Hits", 24, 96), A("f4", "Hits (Remaster)", 24, 96),
+        A("f5", "Songs", 24, 96, version="2009 Master"), A("f6", "Songs", 24, 96),
+        A("f7", "Remastered Collection", 24, 96), A("f8", "MAſTERED", 24, 96)])]
+    yield "remaster by another artist", [_sd_page([
+        A("g1", "Album", 24, 96), A("g2", "Album", 24, 96, artist="Other", version="Remastered")])]
+    yield "remaster at a lower quality", [_sd_page([
+        A("h1", "Album", 24, 192), A("h2", "Album (Remastered)", 24, 96)])]
+    yield "extras", [_sd_page([
+        A("i1", "Album (Deluxe)", 24, 96), A("i2", "Live at Montreux", 24, 96),
+        A("i3", "Songs", 24, 96, version="Collector's Edition"), A("i4", "Demos", 24, 96, version="Demo"),
+        A("i5", "Tunes", 24, 96, version="Expanded"), A("i6", "Anniversary", 24, 96),
+        A("i7", "Lıve at Abbey Road", 24, 96), A("i8", "LİVE", 24, 96), A("i9", "Oliver", 24, 96),
+        A("i10", "Delivered", 24, 96), A("i11", "Studio", 24, 96)])]
+    yield "extra and plain in a group", [_sd_page([
+        A("j1", "Album", 24, 96, version="Deluxe"), A("j2", "Album", 24, 96)])]
+    yield "version None and numbers", [_sd_page([
+        A("k1", "None", 24, 96), A("k2", "Title", 24, 96, version=0), A("k3", "Title2", 24, 96, version=2011.0)])]
+    yield "two pages", [_sd_page([A("l1", "One", 24, 96)]), _sd_page([A("l2", "Two", 24, 96), A("l3", "One", 24, 192)], name="Other")]
+    yield "empty page", [_sd_page([])]
+    yield "no pages", []
+    yield "no name", [{"albums": {"items": []}}]
+    yield "albums None", [{"name": "Artist", "albums": None}]
+    yield "items missing", [{"name": "Artist", "albums": {}}]
+    yield "item a string", [_sd_page(["x"])]
+    yield "title missing", [_sd_page([{"id": "m1", "maximum_bit_depth": 24}])]
+    yield "title a number", [_sd_page([A("n1", 5)])]
+    yield "depth missing", [_sd_page([{"id": "o1", "title": "T", "maximum_sampling_rate": 96, "artist": {"name": "Artist"}}])]
+    yield "depth None alone", [_sd_page([A("p1", "T", None, 96)])]
+    yield "depth None and int", [_sd_page([A("p2", "T", None, 96), A("p3", "T", 24, 96)])]
+    yield "depth bool", [_sd_page([A("p4", "T", True, 96), A("p5", "T", 1, 48)])]
+    yield "rate missing on a worse album", [_sd_page([A("q1", "T", 24, 96), {"id": "q2", "title": "T", "maximum_bit_depth": 16}])]
+    yield "artist missing on a best album", [_sd_page([A("r1", "T", 24, 96), {"id": "r2", "title": "T", "maximum_bit_depth": 24, "maximum_sampling_rate": 96}])]
+    yield "artist None", [_sd_page([{"id": "s1", "title": "T", "maximum_bit_depth": 24, "maximum_sampling_rate": 96, "artist": None}])]
+    yield "big ints against floats", [_sd_page([
+        A("t1", "T", 9007199254740993, 96), A("t2", "T", 9007199254740992.0, 96)])]
+    yield "requested name a number", [_sd_page([A("u1", "T", 24, 96, artist=5)], name=5.0)]
+
+
+def gen_smart_discography(index, raw):
+    g = Golden("smart_discography")
+    for name, pages in smart_discography_inputs(index, raw):
+        for save_space in (True, False):
+            for skip_extras in (True, False):
+                g.case(f"{name} save_space={save_space} skip_extras={skip_extras}",
+                       {"pages": pages, "save_space": save_space, "skip_extras": skip_extras},
+                       lambda p=pages, s=save_space, e=skip_extras: [a["id"] for a in utils.smart_discography_filter(p, save_space=s, skip_extras=e)])
+    g.write()
+
+
+def gen_release_type(index, raw):
+    g = Golden("release_type")
+    values = [None, "", "ep", "EP", "Ep", "single", "album", "compilation", "epmini", "live album",
+              "best-of", "ÉP", "ǆ", "ﬁ", "ß", "İ", 0, 5, 0.0, True, False]
+    for _, album in album_dicts(index, raw):
+        for k in ("release_type", "product_type"):
+            v = album.get(k)
+            if v is not None and v not in values:
+                values.append(v)
+    for v in values:
+        g.case(f"{type(v).__name__} {v!r}", v, lambda v=v: downloader.format_release_type(v))
+    g.write()
+
+
+def gen_settings():
+    g = Golden("settings")
+
+    def attrs():
+        out = {}
+        for k, v in vars(QobuzDLSettings()).items():
+            out[k] = sorted(v) if isinstance(v, set) else v
+        return out
+
+    g.case("defaults", {}, attrs)
+    g.write()
+
+
 def main():
     if pathvalidate.__version__ != "3.3.1":
         sys.exit(f"pathvalidate {pathvalidate.__version__}: the goldens need 3.3.1")
@@ -667,6 +838,10 @@ def main():
     gen_url_info()
     gen_normalize_json(index, raw)
     gen_name_length(corpus)
+    gen_album_artist(index, raw)
+    gen_smart_discography(index, raw)
+    gen_release_type(index, raw)
+    gen_settings()
 
 
 if __name__ == "__main__":

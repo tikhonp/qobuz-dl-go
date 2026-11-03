@@ -564,3 +564,188 @@ func isPy(err error, kinds ...pyKind) bool {
 	}
 	return slices.Contains(kinds, pe.kind)
 }
+
+// pyGetItem is v[key] with a string key: KeyError on a dict without it,
+// TypeError on anything but a dict.
+func pyGetItem(v any, key string) (any, error) {
+	switch t := v.(type) {
+	case *pyDict:
+		return t.item(key)
+	case nil, bool, int64, float64:
+		return nil, pyErr(pyTypeError, "'%s' object is not subscriptable", pyTypeName(v))
+	case string, []any:
+		return nil, pyErr(pyTypeError, "%s indices must be integers or slices, not str", pyTypeName(v))
+	}
+	return nil, pyErr(pyTypeError, "'%s' object is not subscriptable", pyTypeName(v))
+}
+
+// pyNumber returns a bool, int or float as an int64 or a float64; bools are
+// ints in Python.
+func pyNumber(v any) (i int64, f float64, isFloat, ok bool) {
+	switch t := v.(type) {
+	case bool:
+		if t {
+			return 1, 0, false, true
+		}
+		return 0, 0, false, true
+	case int64:
+		return t, 0, false, true
+	case float64:
+		return 0, t, true, true
+	}
+	return 0, 0, false, false
+}
+
+// cmpIntFloat compares an int with a float exactly, as Python does, without
+// rounding the int to a float. ok is false when f is NaN.
+func cmpIntFloat(i int64, f float64) (c int, ok bool) {
+	switch {
+	case math.IsNaN(f):
+		return 0, false
+	case f >= 0x1p63:
+		return -1, true
+	case f < -0x1p63:
+		return 1, true
+	}
+	whole := math.Trunc(f)
+	t := int64(whole)
+	switch {
+	case i < t:
+		return -1, true
+	case i > t:
+		return 1, true
+	case f > whole:
+		return -1, true
+	case f < whole:
+		return 1, true
+	}
+	return 0, true
+}
+
+// cmpNumbers compares two numbers; ok is false when either is NaN.
+func cmpNumbers(a, b any) (c int, ok bool) {
+	ai, af, aFloat, _ := pyNumber(a)
+	bi, bf, bFloat, _ := pyNumber(b)
+	switch {
+	case !aFloat && !bFloat:
+		return cmpOrdered(ai, bi), true
+	case aFloat && bFloat:
+		if math.IsNaN(af) || math.IsNaN(bf) {
+			return 0, false
+		}
+		return cmpOrdered(af, bf), true
+	case aFloat:
+		c, ok := cmpIntFloat(bi, af)
+		return -c, ok
+	}
+	return cmpIntFloat(ai, bf)
+}
+
+func cmpOrdered[T int64 | float64 | string](a, b T) int {
+	switch {
+	case a < b:
+		return -1
+	case a > b:
+		return 1
+	}
+	return 0
+}
+
+// pyEqual is a == b.
+func pyEqual(a, b any) bool {
+	if _, _, _, ok := pyNumber(a); ok {
+		if _, _, _, ok := pyNumber(b); ok {
+			c, ok := cmpNumbers(a, b)
+			return ok && c == 0
+		}
+		return false
+	}
+	switch x := a.(type) {
+	case nil:
+		return b == nil
+	case string:
+		y, ok := b.(string)
+		return ok && x == y
+	case []any:
+		y, ok := b.([]any)
+		if !ok || len(x) != len(y) {
+			return false
+		}
+		for i := range x {
+			if !pyEqual(x[i], y[i]) {
+				return false
+			}
+		}
+		return true
+	case *pyDict:
+		y, ok := b.(*pyDict)
+		if !ok || len(x.keys) != len(y.keys) {
+			return false
+		}
+		for _, k := range x.keys {
+			yv, ok := y.vals[k]
+			if !ok || !pyEqual(x.vals[k], yv) {
+				return false
+			}
+		}
+		return true
+	}
+	return false
+}
+
+// pyLess is a < b for numbers, strings and lists; other pairs are a TypeError.
+func pyLess(a, b any) (bool, error) {
+	_, _, _, aNum := pyNumber(a)
+	_, _, _, bNum := pyNumber(b)
+	switch {
+	case aNum && bNum:
+		c, ok := cmpNumbers(a, b)
+		return ok && c < 0, nil
+	case !aNum && !bNum:
+		switch x := a.(type) {
+		case string:
+			if y, ok := b.(string); ok {
+				// Byte order of UTF-8 is code point order.
+				return x < y, nil
+			}
+		case []any:
+			if y, ok := b.([]any); ok {
+				for i := 0; i < len(x) && i < len(y); i++ {
+					if !pyEqual(x[i], y[i]) {
+						return pyLess(x[i], y[i])
+					}
+				}
+				return len(x) < len(y), nil
+			}
+		}
+	}
+	return false, pyErr(pyTypeError, "'<' not supported between instances of '%s' and '%s'", pyTypeName(a), pyTypeName(b))
+}
+
+// pyMinMax is min(vals) or max(vals): the first value no other beats.
+func pyMinMax(vals []any, isMax bool) (any, error) {
+	name := "min"
+	if isMax {
+		name = "max"
+	}
+	if len(vals) == 0 {
+		return nil, pyErr(pyValueError, "%s() iterable argument is empty", name)
+	}
+	best := vals[0]
+	for _, v := range vals[1:] {
+		var beats bool
+		var err error
+		if isMax {
+			beats, err = pyLess(best, v)
+		} else {
+			beats, err = pyLess(v, best)
+		}
+		if err != nil {
+			return nil, err
+		}
+		if beats {
+			best = v
+		}
+	}
+	return best, nil
+}

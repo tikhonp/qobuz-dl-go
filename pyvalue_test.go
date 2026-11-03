@@ -278,3 +278,94 @@ func TestIsPyMatchesKindsThroughWrapping(t *testing.T) {
 		t.Errorf("message %q", got)
 	}
 }
+
+func TestPyCompareLikePython(t *testing.T) {
+	// From Python 3.14.
+	big := int64(9007199254740993)
+	eq := []struct {
+		a, b any
+		want bool
+	}{
+		{big, 9007199254740992.0, false},
+		{true, int64(1), true},
+		{int64(1), 1.0, true},
+		{int64(math.MinInt64), -0x1p63, true},
+		{math.NaN(), math.NaN(), false},
+		{nil, nil, true},
+		{"a", "a", true},
+		{"1", int64(1), false},
+		{[]any{int64(1)}, []any{1.0}, true},
+	}
+	for _, c := range eq {
+		if got := pyEqual(c.a, c.b); got != c.want {
+			t.Errorf("%s == %s: %v, want %v", pyRepr(c.a), pyRepr(c.b), got, c.want)
+		}
+	}
+	d1, d2 := newDict(), newDict()
+	d1.set("a", int64(1))
+	d1.set("b", []any{1.0})
+	d2.set("b", []any{true})
+	d2.set("a", 1.0)
+	if !pyEqual(d1, d2) {
+		t.Error("dicts with equal values in another order are equal")
+	}
+
+	less := []struct {
+		a, b any
+		want bool
+	}{
+		{9007199254740992.0, big, true},
+		{int64(math.MaxInt64), 9.223372036854775807e18, true},
+		{int64(math.MinInt64), -0x1p63, false},
+		{"é", "z", false},
+		{[]any{int64(1), int64(2)}, []any{int64(1), int64(3)}, true},
+		{[]any{int64(1)}, []any{int64(1), int64(0)}, true},
+		{0.5, int64(1), true},
+		{-0.5, int64(0), true},
+	}
+	for _, c := range less {
+		if got, err := pyLess(c.a, c.b); err != nil || got != c.want {
+			t.Errorf("%s < %s: %v, %v, want %v", pyRepr(c.a), pyRepr(c.b), got, err, c.want)
+		}
+	}
+	for _, c := range [][2]any{{nil, int64(1)}, {"a", int64(1)}} {
+		if _, err := pyLess(c[0], c[1]); !isPy(err, pyTypeError) {
+			t.Errorf("%s < %s: %v, want TypeError", pyRepr(c[0]), pyRepr(c[1]), err)
+		}
+	}
+
+	minMax := []struct {
+		vals  []any
+		isMax bool
+		want  string
+	}{
+		{[]any{int64(24), 24.0}, true, "24"},
+		{[]any{int64(1), true}, true, "1"},
+		{[]any{96.0, int64(96)}, false, "96.0"},
+		{[]any{int64(1), 2.5, int64(2)}, true, "2.5"},
+	}
+	for _, c := range minMax {
+		if got, err := pyMinMax(c.vals, c.isMax); err != nil || pyRepr(got) != c.want {
+			t.Errorf("minmax(%s, %v) = %v, %v, want %s", pyRepr(c.vals), c.isMax, got, err, c.want)
+		}
+	}
+	if _, err := pyMinMax(nil, true); !isPy(err, pyValueError) {
+		t.Errorf("max([]): %v", err)
+	}
+}
+
+func TestPyGetItem(t *testing.T) {
+	d := newDict()
+	d.set("a", "x")
+	if v, err := pyGetItem(d, "a"); v != "x" || err != nil {
+		t.Errorf("d['a'] = %v, %v", v, err)
+	}
+	if _, err := pyGetItem(d, "b"); !isPy(err, pyKeyError) {
+		t.Errorf("d['b']: %v", err)
+	}
+	for _, v := range []any{nil, "s", []any{}, int64(1)} {
+		if _, err := pyGetItem(v, "a"); !isPy(err, pyTypeError) {
+			t.Errorf("%s['a']: %v", pyRepr(v), err)
+		}
+	}
+}

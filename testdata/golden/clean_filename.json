@@ -2114,6 +2114,198 @@
    "output": "word(1)"
   },
   {
+   "name": "handpicked:132 legacy=False",
+   "input": {
+    "name": "(, Песня)",
+    "legacy_charmap": false
+   },
+   "output": "(Песня)"
+  },
+  {
+   "name": "handpicked:132 legacy=True",
+   "input": {
+    "name": "(, Песня)",
+    "legacy_charmap": true
+   },
+   "output": "(Песня)"
+  },
+  {
+   "name": "handpicked:133 legacy=False",
+   "input": {
+    "name": "(Песня ,)",
+    "legacy_charmap": false
+   },
+   "output": "(Песня)"
+  },
+  {
+   "name": "handpicked:133 legacy=True",
+   "input": {
+    "name": "(Песня ,)",
+    "legacy_charmap": true
+   },
+   "output": "(Песня)"
+  },
+  {
+   "name": "handpicked:134 legacy=False",
+   "input": {
+    "name": "【, 音楽】",
+    "legacy_charmap": false
+   },
+   "output": "【音楽】"
+  },
+  {
+   "name": "handpicked:134 legacy=True",
+   "input": {
+    "name": "【, 音楽】",
+    "legacy_charmap": true
+   },
+   "output": "【音楽】"
+  },
+  {
+   "name": "handpicked:135 legacy=False",
+   "input": {
+    "name": "［音楽 /］",
+    "legacy_charmap": false
+   },
+   "output": "［音楽］"
+  },
+  {
+   "name": "handpicked:135 legacy=True",
+   "input": {
+    "name": "［音楽 /］",
+    "legacy_charmap": true
+   },
+   "output": "［音楽］"
+  },
+  {
+   "name": "handpicked:136 legacy=False",
+   "input": {
+    "name": "(_Ελληνικά)",
+    "legacy_charmap": false
+   },
+   "output": "(_Ελληνικά)"
+  },
+  {
+   "name": "handpicked:136 legacy=True",
+   "input": {
+    "name": "(_Ελληνικά)",
+    "legacy_charmap": true
+   },
+   "output": "(_Ελληνικά)"
+  },
+  {
+   "name": "handpicked:137 legacy=False",
+   "input": {
+    "name": "(Ελληνικά_)",
+    "legacy_charmap": false
+   },
+   "output": "(Ελληνικά_)"
+  },
+  {
+   "name": "handpicked:137 legacy=True",
+   "input": {
+    "name": "(Ελληνικά_)",
+    "legacy_charmap": true
+   },
+   "output": "(Ελληνικά_)"
+  },
+  {
+   "name": "handpicked:138 legacy=False",
+   "input": {
+    "name": "(_ Ελληνικά _)",
+    "legacy_charmap": false
+   },
+   "output": "(Ελληνικά)"
+  },
+  {
+   "name": "handpicked:138 legacy=True",
+   "input": {
+    "name": "(_ Ελληνικά _)",
+    "legacy_charmap": true
+   },
+   "output": "(Ελληνικά)"
+  },
+  {
+   "name": "handpicked:139 legacy=False",
+   "input": {
+    "name": "「. 中文」",
+    "legacy_charmap": false
+   },
+   "output": "「中文」"
+  },
+  {
+   "name": "handpicked:139 legacy=True",
+   "input": {
+    "name": "「. 中文」",
+    "legacy_charmap": true
+   },
+   "output": "「中文」"
+  },
+  {
+   "name": "handpicked:140 legacy=False",
+   "input": {
+    "name": "[中文 ;]",
+    "legacy_charmap": false
+   },
+   "output": "[中文]"
+  },
+  {
+   "name": "handpicked:140 legacy=True",
+   "input": {
+    "name": "[中文 ;]",
+    "legacy_charmap": true
+   },
+   "output": "[中文]"
+  },
+  {
+   "name": "handpicked:141 legacy=False",
+   "input": {
+    "name": "Title (| Ünïcode |) x",
+    "legacy_charmap": false
+   },
+   "output": "Title (Ünïcode) x"
+  },
+  {
+   "name": "handpicked:141 legacy=True",
+   "input": {
+    "name": "Title (| Ünïcode |) x",
+    "legacy_charmap": true
+   },
+   "output": "Title (Ünïcode) x"
+  },
+  {
+   "name": "handpicked:142 legacy=False",
+   "input": {
+    "name": "(,é)",
+    "legacy_charmap": false
+   },
+   "output": "(é)"
+  },
+  {
+   "name": "handpicked:142 legacy=True",
+   "input": {
+    "name": "(,é)",
+    "legacy_charmap": true
+   },
+   "output": "(é)"
+  },
+  {
+   "name": "handpicked:143 legacy=False",
+   "input": {
+    "name": "(, ½)",
+    "legacy_charmap": false
+   },
+   "output": "(½)"
+  },
+  {
+   "name": "handpicked:143 legacy=True",
+   "input": {
+    "name": "(, ½)",
+    "legacy_charmap": true
+   },
+   "output": "(½)"
+  },
+  {
    "name": "reserved:1 legacy=False",
    "input": {
     "name": "CON",

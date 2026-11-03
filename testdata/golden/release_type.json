@@ -1,0 +1,121 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "NoneType None",
+   "input": {
+    "py": "none"
+   },
+   "output": "Unknown"
+  },
+  {
+   "name": "str ''",
+   "input": "",
+   "output": "Unknown"
+  },
+  {
+   "name": "str 'ep'",
+   "input": "ep",
+   "output": "EP"
+  },
+  {
+   "name": "str 'EP'",
+   "input": "EP",
+   "output": "EP"
+  },
+  {
+   "name": "str 'Ep'",
+   "input": "Ep",
+   "output": "EP"
+  },
+  {
+   "name": "str 'single'",
+   "input": "single",
+   "output": "Single"
+  },
+  {
+   "name": "str 'album'",
+   "input": "album",
+   "output": "Album"
+  },
+  {
+   "name": "str 'compilation'",
+   "input": "compilation",
+   "output": "Compilation"
+  },
+  {
+   "name": "str 'epmini'",
+   "input": "epmini",
+   "output": "Epmini"
+  },
+  {
+   "name": "str 'live album'",
+   "input": "live album",
+   "output": "Live Album"
+  },
+  {
+   "name": "str 'best-of'",
+   "input": "best-of",
+   "output": "Best-Of"
+  },
+  {
+   "name": "str 'ÉP'",
+   "input": "ÉP",
+   "output": "Ép"
+  },
+  {
+   "name": "str 'ǆ'",
+   "input": "ǆ",
+   "output": "ǅ"
+  },
+  {
+   "name": "str 'ﬁ'",
+   "input": "ﬁ",
+   "output": "Fi"
+  },
+  {
+   "name": "str 'ß'",
+   "input": "ß",
+   "output": "Ss"
+  },
+  {
+   "name": "str 'İ'",
+   "input": "İ",
+   "output": "İ"
+  },
+  {
+   "name": "int 0",
+   "input": {
+    "py": "int",
+    "v": 0
+   },
+   "output": "Unknown"
+  },
+  {
+   "name": "int 5",
+   "input": {
+    "py": "int",
+    "v": 5
+   },
+   "error": "AttributeError"
+  },
+  {
+   "name": "float 0.0",
+   "input": {
+    "py": "float",
+    "v": 0.0
+   },
+   "output": "Unknown"
+  },
+  {
+   "name": "bool True",
+   "input": true,
+   "error": "AttributeError"
+  },
+  {
+   "name": "bool False",
+   "input": false,
+   "output": "Unknown"
+  }
+ ]
+}
