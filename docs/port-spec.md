@@ -438,11 +438,11 @@ Album fields come from the full `album/get` for album downloads, and from the `a
 `tag_flac`:
 
 1. Then, unless switched off: `TRACKNUMBER` `str(track_number)`, default `1`; `TRACKTOTAL` `_disc_track_total`; `DISCNUMBER` `str(media_number)`, default `1`; `DISCTOTAL` `str(album.media_count)`, default `1`.
-2. For each key with a truthy value, `audio[key] = value`. mutagen removes earlier comments with that key, ignoring case, and appends the new ones at the end, one comment per list item. Comments already in the file under other keys keep their place in front.
+2. For each key with a truthy value, `audio[key] = value`. mutagen removes earlier comments with that key, ignoring case, and appends the new ones at the end, one comment per list item. Comments already in the file under other keys keep their place in front. The save fails with ValueError when a value isn't a str, such as an int ISRC.
 3. With `multi_value_tags`, a `GENRE` string containing `, ` is split into a list. Nothing else changes with the setting.
 4. With the `em_image` argument, which is `QobuzDL.embed_art`, not `settings.embed_art`: a PICTURE block, type 3, `image/jpeg`, description `cover`, from `embed_cover.jpg` in the track's folder, else in its parent; missing is silent; over 16,777,215 bytes is logged and skipped.
 5. `ENCODER`, `ENCODED-BY` and `ENCODED_BY` are removed, the vendor string emptied.
-6. Saved with 8,192 bytes of padding. The blocks come out as STREAMINFO, the others in their order, VORBIS_COMMENT, PICTURE, then one PADDING block last.
+6. Saved with 8,192 bytes of padding. The blocks keep their order in the file; a VORBIS_COMMENT block mutagen adds to a file without one goes after them, then the new PICTURE; the old PADDING blocks go, and one PADDING block comes last. An ffmpeg file comes out as STREAMINFO, VORBIS_COMMENT, PICTURE, PADDING. mutagen writes STREAMINFO back as 34 bytes and a SEEKTABLE as whole seek points, and rewrites every VORBIS_COMMENT block as it loaded it: invalid UTF-8 as U+FFFD, a comment without `=` named `unknown<i>`, non-ASCII characters of a name as `?`, comments with other invalid names dropped. An ID3v2 tag before `fLaC` stays.
 7. The temp file is renamed to the final name.
 
 `_disc_track_total(album, item)`: when `album.media_count` is above 1 and `len(album.tracks.items)` equals `album.tracks_count`, the number of those tracks with the item's `media_number`, if not zero; otherwise `album.tracks_count`, default 1. Playlist and single tracks get the album from `track/get`, without a track list, so they get `tracks_count`.
@@ -451,14 +451,16 @@ Album fields come from the full `album/get` for album downloads, and from the `a
 
 `tag_mp3`, ID3v2.3 through mutagen:
 
-1. Read the existing ID3 tag, or start an empty one.
+1. Read the existing ID3 tag, or start an empty one. mutagen translates what it reads to v2.4: TYER, TDAT and TIME become TDRC; TRDA, TSIZ, RVAD and EQUA go; numeric TCON genres are spelled out. The save doesn't translate back, and it drops unknown frames read from a v2.4 tag.
 2. The tagger takes `DATE` out. When its first 4 characters are digits, it writes `TYER`; when characters 6 and 7 and characters 9 and 10 are digits too, `TDAT` as `DDMM`.
 3. `RELEASETYPE` is taken out and added as `TXXX:MusicBrainz Album Type`, the list joined with `,`.
 4. Every other truthy key is looked up in `ID3_LEGEND` by its lower-case name, then as it is: `ALBUMARTIST` TPE2, `ALBUM` TALB, `ARTIST` TPE1, `TITLE` TIT2, `MEDIATYPE` TMED, `GENRE` TCON, `COMPOSER` TCOM, `COPYRIGHT` TCOP, `LABEL` TPUB, `ISRC` TSRC, `COMPILATION` TCMP, `CONDUCTOR` TPE3, `WORK` TIT1; TXXX with the original key as its description for `ITUNESADVISORY`, `BARCODE`, `QOBUZTRACKID`, `QOBUZALBUMID`, `QOBUZ ALBUM URL`, `REPLAYGAIN_TRACK_GAIN`, `REPLAYGAIN_TRACK_PEAK`, `ENSEMBLE`.
 5. `TRCK` is `<n>/<disc track total>` and `TPOS` `<d>/<media_count>`, each part following its setting.
 6. With `em_image`: APIC with encoding 3, `image/jpeg`, type 3 and an empty description, from the same file as for FLAC. mutagen rewrites the encoding for v2.3 as it does for text frames; the goldens show the byte.
 7. `TENC` and `TSSE` are removed.
-8. Saved as v2.3. mutagen writes text frames as UTF-16 with a BOM, since v2.3 has no UTF-8; joins list values with `/`; orders frames with its own priority list; and adds padding.
+8. Saved as v2.3. mutagen writes text frames as UTF-16 with a little-endian BOM, since v2.3 has no UTF-8, and keeps Latin-1 frames; ends each string with a terminator; joins list values with `/`; leaves out text frames with no text; orders frames with its own priority list; adds padding; and updates an ID3v1 tag if the file has one.
+
+A frame's text goes through mutagen's `MultiSpec`: a str is split on NUL, each list item goes through `str()`, and any other value is a ValueError.
 
 ## URLs, collections and search
 

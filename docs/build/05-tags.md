@@ -84,4 +84,31 @@ func flacStreamInfo(path string) (bitDepth int, sampleRate int, samples int64, e
 
 ## As built
 
-Filled in at the end of the step.
+Done on 2026-11-03. `make check` and `make lint` pass: 0 golangci-lint issues, no vulnerabilities.
+
+### Differences from the contract
+
+- `getTagsToAdd(log, album any, item *pyDict, s *Settings) (*pyDict, error)`. The tags are a `*pyDict`, the ordered dict Python builds, not `[]tag`. Values keep their Python types, None and ints included. `tag_mp3` pops `DATE` and `RELEASETYPE` from it, so `pyDict` gained `pop`. `album` is `any` because `tag_flac` passes `d.get("album", {})`, which can be None.
+- The helpers take Python values: `getTitleWithVersion(title, version any) (any, error)`, `metadataGetTitle(*pyDict) (any, error)`, `formatCopyright(any) (any, error)`, `formatGenres([]any) (string, error)` and `discTrackTotal(album any, item *pyDict)`. `releaseTypes` and `isVariousArtists` take a logger, since `get_album_artist` logs.
+- `TagFLAC`, `TagMP3`, `embedFLACImg` and `embedID3Img` take a `*slog.Logger` first.
+- The contract's FLAC order holds for ffmpeg's files only. mutagen keeps the blocks in file order: an existing VORBIS_COMMENT block stays where it is, one added to a file without it goes after the others, new PICTURE blocks after that, and the old PADDING blocks give way to one of 8,192 bytes at the end. mutagen also writes STREAMINFO back as 34 bytes and SEEKTABLE as whole seek points, and rewrites every VORBIS_COMMENT block with its load rules: invalid UTF-8 as U+FFFD, `unknown<i>` for a comment without `=`, `?` for non-ASCII characters of a name, invalid names dropped. `flac.go` does the same; `pyDecodeUTF8` ports Python's `replace` decoding. design.md and port-spec.md now say so.
+- The FLAC output is byte for byte mutagen's. `TestTagFLACGolden` compares the whole file's SHA-256, besides the blocks, comments, pictures and audio.
+- `id3v2` v2.1.4's UTF-16 writer is wrong. It uses a big-endian BOM and writes an extra zero byte after text that doesn't end in one, so the value of a TXXX frame and the data of an APIC frame start one byte late. mutagen read a TXXX value back as `'\ufe00ÿ12345'` and the cover with a leading zero byte. `metadata.go` has its own `Framer` types, `id3Text`, `id3UserText`, `id3LangText` for COMM and USLT, and `id3Picture`, which write what mutagen writes for v2.3. `adoptID3Frames` converts the frames `id3v2` read from the file to them, keeping Latin-1 and turning other encodings into UTF-16, as mutagen does. Every frame's bytes equal mutagen's; `TestTagMP3Golden` compares a hash of each raw frame besides the decoded set. Frame order and padding still differ. design.md now says so.
+- `dropEmptyID3Frames` leaves out text frames whose text is empty, as mutagen's `save_frame` does, and `id3TextValues` ports `MultiSpec`'s validation: a str splits on NUL, list items go through `str()`, any other value is a ValueError.
+- `id3v2` keys APIC frames by type and description; `id3Picture` keys them by description, as mutagen's `HashKey` does.
+- A new golden, `metadata_helpers.json`, covers `_get_title_with_version`, `_get_title`, `_format_copyright` and `_format_genres`. `release_types.json` also records `_is_various_artists`. Built cases in `tags.json` cover each tag's rules and odd value types; the fixture cases keep only the album keys the function reads.
+- `gen.py` writes five audio fixtures: `blocks.flac`, `no-comments.flac`, `id3-prefixed.flac`, `320-bare.mp3` and `320-tagged.mp3`. The README lists what each holds.
+- mutagen reads a v2.3 APIC frame whose data is all zero bytes as empty, since `EncodedTextSpec` drops an all-zero remainder as padding. The oversized covers in the goldens are `0xff` bytes for that reason.
+- Extra tests: `TestMetadataHelpersGolden`, `TestTagFailureKeepsTheFile`, `TestEmbedCoverLogs`, `TestReadFLACBlocksRefusesOtherFiles`, `TestFLACStreamInfo`, `TestParseVorbisCommentLikeMutagen`, `TestPyDecodeUTF8`.
+- UPSTREAM.md lists four new differences: existing MP3 frames are not translated to v2.4 and an ID3v1 tag isn't updated; ID3v2.2 tags fail; PICTURE and CUESHEET blocks are kept as read and block sizes trusted; FLAC tagging writes a new file and renames it.
+
+### Checks
+
+`make golden` twice gives the same files, the new fixtures included. A throwaway differential run, not committed: 6,000 random mutations of the recorded and built albums and tracks, with random settings, through `_get_tags_to_add` and `_disc_track_total`. No differences.
+
+### Notes for later steps
+
+- Step 7: `downloadAndTag` calls `TagFLAC(log, ...)` or `TagMP3(log, ...)` and treats any error as Python's `Error tagging`, which fails the track. For a single track Python passes the track as both `d` and `album`; with `isTrack` the album argument is unused and the track's own `album` is read. A failed tag leaves the temp file untouched; the downloader removes it.
+- Step 7: `TagMP3` on a FLAC prepends an ID3 tag, as mutagen does, so the delivered format must pick the tagger.
+- Step 9: `flacStreamInfo` gives the bit depth, the rate and the sample count for `make_m3u`'s `int(samples / rate)`, and `readFLACBlocks(path)` then `comments()` gives the comments as `KEY=value`. For MP3, `id3v2.Open` with `Parse: true` reads the frames this port writes correctly, since its reader handles little-endian BOMs.
+- Step 10: `compare.py` reads tags with mutagen; the frames this port writes read back the same as Python's.

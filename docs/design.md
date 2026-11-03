@@ -652,14 +652,15 @@ Files are created 0644 and folders 0755, whatever the umask leaves.
 
 ## Tagging
 
-`metadata.go` ports `getTagsToAdd` into an ordered tag list, `[]tag{key string; values []string}`, and `TagFLAC` and `TagMP3` write it. `getTagsToAdd` returns the dict as Python builds it, values still strings or lists, so the golden compares it directly.
+`metadata.go` ports `getTagsToAdd`, which returns the tags as a `*pyDict`, the ordered dict Python builds, with values still strings, lists or whatever the API held, so the golden compares it directly. `TagFLAC` and `TagMP3` write it.
 
-The user asked for the libraries, with workarounds only where they are needed. Two are:
+The user asked for the libraries, with workarounds only where they are needed. Three are:
 
-- **FLAC.** `go-flac`'s `File` reads every audio frame into memory, which for three 24/192 tracks at once is hundreds of megabytes. `flac.go` reads the `fLaC` marker and the metadata blocks itself, builds the new blocks with `flacvorbis` and `flacpicture`, and writes them, followed by the audio copied with `io.Copy`, to a sibling file that then replaces the temp file. It keeps mutagen's rules: STREAMINFO first, other blocks in order, VORBIS_COMMENT, PICTURE, one PADDING block of 8,192 bytes last; a key set again loses its old comments and goes to the end; the vendor string empty.
-- **MP3.** `id3v2` writes frames in map order, so frame order varies from run to run, and adds no padding. Neither shows in a player, so both stay. Text frames use `EncodingUTF16`, list values are joined with `/` before they reach `id3v2`, and `TXXX`, `APIC`, `TYER`, `TDAT`, `TRCK`, `TPOS` and `TCMP` are written as mutagen writes them.
+- **FLAC.** `go-flac`'s `File` reads every audio frame into memory, which for three 24/192 tracks at once is hundreds of megabytes. `flac.go` reads the `fLaC` marker and the metadata blocks itself, builds the new blocks with `flacvorbis` and `flacpicture`, and writes them, followed by the audio copied with `io.Copy`, to a sibling file that then replaces the temp file. It keeps mutagen's rules: the blocks stay in file order, a VORBIS_COMMENT block added to a file without one goes after them, new PICTURE blocks after that, the old PADDING blocks go and one of 8,192 bytes comes last; a key set again loses its old comments, ignoring case, and goes to the end; the vendor string is empty. The output is byte for byte mutagen's.
+- **MP3 order and padding.** `id3v2` writes frames in map order, so frame order varies from run to run, and adds no padding. Neither shows in a player, so both stay.
+- **MP3 frames.** `id3v2` v2.1.4 writes UTF-16 text with a big-endian BOM and an extra zero byte after it, which shifts the value of a TXXX frame and the data of an APIC frame by one byte. `metadata.go` has its own frame types for text, TXXX, COMM, USLT and APIC, which `id3v2` writes through its `Framer` interface. They write what mutagen writes for v2.3: Latin-1 kept, other encodings as UTF-16 with a little-endian BOM, a terminator after each string, list values joined with `/`. Frames read from the file are converted to them, so every frame's bytes are mutagen's.
 
-Goldens compare FLAC comments as an ordered list and MP3 frames as a set of frame ID, description, encoding and text. A golden test also checks that the audio frames come out byte for byte.
+Goldens compare FLAC files by hash, with the comments as an ordered list for readable failures, and MP3 frames as a set of frame ID, description, encoding and text, plus a hash of each raw frame. A golden test also checks that the audio frames come out byte for byte.
 
 ## downloadsdb
 

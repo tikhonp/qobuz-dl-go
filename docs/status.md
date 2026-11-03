@@ -2,9 +2,9 @@
 
 ## Now
 
-Steps 1 to 4 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` without `make_m3u`, pathvalidate's sanitizers, and the API client from `bundle.py` and `qopy.py` without the segmented branch, with the typed views.
+Steps 1 to 5 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` without `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py` without the segmented branch, with the typed views, and the taggers from `metadata.py`.
 
-Next: step 5, [tags](build/05-tags.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
+Next: step 6, [fake Qobuz](build/06-fake.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
 
 ## Steps
 
@@ -14,8 +14,8 @@ Next: step 5, [tags](build/05-tags.md). Start Claude Code in this repo and paste
 | 2 | [Python compatibility layer](build/02-pycompat.md) | done |
 | 3 | [utils, settings, errors, pathvalidate](build/03-utils.md) | done |
 | 4 | [bundle and API client](build/04-client.md) | done |
-| 5 | [tags](build/05-tags.md) | next |
-| 6 | [fake Qobuz](build/06-fake.md) | |
+| 5 | [tags](build/05-tags.md) | done |
+| 6 | [fake Qobuz](build/06-fake.md) | next |
 | 7 | [downloader, direct path](build/07-downloader.md) | |
 | 8 | [segmented path](build/08-segments.md) | |
 | 9 | [core, m3u8, downloadsdb](build/09-core.md) | |
@@ -66,3 +66,7 @@ Filled in by the parity run in step 11.
 - `sanitize_filepath` cuts each entry to 260 bytes and empties a relative path with a blank entry; design.md and port-spec.md now say so. design.md's NFC row now names `pyNFC`, since x/text's Unicode 17.0 tables give 34 new code points a combining class that Python doesn't know.
 - Step 4. `bundle.go`, `qopy.go` without the segmented branch, `catalog.go` and `transport.go`, with their tests. Four new goldens: `secrets.json`, `signatures.json`, `session_key.json`, and `request_params.json`, a transcript of 58 runs of upstream's `Client` against a recording transport that the Go client must match request by request. `gen.py` also writes a synthetic login page and bundle into `testdata/fixtures/bundle/`. Details are in [04-client.md](build/04-client.md) under As built.
 - Python 3.14's base64 decoding is lenient in ways the bundle depends on; `pyB64Decode` ports it. port-spec.md now says how, and that requests keeps `User-Agent` first and `X-App-Id` last on the wire.
+- Step 5. `metadata.go` and `flac.go` with their tests. Six new goldens: `tags.json`, `metadata_helpers.json`, `release_types.json`, `disc_track_total.json`, `flac_tagged.json` and `mp3_tagged.json`, and five audio fixtures `gen.py` builds from the ffmpeg ones. Tagged FLAC files are byte for byte mutagen's, and every MP3 frame's bytes are too. Details are in [05-tags.md](build/05-tags.md) under As built.
+- mutagen keeps FLAC blocks in file order and adds a new comment block and pictures at the end; design.md and port-spec.md had VORBIS_COMMENT and PICTURE always last. Both now follow the source, and port-spec.md also says how mutagen translates existing ID3 frames on load.
+- `id3v2` v2.1.4 writes UTF-16 TXXX values and APIC data one byte off. `metadata.go` writes those frames with its own `Framer` types through `id3v2`; design.md now says so.
+- For shelf: `docs/sources/qobuz.md` says MP3 frame order and padding differ from mutagen's. That still holds, and each frame's bytes match mutagen's. Two more differences show only on MP3s that arrive with a tag: frames mutagen translates to v2.4 on load stay as they are, and an ID3v2.2 tag fails the track. Tagged FLAC files are byte for byte Python's.

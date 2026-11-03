@@ -39,6 +39,12 @@ Each golden is `{"generator", "cases": [{"name", "input", "output"} or {"name", 
 | `url_info.json` | `get_url_info` over `strings/urls.txt`: the groups, or `AttributeError` when nothing matches |
 | `normalize_json.json` | `Client._normalize_json_strings` on built values, every recorded string it changes, and one whole album answer |
 | `name_length.json` | `downloader._shorten_utf8` over the corpus and long names at several byte limits |
+| `tags.json` | `metadata._get_tags_to_add` on every recorded track with its album, on built cases for each tag's rules and odd value types, and with each `no_*_tag` setting on |
+| `metadata_helpers.json` | `_get_title_with_version`, `_get_title`, `_format_copyright` and `_format_genres` |
+| `release_types.json` | `_release_types` and `_is_various_artists` on the recorded albums and on every mix of release type, product type and album artist |
+| `disc_track_total.json` | `_disc_track_total` on every recorded track and on built albums |
+| `flac_tagged.json` | `tag_flac` on copies of the FLAC fixtures: the blocks, the comments, the pictures and hashes of the audio and of the whole file |
+| `mp3_tagged.json` | `tag_mp3` on copies of the MP3 fixtures: the frames as mutagen reads them, a hash of each raw frame and a hash of the audio |
 
 ## Corpora
 
@@ -106,3 +112,11 @@ out += b"trailer\n<< /Size %d /Root 1 0 R >>\nstartxref\n%d\n%%%%EOF\n" % (len(o
 open("booklet.pdf", "wb").write(out)
 EOF
 ```
+
+`gen.py` writes five more on every run, built from the ones above, so the taggers meet layouts ffmpeg doesn't write:
+
+- `blocks.flac`: two PADDING blocks, an APPLICATION block, a SEEKTABLE with a cut seek point, a PICTURE, and two VORBIS_COMMENT blocks, the first with comments mutagen rewrites on load: invalid UTF-8, no `=`, an empty or invalid name, `encoder` in lower case.
+- `no-comments.flac`: STREAMINFO and PADDING only.
+- `id3-prefixed.flac`: `16-44.1-tagged.flac` behind an ID3v2.4 tag.
+- `320-bare.mp3`: `320.mp3` without its tag.
+- `320-tagged.mp3`: `320-bare.mp3` with an ID3v2.3 tag from mutagen: TENC, TSSE, a stale `TXXX:QOBUZTRACKID`, other TXXX, COMM and APIC frames that tagging keeps, in UTF-16 and Latin-1.

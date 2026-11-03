@@ -36,8 +36,8 @@ type vorbisComment struct {
 	value any
 }
 
-// flacBlock is one metadata block. VORBIS_COMMENT blocks are kept parsed and
-// written back from vendor and comments; the rest keep their body.
+// flacBlock is one metadata block. A VORBIS_COMMENT block holds its parsed
+// vendor and comments, which encode writes back; the others hold their body.
 type flacBlock struct {
 	code     goflac.BlockType
 	body     []byte
@@ -366,7 +366,7 @@ func (b *flacBlocks) metadata(padding int) ([]byte, error) {
 
 // writeTo writes src with the new metadata to dst: what came before "fLaC",
 // the marker, the blocks with padding bytes of padding, and src's audio
-// copied as it is. A failed dst is removed.
+// copied as it is. It removes dst when it fails.
 func (b *flacBlocks) writeTo(src, dst string, padding int) (err error) {
 	meta, err := b.metadata(padding)
 	if err != nil {

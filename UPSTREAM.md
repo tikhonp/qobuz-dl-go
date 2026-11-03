@@ -18,7 +18,7 @@
 | `qopy.py` | `qopy.go` | ported, but for the segmented branch of `get_track_url` |
 | `core.py` | `core.go` | planned |
 | `downloader.py` | `downloader.go` | planned |
-| `metadata.py` | `metadata.go` | planned |
+| `metadata.py` | `metadata.go`, with mutagen's FLAC blocks in `flac.go` | ported |
 | `utils.py` | `utils.go` | ported, but for `make_m3u` |
 | `settings.py` | `settings.go` | ported |
 | `constants.py` | `constants.go` | ported |
@@ -101,13 +101,17 @@ When two Python modules have private functions with the same name, the Go name g
 
 | Python | Go |
 | --- | --- |
-| `_get_title_with_version`, `_get_title` | `getTitleWithVersion`, `metadataGetTitle` |
-| `_various_artists_aliases`, `_is_various_artists`, `_release_types`, `_disc_track_total` | `variousArtistsAliases`, `isVariousArtists`, `releaseTypes`, `discTrackTotal` |
+| `_get_title_with_version`, `_get_title` | `getTitleWithVersion`, `metadataGetTitle`, on Python values |
+| `_various_artists_aliases` | `Settings.VariousArtistsAliases`, read directly |
+| `_is_various_artists`, `_release_types`, `_disc_track_total` | `isVariousArtists`, `releaseTypes`, `discTrackTotal`; the first two take the logger `get_album_artist` needs |
 | `_format_copyright`, `_format_genres` | `formatCopyright`, `formatGenres` |
-| `_embed_flac_img`, `_embed_id3_img` | `embedFLACImg`, `embedID3Img` |
-| `tag_flac`, `tag_mp3` | `TagFLAC`, `TagMP3` |
-| `_get_tags_to_add` | `getTagsToAdd` |
-| mutagen's FLAC block handling | `flac.go`, around `flacvorbis` and `flacpicture` |
+| `_embed_flac_img`, `_embed_id3_img` | `embedFLACImg`, `embedID3Img`, with a logger |
+| `tag_flac`, `tag_mp3` | `TagFLAC`, `TagMP3`, with a logger first |
+| `_get_tags_to_add` | `getTagsToAdd`, which returns a `*pyDict` |
+| the ARTIST, COMPOSER and GENRE parts of `_get_tags_to_add` | `artistTag`, `composerTag`, `genreTag` |
+| `COPYRIGHT`, `PHON_COPYRIGHT`, `FLAC_MAX_BLOCKSIZE`, `ID3_LEGEND`, `EMB_COVER_NAME`, `PRIMARY_RELEASE_TYPES`, `LOCAL_GENRE_MAP` | `copyrightSign`, `phonCopyrightSign`, `flacMaxCoverSize`, `id3Legend`, `embCoverName`, `primaryReleaseTypes`, `localGenreMap` |
+| mutagen's `FLAC` load and save, `VCFLACDict`, `Picture` | `readFLACBlocks` and the `flacBlocks` methods in `flac.go`; `flacvorbis` and `flacpicture` encode the blocks |
+| mutagen's ID3v2.3 frame writing and `MultiSpec` validation | `id3Text`, `id3UserText`, `id3LangText`, `id3Picture`, `adoptID3Frames`, `dropEmptyID3Frames` and `id3TextValues`, through `id3v2` |
 
 ### utils.py
 
@@ -143,6 +147,8 @@ These port no qobuz-dl file. They stand in for CPython 3.14 behavior the port re
 | `v[key]` on any value, `==`, `<`, `min`, `max`, `x in container` | `pyGetItem`, `pyEqual`, `pyLess`, `pyMinMax`, `pyContains` |
 | `str(e)` of an exception | `pyExceptionStr` |
 | `posixpath.normpath`, `posixpath.basename`, `ntpath.splitdrive`, `ntpath.isabs`, `os.path.expanduser` | `posixNormpath`, `posixBasename`, `ntSplitDrive`, `ntIsAbs`, `expandUser` |
+| `os.path.join`, `os.path.abspath`, `os.path.isfile` | `pyPathJoin`, `pyAbspath`, `isFile` |
+| `dict.pop`, `bytes.decode("utf-8", "replace")` | `(*pyDict).pop`, `pyDecodeUTF8` |
 
 ### settings.py, constants.py, exceptions.py, db.py
 
@@ -179,6 +185,10 @@ These port no qobuz-dl file. They stand in for CPython 3.14 behavior the port re
 | `ErrUnhandled` is returned where an uncaught Python exception would crash the process. | A library must not crash its caller. |
 | A track skipped because its file exists reports its format, read from the file. | shelf records the delivered format for every file. |
 | MP3 frame order and ID3 padding differ from mutagen's. | `id3v2` writes frames in map order and adds no padding; players show neither. |
+| Frames already in an MP3 stay as they are. mutagen translates them to v2.4 on load and saves them so: TYER, TDAT and TIME become TDRC, TRDA, TSIZ, RVAD and EQUA go, numeric TCON genres are spelled out, and unknown frames from a v2.4 tag go. An ID3v1 tag stays as it is, where mutagen updates it. | `id3v2` reads frames as they are. It shows only on MP3s that come with such frames. |
+| An MP3 with an ID3v2.2 tag, or a frame `id3v2` can't parse, fails to tag. mutagen reads both. | `id3v2` refuses them. |
+| PICTURE, CUESHEET and APPLICATION blocks are written back as they were read, and every block's stated size is trusted. mutagen re-encodes PICTURE and CUESHEET blocks and reads VORBIS_COMMENT and PICTURE blocks by their content. | The bytes are the same for well-formed blocks. |
+| A FLAC is tagged into a new file beside the temp file, which then replaces it; mutagen rewrites the file in place. | A failed tagging leaves the temp file as it was. |
 | `cfg_setup` logs a warning when no secret works. | Python silently uses the first, and later calls fail without a clue. |
 | `GetPlaylistMeta`, `GetArtistMeta` and `GetLabelMeta` return `ErrEmptyContent` when the first page has no items. | `multi_meta` yields nothing then, so there is no page to build the view from. |
 | `TrackURL.Raw` also drops `blob` and `raw_key`. | `blob` is a signed token and `raw_key` the track key. |
