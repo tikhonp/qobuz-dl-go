@@ -24,7 +24,7 @@ testdata/gen/.venv/bin/pip install -r testdata/gen/requirements.txt
 
 `make golden` runs `gen.py`. Running it twice gives the same files byte for byte, and a diff after a run is either a bug or an upstream change.
 
-Each golden is `{"generator", "cases": [{"name", "input", "output"} or {"name", "input", "error"}]}`, where `error` is the Python exception class name. JSON can't tell `96` from `96.0`, so every int, float and None is tagged: `{"py": "int", "v": 96}`, `{"py": "float", "v": 96.0}`, `{"py": "float", "v": "inf"}`, `{"py": "none"}`. Strings, booleans, lists and objects are plain JSON. `golden_test.go` loads them.
+Each golden is `{"generator", "cases": [{"name", "input", "output"} or {"name", "input", "error"}]}`, where `error` is the Python exception class name. JSON can't tell `96` from `96.0`, so `gen.py` tags every int, float and None: `{"py": "int", "v": 96}`, `{"py": "float", "v": 96.0}`, `{"py": "float", "v": "inf"}`, `{"py": "none"}`. Strings, booleans, lists and objects are plain JSON. `golden_test.go` loads them.
 
 | File | Cases |
 | --- | --- |
@@ -58,14 +58,14 @@ The repo is public, so `record.py` cleans the answers:
 
 - `url` and `url_template` in `track/getFileUrl` answers become `{{CDN}}/file/<track id>/<requested format id>`, and the fake Qobuz rewrites `{{CDN}}` at serve time.
 - The signed `blob` in those answers becomes `{{BLOB}}`. Upstream never reads it.
-- `user/get` is never saved.
+- It never saves `user/get`.
 - A file that still contains the token or an app secret stops the run before it is written.
 
 The IDs are in `ITEMS` in `record.py` and in `docs/status.md` under Fixture items. To choose new ones, run `record.py --search`, which prints candidates and saves nothing.
 
 ## Audio and image fixtures
 
-`testdata/fixtures/audio/` was made once with ffmpeg 9.0.2 and committed:
+ffmpeg 9.0.2 made the files in `testdata/fixtures/audio/` once, with these commands:
 
 ```sh
 cd testdata/fixtures/audio
@@ -87,7 +87,7 @@ ffmpeg -y -f lavfi -i "$(sine 44100)" -ac 2 -c:a libmp3lame -b:a 320k -id3v2_ver
 ffmpeg -y -f lavfi -i "color=c=red:s=1x1" -frames:v 1 -update 1 -fflags +bitexact -flags +bitexact cover.jpg
 ```
 
-`booklet.pdf` is a one-page PDF with no content, written by this script in the same folder:
+This script, run in the same folder, writes `booklet.pdf`, a one-page PDF with no content:
 
 ```sh
 ../../gen/.venv/bin/python -I - <<'EOF'

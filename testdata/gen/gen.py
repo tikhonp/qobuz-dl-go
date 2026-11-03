@@ -9,10 +9,9 @@ output is reproducible byte for byte.
 
 Each golden is {"generator": ..., "cases": [{"name", "input", "output"} or
 {"name", "input", "error"}]}, where error is the Python exception class name.
-Values whose Python type matters are tagged, because JSON loses it:
-{"py": "int", "v": 96}, {"py": "float", "v": 96.0}, {"py": "none"}. Every
-int, float and None in a golden is tagged, so the Go loader can refuse a
-plain JSON number or null.
+JSON can't tell 96 from 96.0, so every int, float and None gets a tag:
+{"py": "int", "v": 96}, {"py": "float", "v": 96.0}, {"py": "none"}. The Go
+loader refuses a plain JSON number or null as a generator bug.
 """
 
 import json

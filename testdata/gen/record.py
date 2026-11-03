@@ -3,15 +3,15 @@
     QOBUZ_TOKEN=... testdata/gen/.venv/bin/python -I testdata/gen/record.py [--search]
 
 The answers come through qobuz-dl 2.5.9's own Client, so the requests are the
-ones production sends. The raw response bodies are saved, before
-_normalize_json_strings runs, because the Go client normalizes them itself.
+ones production sends. It saves the raw response bodies, from before
+_normalize_json_strings, because the Go client normalizes them itself.
 
 --search prints candidates for each fixture kind and records nothing; the
 chosen IDs go into ITEMS below and into docs/status.md under Fixture items.
 
-The repo is public, so the answers are cleaned: signed CDN URLs become
+The repo is public, so record.py cleans the answers: signed CDN URLs become
 {{CDN}}/file/<track id>/<format id>, the signed blob of a getFileUrl answer
-becomes {{BLOB}}, user/get is never saved, and a file that still contains the
+becomes {{BLOB}}, it never saves user/get, and a file that still contains the
 token or an app secret aborts the run.
 """
 
