@@ -13,6 +13,7 @@ type switches struct {
 	empty       map[string]bool
 	restrict    map[trackFormat]bool
 	deliver     map[string]int
+	segmented   map[string]bool
 	expired     bool
 	staticDown  bool
 }
@@ -34,6 +35,7 @@ func newSwitches() switches {
 		empty:       map[string]bool{},
 		restrict:    map[trackFormat]bool{},
 		deliver:     map[string]int{},
+		segmented:   map[string]bool{},
 	}
 }
 
@@ -69,16 +71,16 @@ func (s *Server) IgnoreRange(trackID string) {
 	s.sw.ignoreRange[trackID] = true
 }
 
-// Sample makes getFileUrl for the track at that format add "sample": true,
-// as Qobuz answers with a 30-second preview.
+// Sample makes getFileUrl and file/url for the track at that format add
+// "sample": true, as Qobuz answers with a 30-second preview.
 func (s *Server) Sample(trackID string, fmtID int) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	s.sw.sample[trackFormat{trackID, fmtID}] = true
 }
 
-// EmptyAnswer makes getFileUrl answer {} for the track at every format, as
-// Qobuz does for a demo.
+// EmptyAnswer makes getFileUrl and file/url answer {} for the track at
+// every format, as Qobuz does for a demo.
 func (s *Server) EmptyAnswer(trackID string) {
 	s.mu.Lock()
 	defer s.mu.Unlock()

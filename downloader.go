@@ -1,12 +1,15 @@
 // Ports qobuz_dl/downloader.py from qobuz-dl 2.5.9: Download, the naming
-// helpers, the extras and the direct transfer. The segmented transfer comes
-// with step 8; lyrics, booklet-only downloads, filter_label and
-// playlist_as_albums are not ported.
+// helpers, the extras and both transfers. Lyrics, booklet-only downloads,
+// filter_label and playlist_as_albums are not ported.
 
 package qobuzdl
 
 import (
+	"bytes"
 	"context"
+	"crypto/aes"
+	"crypto/cipher"
+	"encoding/binary"
 	"errors"
 	"fmt"
 	"io"
@@ -14,11 +17,13 @@ import (
 	"net/http"
 	"net/http/httptrace"
 	"os"
+	"os/exec"
 	"regexp"
 	"slices"
 	"strconv"
 	"strings"
 	"sync"
+	"sync/atomic"
 	"syscall"
 	"time"
 )
@@ -1074,6 +1079,7 @@ func (d *download) tryTier(ctx context.Context, track *pyDict, fmtID int, filena
 	}
 	if answer.has("url_template") {
 		d.progress.TrackStart(TrackInfo{Position: pos, ID: pyStr(id), Title: title, FormatID: fmtID, Segmented: true})
+		d.info("[+] In progress: " + desc)
 		meter := newByteMeter(d.progress, pos)
 		err := d.transferSegments(ctx, answer, filename, meter.update)
 		meter.finish()
@@ -1081,14 +1087,10 @@ func (d *download) tryTier(ctx context.Context, track *pyDict, fmtID int, filena
 			d.log.Debug("tier failed", "track", pyStr(id), "format", fmtID, "error", err)
 			return answer, false
 		}
+		d.info("  L Completed: " + desc)
 		return answer, true
 	}
 	return answer, false
-}
-
-// transferSegments is tqdm_download_segments, which step 8 ports.
-func (d *download) transferSegments(_ context.Context, _ *pyDict, _ string, _ func(done, total int64)) error {
-	return errSegmentedNotPorted
 }
 
 // existingFormat fills a skipped track's format from its file: STREAMINFO
@@ -2119,6 +2121,7 @@ func transferError(ctx, attemptCtx context.Context, err error) error {
 // attempt with a timeoutError as the cause.
 type transferTimers struct {
 	cancel           context.CancelCauseFunc
+	op               string
 	connect, idleFor time.Duration
 
 	mu          sync.Mutex
@@ -2131,6 +2134,7 @@ func newTransferTimers(cancel context.CancelCauseFunc, t Timeouts) *transferTime
 	def := DefaultTimeouts()
 	return &transferTimers{
 		cancel:  cancel,
+		op:      "transfer",
 		connect: cmpDuration(t.Connect, def.Connect),
 		idleFor: cmpDuration(t.Idle, def.Idle),
 	}
@@ -2163,7 +2167,7 @@ func (tt *transferTimers) startConnect() {
 	}
 	if tt.connTimer == nil {
 		tt.connTimer = time.AfterFunc(tt.connect, func() {
-			tt.cancel(&timeoutError{op: "transfer: connect", after: tt.connect})
+			tt.cancel(&timeoutError{op: tt.op + ": connect", after: tt.connect})
 		})
 		return
 	}
@@ -2183,7 +2187,7 @@ func (tt *transferTimers) startIdle() {
 	}
 	if tt.idleTimer == nil {
 		tt.idleTimer = time.AfterFunc(tt.idleFor, func() {
-			tt.cancel(&timeoutError{op: "transfer: read", after: tt.idleFor})
+			tt.cancel(&timeoutError{op: tt.op + ": read", after: tt.idleFor})
 		})
 		return
 	}
@@ -2211,6 +2215,425 @@ type idleReader struct {
 func (r *idleReader) Read(p []byte) (int, error) {
 	r.timers.startIdle()
 	return r.r.Read(p)
+}
+
+// The segmented transfer.
+
+// segmentWorkers is the pool tqdm_download_segments uses for the sizes and
+// for segments 2 on.
+const segmentWorkers = 8
+
+// segmentsAhead bounds the segments fetched but not yet written. Python
+// submits them all at once; the bound keeps a long track's memory flat.
+const segmentsAhead = 2 * segmentWorkers
+
+// stderrMax is how much of ffmpeg's stderr a remux error keeps.
+const stderrMax = 500
+
+// transferSegments is tqdm_download_segments: the segment sizes by HEAD for
+// the progress total, segments 0 and 1 in order, the UUID from segment 1,
+// the rest with 8 workers written in order, every segment decrypted into
+// <fname>.mp4, then ffmpeg remuxes that into fname. The .mp4 goes in every
+// case. There are no retries on this path.
+func (d *download) transferSegments(ctx context.Context, answer *pyDict, fname string, onBytes func(done, total int64)) error {
+	if ctx.Err() != nil {
+		return stopped(ctx)
+	}
+	if onBytes == nil {
+		onBytes = func(int64, int64) {}
+	}
+	tmp := fname + ".mp4"
+	nValue, err := answer.item("n_segments")
+	if err != nil {
+		return err
+	}
+	n, ok := segmentCount(nValue)
+	if !ok {
+		return pyErr(pyTypeError, "can only concatenate %s (not \"int\") to %s", pyTypeName(nValue), pyTypeName(nValue))
+	}
+	tmplValue, err := answer.item("url_template")
+	if err != nil {
+		return err
+	}
+	tmpl, ok := tmplValue.(string)
+	if !ok {
+		return pyErr(pyAttributeError, "'%s' object has no attribute 'replace'", pyTypeName(tmplValue))
+	}
+	keyValue, err := answer.item("raw_key")
+	if err != nil {
+		return err
+	}
+	rawKey, ok := keyValue.([]byte)
+	if !ok {
+		return pyErr(pyTypeError, "a bytes-like object is required, not '%s'", pyTypeName(keyValue))
+	}
+	urlOf := func(i int64) string { return strings.ReplaceAll(tmpl, "$SEGMENT$", strconv.FormatInt(i, 10)) }
+
+	total := d.segmentSizes(ctx, urlOf, n)
+	if ctx.Err() != nil {
+		return stopped(ctx)
+	}
+	var mu sync.Mutex
+	var done int64
+	// The workers report from several goroutines; one lock keeps the
+	// counts rising.
+	add := func(k int) {
+		mu.Lock()
+		done += int64(k)
+		onBytes(done, total)
+		mu.Unlock()
+	}
+
+	defer removeFile(tmp)
+	f, err := openFile(tmp, os.O_WRONLY|os.O_CREATE|os.O_TRUNC)
+	if err != nil {
+		return err
+	}
+	err = d.writeSegments(ctx, f, urlOf, n, rawKey, fname, add)
+	if cerr := f.Close(); err == nil {
+		err = cerr
+	}
+	if err != nil {
+		return err
+	}
+	d.info("  > Assembling the final FLAC file...")
+	return d.remux(ctx, tmp, fname)
+}
+
+// segmentCount is n_segments as range() takes it: an int, or a bool.
+func segmentCount(v any) (int64, bool) {
+	i, _, isFloat, ok := pyNumber(v)
+	return i, ok && !isFloat
+}
+
+// writeSegments fetches, decrypts and writes segments 0 to n in order.
+func (d *download) writeSegments(ctx context.Context, f *os.File, urlOf func(int64) string, n int64, rawKey []byte,
+	fname string, add func(int)) error {
+	var uuid []byte
+	for i := range int64(2) {
+		seg, err := d.fetchSegment(ctx, urlOf(i), add)
+		if err != nil {
+			return err
+		}
+		if i == 1 {
+			if uuid = qobuzSegmentUUID(seg); uuid == nil {
+				return fmt.Errorf("qobuzdl: Cannot find segment UUID for %s", fname)
+			}
+		}
+		// Segment 0 goes out as it came: its UUID isn't known yet.
+		plain, err := decryptQobuzSegment(seg, rawKey, uuid)
+		if err != nil {
+			return err
+		}
+		if _, err := f.Write(plain); err != nil {
+			return err
+		}
+	}
+	if n < 2 {
+		return nil
+	}
+
+	type result struct {
+		data []byte
+		err  error
+	}
+	var wg sync.WaitGroup
+	poolCtx, cancel := context.WithCancel(ctx)
+	// Deferred calls run last first: the workers are told to stop, then
+	// awaited.
+	defer wg.Wait()
+	defer cancel()
+	slots := make(chan struct{}, segmentWorkers)
+	order := make(chan chan result, segmentsAhead)
+	wg.Go(func() {
+		defer close(order)
+		for i := int64(2); i <= n; i++ {
+			select {
+			case slots <- struct{}{}:
+			case <-poolCtx.Done():
+				return
+			}
+			ch := make(chan result, 1)
+			select {
+			case order <- ch:
+			case <-poolCtx.Done():
+				<-slots
+				return
+			}
+			wg.Go(func() {
+				defer func() { <-slots }()
+				data, err := d.fetchSegment(poolCtx, urlOf(i), add)
+				ch <- result{data, err}
+			})
+		}
+	})
+	for ch := range order {
+		r := <-ch
+		if r.err != nil {
+			// Python lets the queued segments finish before it raises;
+			// they would be thrown away, so they stop here.
+			cancel()
+			if ctx.Err() != nil {
+				return stopped(ctx)
+			}
+			return r.err
+		}
+		plain, err := decryptQobuzSegment(r.data, rawKey, uuid)
+		if err == nil {
+			_, err = f.Write(plain)
+		}
+		if err != nil {
+			cancel()
+			return err
+		}
+	}
+	if ctx.Err() != nil {
+		return stopped(ctx)
+	}
+	return nil
+}
+
+// segmentSizes sums the Content-Length of a HEAD for segments 0 to n, 8 at
+// a time. Any failure counts as 0, as in Python; the sum only feeds the
+// progress total.
+func (d *download) segmentSizes(ctx context.Context, urlOf func(int64) string, n int64) int64 {
+	// requests.head doesn't follow redirects.
+	hc := *d.opts.HTTPClient
+	hc.CheckRedirect = func(*http.Request, []*http.Request) error { return http.ErrUseLastResponse }
+	timeout := cmpDuration(d.opts.Timeouts.SegmentHead, DefaultTimeouts().SegmentHead)
+	var next, total atomic.Int64
+	var wg sync.WaitGroup
+	for range segmentWorkers {
+		wg.Go(func() {
+			for {
+				i := next.Add(1) - 1
+				if i > n || ctx.Err() != nil {
+					return
+				}
+				total.Add(headSize(ctx, &hc, urlOf(i), timeout))
+			}
+		})
+	}
+	wg.Wait()
+	return total.Load()
+}
+
+func headSize(ctx context.Context, hc *http.Client, url string, timeout time.Duration) int64 {
+	ctx, cancel := context.WithTimeout(ctx, timeout)
+	defer cancel()
+	req, err := http.NewRequestWithContext(ctx, http.MethodHead, url, nil)
+	if err != nil {
+		return 0
+	}
+	setRequestsHeaders(req)
+	resp, err := hc.Do(req)
+	if err != nil {
+		return 0
+	}
+	_ = resp.Body.Close()
+	// Python reads the header whatever the status.
+	cl := resp.Header.Get("Content-Length")
+	if cl == "" {
+		return 0
+	}
+	v, err := parsePyInt(cl)
+	if err != nil {
+		return 0
+	}
+	return v
+}
+
+// setRequestsHeaders sets what a plain requests call sends; Go's transport
+// adds the rest.
+func setRequestsHeaders(req *http.Request) {
+	req.Header.Set("User-Agent", "python-requests/2.34.2")
+	req.Header.Set("Accept", "*/*")
+}
+
+// fetchSegment is fetch_segment_fluid: one GET with timeout=15, an HTTP
+// error status raised, the body read in 64 KiB chunks.
+func (d *download) fetchSegment(ctx context.Context, url string, add func(int)) ([]byte, error) {
+	if ctx.Err() != nil {
+		return nil, stopped(ctx)
+	}
+	attemptCtx, cancel := context.WithCancelCause(ctx)
+	defer cancel(nil)
+	limit := cmpDuration(d.opts.Timeouts.Segment, DefaultTimeouts().Segment)
+	timers := newTransferTimers(cancel, Timeouts{Connect: limit, Idle: limit})
+	timers.op = "segment"
+	defer timers.stop()
+
+	d.log.Debug("segment", "url", redactURL(url))
+	req, err := http.NewRequestWithContext(httptrace.WithClientTrace(attemptCtx, timers.trace()), http.MethodGet, url, nil)
+	if err != nil {
+		return nil, &requestError{op: "segment", err: errors.New("invalid URL")}
+	}
+	setRequestsHeaders(req)
+	resp, err := d.opts.HTTPClient.Do(req)
+	if err != nil {
+		return nil, transferError(ctx, attemptCtx, err)
+	}
+	defer func() { _ = resp.Body.Close() }()
+	timers.startIdle()
+	if resp.StatusCode >= 400 && resp.StatusCode < 600 {
+		return nil, fmt.Errorf("qobuzdl: segment: HTTP %d", resp.StatusCode)
+	}
+	var seg []byte
+	body := &idleReader{r: resp.Body, timers: timers}
+	buf := make([]byte, transferChunk)
+	for {
+		n, err := readChunk(body, buf)
+		if err != nil && !errors.Is(err, io.EOF) {
+			return nil, transferError(ctx, attemptCtx, err)
+		}
+		if ctx.Err() != nil {
+			return nil, stopped(ctx)
+		}
+		seg = append(seg, buf[:n]...)
+		if n > 0 {
+			add(n)
+		}
+		if err != nil {
+			return seg, nil
+		}
+	}
+}
+
+// remux runs ffmpeg as Python does. A missing ffmpeg fails like a failed
+// remux, and cancelling the context kills it.
+func (d *download) remux(ctx context.Context, src, dst string) error {
+	ffmpeg := cmpOr(d.opts.FFmpegPath, "ffmpeg")
+	cmd := exec.CommandContext(ctx, ffmpeg, "-nostdin", "-v", "error", "-y", "-i", src, "-c:a", "copy", "-f", "flac", dst)
+	stderr := &cappedBuffer{max: stderrMax}
+	cmd.Stderr = stderr
+	if err := cmd.Run(); err != nil {
+		if ctx.Err() != nil {
+			return stopped(ctx)
+		}
+		msg := strings.TrimSpace(shortenUTF8(stderr.String(), stderrMax))
+		return fmt.Errorf("qobuzdl: FFmpeg remux failed for %s: %w: %s", posixBasename(dst), err, msg)
+	}
+	// ffmpeg creates the file with the umask's mode.
+	return os.Chmod(dst, 0o644)
+}
+
+// cappedBuffer keeps the first max bytes written to it and drops the rest,
+// so a chatty process can't fill memory.
+type cappedBuffer struct {
+	max int
+	b   bytes.Buffer
+}
+
+func (c *cappedBuffer) Write(p []byte) (int, error) {
+	if room := c.max - c.b.Len(); room > 0 {
+		c.b.Write(p[:min(room, len(p))])
+	}
+	return len(p), nil
+}
+
+func (c *cappedBuffer) String() string { return c.b.String() }
+
+// qobuzSegmentUUID is _get_qobuz_segment_uuid: the usertype of the first
+// top-level uuid box, or nil. A box size of 0 or one past the end stops the
+// walk.
+func qobuzSegmentUUID(seg []byte) []byte {
+	pos := 0
+	for pos+24 <= len(seg) {
+		size := int(binary.BigEndian.Uint32(seg[pos : pos+4]))
+		if size <= 0 || pos+size > len(seg) {
+			break
+		}
+		if string(seg[pos+4:pos+8]) == "uuid" {
+			return bytes.Clone(seg[pos+8 : pos+24])
+		}
+		pos += size
+	}
+	return nil
+}
+
+// decryptQobuzSegment is _decrypt_qobuz_segment. In each top-level uuid box
+// whose usertype is uuid, a frame table gives each frame's length, flags
+// and counter; a flagged frame is decrypted with AES-CTR under rawKey and
+// the counter padded with zeros to 16 bytes. The frames run from an offset
+// past the box's start, so they may sit outside it, and the work is done in
+// place over a copy of the whole segment, as Python's bytearray is: a frame
+// that overlaps the table changes the entries read after it. Reads past the
+// end give fewer bytes, as Python's slices do; a nil uuid returns the
+// segment unchanged.
+func decryptQobuzSegment(seg, rawKey, uuid []byte) ([]byte, error) {
+	buf := bytes.Clone(seg)
+	if buf == nil {
+		buf = []byte{}
+	}
+	if uuid == nil {
+		return buf, nil
+	}
+	var block cipher.Block
+	pos := 0
+	for pos+8 <= len(buf) {
+		size := int(binary.BigEndian.Uint32(buf[pos : pos+4]))
+		if size <= 0 || pos+size > len(buf) {
+			break
+		}
+		if string(buf[pos+4:pos+8]) == "uuid" && bytes.Equal(byteSlice(buf, pos+8, pos+24), uuid) {
+			p := pos + 28
+			dataEnd := pos + int(beUint(byteSlice(buf, p, p+4)))
+			p += 4
+			if p >= len(buf) {
+				return nil, pyErr(pyIndexError, "bytearray index out of range")
+			}
+			counterLen := int(buf[p])
+			p++
+			frameCount := beUint(byteSlice(buf, p, p+3))
+			p += 3
+			for range frameCount {
+				if p >= len(buf) {
+					// Every later entry reads as zeros: no length, no flags.
+					break
+				}
+				frameLen := int(beUint(byteSlice(buf, p, p+4)))
+				p += 6
+				flags := beUint(byteSlice(buf, p, p+2))
+				p += 2
+				start := dataEnd
+				dataEnd += frameLen
+				if flags != 0 {
+					counter := append(bytes.Clone(byteSlice(buf, p, p+counterLen)), make([]byte, max(16-counterLen, 0))...)
+					if block == nil {
+						b, err := aes.NewCipher(rawKey)
+						if err != nil {
+							return nil, pyErr(pyValueError, "Invalid key size (%d) for AES.", len(rawKey)*8)
+						}
+						block = b
+					}
+					if len(counter) != aes.BlockSize {
+						return nil, pyErr(pyValueError, "Invalid nonce size (%d) for CTR.", len(counter))
+					}
+					frame := byteSlice(buf, start, dataEnd)
+					cipher.NewCTR(block, counter).XORKeyStream(frame, frame)
+				}
+				p += counterLen
+			}
+		}
+		pos += size
+	}
+	return buf, nil
+}
+
+// byteSlice is b[start:end] with Python's clamping, for start >= 0.
+func byteSlice(b []byte, start, end int) []byte {
+	start = min(start, len(b))
+	end = min(max(end, start), len(b))
+	return b[start:end]
+}
+
+// beUint is int.from_bytes(b, "big") for up to 8 bytes.
+func beUint(b []byte) uint64 {
+	var v uint64
+	for _, c := range b {
+		v = v<<8 | uint64(c)
+	}
+	return v
 }
 
 // Python's os.path functions on POSIX paths.

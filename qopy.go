@@ -1,6 +1,6 @@
 // Ports qobuz_dl/qopy.py from qobuz-dl 2.5.9: the Qobuz API client. The
-// segmented branch of get_track_url comes with step 8. The port leaves out
-// the Last.fm matcher, favorites, lyrics and user/login, which nothing ported calls.
+// port leaves out the Last.fm matcher, favorites, lyrics and user/login,
+// which nothing ported calls.
 
 package qobuzdl
 
@@ -50,8 +50,9 @@ type ClientOptions struct {
 }
 
 // Client is the Qobuz API client. It is safe for concurrent use: NewClient
-// sets everything but the segmented session, which mu guards. Step 8 adds
-// the session's infos and key next to sessionID.
+// sets everything but the segmented session, which mu guards. sessionMu
+// makes concurrent tracks start one session, where Python races; it is
+// separate from mu because the session/start call reads the headers.
 type Client struct {
 	hc           *http.Client
 	log          *slog.Logger
@@ -65,8 +66,11 @@ type Client struct {
 	label        any
 	userID       any
 
-	mu        sync.Mutex
-	sessionID string
+	sessionMu    sync.Mutex
+	mu           sync.Mutex
+	sessionID    string
+	sessionInfos string
+	sessionKey   []byte
 }
 
 // kv is one keyword argument or query parameter. A slice of them keeps
@@ -703,12 +707,11 @@ func (c *Client) trackMeta(ctx context.Context, id string) (*pyDict, error) {
 	return c.apiCall(ctx, "track/get", []kv{{"id", id}})
 }
 
-// errSegmentedNotPorted stands in for the segmented branch until step 8.
-var errSegmentedNotPorted = errors.New("qobuzdl: the segmented path is not ported yet")
-
 // getTrackURL ports get_track_url. Format 5 returns getFileUrl's answer
 // whatever it is. Other formats return it when it has a url; any failure
-// there goes on to the segmented path, as in Python.
+// there goes on to the segmented path, as in Python: the web player's
+// session, then file/url, with bits_depth copied to bit_depth, the rate in
+// kHz and the track key unwrapped into raw_key.
 func (c *Client) getTrackURL(ctx context.Context, id string, fmtID int, force bool) (*pyDict, error) {
 	kw := []kv{{"id", id}, {"fmt_id", int64(fmtID)}}
 	if fmtID == 5 {
@@ -724,7 +727,100 @@ func (c *Client) getTrackURL(ctx context.Context, id string, fmtID int, force bo
 			return nil, err
 		}
 	}
-	return nil, fmt.Errorf("%w: track %s at format %d", errSegmentedNotPorted, id, fmtID)
+
+	if err := c.startSession(ctx); err != nil {
+		return nil, err
+	}
+	track, err := c.apiCall(ctx, "file/url", kw)
+	if err != nil {
+		return nil, err
+	}
+	if track.has("bits_depth") && !track.has("bit_depth") {
+		track.set("bit_depth", track.get("bits_depth", nil))
+	}
+	rate := track.get("sampling_rate", int64(0))
+	above, err := pyGreater(rate, int64(1000))
+	if err != nil {
+		return nil, err
+	}
+	if above {
+		track.set("sampling_rate", pyTrueDiv(rate, 1000))
+	}
+	if track.has("key") {
+		key, ok := track.get("key", nil).(string)
+		if !ok {
+			return nil, pyErr(pyAttributeError, "'%s' object has no attribute 'split'", pyTypeName(track.get("key", nil)))
+		}
+		c.mu.Lock()
+		sessionKey := c.sessionKey
+		c.mu.Unlock()
+		raw, err := unwrapTrackKey(sessionKey, key)
+		if err != nil {
+			return nil, err
+		}
+		track.set("raw_key", raw)
+	}
+	return track, nil
+}
+
+// pyGreater is a > b for the numbers and strings JSON gives.
+func pyGreater(a, b any) (bool, error) {
+	_, _, _, aNum := pyNumber(a)
+	_, _, _, bNum := pyNumber(b)
+	if aNum && bNum {
+		return pyLess(b, a)
+	}
+	return false, pyErr(pyTypeError, "'>' not supported between instances of '%s' and '%s'", pyTypeName(a), pyTypeName(b))
+}
+
+// pyTrueDiv is a / n for an int or float a, which is always a float.
+func pyTrueDiv(a any, n int64) float64 {
+	i, f, isFloat, _ := pyNumber(a)
+	if isFloat {
+		return f / float64(n)
+	}
+	return float64(i) / float64(n)
+}
+
+// startSession is get_track_url's session setup: session/start once per
+// client, then the session key from the secret and the answer's infos, and
+// X-Session-Id on every later call. Python sets each field as it goes, so
+// a failure there leaves a half-made session; here the session exists
+// whole or not at all, and the next track tries again.
+func (c *Client) startSession(ctx context.Context) error {
+	c.sessionMu.Lock()
+	defer c.sessionMu.Unlock()
+	c.mu.Lock()
+	started := c.sessionID != ""
+	c.mu.Unlock()
+	if started {
+		return nil
+	}
+	session, err := c.apiCall(ctx, "session/start", nil)
+	if err != nil {
+		return err
+	}
+	id, err := session.item("session_id")
+	if err != nil {
+		return err
+	}
+	infosValue, err := session.item("infos")
+	if err != nil {
+		return err
+	}
+	infos, ok := infosValue.(string)
+	if !ok {
+		return pyErr(pyAttributeError, "'%s' object has no attribute 'split'", pyTypeName(infosValue))
+	}
+	key, err := deriveSessionKey(c.sec, infos)
+	if err != nil {
+		return err
+	}
+	c.mu.Lock()
+	c.sessionID, c.sessionInfos, c.sessionKey = pyStr(id), infos, key
+	c.mu.Unlock()
+	c.log.Debug("session started")
+	return nil
 }
 
 // GetAlbumMeta ports get_album_meta.

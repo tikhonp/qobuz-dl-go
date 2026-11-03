@@ -238,6 +238,8 @@ func (s *Server) serveHTTP(w http.ResponseWriter, r *http.Request) {
 		s.serveAPI(sw, r, strings.TrimPrefix(p, apiPrefix))
 	case strings.HasPrefix(p, cdnPrefix):
 		s.serveCDN(sw, r, strings.TrimPrefix(p, cdnPrefix))
+	case strings.HasPrefix(p, segPrefix):
+		s.serveSegment(sw, r, strings.TrimPrefix(p, segPrefix))
 	case strings.HasPrefix(p, staticPrefix):
 		s.serveStatic(sw, r, p)
 	case p == "/login":
@@ -319,6 +321,12 @@ func (s *Server) serveAPI(w http.ResponseWriter, r *http.Request, endpoint strin
 		answer, err = s.search(q)
 	case "track/getFileUrl":
 		s.serveFileURL(w, cat, q)
+		return
+	case "session/start":
+		s.serveSessionStart(w, r)
+		return
+	case "file/url":
+		s.serveFileURLSegmented(w, r, cat)
 		return
 	default:
 		apiError(w, http.StatusNotFound, "Method not found: "+endpoint)

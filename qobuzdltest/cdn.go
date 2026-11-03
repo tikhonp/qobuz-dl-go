@@ -56,15 +56,41 @@ func (s *Server) serveFileURL(w http.ResponseWriter, cat *catalog, q url.Values)
 
 	s.mu.Lock()
 	empty := s.sw.empty[id]
-	deliver, delivering := s.sw.deliver[id]
-	restrict := s.sw.restrict[trackFormat{id, fmtID}]
 	sample := s.sw.sample[trackFormat{id, fmtID}]
+	segmented := s.sw.segmented[id]
 	s.mu.Unlock()
 
 	if empty {
 		writeJSON(w, http.StatusOK, newObject())
 		return
 	}
+	answer, delivered, err := s.fileURLAnswer(cat, id, fmtID)
+	if err != nil {
+		apiError(w, http.StatusInternalServerError, err.Error())
+		return
+	}
+	answer.set("url", s.cdnURL(id, delivered))
+	if segmented {
+		answer.del("url")
+	}
+	if answer.str("blob") != "" {
+		answer.set("blob", "qobuzdltest-blob")
+	}
+	if sample {
+		answer.set("sample", true)
+	}
+	writeJSON(w, http.StatusOK, answer)
+}
+
+// fileURLAnswer is getFileUrl's answer for a track and format before the
+// fake fills in its url, and the format it delivers: as Deliver or Restrict
+// say, else the recorded answer, else one built from the format table.
+func (s *Server) fileURLAnswer(cat *catalog, id string, fmtID int) (*object, int, error) {
+	s.mu.Lock()
+	deliver, delivering := s.sw.deliver[id]
+	restrict := s.sw.restrict[trackFormat{id, fmtID}]
+	s.mu.Unlock()
+
 	var answer *object
 	switch {
 	case delivering:
@@ -72,10 +98,9 @@ func (s *Server) serveFileURL(w http.ResponseWriter, cat *catalog, q url.Values)
 	case restrict:
 		answer = builtFileURL(cat, id, formats[fmtID].lower, true)
 	default:
-		o, ok, err := fixture(fixtureFile("track/getFileUrl", id, fmtStr))
+		o, ok, err := fixture(fixtureFile("track/getFileUrl", id, strconv.Itoa(fmtID)))
 		if err != nil {
-			apiError(w, http.StatusInternalServerError, err.Error())
-			return
+			return nil, 0, err
 		}
 		if ok {
 			answer = o
@@ -87,14 +112,7 @@ func (s *Server) serveFileURL(w http.ResponseWriter, cat *catalog, q url.Values)
 	if err != nil {
 		delivered = fmtID
 	}
-	answer.set("url", s.cdnURL(id, delivered))
-	if answer.str("blob") != "" {
-		answer.set("blob", "qobuzdltest-blob")
-	}
-	if sample {
-		answer.set("sample", true)
-	}
-	writeJSON(w, http.StatusOK, answer)
+	return answer, delivered, nil
 }
 
 // builtFileURL is an answer for a track and format nothing recorded, with
@@ -152,6 +170,22 @@ func (s *Server) serveCDN(w http.ResponseWriter, r *http.Request, rest string) {
 		return
 	}
 
+	data, err := fs.ReadFile(embedded, "testdata/audio/"+f.file)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	w, ok = s.misbehave(w, r, trackID)
+	if !ok {
+		return
+	}
+	w.Header().Set("Content-Type", f.mimeType)
+	http.ServeContent(w, r, "", time.Time{}, bytes.NewReader(data))
+}
+
+// misbehave applies the CDN switches of a track to one request. ok is false
+// when it has answered already; otherwise w may cut the body.
+func (s *Server) misbehave(w http.ResponseWriter, r *http.Request, trackID string) (_ http.ResponseWriter, ok bool) {
 	s.mu.Lock()
 	fail404 := s.sw.fail404[trackID]
 	failStatus := 0
@@ -172,15 +206,10 @@ func (s *Server) serveCDN(w http.ResponseWriter, r *http.Request, rest string) {
 	switch {
 	case fail404:
 		http.NotFound(w, r)
-		return
+		return w, false
 	case failStatus != 0:
 		http.Error(w, http.StatusText(failStatus), failStatus)
-		return
-	}
-	data, err := fs.ReadFile(embedded, "testdata/audio/"+f.file)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return w, false
 	}
 	if ignoreRange {
 		r.Header.Del("Range")
@@ -188,8 +217,7 @@ func (s *Server) serveCDN(w http.ResponseWriter, r *http.Request, rest string) {
 	if cutting {
 		w = &cutWriter{ResponseWriter: w, left: cut}
 	}
-	w.Header().Set("Content-Type", f.mimeType)
-	http.ServeContent(w, r, "", time.Time{}, bytes.NewReader(data))
+	return w, true
 }
 
 // serveStatic answers a cover for .jpg and a booklet for .pdf.

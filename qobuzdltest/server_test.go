@@ -619,9 +619,9 @@ func TestFakeQualitySwitches(t *testing.T) {
 	if u := trackURL(5); u.URL != "" || u.FormatID != 0 || string(u.Raw) != "{}" {
 		t.Errorf("EmptyAnswer: %+v", u)
 	}
-	// Without a url the client goes on to the segmented path.
-	if _, err := c.GetTrackURL(ctx, TrackSingle, 27, false); err == nil {
-		t.Error("EmptyAnswer at 27: no error")
+	// Without a url the client goes on to file/url, which is empty too.
+	if u, err := c.GetTrackURL(ctx, TrackSingle, 27, false); err != nil || string(u.Raw) != "{}" || u.Segmented {
+		t.Errorf("EmptyAnswer at 27: %+v, %v", u, err)
 	}
 
 	s.Reset()

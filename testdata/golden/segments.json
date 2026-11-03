@@ -1,0 +1,691 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "fixture: 6/0",
+   "input": {
+    "format": {
+     "py": "int",
+     "v": 6
+    },
+    "segment": {
+     "py": "int",
+     "v": 0
+    },
+    "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+    "uuid": {
+     "py": "none"
+    }
+   },
+   "output": {
+    "uuid": {
+     "py": "none"
+    },
+    "size": {
+     "py": "int",
+     "v": 668
+    },
+    "sha256": "8b014ccb5ecd28a3625b07604cf5f468dd5ffae1c105d197eaed674e0313e574"
+   }
+  },
+  {
+   "name": "fixture: 6/1",
+   "input": {
+    "format": {
+     "py": "int",
+     "v": 6
+    },
+    "segment": {
+     "py": "int",
+     "v": 1
+    },
+    "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+    "uuid": "a6cd676fca921c716edd2cf5c4e792f3"
+   },
+   "output": {
+    "uuid": "a6cd676fca921c716edd2cf5c4e792f3",
+    "size": {
+     "py": "int",
+     "v": 891
+    },
+    "sha256": "beacb741e561067d57fa1d225ed2139223aeae33f4f8c7397a893291fa2e32ce"
+   }
+  },
+  {
+   "name": "fixture: 6/2",
+   "input": {
+    "format": {
+     "py": "int",
+     "v": 6
+    },
+    "segment": {
+     "py": "int",
+     "v": 2
+    },
+    "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+    "uuid": "a6cd676fca921c716edd2cf5c4e792f3"
+   },
+   "output": {
+    "uuid": "a6cd676fca921c716edd2cf5c4e792f3",
+    "size": {
+     "py": "int",
+     "v": 882
+    },
+    "sha256": "1dd0d755986d12b6c839f5fa20414d234ec94e8c5f323e99abb1aa755d071f0c"
+   }
+  },
+  {
+   "name": "fixture: 6/3",
+   "input": {
+    "format": {
+     "py": "int",
+     "v": 6
+    },
+    "segment": {
+     "py": "int",
+     "v": 3
+    },
+    "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+    "uuid": "a6cd676fca921c716edd2cf5c4e792f3"
+   },
+   "output": {
+    "uuid": "a6cd676fca921c716edd2cf5c4e792f3",
+    "size": {
+     "py": "int",
+     "v": 330
+    },
+    "sha256": "beb1394e130e11a31ae71842b64e6dc327b252a8c84d1104113c68eb7b0bd952"
+   }
+  },
+  {
+   "name": "fixture: 7/0",
+   "input": {
+    "format": {
+     "py": "int",
+     "v": 7
+    },
+    "segment": {
+     "py": "int",
+     "v": 0
+    },
+    "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+    "uuid": {
+     "py": "none"
+    }
+   },
+   "output": {
+    "uuid": {
+     "py": "none"
+    },
+    "size": {
+     "py": "int",
+     "v": 668
+    },
+    "sha256": "b836b8f92576e15b429c0573117b8a38812f53d86bbaf3a697a13689990f61e2"
+   }
+  },
+  {
+   "name": "fixture: 7/1",
+   "input": {
+    "format": {
+     "py": "int",
+     "v": 7
+    },
+    "segment": {
+     "py": "int",
+     "v": 1
+    },
+    "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+    "uuid": "d1d810ee5cec2946e412284efcb94347"
+   },
+   "output": {
+    "uuid": "d1d810ee5cec2946e412284efcb94347",
+    "size": {
+     "py": "int",
+     "v": 4067
+    },
+    "sha256": "7f12f26aed45f673234ee6a27d4310503dcad1891026a0e2dbe863bd1aabe810"
+   }
+  },
+  {
+   "name": "fixture: 7/2",
+   "input": {
+    "format": {
+     "py": "int",
+     "v": 7
+    },
+    "segment": {
+     "py": "int",
+     "v": 2
+    },
+    "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+    "uuid": "d1d810ee5cec2946e412284efcb94347"
+   },
+   "output": {
+    "uuid": "bdeb9ba22af8fa73e59fe7c4d3c48ae1",
+    "size": {
+     "py": "int",
+     "v": 4142
+    },
+    "sha256": "21aaed5d1995b8296989ec7e8945368b4e11c93013843bcbe65f46638d6f568d"
+   }
+  },
+  {
+   "name": "fixture: 7/3",
+   "input": {
+    "format": {
+     "py": "int",
+     "v": 7
+    },
+    "segment": {
+     "py": "int",
+     "v": 3
+    },
+    "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+    "uuid": "d1d810ee5cec2946e412284efcb94347"
+   },
+   "output": {
+    "uuid": "bdeb9ba22af8fa73e59fe7c4d3c48ae1",
+    "size": {
+     "py": "int",
+     "v": 4096
+    },
+    "sha256": "1e0200a0fd139d0411c2ab7874edb2e22a5ec76e9b65b4c3dc679292ad7a1837"
+   }
+  },
+  {
+   "name": "fixture: 7/4",
+   "input": {
+    "format": {
+     "py": "int",
+     "v": 7
+    },
+    "segment": {
+     "py": "int",
+     "v": 4
+    },
+    "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+    "uuid": "d1d810ee5cec2946e412284efcb94347"
+   },
+   "output": {
+    "uuid": "bdeb9ba22af8fa73e59fe7c4d3c48ae1",
+    "size": {
+     "py": "int",
+     "v": 764
+    },
+    "sha256": "0218aecbba11bf120e18479babea9dcee9ae2845e210ee4392df20c4b1d339d0"
+   }
+  },
+  {
+   "name": "fixture: 27/0",
+   "input": {
+    "format": {
+     "py": "int",
+     "v": 27
+    },
+    "segment": {
+     "py": "int",
+     "v": 0
+    },
+    "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+    "uuid": {
+     "py": "none"
+    }
+   },
+   "output": {
+    "uuid": {
+     "py": "none"
+    },
+    "size": {
+     "py": "int",
+     "v": 668
+    },
+    "sha256": "50f755391cbaed17719ca7d9be5b92791d1807628bad0cd45425fe04ff84fe02"
+   }
+  },
+  {
+   "name": "fixture: 27/1",
+   "input": {
+    "format": {
+     "py": "int",
+     "v": 27
+    },
+    "segment": {
+     "py": "int",
+     "v": 1
+    },
+    "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+    "uuid": "93b33afe6efa6bbd4452a24743b6d269"
+   },
+   "output": {
+    "uuid": "93b33afe6efa6bbd4452a24743b6d269",
+    "size": {
+     "py": "int",
+     "v": 8019
+    },
+    "sha256": "6e4679ea134bdd0a2e0a54b61e408261ecf183ec21de2911a8c1f4cabadbb3eb"
+   }
+  },
+  {
+   "name": "fixture: 27/2",
+   "input": {
+    "format": {
+     "py": "int",
+     "v": 27
+    },
+    "segment": {
+     "py": "int",
+     "v": 2
+    },
+    "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+    "uuid": "93b33afe6efa6bbd4452a24743b6d269"
+   },
+   "output": {
+    "uuid": "93b33afe6efa6bbd4452a24743b6d269",
+    "size": {
+     "py": "int",
+     "v": 8045
+    },
+    "sha256": "974cd80f61bd2f968fc439b4b43b88aa3e52708f45acd6c18700748f6d9dfa6a"
+   }
+  },
+  {
+   "name": "fixture: 27/3",
+   "input": {
+    "format": {
+     "py": "int",
+     "v": 27
+    },
+    "segment": {
+     "py": "int",
+     "v": 3
+    },
+    "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+    "uuid": "93b33afe6efa6bbd4452a24743b6d269"
+   },
+   "output": {
+    "uuid": "93b33afe6efa6bbd4452a24743b6d269",
+    "size": {
+     "py": "int",
+     "v": 8078
+    },
+    "sha256": "e275ffa06bf8216f8bd8f10fa8144364e334551ffe4a1f9bb9f2c89aef815f39"
+   }
+  },
+  {
+   "name": "fixture: 27/4",
+   "input": {
+    "format": {
+     "py": "int",
+     "v": 27
+    },
+    "segment": {
+     "py": "int",
+     "v": 4
+    },
+    "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+    "uuid": "93b33afe6efa6bbd4452a24743b6d269"
+   },
+   "output": {
+    "uuid": "93b33afe6efa6bbd4452a24743b6d269",
+    "size": {
+     "py": "int",
+     "v": 1130
+    },
+    "sha256": "d7077a40b980588f90948be4966da790a274c1c2a989011d2b43bdd1122b0fa0"
+   }
+  },
+  {
+   "name": "uuid: first box",
+   "input": {
+    "data": "00000034757569649a1068ebed3f466f8393b9794136235a00000000000000340800000100000010000000010cc175b9c0f1b6a8000102030405060708090a0b0c0d0e0f"
+   },
+   "output": "9a1068ebed3f466f8393b9794136235a"
+  },
+  {
+   "name": "uuid: after other boxes",
+   "input": {
+    "data": "00000014667265657878787878787878787878780000001c6d6f6f666d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d00000024757569649a1068ebed3f466f8393b9794136235a000000000000002408000000"
+   },
+   "output": "9a1068ebed3f466f8393b9794136235a"
+  },
+  {
+   "name": "uuid: first of two",
+   "input": {
+    "data": "0000002475756964bc8cbc85c13c6893c6f7ee602d89d03c00000000000000240800000000000024757569649a1068ebed3f466f8393b9794136235a000000000000002408000000"
+   },
+   "output": "bc8cbc85c13c6893c6f7ee602d89d03c"
+  },
+  {
+   "name": "uuid: none",
+   "input": {
+    "data": "0000001466726565787878787878787878787878000000306d646174000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f2021222324252627"
+   },
+   "output": {
+    "py": "none"
+   }
+  },
+  {
+   "name": "uuid: empty",
+   "input": {
+    "data": ""
+   },
+   "output": {
+    "py": "none"
+   }
+  },
+  {
+   "name": "uuid: zero size stops",
+   "input": {
+    "data": "00000000667265650000000000000000000000000000000000000024757569649a1068ebed3f466f8393b9794136235a000000000000002408000000"
+   },
+   "output": {
+    "py": "none"
+   }
+  },
+  {
+   "name": "uuid: size past the end stops",
+   "input": {
+    "data": "000003e8667265650000000000000000000000000000000000000024757569649a1068ebed3f466f8393b9794136235a000000000000002408000000"
+   },
+   "output": {
+    "py": "none"
+   }
+  },
+  {
+   "name": "uuid: short box at the end",
+   "input": {
+    "data": "00000018757569649a1068ebed3f466f8393b979"
+   },
+   "output": {
+    "py": "none"
+   }
+  },
+  {
+   "name": "uuid: uuid box shorter than 24",
+   "input": {
+    "data": "0000000c757569649a1068ebed3f466f8393b9794136235a000000000000000000000000"
+   },
+   "output": "9a1068ebed3f466f8393b9794136235a"
+  },
+  {
+   "name": "uuid: small size steps",
+   "input": {
+    "data": "00000004757569649a1068ebed3f466f8393b9794136235a00000000"
+   },
+   "output": "9a1068ebed3f466f8393b9794136235a"
+  },
+  {
+   "name": "decrypt: flags",
+   "input": {
+    "data": "00000054757569649a1068ebed3f466f8393b9794136235a0000000000000054080000030000002000000001c4ca4238a0b923820000001000000000c81e728d9d4c2f630000002800000100eccbc87e4b5ce2fe000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f5051525354555657",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "00000054757569649a1068ebed3f466f8393b9794136235a0000000000000054080000030000002000000001c4ca4238a0b923820000001000000000c81e728d9d4c2f630000002800000100eccbc87e4b5ce2fefa3da77f49853ef03d1b8da5925899456d8c19aa9706f9c7fded772ecc70fbaf202122232425262728292a2b2c2d2e2f97c0958dacb25e0b24b008d4cdb1f674da9cdcef563f166d9fe5b0fbf6ca9022b08a9970101d5677"
+  },
+  {
+   "name": "decrypt: zero flags only",
+   "input": {
+    "data": "00000044757569649a1068ebed3f466f8393b9794136235a0000000000000044080000020000002000000000c4ca4238a0b923820000002000000000c81e728d9d4c2f63000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "00000044757569649a1068ebed3f466f8393b9794136235a0000000000000044080000020000002000000000c4ca4238a0b923820000002000000000c81e728d9d4c2f63000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f"
+  },
+  {
+   "name": "decrypt: frames past the data",
+   "input": {
+    "data": "00000054757569649a1068ebed3f466f8393b9794136235a0000000000000054080000030000002000000001c4ca4238a0b923820000001000000000c81e728d9d4c2f630000002800000100eccbc87e4b5ce2fe000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f3031",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "00000054757569649a1068ebed3f466f8393b9794136235a0000000000000054080000030000002000000001c4ca4238a0b923820000001000000000c81e728d9d4c2f630000002800000100eccbc87e4b5ce2fefa3da77f49853ef03d1b8da5925899456d8c19aa9706f9c7fded772ecc70fbaf202122232425262728292a2b2c2d2e2f97c0"
+  },
+  {
+   "name": "decrypt: frame inside the box",
+   "input": {
+    "data": "00000044757569649a1068ebed3f466f8393b9794136235a0000000000000008080000020000001400000001c4ca4238a0b923820000000800000001c81e728d9d4c2f630001020304050607",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "0000004475756964602ccd97a0bf7e98b6813ed7df63b4107d9d0bb98adc057113eb789f0000001400000001c4ca4238a0b923820000000800000001c81e728d9d4c2f630001020304050607"
+  },
+  {
+   "name": "decrypt: frame over its own table",
+   "input": {
+    "data": "00000044757569649a1068ebed3f466f8393b9794136235a000000000000001c080000020000002800000001c4ca4238a0b923820000001000000001c81e728d9d4c2f63000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "00000044757569649a1068ebed3f466f8393b9794136235a00000000fa3ca560458038f5351287869e55974bb957498123aacc52e5f46d25d06de5b1bb93d371d5e14f717b08ae43bdb9d15268c6481b78e04fe51a9ca30a1b081fbda9f4837a4e6eff8d"
+  },
+  {
+   "name": "decrypt: frame after other boxes",
+   "input": {
+    "data": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000048080000010000001800000001c4ca4238a0b923820000001466726565787878787878787878787878000102030405060708090a0b0c0d0e0f1011121314151617",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000048080000010000001800000001c4ca4238a0b923820000001466726565787878787878787878787878fa3da77f49853ef03d1b8da5925899456d8c19aa9706f9c7"
+  },
+  {
+   "name": "decrypt: counter of 16 with a carry",
+   "input": {
+    "data": "0000003c757569649a1068ebed3f466f8393b9794136235a000000000000003c1000000100000050000000010101010101010101ffffffffffffffff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "0000003c757569649a1068ebed3f466f8393b9794136235a000000000000003c1000000100000050000000010101010101010101ffffffffffffffffbf58ba8d09a1e59bfba49ac76b612476b7d9a1c97f41dcc69597bdca250c9a017972f4b59b37b1ba464e72f9dd035d587583b3138ffd6c273ecc3e091e4d0d3ff9e80cdb2e776a6f39075415190cb2dc"
+  },
+  {
+   "name": "decrypt: counter of 16 wrapping",
+   "input": {
+    "data": "0000003c757569649a1068ebed3f466f8393b9794136235a000000000000003c100000010000003000000001ffffffffffffffffffffffffffffffff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "0000003c757569649a1068ebed3f466f8393b9794136235a000000000000003c100000010000003000000001ffffffffffffffffffffffffffffffffdfe5e3e5c62abb9a382962209b23bf905b3ec980e865f0dea8ee03ec6c0f499a6d036c3555d99592e6630c8f9367c25a"
+  },
+  {
+   "name": "decrypt: counter of 0",
+   "input": {
+    "data": "0000002c757569649a1068ebed3f466f8393b9794136235a000000000000002c000000010000002000000001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "0000002c757569649a1068ebed3f466f8393b9794136235a000000000000002c0000000100000020000000014b2ed990f875e0ceb8fe13fc7c1f598a5d335c0565e9a5a2d6533cbfa357f26a"
+  },
+  {
+   "name": "decrypt: counter of 17",
+   "input": {
+    "data": "0000003d757569649a1068ebed3f466f8393b9794136235a000000000000003d1100000100000020000000016363636363636363636363636363636363000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "decrypt: counter of 17 unflagged",
+   "input": {
+    "data": "0000003d757569649a1068ebed3f466f8393b9794136235a000000000000003d1100000100000020000000006363636363636363636363636363636363000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "0000003d757569649a1068ebed3f466f8393b9794136235a000000000000003d1100000100000020000000006363636363636363636363636363636363000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f"
+  },
+  {
+   "name": "decrypt: counter cut by the end",
+   "input": {
+    "data": "0000002c757569649a1068ebed3f466f8393b9794136235a0000000000000064080000010000001000000001",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "decrypt: frame count past the table",
+   "input": {
+    "data": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080003e80000001000000001c4ca4238a0b92382000102030405060708090a0b0c0d0e0f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080003e80000001000000001c4ca4238a0b92382fa3da77f49853ef03d1b8da592589945"
+  },
+  {
+   "name": "decrypt: two boxes",
+   "input": {
+    "data": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b92382000102030405060708090a0b0c0d0e0f00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c81e728d9d4c2f63101112131415161718191a1b1c1d1e1f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b92382fa3da77f49853ef03d1b8da59258994500000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c81e728d9d4c2f63101112131415161718191a1b1c1d1e1f"
+  },
+  {
+   "name": "decrypt: other uuid untouched",
+   "input": {
+    "data": "0000003475756964bc8cbc85c13c6893c6f7ee602d89d03c0000000000000034080000010000001000000001c4ca4238a0b92382000102030405060708090a0b0c0d0e0f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "0000003475756964bc8cbc85c13c6893c6f7ee602d89d03c0000000000000034080000010000001000000001c4ca4238a0b92382000102030405060708090a0b0c0d0e0f"
+  },
+  {
+   "name": "decrypt: uuid None",
+   "input": {
+    "data": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b92382000102030405060708090a0b0c0d0e0f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": {
+     "py": "none"
+    }
+   },
+   "output": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b92382000102030405060708090a0b0c0d0e0f"
+  },
+  {
+   "name": "decrypt: uuid shorter than 16",
+   "input": {
+    "data": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b92382000102030405060708090a0b0c0d0e0f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f"
+   },
+   "output": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b92382000102030405060708090a0b0c0d0e0f"
+  },
+  {
+   "name": "decrypt: AES-256 key",
+   "input": {
+    "data": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b92382000102030405060708090a0b0c0d0e0f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b92382c8e676e621886ed45ecad82664dfcefc"
+  },
+  {
+   "name": "decrypt: key of 10 bytes",
+   "input": {
+    "data": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b92382000102030405060708090a0b0c0d0e0f",
+    "raw_key": "d164d338c18eaa85d5f2",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "decrypt: key of 10 bytes, nothing flagged",
+   "input": {
+    "data": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000000c4ca4238a0b92382000102030405060708090a0b0c0d0e0f",
+    "raw_key": "d164d338c18eaa85d5f2",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000000c4ca4238a0b92382000102030405060708090a0b0c0d0e0f"
+  },
+  {
+   "name": "decrypt: zero size stops",
+   "input": {
+    "data": "000000006672656500000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b92382000102030405060708090a0b0c0d0e0f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "000000006672656500000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b92382000102030405060708090a0b0c0d0e0f"
+  },
+  {
+   "name": "decrypt: truncated box stops",
+   "input": {
+    "data": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b923",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "00000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b923"
+  },
+  {
+   "name": "decrypt: size past the end stops",
+   "input": {
+    "data": "0000001466726565787878787878787878787878000001f4757569649a1068ebed3f466f8393b9794136235a000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f2021222324252627",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "0000001466726565787878787878787878787878000001f4757569649a1068ebed3f466f8393b9794136235a000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f2021222324252627"
+  },
+  {
+   "name": "decrypt: header cut short",
+   "input": {
+    "data": "00010203040506",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "00010203040506"
+  },
+  {
+   "name": "decrypt: small size steps",
+   "input": {
+    "data": "0000000400000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b92382000102030405060708090a0b0c0d0e0f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "0000000400000034757569649a1068ebed3f466f8393b9794136235a0000000000000034080000010000001000000001c4ca4238a0b92382fa3da77f49853ef03d1b8da592589945"
+  },
+  {
+   "name": "decrypt: uuid box of 24 at the end",
+   "input": {
+    "data": "00000018757569649a1068ebed3f466f8393b9794136235a",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "error": "IndexError"
+  },
+  {
+   "name": "decrypt: uuid box of 30 at the end",
+   "input": {
+    "data": "0000001e757569649a1068ebed3f466f8393b9794136235a000000000000",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "error": "IndexError"
+  },
+  {
+   "name": "decrypt: uuid box of 33 at the end",
+   "input": {
+    "data": "00000021757569649a1068ebed3f466f8393b9794136235a000000000000000008",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "00000021757569649a1068ebed3f466f8393b9794136235a000000000000000008"
+  },
+  {
+   "name": "decrypt: empty",
+   "input": {
+    "data": "",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": ""
+  },
+  {
+   "name": "decrypt: table with a 16-byte counter",
+   "input": {
+    "data": "00000054757569649a1068ebed3f466f8393b9794136235a00000000000000541000000200000010000000019dd4e461268c8034f5c8564e155c67a60000001000000000415290769594460e2e485922904f345d000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+    "raw_key": "d164d338c18eaa85d5f23b213859db87",
+    "uuid": "9a1068ebed3f466f8393b9794136235a"
+   },
+   "output": "00000054757569649a1068ebed3f466f8393b9794136235a00000000000000541000000200000010000000019dd4e461268c8034f5c8564e155c67a60000001000000000415290769594460e2e485922904f345da3e3483f1184e882b45de06322c4d3a1101112131415161718191a1b1c1d1e1f"
+  }
+ ]
+}

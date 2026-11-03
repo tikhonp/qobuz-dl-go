@@ -10,6 +10,7 @@ import (
 	"os"
 	"path/filepath"
 	"slices"
+	"strconv"
 	"strings"
 	"sync"
 	"syscall"
@@ -310,15 +311,17 @@ func TestNoFallbackSkips(t *testing.T) {
 }
 
 func TestGateFailureIsUnknown(t *testing.T) {
-	e := newEnv(t)
-	e.opts.Quality = 5
-	e.srv.EmptyAnswer(e.trackIDs(t, qobuzdltest.AlbumHiRes96)[0])
-	rel := e.mustDownload(t, qobuzdltest.AlbumHiRes96, false, nil)
-	if rel.Format != "Unknown" || !rel.QualityMet || rel.BitDepth != 0 {
-		t.Errorf("gate %q %v %d", rel.Format, rel.QualityMet, rel.BitDepth)
-	}
-	if want := "[INCOMPLETE] Norah Jones - Begin Again (2019) [NoneB-NonekHz]"; filepath.Base(rel.Folder) != want {
-		t.Errorf("folder %q", filepath.Base(rel.Folder))
+	for _, q := range []int{5, 27} {
+		e := newEnv(t)
+		e.opts.Quality = q
+		e.srv.EmptyAnswer(e.trackIDs(t, qobuzdltest.AlbumHiRes96)[0])
+		rel := e.mustDownload(t, qobuzdltest.AlbumHiRes96, false, nil)
+		if rel.Format != "Unknown" || !rel.QualityMet || rel.BitDepth != 0 {
+			t.Errorf("q%d gate %q %v %d", q, rel.Format, rel.QualityMet, rel.BitDepth)
+		}
+		if want := "[INCOMPLETE] Norah Jones - Begin Again (2019) [NoneB-NonekHz]"; filepath.Base(rel.Folder) != want {
+			t.Errorf("q%d folder %q", q, filepath.Base(rel.Folder))
+		}
 	}
 }
 
@@ -369,31 +372,35 @@ func TestSampleMovesToNextTier(t *testing.T) {
 }
 
 func TestDemoTracksSkipped(t *testing.T) {
-	e := newEnv(t)
-	e.opts.Quality = 5
-	ids := e.trackIDs(t, qobuzdltest.AlbumHiRes96)
-	e.srv.EmptyAnswer(ids[3])
-	ev := &events{}
-	rel := e.mustDownload(t, qobuzdltest.AlbumHiRes96, false, ev)
-	if tr := rel.Tracks[3]; tr.Outcome != qobuzdl.OutcomeFailed || !errors.Is(tr.Err, qobuzdl.ErrDemo) {
-		t.Errorf("demo track: %+v", tr)
-	}
-	if rel.Status != qobuzdl.StatusPartial || !strings.HasPrefix(filepath.Base(rel.Folder), "[INCOMPLETE] ") || !ev.logged("Demo. Skipping") {
-		t.Errorf("status %v, folder %q", rel.Status, rel.Folder)
-	}
-	if len(ev.ends) != 7 {
-		t.Errorf("%d TrackEnd calls", len(ev.ends))
-	}
+	// At 27 getFileUrl's empty answer sends the client to file/url, which
+	// answers {} too.
+	for _, q := range []int{5, 27} {
+		e := newEnv(t)
+		e.opts.Quality = q
+		ids := e.trackIDs(t, qobuzdltest.AlbumHiRes96)
+		e.srv.EmptyAnswer(ids[3])
+		ev := &events{}
+		rel := e.mustDownload(t, qobuzdltest.AlbumHiRes96, false, ev)
+		if tr := rel.Tracks[3]; tr.Outcome != qobuzdl.OutcomeFailed || !errors.Is(tr.Err, qobuzdl.ErrDemo) {
+			t.Errorf("q%d demo track: %+v", q, tr)
+		}
+		if rel.Status != qobuzdl.StatusPartial || !strings.HasPrefix(filepath.Base(rel.Folder), "[INCOMPLETE] ") || !ev.logged("Demo. Skipping") {
+			t.Errorf("q%d status %v, folder %q", q, rel.Status, rel.Folder)
+		}
+		if len(ev.ends) != 7 {
+			t.Errorf("q%d: %d TrackEnd calls", q, len(ev.ends))
+		}
 
-	e = newEnv(t)
-	e.opts.Quality = 5
-	e.srv.EmptyAnswer(qobuzdltest.TrackSingle)
-	rel, err := e.download(t, qobuzdltest.TrackSingle, true, nil)
-	if err != nil || rel.Status != qobuzdl.StatusSkipped || rel.Skip != qobuzdl.SkipDemo {
-		t.Errorf("single demo: %+v, %v", rel, err)
-	}
-	if got := tree(t, e.opts.Directory); len(got) != 0 {
-		t.Errorf("wrote %q", got)
+		e = newEnv(t)
+		e.opts.Quality = q
+		e.srv.EmptyAnswer(qobuzdltest.TrackSingle)
+		rel, err := e.download(t, qobuzdltest.TrackSingle, true, nil)
+		if err != nil || rel.Status != qobuzdl.StatusSkipped || rel.Skip != qobuzdl.SkipDemo {
+			t.Errorf("q%d single demo: %+v, %v", q, rel, err)
+		}
+		if got := tree(t, e.opts.Directory); len(got) != 0 {
+			t.Errorf("q%d wrote %q", q, got)
+		}
 	}
 }
 
@@ -664,8 +671,10 @@ func TestAlbumsOnly(t *testing.T) {
 func TestProgressEvents(t *testing.T) {
 	e := newEnv(t)
 	ids := e.trackIDs(t, qobuzdltest.AlbumHiRes96)
-	// Five failures use up the first tier; the next one delivers.
+	// Five failures use up the direct transfer of the first tier, and
+	// without ffmpeg its segmented retry fails too; the next tier delivers.
 	e.srv.FailTimes(ids[1], 5, http.StatusServiceUnavailable)
+	e.opts.FFmpegPath = filepath.Join(t.TempDir(), "no-ffmpeg")
 	ev := &events{}
 	e.mustDownload(t, qobuzdltest.AlbumHiRes96, false, ev)
 
@@ -681,17 +690,21 @@ func TestProgressEvents(t *testing.T) {
 			t.Errorf("planned %+v", p)
 		}
 	}
-	starts := map[int][]int{}
+	starts := map[int][]string{}
 	for _, s := range ev.starts {
-		starts[s.Position] = append(starts[s.Position], s.FormatID)
+		f := strconv.Itoa(s.FormatID)
+		if s.Segmented {
+			f += " segmented"
+		}
+		starts[s.Position] = append(starts[s.Position], f)
 	}
 	for pos := 1; pos <= 7; pos++ {
-		want := []int{27}
+		want := []string{"27"}
 		if pos == 2 {
-			want = []int{27, 7}
+			want = []string{"27", "27 segmented", "7"}
 		}
 		if !slices.Equal(starts[pos], want) {
-			t.Errorf("track %d started at %v, want %v", pos, starts[pos], want)
+			t.Errorf("track %d started at %q, want %q", pos, starts[pos], want)
 		}
 		calls := ev.bytes[pos]
 		if len(calls) == 0 {

@@ -285,7 +285,23 @@ func callFromGolden(ctx context.Context, c *Client, call []any) (any, error) {
 		}
 		return c.search(ctx, strings.TrimPrefix(name, "search_"), call[1].(string), limit, 0)
 	case "get_track_url":
-		return c.getTrackURL(ctx, pyStr(call[1]), int(call[2].(int64)), false)
+		force := len(call) > 3 && call[3].(bool)
+		d, err := c.getTrackURL(ctx, pyStr(call[1]), int(call[2].(int64)), force)
+		if err == nil && d.has("raw_key") {
+			// The golden holds the key as hex, as gen.py writes bytes.
+			d.set("raw_key", hex.EncodeToString(d.get("raw_key", nil).([]byte)))
+		}
+		return d, err
+	case "seq":
+		var out []any
+		for _, sub := range call[1:] {
+			r, err := callFromGolden(ctx, c, sub.([]any))
+			if err != nil {
+				return nil, err
+			}
+			out = append(out, r)
+		}
+		return out, nil
 	case "api_call":
 		kwargs := call[2].(*pyDict)
 		var kw []kv
@@ -780,7 +796,7 @@ func TestClientConcurrentCalls(t *testing.T) {
 	}
 }
 
-func TestGetTrackURLWithoutURLNeedsSegments(t *testing.T) {
+func TestGetTrackURLWithoutURLGoesSegmented(t *testing.T) {
 	f := &fakeAPI{handlers: map[string]http.HandlerFunc{"track/getFileUrl": func(w http.ResponseWriter, r *http.Request) {
 		_, _ = io.WriteString(w, `{"track_id": 1, "format_id": 27}`)
 	}}}
@@ -789,10 +805,16 @@ func TestGetTrackURLWithoutURLNeedsSegments(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if _, err := c.GetTrackURL(context.Background(), "1", 27, false); !errors.Is(err, errSegmentedNotPorted) {
-		t.Errorf("got %v, want the segmented placeholder", err)
+	// The fake has no session/start, so the segmented branch stops there.
+	var ae *APIError
+	if _, err := c.GetTrackURL(context.Background(), "1", 27, false); !errors.As(err, &ae) || ae.Endpoint != "session/start" {
+		t.Errorf("got %v, want session/start's 404", err)
 	}
 	if _, err := c.GetTrackURL(context.Background(), "1", 5, false); err != nil {
 		t.Errorf("format 5: %v", err)
+	}
+	seen := f.seen()
+	if last := seen[len(seen)-1]; !strings.HasPrefix(last, "track/getFileUrl?") {
+		t.Errorf("format 5 called %s", last)
 	}
 }

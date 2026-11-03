@@ -1,0 +1,20 @@
+{
+ "session_id": "qobuzdltest-session",
+ "infos": "relDOsPW8E9zCJI8ya6TnQ.EriEiqBHHdkKoZRbxQtYV3Fieg",
+ "key": "qbz-1.E9ZOcTPMFXR6F_aeZZ9AjaJAGlVV2B21vzLmFynGXzg.wH58rvh7B8aUanBF4uXCzg",
+ "raw_key": "acb8beee9c7d95e4e8a61c3f689d83d9",
+ "formats": {
+  "6": {
+   "n_segments": 3,
+   "mime_type": "audio/mp4; codecs=\"flac\""
+  },
+  "7": {
+   "n_segments": 4,
+   "mime_type": "audio/mp4; codecs=\"flac\""
+  },
+  "27": {
+   "n_segments": 4,
+   "mime_type": "audio/mp4; codecs=\"flac\""
+  }
+ }
+}

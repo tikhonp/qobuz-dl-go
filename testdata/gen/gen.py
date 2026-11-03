@@ -1169,6 +1169,19 @@ def client_state(c):
             "label": getattr(c, "label", None), "user_id": getattr(c, "user_id", None)}
 
 
+def client_call(c, call):
+    fn, args = call[0], call[1:]
+    if fn == "api_call":
+        res = c.api_call(args[0], **args[1])
+    else:
+        res = getattr(c, fn)(*args)
+    if fn.startswith("get_") and fn.endswith("_meta") and fn not in ("get_album_meta", "get_track_meta"):
+        res = list(res)
+    if isinstance(res, dict) and "raw_key" in res:
+        res["raw_key"] = res["raw_key"].hex()
+    return res
+
+
 def run_client(opts, overrides, call):
     o = dict(CLIENT_DEFAULTS, **opts)
     out = {}
@@ -1177,17 +1190,10 @@ def run_client(opts, overrides, call):
         try:
             c = Client(o["email"], o["pwd"], o["app_id"], o["secrets"], o["token"], force_english=o["force_english"])
             out["state"] = client_state(c)
-            if call:
-                fn, args = call[0], call[1:]
-                if fn == "api_call":
-                    res = c.api_call(args[0], **args[1])
-                else:
-                    res = getattr(c, fn)(*args)
-                if fn.startswith("get_") and fn.endswith("_meta") and fn not in ("get_album_meta", "get_track_meta"):
-                    res = list(res)
-                if isinstance(res, dict) and "raw_key" in res:
-                    res["raw_key"] = res["raw_key"].hex()
-                out["result"] = res
+            if call and call[0] == "seq":
+                out["result"] = [client_call(c, sub) for sub in call[1:]]
+            elif call:
+                out["result"] = client_call(c, call)
         except SystemExit as e:
             out["raised"] = f"SystemExit({e.code})"
         except Exception as e:
@@ -1267,7 +1273,62 @@ def gen_request_params():
     for name, pages in multi_meta_scenarios():
         g.case(f"multi_meta: {name}", {"client": CLIENT_DEFAULTS, "call": ["get_plist_meta", "77"]},
                lambda pages=pages: run_client({}, {"playlist/get": pager(pages)}, ("get_plist_meta", "77")))
+    for name, overrides, call in segmented_calls():
+        g.case(f"segmented: {name}", {"client": CLIENT_DEFAULTS, "call": list(call)},
+               lambda ov=overrides, call=call: run_client({}, ov, call))
     g.write()
+
+
+def segmented_calls():
+    """Calls through get_track_url's segmented branch, with the getFileUrl,
+    session/start and file/url answers each one needs."""
+    # cfg_setup's call keeps the default answer, so the client picks the
+    # secret the wrapped key needs.
+    status = lambda code, body="": (lambda q: None if q.get("track_id") == "5966783" else (code, body))
+    no_url = {"track/getFileUrl": lambda q: None if q["track_id"] == "5966783" else (
+        200, json.dumps({"track_id": int(q["track_id"]), "format_id": int(q["format_id"]),
+                         "restrictions": [{"code": "TrackRestrictedByRightHolders"}]}))}
+
+    def file_url(**change):
+        def answer(q):
+            a = file_url_answer(q)
+            for k, v in change.items():
+                if v is MISSING:
+                    a.pop(k, None)
+                else:
+                    a[k] = v
+            return 200, json.dumps(a)
+        return answer
+
+    def seg(over):
+        return dict(no_url, **over)
+
+    yield "track URL at 27 without url", no_url, ("get_track_url", "20273753", 27)
+    yield "track URL at 7 forced", {}, ("get_track_url", "20273753", 7, True)
+    yield "track URL at 6 after a 400", {"track/getFileUrl": status(400, '{"message":"bad"}')}, ("get_track_url", "20273753", 6)
+    yield "track URL at 27 after a 500", {"track/getFileUrl": status(500, "{}")}, ("get_track_url", "20273753", 27)
+    yield "track URL at 27 after a list answer", {"track/getFileUrl": status(200, "[1]")}, ("get_track_url", "20273753", 27)
+    yield "track URL at 4", {}, ("get_track_url", "20273753", 4)
+    yield "track URL at 5 without url", no_url, ("get_track_url", "20273753", 5)
+    yield "session reused", {}, ("seq", ["get_track_url", "20273753", 27, True], ["get_track_url", "20273754", 7, True])
+    yield "bit_depth kept", seg({"file/url": file_url(bit_depth=16)}), ("get_track_url", "1", 27)
+    yield "no bits_depth", seg({"file/url": file_url(bits_depth=MISSING)}), ("get_track_url", "1", 27)
+    yield "sampling_rate 44.1", seg({"file/url": file_url(sampling_rate=44.1)}), ("get_track_url", "1", 27)
+    yield "sampling_rate 1000", seg({"file/url": file_url(sampling_rate=1000)}), ("get_track_url", "1", 27)
+    yield "sampling_rate 1001", seg({"file/url": file_url(sampling_rate=1001)}), ("get_track_url", "1", 27)
+    yield "sampling_rate 192000.0", seg({"file/url": file_url(sampling_rate=192000.0)}), ("get_track_url", "1", 27)
+    yield "sampling_rate missing", seg({"file/url": file_url(sampling_rate=MISSING)}), ("get_track_url", "1", 27)
+    yield "sampling_rate None", seg({"file/url": file_url(sampling_rate=None)}), ("get_track_url", "1", 27)
+    yield "sampling_rate a string", seg({"file/url": file_url(sampling_rate="96000")}), ("get_track_url", "1", 27)
+    yield "no key", seg({"file/url": file_url(key=MISSING)}), ("get_track_url", "1", 27)
+    yield "key not a string", seg({"file/url": file_url(key=5)}), ("get_track_url", "1", 27)
+    yield "key in two parts", seg({"file/url": file_url(key="qbz-1.abc")}), ("get_track_url", "1", 27)
+    yield "empty answer", seg({"file/url": status(200, "{}")}), ("get_track_url", "1", 27)
+    yield "file/url 400", seg({"file/url": status(400, '{"message":"bad"}')}), ("get_track_url", "1", 27)
+    yield "file/url 404", seg({"file/url": status(404, "{}")}), ("get_track_url", "1", 27)
+    yield "session/start 500", seg({"session/start": status(500, "{}")}), ("get_track_url", "1", 27)
+    yield "session/start without infos", seg({"session/start": status(200, '{"session_id":"s"}')}), ("get_track_url", "1", 27)
+    yield "session/start with bad infos", seg({"session/start": status(200, '{"session_id":"s","infos":"nodot"}')}), ("get_track_url", "1", 27)
 
 
 def pager(pages):
@@ -2322,6 +2383,209 @@ def gen_layout(index, raw):
         downloader.time = real_time
 
 
+# --- Segments -------------------------------------------------------------
+
+# What the fake's segmented path serves: session/start's infos, one track key
+# wrapped under the session key that Secret and the infos give, and per
+# format the fragmented MP4 cut into segments and encrypted.
+SEGMENTS = FIXTURES / "segments"
+SEG_FORMATS = {6: "16-44.1", 7: "24-96", 27: "24-192"}
+SEG_SESSION_ID = "qobuzdltest-session"
+SEG_INFOS = session_infos("qobuzdltest")
+SEG_RAW_KEY = hashlib.sha256(b"qobuzdltest raw key").digest()[:16]
+SEG_KEY = wrap_key(derive(FAKE_SECRET, SEG_INFOS), SEG_RAW_KEY, hashlib.md5(b"qobuzdltest key iv").digest())
+# Frame sizes and flags cycle; 0x0100 checks that flags is read as 16 bits.
+SEG_FRAME_SIZES = (1000, 250, 640, 0, 77)
+SEG_FRAME_FLAGS = (1, 0, 0x0100, 1, 0)
+
+
+def mp4_boxes(data):
+    pos, out = 0, []
+    while pos < len(data):
+        size = int.from_bytes(data[pos:pos + 4], "big")
+        out.append((data[pos + 4:pos + 8], data[pos:pos + size]))
+        pos += size
+    return out
+
+
+def uuid_box(usertype, data_offset, counter_len, frames):
+    """A uuid box as _decrypt_qobuz_segment reads it: 4 bytes it skips, the
+    offset of the first frame from the box's start, the counter length, the
+    frame count, then per frame its length, 2 bytes it skips, the flags and
+    the counter."""
+    body = bytes(4) + data_offset.to_bytes(4, "big") + bytes([counter_len]) + len(frames).to_bytes(3, "big")
+    for n, flags, counter in frames:
+        body += n.to_bytes(4, "big") + b"\x00\x00" + flags.to_bytes(2, "big") + counter
+    return (24 + len(body)).to_bytes(4, "big") + b"uuid" + usertype + body
+
+
+def ctr(key, counter, data):
+    e = Cipher(algorithms.AES(key), modes.CTR(counter + bytes(16 - len(counter)))).encryptor()
+    return e.update(data) + e.finalize()
+
+
+def encrypt_fragment(fmt, n, moof, mdat, usertype, counter_len, decoy):
+    """Segment n of a format: an optional decoy uuid box, the uuid box, the
+    moof and the mdat with the flagged frames encrypted. default_base_moof
+    keeps the moof's offsets valid with boxes in front of it."""
+    payload = mdat[8:]
+    sizes, left, i = [], len(payload), 0
+    while left > 0:
+        size = min(SEG_FRAME_SIZES[i % len(SEG_FRAME_SIZES)], left)
+        sizes.append(size)
+        left -= size
+        i += 1
+    frames = []
+    for j, size in enumerate(sizes):
+        counter = hashlib.sha256(f"counter {fmt} {n} {j}".encode()).digest()[:counter_len]
+        if j == 0 and counter_len == 16:
+            # The low 64 bits overflow within the frame, so the carry has to
+            # reach the high half.
+            counter = counter[:8] + b"\xff" * 7 + b"\xfe"
+        frames.append((size, SEG_FRAME_FLAGS[j % len(SEG_FRAME_FLAGS)], counter))
+    box_size = 24 + 12 + len(frames) * (8 + counter_len)
+    plain_box = uuid_box(usertype, box_size + len(moof) + 8, counter_len, frames)
+    out, pos = bytearray(mdat[:8]), 0
+    for size, flags, counter in frames:
+        chunk = payload[pos:pos + size]
+        out += ctr(SEG_RAW_KEY, counter, chunk) if flags else chunk
+        pos += size
+    head = b""
+    if decoy:
+        other = hashlib.sha256(b"decoy").digest()[:16]
+        head = uuid_box(other, 36 + 8 + 16, 16, [(64, 1, bytes(16))])
+    return head + plain_box + moof + bytes(out), head + plain_box + moof + mdat
+
+
+def write_segment_fixtures():
+    shutil.rmtree(SEGMENTS, ignore_errors=True)
+    index = {"session_id": SEG_SESSION_ID, "infos": SEG_INFOS, "key": SEG_KEY, "raw_key": SEG_RAW_KEY.hex(), "formats": {}}
+    for fmt, name in SEG_FORMATS.items():
+        boxes = mp4_boxes((AUDIO / f"{name}.mp4").read_bytes())
+        if [t for t, _ in boxes[:2]] != [b"ftyp", b"moov"] or boxes[-1][0] != b"mfra":
+            sys.exit(f"{name}.mp4: not a fragmented MP4 as the README makes it")
+        fragments = boxes[2:-1]
+        usertype = hashlib.sha256(f"segment uuid {fmt}".encode()).digest()[:16]
+        counter_len = 16 if fmt == 27 else 8
+        d = SEGMENTS / str(fmt)
+        d.mkdir(parents=True)
+        (d / "0.m4s").write_bytes(boxes[0][1] + boxes[1][1])
+        n = 0
+        for k in range(0, len(fragments), 2):
+            (t1, moof), (t2, mdat) = fragments[k], fragments[k + 1]
+            if (t1, t2) != (b"moof", b"mdat"):
+                sys.exit(f"{name}.mp4: fragment {k} is {t1} {t2}")
+            n += 1
+            seg, plain = encrypt_fragment(fmt, n, moof, mdat, usertype, counter_len, decoy=n >= 2 and fmt == 7)
+            if downloader._decrypt_qobuz_segment(seg, SEG_RAW_KEY, usertype) != plain:
+                sys.exit(f"{name}.mp4: segment {n} does not decrypt back")
+            (d / f"{n}.m4s").write_bytes(seg)
+        seg1 = (d / "1.m4s").read_bytes()
+        if downloader._get_qobuz_segment_uuid(seg1) != usertype:
+            sys.exit(f"{name}.mp4: segment 1 gives the wrong UUID")
+        index["formats"][str(fmt)] = {"n_segments": n, "mime_type": 'audio/mp4; codecs="flac"'}
+    (SEGMENTS / "index.json").write_text(json.dumps(index, indent=1) + "\n", encoding="utf-8")
+
+
+def box(typ, body):
+    return (8 + len(body)).to_bytes(4, "big") + typ + body
+
+
+def built_segment_cases():
+    """Hand-built buffers for _get_qobuz_segment_uuid and
+    _decrypt_qobuz_segment: flags, offsets, counters and broken boxes."""
+    u = hashlib.sha256(b"built uuid").digest()[:16]
+    other = hashlib.sha256(b"other uuid").digest()[:16]
+    key = hashlib.sha256(b"built key").digest()[:16]
+    data = bytes(range(256)) * 2
+
+    def table(frames, counter_len=8, offset=None, usertype=u, count=None):
+        size = 36 + len(frames) * (8 + counter_len)
+        b = uuid_box(usertype, size if offset is None else offset, counter_len, frames)
+        if count is not None:
+            b = b[:32] + b[32:33] + count.to_bytes(3, "big") + b[36:]
+        return b
+
+    c8 = lambda s: hashlib.md5(s.encode()).digest()[:8]
+    c16 = lambda s: hashlib.md5(s.encode()).digest()
+    free = box(b"free", b"x" * 12)
+    uuid_cases = {
+        "first box": table([(16, 1, c8("a"))]) + data[:16],
+        "after other boxes": free + box(b"moof", b"m" * 20) + table([]),
+        "first of two": table([], usertype=other) + table([]),
+        "none": free + box(b"mdat", data[:40]),
+        "empty": b"",
+        "zero size stops": bytes(4) + b"free" + bytes(16) + table([]),
+        "size past the end stops": (1000).to_bytes(4, "big") + b"free" + bytes(16) + table([]),
+        "short box at the end": (24).to_bytes(4, "big") + b"uuid" + u[:12],
+        "uuid box shorter than 24": (12).to_bytes(4, "big") + b"uuid" + u[:4] + u[4:] + bytes(12),
+        "small size steps": (4).to_bytes(4, "big") + b"uuid" + u + bytes(4),
+    }
+    for name, buf in uuid_cases.items():
+        yield f"uuid: {name}", {"data": buf.hex()}, lambda buf=buf: (lambda r: None if r is None else r.hex())(downloader._get_qobuz_segment_uuid(buf))
+
+    def dec(name, buf, uuid=u, k=key):
+        inp = {"data": buf.hex(), "raw_key": k.hex(), "uuid": None if uuid is None else uuid.hex()}
+        return f"decrypt: {name}", inp, lambda: downloader._decrypt_qobuz_segment(bytearray(buf), k, uuid).hex()
+
+    three = [(32, 1, c8("1")), (16, 0, c8("2")), (40, 0x0100, c8("3"))]
+    yield dec("flags", table(three) + data[:88])
+    yield dec("zero flags only", table([(32, 0, c8("1")), (32, 0, c8("2"))]) + data[:64])
+    yield dec("frames past the data", table(three) + data[:50])
+    yield dec("frame inside the box", table([(20, 1, c8("1")), (8, 1, c8("2"))], offset=8) + data[:8])
+    yield dec("frame over its own table", table([(40, 1, c8("1")), (16, 1, c8("2"))], offset=28) + data[:32])
+    yield dec("frame after other boxes", table([(24, 1, c8("1"))], offset=36 + 16 + len(free)) + free + data[:24])
+    yield dec("counter of 16 with a carry", table([(80, 1, b"\x01" * 8 + b"\xff" * 8)], counter_len=16) + data[:80])
+    yield dec("counter of 16 wrapping", table([(48, 1, b"\xff" * 16)], counter_len=16) + data[:48])
+    yield dec("counter of 0", table([(32, 1, b"")], counter_len=0) + data[:32])
+    yield dec("counter of 17", table([(32, 1, b"c" * 17)], counter_len=17) + data[:32])
+    yield dec("counter of 17 unflagged", table([(32, 0, b"c" * 17)], counter_len=17) + data[:32])
+    cut = (44).to_bytes(4, "big") + b"uuid" + u + bytes(4) + (100).to_bytes(4, "big") + b"\x08" + (1).to_bytes(3, "big")
+    yield dec("counter cut by the end", cut + (16).to_bytes(4, "big") + b"\x00\x00" + (1).to_bytes(2, "big"))
+    yield dec("frame count past the table", table([(16, 1, c8("1"))], count=1000) + data[:16])
+    yield dec("two boxes", table([(16, 1, c8("1"))]) + data[:16] + table([(16, 1, c8("2"))]) + data[16:32])
+    yield dec("other uuid untouched", table([(16, 1, c8("1"))], usertype=other) + data[:16])
+    yield dec("uuid None", table([(16, 1, c8("1"))]) + data[:16], uuid=None)
+    yield dec("uuid shorter than 16", table([(16, 1, c8("1"))]) + data[:16], uuid=u[:8])
+    yield dec("AES-256 key", table([(16, 1, c8("1"))]) + data[:16], k=key * 2)
+    yield dec("key of 10 bytes", table([(16, 1, c8("1"))]) + data[:16], k=key[:10])
+    yield dec("key of 10 bytes, nothing flagged", table([(16, 0, c8("1"))]) + data[:16], k=key[:10])
+    yield dec("zero size stops", bytes(4) + b"free" + table([(16, 1, c8("1"))]) + data[:16])
+    yield dec("truncated box stops", table([(16, 1, c8("1"))])[:-1])
+    yield dec("size past the end stops", free + (500).to_bytes(4, "big") + b"uuid" + u + data[:40])
+    yield dec("header cut short", data[:7])
+    yield dec("small size steps", (4).to_bytes(4, "big") + table([(16, 1, c8("1"))]) + data[:16])
+    yield dec("uuid box of 24 at the end", (24).to_bytes(4, "big") + b"uuid" + u)
+    yield dec("uuid box of 30 at the end", (30).to_bytes(4, "big") + b"uuid" + u + bytes(6))
+    yield dec("uuid box of 33 at the end", (33).to_bytes(4, "big") + b"uuid" + u + bytes(4) + bytes(4) + b"\x08")
+    yield dec("empty", b"")
+    yield dec("table with a 16-byte counter", table([(16, 1, c16("x")), (16, 0, c16("y"))], counter_len=16) + data[:32])
+
+
+def gen_segments():
+    g = Golden("segments")
+    index = json.loads((SEGMENTS / "index.json").read_text(encoding="utf-8"))
+    raw_key = bytes.fromhex(index["raw_key"])
+    for fmt in SEG_FORMATS:
+        n = index["formats"][str(fmt)]["n_segments"]
+        uuid = downloader._get_qobuz_segment_uuid((SEGMENTS / str(fmt) / "1.m4s").read_bytes())
+        for i in range(n + 1):
+            seg = (SEGMENTS / str(fmt) / f"{i}.m4s").read_bytes()
+            # The flow decrypts segment 0 before the UUID is known.
+            use = None if i == 0 else uuid
+
+            def run(seg=seg, use=use):
+                found = downloader._get_qobuz_segment_uuid(seg)
+                plain = downloader._decrypt_qobuz_segment(seg, raw_key, use)
+                return {"uuid": None if found is None else found.hex(), "size": len(plain), "sha256": sha(plain)}
+
+            g.case(f"fixture: {fmt}/{i}", {"format": fmt, "segment": i, "raw_key": raw_key.hex(),
+                                             "uuid": None if use is None else use.hex()}, run)
+    for name, inp, fn in built_segment_cases():
+        g.case(name, inp, fn)
+    g.write()
+
+
 # --- qobuzdltest ---------------------------------------------------------
 
 
@@ -2335,6 +2599,7 @@ def write_fake_fixtures():
     shutil.rmtree(FAKE_DATA, ignore_errors=True)
     shutil.copytree(FIXTURES / "api", FAKE_DATA / "api")
     shutil.copytree(FIXTURES / "bundle", FAKE_DATA / "bundle")
+    shutil.copytree(SEGMENTS, FAKE_DATA / "segments")
     (FAKE_DATA / "audio").mkdir()
     for name in FAKE_AUDIO:
         shutil.copyfile(AUDIO / name, FAKE_DATA / "audio" / name)
@@ -2385,6 +2650,8 @@ def main():
     gen_naming(index, raw)
     gen_tracklist(index, raw)
     gen_layout(index, raw)
+    write_segment_fixtures()
+    gen_segments()
     write_fake_fixtures()
 
 

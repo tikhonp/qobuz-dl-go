@@ -2,6 +2,7 @@ package qobuzdl
 
 import (
 	"context"
+	"os"
 	"testing"
 )
 
@@ -78,3 +79,28 @@ var (
 	ErrDemo     = errDemo
 	ErrAllTiers = errAllTiers
 )
+
+// FLACAudio returns a FLAC file's audio frames, the bytes after its
+// metadata blocks.
+func FLACAudio(t *testing.T, path string) []byte {
+	t.Helper()
+	b, err := readFLACBlocks(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	data, err := os.ReadFile(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	return data[b.audio:]
+}
+
+// FLACStreamInfo is a FLAC file's bit depth, rate and sample count.
+func FLACStreamInfo(t *testing.T, path string) (bitDepth, rate int, samples int64) {
+	t.Helper()
+	bitDepth, rate, samples, err := flacStreamInfo(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	return bitDepth, rate, samples
+}
