@@ -11,3 +11,4 @@ testdata/gen/.venv/
 *.swp
 .idea/
 .vscode/
+__pycache__/

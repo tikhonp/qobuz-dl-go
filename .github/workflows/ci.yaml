@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-go@v7
+        timeout-minutes: 10
+        with:
+          go-version-file: go.mod
+
+      - name: Download modules
+        timeout-minutes: 10
+        run: go mod download
+
+      # The remux test skips without ffmpeg; CI should run it.
+      - name: Install ffmpeg
+        timeout-minutes: 10
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: gofmt
+        run: |
+          out=$(gofmt -l .)
+          if [ -n "$out" ]; then echo "::error::unformatted files:"; echo "$out"; exit 1; fi
+
+      - name: Build
+        run: go build ./...
+
+      - name: Vet
+        run: go vet ./...
+
+      - name: Test
+        run: go test -race -count=1 ./...
+
+  # Lint and govulncheck don't wait for the tests: a runner of their own.
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-go@v7
+        timeout-minutes: 10
+        with:
+          go-version-file: go.mod
+
+      - name: Download modules
+        timeout-minutes: 10
+        run: go mod download
+
+      # Keep the version equal to the Makefile's: a new release brings new findings unasked.
+      - name: golangci-lint
+        timeout-minutes: 20
+        uses: golangci/golangci-lint-action@v9
+        with:
+          version: v2.15.0
+
+      - name: govulncheck
+        run: go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...
