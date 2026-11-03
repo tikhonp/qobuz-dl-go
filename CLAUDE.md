@@ -60,4 +60,4 @@ testdata/golden/          the golden files
 
 ## Releases
 
-Tags are this repo's own semver, starting at `v0.1.0`. `UPSTREAM.md` records which qobuz-dl version each tag ports. The repo lives on Forgejo at `code.tikhonnnnn.com/tikhon/qobuz-dl-go` with a push mirror to `github.com/tikhonp/qobuz-dl-go`, which is where `go get` fetches the module.
+Tags are this repo's own semver, starting at `v0.1.0`. `UPSTREAM.md` records which qobuz-dl version each tag ports. The repo lives only on GitHub, at `github.com/tikhonp/qobuz-dl-go`, public, and `origin` points there. CI runs on GitHub Actions from `.github/workflows/ci.yaml`: gofmt, vet, `go test -race`, golangci-lint v2.15.0 and govulncheck.
