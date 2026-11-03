@@ -526,8 +526,9 @@ With `save_space` and `skip_extras` on, as `handle_url` calls it:
 - A status other than 200 or 206 raises `Status Server: <code>`.
 - A 200 to a resumed request starts the file over (2.5.8).
 - The expected total is set once: the bytes already saved plus `Content-Length`, default 0.
-- After the body: more bytes than expected deletes the file and raises; at least the expected bytes returns as success; fewer goes straight to the next attempt, with no sleep, resuming from what is saved.
-- Any exception whose text contains `404` deletes the file and raises `HTTP 404: File not found on server.` at once. That includes `Status Server: 404`.
+- After the body: more bytes than expected deletes the file and raises; at least the expected bytes returns as success; fewer goes straight to the next attempt, with no sleep, resuming from what is saved. The short case happens only when the server answers a range with a shorter body that matches its own `Content-Length`.
+- A connection that drops before `Content-Length` is reached raises urllib3's `IncompleteRead` inside the read loop, so the attempt sleeps and retries like any other error. urllib3 drops the bytes of the unfinished 64 KiB chunk, so a body cut at byte 70,000 keeps 65,536 bytes and the next attempt asks for `bytes=65536-`.
+- Any exception whose text contains `404` deletes the file and raises `HTTP 404: File not found on server.` at once. That includes `Status Server: 404`, and also an overshoot message or a connection error whose numbers happen to contain `404`.
 - Other exceptions sleep 2, 4, 8 or 16 seconds and retry. After the fifth the file is deleted and the error raised.
 - When the attempts run out on a short read, the file is deleted and `Incomplete download` raised.
 - When a resumed attempt overshoots, the file is deleted but the saved count is not reset, so the next attempt appends to a new file from that offset (kept).

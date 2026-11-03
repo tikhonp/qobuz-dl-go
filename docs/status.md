@@ -2,9 +2,9 @@
 
 ## Now
 
-Steps 1 to 6 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` without `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py` without the segmented branch, with the typed views, the taggers from `metadata.py`, and `qobuzdltest`, the fake Qobuz, with `Options` from `core.py`.
+Steps 1 to 7 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` without `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py` without the segmented branch, with the typed views, the taggers from `metadata.py`, `qobuzdltest`, the fake Qobuz, with `Options` from `core.py`, and `downloader.py` without the segmented transfer, with `Progress` and the results.
 
-Next: step 7, [downloader, direct path](build/07-downloader.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
+Next: step 8, [segmented path](build/08-segments.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
 
 ## Steps
 
@@ -16,8 +16,8 @@ Next: step 7, [downloader, direct path](build/07-downloader.md). Start Claude Co
 | 4 | [bundle and API client](build/04-client.md) | done |
 | 5 | [tags](build/05-tags.md) | done |
 | 6 | [fake Qobuz](build/06-fake.md) | done |
-| 7 | [downloader, direct path](build/07-downloader.md) | next |
-| 8 | [segmented path](build/08-segments.md) | |
+| 7 | [downloader, direct path](build/07-downloader.md) | done |
+| 8 | [segmented path](build/08-segments.md) | next |
 | 9 | [core, m3u8, downloadsdb](build/09-core.md) | |
 | 10 | [CLI and parity tools](build/10-cli.md) | |
 | 11 | [parity and v0.1.0](build/11-parity.md) | needs `QOBUZ_TOKEN` |
@@ -73,3 +73,8 @@ Filled in by the parity run in step 11.
 - Step 6. `qobuzdltest` with `server.go`, `fixtures.go`, `cdn.go` and `switches.go`, and `Options`, `DefaultOptions` and `DownloadsDB` in `core.go`, which `Configure` needs. `make golden` copies the fixtures into `qobuzdltest/testdata/`, which the package embeds. A client built from `ClientOptions()` reads all 367 recorded answers. Details are in [06-fake.md](build/06-fake.md) under As built.
 - The fake also answers `track/get` for the tracks of the recorded albums and playlist, since a playlist download calls it for each track and only one answer is recorded. It has built collections for paging and empty answers, and `Request` has the headers and the status. design.md's qobuzdltest section now says all this.
 - For shelf: `qobuzdltest` has `PlaylistEmpty`, `ArtistEmpty` and `LabelEmpty` for 1d's `TestResolveEmptyCollection`, and `ExpireToken` for `TestHealthTokenExpired`. `catalog/search` answers the recorded search of each type whatever the query, so search tests can't check that a query reached Qobuz except through `Requests()`. `Configure` replaces `Options.HTTPClient` with the fake's; tests of shelf's own client, such as `TestHTTPClientHasNoTimeout` and `TestProxyOptIn`, can instead set `APIBase`, `PlayBase` and `Settings.UserAuthToken` by hand, since the fake is plain HTTP on localhost.
+- Step 7. `downloader.go` without the segmented transfer, `progress.go`, `isRequestError`, and a `FailStatic` switch in the fake. Four new goldens: `naming.json`, `tracklist.json`, and `layout_album.json` and `layout_track.json`, whole download trees from upstream's `Download` run against a client that answers as the fake does. The Go trees match them, FLAC files byte for byte. Details are in [07-downloader.md](build/07-downloader.md) under As built.
+- port-spec.md said a short body retries without sleeping. That holds only when a short body matches its own `Content-Length`. A dropped connection raises urllib3's `IncompleteRead`, which loses the unfinished 64 KiB chunk and sleeps before the retry. Python runs in the venv showed both, and port-spec.md now says so.
+- `genreTag` now changes a copy of `genres_list`, where Python writes into the shared album; the workers raced on it. `TagMP3` now sets 0644 on the file `id3v2` saves.
+- The commits of this step have no `Co-Authored-By` line, at the user's request, and were not pushed.
+- For shelf: `DefaultOptions().Quality` is Python's 6; the bot runs 27. `Progress.TrackEnd` gets the track's path in the work folder, `[IN PROGRESS] <name>` for albums, and the `Result` has the final path. `TrackEnd` also fires for tracks that never started because the context ended. `qobuzdltest` has `FailStatic`, 404 on every cover and goody.

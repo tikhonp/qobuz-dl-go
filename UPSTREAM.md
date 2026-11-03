@@ -17,7 +17,7 @@
 | `bundle.py` | `bundle.go` | ported |
 | `qopy.py` | `qopy.go` | ported, but for the segmented branch of `get_track_url` |
 | `core.py` | `core.go` | `Options` and `DefaultOptions` only; the rest planned |
-| `downloader.py` | `downloader.go` | planned |
+| `downloader.py` | `downloader.go`, with `Progress` and the results in `progress.go` | ported, but for the segmented transfer |
 | `metadata.py` | `metadata.go`, with mutagen's FLAC blocks in `flac.go` | ported |
 | `utils.py` | `utils.go` | ported, but for `make_m3u` |
 | `settings.py` | `settings.go` | ported |
@@ -85,12 +85,16 @@ When two Python modules have private functions with the same name, the Go name g
 | `process_folder_format_with_subdirs` | `processFolderFormatWithSubdirs` |
 | `Download` | `download` |
 | `download_id_by_type`, `download_release`, `download_track` | `downloadIDByType`, `downloadRelease`, `downloadTrack` |
-| `_download_and_tag` | `downloadAndTag` |
+| `_download_and_tag` | `downloadAndTag`, with its naming part in `trackPath` and one pass of the tier loop in `tryTier` |
+| the `try` block of `download_release`, extras and worker pool | `releaseBody` |
 | `_get_filename_attr`, `_get_track_attr`, `_get_album_attr` | `getFilenameAttr`, `getTrackAttr`, `getAlbumAttr` |
 | `_get_format`, `_determine_formats` | `getFormat`, `determineFormats` |
 | `_generate_tracklist` | `generateTracklist` |
 | `_get_description`, `_get_title`, `_get_extra`, `_clean_format_str`, `_safe_get` | `getDescription`, `downloaderGetTitle`, `getExtra`, `cleanFormatStr`, `safeGet` |
-| `tqdm_download` | `transfer` |
+| `_flatten_artists` | `flattenArtists` |
+| `QL_DOWNGRADE`, `EMB_COVER_NAME`, `NAME_MAX_BYTES`, `STATE_PREFIX_BYTES` | `qlDowngrade`, `embCoverName`, `nameMaxBytes`, `statePrefixBytes` |
+| `tqdm_download` | `transfer`, one pass of its loop in `transferAttempt` |
+| `requests`' `timeout=(10, 60)` | `transferTimers` |
 | `tqdm_download_segments` with `get_seg_size`, `fetch_segment_fluid` | `transferSegments` |
 | `Download.__init__` | the unexported `download` struct, one per call |
 | `_get_qobuz_segment_uuid`, `_decrypt_qobuz_segment` | `qobuzSegmentUUID`, `decryptQobuzSegment` |
@@ -147,7 +151,10 @@ These port no qobuz-dl file. They stand in for CPython 3.14 behavior the port re
 | `v[key]` on any value, `==`, `<`, `min`, `max`, `x in container` | `pyGetItem`, `pyEqual`, `pyLess`, `pyMinMax`, `pyContains` |
 | `str(e)` of an exception | `pyExceptionStr` |
 | `posixpath.normpath`, `posixpath.basename`, `ntpath.splitdrive`, `ntpath.isabs`, `os.path.expanduser` | `posixNormpath`, `posixBasename`, `ntSplitDrive`, `ntIsAbs`, `expandUser` |
-| `os.path.join`, `os.path.abspath`, `os.path.isfile` | `pyPathJoin`, `pyAbspath`, `isFile` |
+| `os.path.join`, `os.path.abspath`, `os.path.isfile` | `pyPathJoin` and `pyJoin`, `pyAbspath`, `isFile` |
+| `os.path.split`, `os.path.dirname`, `os.path.splitext`, `os.path.exists`, `os.path.isdir`, `os.makedirs` | `pySplit`, `pyDirname`, `pySplitext`, `pathExists`, `isDir`, `makeDirs` |
+| `str.zfill`, `divmod` on ints, `v[0]` | `pyZfill`, `floorDivmod`, `pyIndex` |
+| `except requests.exceptions.RequestException` | `isRequestError` |
 | `dict.pop`, `bytes.decode("utf-8", "replace")` | `(*pyDict).pop`, `pyDecodeUTF8` |
 
 ### settings.py, constants.py, exceptions.py, db.py
@@ -178,12 +185,16 @@ These port no qobuz-dl file. They stand in for CPython 3.14 behavior the port re
 | Private functions with clashing names get the module as a prefix. | One Go package holds several Python modules. |
 | `HandleID` is `handle_url` without the URL parsing. | Callers that already have a kind and an ID, such as shelf's playlist downloads. |
 | A context end renames `[IN PROGRESS]` to `[INCOMPLETE]` and returns an error; Python does the rename on Ctrl+C and exits the process. | A library must not exit. |
-| Each call copies the settings a playlist changes; Python changes the shared settings object for the loop. | Concurrent calls on one `DL`. |
+| Each call copies the settings a playlist changes; Python changes the shared settings object for the loop. `_determine_formats` also writes the multi-disc template it chose into that object, so in Python a fallback to `DEFAULT_MULTIPLE_DISC_TRACK` on one album of an artist or label carries over to the albums after it; in the port it doesn't. | Concurrent calls on one `DL`. |
 | `MakeM3U` reads file names sorted; Python takes the file system's order. | Python's order varies between machines. It shows only when two files tie on a title or nothing matches. |
 | A tagging failure removes the temp file. | Python leaves it for the CLI to clean. |
 | `DownloadsDB.Has` gets the media type. | shelf keys its table on it; `downloadsdb` ignores it, as Python does. |
 | `ErrUnhandled` is returned where an uncaught Python exception would crash the process. | A library must not crash its caller. |
 | A track skipped because its file exists reports its format, read from the file. | shelf records the delivered format for every file. |
+| The transfer's 404 rule looks for `404` in Go's error text, which never holds the URL; requests' errors print the URL, so Python also gives up at once on a connection error to a URL with `404` in it. | URLs carry signatures and stay out of errors. |
+| Progress lines are shorter: `[+] In progress` has no size in MB, and nothing draws a bar. `_clean_embed_art` doesn't sleep half a second first. | The sizes and bars are tqdm's; the sleep waits for Windows file locks. |
+| `Settings.Delay` takes any duration; Python takes whole seconds. | Tests run with a millisecond. |
+| `genres_list[0] = main` in the GENRE tag works on a copy. Python writes the same value into the shared album on every call. | The workers tag one album's tracks at once; the tags are the same. |
 | MP3 frame order and ID3 padding differ from mutagen's. | `id3v2` writes frames in map order and adds no padding; players show neither. |
 | Frames already in an MP3 stay as they are. mutagen translates them to v2.4 on load and saves them so: TYER, TDAT and TIME become TDRC, TRDA, TSIZ, RVAD and EQUA go, numeric TCON genres are spelled out, and unknown frames from a v2.4 tag go. An ID3v1 tag stays as it is, where mutagen updates it. | `id3v2` reads frames as they are. It shows only on MP3s that come with such frames. |
 | An MP3 with an ID3v2.2 tag, or a frame `id3v2` can't parse, fails to tag. mutagen reads both. | `id3v2` refuses them. |

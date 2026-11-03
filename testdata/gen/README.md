@@ -45,6 +45,9 @@ Each golden is `{"generator", "cases": [{"name", "input", "output"} or {"name", 
 | `disc_track_total.json` | `_disc_track_total` on every recorded track and on built albums |
 | `flac_tagged.json` | `tag_flac` on copies of the FLAC fixtures: the blocks, the comments, the pictures and hashes of the audio and of the whole file |
 | `mp3_tagged.json` | `tag_mp3` on copies of the MP3 fixtures: the frames as mutagen reads them, a hash of each raw frame and a hash of the audio |
+| `naming.json` | the folder and file names of each recorded album and the single track, through `_get_album_attr` or `_get_track_attr`, `_determine_formats`, `process_folder_format_with_subdirs` and `_download_and_tag` up to its `_fit_name` call, over gates at 27, 6 and 5, a failed gate and a float rate, and a matrix of templates and settings |
+| `tracklist.json` | `_generate_tracklist` on the recorded albums and on built ones with discs, nulls, missing keys, odd types and descriptions |
+| `layout_album.json`, `layout_track.json` | whole downloads by `Download.download_id_by_type`, with a client that answers as `qobuzdltest` does and a localhost server for the CDN and the static files: every folder and file, with the FLAC and MP3 results above, the tracklist's text, or a SHA-256 |
 
 ## Corpora
 

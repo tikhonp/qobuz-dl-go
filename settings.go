@@ -44,7 +44,7 @@ type Settings struct {
 	VariousArtistsAliases []string
 
 	EmbedArt        bool   // fetch embed_cover.jpg; Options.EmbedArt embeds it
-	NoCover         bool   // passed along and read by nothing, as upstream
+	NoCover         bool   // no cover.jpg
 	EmbeddedArtSize string // "600"
 	SavedArtSize    string // "org"
 

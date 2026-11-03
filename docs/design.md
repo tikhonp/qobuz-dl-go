@@ -511,7 +511,7 @@ type TrackInfo struct {
 - `ReleaseStart` fires once per album or single track, after the folder exists and before the extras. A playlist fires it once with every track planned, and its tracks fire no `ReleaseStart` of their own. Artists and labels fire one per album.
 - `TrackStart` fires when a transfer starts, once per tier tried.
 - `TrackBytes` fires at most every 250 ms per track and once more when the transfer ends. `total` is 0 when unknown. Covers and goodies don't report bytes.
-- `TrackEnd` fires once per planned track, also for tracks that fail before a transfer.
+- `TrackEnd` fires once per planned track, also for tracks that fail before a transfer or never start because the context ended. Its `Path` is in the work folder; the `Result` has the final one.
 - `Log` gets the lines Python prints or logs at info level and above, without colors. The same lines go to the `*slog.Logger`, which also gets debug lines.
 
 ```go
@@ -594,7 +594,7 @@ The Python `abort_event` becomes the context. Every place that checks `abort_eve
 
 ### Worker pool
 
-The main loop calls `getTrackURL` for each track in order, then hands the track to a pool of `MaxWorkers` goroutines, or one when `Delay` is above 0. Submission never blocks, as with `ThreadPoolExecutor`, and results are collected in submission order. Files, temp files and log lines then come in Python's order.
+The main loop calls `getTrackURL` for each track in order, then hands the track to a pool of `MaxWorkers` goroutines, or one when `Delay` is above 0. Submission never blocks, as with `ThreadPoolExecutor`. The main loop puts each track's index on a queue with room for every track, and the workers take from it in order, so tracks start in submission order. The main loop collects the results in submission order. Files, temp files and log lines then come in Python's order.
 
 ### Cancellation
 
@@ -748,6 +748,7 @@ func (s *Server) EmptyAnswer(trackID string)               // getFileUrl answers
 func (s *Server) Restrict(trackID string, fmtID int)       // FormatRestrictedByFormatAvailability, delivers the next tier
 func (s *Server) Deliver(trackID string, fmtID int)        // answers that format_id whatever is asked, without restrictions
 func (s *Server) Segmented(trackID string)                  // step 8: getFileUrl without url; file/url and segments instead
+func (s *Server) FailStatic()                               // 404 on every cover and goody
 func (s *Server) ExpireToken()                             // 401 on every API call
 func (s *Server) Requests() []Request                      // in arrival order
 func (s *Server) Reset()                                   // clears switches and the log
