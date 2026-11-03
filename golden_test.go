@@ -5,15 +5,15 @@ package qobuzdl
 
 import (
 	"bytes"
-	"encoding/json"
 	"errors"
 	"fmt"
-	"io"
 	"math"
 	"os"
 	"path/filepath"
+	"slices"
 	"strings"
 	"testing"
+	"unicode"
 )
 
 const goldenGenerator = "qobuz-dl 2.5.9"
@@ -28,22 +28,8 @@ type goldenCase struct {
 	Error     string
 }
 
-// goldenDict is a JSON object with its keys in file order, which is Python's
-// insertion order.
-type goldenDict struct {
-	keys []string
-	vals map[string]any
-}
-
-func (d *goldenDict) Keys() []string { return d.keys }
-
-func (d *goldenDict) Get(key string) (any, bool) {
-	v, ok := d.vals[key]
-	return v, ok
-}
-
-// loadGolden reads testdata/golden/<name>.json. Values come back as nil, bool,
-// int64, float64, string, []any or *goldenDict.
+// loadGolden reads testdata/golden/<name>.json. Values come back as Python
+// values: nil, bool, int64, float64, string, []any or *pyDict.
 func loadGolden(tb testing.TB, name string) []goldenCase {
 	tb.Helper()
 	path := filepath.Join("testdata", "golden", name+".json")
@@ -59,25 +45,25 @@ func loadGolden(tb testing.TB, name string) []goldenCase {
 }
 
 func parseGolden(data []byte) ([]goldenCase, error) {
-	raw, err := decodeGoldenJSON(data)
+	raw, err := decodeJSON(bytes.NewReader(data))
 	if err != nil {
 		return nil, err
 	}
-	doc, ok := raw.(*goldenDict)
+	doc, ok := raw.(*pyDict)
 	if !ok {
 		return nil, errors.New("top level is not an object")
 	}
-	if g, _ := doc.Get("generator"); g != goldenGenerator {
+	if g := doc.get("generator", nil); g != goldenGenerator {
 		return nil, fmt.Errorf("generator %v, want %q", g, goldenGenerator)
 	}
-	list, _ := doc.Get("cases")
+	list := doc.get("cases", nil)
 	items, ok := list.([]any)
 	if !ok {
 		return nil, errors.New("cases is not a list")
 	}
 	cases := make([]goldenCase, 0, len(items))
 	for i, item := range items {
-		obj, ok := item.(*goldenDict)
+		obj, ok := item.(*pyDict)
 		if !ok {
 			return nil, fmt.Errorf("case %d is not an object", i)
 		}
@@ -90,7 +76,7 @@ func parseGolden(data []byte) ([]goldenCase, error) {
 	return cases, nil
 }
 
-func goldenCaseFrom(obj *goldenDict) (goldenCase, error) {
+func goldenCaseFrom(obj *pyDict) (goldenCase, error) {
 	var c goldenCase
 	for _, k := range obj.keys {
 		v := obj.vals[k]
@@ -129,82 +115,15 @@ func goldenString(key string, v any) (string, error) {
 	return s, nil
 }
 
-// jsonNull stands for a JSON null until untagGolden refuses it: gen.py tags
-// every None, so a plain null is a generator bug.
-type jsonNull struct{}
-
-// decodeGoldenJSON parses JSON keeping object key order, numbers as
-// json.Number and nulls as jsonNull.
-func decodeGoldenJSON(data []byte) (any, error) {
-	dec := json.NewDecoder(bytes.NewReader(data))
-	dec.UseNumber()
-	v, err := decodeGoldenToken(dec)
-	if err != nil {
-		return nil, err
-	}
-	if _, err := dec.Token(); !errors.Is(err, io.EOF) {
-		return nil, errors.New("data after the top-level value")
-	}
-	return v, nil
-}
-
-func decodeGoldenToken(dec *json.Decoder) (any, error) {
-	tok, err := dec.Token()
-	if err != nil {
-		return nil, err
-	}
-	switch t := tok.(type) {
-	case json.Delim:
-		switch t {
-		case '{':
-			d := &goldenDict{vals: map[string]any{}}
-			for dec.More() {
-				kt, err := dec.Token()
-				if err != nil {
-					return nil, err
-				}
-				k := kt.(string)
-				if _, dup := d.vals[k]; dup {
-					return nil, fmt.Errorf("duplicate key %q", k)
-				}
-				v, err := decodeGoldenToken(dec)
-				if err != nil {
-					return nil, err
-				}
-				d.keys = append(d.keys, k)
-				d.vals[k] = v
-			}
-			_, err := dec.Token()
-			return d, err
-		case '[':
-			list := []any{}
-			for dec.More() {
-				v, err := decodeGoldenToken(dec)
-				if err != nil {
-					return nil, err
-				}
-				list = append(list, v)
-			}
-			_, err := dec.Token()
-			return list, err
-		}
-		return nil, fmt.Errorf("unexpected %v", t)
-	case nil:
-		return jsonNull{}, nil
-	default:
-		return t, nil // string, bool, json.Number
-	}
-}
-
 // untagGolden turns gen.py's tagged values into Go values and refuses untagged
 // numbers and nulls, whose Python type is lost.
 func untagGolden(v any) (any, error) {
 	switch t := v.(type) {
 	case string, bool:
 		return t, nil
-	case json.Number:
-		return nil, fmt.Errorf("untagged number %s", t)
-	case jsonNull:
+	case int64, float64:
+		return nil, fmt.Errorf("untagged number %v", t)
+	case nil:
 		return nil, errors.New("untagged null")
 	case []any:
 		out := make([]any, len(t))
@@ -215,24 +134,24 @@ func untagGolden(v any) (any, error) {
 			}
 		}
 		return out, nil
-	case *goldenDict:
-		if _, tagged := t.vals["py"]; tagged {
+	case *pyDict:
+		if t.has("py") {
 			return untagPython(t)
 		}
-		out := &goldenDict{keys: t.keys, vals: make(map[string]any, len(t.vals))}
+		out := newDict()
 		for _, k := range t.keys {
 			x, err := untagGolden(t.vals[k])
 			if err != nil {
 				return nil, fmt.Errorf("%s: %w", k, err)
 			}
-			out.vals[k] = x
+			out.set(k, x)
 		}
 		return out, nil
 	}
 	return nil, fmt.Errorf("unexpected %T", v)
 }
 
-func untagPython(d *goldenDict) (any, error) {
+func untagPython(d *pyDict) (any, error) {
 	kind, _ := d.vals["py"].(string)
 	val, hasVal := d.vals["v"]
 	wantKeys := 1
@@ -249,19 +168,15 @@ func untagPython(d *goldenDict) (any, error) {
 		}
 		return nil, nil
 	case "int":
-		n, ok := val.(json.Number)
+		n, ok := val.(int64)
 		if !ok {
 			return nil, fmt.Errorf("int value %v", val)
 		}
-		i, err := n.Int64()
-		if err != nil {
-			return nil, fmt.Errorf("int %s: %w", n, err)
-		}
-		return i, nil
+		return n, nil
 	case "float":
 		switch f := val.(type) {
-		case json.Number:
-			return f.Float64()
+		case float64:
+			return f, nil
 		case string:
 			switch f {
 			case "inf":
@@ -319,14 +234,14 @@ func TestGoldenObjectsKeepKeyOrder(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	d := cases[0].Input.(*goldenDict)
-	if got := strings.Join(d.Keys(), ","); got != "z,a,m" {
+	d := cases[0].Input.(*pyDict)
+	if got := strings.Join(d.keysInOrder(), ","); got != "z,a,m" {
 		t.Errorf("keys %s, want z,a,m", got)
 	}
-	if v, _ := d.Get("a"); v != int64(2) {
+	if v := d.get("a", nil); v != int64(2) {
 		t.Errorf("a = %#v", v)
 	}
-	if v, _ := d.Get("m"); len(v.([]any)) != 1 || v.([]any)[0] != nil {
+	if v := d.get("m", nil); len(v.([]any)) != 1 || v.([]any)[0] != nil {
 		t.Errorf("m = %#v", v)
 	}
 }
@@ -368,5 +283,59 @@ func TestEveryGoldenLoads(t *testing.T) {
 				seen[c.Name] = true
 			}
 		})
+	}
+}
+
+// goldenRanges reads a golden list of code point ranges such as "0030-0039".
+func goldenRanges(tb testing.TB, v any) []runeRange {
+	tb.Helper()
+	items, ok := v.([]any)
+	if !ok {
+		tb.Fatalf("ranges are %T, not a list", v)
+	}
+	out := make([]runeRange, 0, len(items))
+	for _, it := range items {
+		s, _ := it.(string)
+		var lo, hi rune
+		if _, err := fmt.Sscanf(s, "%X-%X", &lo, &hi); err != nil {
+			tb.Fatalf("range %q: %v", s, err)
+		}
+		out = append(out, runeRange{lo, hi})
+	}
+	return out
+}
+
+// inRanges reports whether r is in sorted ranges.
+func inRanges(rs []runeRange, r rune) bool {
+	i, found := slices.BinarySearchFunc(rs, r, func(rg runeRange, r rune) int {
+		switch {
+		case rg.hi < r:
+			return -1
+		case rg.lo > r:
+			return 1
+		}
+		return 0
+	})
+	return found && i >= 0
+}
+
+// goldenByName indexes cases by name.
+func goldenByName(tb testing.TB, name string) map[string]goldenCase {
+	tb.Helper()
+	out := map[string]goldenCase{}
+	for _, c := range loadGolden(tb, name) {
+		out[c.Name] = c
+	}
+	return out
+}
+
+// eachRune calls fn for every code point Python can hold in a str, which is
+// all of them but the surrogates.
+func eachRune(fn func(r rune)) {
+	for r := rune(0); r <= unicode.MaxRune; r++ {
+		if r >= 0xd800 && r <= 0xdfff {
+			continue
+		}
+		fn(r)
 	}
 }

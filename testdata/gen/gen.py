@@ -454,6 +454,61 @@ def gen_regex():
     g.write()
 
 
+def _sigma_final(s):
+    return s.lower()[-1] == "ς"
+
+
+def _cased(c):
+    # A cased character makes title() lowercase the next letter.
+    return (c + "A").title()[-1] == "a"
+
+
+def _case_ignorable(c):
+    # Final sigma skips case-ignorable characters on both sides. A cased
+    # character before the sigma would decide the result, so cased ones are
+    # tested after it.
+    if _cased(c):
+        return ("AΣ" + c).lower()[1] == "ς"
+    return _sigma_final("A" + c + "Σ")
+
+
+def char_map(fn):
+    out = {}
+    for c in range(0x110000):
+        if 0xD800 <= c <= 0xDFFF:
+            continue
+        ch = chr(c)
+        m = fn(ch)
+        if m != ch:
+            out[f"{c:04X}"] = m
+    return out
+
+
+def gen_unicode():
+    g = Golden("unicode")
+    g.case("unidata_version", "", lambda: unicodedata.unidata_version)
+    sets = [
+        ("assigned", lambda ch: unicodedata.category(ch) != "Cn"),
+        ("isdigit", str.isdigit),
+        ("isdecimal", str.isdecimal),
+        ("isspace", str.isspace),
+        ("isprintable", str.isprintable),
+        ("cased", _cased),
+        ("case_ignorable", _case_ignorable),
+    ]
+    for name, pred in sets:
+        g.case(name, name, lambda pred=pred: ranges(pred))
+    maps = [
+        ("lower", str.lower),
+        ("upper", str.upper),
+        ("title", str.title),
+        ("casefold", str.casefold),
+    ]
+    for name, fn in maps:
+        g.case(f"{name} map", name, lambda fn=fn: char_map(fn))
+    g.write()
+
+
 def gen_clean_filename(corpus, recorded, attr_sets):
     g = Golden("clean_filename")
     inputs = list(corpus)
@@ -606,6 +661,7 @@ def main():
     gen_strings(corpus)
     gen_textwrap(corpus, descriptions(index, raw))
     gen_regex()
+    gen_unicode()
     gen_clean_filename(corpus, recorded, attr_sets)
     gen_pathvalidate(corpus, recorded)
     gen_url_info()
