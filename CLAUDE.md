@@ -4,14 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 qobuz-dl-go is a Go library and a small CLI that port qobuz-dl, a Python Qobuz downloader, file by file. The first user is Music Shelf, in `~/projects/proj-x` with the module `github.com/tikhonp/shelf`, which imports the package. Docs, code and logs are in English.
 
-State: the docs exist and no code does yet. Step 1c of Music Shelf's phase 1 builds the port; its contract is `~/projects/proj-x/docs/build/1c.md`. `docs/status.md` says what is done and what comes next.
+State: docs only, no code yet. The next session designs the port with `docs/prompts/01-design.md`, writing `docs/design.md` and the step contracts in `docs/build/`. Music Shelf tracks this work as its step 1c. `docs/status.md` says what is done and what comes next.
 
 ## Read first
 
 - `docs/status.md`: where the work stands.
+- `docs/requirements.md`: what the port must do and when it is done.
+- `docs/design.md` and the current step's contract in `docs/build/`, once the design session has written them. Before that, `docs/design-questions.md`.
 - `UPSTREAM.md`: the ported version, the map from Python functions to Go functions, and the deliberate differences.
 - `docs/port-spec.md`: how qobuz-dl behaves, as notes for the port.
+- `docs/reference.md`: where the upstream source is, the Python venv for golden data, the tools on this machine, the rules for the Qobuz token, and the conventions.
 - The upstream source at the tag in `UPSTREAM.md`. When the notes and the source disagree, the source wins.
+- `docs/prompts/README.md` lists the prompts the user starts sessions with.
 
 ## Rules for all code
 
@@ -56,6 +60,19 @@ qobuzdltest/              a fake API and CDN for tests here and in Music Shelf
 cmd/qobuz-dl/             dl and search, for parity runs
 testdata/gen/gen.py       writes golden files from Python qobuz-dl
 testdata/golden/          the golden files
+```
+
+Docs:
+
+```
+docs/status.md            the running log
+docs/requirements.md      what the port must do
+docs/design-questions.md  the questions the design answers
+docs/design.md            the design, written by the design session
+docs/build/               step contracts, written by the design session
+docs/port-spec.md         notes on upstream behavior
+docs/reference.md         sources, tools, token rules, conventions
+docs/prompts/             session prompts
 ```
 
 ## Releases
