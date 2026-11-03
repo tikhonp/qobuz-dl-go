@@ -1,6 +1,6 @@
 // The segmented path: session/start, file/url and the encrypted segments the
-// web player streams, which make golden builds and checks with upstream's
-// own decryption.
+// web player streams. make golden builds the segments and checks them with
+// upstream's own decryption.
 
 package qobuzdltest
 

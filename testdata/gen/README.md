@@ -4,7 +4,7 @@ The scripts here run qobuz-dl 2.5.9 to make the test data. Go tests read only th
 
 | Script | Does | Network |
 | --- | --- | --- |
-| `gen.py` | reads `testdata/fixtures/` and writes `testdata/golden/*.json`, `testdata/fixtures/strings/random.txt`, the bundle and built audio fixtures, and the copy of the fixtures in `qobuzdltest/testdata/` | none |
+| `gen.py` | reads `testdata/fixtures/` and writes `testdata/golden/*.json`, `testdata/fixtures/strings/random.txt`, the bundle, built audio and segment fixtures, and the copy of the fixtures in `qobuzdltest/testdata/` | none |
 | `record.py` | records the Qobuz API answers into `testdata/fixtures/api/`; `--search` lists candidate IDs | Qobuz, needs `QOBUZ_TOKEN` |
 
 `parity.py` and `compare.py` come with step 10.
@@ -47,7 +47,14 @@ Each golden is `{"generator", "cases": [{"name", "input", "output"} or {"name", 
 | `mp3_tagged.json` | `tag_mp3` on copies of the MP3 fixtures: the frames as mutagen reads them, a hash of each raw frame and a hash of the audio |
 | `naming.json` | the folder and file names of each recorded album and the single track, through `_get_album_attr` or `_get_track_attr`, `_determine_formats`, `process_folder_format_with_subdirs` and `_download_and_tag` up to its `_fit_name` call, over gates at 27, 6 and 5, a failed gate and a float rate, and a matrix of templates and settings |
 | `tracklist.json` | `_generate_tracklist` on the recorded albums and on built ones with discs, nulls, missing keys, odd types and descriptions |
+| `segments.json` | `_get_qobuz_segment_uuid` and `_decrypt_qobuz_segment` on every segment the fake serves, as a size and a SHA-256, and on built buffers for the flags, offsets, counters, keys and broken boxes |
 | `layout_album.json`, `layout_track.json` | whole downloads by `Download.download_id_by_type`, with a client that answers as `qobuzdltest` does and a localhost server for the CDN and the static files: every folder and file, with the FLAC and MP3 results above, the tracklist's text, or a SHA-256 |
+
+## Segments
+
+`gen.py` cuts each fragmented MP4 into what the fake's `/cdn/seg/` serves, in `testdata/fixtures/segments/<format>/<n>.m4s`: segment 0 is `ftyp` and `moov`, and each later one a `uuid` box, a `moof` and an `mdat`. The `uuid` box holds the frame table `_decrypt_qobuz_segment` reads; the frames cover the `mdat` payload in sizes of 1,000, 250, 640, 0 and 77 bytes in turn, with flags 1, 0, 0x0100, 1 and 0. Flagged frames are encrypted with AES-CTR under a fixed `raw_key`, with 8-byte counters at formats 6 and 7 and 16-byte ones at 27, whose first frame carries over the low 64 bits. From segment 2 on, format 7 has a decoy `uuid` box with another usertype in front. `gen.py` checks that upstream's `_decrypt_qobuz_segment` gives each one back and that `_get_qobuz_segment_uuid` finds the usertype in segment 1.
+
+`index.json` holds the session ID and `infos` the fake's `session/start` answers, the key `file/url` answers, which is `raw_key` wrapped under the session key that `qobuzdltest.Secret` and the `infos` derive, `raw_key` itself for tests, and each format's `n_segments`.
 
 ## Corpora
 
@@ -97,6 +104,12 @@ ffmpeg -y -f lavfi -i "$(sine 44100)" -ac 2 -c:a libmp3lame -b:a 320k -id3v2_ver
   -metadata title="Old Title" 320.mp3
 
 ffmpeg -y -f lavfi -i "color=c=red:s=1x1" -frames:v 1 -update 1 -fflags +bitexact -flags +bitexact cover.jpg
+
+# Fragmented MP4s, 30 ms a fragment, for the segmented path. default_base_moof
+# keeps each fragment's offsets valid when gen.py puts boxes in front of it.
+for f in 16-44.1 24-96 24-192; do
+  ffmpeg -y -i $f.flac -c:a copy $exact -movflags +empty_moov+default_base_moof -frag_duration 30000 -f mp4 $f.mp4
+done
 ```
 
 This script, run in the same folder, writes `booklet.pdf`, a one-page PDF with no content:

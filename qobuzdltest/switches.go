@@ -39,7 +39,8 @@ func newSwitches() switches {
 	}
 }
 
-// Fail404 makes the CDN answer 404 to every request for the track's file.
+// Fail404 makes the CDN answer 404 to every request for the track's file
+// or its segments.
 func (s *Server) Fail404(trackID string) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -47,16 +48,16 @@ func (s *Server) Fail404(trackID string) {
 }
 
 // FailTimes makes the CDN answer the next n requests for the track's file
-// with status, and serve the file after that.
+// or its segments, HEADs included, with status, and serve them after that.
 func (s *Server) FailTimes(trackID string, n, status int) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	s.sw.failTimes[trackID] = failure{left: n, status: status}
 }
 
-// CutAfter makes the CDN close the next answer for the track's file after n
-// bytes of its body, while the headers promise the whole length. It happens
-// once.
+// CutAfter makes the CDN close the next GET answer for the track's file or
+// one of its segments after n bytes of its body, while the headers promise
+// the whole length. It happens once.
 func (s *Server) CutAfter(trackID string, n int64) {
 	s.mu.Lock()
 	defer s.mu.Unlock()

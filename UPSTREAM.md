@@ -15,9 +15,9 @@
 | Python | Go | State |
 | --- | --- | --- |
 | `bundle.py` | `bundle.go` | ported |
-| `qopy.py` | `qopy.go` | ported, but for the segmented branch of `get_track_url` |
+| `qopy.py` | `qopy.go` | ported |
 | `core.py` | `core.go` | `Options` and `DefaultOptions` only; the rest planned |
-| `downloader.py` | `downloader.go`, with `Progress` and the results in `progress.go` | ported, but for the segmented transfer |
+| `downloader.py` | `downloader.go`, with `Progress` and the results in `progress.go` | ported |
 | `metadata.py` | `metadata.go`, with mutagen's FLAC blocks in `flac.go` | ported |
 | `utils.py` | `utils.go` | ported, but for `make_m3u` |
 | `settings.py` | `settings.go` | ported |
@@ -200,6 +200,10 @@ These port no qobuz-dl file. They stand in for CPython 3.14 behavior the port re
 | An MP3 with an ID3v2.2 tag, or a frame `id3v2` can't parse, fails to tag. mutagen reads both. | `id3v2` refuses them. |
 | PICTURE, CUESHEET and APPLICATION blocks are written back as they were read, and every block's stated size is trusted. mutagen re-encodes PICTURE and CUESHEET blocks and reads VORBIS_COMMENT and PICTURE blocks by their content. | The bytes are the same for well-formed blocks. |
 | A FLAC is tagged into a new file beside the temp file, which then replaces it; mutagen rewrites the file in place. | A failed tagging leaves the temp file as it was. |
+| `startSession` makes the segmented session whole or not at all, once per client, behind a lock. Python sets `session_id`, `session_infos` and the key one by one, so a `session/start` answer without `infos`, or a key that fails to derive, leaves a half-made session that later tracks use without starting again; and concurrent tracks may each start one. | The next track tries a failed start again, and concurrent tracks share one session. |
+| When a segment fails, `transferSegments` cancels the segments still queued. Python's executor fetches them all before it raises. At most 16 segments wait unwritten in memory; Python holds every finished one. | The fetched segments would be thrown away; a long track's memory stays flat. |
+| A remux error carries the first 500 bytes of ffmpeg's stderr. Python drops stderr and says only `FFmpeg remux failed`. The remuxed file is set to 0644. | The reason ffmpeg failed is the useful part; files are 0644 whatever the umask. |
+| Segment requests go through the caller's client and its redirect rules; only the HEADs keep requests' `allow_redirects=False`. The `[+] In progress` line of a segmented transfer comes before the HEADs, not after them. | The same client for everything; the line's order shows nowhere but the log. |
 | `cfg_setup` logs a warning when no secret works. | Python silently uses the first, and later calls fail without a clue. |
 | `GetPlaylistMeta`, `GetArtistMeta` and `GetLabelMeta` return `ErrEmptyContent` when the first page has no items. | `multi_meta` yields nothing then, so there is no page to build the view from. |
 | `TrackURL.Raw` also drops `blob` and `raw_key`. | `blob` is a signed token and `raw_key` the track key. |

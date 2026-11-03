@@ -2,9 +2,9 @@
 
 ## Now
 
-Steps 1 to 7 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` without `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py` without the segmented branch, with the typed views, the taggers from `metadata.py`, `qobuzdltest`, the fake Qobuz, with `Options` from `core.py`, and `downloader.py` without the segmented transfer, with `Progress` and the results.
+Steps 1 to 8 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` without `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py`, with the typed views, the taggers from `metadata.py`, `qobuzdltest`, the fake Qobuz, with `Options` from `core.py`, and `downloader.py`, both transfers included, with `Progress` and the results.
 
-Next: step 8, [segmented path](build/08-segments.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
+Next: step 9, [core, m3u8, downloadsdb](build/09-core.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
 
 ## Steps
 
@@ -17,8 +17,8 @@ Next: step 8, [segmented path](build/08-segments.md). Start Claude Code in this 
 | 5 | [tags](build/05-tags.md) | done |
 | 6 | [fake Qobuz](build/06-fake.md) | done |
 | 7 | [downloader, direct path](build/07-downloader.md) | done |
-| 8 | [segmented path](build/08-segments.md) | next |
-| 9 | [core, m3u8, downloadsdb](build/09-core.md) | |
+| 8 | [segmented path](build/08-segments.md) | done |
+| 9 | [core, m3u8, downloadsdb](build/09-core.md) | next |
 | 10 | [CLI and parity tools](build/10-cli.md) | |
 | 11 | [parity and v0.1.0](build/11-parity.md) | needs `QOBUZ_TOKEN` |
 
@@ -78,3 +78,10 @@ Filled in by the parity run in step 11.
 - `genreTag` now changes a copy of `genres_list`, where Python writes into the shared album; the workers raced on it. `TagMP3` now sets 0644 on the file `id3v2` saves.
 - The commits of this step have no `Co-Authored-By` line, at the user's request, and were not pushed.
 - For shelf: `DefaultOptions().Quality` is Python's 6; the bot runs 27. `Progress.TrackEnd` gets the track's path in the work folder, `[IN PROGRESS] <name>` for albums, and the `Result` has the final path. `TrackEnd` also fires for tracks that never started because the context ended. `qobuzdltest` has `FailStatic`, 404 on every cover and goody.
+
+### 2026-11-04
+
+- Step 8. The segmented branch of `get_track_url` with `startSession`, and `transferSegments`, `qobuzSegmentUUID`, `decryptQobuzSegment` and the ffmpeg remux in `downloader.go`. The fake serves `session/start`, `file/url` and encrypted segments, and has a `Segmented` switch. A new golden, `segments.json`, and 26 segmented cases in `request_params.json`. The segments come from three fragmented MP4s that ffmpeg made once; `gen.py` encrypts them and checks them with upstream's own decryption. A track forced onto the path downloads, decrypts, remuxes to the same audio frames as the source FLAC, and tags. Details are in [08-segments.md](build/08-segments.md) under As built.
+- port-spec.md now says how the decryption reads past the end, which inputs raise, and that the UUID walk needs 24 bytes. design.md describes the fake's segmented path and the session's two mutexes.
+- The commits of this step have no `Co-Authored-By` line, at the user's request, and were not pushed.
+- For shelf: a failed direct transfer now retries on the segmented path in the same tier, as Python does, so a test that wants a track to fail needs `Fail404`, enough `FailTimes`, or a missing `FFmpegPath`. `TrackInfo.Segmented` is true for the segmented attempt. The bot's host needs ffmpeg on PATH, or `Options.FFmpegPath`, for tracks Qobuz serves only segmented; without it such tracks fall to the next tier and then fail. `qobuzdltest.Segmented(id)` makes a track take the path; `Fail404`, `FailTimes` and `CutAfter` also hit its segments, and `EmptyAnswer` also empties `file/url`.

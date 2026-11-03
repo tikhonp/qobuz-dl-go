@@ -23,8 +23,15 @@
 //     Secret and answers the recorded answer for the track and format, or
 //     one built from the format table; the url points at the fake CDN and
 //     names the delivered format.
+//   - session/start and file/url, the web player's segmented path, both
+//     signed by _modern_sig's rule with Secret. file/url needs the
+//     X-Session-Id session/start handed out and answers the format getFileUrl
+//     would deliver, at least 6, with a url_template, n_segments and a track
+//     key wrapped under the session key.
 //   - The CDN under /cdn/file/<track>/<format>, one file per format: a
 //     16/44.1, 24/96 or 24/192 FLAC, or an MP3. It honors Range with 206.
+//     The segments of each FLAC, encrypted as Qobuz encrypts them, are under
+//     /cdn/seg/<track>/<format>/<n>.
 //   - Covers and goodies under /static/. The fake rewrites every recorded
 //     https://static.qobuz.com/ URL to point there, and answers a JPEG for
 //     .jpg and a PDF for .pdf.

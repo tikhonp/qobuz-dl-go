@@ -553,7 +553,9 @@ Decryption, per segment: walk the top-level boxes while 8 header bytes remain; a
 2. `counter_len = u8(p)`; `p += 1`. `frame_count = u24(p)`; `p += 3`.
 3. Per frame: `frame_len = u32(p)`; `p += 6`; `flags = u16(p)`; `p += 2`. The frame is the bytes from `data_end` to `data_end + frame_len`, and `data_end` moves to its end. When `flags` is non-zero, the frame is AES-128-CTR decrypted with `raw_key` and an initial counter of the `counter_len` bytes at `p` padded with zeros to 16. `p += counter_len`.
 
-The decryption runs in place over the whole segment buffer, so a frame may sit outside the `uuid` box.
+The decryption runs in place over the whole segment buffer, so a frame may sit outside the `uuid` box, and a frame that overlaps the table changes the entries read after it. Reads past the end give fewer bytes, as Python's slices do: an entry past the end reads as zeros, a frame past the end is cut short. A `uuid` box that ends before its counter-length byte raises IndexError. A flagged frame whose counter is not 16 bytes after padding, because `counter_len` is above 16 or the table runs out, raises ValueError, as does a key that isn't 16, 24 or 32 bytes; unflagged frames check neither. Segment 0 goes through with no UUID and comes out unchanged.
+
+`_get_qobuz_segment_uuid` walks while 24 bytes remain, not 8, and returns bytes 8 to 24 of the first box typed `uuid` even when the box is shorter than 24.
 
 ## Downloads database
 

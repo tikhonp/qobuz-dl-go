@@ -268,7 +268,7 @@ type Secret struct{ Timezone, Value string }
 
 Unexported, ported one to one: `apiCall(ctx, epoint string, kw []kv) (*pyDict, error)`, `auth`, `cfgSetup`, `modernSig`, `b64urlDecode`, `deriveSessionKey`, `unwrapTrackKey`, `normalizeJSONStrings`, `multiMeta(ctx, epoint, key, id string) ([]*pyDict, error)`, and `getTrackURL(ctx, id string, fmtID int, force bool) (*pyDict, error)`, which the downloader uses. `kv` keeps keyword arguments in Python's order, so query strings match.
 
-The `Client` is safe for concurrent use. `NewClient` sets the secret once; the first segmented download creates the session under a mutex, where Python races.
+The `Client` is safe for concurrent use. `NewClient` sets the secret once; the first segmented download creates the session, where Python races. `startSession` holds `sessionMu` for the `session/start` call, so concurrent tracks start one session, and sets the ID, infos and key under `mu`, which `headers` also takes; one mutex for both would deadlock, since the call reads the headers.
 
 `sys.exit(1)` on a missing token or a 401 becomes `ErrAuthentication`. Python's "Profile validation bypassed" for other `user/get` failures is kept: label `Studio`, no user ID, no error.
 
@@ -743,11 +743,11 @@ func (s *Server) Fail404(trackID string)
 func (s *Server) FailTimes(trackID string, n, status int) // n failures, then success
 func (s *Server) CutAfter(trackID string, n int64)        // close the body after n bytes, once; HEADs don't count
 func (s *Server) IgnoreRange(trackID string)               // answer 200 with the whole file to Range requests
-func (s *Server) Sample(trackID string, fmtID int)         // getFileUrl adds sample: true at that format
-func (s *Server) EmptyAnswer(trackID string)               // getFileUrl answers {} at every format: a demo
+func (s *Server) Sample(trackID string, fmtID int)         // getFileUrl and file/url add sample: true at that format
+func (s *Server) EmptyAnswer(trackID string)               // getFileUrl and file/url answer {} at every format: a demo
 func (s *Server) Restrict(trackID string, fmtID int)       // FormatRestrictedByFormatAvailability, delivers the next tier
 func (s *Server) Deliver(trackID string, fmtID int)        // answers that format_id whatever is asked, without restrictions
-func (s *Server) Segmented(trackID string)                  // step 8: getFileUrl without url; file/url and segments instead
+func (s *Server) Segmented(trackID string)                 // getFileUrl answers without url, so the client goes segmented
 func (s *Server) FailStatic()                               // 404 on every cover and goody
 func (s *Server) ExpireToken()                             // 401 on every API call
 func (s *Server) Requests() []Request                      // in arrival order
@@ -771,7 +771,7 @@ type Request struct {
 - `track/getFileUrl` checks `request_sig` with `Secret` and answers 400 on a mismatch, as Qobuz does. It answers the recorded file for the track and format, or one built from the format table: 5 is MP3 16/44.1, 6 FLAC 16/44.1, 7 FLAC 24/96, 27 FLAC 24/192. Its `url` points at the fake CDN, `/cdn/file/<track>/<format>` with a query standing for the signature, and names the delivered format, not the requested one.
 - The CDN serves one file per format, the tiny FLACs at 16/44.1, 24/96 and 24/192 and the MP3 from step 1, through `http.ServeContent`: `Range` gives 206, and a range past the end 416.
 - The fake rewrites every `https://static.qobuz.com/` URL in an answer to its own `/static/`, which serves the JPEG for `.jpg` and the PDF for `.pdf`.
-- The segmented path, from step 8, serves encrypted segments that `gen.py` builds and checks with upstream's own decryption, together with the `session/start` infos and the wrapped key that go with `Secret`.
+- The segmented path serves encrypted segments that `gen.py` builds and checks with upstream's own decryption, together with the `session/start` infos and the wrapped key that go with `Secret`. `session/start` and `file/url` check `request_sig` by `_modern_sig`'s rule; `file/url` also needs the `X-Session-Id` the fake handed out, else 400, takes formats 6, 7 and 27, and delivers the format getFileUrl would, with its restrictions, at least 6. Its answer has the rate in Hz and `bits_depth`, as the web player's API does, and a `url_template` on `/cdn/seg/<track>/<format>/$SEGMENT$`. `file/url` and the segments work for every track; `Segmented` only takes the direct path away. `Fail404`, `FailTimes` and `CutAfter` apply to the segments as to the file.
 - The bundle at `/login` and its script carry `AppID` and secrets that decode to `BadSecret`, `Secret` and an empty one, in Python's order.
 - Tests in the root package can't import `qobuzdltest`, since it imports the root package. Scenario tests live in package `qobuzdl_test` and reach unexported functions through an `export_test.go`.
 
@@ -838,7 +838,7 @@ Fixture recording needs the token; the user chose to record in step 01, so that 
 - Standard `testing` only. Test names are sentences in CamelCase.
 - Unit tests per file, golden tests per golden file, and scenario tests on `qobuzdltest` for the flows.
 - Retries, backoff, timeouts and the 250 ms throttle run under `testing/synctest`; no test sleeps more than 100 ms.
-- The remux test runs ffmpeg on a tiny fMP4 it makes on the spot, and skips when `ffmpeg` is not on `PATH`.
+- The remux tests run ffmpeg on the fake's segments, cut by `gen.py` from fragmented MP4s that ffmpeg made once from the FLAC fixtures, and skip when `ffmpeg` is not on `PATH`. A shell script that exits 1 stands in for a failing ffmpeg.
 - No network outside `httptest` and localhost. `go test -race ./...` passes.
 - Each step's checklist maps edge cases to test names; shelf's 1c checklist is included in the steps.
 

@@ -2339,8 +2339,8 @@ func (d *download) writeSegments(ctx context.Context, f *os.File, urlOf func(int
 	}
 	var wg sync.WaitGroup
 	poolCtx, cancel := context.WithCancel(ctx)
-	// Deferred calls run last first: the workers are told to stop, then
-	// awaited.
+	// Deferred calls run in reverse order, so cancel stops the workers
+	// before wg.Wait waits for them.
 	defer wg.Wait()
 	defer cancel()
 	slots := make(chan struct{}, segmentWorkers)
@@ -2370,8 +2370,8 @@ func (d *download) writeSegments(ctx context.Context, f *os.File, urlOf func(int
 	for ch := range order {
 		r := <-ch
 		if r.err != nil {
-			// Python lets the queued segments finish before it raises;
-			// they would be thrown away, so they stop here.
+			// Python fetches the queued segments before it raises. Their
+			// bytes would be thrown away, so cancel stops them.
 			cancel()
 			if ctx.Err() != nil {
 				return stopped(ctx)
@@ -2450,8 +2450,8 @@ func setRequestsHeaders(req *http.Request) {
 	req.Header.Set("Accept", "*/*")
 }
 
-// fetchSegment is fetch_segment_fluid: one GET with timeout=15, an HTTP
-// error status raised, the body read in 64 KiB chunks.
+// fetchSegment is fetch_segment_fluid: one GET with timeout=15 that fails
+// on an HTTP error status and reads the body in 64 KiB chunks.
 func (d *download) fetchSegment(ctx context.Context, url string, add func(int)) ([]byte, error) {
 	if ctx.Err() != nil {
 		return nil, stopped(ctx)
@@ -2553,12 +2553,12 @@ func qobuzSegmentUUID(seg []byte) []byte {
 
 // decryptQobuzSegment is _decrypt_qobuz_segment. In each top-level uuid box
 // whose usertype is uuid, a frame table gives each frame's length, flags
-// and counter; a flagged frame is decrypted with AES-CTR under rawKey and
-// the counter padded with zeros to 16 bytes. The frames run from an offset
-// past the box's start, so they may sit outside it, and the work is done in
-// place over a copy of the whole segment, as Python's bytearray is: a frame
+// and counter. It decrypts each flagged frame with AES-CTR under rawKey,
+// with the counter padded with zeros to 16 bytes. The frames start at an
+// offset from the box, so they may sit outside it. It works in place over a
+// copy of the whole segment, as Python works on its bytearray, so a frame
 // that overlaps the table changes the entries read after it. Reads past the
-// end give fewer bytes, as Python's slices do; a nil uuid returns the
+// end give fewer bytes, as Python's slices do. A nil uuid returns the
 // segment unchanged.
 func decryptQobuzSegment(seg, rawKey, uuid []byte) ([]byte, error) {
 	buf := bytes.Clone(seg)
