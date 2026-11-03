@@ -20,6 +20,7 @@ import copy
 import hashlib
 import io
 import json
+import os
 import logging
 import math
 import random
@@ -29,9 +30,11 @@ import struct
 import sys
 import tempfile
 import textwrap
+import threading
 import unicodedata
 import urllib.parse
 from http import HTTPStatus
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -1912,6 +1915,413 @@ def gen_mp3_tagged(index, raw):
     g.write()
 
 
+# --- Downloads ------------------------------------------------------------
+
+# The templates the bot runs with, and Download's defaults.
+BOT_FOLDER = "{artist} - {album} ({year}) [{bit_depth}B-{sampling_rate}kHz]"
+BOT_TRACK = "{track_number} - {track_title}"
+NAMING_ROOT = "/ROOT"
+
+
+def dl_settings(over):
+    s = QobuzDLSettings()
+    for k, v in over.items():
+        if not hasattr(s, k):
+            raise KeyError(f"no setting {k}")
+        setattr(s, k, v)
+    return s
+
+
+@contextlib.contextmanager
+def quiet_downloader():
+    """Keeps the downloader's prints, which go to stdout, out of gen.py's output."""
+    real = downloader.safe_print
+    downloader.safe_print = lambda *a, **k: None
+    try:
+        yield
+    finally:
+        downloader.safe_print = real
+
+
+@contextlib.contextmanager
+def recording_fit_name(out):
+    """Records the paths _download_and_tag builds, through the _fit_name call that ends them."""
+    real = downloader._fit_name
+
+    def fit(parent, name, suffix="", reserve=0):
+        res = real(parent, name, suffix, reserve)
+        out.append(os.path.join(parent, res))
+        return res
+
+    downloader._fit_name = fit
+    downloader.abort_event.set()
+    try:
+        yield
+    finally:
+        downloader._fit_name = real
+        downloader.abort_event.clear()
+
+
+def relative(path):
+    if path == NAMING_ROOT:
+        return ""
+    if not path.startswith(NAMING_ROOT + "/"):
+        raise ValueError(f"{path!r} is outside {NAMING_ROOT}")
+    return path[len(NAMING_ROOT) + 1:]
+
+
+def patched_item(item, patch):
+    item = copy.deepcopy(item)
+    for k, v in (patch or {}).items():
+        item[k] = v
+    return item
+
+
+def naming_album(raw, inp):
+    album = normalize(raw[f"album-get-{inp['album']}.json"])
+    album = patched_item(album, inp["album_patch"])
+    album["tracks"]["items"] = [patched_item(t, inp["track_patch"]) for t in album["tracks"]["items"]]
+    return album
+
+
+def run_naming(raw, inp):
+    """Names an album's or a track's folder and files the way download_release
+    and download_track do, without fetching anything."""
+    s = dl_settings(inp["settings"])
+    q = inp["quality"]
+    fmt, _, bd, sr = inp["gate"]
+    dl = Download(None, "id", NAMING_ROOT, q, folder_format=inp["folder_format"],
+                  track_format=inp["track_format"], settings=s)
+    paths = []
+    if inp["kind"] == "album":
+        album = naming_album(raw, inp)
+        attrs = dl._get_album_attr(album, downloader._get_title(album), fmt, bd, sr)
+        dl._determine_formats(album_meta=album, album_attr=attrs, tracks_meta=album["tracks"]["items"],
+                              track_attr=None, is_track=False, file_format=fmt, settings=s)
+        folder = downloader.process_folder_format_with_subdirs(
+            dl.folder_format, attrs, NAMING_ROOT, s.legacy_charmap, s.disable_smart_truncation)
+        multiple = album.get("media_count", 1) > 1
+        with recording_fit_name(paths):
+            for count, t in enumerate(album["tracks"]["items"]):
+                dl._download_and_tag(folder, count, None, t, album, False, q == 5,
+                                     t.get("media_number") if multiple else None)
+    else:
+        track = patched_item(normalize(raw[f"track-get-{inp['track']}.json"]), inp["track_patch"])
+        attrs = dl._get_track_attr(track, downloader._get_title(track), bd, sr, fmt)
+        dl._determine_formats(album_meta=track.get("album", {}), album_attr=None, tracks_meta=[track],
+                              track_attr=attrs, is_track=True, file_format=fmt, settings=s)
+        folder = downloader.process_folder_format_with_subdirs(
+            dl.folder_format, attrs, NAMING_ROOT, s.legacy_charmap, s.disable_smart_truncation)
+        with recording_fit_name(paths):
+            dl._download_and_tag(folder, 1, None, track, track, True, q == 5, False)
+    return {
+        "formats": [dl.folder_format, dl.track_format, s.multiple_disc_track_format],
+        "folder": relative(folder),
+        "files": [relative(p) for p in paths],
+    }
+
+
+def naming_inputs(index, raw):
+    fake = FakeClient(index, raw)
+    items = index["items"]
+
+    def inp(kind, ref, quality, gate, ff=BOT_FOLDER, tf=BOT_TRACK, settings=None, album_patch=None, track_patch=None):
+        d = {"kind": kind, "quality": quality, "gate": list(gate), "folder_format": ff, "track_format": tf,
+             "settings": settings or {}, "album_patch": album_patch or {}, "track_patch": track_patch or {}}
+        d["album" if kind == "album" else "track"] = ref
+        return d
+
+    combos = [
+        ("bot", {}),
+        ("defaults", {"ff": None, "tf": None}),
+        ("subfolders", {"ff": "{album_artist}/{album_title} ({year})/{release_type}{version_tag}",
+                        "tf": "{disc_number}-{track_number} {track_title}{explicit}"}),
+        ("one dir", {"settings": {"multiple_disc_one_dir": True}}),
+        ("one dir with its template", {"settings": {"multiple_disc_one_dir": True,
+                                                    "multiple_disc_track_format": "{disc_number}{track_number} {tracktitle}"}}),
+        ("disc prefix", {"settings": {"multiple_disc_prefix": "Disc"}}),
+        ("ValueError in the folder", {"ff": "{year:d} {album}"}),
+        ("KeyError in the track", {"tf": "{nope} - {track_title}"}),
+        ("KeyError in a folder part", {"ff": "{artist}/{nope} {album}/{year}"}),
+        ("KeyError everywhere", {"ff": "{year:d}", "tf": "{nope}",
+                                 "settings": {"fallback_folder_format": "{nope:d}", "multiple_disc_track_format": "{x}"}}),
+        ("fallback folder", {"ff": "{year:d}", "settings": {"fallback_folder_format": "{album_artist}/{album}"}}),
+        ("extensions in templates", {"ff": " {artist} - {album}.flac ", "tf": "{track_number}. {track_title}.mp3"}),
+        ("legacy charmap", {"settings": {"legacy_charmap": True}}),
+        ("no truncation", {"settings": {"disable_smart_truncation": True}}),
+    ]
+    for kind, album_id in items["albums"].items():
+        album = normalize(raw[f"album-get-{album_id}.json"])
+        gates = {"q27": (27, release_gate(fake, album, 27)), "q6": (6, release_gate(fake, album, 6)),
+                 "q5": (5, release_gate(fake, album, 5)), "failed gate": (27, ("Unknown", None, None)),
+                 "float rate": (27, ("FLAC", 24, 96.0))}
+        for gname, (q, (fmt, bd, sr)) in gates.items():
+            for cname, c in combos:
+                if gname != "q27" and cname not in ("bot", "defaults"):
+                    continue
+                yield f"album/{kind} {gname} {cname}", inp("album", album_id, q, (fmt, True, bd, sr), **c)
+
+    long_title = "A Very Long Album Title " * 8
+    long_track = "An Extraordinarily Long Track Title, " * 6
+    for cname, c in [("bot", {}), ("no truncation", {"settings": {"disable_smart_truncation": True}}),
+                     ("subfolders", combos[2][1])]:
+        yield f"album/long titles {cname}", inp(
+            "album", items["albums"]["multi_disc"], 27, ("FLAC", True, 24, 192),
+            album_patch={"title": long_title, "version": "Remastered"}, track_patch={"title": long_track}, **c)
+    yield "album/media_number missing", inp("album", items["albums"]["multi_disc"], 27, ("FLAC", True, 24, 192),
+                                            track_patch={"media_number": None})
+    yield "album/track_number a string", inp("album", items["albums"]["cd"], 27, ("FLAC", True, 16, 44.1),
+                                             track_patch={"track_number": "7"})
+    yield "album/title None", inp("album", items["albums"]["cd"], 27, ("FLAC", True, 16, 44.1),
+                                  album_patch={"title": None})
+    yield "album/version in title", inp("album", items["albums"]["cd"], 27, ("FLAC", True, 16, 44.1),
+                                        album_patch={"version": "COM LAG"}, track_patch={"version": "live"})
+
+    track = normalize(raw[f"track-get-{items['track']}.json"])
+    gates = {"q27": (27, track_gate(fake, track, 27)), "q5": (5, track_gate(fake, track, 5)),
+             "failed gate": (27, ("Unknown", None, None)), "float rate": (27, ("FLAC", 24, 96.0))}
+    for gname, (q, (fmt, bd, sr)) in gates.items():
+        for cname, c in combos[:3] + combos[6:9]:
+            yield f"track/{gname} {cname}", inp("track", items["track"], q, (fmt, True, bd, sr), **c)
+    yield "track/album None", inp("track", items["track"], 27, ("FLAC", True, 24, 96), track_patch={"album": None})
+
+
+def gen_naming(index, raw):
+    g = Golden("naming")
+    with quiet_downloader():
+        for name, inp in naming_inputs(index, raw):
+            g.case(name, inp, lambda inp=inp: run_naming(raw, inp))
+    g.write()
+
+
+def run_tracklist(inp, album):
+    dl = Download(None, "id", NAMING_ROOT, 27, no_credits=inp["no_credits"], settings=QobuzDLSettings())
+    fmt, bd, sr = inp["gate"]
+    with tempfile.TemporaryDirectory() as tmp:
+        dl._generate_tracklist(copy.deepcopy(album), tmp, inp["title"], fmt, bd, sr)
+        files = sorted(Path(tmp).iterdir())
+        return [{"name": f.name, "text": f.read_text(encoding="utf-8")} for f in files]
+
+
+def tracklist_inputs(index, raw):
+    fake = FakeClient(index, raw)
+    for kind, album_id in index["items"]["albums"].items():
+        album = normalize(raw[f"album-get-{album_id}.json"])
+        yield f"album/{kind}", {"album": album_id, "title": downloader._get_title(album),
+                                "gate": list(release_gate(fake, album, 27)), "no_credits": False}, album
+
+    def t(n, **over):
+        d = {"id": n, "title": f"Track {n}", "track_number": n, "media_number": 1, "duration": 61 * n,
+             "performer": {"name": "Performer"}}
+        d.update(over)
+        return d
+
+    base = {"title": "Album", "artist": {"name": "Artist"}, "label": {"name": "Label"},
+            "genre": {"name": "Jazz"}, "release_date_original": "2001-02-03"}
+    built = [
+        ("one disc", {"tracks": {"items": [t(1), t(2, parental_warning=True), t(3, performers="A, Main - B, Guest\r\nC, Bass")]}}),
+        ("discs", {"tracks": {"items": [t(1), t(2, media_number=2), t(3, media_number=2), t(4, media_number=3), t(5, media_number=1)]}}),
+        ("disc numbers missing", {"tracks": {"items": [t(1), {"title": "No disc", "duration": 5}, t(3, media_number=2)]}}),
+        ("nulls", {"artist": None, "composer": {"name": None}, "label": {"name": None}, "genre": {"name": None},
+                   "release_date_original": None, "parental_warning": None,
+                   "tracks": {"items": [t(1, title=None, track_number=None, performer=None, performers=None)]}}),
+        ("missing keys", {"artist": {}, "label": {}, "genre": {},
+                          "tracks": {"items": [{"duration": 0}, {"id": 2, "performer": {}}]}}),
+        ("no tracks", {"tracks": {}}),
+        ("tracks None", {"tracks": None}),
+        ("duration None", {"tracks": {"items": [t(1), t(2, duration=None), t(3)]}}),
+        ("duration a float and negative", {"tracks": {"items": [t(1, duration=125.9), t(2, duration=-61)]}}),
+        ("genre mapped", {"genre": {"name": "Rock progressif"}, "composer": {"name": "Composer"},
+                          "tracks": {"items": [t(1)]}}),
+        ("long titles", {"tracks": {"items": [t(1, title="T" * 70), t(2, title="Ünïcödé 日本語 " * 6)]}}),
+        ("description", {"description": "First paragraph with <b>bold</b> and a <a href=\"x\">link</a>.<br>Second "
+                         + "word " * 40 + "<br/>\n\n<br />Third<p>para</p>  \n  ", "tracks": {"items": [t(1)]}}),
+        ("description not a string", {"description": 12345, "tracks": {"items": [t(1)]}}),
+        ("artist a string", {"artist": "Artist", "tracks": {"items": [t(1)]}}),
+        ("performers a number", {"tracks": {"items": [t(1, performers=5)]}}),
+        ("track a string", {"tracks": {"items": ["x"]}}),
+    ]
+    for name, over in built:
+        album = dict(base)
+        album.update(over)
+        yield f"built/{name}", {"album": album, "title": "Album", "gate": ["FLAC", 24, 96], "no_credits": False}, album
+    album = dict(base, tracks={"items": [t(1)]})
+    yield "built/title with slashes", {"album": album, "title": "A/B: C?", "gate": ["FLAC", 16, 44.1], "no_credits": False}, album
+    yield "built/title None", {"album": album, "title": None, "gate": ["FLAC", 16, 44.1], "no_credits": False}, album
+    yield "built/gate failed", {"album": album, "title": "Album", "gate": ["Unknown", None, None], "no_credits": False}, album
+    yield "built/no credits", {"album": album, "title": "Album", "gate": ["FLAC", 16, 44.1], "no_credits": True}, album
+
+
+def gen_tracklist(index, raw):
+    g = Golden("tracklist")
+    with quiet_downloader():
+        for name, inp, album in tracklist_inputs(index, raw):
+            g.case(name, inp, lambda inp=inp, album=album: run_tracklist(inp, album))
+    g.write()
+
+
+STATIC_HOST = "https://static.qobuz.com/"
+
+
+def rewrite_static(o, base):
+    if isinstance(o, dict):
+        return {k: rewrite_static(v, base) for k, v in o.items()}
+    if isinstance(o, list):
+        return [rewrite_static(v, base) for v in o]
+    if isinstance(o, str) and o.startswith(STATIC_HOST):
+        return base + "/static/" + o[len(STATIC_HOST):]
+    return o
+
+
+class LayoutHandler(BaseHTTPRequestHandler):
+    """The CDN and static files of qobuzdltest: one file per format, a cover
+    for .jpg and a booklet for .pdf, with Range answered by 206."""
+
+    FORMATS = {5: "320.mp3", 6: "16-44.1.flac", 7: "24-96.flac", 27: "24-192.flac"}
+
+    def log_message(self, *args):
+        pass
+
+    def do_GET(self):
+        parts = self.path.split("?")[0].split("/")
+        if self.path.startswith("/cdn/file/") and len(parts) == 5 and int(parts[4]) in self.FORMATS:
+            name = self.FORMATS[int(parts[4])]
+        elif self.path.startswith("/static/") and self.path.lower().endswith(".jpg"):
+            name = "cover.jpg"
+        elif self.path.startswith("/static/") and self.path.lower().endswith(".pdf"):
+            name = "booklet.pdf"
+        else:
+            self.send_error(404)
+            return
+        data = (AUDIO / name).read_bytes()
+        start = 0
+        rng = self.headers.get("Range")
+        if rng:
+            start = int(rng.split("=")[1].split("-")[0])
+            if start >= len(data):
+                self.send_response(416)
+                self.send_header("Content-Range", f"bytes */{len(data)}")
+                self.send_header("Content-Length", "0")
+                self.end_headers()
+                return
+            self.send_response(206)
+            self.send_header("Content-Range", f"bytes {start}-{len(data) - 1}/{len(data)}")
+        else:
+            self.send_response(200)
+        self.send_header("Content-Length", str(len(data) - start))
+        self.end_headers()
+        self.wfile.write(data[start:])
+
+
+class LayoutClient:
+    """Answers as qobuzdltest does: the recorded answers, static URLs on the
+    local server, and getFileUrl URLs naming the delivered format."""
+
+    def __init__(self, index, raw, base):
+        self.raw, self.base = raw, base
+        self.urls = FakeClient(index, raw).urls
+
+    def get_album_meta(self, id):
+        return rewrite_static(normalize(self.raw[f"album-get-{id}.json"]), self.base)
+
+    def get_track_meta(self, id):
+        return rewrite_static(normalize(self.raw[f"track-get-{id}.json"]), self.base)
+
+    def get_track_url(self, id, fmt_id, force_segments=False):
+        if force_segments:
+            raise ConnectionError("the segmented path is not served")
+        ans = copy.deepcopy(self.urls[(str(id), int(fmt_id))])
+        ans["url"] = f"{self.base}/cdn/file/{id}/{ans['format_id']}?etsp=946684800&hmac=qobuzdltest-cdn-signature"
+        return ans
+
+
+def layout_tree(root):
+    out = []
+    for p in sorted(Path(root).rglob("*"), key=lambda p: p.relative_to(root).as_posix()):
+        rel = p.relative_to(root).as_posix()
+        if p.is_dir():
+            out.append({"path": rel, "type": "dir"})
+        elif p.suffix == ".flac":
+            out.append({"path": rel, "type": "flac", "result": flac_result(p)})
+        elif p.suffix == ".mp3":
+            out.append({"path": rel, "type": "mp3", "result": mp3_result(p)})
+        elif p.suffix == ".txt":
+            out.append({"path": rel, "type": "text", "text": p.read_text(encoding="utf-8")})
+        else:
+            out.append({"path": rel, "type": "file", "sha256": sha(p.read_bytes())})
+    return out
+
+
+def run_layout(client, inp):
+    o = inp["options"]
+    s = dl_settings(o["settings"])
+    with tempfile.TemporaryDirectory() as tmp, open(os.devnull, "w") as null, contextlib.redirect_stderr(null):
+        dl = Download(client, inp["id"], tmp, o["quality"], o["embed_art"], o["albums_only"], o["fallback"],
+                      False, False, o["folder_format"], o["track_format"], False, False, None,
+                      o["no_credits"], s, None)
+        downloader.abort_event.clear()
+        dl.download_id_by_type(track=inp["kind"] == "track")
+        return layout_tree(tmp)
+
+
+def layout_inputs(index, kind):
+    def inp(id, quality=27, fallback=True, embed_art=False, albums_only=False, no_credits=False,
+            ff=BOT_FOLDER, tf=BOT_TRACK, settings=None):
+        return {"kind": kind, "id": id, "options": {
+            "quality": quality, "fallback": fallback, "embed_art": embed_art, "albums_only": albums_only,
+            "no_credits": no_credits, "folder_format": ff, "track_format": tf, "settings": settings or {}}}
+
+    items = index["items"]
+    if kind == "track":
+        t = items["track"]
+        yield "bot", inp(t)
+        yield "q5", inp(t, quality=5)
+        yield "q6", inp(t, quality=6)
+        yield "defaults", inp(t, ff=None, tf=None)
+        yield "embedded cover", inp(t, embed_art=True, settings={"embed_art": True})
+        yield "no cover", inp(t, settings={"no_cover": True})
+        yield "no fallback", inp(t, fallback=False)
+        return
+    albums = items["albums"]
+    for name, id in albums.items():
+        yield f"{name} bot", inp(id)
+    m = albums["multi_disc"]
+    yield "multi_disc q5", inp(m, quality=5)
+    yield "multi_disc q6", inp(m, quality=6)
+    yield "multi_disc defaults", inp(m, ff=None, tf=None)
+    yield "multi_disc one dir", inp(m, settings={"multiple_disc_one_dir": True})
+    yield "multi_disc embedded cover", inp(m, embed_art=True, settings={"embed_art": True, "embedded_art_size": "300"})
+    yield "multi_disc no credits, no cover", inp(m, no_credits=True, settings={"no_cover": True})
+    yield "multi_disc saved art 600", inp(m, settings={"saved_art_size": "600"})
+    yield "multi_disc one worker", inp(m, settings={"max_workers": 1})
+    yield "hires_96 no fallback", inp(albums["hires_96"], fallback=False)
+    yield "hires_96 no fallback q7", inp(albums["hires_96"], quality=7, fallback=False)
+    yield "cd q27 no fallback", inp(albums["cd"], fallback=False)
+    yield "compilation albums only", inp(albums["compilation"], albums_only=True)
+    yield "cd albums only", inp(albums["cd"], albums_only=True)
+    yield "goodies subfolders", inp(albums["goodies"], ff="{album_artist}/{album_title}", tf="{disc_number}.{track_number} {track_title}")
+
+
+def gen_layout(index, raw):
+    # The downloader's sleeps are a second per track; a short one keeps the
+    # wait loops from spinning.
+    real_time = downloader.time
+    downloader.time = SimpleNamespace(sleep=lambda s: real_time.sleep(min(s, 0.002)))
+    srv = ThreadingHTTPServer(("127.0.0.1", 0), LayoutHandler)
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    try:
+        client = LayoutClient(index, raw, f"http://127.0.0.1:{srv.server_address[1]}")
+        with quiet_downloader():
+            for kind in ("album", "track"):
+                g = Golden(f"layout_{kind}")
+                for name, inp in layout_inputs(index, kind):
+                    g.case(name, inp, lambda inp=inp: run_layout(client, inp))
+                g.write()
+    finally:
+        srv.shutdown()
+        downloader.time = real_time
+
+
 # --- qobuzdltest ---------------------------------------------------------
 
 
@@ -1972,6 +2382,9 @@ def main():
     gen_disc_track_total(index, raw)
     gen_flac_tagged(index, raw)
     gen_mp3_tagged(index, raw)
+    gen_naming(index, raw)
+    gen_tracklist(index, raw)
+    gen_layout(index, raw)
     write_fake_fixtures()
 
 

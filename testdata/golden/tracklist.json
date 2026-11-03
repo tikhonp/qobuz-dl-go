@@ -1,0 +1,1624 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "album/multi_disc",
+   "input": {
+    "album": "evz7usmruz35a",
+    "title": "Ummagumma",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 192
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Ummagumma - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Ummagumma\nCOMPOSER   : Various Composers\nMAIN ART.  : Pink Floyd\nLABEL      : Pink Floyd Records\nGENRE      : Rock\nRELEASE    : 1969-10-25\nQUALITY    : FLAC (24-Bit / 192 kHz)\n======================================================================\n\n--- DISC 1 ---\n\n01. Astronomy Domine                                         [08:30]\n    * David Gilmour, AssociatedPerformer\n    * Roger Waters, AssociatedPerformer\n    * Syd Barrett, Composer, Lyricist\n    * Pink Floyd, Producer, MainArtist, AssociatedPerformer\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n    * Richard Wright, AssociatedPerformer\n    * Nick Mason, Drums\n    * Brian Humphries, Engineer\n\n02. Careful with That Axe, Eugene                            [08:50]\n    * David Gilmour, Composer, AssociatedPerformer\n    * Roger Waters, Composer, AssociatedPerformer\n    * Pink Floyd, Producer, MainArtist, AssociatedPerformer\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n    * Richard Wright, Composer, Organ\n    * Nick Mason, Composer, Drums\n    * Brian Humphries, Engineer\n\n03. Set the Controls for the Heart of the Sun                [09:26]\n    * David Gilmour, Guitar\n    * Roger Waters, Composer, Lyricist, AssociatedPerformer\n    * Pink Floyd, Producer, MainArtist, AssociatedPerformer\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n    * Richard Wright, Organ\n    * Nick Mason, Drums\n    * Brian Humphries, Engineer\n\n04. A Saucerful of Secrets                                   [12:49]\n    * David Gilmour, Composer, AssociatedPerformer\n    * Roger Waters, Composer, AssociatedPerformer\n    * Pink Floyd, Producer, MainArtist, AssociatedPerformer\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n    * Richard Wright, Composer, Organ\n    * Nick Mason, Composer, Drums\n    * Brian Humphries, Engineer\n\n\n--- DISC 2 ---\n\n01. Sysyphus, Pt. 1                                          [01:07]\n    * Peter Mew, Producer\n    * Pink Floyd, MainArtist, AssociatedPerformer\n    * Norman Smith, Producer, Drums\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n    * Richard Wright, Composer, AssociatedPerformer\n\n02. Sysyphus, Pt. 2                                          [03:30]\n    * Peter Mew, Producer\n    * Pink Floyd, MainArtist, AssociatedPerformer\n    * Norman Smith, Producer, Drums\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n    * Richard Wright, Composer, AssociatedPerformer\n\n03. Sysyphus, Pt. 3                                          [01:49]\n    * Peter Mew, Producer\n    * Pink Floyd, MainArtist, AssociatedPerformer\n    * Norman Smith, Producer, Drums\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n    * Richard Wright, Composer, AssociatedPerformer\n    * Nick Mason, Percussion\n\n04. Sysyphus, Pt. 4                                          [06:59]\n    * Peter Mew, Producer\n    * Pink Floyd, MainArtist, AssociatedPerformer\n    * Norman Smith, Producer, Drums\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n    * Richard Wright, Composer, AssociatedPerformer\n\n05. Grantchester Meadows                                     [07:27]\n    * Roger Waters, Composer, Lyricist, AssociatedPerformer\n    * Peter Mew, Producer\n    * Pink Floyd, MainArtist, AssociatedPerformer\n    * Norman Smith, Producer\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n\n06. Several Species of Small Furry Animals Gathered Together in a Cave and Grooving with a Pict [04:58]\n    * Roger Waters, Composer, Lyricist, AssociatedPerformer\n    * Peter Mew, Producer\n    * Pink Floyd, MainArtist, AssociatedPerformer\n    * Norman Smith, Producer\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n    * Ron Geesin, AssociatedPerformer\n\n07. The Narrow Way, Pt. 1                                    [03:28]\n    * David Gilmour, Composer, Lyricist, AssociatedPerformer\n    * Peter Mew, Producer\n    * Pink Floyd, MainArtist, AssociatedPerformer\n    * Norman Smith, Producer\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n\n08. The Narrow Way, Pt. 2                                    [02:53]\n    * David Gilmour, Composer, Lyricist, AssociatedPerformer\n    * Peter Mew, Producer\n    * Pink Floyd, MainArtist, AssociatedPerformer\n    * Norman Smith, Producer\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n\n09. The Narrow Way, Pt. 3                                    [05:57]\n    * David Gilmour, Composer, Lyricist, AssociatedPerformer\n    * Peter Mew, Producer\n    * Pink Floyd, MainArtist, AssociatedPerformer\n    * Norman Smith, Producer\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n\n10. The Grand Vizier's Garden Party, Pt. 1 (Entrance)        [00:59]\n    * Peter Mew, Producer\n    * Pink Floyd, MainArtist, AssociatedPerformer\n    * Norman Smith, Producer\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n    * Nick Mason, Composer, AssociatedPerformer\n    * Lindy Mason, Flute\n\n11. The Grand Vizier's Garden Party, Pt. 2 (Entertainment)   [07:05]\n    * Peter Mew, Producer\n    * Pink Floyd, MainArtist, AssociatedPerformer\n    * Norman Smith, Producer\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n    * Nick Mason, Composer, Percussion, AssociatedPerformer\n    * Lindy Mason, Flute\n\n12. The Grand Vizier's Garden Party, Pt. 3 (Exit)            [00:40]\n    * Peter Mew, Producer\n    * Pink Floyd, MainArtist, AssociatedPerformer\n    * Norman Smith, Producer\n    * James Guthrie, Mastering Engineer\n    * Joel Plante, Mastering Engineer\n    * Nick Mason, Composer, AssociatedPerformer\n    * Lindy Mason, Flute\n\n\n======================================================================\nALBUM REVIEW / NOTES\n======================================================================\n\nReleased on 7th November, 1969, Pink Floyd’s fourth album Ummagumma is\na disorienting head trip of an album: one part live recordings, the\nother a bizarre, psychedelic and rather cinematic collection of solo\nexperiments. The first disc’s purely instrumental concerts stem from\nBirmingham’s Mothers Club and Manchester’s College of Commerce and\nwere recorded earlier that year. The sound is raw and crude, offering\na glimpse of Pink Floyd’s early days on stage. By the time Nick\nWright’s ominous piano opens the curtain on the second disc, it’s\nclear the mood has changed from spaced-out jams to a kind of freaky\nfolk opera. The band members’ rotating positions on the album cover\n(designed by their long-term collaborators Hipgnosis) give you a clue\nas to what’s in store: each artist had half an album side to compose\ntheir own work without any input from the others. The four-part\nSysyphus by Nick Wright is intense and progressive, packed with an\narray of synths, organs and pianos. Roger Waters’ Grantchester Meadows\nand Several Species of Small Furry Animals Gathered Together in a Cave\nand Grooving with a Pict contains bird songs and warped voice samples\nplayed both forwards and backwards at varying speeds, crafting a\nlyrical world that’s peaceful and unnerving in equal measure. When\nDavid Gilmour takes the reins for The Narrow Way we’re treated to a\nmeandering stream of vocals, guitar strums and solos that flow neither\nthis way nor that. For the album closer, The Grand Vizier’s Garden\nParty by Nick Mason starts off as an introductory flute piece (played\nby his wife) before galloping head-first into a looping frenzy of\nbeats and distortions. Initially viewed as a success, the group look\nback on this record as “pretentious”. In an interview, Nick Mason\ncommented “in hindsight, it rather proves that we were better when we\nworked together than when we worked as individuals. There are nice\nmoments and odd good bits but as an album it’s pretty fragmented…”.\nIt’s not an easy listen, but then it’s not trying to be. If it’s sheer\npsychedelia you’re after, look no further than Ummagumma. © Abi\nChurch/Qobuz\n\n"
+    }
+   ]
+  },
+  {
+   "name": "album/hires_96",
+   "input": {
+    "album": "k43q1q3kx88fa",
+    "title": "Begin Again",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Begin Again - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Begin Again\nCOMPOSER   : Various Composers\nMAIN ART.  : Norah Jones\nLABEL      : Blue Note Records\nGENRE      : Pop/Rock\nRELEASE    : 2019-04-12\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n01. My Heart Is Full                                         [03:06]\n    * Norah Jones, MainArtist, AssociatedPerformer, Vocals, ComposerLyricist\n    * Thomas Bartlett, Producer, AssociatedPerformer, Keyboards, StudioPersonnel, Engineer, ComposerLyricist\n    * Patrick Dillett, StudioPersonnel, Mixer\n    * Chris Gehringer, StudioPersonnel, Mastering Engineer\n    * Will Quinnell, StudioPersonnel, Assistant Mastering Engineer\n\n02. Begin Again                                              [03:49]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist\n    * Brandon Bost, StudioPersonnel, Mix Engineer\n    * Tom Elmhirst, StudioPersonnel, Mixer\n    * Brian Blade, AssociatedPerformer, Drums\n    * Christopher Thomas, AssociatedPerformer, Bass (Vocal)\n    * Pete Remm, AssociatedPerformer, Hammond B3\n    * Chris Gehringer, StudioPersonnel, Mastering Engineer\n    * Will Quinnell, StudioPersonnel, Assistant Mastering Engineer\n    * James Yost, StudioPersonnel, Asst. Recording Engineer\n    * Patrick Dillett, StudioPersonnel, Recording Engineer\n    * Emily Fiskio, ComposerLyricist\n\n03. It Was You                                               [05:30]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist\n    * Patrick Dillett, StudioPersonnel, Recording Engineer\n    * Jens Jungkurth, StudioPersonnel, Recording Engineer\n    * Andy Taub, StudioPersonnel, Recording Engineer\n    * James Yost, StudioPersonnel, Asst. Recording Engineer\n    * Genevieve Nelson, StudioPersonnel, Asst. Recording Engineer\n    * Tom Elmhirst, StudioPersonnel, Mixer\n    * Brandon Bost, StudioPersonnel, Assistant Mixer\n    * Brian Blade, AssociatedPerformer, Drums\n    * Christopher Thomas, AssociatedPerformer, Bass (Vocal)\n    * Dave Guy, AssociatedPerformer\n    * Leon Michels, AssociatedPerformer, Tenor Saxophone\n    * Pete Remm, AssociatedPerformer\n    * Chris Gehringer, StudioPersonnel, Mastering Engineer\n    * Will Quinnell, StudioPersonnel, Assistant Mastering Engineer\n\n04. A Song With No Name                                      [04:03]\n    * Norah Jones, MainArtist, AssociatedPerformer, Acoustic Guitar, Vocals, ComposerLyricist\n    * Jeff Tweedy, Producer, AssociatedPerformer, Acoustic Guitar, Electric Guitar, ComposerLyricist\n    * Mark Greenberg, StudioPersonnel, Assistant Mixer, Asst. Recording Engineer\n    * TOM SCHICK, StudioPersonnel, Mixer, Recording Engineer\n    * Chris Gehringer, StudioPersonnel, Mastering Engineer\n    * Will Quinnell, StudioPersonnel, Assistant Mastering Engineer\n\n05. Uh Oh                                                    [03:37]\n    * Norah Jones, MainArtist, AssociatedPerformer, Drums, Vocals, ComposerLyricist\n    * Thomas Bartlett, Producer, AssociatedPerformer, Drum Programming, Keyboards, StudioPersonnel, Recording Engineer\n    * Patrick Dillett, StudioPersonnel, Mixer\n    * Chris Gehringer, StudioPersonnel, Mastering Engineer\n    * Will Quinnell, StudioPersonnel, Assistant Mastering Engineer\n    * Thomas Wayland Bartlett, ComposerLyricist\n\n06. Wintertime                                               [03:48]\n    * Norah Jones, MainArtist, AssociatedPerformer, Vocals, ComposerLyricist\n    * Jeff Tweedy, Producer, AssociatedPerformer, Bass (Vocal), ComposerLyricist\n    * TOM SCHICK, StudioPersonnel, Mixer, Recording Engineer\n    * Mark Greenberg, StudioPersonnel, Assistant Mixer, Asst. Recording Engineer\n    * Spencer Tweedy, AssociatedPerformer, Drums\n    * Chris Gehringer, StudioPersonnel, Mastering Engineer\n    * Will Quinnell, StudioPersonnel, Assistant Mastering Engineer\n\n07. Just A Little Bit                                        [05:02]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist\n    * James Yost, StudioPersonnel, Assistant Mixer, Asst. Recording Engineer\n    * Patrick Dillett, StudioPersonnel, Mixer, Recording Engineer\n    * Brian Blade, AssociatedPerformer, Drums, ComposerLyricist\n    * Christopher Thomas, AssociatedPerformer, Bass (Vocal), ComposerLyricist\n    * Dave Guy, AssociatedPerformer\n    * Leon Michels, AssociatedPerformer, Tenor Saxophone\n    * Chris Gehringer, StudioPersonnel, Mastering Engineer\n    * Will Quinnell, StudioPersonnel, Assistant Mastering Engineer\n    * Homer Steinweiss, StudioPersonnel, Recording Engineer\n    * Sarah Oda, ComposerLyricist\n\n\n======================================================================\nALBUM REVIEW / NOTES\n======================================================================\n\nLabels have never been her thing… Jazz, pop, country, folk, world,\nNorah Jones has always played music that she has to blur boundaries.\nAnd that her collaborators include legends of jazz like Wayne Shorter,\nof soul like Ray Charles, of country like Willie Nelson, of rap like\nQ-Tip and of rock’n’roll like Keith Richards, this American has worked\ntirelessly to, above all, be herself. A serene and beautifully\nnonchalant voice capable of inhabiting her own themes as well as\nrevisiting any song. Three years after the ambitious Day Breaks, this\nbrief Begin Again (28 minutes, 7 tracks) is more than just a thrown-\ntogether collection of tracks. Instead, it’s a new self-portrait,\nalternating between assumed pop (My Heart is Full), expressive soul\n(It was You) and up-tempo jazz (Begin Again). To stay amongst people\nof taste, Jeff Tweedy from Wilco made appearances on the magnificent A\nSong with No Name and Wintertime. Surrounded as always by the finest\nmusicians (Brian Blade's velvet drums are wonderful), Norah Jones\nmasterfully guides us through this no-man’s land of a little bit of\njazz, a bit pop, a bit soul. And it's as enjoyable as ever. © Clotilde\nMaréchal/Qobuz\n\n"
+    }
+   ]
+  },
+  {
+   "name": "album/cd",
+   "input": {
+    "album": "0634904080853",
+    "title": "Com Lag: 2+2=5",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 16
+     },
+     {
+      "py": "float",
+      "v": 44.1
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Com Lag 2+2=5 - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Com Lag: 2+2=5\nCOMPOSER   : Various Composers\nMAIN ART.  : Radiohead\nLABEL      : XL Recordings\nGENRE      : Alternative & Indie\nRELEASE    : 2004-03-24\nQUALITY    : FLAC (16-Bit / 44.1 kHz)\n======================================================================\n\n01. 2 + 2 = 5                                                [03:35]\n    * RADIOHEAD, MainArtist\n    * Colin Greenwood, Composer, AssociatedPerformer\n    * Ed O'Brien, AssociatedPerformer, Composer\n    * Phil Selway, Composer, AssociatedPerformer\n    * Jonny Greenwood, Composer, AssociatedPerformer\n    * Warner Chappell Music Publishing Ltd., Main Artist, MusicPublisher\n    * Thom Yorke, AssociatedPerformer, ComposerLyricist\n    * NIGEL GODRICH, Programmer\n    * WARNER/CHAPPELL MUSIC PUBLISHING, MusicPublisher\n    * CMRRA, MusicPublisher\n\n02. Remyxomatosis                                            [05:09]\n    * RADIOHEAD, MainArtist\n    * Colin Greenwood, Composer, AssociatedPerformer, Producer\n    * Phil Selway, Composer, AssociatedPerformer, Producer\n    * Jonny Greenwood, Composer, AssociatedPerformer, Producer\n    * Warner Chappell Music Publishing Ltd., Main Artist, MusicPublisher\n    * Ed O'Brien, AssociatedPerformer, Producer, Composer\n    * Thom Yorke, AssociatedPerformer, Producer, ComposerLyricist\n    * Cristian Vogel, Remixer\n    * Darryl Thorp, Engineer\n    * Graeme Stewart, Engineer\n    * NIGEL GODRICH, Engineer, Producer, Programmer, MixingEngineer\n    * CMRRA, MusicPublisher\n    * WARNER/CHAPPELL MUSIC PUBLISHING, MusicPublisher\n\n03. I Will                                                   [02:13]\n    * RADIOHEAD, MainArtist\n    * Colin Greenwood, Composer, AssociatedPerformer, Producer\n    * Phil Selway, Composer, AssociatedPerformer, Producer\n    * Jonny Greenwood, Composer, AssociatedPerformer, Producer\n    * Warner Chappell Music Publishing Ltd., Main Artist, MusicPublisher\n    * Ed O'Brien, AssociatedPerformer, Producer, Composer\n    * Thom Yorke, AssociatedPerformer, Producer, ComposerLyricist\n    * Darryl Thorp, Engineer\n    * NIGEL GODRICH, Engineer, Producer, Programmer, MixingEngineer\n    * CMRRA, MusicPublisher\n    * WARNER/CHAPPELL MUSIC PUBLISHING, MusicPublisher\n\n04. Paperbag Writer                                          [03:58]\n    * RADIOHEAD, MainArtist\n    * Colin Greenwood, AssociatedPerformer, ComposerLyricist\n    * Ed O'Brien, AssociatedPerformer, ComposerLyricist\n    * Jonny Greenwood, AssociatedPerformer, ComposerLyricist\n    * Phil Selway, AssociatedPerformer, ComposerLyricist\n    * Thom Yorke, AssociatedPerformer, ComposerLyricist\n    * Warner Chappell Music Publishing Ltd., Main Artist, MusicPublisher\n    * Darrell Thorp, Engineer\n    * NIGEL GODRICH, Producer, Programmer, MixingEngineer\n    * WARNER/CHAPPELL MUSIC PUBLISHING, MusicPublisher\n    * CMRRA, MusicPublisher\n\n05. I Am a Wicked Child                                      [03:06]\n    * RADIOHEAD, MainArtist\n    * Colin Greenwood, Composer, AssociatedPerformer, Producer\n    * Phil Selway, Composer, AssociatedPerformer, Producer\n    * Jonny Greenwood, Composer, AssociatedPerformer, Producer\n    * Warner Chappell Music Publishing Ltd., Main Artist, MusicPublisher\n    * Ed O'Brien, AssociatedPerformer, Producer, Composer\n    * Thom Yorke, AssociatedPerformer, Producer, ComposerLyricist\n    * NIGEL GODRICH, Programmer\n    * WARNER/CHAPPELL MUSIC PUBLISHING, MusicPublisher\n    * CMRRA, MusicPublisher\n\n06. I Am Citizen Insane                                      [03:32]\n    * RADIOHEAD, MainArtist\n    * Colin Greenwood, AssociatedPerformer, Producer, ComposerLyricist\n    * Ed O'Brien, AssociatedPerformer, Producer, ComposerLyricist\n    * Jonny Greenwood, AssociatedPerformer, Producer, ComposerLyricist\n    * Warner Chappell Music Publishing Ltd., Main Artist, MusicPublisher\n    * Phil Selway, AssociatedPerformer, Producer, ComposerLyricist\n    * Thom Yorke, AssociatedPerformer, Producer, ComposerLyricist\n    * NIGEL GODRICH, Programmer\n    * WARNER/CHAPPELL MUSIC PUBLISHING, MusicPublisher\n    * CMRRA, MusicPublisher\n\n07. Skttrbrain                                               [04:25]\n    * RADIOHEAD, MainArtist\n    * Colin Greenwood, Composer, AssociatedPerformer, Producer\n    * Phil Selway, Composer, AssociatedPerformer, Producer\n    * Jonny Greenwood, Composer, AssociatedPerformer, Producer\n    * Warner Chappell Music Publishing Ltd., Main Artist, MusicPublisher\n    * Ed O'Brien, AssociatedPerformer, Producer, Composer\n    * Thom Yorke, AssociatedPerformer, Producer, ComposerLyricist\n    * Darryl Thorp, Engineer\n    * NIGEL GODRICH, Producer, Programmer, MixingEngineer\n    * Four Tet, Remixer\n    * CMRRA, MusicPublisher\n    * WARNER/CHAPPELL MUSIC PUBLISHING, MusicPublisher\n\n08. Gagging Order                                            [03:36]\n    * RADIOHEAD, MainArtist\n    * Colin Greenwood, AssociatedPerformer, Producer, ComposerLyricist\n    * Ed O'Brien, AssociatedPerformer, Producer, ComposerLyricist\n    * Jonny Greenwood, AssociatedPerformer, Producer, ComposerLyricist\n    * Warner Chappell Music Publishing Ltd., Main Artist, MusicPublisher\n    * Phil Selway, AssociatedPerformer, Producer, ComposerLyricist\n    * Thom Yorke, AssociatedPerformer, Producer, ComposerLyricist\n    * Graeme Stewart, Engineer\n    * NIGEL GODRICH, Programmer\n    * CMRRA, MusicPublisher\n    * WARNER/CHAPPELL MUSIC PUBLISHING, MusicPublisher\n\n09. Fog (Again)                                              [02:18]\n    * RADIOHEAD, MainArtist\n    * Colin Greenwood, AssociatedPerformer, ComposerLyricist\n    * Ed O'Brien, AssociatedPerformer, ComposerLyricist\n    * Jonny Greenwood, AssociatedPerformer, ComposerLyricist\n    * Phil Selway, AssociatedPerformer, ComposerLyricist\n    * Thom Yorke, AssociatedPerformer, ComposerLyricist\n    * Warner Chappell Music Publishing Ltd., Main Artist, MusicPublisher\n    * NIGEL GODRICH, Engineer\n    * WARNER/CHAPPELL MUSIC PUBLISHING, MusicPublisher\n    * CMRRA, MusicPublisher\n\n10. Where Bluebirds Fly                                      [04:31]\n    * RADIOHEAD, MainArtist\n    * Colin Greenwood, AssociatedPerformer, Producer, ComposerLyricist\n    * Ed O'Brien, AssociatedPerformer, Producer, ComposerLyricist\n    * Jonny Greenwood, Producer, AssociatedPerformer, ComposerLyricist\n    * Warner Chappell Music Publishing Ltd., Main Artist, MusicPublisher\n    * Phil Selway, AssociatedPerformer, Producer, ComposerLyricist\n    * Thom Yorke, AssociatedPerformer, Producer, ComposerLyricist\n    * NIGEL GODRICH, Programmer\n    * WARNER/CHAPPELL MUSIC PUBLISHING, MusicPublisher\n    * CMRRA, MusicPublisher\n\n\n======================================================================\nALBUM REVIEW / NOTES\n======================================================================\n\nUseful only to the most devoted Radiohead followers (who will probably\nhave most of the contents to begin with), Com Lag is a patchwork of\nlive material, remixes, B-sides, and other assorted scraps. Naturally,\nthe release isn't nearly as cohesive as Hail to the Thief; its\napparent intent is to supply the fans with another stream of the\nband's recordings, regardless of both how they fit together and how\nmixed the tracks are to begin with. The B-sides aren't nearly as solid\nas the ones collected on the Airbag/How Am I Driving EP, not to\nmention most of the intervening extras that trickled out between that\nrelease and this one -- though the live, solo piano version of\nAmnesiac-era B-side \"Fog\" is a definite standout, and the likes of\n\"Paperbag Writer,\" \"I Am Citizen Insane,\" and \"Gagging Order\" are\nhardly throwaways. A Cristian Vogel remix of \"Myxomatosis\" is far more\nnerve-racking than the original, full of clattering percussion; Thom\nYorke's vocals are placed higher in the mix and possibly multi-tracked\nto make them sound as if they're on the brink of lunacy. Another\nstandout is a ferocious live version of \"2+2=5\" recorded at London's\nEarls Court. To make the release a little more enticing, no expense\nwas spared with the packaging.\n\n&copy Andy Kellman /TiVo\n\n"
+    }
+   ]
+  },
+  {
+   "name": "album/compilation",
+   "input": {
+    "album": "zcs2h686vhj4b",
+    "title": "Now That's Not What I Call Music",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 16
+     },
+     {
+      "py": "float",
+      "v": 44.1
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Now That's Not What I Call Music - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Now That's Not What I Call Music [E]\nMAIN ART.  : Various Artists\nLABEL      : Naked Jain Records\nGENRE      : Punk / New Wave\nRELEASE    : 2002-01-01\nQUALITY    : FLAC (16-Bit / 44.1 kHz)\n======================================================================\n\n01. My Dad Smokes Crack [E]                                  [02:15]\n    * The Strap-Ons, MainArtist\n\n02. Let's Fuck [E]                                           [04:58]\n    * Strip Johnny, MainArtist\n\n03. Blonde Hair [E]                                          [03:41]\n    * Uncle Tom, MainArtist\n\n04. Messy People [E]                                         [05:19]\n    * Lung Cookie, MainArtist\n\n05. Binge [E]                                                [03:19]\n    * Chlorine, MainArtist\n\n06. Fictionary [E]                                           [01:29]\n    * Pete's Sake, MainArtist\n\n07. Hangover [E]                                             [02:14]\n    * Lewinski, MainArtist\n\n08. Cigarettes [E]                                           [02:05]\n    * The Spiders, MainArtist\n\n09. Balkans [E]                                              [03:08]\n    * Fallback, MainArtist\n\n10. Flamethrower [E]                                         [02:42]\n    * Basis, MainArtist\n\n11. Once in a While [E]                                      [01:55]\n    * Jalopy Kinfolk, MainArtist\n\n12. Yesterday Seems [E]                                      [04:26]\n    * Guff, MainArtist\n\n13. I Kissed a Killer [E]                                    [06:53]\n    * Vodka 9, MainArtist\n\n14. Nothing Gets Me Off [E]                                  [02:38]\n    * Mudstack, MainArtist\n\n15. She Wants [E]                                            [04:01]\n    * Brown Sox, MainArtist\n\n16. Summer Moon [E]                                          [04:23]\n    * 50 Mission Crush, MainArtist\n\n17. Supersonic [E]                                           [03:48]\n    * Clyde, MainArtist\n\n18. Vegasstock [E]                                           [03:17]\n    * Evil Side Of Math, MainArtist\n\n19. Dang [E]                                                 [02:40]\n    * Woodpecker, MainArtist\n\n20. Trapped in Purgatory [E]                                 [03:40]\n    * Blood Angora, MainArtist\n\n"
+    }
+   ]
+  },
+  {
+   "name": "album/with_version",
+   "input": {
+    "album": "b2d4k8h8pu6zb",
+    "title": "…‘Til We Meet Again (Live)",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "…‘Til We Meet Again (Live) - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : …‘Til We Meet Again (Live)\nCOMPOSER   : Various Composers\nMAIN ART.  : Norah Jones\nLABEL      : Blue Note Records\nGENRE      : Pop\nRELEASE    : 2021-04-16\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n01. Cold, Cold Heart                                         [05:24]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals\n    * Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer\n    * Brian Blade, AssociatedPerformer, Drums\n    * Pete Remm, AssociatedPerformer\n    * Christopher Thomas, AssociatedPerformer, Upright Bass\n    * Alexander Fedrizzi, StudioPersonnel, Asst. Recording Engineer\n    * Steve Fallone, StudioPersonnel, Mastering Engineer\n    * Hank Williams, ComposerLyricist\n\n02. It Was You                                               [05:37]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist\n    * Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer\n    * Brian Blade, AssociatedPerformer, Drums\n    * Christopher Thomas, AssociatedPerformer, Electric Bass\n    * Pete Remm, AssociatedPerformer\n    * Alexander Fedrizzi, StudioPersonnel, Asst. Recording Engineer\n    * Steve Fallone, StudioPersonnel, Mastering Engineer\n\n03. Begin Again                                              [04:16]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist\n    * Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer\n    * Brian Blade, AssociatedPerformer, Drums\n    * Christopher Thomas, AssociatedPerformer, Upright Bass\n    * Pete Remm, AssociatedPerformer\n    * Alexander Fedrizzi, StudioPersonnel, Asst. Recording Engineer\n    * Steve Fallone, StudioPersonnel, Mastering Engineer\n    * Emily Fiskio, ComposerLyricist\n\n04. Those Sweet Words                                        [03:50]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals\n    * Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer\n    * Marcelo Costa, AssociatedPerformer\n    * Brian Blade, AssociatedPerformer, Drums\n    * Jesse Murphy, AssociatedPerformer, Upright Bass\n    * Mike Bradley, StudioPersonnel, Asst. Recording Engineer\n    * Steve Fallone, StudioPersonnel, Mastering Engineer\n    * Lee Alexander, ComposerLyricist\n    * Richard Julian, ComposerLyricist\n\n05. I've Got To See You Again                                [07:33]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals\n    * Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer\n    * Brian Blade, AssociatedPerformer, Drums\n    * Christopher Thomas, AssociatedPerformer, Upright Bass\n    * Pete Remm, AssociatedPerformer\n    * Alexander Fedrizzi, StudioPersonnel, Asst. Recording Engineer\n    * Steve Fallone, StudioPersonnel, Mastering Engineer\n    * Jesse Harris, ComposerLyricist\n\n06. After The Fall                                           [05:33]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist\n    * Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer\n    * Brian Blade, AssociatedPerformer, Drums\n    * Christopher Thomas, AssociatedPerformer, Electric Bass\n    * Alexander Fedrizzi, StudioPersonnel, Asst. Recording Engineer\n    * Steve Fallone, StudioPersonnel, Mastering Engineer\n    * Brian Burton, ComposerLyricist\n\n07. I'll Be Gone                                             [04:48]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals\n    * Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer\n    * Brian Blade, AssociatedPerformer, Drums, Vocals\n    * Jesse Murphy, AssociatedPerformer, Electric Bass, Vocals\n    * Mike Bradley, StudioPersonnel, Asst. Recording Engineer\n    * Steve Fallone, StudioPersonnel, Mastering Engineer\n    * Pete Remm, ComposerLyricist\n\n08. Just A Little Bit                                        [05:29]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist\n    * Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer\n    * Brian Blade, AssociatedPerformer, Drums, ComposerLyricist\n    * Jesse Murphy, AssociatedPerformer, Electric Bass\n    * Jorge Continentino, AssociatedPerformer, Alto Flute\n    * Mike Bradley, StudioPersonnel, Asst. Recording Engineer\n    * Steve Fallone, StudioPersonnel, Mastering Engineer\n    * Sarah Oda, ComposerLyricist\n    * Christopher Thomas, ComposerLyricist\n\n09. Falling                                                  [04:35]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist\n    * Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer\n    * Brian Blade, AssociatedPerformer, Drums\n    * Jesse Murphy, AssociatedPerformer, Upright Bass\n    * Jesse Harris, AssociatedPerformer, Acoustic Guitar\n    * Mike Bradley, StudioPersonnel, Asst. Recording Engineer\n    * Steve Fallone, StudioPersonnel, Mastering Engineer\n    * Rodrigo Amarante, ComposerLyricist\n\n10. Tragedy                                                  [05:04]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist\n    * Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer\n    * Brian Blade, AssociatedPerformer, Drums\n    * Jesse Murphy, AssociatedPerformer, Electric Bass\n    * Mike Bradley, StudioPersonnel, Asst. Recording Engineer\n    * Steve Fallone, StudioPersonnel, Mastering Engineer\n    * Sarah Oda, ComposerLyricist\n\n11. Sunrise                                                  [04:32]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist\n    * Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer\n    * Brian Blade, AssociatedPerformer, Drums, Vocals\n    * Jesse Murphy, AssociatedPerformer, Upright Bass, Vocals\n    * Mike Bradley, StudioPersonnel, Asst. Recording Engineer\n    * Steve Fallone, StudioPersonnel, Mastering Engineer\n    * Lee Alexander, ComposerLyricist\n\n12. Flipside                                                 [06:47]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals, ComposerLyricist\n    * Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer\n    * Brian Blade, AssociatedPerformer, Drums\n    * Jesse Murphy, AssociatedPerformer, Electric Bass\n    * Mike Bradley, StudioPersonnel, Asst. Recording Engineer\n    * Steve Fallone, StudioPersonnel, Mastering Engineer\n    * Pete Remm, ComposerLyricist\n\n13. Don't Know Why                                           [05:05]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals\n    * Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer\n    * Brian Blade, AssociatedPerformer, Drums\n    * Christopher Thomas, AssociatedPerformer, Upright Bass\n    * Pete Remm, AssociatedPerformer\n    * Alexander Fedrizzi, StudioPersonnel, Asst. Recording Engineer\n    * Steve Fallone, StudioPersonnel, Mastering Engineer\n    * Jesse Harris, ComposerLyricist\n\n14. Black Hole Sun                                           [07:11]\n    * Norah Jones, MainArtist, Producer, AssociatedPerformer, Vocals\n    * Jamie Landry, Producer, StudioPersonnel, Mixer, Recording Engineer\n    * Alexander Fedrizzi, StudioPersonnel, Asst. Recording Engineer\n    * Steve Fallone, StudioPersonnel, Mastering Engineer\n    * Chris Cornell, ComposerLyricist\n\n\n======================================================================\nALBUM REVIEW / NOTES\n======================================================================\n\nOver the course of her 20-year career, Norah Jones may have performed\nthousands of concerts, but she has never delivered a live album. For\n…’Til We Meet Again, released almost two decades after her hit first\nalbum Come Away With Me, she opts for the trio and quartet setups,\nundoubtedly the configurations that best suit her voice and piano. The\nsetlist includes songs recorded between May 2017 and December 2019 in\nthe United States, France, Italy, Brazil and Argentina, with organist\nPete Remm, bassists Christopher Thomas and Jesse Murphy, drummers and\npercussionists Brian Blade and Marcelo Costa, guitarist Jesse Harris\nand flautist Jorge Continentino.\n\nIn order to show she’s a major-league performer capable of fully\nowning everything she sings, Jones shifts seamlessly from the\nlegendary country of Cold Cold Heart by Hank Williams to Black Hole\nSun by grunge group Soundgarden (a posthumous tribute to singer Chris\nCornell recorded a few days after his death), not to mention her own\nsongs… With false nonchalance but genuine melancholy, Jones picks\nthrough her albums Come Away With Me (Don’t Know Why, I’ve Got To See\nYou Again, Cold, Cold Heart), Feels Like Home (Sunrise, Those Sweet\nWords), Little Broken Hearts (After The Fall) and Day\nBreaks (Flipside, Tragedy), as well as her most recent series of\nsingles (It Was You, Begin Again, Just A Little Bit). Everything is\nfluid and coherent. Her piano playing is nicely matured and the\nchemistry with the exceptional Blade (what a drummer!) reaches real\nheights here. You’ve got to surrender yourself to this smoky bar jazz\n(even if you can't smoke in bars anymore…), to the silky velvet blues,\ndeeper and richer than a casual listening might indicate. Then there’s\nthat magical voice with its instantly recognisable timbre, capable of\nbeing moving without being weepy, as in the tribute to Cornell that\ncloses this beautiful live set. © Marc Zisman/Qobuz\n\n"
+    }
+   ]
+  },
+  {
+   "name": "album/classical",
+   "input": {
+    "album": "xf2zfbfjz0w1b",
+    "title": "Mahler: Symphony No. 2",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 192
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Mahler Symphony No. 2 - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Mahler: Symphony No. 2\nCOMPOSER   : Gustav Mahler\nMAIN ART.  : Budapest Festival Orchestra\nLABEL      : Channel Classics\nGENRE      : Classical\nRELEASE    : 2006-01-01\nQUALITY    : FLAC (24-Bit / 192 kHz)\n======================================================================\n\n--- DISC 1 ---\n\n01. I. Allegro maestoso                                      [21:46]\n    * Gustav Mahler, Composer\n    * Copyright Control, MusicPublisher\n    * Ivan Fischer, Conductor, MainArtist\n    * Budapest Festival Orchestra, Orchestra, MainArtist\n\n02. II. Andante moderato                                     [10:02]\n    * Gustav Mahler, Composer\n    * Copyright Control, MusicPublisher\n    * Ivan Fischer, Conductor, MainArtist\n    * Budapest Festival Orchestra, Orchestra, MainArtist\n\n\n--- DISC 2 ---\n\n01. III. In ruhig fliessender Bewegung                       [11:18]\n    * Gustav Mahler, Composer\n    * Copyright Control, MusicPublisher\n    * Ivan Fischer, Conductor, MainArtist\n    * Budapest Festival Orchestra, Orchestra, MainArtist\n\n02. IV. Urlicht, \"Der Mensch liegt in grösster Not\". Sehr feierlich, aber schlicht (Contralto) [04:52]\n    * Gustav Mahler, Composer\n    * Copyright Control, MusicPublisher\n    * Birgit Remmert, MainArtist\n    * Ivan Fischer, Conductor, MainArtist\n    * Friedrich Gottlieb Klopstock, Lyricist\n    * Budapest Festival Orchestra, Orchestra, MainArtist\n\n03. V. Im Tempo des Scherzos - Langsam. Misterioso, \"Aufersteh'n\" (Chorus, Soprano) - Etwas bewegter, \" O glaube, mein Herz … Aufersteh'n\" (Alto, Soprano, Chorus) [34:20]\n    * Gustav Mahler, Composer, Lyricist\n    * Copyright Control, MusicPublisher\n    * Birgit Remmert, MainArtist\n    * Ivan Fischer, Conductor, MainArtist\n    * Budapest Festival Orchestra, Orchestra, MainArtist\n    * Lisa Milne, MainArtist\n    * Hungarian Radio Choir, MainArtist\n\n\n======================================================================\nALBUM REVIEW / NOTES\n======================================================================\n\n'Resurrection' (1894) is a gigantic work of enormous proportions,\nextreme contrasts, and a score that surpasses even his First Symphony\nfrom two years earlier. Ten horns, eight trumpets, two harps, organ,\nfive percussionists, two vocal soloists (soprano and alto), as well as\na large mixed chorus, fill the podium. And behind all this, invisible,\nis a 'Fernorchester' (distant orchestra) as a symbol of 'the\nresurrection'. The work lasts for some 80 to 85 minutes, twice as long\nas Brahms's Fourth or the Franck and D'Indy symphonies of the same\nperiod. And relative to a Haydn or Mozart symphony, there is a\ntripling in size. Only Bruckner approaches it in the length department\nwith his Fifth and Eighth, each lasting about 75 minutes. But then\nMahler, in this symphony, is dealing with the themes of life, death,\nand resurrection, and he took whatever space he felt that he needed.\nThere is a strangely sharp contrast between the untroubled key of C\nmajor and the dark and turbulent contents of the work. It has been\nsuggested that the theme of life, death, and resurrection was borne in\non Mahler on the occasion of the funeral of the great conductor Hans\nvon Bülow in 1894. In any case, the words of Klopstock that were read\non that occasion are the same ones that Mahler used that year for the\napotheosis (last movement) of his Second Symphony: “Aufersteh'n, ja\naufersteh'n wirst du, mein Staub, nach kurzer Ruh unsterblich Leben\nwird der dich rief gegeben.” (Thou shalt arise, yes, arise, my dust,\nafter a brief slumber, thou shalt be called to immortal life). And\nMahler expanded the text further with his own words: “O glaube, mein\nHerz. Es geht dir nichts verloren. Dein ist was du gesehnt. Dein, was\ndu geliebt, was du gestritten. O glaube: Du wardst nicht umsonst\ngeboren. Hast nicht umsonst gelebt, gelitten.” (O have faith, my\nheart. Nothing shall be lost to thee. What thou hast longed for is\nthine. Thine remains, what thou hast loved, what thou hast battled\nfor. O have faith: thou wast not born for nothing. Thou hast not\nsuffered in vain.) From liner notes (Clemns Romijn)\n\n"
+    }
+   ]
+  },
+  {
+   "name": "album/goodies",
+   "input": {
+    "album": "el3qez8zpc8bc",
+    "title": "Beethoven: Symphony No. 3 \"Eroica\" & Coriolan Overture",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 192
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Beethoven Symphony No. 3 Eroica & Coriolan Overture - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Beethoven: Symphony No. 3 \"Eroica\" & Coriolan Overture\nCOMPOSER   : Ludwig van Beethoven\nMAIN ART.  : Iván Fischer\nLABEL      : Channel Classics\nGENRE      : Symphonic Music\nRELEASE    : 2024-04-05\nQUALITY    : FLAC (24-Bit / 192 kHz)\n======================================================================\n\n01. I. Allegro con brio                                      [18:17]\n    * Ludwig van Beethoven, Composer\n    * Copyright Control, MusicPublisher\n    * Ivan Fischer, Conductor, MainArtist\n    * Budapest Festival Orchestra, Orchestra, MainArtist\n    * Jared Sacks, MasteringEngineer, AAndRAdministrator, RecordingEngineer, SoundEngineer, ExecutiveProducer, SoundEditor\n    * Gert Jan Boeke, AssistantRecordingEngineer\n\n02. II. Marcia funebre. Adagio assai                         [16:31]\n    * Ludwig van Beethoven, Composer\n    * Copyright Control, MusicPublisher\n    * Ivan Fischer, Conductor, MainArtist\n    * Budapest Festival Orchestra, Orchestra, MainArtist\n    * Jared Sacks, MasteringEngineer, AAndRAdministrator, RecordingEngineer, SoundEngineer, ExecutiveProducer, SoundEditor\n    * Gert Jan Boeke, AssistantRecordingEngineer\n\n03. III. Scherzo. Allegro vivace - Trio                      [05:55]\n    * Ludwig van Beethoven, Composer\n    * Copyright Control, MusicPublisher\n    * Ivan Fischer, Conductor, MainArtist\n    * Budapest Festival Orchestra, Orchestra, MainArtist\n    * Jared Sacks, MasteringEngineer, AAndRAdministrator, RecordingEngineer, SoundEngineer, ExecutiveProducer, SoundEditor\n    * Gert Jan Boeke, AssistantRecordingEngineer\n\n04. IV. Finale. Allegro molto                                [12:12]\n    * Ludwig van Beethoven, Composer\n    * Copyright Control, MusicPublisher\n    * Ivan Fischer, Conductor, MainArtist\n    * Budapest Festival Orchestra, Orchestra, MainArtist\n    * Jared Sacks, MasteringEngineer, AAndRAdministrator, RecordingEngineer, SoundEngineer, ExecutiveProducer, SoundEditor\n    * Gert Jan Boeke, AssistantRecordingEngineer\n\n05. Coriolan, Op. 62                                         [07:39]\n    * Ludwig van Beethoven, Composer\n    * Copyright Control, MusicPublisher\n    * Ivan Fischer, Conductor, MainArtist\n    * Budapest Festival Orchestra, Orchestra, MainArtist\n    * Jared Sacks, MasteringEngineer, AAndRAdministrator, RecordingEngineer, SoundEngineer, ExecutiveProducer, SoundEditor\n    * Gert Jan Boeke, AssistantRecordingEngineer\n\n\n======================================================================\nALBUM REVIEW / NOTES\n======================================================================\n\nBeethoven's Symphony No. 3 in E flat major, Op. 55 (\"Eroica\"),\ncertainly does not lack for recordings, but it has been a while since\nthere has been one like this one from conductor Iván Fischer and the\nBudapest Festival Orchestra, two entities that know each other well.\nThis is old-school Beethoven, with no historical performance influence\nin earshot, that may, given its Hungarian provenance, remind one of\nthe great George Szell. The orchestral strings are flawless. The\nbalances among the instruments are a carefully sculpted set of levels\nand transitions that will reveal small details even in this most\nfamiliar of symphonies. The overall feeling of the interpretation is\nsober, warm, noble, never extreme or tumultuous. Perhaps best of all,\nFischer's finale is really extraordinary. This set of variations,\nwhich started life as a piano work before being heavily modified to\nserve as the symphony's finale, can seem inadequate to the task in the\nwrong hands. In Fischer's, it is transcendent, a sequence of sparkling\nbits of pure imagination that feels like a resolution of the drama in\nthe first three movements. Even those listeners resistant to the idea\nof another \"Eroica\" symphony owe it to themselves to hear this\nmovement, which represents Fischer at his best. Channel Classics'\nsound, from a Budapest synagogue, has a clear, glassy quality that\nactually serves Fischer's aims well. A delightful release that made\nclassical best-seller lists in the spring of 2024.\n\n&copy James Manheim /TiVo\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/one disc",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "Track 1",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       },
+       {
+        "id": {
+         "py": "int",
+         "v": 2
+        },
+        "title": "Track 2",
+        "track_number": {
+         "py": "int",
+         "v": 2
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 122
+        },
+        "performer": {
+         "name": "Performer"
+        },
+        "parental_warning": true
+       },
+       {
+        "id": {
+         "py": "int",
+         "v": 3
+        },
+        "title": "Track 3",
+        "track_number": {
+         "py": "int",
+         "v": 3
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 183
+        },
+        "performer": {
+         "name": "Performer"
+        },
+        "performers": "A, Main - B, Guest\r\nC, Bass"
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n01. Track 1                                                  [01:01]\n    Performer\n\n02. Track 2 [E]                                              [02:02]\n    Performer\n\n03. Track 3                                                  [03:03]\n    * A, Main\n    * B, Guest\n    * C, Bass\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/discs",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "Track 1",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       },
+       {
+        "id": {
+         "py": "int",
+         "v": 2
+        },
+        "title": "Track 2",
+        "track_number": {
+         "py": "int",
+         "v": 2
+        },
+        "media_number": {
+         "py": "int",
+         "v": 2
+        },
+        "duration": {
+         "py": "int",
+         "v": 122
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       },
+       {
+        "id": {
+         "py": "int",
+         "v": 3
+        },
+        "title": "Track 3",
+        "track_number": {
+         "py": "int",
+         "v": 3
+        },
+        "media_number": {
+         "py": "int",
+         "v": 2
+        },
+        "duration": {
+         "py": "int",
+         "v": 183
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       },
+       {
+        "id": {
+         "py": "int",
+         "v": 4
+        },
+        "title": "Track 4",
+        "track_number": {
+         "py": "int",
+         "v": 4
+        },
+        "media_number": {
+         "py": "int",
+         "v": 3
+        },
+        "duration": {
+         "py": "int",
+         "v": 244
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       },
+       {
+        "id": {
+         "py": "int",
+         "v": 5
+        },
+        "title": "Track 5",
+        "track_number": {
+         "py": "int",
+         "v": 5
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 305
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n--- DISC 1 ---\n\n01. Track 1                                                  [01:01]\n    Performer\n\n\n--- DISC 2 ---\n\n02. Track 2                                                  [02:02]\n    Performer\n\n03. Track 3                                                  [03:03]\n    Performer\n\n\n--- DISC 3 ---\n\n04. Track 4                                                  [04:04]\n    Performer\n\n\n--- DISC 1 ---\n\n05. Track 5                                                  [05:05]\n    Performer\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/disc numbers missing",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "Track 1",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       },
+       {
+        "title": "No disc",
+        "duration": {
+         "py": "int",
+         "v": 5
+        }
+       },
+       {
+        "id": {
+         "py": "int",
+         "v": 3
+        },
+        "title": "Track 3",
+        "track_number": {
+         "py": "int",
+         "v": 3
+        },
+        "media_number": {
+         "py": "int",
+         "v": 2
+        },
+        "duration": {
+         "py": "int",
+         "v": 183
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n--- DISC 1 ---\n\n01. Track 1                                                  [01:01]\n    Performer\n\n00. No disc                                                  [00:05]\n    Artist\n\n\n--- DISC 2 ---\n\n03. Track 3                                                  [03:03]\n    Performer\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/nulls",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "py": "none"
+     },
+     "label": {
+      "name": {
+       "py": "none"
+      }
+     },
+     "genre": {
+      "name": {
+       "py": "none"
+      }
+     },
+     "release_date_original": {
+      "py": "none"
+     },
+     "composer": {
+      "name": {
+       "py": "none"
+      }
+     },
+     "parental_warning": {
+      "py": "none"
+     },
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": {
+         "py": "none"
+        },
+        "track_number": {
+         "py": "none"
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "py": "none"
+        },
+        "performers": {
+         "py": "none"
+        }
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nCOMPOSER   : None\nMAIN ART.  : None\nLABEL      : None\nGENRE      : None\nRELEASE    : None\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\nNone. None                                                   [01:01]\n    None\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/missing keys",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {},
+     "label": {},
+     "genre": {},
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "items": [
+       {
+        "duration": {
+         "py": "int",
+         "v": 0
+        }
+       },
+       {
+        "id": {
+         "py": "int",
+         "v": 2
+        },
+        "performer": {}
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nMAIN ART.  : Unknown Artist\nLABEL      : Independent\nGENRE      : Unknown Genre\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n00. Unknown Title                                            [00:00]\n    Unknown Artist\n\n00. Unknown Title                                            [00:00]\n    Unknown Artist\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/no tracks",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {}
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/tracks None",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "py": "none"
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/duration None",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "Track 1",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       },
+       {
+        "id": {
+         "py": "int",
+         "v": 2
+        },
+        "title": "Track 2",
+        "track_number": {
+         "py": "int",
+         "v": 2
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "none"
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       },
+       {
+        "id": {
+         "py": "int",
+         "v": 3
+        },
+        "title": "Track 3",
+        "track_number": {
+         "py": "int",
+         "v": 3
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 183
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n01. Track 1                                                  [01:01]\n    Performer\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/duration a float and negative",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "Track 1",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "float",
+         "v": 125.9
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       },
+       {
+        "id": {
+         "py": "int",
+         "v": 2
+        },
+        "title": "Track 2",
+        "track_number": {
+         "py": "int",
+         "v": 2
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": -61
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n01. Track 1                                                  [02:05]\n    Performer\n\n02. Track 2                                                  [-2:59]\n    Performer\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/genre mapped",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Rock progressif"
+     },
+     "release_date_original": "2001-02-03",
+     "composer": {
+      "name": "Composer"
+     },
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "Track 1",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nCOMPOSER   : Composer\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Progressive Rock\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n01. Track 1                                                  [01:01]\n    Performer\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/long titles",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       },
+       {
+        "id": {
+         "py": "int",
+         "v": 2
+        },
+        "title": "Ünïcödé 日本語 Ünïcödé 日本語 Ünïcödé 日本語 Ünïcödé 日本語 Ünïcödé 日本語 Ünïcödé 日本語 ",
+        "track_number": {
+         "py": "int",
+         "v": 2
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 122
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n01. TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT [01:01]\n    Performer\n\n02. Ünïcödé 日本語 Ünïcödé 日本語 Ünïcödé 日本語 Ünïcödé 日本語 Ünïcödé 日本語 Ünïcödé 日本語  [02:02]\n    Performer\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/description",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "description": "First paragraph with <b>bold</b> and a <a href=\"x\">link</a>.<br>Second word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word <br/>\n\n<br />Third<p>para</p>  \n  ",
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "Track 1",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n01. Track 1                                                  [01:01]\n    Performer\n\n\n======================================================================\nALBUM REVIEW / NOTES\n======================================================================\n\nFirst paragraph with bold and a link.\n\nSecond word word word word word word word word word word word word\nword word word word word word word word word word word word word word\nword word word word word word word word word word word word word word\n\nThirdpara\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/description not a string",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "description": {
+      "py": "int",
+      "v": 12345
+     },
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "Track 1",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n01. Track 1                                                  [01:01]\n    Performer\n\n\n======================================================================\nALBUM REVIEW / NOTES\n======================================================================\n\n12345\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/artist a string",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": "Artist",
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "Track 1",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "error": "AttributeError"
+  },
+  {
+   "name": "built/performers a number",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "Track 1",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "name": "Performer"
+        },
+        "performers": {
+         "py": "int",
+         "v": 5
+        }
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n01. Track 1                                                  [01:01]\n    * 5\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/track a string",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "items": [
+       "x"
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 24
+     },
+     {
+      "py": "int",
+      "v": 96
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (24-Bit / 96 kHz)\n======================================================================\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/title with slashes",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "Track 1",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       }
+      ]
+     }
+    },
+    "title": "A/B: C?",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 16
+     },
+     {
+      "py": "float",
+      "v": 44.1
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "AB C - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : A/B: C?\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (16-Bit / 44.1 kHz)\n======================================================================\n\n01. Track 1                                                  [01:01]\n    Performer\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/title None",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "Track 1",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       }
+      ]
+     }
+    },
+    "title": {
+     "py": "none"
+    },
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 16
+     },
+     {
+      "py": "float",
+      "v": 44.1
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": " - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : None\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : FLAC (16-Bit / 44.1 kHz)\n======================================================================\n\n01. Track 1                                                  [01:01]\n    Performer\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/gate failed",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "Track 1",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "Unknown",
+     {
+      "py": "none"
+     },
+     {
+      "py": "none"
+     }
+    ],
+    "no_credits": false
+   },
+   "output": [
+    {
+     "name": "Album - Tracklist.txt",
+     "text": "======================================================================\nALBUM      : Album\nMAIN ART.  : Artist\nLABEL      : Label\nGENRE      : Jazz\nRELEASE    : 2001-02-03\nQUALITY    : Unknown (None-Bit / None kHz)\n======================================================================\n\n01. Track 1                                                  [01:01]\n    Performer\n\n"
+    }
+   ]
+  },
+  {
+   "name": "built/no credits",
+   "input": {
+    "album": {
+     "title": "Album",
+     "artist": {
+      "name": "Artist"
+     },
+     "label": {
+      "name": "Label"
+     },
+     "genre": {
+      "name": "Jazz"
+     },
+     "release_date_original": "2001-02-03",
+     "tracks": {
+      "items": [
+       {
+        "id": {
+         "py": "int",
+         "v": 1
+        },
+        "title": "Track 1",
+        "track_number": {
+         "py": "int",
+         "v": 1
+        },
+        "media_number": {
+         "py": "int",
+         "v": 1
+        },
+        "duration": {
+         "py": "int",
+         "v": 61
+        },
+        "performer": {
+         "name": "Performer"
+        }
+       }
+      ]
+     }
+    },
+    "title": "Album",
+    "gate": [
+     "FLAC",
+     {
+      "py": "int",
+      "v": 16
+     },
+     {
+      "py": "float",
+      "v": 44.1
+     }
+    ],
+    "no_credits": true
+   },
+   "output": []
+  }
+ ]
+}

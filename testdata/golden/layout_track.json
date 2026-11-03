@@ -1,0 +1,1146 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "bot",
+   "input": {
+    "kind": "track",
+    "id": "20273753",
+    "options": {
+     "quality": {
+      "py": "int",
+      "v": 27
+     },
+     "fallback": true,
+     "embed_art": false,
+     "albums_only": false,
+     "no_credits": false,
+     "folder_format": "{artist} - {album} ({year}) [{bit_depth}B-{sampling_rate}kHz]",
+     "track_format": "{track_number} - {track_title}",
+     "settings": {}
+    }
+   },
+   "output": [
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [24B-96kHz]",
+     "type": "dir"
+    },
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [24B-96kHz]/01 - So What (Mono Version).flac",
+     "type": "flac",
+     "result": {
+      "prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blocks": [
+       [
+        {
+         "py": "int",
+         "v": 0
+        },
+        {
+         "py": "int",
+         "v": 34
+        }
+       ],
+       [
+        {
+         "py": "int",
+         "v": 4
+        },
+        {
+         "py": "int",
+         "v": 686
+        }
+       ],
+       [
+        {
+         "py": "int",
+         "v": 1
+        },
+        {
+         "py": "int",
+         "v": 8192
+        }
+       ]
+      ],
+      "vendor": "",
+      "comments": [
+       [
+        "ALBUM",
+        "Kind of Blue (Mono) (Mono Version)"
+       ],
+       [
+        "TITLE",
+        "So What (Mono Version)"
+       ],
+       [
+        "ALBUMARTIST",
+        "Miles Davis"
+       ],
+       [
+        "ARTIST",
+        "Miles Davis"
+       ],
+       [
+        "COMPOSER",
+        "Miles Davis"
+       ],
+       [
+        "DATE",
+        "1959-08-17"
+       ],
+       [
+        "GENRE",
+        "Jazz"
+       ],
+       [
+        "COPYRIGHT",
+        "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment"
+       ],
+       [
+        "LABEL",
+        "Columbia/Legacy"
+       ],
+       [
+        "ISRC",
+        "USSM11304993"
+       ],
+       [
+        "BARCODE",
+        "0886444350747"
+       ],
+       [
+        "MEDIATYPE",
+        "SINGLE"
+       ],
+       [
+        "RELEASETYPE",
+        "album"
+       ],
+       [
+        "REPLAYGAIN_TRACK_GAIN",
+        "0.24 dB"
+       ],
+       [
+        "REPLAYGAIN_TRACK_PEAK",
+        "0.824371"
+       ],
+       [
+        "QOBUZTRACKID",
+        "20273753"
+       ],
+       [
+        "QOBUZALBUMID",
+        "0886444350747"
+       ],
+       [
+        "QOBUZ ALBUM URL",
+        "https://www.qobuz.com/album/kind-of-blue-mono/0886444350747"
+       ],
+       [
+        "TRACKNUMBER",
+        "1"
+       ],
+       [
+        "TRACKTOTAL",
+        "5"
+       ],
+       [
+        "DISCNUMBER",
+        "1"
+       ],
+       [
+        "DISCTOTAL",
+        "1"
+       ]
+      ],
+      "pictures": [],
+      "audio": "8a04c2315333d5f35e0b78e6ced2ebb4617735ecf55210f53d4ca8c7c93a4d19",
+      "sha256": "0b6e75fcf54b68a7aaacd27cccbcb8ae65969da10691db547c2e725797cdccfa"
+     }
+    },
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [24B-96kHz]/cover.jpg",
+     "type": "file",
+     "sha256": "4cfa0c9b0e37bb1cd67ce55227c990b9fd4ad4f09b85d65e9b1d53ca379858cb"
+    }
+   ]
+  },
+  {
+   "name": "q5",
+   "input": {
+    "kind": "track",
+    "id": "20273753",
+    "options": {
+     "quality": {
+      "py": "int",
+      "v": 5
+     },
+     "fallback": true,
+     "embed_art": false,
+     "albums_only": false,
+     "no_credits": false,
+     "folder_format": "{artist} - {album} ({year}) [{bit_depth}B-{sampling_rate}kHz]",
+     "track_format": "{track_number} - {track_title}",
+     "settings": {}
+    }
+   },
+   "output": [
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [16B-44.1kHz]",
+     "type": "dir"
+    },
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [16B-44.1kHz]/01 - So What (Mono Version).mp3",
+     "type": "mp3",
+     "result": {
+      "version": {
+       "py": "int",
+       "v": 3
+      },
+      "frames": [
+       {
+        "key": "TALB",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "Kind of Blue (Mono) (Mono Version)"
+        ]
+       },
+       {
+        "key": "TCOM",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "Miles Davis"
+        ]
+       },
+       {
+        "key": "TCON",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "Jazz"
+        ]
+       },
+       {
+        "key": "TCOP",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment"
+        ]
+       },
+       {
+        "key": "TDAT",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "1708"
+        ]
+       },
+       {
+        "key": "TIT2",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "So What (Mono Version)"
+        ]
+       },
+       {
+        "key": "TMED",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "SINGLE"
+        ]
+       },
+       {
+        "key": "TPE1",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "Miles Davis"
+        ]
+       },
+       {
+        "key": "TPE2",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "Miles Davis"
+        ]
+       },
+       {
+        "key": "TPOS",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "1/1"
+        ]
+       },
+       {
+        "key": "TPUB",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "Columbia/Legacy"
+        ]
+       },
+       {
+        "key": "TRCK",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "1/5"
+        ]
+       },
+       {
+        "key": "TSRC",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "USSM11304993"
+        ]
+       },
+       {
+        "key": "TXXX:BARCODE",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "0886444350747"
+        ]
+       },
+       {
+        "key": "TXXX:MusicBrainz Album Type",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "album"
+        ]
+       },
+       {
+        "key": "TXXX:QOBUZ ALBUM URL",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "https://www.qobuz.com/album/kind-of-blue-mono/0886444350747"
+        ]
+       },
+       {
+        "key": "TXXX:QOBUZALBUMID",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "0886444350747"
+        ]
+       },
+       {
+        "key": "TXXX:QOBUZTRACKID",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "20273753"
+        ]
+       },
+       {
+        "key": "TXXX:REPLAYGAIN_TRACK_GAIN",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "0.24 dB"
+        ]
+       },
+       {
+        "key": "TXXX:REPLAYGAIN_TRACK_PEAK",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "0.824371"
+        ]
+       },
+       {
+        "key": "TYER",
+        "encoding": {
+         "py": "int",
+         "v": 1
+        },
+        "text": [
+         "1959"
+        ]
+       }
+      ],
+      "raw": [
+       "14e71f174bc876c226a46d415ff25f25763a23d9838ded562d8af663be9319b9",
+       "186d9f4dd92db2cfab63f9319c6b144e63c495416137fb3c9b2587d62672720d",
+       "258952da892a98cdaff27f3c9a44bcbbe8b09590d683e493e944195c0a055c19",
+       "307f887235c20eac200975684903dd23043a458e8888833c050fbfc70c537f1e",
+       "436e9634cfe3d480ffc3b017ac0722811d44072af50903be4e1553768ecf3ef2",
+       "5686e95430d9e9070fd83275ff25dbfe57c6fab3526e8e4a6c1fa5bec8212c51",
+       "6e550f3759f84405999966aae41e9483811c7669ed33d6a7d907cb8f2eeb2363",
+       "7d05dc62ff0ff23d8f9dece0be66edd5cd72a64df350f3e07249080b6ed0f67b",
+       "8193309fac0893e49852d9fa3aac72fd018fec90b7f2cfeca93dfd7cadd74d7f",
+       "87af50603ca936f2aeb52b9ba5bcd4e51d910dde04896554047910a87aa3384d",
+       "8a04bbe5cf1bbf7e7fa194a1ad361f666b3b20ae6890dff3fb51c936b405176b",
+       "8d90b72f17732f87a107fa37d2fabe1776976a66bac980ecdfb34ef6099f6dca",
+       "93ed6984883d3cbfa47fdc9220af8b39e103a0a8b0406ce7ce53ca94b1ab7cff",
+       "a5477a673552093dd97edb4c50dce25ca154134ca2690bc917db55df7bd731fc",
+       "beffeaaea2f939dbeedb8ba8ad0ab01836156e0169b05d88df4945bfcc53c472",
+       "d1cdcf7ccd3d2334fe9f1d655dc7ddf38bf1a80619a2553d345949ebb567f63a",
+       "d673956fbf85a374edf02a8a75c5d4dd7a0ac4b1322e1f606562071807aff38f",
+       "de6169bc3a984818dd612286013433a7929d7039454aaa6aa7e4535602a1599e",
+       "de9ae84edaf8c8aaee472f9a0058b37ca5ff2eda1e3c4fc8b5327d368361bbad",
+       "e0503a2bfa11aaf1cd26eee4276c60321f5a4a8a16470945d724ca81b30a6017",
+       "e7bd3317ec91dae5f2ddf87810c7cba8fe444c39c48da4f7c13e5961356e7d2b"
+      ],
+      "audio": "794a33ae3e8e087d252d1af34e74f5dbbbcde7ecc448966a5217e5b715d55f15"
+     }
+    },
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [16B-44.1kHz]/cover.jpg",
+     "type": "file",
+     "sha256": "4cfa0c9b0e37bb1cd67ce55227c990b9fd4ad4f09b85d65e9b1d53ca379858cb"
+    }
+   ]
+  },
+  {
+   "name": "q6",
+   "input": {
+    "kind": "track",
+    "id": "20273753",
+    "options": {
+     "quality": {
+      "py": "int",
+      "v": 6
+     },
+     "fallback": true,
+     "embed_art": false,
+     "albums_only": false,
+     "no_credits": false,
+     "folder_format": "{artist} - {album} ({year}) [{bit_depth}B-{sampling_rate}kHz]",
+     "track_format": "{track_number} - {track_title}",
+     "settings": {}
+    }
+   },
+   "output": [
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [16B-44.1kHz]",
+     "type": "dir"
+    },
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [16B-44.1kHz]/01 - So What (Mono Version).flac",
+     "type": "flac",
+     "result": {
+      "prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blocks": [
+       [
+        {
+         "py": "int",
+         "v": 0
+        },
+        {
+         "py": "int",
+         "v": 34
+        }
+       ],
+       [
+        {
+         "py": "int",
+         "v": 4
+        },
+        {
+         "py": "int",
+         "v": 686
+        }
+       ],
+       [
+        {
+         "py": "int",
+         "v": 1
+        },
+        {
+         "py": "int",
+         "v": 8192
+        }
+       ]
+      ],
+      "vendor": "",
+      "comments": [
+       [
+        "ALBUM",
+        "Kind of Blue (Mono) (Mono Version)"
+       ],
+       [
+        "TITLE",
+        "So What (Mono Version)"
+       ],
+       [
+        "ALBUMARTIST",
+        "Miles Davis"
+       ],
+       [
+        "ARTIST",
+        "Miles Davis"
+       ],
+       [
+        "COMPOSER",
+        "Miles Davis"
+       ],
+       [
+        "DATE",
+        "1959-08-17"
+       ],
+       [
+        "GENRE",
+        "Jazz"
+       ],
+       [
+        "COPYRIGHT",
+        "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment"
+       ],
+       [
+        "LABEL",
+        "Columbia/Legacy"
+       ],
+       [
+        "ISRC",
+        "USSM11304993"
+       ],
+       [
+        "BARCODE",
+        "0886444350747"
+       ],
+       [
+        "MEDIATYPE",
+        "SINGLE"
+       ],
+       [
+        "RELEASETYPE",
+        "album"
+       ],
+       [
+        "REPLAYGAIN_TRACK_GAIN",
+        "0.24 dB"
+       ],
+       [
+        "REPLAYGAIN_TRACK_PEAK",
+        "0.824371"
+       ],
+       [
+        "QOBUZTRACKID",
+        "20273753"
+       ],
+       [
+        "QOBUZALBUMID",
+        "0886444350747"
+       ],
+       [
+        "QOBUZ ALBUM URL",
+        "https://www.qobuz.com/album/kind-of-blue-mono/0886444350747"
+       ],
+       [
+        "TRACKNUMBER",
+        "1"
+       ],
+       [
+        "TRACKTOTAL",
+        "5"
+       ],
+       [
+        "DISCNUMBER",
+        "1"
+       ],
+       [
+        "DISCTOTAL",
+        "1"
+       ]
+      ],
+      "pictures": [],
+      "audio": "6580781571c7cd95e84e379878f35653f3a7867c5245bff002fa9a786ce53c46",
+      "sha256": "f1d83265142730b0318ab9b0e0801b8eff40633b486f22c25f30673a7a51111b"
+     }
+    },
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [16B-44.1kHz]/cover.jpg",
+     "type": "file",
+     "sha256": "4cfa0c9b0e37bb1cd67ce55227c990b9fd4ad4f09b85d65e9b1d53ca379858cb"
+    }
+   ]
+  },
+  {
+   "name": "defaults",
+   "input": {
+    "kind": "track",
+    "id": "20273753",
+    "options": {
+     "quality": {
+      "py": "int",
+      "v": 27
+     },
+     "fallback": true,
+     "embed_art": false,
+     "albums_only": false,
+     "no_credits": false,
+     "folder_format": {
+      "py": "none"
+     },
+     "track_format": {
+      "py": "none"
+     },
+     "settings": {}
+    }
+   },
+   "output": [
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [FLAC 24]",
+     "type": "dir"
+    },
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [FLAC 24]/01 - So What.flac",
+     "type": "flac",
+     "result": {
+      "prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blocks": [
+       [
+        {
+         "py": "int",
+         "v": 0
+        },
+        {
+         "py": "int",
+         "v": 34
+        }
+       ],
+       [
+        {
+         "py": "int",
+         "v": 4
+        },
+        {
+         "py": "int",
+         "v": 686
+        }
+       ],
+       [
+        {
+         "py": "int",
+         "v": 1
+        },
+        {
+         "py": "int",
+         "v": 8192
+        }
+       ]
+      ],
+      "vendor": "",
+      "comments": [
+       [
+        "ALBUM",
+        "Kind of Blue (Mono) (Mono Version)"
+       ],
+       [
+        "TITLE",
+        "So What (Mono Version)"
+       ],
+       [
+        "ALBUMARTIST",
+        "Miles Davis"
+       ],
+       [
+        "ARTIST",
+        "Miles Davis"
+       ],
+       [
+        "COMPOSER",
+        "Miles Davis"
+       ],
+       [
+        "DATE",
+        "1959-08-17"
+       ],
+       [
+        "GENRE",
+        "Jazz"
+       ],
+       [
+        "COPYRIGHT",
+        "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment"
+       ],
+       [
+        "LABEL",
+        "Columbia/Legacy"
+       ],
+       [
+        "ISRC",
+        "USSM11304993"
+       ],
+       [
+        "BARCODE",
+        "0886444350747"
+       ],
+       [
+        "MEDIATYPE",
+        "SINGLE"
+       ],
+       [
+        "RELEASETYPE",
+        "album"
+       ],
+       [
+        "REPLAYGAIN_TRACK_GAIN",
+        "0.24 dB"
+       ],
+       [
+        "REPLAYGAIN_TRACK_PEAK",
+        "0.824371"
+       ],
+       [
+        "QOBUZTRACKID",
+        "20273753"
+       ],
+       [
+        "QOBUZALBUMID",
+        "0886444350747"
+       ],
+       [
+        "QOBUZ ALBUM URL",
+        "https://www.qobuz.com/album/kind-of-blue-mono/0886444350747"
+       ],
+       [
+        "TRACKNUMBER",
+        "1"
+       ],
+       [
+        "TRACKTOTAL",
+        "5"
+       ],
+       [
+        "DISCNUMBER",
+        "1"
+       ],
+       [
+        "DISCTOTAL",
+        "1"
+       ]
+      ],
+      "pictures": [],
+      "audio": "8a04c2315333d5f35e0b78e6ced2ebb4617735ecf55210f53d4ca8c7c93a4d19",
+      "sha256": "0b6e75fcf54b68a7aaacd27cccbcb8ae65969da10691db547c2e725797cdccfa"
+     }
+    },
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [FLAC 24]/cover.jpg",
+     "type": "file",
+     "sha256": "4cfa0c9b0e37bb1cd67ce55227c990b9fd4ad4f09b85d65e9b1d53ca379858cb"
+    }
+   ]
+  },
+  {
+   "name": "embedded cover",
+   "input": {
+    "kind": "track",
+    "id": "20273753",
+    "options": {
+     "quality": {
+      "py": "int",
+      "v": 27
+     },
+     "fallback": true,
+     "embed_art": true,
+     "albums_only": false,
+     "no_credits": false,
+     "folder_format": "{artist} - {album} ({year}) [{bit_depth}B-{sampling_rate}kHz]",
+     "track_format": "{track_number} - {track_title}",
+     "settings": {
+      "embed_art": true
+     }
+    }
+   },
+   "output": [
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [24B-96kHz]",
+     "type": "dir"
+    },
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [24B-96kHz]/01 - So What (Mono Version).flac",
+     "type": "flac",
+     "result": {
+      "prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blocks": [
+       [
+        {
+         "py": "int",
+         "v": 0
+        },
+        {
+         "py": "int",
+         "v": 34
+        }
+       ],
+       [
+        {
+         "py": "int",
+         "v": 4
+        },
+        {
+         "py": "int",
+         "v": 686
+        }
+       ],
+       [
+        {
+         "py": "int",
+         "v": 6
+        },
+        {
+         "py": "int",
+         "v": 254
+        }
+       ],
+       [
+        {
+         "py": "int",
+         "v": 1
+        },
+        {
+         "py": "int",
+         "v": 8192
+        }
+       ]
+      ],
+      "vendor": "",
+      "comments": [
+       [
+        "ALBUM",
+        "Kind of Blue (Mono) (Mono Version)"
+       ],
+       [
+        "TITLE",
+        "So What (Mono Version)"
+       ],
+       [
+        "ALBUMARTIST",
+        "Miles Davis"
+       ],
+       [
+        "ARTIST",
+        "Miles Davis"
+       ],
+       [
+        "COMPOSER",
+        "Miles Davis"
+       ],
+       [
+        "DATE",
+        "1959-08-17"
+       ],
+       [
+        "GENRE",
+        "Jazz"
+       ],
+       [
+        "COPYRIGHT",
+        "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment"
+       ],
+       [
+        "LABEL",
+        "Columbia/Legacy"
+       ],
+       [
+        "ISRC",
+        "USSM11304993"
+       ],
+       [
+        "BARCODE",
+        "0886444350747"
+       ],
+       [
+        "MEDIATYPE",
+        "SINGLE"
+       ],
+       [
+        "RELEASETYPE",
+        "album"
+       ],
+       [
+        "REPLAYGAIN_TRACK_GAIN",
+        "0.24 dB"
+       ],
+       [
+        "REPLAYGAIN_TRACK_PEAK",
+        "0.824371"
+       ],
+       [
+        "QOBUZTRACKID",
+        "20273753"
+       ],
+       [
+        "QOBUZALBUMID",
+        "0886444350747"
+       ],
+       [
+        "QOBUZ ALBUM URL",
+        "https://www.qobuz.com/album/kind-of-blue-mono/0886444350747"
+       ],
+       [
+        "TRACKNUMBER",
+        "1"
+       ],
+       [
+        "TRACKTOTAL",
+        "5"
+       ],
+       [
+        "DISCNUMBER",
+        "1"
+       ],
+       [
+        "DISCTOTAL",
+        "1"
+       ]
+      ],
+      "pictures": [
+       [
+        {
+         "py": "int",
+         "v": 3
+        },
+        "image/jpeg",
+        "cover",
+        "4cfa0c9b0e37bb1cd67ce55227c990b9fd4ad4f09b85d65e9b1d53ca379858cb"
+       ]
+      ],
+      "audio": "8a04c2315333d5f35e0b78e6ced2ebb4617735ecf55210f53d4ca8c7c93a4d19",
+      "sha256": "bfcd217be2c0b3945e218809a9381d757e2b05082c5ee60fefc5ded5a59b43d5"
+     }
+    },
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [24B-96kHz]/cover.jpg",
+     "type": "file",
+     "sha256": "4cfa0c9b0e37bb1cd67ce55227c990b9fd4ad4f09b85d65e9b1d53ca379858cb"
+    }
+   ]
+  },
+  {
+   "name": "no cover",
+   "input": {
+    "kind": "track",
+    "id": "20273753",
+    "options": {
+     "quality": {
+      "py": "int",
+      "v": 27
+     },
+     "fallback": true,
+     "embed_art": false,
+     "albums_only": false,
+     "no_credits": false,
+     "folder_format": "{artist} - {album} ({year}) [{bit_depth}B-{sampling_rate}kHz]",
+     "track_format": "{track_number} - {track_title}",
+     "settings": {
+      "no_cover": true
+     }
+    }
+   },
+   "output": [
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [24B-96kHz]",
+     "type": "dir"
+    },
+    {
+     "path": "Miles Davis - Kind of Blue (Mono) (Mono Version) (1959) [24B-96kHz]/01 - So What (Mono Version).flac",
+     "type": "flac",
+     "result": {
+      "prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blocks": [
+       [
+        {
+         "py": "int",
+         "v": 0
+        },
+        {
+         "py": "int",
+         "v": 34
+        }
+       ],
+       [
+        {
+         "py": "int",
+         "v": 4
+        },
+        {
+         "py": "int",
+         "v": 686
+        }
+       ],
+       [
+        {
+         "py": "int",
+         "v": 1
+        },
+        {
+         "py": "int",
+         "v": 8192
+        }
+       ]
+      ],
+      "vendor": "",
+      "comments": [
+       [
+        "ALBUM",
+        "Kind of Blue (Mono) (Mono Version)"
+       ],
+       [
+        "TITLE",
+        "So What (Mono Version)"
+       ],
+       [
+        "ALBUMARTIST",
+        "Miles Davis"
+       ],
+       [
+        "ARTIST",
+        "Miles Davis"
+       ],
+       [
+        "COMPOSER",
+        "Miles Davis"
+       ],
+       [
+        "DATE",
+        "1959-08-17"
+       ],
+       [
+        "GENRE",
+        "Jazz"
+       ],
+       [
+        "COPYRIGHT",
+        "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment"
+       ],
+       [
+        "LABEL",
+        "Columbia/Legacy"
+       ],
+       [
+        "ISRC",
+        "USSM11304993"
+       ],
+       [
+        "BARCODE",
+        "0886444350747"
+       ],
+       [
+        "MEDIATYPE",
+        "SINGLE"
+       ],
+       [
+        "RELEASETYPE",
+        "album"
+       ],
+       [
+        "REPLAYGAIN_TRACK_GAIN",
+        "0.24 dB"
+       ],
+       [
+        "REPLAYGAIN_TRACK_PEAK",
+        "0.824371"
+       ],
+       [
+        "QOBUZTRACKID",
+        "20273753"
+       ],
+       [
+        "QOBUZALBUMID",
+        "0886444350747"
+       ],
+       [
+        "QOBUZ ALBUM URL",
+        "https://www.qobuz.com/album/kind-of-blue-mono/0886444350747"
+       ],
+       [
+        "TRACKNUMBER",
+        "1"
+       ],
+       [
+        "TRACKTOTAL",
+        "5"
+       ],
+       [
+        "DISCNUMBER",
+        "1"
+       ],
+       [
+        "DISCTOTAL",
+        "1"
+       ]
+      ],
+      "pictures": [],
+      "audio": "8a04c2315333d5f35e0b78e6ced2ebb4617735ecf55210f53d4ca8c7c93a4d19",
+      "sha256": "0b6e75fcf54b68a7aaacd27cccbcb8ae65969da10691db547c2e725797cdccfa"
+     }
+    }
+   ]
+  },
+  {
+   "name": "no fallback",
+   "input": {
+    "kind": "track",
+    "id": "20273753",
+    "options": {
+     "quality": {
+      "py": "int",
+      "v": 27
+     },
+     "fallback": false,
+     "embed_art": false,
+     "albums_only": false,
+     "no_credits": false,
+     "folder_format": "{artist} - {album} ({year}) [{bit_depth}B-{sampling_rate}kHz]",
+     "track_format": "{track_number} - {track_title}",
+     "settings": {}
+    }
+   },
+   "output": []
+  }
+ ]
+}
