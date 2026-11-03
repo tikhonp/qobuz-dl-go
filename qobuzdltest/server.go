@@ -25,9 +25,9 @@
 //     names the delivered format.
 //   - The CDN under /cdn/file/<track>/<format>, one file per format: a
 //     16/44.1, 24/96 or 24/192 FLAC, or an MP3. It honors Range with 206.
-//   - Covers and goodies under /static/: every recorded
-//     https://static.qobuz.com/ URL is rewritten to it, and it answers a JPEG
-//     for .jpg and a PDF for .pdf.
+//   - Covers and goodies under /static/. The fake rewrites every recorded
+//     https://static.qobuz.com/ URL to point there, and answers a JPEG for
+//     .jpg and a PDF for .pdf.
 //
 // The answers are the recorded bytes' values with their key order and
 // number text, so 96 stays an int and 44.1 a float.
@@ -122,8 +122,7 @@ type Request struct {
 	Query        url.Values
 	Range        string
 	Header       http.Header
-	// Status is the answer's status code; 0 while the answer is being
-	// written.
+	// Status is the answer's status code, 0 until the handler sets one.
 	Status int
 }
 

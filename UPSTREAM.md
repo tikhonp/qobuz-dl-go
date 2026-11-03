@@ -16,7 +16,7 @@
 | --- | --- | --- |
 | `bundle.py` | `bundle.go` | ported |
 | `qopy.py` | `qopy.go` | ported, but for the segmented branch of `get_track_url` |
-| `core.py` | `core.go` | planned |
+| `core.py` | `core.go` | `Options` and `DefaultOptions` only; the rest planned |
 | `downloader.py` | `downloader.go` | planned |
 | `metadata.py` | `metadata.go`, with mutagen's FLAC blocks in `flac.go` | ported |
 | `utils.py` | `utils.go` | ported, but for `make_m3u` |

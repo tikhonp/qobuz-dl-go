@@ -4,7 +4,7 @@ The scripts here run qobuz-dl 2.5.9 to make the test data. Go tests read only th
 
 | Script | Does | Network |
 | --- | --- | --- |
-| `gen.py` | reads `testdata/fixtures/` and writes `testdata/golden/*.json` and `testdata/fixtures/strings/random.txt` | none |
+| `gen.py` | reads `testdata/fixtures/` and writes `testdata/golden/*.json`, `testdata/fixtures/strings/random.txt`, the bundle and built audio fixtures, and the copy of the fixtures in `qobuzdltest/testdata/` | none |
 | `record.py` | records the Qobuz API answers into `testdata/fixtures/api/`; `--search` lists candidate IDs | Qobuz, needs `QOBUZ_TOKEN` |
 
 `parity.py` and `compare.py` come with step 10.
@@ -67,6 +67,8 @@ The repo is public, so `record.py` cleans the answers:
 - The signed `blob` in those answers becomes `{{BLOB}}`. Upstream never reads it.
 - It never saves `user/get`.
 - A file that still contains the token or an app secret stops the run before it is written.
+
+`gen.py` copies `api/`, `bundle/` and the audio files the fake serves into `qobuzdltest/testdata/`, which the package embeds, so it works from another module's cache. Edit the originals; the copy is replaced on every run.
 
 The IDs are in `ITEMS` in `record.py` and in `docs/status.md` under Fixture items. To choose new ones, run `record.py --search`, which prints candidates and saves nothing.
 

@@ -710,51 +710,69 @@ A fake Qobuz for tests in this repo and in shelf's 1d.
 package qobuzdltest
 
 const (
-    Token  = "…"        // longer than 60 characters
-    AppID  = "123456789"
-    Secret = "…"        // 32 hex characters; the one the fake accepts
+    Token     = "…"                                // longer than 60 characters
+    AppID     = "123456789"
+    Secret    = "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c" // the one the fake accepts
+    BadSecret = "0f9e8d7c6b5a49382716051423324150" // the bundle's first secret
+    UserID    = "1000001"                          // the account user/get answers
 )
 
-// Fixture IDs, from recorded and cleaned API answers.
+// Fixture IDs, from the recorded answers.
 const (
-    AlbumMultiDisc, AlbumCD, AlbumCompilation, AlbumWithVersion, AlbumClassical, AlbumGoodies string = …
+    AlbumMultiDisc, AlbumHiRes96, AlbumCD, AlbumCompilation, AlbumWithVersion, AlbumClassical, AlbumGoodies string = …
     TrackSingle, Playlist, Artist, Label string = …
+)
+
+// Collections built from the recorded ones.
+const (
+    PlaylistLong, ArtistLong                string = … // 120 items, pages at 0, 50 and 100
+    PlaylistEmpty, ArtistEmpty, LabelEmpty  string = … // a first page without items
 )
 
 type Server struct {
     URL string
-    // unexported: httptest server, fixtures, switches under a mutex, request log
+    // unexported: httptest server, the track index, switches and the request log under one mutex
 }
 
-func New(tb testing.TB) *Server          // closed by tb.Cleanup
-func (s *Server) Configure(o *qobuzdl.Options) // APIBase, PlayBase, HTTPClient, zero sleeps, AppID and secrets
-func (s *Server) ClientOptions() qobuzdl.ClientOptions
+func New(tb testing.TB) *Server          // closed by tb.Cleanup; calls only Helper, Cleanup and Fatalf
+func (s *Server) Configure(o *qobuzdl.Options) // APIBase, PlayBase, HTTPClient, Settings.UserAuthToken, zero sleeps
+func (s *Server) ClientOptions() qobuzdl.ClientOptions // AppID, BadSecret and Secret, Token, the bases, the client
 
 // Switches, safe to call while requests run.
 func (s *Server) Fail404(trackID string)
 func (s *Server) FailTimes(trackID string, n, status int) // n failures, then success
-func (s *Server) CutAfter(trackID string, n int64)        // close the body after n bytes, once
+func (s *Server) CutAfter(trackID string, n int64)        // close the body after n bytes, once; HEADs don't count
 func (s *Server) IgnoreRange(trackID string)               // answer 200 with the whole file to Range requests
-func (s *Server) Sample(trackID string, fmtID int)         // getFileUrl answers sample: true at that format
-func (s *Server) EmptyAnswer(trackID string)               // getFileUrl answers {}: a demo
+func (s *Server) Sample(trackID string, fmtID int)         // getFileUrl adds sample: true at that format
+func (s *Server) EmptyAnswer(trackID string)               // getFileUrl answers {} at every format: a demo
 func (s *Server) Restrict(trackID string, fmtID int)       // FormatRestrictedByFormatAvailability, delivers the next tier
-func (s *Server) Deliver(trackID string, fmtID int)        // answers that format_id whatever is asked
-func (s *Server) Segmented(trackID string)                  // getFileUrl without url; file/url and segments instead
+func (s *Server) Deliver(trackID string, fmtID int)        // answers that format_id whatever is asked, without restrictions
+func (s *Server) Segmented(trackID string)                  // step 8: getFileUrl without url; file/url and segments instead
 func (s *Server) ExpireToken()                             // 401 on every API call
-func (s *Server) Requests() []Request                      // method, path, query, Range header
+func (s *Server) Requests() []Request                      // in arrival order
+func (s *Server) Reset()                                   // clears switches and the log
 
 type Request struct {
     Method, Path string
     Query        url.Values
     Range        string
+    Header       http.Header // the token and app ID included
+    Status       int         // the answer's; 0 while it is written
 }
 ```
 
-- The fixtures are the recorded answers from `testdata/fixtures/api/`, copied into `qobuzdltest/testdata/` and embedded. Signed URLs in them are rewritten to the fake CDN at serve time.
-- Audio: tiny FLAC files at 16/44.1, 24/96 and 24/192, and an MP3, made by ffmpeg once in step 01 and committed. Every track at a format serves the file for that format. A JPEG serves every cover; a small PDF every goody.
-- The segmented path serves encrypted segments that `gen.py` builds and checks with upstream's own decryption, together with the `session/start` infos and the wrapped key that go with `Secret`.
-- The fake checks request signatures with `Secret`, so a wrong secret gets a 400 as Qobuz gives.
-- The bundle at `/login` and its script carry `AppID` and secrets that decode to `Secret` and one bad secret, in Python's order.
+- The fixtures are the recorded answers from `testdata/fixtures/api/`, which `make golden` copies into `qobuzdltest/testdata/` with the bundle files and the audio, and the package embeds. Answers keep their key order and the text of their numbers, so `96` stays an int and `44.1` a float.
+- Every API call needs the X-App-Id `AppID`, else 400, and the X-User-Auth-Token `Token`, else 401. Errors have Qobuz's shape, `{"status": "error", "code": …, "message": …}`; unknown IDs get 404.
+- `user/get` answers a Studio account with `UserID`.
+- `album/get` and `track/get` answer the recorded files. `track/get` also answers for every track of a recorded album, as the album lists it with the album/get answer, less its tracks, in front as `album`; and for every track of the recorded playlist, as the playlist lists it, less `position`, `created_at` and `playlist_track_id`. A playlist download calls `track/get` for each track, so it needs these; step 9's Python generator has to build the same answers.
+- `playlist/get`, `artist/get` and `label/get` cut the recorded first page, or a built collection, by `offset` and `limit`, keeping `total`.
+- `catalog/search` answers the recorded search of the requested type, whatever the query, cut by `offset` and `limit`.
+- `track/getFileUrl` checks `request_sig` with `Secret` and answers 400 on a mismatch, as Qobuz does. It answers the recorded file for the track and format, or one built from the format table: 5 is MP3 16/44.1, 6 FLAC 16/44.1, 7 FLAC 24/96, 27 FLAC 24/192. Its `url` points at the fake CDN, `/cdn/file/<track>/<format>` with a query standing for the signature, and names the delivered format, not the requested one.
+- The CDN serves one file per format, the tiny FLACs at 16/44.1, 24/96 and 24/192 and the MP3 from step 1, through `http.ServeContent`: `Range` gives 206, and a range past the end 416.
+- The fake rewrites every `https://static.qobuz.com/` URL in an answer to its own `/static/`, which serves the JPEG for `.jpg` and the PDF for `.pdf`.
+- The segmented path, from step 8, serves encrypted segments that `gen.py` builds and checks with upstream's own decryption, together with the `session/start` infos and the wrapped key that go with `Secret`.
+- The bundle at `/login` and its script carry `AppID` and secrets that decode to `BadSecret`, `Secret` and an empty one, in Python's order.
+- Tests in the root package can't import `qobuzdltest`, since it imports the root package. Scenario tests live in package `qobuzdl_test` and reach unexported functions through an `export_test.go`.
 
 ## CLI
 

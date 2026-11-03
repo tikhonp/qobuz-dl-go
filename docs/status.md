@@ -2,9 +2,9 @@
 
 ## Now
 
-Steps 1 to 5 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` without `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py` without the segmented branch, with the typed views, and the taggers from `metadata.py`.
+Steps 1 to 6 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` without `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py` without the segmented branch, with the typed views, the taggers from `metadata.py`, and `qobuzdltest`, the fake Qobuz, with `Options` from `core.py`.
 
-Next: step 6, [fake Qobuz](build/06-fake.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
+Next: step 7, [downloader, direct path](build/07-downloader.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
 
 ## Steps
 
@@ -15,8 +15,8 @@ Next: step 6, [fake Qobuz](build/06-fake.md). Start Claude Code in this repo and
 | 3 | [utils, settings, errors, pathvalidate](build/03-utils.md) | done |
 | 4 | [bundle and API client](build/04-client.md) | done |
 | 5 | [tags](build/05-tags.md) | done |
-| 6 | [fake Qobuz](build/06-fake.md) | next |
-| 7 | [downloader, direct path](build/07-downloader.md) | |
+| 6 | [fake Qobuz](build/06-fake.md) | done |
+| 7 | [downloader, direct path](build/07-downloader.md) | next |
 | 8 | [segmented path](build/08-segments.md) | |
 | 9 | [core, m3u8, downloadsdb](build/09-core.md) | |
 | 10 | [CLI and parity tools](build/10-cli.md) | |
@@ -70,3 +70,6 @@ Filled in by the parity run in step 11.
 - mutagen keeps FLAC blocks in file order and adds a new comment block and pictures at the end; design.md and port-spec.md had VORBIS_COMMENT and PICTURE always last. Both now follow the source, and port-spec.md also says how mutagen translates existing ID3 frames on load.
 - `id3v2` v2.1.4 writes UTF-16 TXXX values and APIC data one byte off. `metadata.go` writes those frames with its own `Framer` types through `id3v2`; design.md now says so.
 - For shelf: `docs/sources/qobuz.md` says MP3 frame order and padding differ from mutagen's. That still holds, and each frame's bytes match mutagen's. Two more differences show only on MP3s that arrive with a tag: frames mutagen translates to v2.4 on load stay as they are, and an ID3v2.2 tag fails the track. Tagged FLAC files are byte for byte Python's.
+- Step 6. `qobuzdltest` with `server.go`, `fixtures.go`, `cdn.go` and `switches.go`, and `Options`, `DefaultOptions` and `DownloadsDB` in `core.go`, which `Configure` needs. `make golden` copies the fixtures into `qobuzdltest/testdata/`, which the package embeds. A client built from `ClientOptions()` reads all 367 recorded answers. Details are in [06-fake.md](build/06-fake.md) under As built.
+- The fake also answers `track/get` for the tracks of the recorded albums and playlist, since a playlist download calls it for each track and only one answer is recorded. It has built collections for paging and empty answers, and `Request` has the headers and the status. design.md's qobuzdltest section now says all this.
+- For shelf: `qobuzdltest` has `PlaylistEmpty`, `ArtistEmpty` and `LabelEmpty` for 1d's `TestResolveEmptyCollection`, and `ExpireToken` for `TestHealthTokenExpired`. `catalog/search` answers the recorded search of each type whatever the query, so search tests can't check that a query reached Qobuz except through `Requests()`. `Configure` replaces `Options.HTTPClient` with the fake's; tests of shelf's own client, such as `TestHTTPClientHasNoTimeout` and `TestProxyOptIn`, can instead set `APIBase`, `PlayBase` and `Settings.UserAuthToken` by hand, since the fake is plain HTTP on localhost.
