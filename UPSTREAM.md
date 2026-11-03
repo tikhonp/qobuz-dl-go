@@ -14,8 +14,8 @@
 
 | Python | Go | State |
 | --- | --- | --- |
-| `bundle.py` | `bundle.go` | planned |
-| `qopy.py` | `qopy.go` | planned |
+| `bundle.py` | `bundle.go` | ported |
+| `qopy.py` | `qopy.go` | ported, but for the segmented branch of `get_track_url` |
 | `core.py` | `core.go` | planned |
 | `downloader.py` | `downloader.go` | planned |
 | `metadata.py` | `metadata.go` | planned |
@@ -37,6 +37,7 @@ When two Python modules have private functions with the same name, the Go name g
 | `Bundle.__init__` | `FetchBundle(ctx, hc, playBase)` |
 | `Bundle.get_app_id` | `(*Bundle).AppID` |
 | `Bundle.get_secrets` | `(*Bundle).Secrets`, ordered by timezone as in Python |
+| `base64.standard_b64decode`, `urlsafe_b64decode` | `pyB64Decode`, with Python 3.14's lenient padding rules |
 
 ### qopy.py
 
@@ -50,15 +51,17 @@ When two Python modules have private functions with the same name, the Go name g
 | `_b64url_decode` | `b64urlDecode` |
 | `_derive_session_key` | `deriveSessionKey` |
 | `_unwrap_track_key` | `unwrapTrackKey` |
-| `api_call` | `(*Client).apiCall` |
+| `api_call` | `(*Client).apiCallValue`, which returns any JSON value; `(*Client).apiCall` for answers used as dicts |
+| the signature in `api_call`'s `track/getFileUrl` branch | `getFileURLSig` |
 | `multi_meta` | `(*Client).multiMeta`, returning every page |
 | `get_track_meta` | `(*Client).GetTrackMeta`, typed; `trackMeta` gives the dict |
+| `bytes.fromhex` | `pyFromHex` |
 | `get_album_meta`, `get_artist_meta`, `get_plist_meta`, `get_label_meta` | `GetAlbumMeta`, `GetArtistMeta`, `GetPlaylistMeta`, `GetLabelMeta`, typed; the downloader uses `albumMeta` and `multiMeta` |
 | `search_albums`, `search_tracks`, `search_artists`, `search_playlists` | `SearchAlbums`, `SearchTracks`, `SearchArtists`, `SearchPlaylists`, typed, with an offset |
 | `get_track_url` | `(*Client).getTrackURL`; `GetTrackURL` is its typed view |
 | `session/start` branch of `get_track_url` | `(*Client).startSession` |
 | `cfg_setup` | `(*Client).cfgSetup` |
-| `get_track_ids_from_list`, `get_favorites`, `add_favorite_album` | not ported |
+| `get_track_ids_from_list`, `get_favorites`, `add_favorite_album`, and `api_call`'s branches for `user/login`, `favorite/*` and `track/lyricsUrl` | not ported |
 
 ### core.py
 
@@ -177,6 +180,9 @@ These port no qobuz-dl file. They stand in for CPython 3.14 behavior the port re
 | A track skipped because its file exists reports its format, read from the file. | shelf records the delivered format for every file. |
 | MP3 frame order and ID3 padding differ from mutagen's. | `id3v2` writes frames in map order and adds no padding; players show neither. |
 | `cfg_setup` logs a warning when no secret works. | Python silently uses the first, and later calls fail without a clue. |
+| `GetPlaylistMeta`, `GetArtistMeta` and `GetLabelMeta` return `ErrEmptyContent` when the first page has no items. | `multi_meta` yields nothing then, so there is no page to build the view from. |
+| `TrackURL.Raw` also drops `blob` and `raw_key`. | `blob` is a signed token and `raw_key` the track key. |
+| An API call that runs past its own timeout counts as a request failure, as requests' `Timeout` would; the caller's context ending always propagates. | Auth's bypass and `get_track_url`'s fallback treat a slow call like a failed one, while a caller's cancel stops everything. |
 | In a template, `{x.name}` knows only `real`, `imag`, `numerator` and `denominator` on numbers; any other attribute is an AttributeError. Python returns methods and classes, which print with a memory address. | No template can use such output in a file name. |
 | A format width, or a float precision, over 2^24 is a ValueError. Python tries to build the string and runs out of memory. | A typo in a template must not take the process down. |
 | JSON ints beyond int64 fail to decode and `int()` beyond int64 is an OverflowError; Python makes a big int. JSON's `NaN` and `Infinity` are refused, and a lone surrogate in a string becomes U+FFFD. | Go has no big ints in the value model, and Go strings hold UTF-8. Qobuz sends none of these. |

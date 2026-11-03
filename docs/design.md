@@ -360,7 +360,7 @@ type TrackURL struct {
     Restrictions []string // restriction codes
     Segmented    bool
     NSegments    int
-    Raw          json.RawMessage // with url, url_template and key removed: they are signed
+    Raw          json.RawMessage // with url, url_template, key, raw_key and blob removed: they are signed or secret
 }
 ```
 

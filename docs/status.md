@@ -2,9 +2,9 @@
 
 ## Now
 
-Steps 1 to 3 are done: the module, CI, goldens and fixtures, the Python compatibility layer, and the first ported files, `constants.py`, `exceptions.py`, `settings.py` and `utils.py` without `make_m3u`, with pathvalidate's sanitizers.
+Steps 1 to 4 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` without `make_m3u`, pathvalidate's sanitizers, and the API client from `bundle.py` and `qopy.py` without the segmented branch, with the typed views.
 
-Next: step 4, [bundle and API client](build/04-client.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
+Next: step 5, [tags](build/05-tags.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
 
 ## Steps
 
@@ -13,8 +13,8 @@ Next: step 4, [bundle and API client](build/04-client.md). Start Claude Code in 
 | 1 | [golden generator and fixtures](build/01-golden.md) | done |
 | 2 | [Python compatibility layer](build/02-pycompat.md) | done |
 | 3 | [utils, settings, errors, pathvalidate](build/03-utils.md) | done |
-| 4 | [bundle and API client](build/04-client.md) | next |
-| 5 | [tags](build/05-tags.md) | |
+| 4 | [bundle and API client](build/04-client.md) | done |
+| 5 | [tags](build/05-tags.md) | next |
 | 6 | [fake Qobuz](build/06-fake.md) | |
 | 7 | [downloader, direct path](build/07-downloader.md) | |
 | 8 | [segmented path](build/08-segments.md) | |
@@ -64,3 +64,5 @@ Filled in by the parity run in step 11.
 - design.md had combining marks in `\w`, which Python's `\w` lacks, and said textwrap collapses whitespace runs, which it doesn't. Both now follow the source. UPSTREAM.md has three new deliberate differences: template attributes, a cap on format widths, and JSON ints beyond int64.
 - Step 3. `constants.go`, `errors.go`, `settings.go`, `pathvalidate.go` and `utils.go` without `MakeM3U`, with their tests; every case of `clean_filename`, `pathvalidate`, `url_info`, `album_artist`, `smart_discography` and `settings` passes. Four new goldens: `album_artist.json`, `smart_discography.json`, `release_type.json` and `settings.json`. Details are in [03-utils.md](build/03-utils.md) under As built.
 - `sanitize_filepath` cuts each entry to 260 bytes and empties a relative path with a blank entry; design.md and port-spec.md now say so. design.md's NFC row now names `pyNFC`, since x/text's Unicode 17.0 tables give 34 new code points a combining class that Python doesn't know.
+- Step 4. `bundle.go`, `qopy.go` without the segmented branch, `catalog.go` and `transport.go`, with their tests. Four new goldens: `secrets.json`, `signatures.json`, `session_key.json`, and `request_params.json`, a transcript of 58 runs of upstream's `Client` against a recording transport that the Go client must match request by request. `gen.py` also writes a synthetic login page and bundle into `testdata/fixtures/bundle/`. Details are in [04-client.md](build/04-client.md) under As built.
+- Python 3.14's base64 decoding is lenient in ways the bundle depends on; `pyB64Decode` ports it. port-spec.md now says how, and that requests keeps `User-Agent` first and `X-App-Id` last on the wire.

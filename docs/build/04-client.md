@@ -111,4 +111,33 @@ func redactURL(u string) string
 
 ## As built
 
-Filled in at the end of the step.
+Done on 2026-11-03. `make check` and `make lint` pass: 0 golangci-lint issues, no vulnerabilities.
+
+### Differences from the contract
+
+- `request_params.json` is a transcript. `gen.py` runs upstream's real `Client` offline: a requests transport answers each request from a small fake API and records it, `requests.Session` and `bundle.Session` are patched to use it, and `qopy.time` returns a fixed time. Each of the 58 cases holds the client's options, an optional call, every request with its URL, headers and body, every answer, and the client's state or the exception. `TestRequestParamsGolden` replays the answers through an `http.RoundTripper` and checks each request against Python's. The cases cover the bundle branch, every auth outcome, the secret choice, each endpoint the port calls and `multi_meta` paging.
+- The transcripts sign with 946684800, midnight UTC on 2000-01-01, where `testing/synctest`'s clock starts. The replay runs under `synctest.Test`, so `apiCall` reads `time.Now()` with no clock hook.
+- `Accept-Encoding`, `Connection` and `Content-Length` are left to Go's transport, and the replay skips them. Go's `http.Header` doesn't keep order on the wire; `(*Client).headers` lists the headers in requests' order, and the test checks that list.
+- The bundle fetch sends requests' default `User-Agent: python-requests/2.34.2` and `Accept: */*`, as Python's plain `Session` does.
+- `pyB64Decode` ports Python 3.14's lenient base64 decoding, which the bundle secrets and `_b64url_decode` go through. It drops characters outside the alphabet, keeps decoding after a `=`, and counts padding only after the last data character. `secrets.json` has 800 random strings through both decoders. `pyFromHex` ports `bytes.fromhex`.
+- `apiCallValue` returns any JSON value, as `api_call` does, and `apiCall` wraps it for answers used as dicts. `cfg_setup` accepts any answer, so it uses `apiCallValue`.
+- `apiCall` ports only the endpoints the port calls: `track/getFileUrl`, `session/start`, `file/url` and the standard calls. The `user/login`, `favorite/*` and `track/lyricsUrl` branches are not ported.
+- The segmented branch of `getTrackURL` returns `errSegmentedNotPorted` until step 8. The `session/start` and `file/url` requests already exist in `apiCallValue`, and the golden covers them.
+- `Client` has `mu` and `sessionID` but not yet the session's infos and key, because the linter rejects unused fields. Step 8 adds them.
+- `Timeouts` and `DefaultTimeouts` live in `transport.go`. `fetch` gives each call its own timeout and sorts failures: the caller's context ending wraps `ctx.Err()`; the call's own timeout is a `timeoutError`, which doesn't match `context.DeadlineExceeded`, so auth's bypass and `get_track_url`'s fallback treat it like requests' `Timeout`; other failures are a `requestError` without the URL, since `url.Error` would print the signature. An answer that isn't JSON is a `requestError` too, like requests' `JSONDecodeError`.
+- `TrackURL.Raw` also drops `blob`, a signed token, and `raw_key`.
+- `GetPlaylistMeta`, `GetArtistMeta` and `GetLabelMeta` return `ErrEmptyContent` when the first page has no items.
+- `GetAlbumArtist(*Album)` decodes `Raw` and runs `getAlbumArtist`, so it agrees with the dict version by construction. Without a readable `Raw` it falls back to the typed fields.
+- `Label()` and `UserID()` return "" when Python's value is None.
+- Extra tests: `TestBundleURLGolden`, `TestB64DecodeGolden`, `TestFetchBundleReadsFixture`, `TestFetchBundleHTTPError`, `TestAPICallTimeoutDuringAuthPropagates`, `TestGetTrackURLWithoutURLNeedsSegments`, `TestCatalogEmptyCollections`, `TestCatalogRawKeepsOrder`, `TestRedactURL`, `TestAPIContextDefaultsTo30Seconds`, `TestFetchErrorsHideTheURL`, `TestFetchKeepsCallerCancel`.
+
+### Checks
+
+`make golden` twice gives the same files. Changing one header value in `qopy.go` fails the replay on every request that carries it.
+
+### Notes for later steps
+
+- Step 6: `testdata/fixtures/bundle/` carries app ID `123456789`, the good secret `5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c` and the bad one `0f9e8d7c6b5a49382716051423324150`. In Python's order they are berlin (bad), london (good) and abidjan (empty). `qobuzdltest.AppID` and `Secret` should use these values so the fake serves the files as they are. The login page names `/resources/8.1.0-b019/bundle.js`.
+- Step 6: `fakeAPI` in `qopy_test.go` checks getFileUrl signatures the way the fake should.
+- Step 7: the downloader calls `getTrackURL` and `albumMeta` for dicts. A `timeoutError` or `requestError` from them is a `RequestException` in Python terms; `isRequestError` should match both, plus `*APIError`.
+- Step 8: add `sessionInfos` and `sessionKey` to `Client`, `startSession` under `mu`, and replace `errSegmentedNotPorted`. For a format outside 5, 6, 7 and 27, Python's `get_track_url` sends `session/start` before `file/url` raises `InvalidQuality`. `request_params.json` needs cases for the segmented branch; `file_url_answer` in `gen.py` already builds a wrapped key under the session key from `session_infos(1)`.

@@ -15,7 +15,7 @@ Quirks that look like upstream bugs are kept on purpose and marked "kept". The p
    - Seeds: `[a-z]\.initialSeed\("(?P<seed>[\w=]+)",window\.utimezone\.(?P<timezone>[a-z]+)\)`, collected in document order into an ordered map from timezone to `[seed]`. A timezone seen twice keeps its first position and its last seed.
    - The second timezone moves to the front. Fewer than two timezones raises `IndexError`.
    - Info and extras: a regex built per run, `name:"\w+/(?P<timezone>Tz1|Tz2|…)",info:"(?P<info>[\w=]+)",extras:"(?P<extras>[\w=]+)"`, where each `TzN` is the timezone through `str.capitalize`: first letter upper case, the rest lower case. Each match appends info and extras to the timezone's list.
-   - Secret: concatenate the list, drop the last 44 characters, decode with standard base64, read as UTF-8.
+   - Secret: concatenate the list, drop the last 44 characters, decode with standard base64, read as UTF-8. Python 3.14's decoder is lenient: it drops characters outside the alphabet, such as `_`, keeps decoding after a `=`, and wants enough `=` only after the last data character.
 5. `get_secrets` returns the map with every timezone, empty secrets included. `QobuzDL.get_tokens` keeps the values in order and drops the empty ones.
 
 `\w` in these regexes is Python's Unicode `\w`; bundle text is ASCII, so `[A-Za-z0-9_]` is equivalent here.
@@ -28,7 +28,7 @@ Quirks that look like upstream bugs are kept on purpose and marked "kept". The p
 
 `Client(email, pwd, app_id, secrets, user_auth_token, force_english)`:
 
-1. When `app_id` is empty or `798273057`, the client fetches the bundle itself and takes its app ID and all its secret values, empty ones included. Any failure there is ignored and the given values stay. `QobuzDL` passes the app ID from `get_tokens`, but on 2026-11-03 the web player's bundle itself carried `798273057`, so the bot runs this branch: a second bundle fetch, and the secrets `get_tokens` filtered are replaced by all of the bundle's values, empty ones included, in the same order. `cfg_setup` then tries an empty secret like any other, and it fails.
+1. When `app_id` is empty or `798273057`, the client fetches the bundle itself and takes its app ID and all its secret values, empty ones included. Any failure there is ignored and the given values stay, except that a failure in `get_secrets` comes after the new app ID is set, which then stays with the old secrets. `QobuzDL` passes the app ID from `get_tokens`, but on 2026-11-03 the web player's bundle itself carried `798273057`, so the bot runs this branch: a second bundle fetch, and the secrets `get_tokens` filtered are replaced by all of the bundle's values, empty ones included, in the same order. `cfg_setup` then tries an empty secret like any other, and it fails.
 2. Session headers. With `force_english`, the default:
 
    ```
@@ -44,14 +44,14 @@ Quirks that look like upstream bugs are kept on purpose and marked "kept". The p
    Sec-Fetch-Site: same-site
    ```
 
-   Always, and last, so this user agent wins:
+   Always, so this user agent wins:
 
    ```
    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
    X-App-Id: <app id>
    ```
 
-   `X-User-Auth-Token` is added by `auth`, `X-Session-Id` after `session/start`. requests adds `Accept-Encoding` and `Connection: keep-alive` on its own.
+   requests' header dict keeps a key's place when it is set again, so on the wire `User-Agent` comes first and `X-App-Id` last of these. Without `force_english` the session sends `User-Agent`, requests' default `Accept: */*` and `X-App-Id`. `auth` adds `X-User-Auth-Token`, and `session/start` adds `X-Session-Id`. requests adds `Accept-Encoding` and `Connection: keep-alive` on its own. `testdata/golden/request_params.json` has every request as sent.
 3. `auth`, then `cfg_setup`.
 
 Every JSON answer passes through `_normalize_json_strings`: each string that contains `...` and not `://` gets `...` replaced by `…`, then every string is NFC-normalized. Keys are left alone. Both steps change tags and file names.
