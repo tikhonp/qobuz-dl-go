@@ -1,0 +1,335 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "getFileUrl 5966783 5 946684800",
+   "input": {
+    "track_id": "5966783",
+    "fmt_id": {
+     "py": "int",
+     "v": 5
+    },
+    "ts": {
+     "py": "int",
+     "v": 946684800
+    },
+    "secret": "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c"
+   },
+   "output": "4fbcc7eed016d966ba73f0bc3fb1ab12"
+  },
+  {
+   "name": "getFileUrl 20273753 27 1762185600",
+   "input": {
+    "track_id": "20273753",
+    "fmt_id": {
+     "py": "int",
+     "v": 27
+    },
+    "ts": {
+     "py": "int",
+     "v": 1762185600
+    },
+    "secret": "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c"
+   },
+   "output": "fd4b1d0ae4c3c1aec049fcd4fb92446d"
+  },
+  {
+   "name": "getFileUrl 20273753 6 1762185600",
+   "input": {
+    "track_id": "20273753",
+    "fmt_id": {
+     "py": "int",
+     "v": 6
+    },
+    "ts": {
+     "py": "int",
+     "v": 1762185600
+    },
+    "secret": "0f9e8d7c6b5a49382716051423324150"
+   },
+   "output": "8ad26b0b3230747f197b185d2668f114"
+  },
+  {
+   "name": "getFileUrl 115851707 7 0",
+   "input": {
+    "track_id": "115851707",
+    "fmt_id": {
+     "py": "int",
+     "v": 7
+    },
+    "ts": {
+     "py": "int",
+     "v": 0
+    },
+    "secret": ""
+   },
+   "output": "f96ab9c68abab14a24870ab2cfba2792"
+  },
+  {
+   "name": "modern 0 session/start 946684800",
+   "input": {
+    "epoint": "session/start",
+    "params": {
+     "profile": "qbz-1",
+     "request_ts": {
+      "py": "int",
+      "v": 946684800
+     },
+     "request_sig": "ignored"
+    },
+    "secret": "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c"
+   },
+   "output": "e7e3b5cf25d8f52aa6199416925ca3d7"
+  },
+  {
+   "name": "modern 0 session/start 1762185600",
+   "input": {
+    "epoint": "session/start",
+    "params": {
+     "profile": "qbz-1",
+     "request_ts": {
+      "py": "int",
+      "v": 1762185600
+     },
+     "request_sig": "ignored"
+    },
+    "secret": ""
+   },
+   "output": "9c8816f9d2051763965f07320b339f43"
+  },
+  {
+   "name": "modern 1 file/url 946684800",
+   "input": {
+    "epoint": "file/url",
+    "params": {
+     "track_id": "20273753",
+     "format_id": {
+      "py": "int",
+      "v": 27
+     },
+     "intent": "import",
+     "request_ts": {
+      "py": "int",
+      "v": 946684800
+     },
+     "request_sig": "ignored"
+    },
+    "secret": "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c"
+   },
+   "output": "3be681370c4cfc8dbaa3e7d3f033da4a"
+  },
+  {
+   "name": "modern 1 file/url 1762185600",
+   "input": {
+    "epoint": "file/url",
+    "params": {
+     "track_id": "20273753",
+     "format_id": {
+      "py": "int",
+      "v": 27
+     },
+     "intent": "import",
+     "request_ts": {
+      "py": "int",
+      "v": 1762185600
+     },
+     "request_sig": "ignored"
+    },
+    "secret": ""
+   },
+   "output": "fb97db9f11d5ef60c0fd30d3be4ac347"
+  },
+  {
+   "name": "modern 2 file/url 946684800",
+   "input": {
+    "epoint": "file/url",
+    "params": {
+     "track_id": {
+      "py": "int",
+      "v": 20273753
+     },
+     "format_id": "7",
+     "intent": "import",
+     "request_ts": {
+      "py": "int",
+      "v": 946684800
+     },
+     "request_sig": "ignored"
+    },
+    "secret": "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c"
+   },
+   "output": "2cf33a1a5eb65f1d0407bd6fd856ec8d"
+  },
+  {
+   "name": "modern 2 file/url 1762185600",
+   "input": {
+    "epoint": "file/url",
+    "params": {
+     "track_id": {
+      "py": "int",
+      "v": 20273753
+     },
+     "format_id": "7",
+     "intent": "import",
+     "request_ts": {
+      "py": "int",
+      "v": 1762185600
+     },
+     "request_sig": "ignored"
+    },
+    "secret": ""
+   },
+   "output": "89a22ba05a30efecb1e2f2900d4ec93f"
+  },
+  {
+   "name": "modern 3 track/lyricsUrl 946684800",
+   "input": {
+    "epoint": "track/lyricsUrl",
+    "params": {
+     "track_id": "1",
+     "language": "fr",
+     "request_ts": {
+      "py": "int",
+      "v": 946684800
+     },
+     "request_sig": "ignored"
+    },
+    "secret": "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c"
+   },
+   "output": "c68345e8ba4f8be1aad0f6c1f9ba1044"
+  },
+  {
+   "name": "modern 3 track/lyricsUrl 1762185600",
+   "input": {
+    "epoint": "track/lyricsUrl",
+    "params": {
+     "track_id": "1",
+     "language": "fr",
+     "request_ts": {
+      "py": "int",
+      "v": 1762185600
+     },
+     "request_sig": "ignored"
+    },
+    "secret": ""
+   },
+   "output": "c5d208beb01bf337a62095590ad1d800"
+  },
+  {
+   "name": "modern 4 a/b 946684800",
+   "input": {
+    "epoint": "a/b",
+    "params": {
+     "z": "1",
+     "a": {
+      "py": "float",
+      "v": 2.5
+     },
+     "m": true,
+     "b": {
+      "py": "none"
+     },
+     "c": [
+      {
+       "py": "int",
+       "v": 1
+      },
+      {
+       "py": "int",
+       "v": 2
+      }
+     ],
+     "d": {
+      "k": "v"
+     },
+     "e": {
+      "py": "float",
+      "v": 96.0
+     },
+     "é": "x",
+     "B": "y",
+     "request_ts": {
+      "py": "int",
+      "v": 946684800
+     },
+     "request_sig": "ignored"
+    },
+    "secret": "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c"
+   },
+   "output": "1e7a1abf39fd006edf85d98ba0533e43"
+  },
+  {
+   "name": "modern 4 a/b 1762185600",
+   "input": {
+    "epoint": "a/b",
+    "params": {
+     "z": "1",
+     "a": {
+      "py": "float",
+      "v": 2.5
+     },
+     "m": true,
+     "b": {
+      "py": "none"
+     },
+     "c": [
+      {
+       "py": "int",
+       "v": 1
+      },
+      {
+       "py": "int",
+       "v": 2
+      }
+     ],
+     "d": {
+      "k": "v"
+     },
+     "e": {
+      "py": "float",
+      "v": 96.0
+     },
+     "é": "x",
+     "B": "y",
+     "request_ts": {
+      "py": "int",
+      "v": 1762185600
+     },
+     "request_sig": "ignored"
+    },
+    "secret": ""
+   },
+   "output": "3e62bccca90dafc99b13cbd5e4510123"
+  },
+  {
+   "name": "modern 5 a/b 946684800",
+   "input": {
+    "epoint": "a/b",
+    "params": {
+     "request_ts": {
+      "py": "int",
+      "v": 946684800
+     },
+     "request_sig": "ignored"
+    },
+    "secret": "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c"
+   },
+   "output": "f22a2a5fa435732712f24102e15cd792"
+  },
+  {
+   "name": "modern 5 a/b 1762185600",
+   "input": {
+    "epoint": "a/b",
+    "params": {
+     "request_ts": {
+      "py": "int",
+      "v": 1762185600
+     },
+     "request_sig": "ignored"
+    },
+    "secret": ""
+   },
+   "output": "bc80d55013c3663f09854f912155c228"
+  }
+ ]
+}

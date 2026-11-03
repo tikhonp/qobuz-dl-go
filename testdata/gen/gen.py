@@ -14,20 +14,32 @@ JSON can't tell 96 from 96.0, so every int, float and None gets a tag:
 loader refuses a plain JSON number or null as a generator bug.
 """
 
+import base64
+import contextlib
+import hashlib
+import io
 import json
+import logging
 import math
 import random
 import re
 import sys
 import textwrap
 import unicodedata
+import urllib.parse
+from http import HTTPStatus
 from pathlib import Path
 from types import SimpleNamespace
 
 import pathvalidate
+import requests
+from cryptography.hazmat.primitives import padding
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from pathvalidate import sanitize_filename, sanitize_filepath
+from requests.adapters import BaseAdapter
 
-from qobuz_dl import constants, downloader, utils
+from qobuz_dl import bundle as bundle_mod
+from qobuz_dl import constants, downloader, qopy, utils
 from qobuz_dl.settings import QobuzDLSettings
 from qobuz_dl.downloader import Download
 from qobuz_dl.qopy import Client
@@ -813,7 +825,480 @@ def gen_settings():
     g.write()
 
 
+# --- Bundle and client ----------------------------------------------------
+
+# The synthetic bundle carries the app ID and secret qobuzdltest will use, so
+# the fake of step 6 can serve these files as they are.
+FAKE_APP_ID = "123456789"
+FAKE_SECRET = "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c"
+BAD_SECRET = "0f9e8d7c6b5a49382716051423324150"
+FAKE_TOKEN = "fake-user-auth-token-for-tests-" + "x" * 40
+# Midnight UTC on 2000-01-01, where testing/synctest's clock starts, so the Go
+# tests sign with the same timestamp.
+FIXED_TS = 946684800
+BUNDLE_PATH = "/resources/8.1.0-b019/bundle.js"
+API_BASE = "https://www.qobuz.com/api.json/0.2/"
+PLAY_BASE = "https://play.qobuz.com"
+FILLER = "Zm9yIHRoZSBzaWduYXR1cmUgdGhhdCBuZXZlciBpcyBjaGVja2Vk"[:44]
+
+
+def _secret_parts(secret):
+    full = base64.standard_b64encode(secret.encode()).decode() + FILLER
+    return full[:17], full[17:39], full[39:]
+
+
+def bundle_text():
+    b_seed, b_info, b_extras = _secret_parts(BAD_SECRET)
+    l_seed, l_info, l_extras = _secret_parts(FAKE_SECRET)
+    return "".join([
+        '/*! synthetic bundle for qobuz-dl-go tests */\n',
+        '!function(){var n={};n.config={development:{api:{appId:"000000000",appSecret:"',
+        "d" * 32, '"}},production:{api:{appId:"', FAKE_APP_ID, '",appSecret:"', "e" * 32, '"}}};\n',
+        # london first with a seed a later line replaces, then berlin, which
+        # moves to the front, then abidjan, whose short seed decodes to "".
+        'var l=new s;l.initialSeed("bm90IHRoaXMgb25l",window.utimezone.london),\n',
+        'b.initialSeed("', b_seed, '",window.utimezone.berlin),\n',
+        'c.initialSeed("c2hvcnQ=",window.utimezone.abidjan),\n',
+        'l.initialSeed("', l_seed, '",window.utimezone.london);\n',
+        'var z=[{offset:"GMT+01:00",name:"Europe/Berlin",info:"', b_info, '",extras:"', b_extras, '"},\n',
+        '{offset:"GMT",name:"Europe/London",info:"', l_info, '",extras:"', l_extras, '"},\n',
+        '{offset:"GMT-05:00",name:"America/Montreal",info:"aWdub3JlZA==",extras:"aWdub3JlZA=="}];\n',
+        '}();\n',
+    ])
+
+
+def login_html():
+    return (
+        '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<title>Qobuz Web Player</title>\n'
+        '<script src="/resources/8.1.0-b019/vendor.js"></script>\n'
+        f'<script src="{BUNDLE_PATH}"></script>\n</head>\n<body></body>\n</html>\n'
+    )
+
+
+def write_bundle_fixtures():
+    d = FIXTURES / "bundle"
+    d.mkdir(exist_ok=True)
+    (d / "login.html").write_text(login_html(), encoding="utf-8")
+    (d / "bundle.js").write_text(bundle_text(), encoding="utf-8")
+
+
+def _bundle(text):
+    b = bundle_mod.Bundle.__new__(bundle_mod.Bundle)
+    b._bundle = text
+    return b
+
+
+def gen_secrets():
+    g = Golden("secrets")
+    text = bundle_text()
+    g.case("fixture bundle app ID", {"bundle": "bundle.js"}, lambda: _bundle(text).get_app_id())
+    g.case("fixture bundle secrets", {"bundle": "bundle.js"},
+           lambda: [[k, v] for k, v in _bundle(text).get_secrets().items()])
+    seed = 'a.initialSeed("{s}",window.utimezone.{tz})'
+    built = [
+        ("one timezone", seed.format(s="QUJD", tz="paris")),
+        ("no timezone", "nothing here"),
+        ("two timezones without info", seed.format(s="QUJD" + FILLER, tz="paris") + seed.format(s="QUFB" + FILLER, tz="tokyo")),
+        ("invalid UTF-8", seed.format(s="wyg=" + FILLER, tz="paris") + seed.format(s="QUJD" + FILLER, tz="tokyo")),
+        ("bad padding", seed.format(s="QUJDR" + FILLER, tz="paris") + seed.format(s="QUJD" + FILLER, tz="tokyo")),
+        ("info for a prefix timezone", seed.format(s="QU", tz="lon") + seed.format(s="QU", tz="london")
+         + 'name:"Europe/London",info:"JD",extras:"' + FILLER + '"'
+         + 'name:"Asia/Lon",info:"FBQU",extras:"FB' + FILLER + '"'),
+        ("underscores are dropped", seed.format(s="Q_UJD" + FILLER, tz="paris") + seed.format(s="QU_FB" + FILLER, tz="tokyo")),
+    ]
+    for name, t in built:
+        g.case(f"secrets: {name}", {"text": t},
+               lambda t=t: [[k, v] for k, v in _bundle(t).get_secrets().items()])
+    app_ids = [
+        ("eight digits", 'production:{api:{appId:"12345678",appSecret:"' + "e" * 32 + '"'),
+        ("short secret", 'production:{api:{appId:"123456789",appSecret:"' + "e" * 31 + '"'),
+        ("first of two", 'production:{api:{appId:"111111111",appSecret:"' + "e" * 32 + '"production:{api:{appId:"222222222",appSecret:"' + "f" * 32 + '"'),
+        ("arabic-indic digits", 'production:{api:{appId:"١٢٣٤٥٦٧٨٩",appSecret:"' + "e" * 32 + '"'),
+        ("none", "development:{}"),
+    ]
+    for name, t in app_ids:
+        g.case(f"app ID: {name}", {"text": t}, lambda t=t: _bundle(t).get_app_id())
+    pages = [
+        ("fixture login page", login_html()),
+        ("no script", "<html></html>"),
+        ("single quotes", "<script src='/resources/8.1.0-b019/bundle.js'></script>"),
+        ("two letters in the build", '<script src="/resources/8.1.0-bb19/bundle.js"></script>'),
+        ("first of two", '<script src="/resources/1.2.3-a001/bundle.js"></script><script src="/resources/4.5.6-b002/bundle.js"></script>'),
+    ]
+    for name, page in pages:
+        g.case(f"login page: {name}", {"page": page}, lambda page=page: (lambda m: m.group(1) if m else None)(bundle_mod._BUNDLE_URL_REGEX.search(page)))
+    rnd = random.Random(SEED + 1)
+    for i in range(400):
+        s = "".join(rnd.choice("QUJDRA=_x-+/") for _ in range(rnd.randint(0, 14)))
+        g.case(f"b64 standard:{i} {s!r}", {"s": s}, lambda s=s: base64.standard_b64decode(s).hex())
+        g.case(f"b64 urlsafe:{i} {s!r}", {"s": s}, lambda s=s: Client._b64url_decode(s).hex())
+    g.case("b64 urlsafe: non-ASCII", {"s": "QUJDé"}, lambda: Client._b64url_decode("QUJDé").hex())
+    g.write()
+
+
+def gen_signatures():
+    g = Golden("signatures")
+    for track_id, fmt_id, ts, secret in [
+        ("5966783", 5, FIXED_TS, FAKE_SECRET),
+        ("20273753", 27, 1762185600, FAKE_SECRET),
+        ("20273753", 6, 1762185600, BAD_SECRET),
+        ("115851707", 7, 0, ""),
+    ]:
+        def sig(track_id=track_id, fmt_id=fmt_id, ts=ts, secret=secret):
+            with offline(lambda req: (200, "{}"), ts=ts) as rec:
+                me = Client.__new__(Client)
+                me.base, me.sec, me.session = API_BASE, None, requests.Session()
+                me.api_call("track/getFileUrl", id=track_id, fmt_id=fmt_id, sec=secret)
+            q = urllib.parse.parse_qs(urllib.parse.urlsplit(rec.log[0][0].url).query)
+            return q["request_sig"][0]
+        g.case(f"getFileUrl {track_id} {fmt_id} {ts}", {"track_id": track_id, "fmt_id": fmt_id, "ts": ts, "secret": secret}, sig)
+    modern = [
+        ("session/start", {"profile": "qbz-1"}),
+        ("file/url", {"track_id": "20273753", "format_id": 27, "intent": "import"}),
+        ("file/url", {"track_id": 20273753, "format_id": "7", "intent": "import"}),
+        ("track/lyricsUrl", {"track_id": "1", "language": "fr"}),
+        ("a/b", {"z": "1", "a": 2.5, "m": True, "b": None, "c": [1, 2], "d": {"k": "v"}, "e": 96.0, "é": "x", "B": "y"}),
+        ("a/b", {}),
+    ]
+    for i, (epoint, params) in enumerate(modern):
+        for ts, secret in [(FIXED_TS, FAKE_SECRET), (1762185600, "")]:
+            p = dict(params)
+            p["request_ts"] = ts
+            p["request_sig"] = "ignored"
+            g.case(f"modern {i} {epoint} {ts}", {"epoint": epoint, "params": p, "secret": secret},
+                   lambda epoint=epoint, p=p, secret=secret: Client._modern_sig(_client, epoint, p, secret))
+    g.write()
+
+
+def _b64url(b):
+    return base64.urlsafe_b64encode(b).decode().rstrip("=")
+
+
+def session_infos(n):
+    h = hashlib.sha256(f"infos {n}".encode()).digest()
+    return _b64url(h[:16]) + "." + _b64url(h[16:] + b"qbz")
+
+
+def wrap_key(session_key, raw_key, iv):
+    p = padding.PKCS7(128).padder()
+    padded = p.update(raw_key) + p.finalize()
+    e = Cipher(algorithms.AES(session_key), modes.CBC(iv)).encryptor()
+    return "qbz-1." + _b64url(e.update(padded) + e.finalize()) + "." + _b64url(iv)
+
+
+def derive(secret, infos):
+    me = SimpleNamespace(session_infos=infos, sec=secret, _b64url_decode=Client._b64url_decode)
+    return Client._derive_session_key(me)
+
+
+def unwrap(session_key, key):
+    me = SimpleNamespace(session_key=session_key, _b64url_decode=Client._b64url_decode)
+    return Client._unwrap_track_key(me, key)
+
+
+def gen_session_key():
+    g = Golden("session_key")
+    derives = [(FAKE_SECRET, session_infos(1)), (BAD_SECRET, session_infos(2)), ("", session_infos(3)),
+               (FAKE_SECRET, "." + _b64url(b"info")), (FAKE_SECRET, _b64url(b"salt") + "."),
+               ("5e 1f 0c 2a 9b 7d 4e 3f 8a 6c 1b 0d 2e 4f 6a 8c", session_infos(1)),
+               (FAKE_SECRET.upper(), session_infos(1)),
+               (FAKE_SECRET, "no-dot"), (FAKE_SECRET, "a.b.c"), (FAKE_SECRET, "QUJDR.QUJD"),
+               ("5e1", session_infos(1)), ("5e 1f0", session_infos(1)), ("zz", session_infos(1))]
+    for i, (secret, infos) in enumerate(derives):
+        g.case(f"derive {i}", {"secret": secret, "infos": infos}, lambda s=secret, i=infos: derive(s, i).hex())
+    sk = derive(FAKE_SECRET, session_infos(1))
+    other = derive(BAD_SECRET, session_infos(2))
+    unwraps = []
+    for n in (16, 15, 32, 1):
+        raw = hashlib.sha256(f"raw {n}".encode()).digest()[:n]
+        iv = hashlib.md5(f"iv {n}".encode()).digest()
+        unwraps.append((f"raw key of {n} bytes", sk, wrap_key(sk, raw, iv)))
+    good = wrap_key(sk, hashlib.sha256(b"raw 16").digest()[:16], hashlib.md5(b"iv 16").digest())
+    _, w, v = good.split(".")
+    unwraps += [
+        ("wrong session key", other, good),
+        ("two parts", sk, "qbz-1." + w),
+        ("four parts", sk, good + ".x"),
+        ("short IV", sk, f"qbz-1.{w}.{_b64url(b'short')}"),
+        ("wrapped not a block multiple", sk, f"qbz-1.{w[:-3]}.{v}"),
+        ("empty wrapped", sk, f"qbz-1..{v}"),
+        ("bad base64", sk, f"qbz-1.{w}Q.{v}"),
+    ]
+    for name, key, token in unwraps:
+        g.case(f"unwrap: {name}", {"session_key": key.hex(), "key": token}, lambda k=key, t=token: unwrap(k, t).hex())
+    g.write()
+
+
+class Recorder(BaseAdapter):
+    """A requests transport that answers from a function and logs each exchange."""
+
+    def __init__(self, answer):
+        super().__init__()
+        self.answer = answer
+        self.log = []
+
+    def send(self, request, **kwargs):
+        status, body = self.answer(request)
+        self.log.append((request, status, body))
+        r = requests.Response()
+        r.status_code = status
+        r.reason = HTTPStatus(status).phrase
+        r._content = body.encode("utf-8")
+        r.encoding = "utf-8"
+        r.headers = requests.structures.CaseInsensitiveDict({"Content-Type": "application/json"})
+        r.url = request.url
+        r.request = request
+        return r
+
+    def close(self):
+        pass
+
+
+@contextlib.contextmanager
+def offline(answer, ts=FIXED_TS):
+    rec = Recorder(answer)
+
+    class Session(requests.Session):
+        def __init__(self):
+            super().__init__()
+            self.mount("https://", rec)
+            self.mount("http://", rec)
+
+    saved = requests.Session, bundle_mod.Session, qopy.time
+    requests.Session = bundle_mod.Session = Session
+    # A fraction of a second checks that the port drops it as int() does.
+    qopy.time = SimpleNamespace(time=lambda: ts + 0.75)
+    try:
+        yield rec
+    finally:
+        requests.Session, bundle_mod.Session, qopy.time = saved
+
+
+def exchanges(rec):
+    out = []
+    for req, status, body in rec.log:
+        out.append({
+            "request": {
+                "method": req.method,
+                "url": req.url,
+                "headers": [[k, v] for k, v in req.headers.items()],
+                "body": req.body if isinstance(req.body, str) or req.body is None else req.body.decode(),
+            },
+            "response": {"status": status, "body": body},
+        })
+    return out
+
+
+def file_url_answer(q):
+    sk = derive(FAKE_SECRET, session_infos(1))
+    return {"track_id": int(q["track_id"]), "format_id": int(q["format_id"]), "mime_type": "audio/mp4; codecs=\"flac\"",
+            "sampling_rate": 96000, "bits_depth": 24, "n_segments": 3,
+            "url_template": "https://cdn.test/file/$SEGMENT$?sig=abc",
+            "key": wrap_key(sk, hashlib.sha256(b"raw 16").digest()[:16], hashlib.md5(b"iv 16").digest()),
+            "restrictions": []}
+
+
+def api_answer(overrides):
+    """The default API. It checks signatures with FAKE_SECRET and gives small answers."""
+
+    def answer(req):
+        u = urllib.parse.urlsplit(req.url)
+        if u.netloc == "play.qobuz.com":
+            if "play" in overrides:
+                return overrides["play"](u.path)
+            if u.path == "/login":
+                return 200, login_html()
+            if u.path == BUNDLE_PATH:
+                return 200, bundle_text()
+            return 404, "not found"
+        ep = u.path.removeprefix("/api.json/0.2/")
+        q = dict(urllib.parse.parse_qsl(u.query or req.body or "", keep_blank_values=True))
+        if ep in overrides:
+            r = overrides[ep](q)
+            if r is not None:
+                return r
+        if ep == "user/get":
+            return 200, json.dumps({"id": 2468, "credential": {"parameters": {"short_label": "Studio Premier"}}})
+        if ep == "track/getFileUrl":
+            want = hashlib.md5(f"trackgetFileUrlformat_id{q['format_id']}intentstreamtrack_id{q['track_id']}{q['request_ts']}{FAKE_SECRET}".encode()).hexdigest()
+            if q["request_sig"] != want:
+                return 400, json.dumps({"status": "error", "code": 400, "message": "Invalid Request Signature parameter (request_sig)"})
+            fmt = int(q["format_id"])
+            return 200, json.dumps({"track_id": int(q["track_id"]), "duration": 30, "url": f"https://cdn.test/file/{q['track_id']}/{fmt}?sig=abc...def",
+                                    "format_id": fmt, "mime_type": "audio/mpeg" if fmt == 5 else "audio/flac",
+                                    "restrictions": [], "sampling_rate": 44.1, "bit_depth": 16, "blob": "signed"})
+        if ep == "session/start":
+            return 200, json.dumps({"session_id": "session-1", "infos": session_infos(1), "expires_at": FIXED_TS + 3600})
+        if ep == "file/url":
+            return 200, json.dumps(file_url_answer(q))
+        if ep == "album/get":
+            return 200, json.dumps({"id": q["album_id"], "title": "Album...", "version": None, "artist": {"id": 1, "name": "Café"}})
+        if ep == "track/get":
+            return 200, json.dumps({"id": int(q["track_id"]), "title": "Track", "album": {"id": "a1", "title": "Album"}})
+        if ep in ("playlist/get", "artist/get", "label/get"):
+            key = "tracks" if ep == "playlist/get" else "albums"
+            off = int(q["offset"])
+            n = max(0, min(50, 70 - off))
+            return 200, json.dumps({"id": 9, "name": "Paged", key: {"offset": off, "limit": 50, "total": 70,
+                                                                     "items": [{"id": off + i} for i in range(n)]}})
+        if ep == "catalog/search":
+            t = q["type"]
+            return 200, json.dumps({"query": q["query"], t: {"limit": int(q["limit"]), "offset": int(q.get("offset", 0)),
+                                                             "total": 1, "items": [{"id": 1, "title": "Found..."}]}})
+        return 404, json.dumps({"status": "error", "code": 404, "message": "No route"})
+
+    return answer
+
+
+CLIENT_DEFAULTS = {"email": "", "pwd": "", "app_id": FAKE_APP_ID, "secrets": [BAD_SECRET, FAKE_SECRET],
+                   "token": FAKE_TOKEN, "force_english": True}
+
+
+def client_state(c):
+    return {"app_id": c.id, "secrets": list(c.secrets), "sec": c.sec,
+            "label": getattr(c, "label", None), "user_id": getattr(c, "user_id", None)}
+
+
+def run_client(opts, overrides, call):
+    o = dict(CLIENT_DEFAULTS, **opts)
+    out = {}
+    # Upstream prints and logs as it goes; the golden needs none of it.
+    with offline(api_answer(overrides)) as rec, contextlib.redirect_stdout(io.StringIO()):
+        try:
+            c = Client(o["email"], o["pwd"], o["app_id"], o["secrets"], o["token"], force_english=o["force_english"])
+            out["state"] = client_state(c)
+            if call:
+                fn, args = call[0], call[1:]
+                if fn == "api_call":
+                    res = c.api_call(args[0], **args[1])
+                else:
+                    res = getattr(c, fn)(*args)
+                if fn.startswith("get_") and fn.endswith("_meta") and fn not in ("get_album_meta", "get_track_meta"):
+                    res = list(res)
+                if isinstance(res, dict) and "raw_key" in res:
+                    res["raw_key"] = res["raw_key"].hex()
+                out["result"] = res
+        except SystemExit as e:
+            out["raised"] = f"SystemExit({e.code})"
+        except Exception as e:
+            out["raised"] = type(e).__name__
+    out["exchanges"] = exchanges(rec)
+    return out
+
+
+def gen_request_params():
+    g = Golden("request_params")
+    status = lambda code, body="": (lambda q: (code, body))
+    scenarios = [
+        ("new client", {}, {}, None),
+        ("new client without force_english", {"force_english": False}, {}, None),
+        ("legacy app ID fetches the bundle", {"app_id": "798273057", "secrets": ["unused"]}, {}, None),
+        ("empty app ID fetches the bundle", {"app_id": ""}, {}, None),
+        ("failed bundle keeps the given values", {"app_id": "798273057"}, {"play": lambda path: (500, "down")}, None),
+        ("bundle without a script keeps the given values", {"app_id": "798273057"}, {"play": lambda path: (200, "<html></html>")}, None),
+        ("user/get 401 exits", {}, {"user/get": status(401, '{"status":"error","code":401,"message":"User authentication is required."}')}, None),
+        ("user/get 400 is an empty answer", {}, {"user/get": status(400, '{"status":"error"}')}, None),
+        ("user/get 500 is bypassed", {}, {"user/get": status(500, "oops")}, None),
+        ("user/get 404 is bypassed", {}, {"user/get": status(404, "{}")}, None),
+        ("user/get not JSON is bypassed", {}, {"user/get": status(200, "<html>")}, None),
+        ("user/get with the user nested", {}, {"user/get": status(200, '{"user":{"id":7,"credential":{"parameters":{"short_label":"Sublime"}}}}')}, None),
+        ("user/get with a null user", {}, {"user/get": status(200, '{"user":null}')}, None),
+        ("user/get with a null label", {}, {"user/get": status(200, '{"id":0,"credential":{"parameters":{"short_label":null}}}')}, None),
+        ("user/get with a string credential", {}, {"user/get": status(200, '{"id":5,"credential":"x"}')}, None),
+        ("user/get with a list answer", {}, {"user/get": status(200, '[1]')}, None),
+        ("no token and a short password exits", {"token": "", "pwd": "short"}, {}, None),
+        ("a long password is the token", {"token": "", "pwd": "p" * 61}, {}, None),
+        ("a 60-character password exits", {"token": None, "pwd": "p" * 60}, {}, None),
+        ("token wins over a long password", {"pwd": "p" * 61}, {}, None),
+        ("no working secret keeps the first", {"secrets": [BAD_SECRET, "deadbeef"]}, {}, None),
+        ("no secrets", {"secrets": []}, {}, None),
+        ("an empty first secret that fails", {"secrets": ["", FAKE_SECRET]}, {}, None),
+        ("only an empty secret", {"secrets": [""]}, {}, None),
+        ("the good secret first", {"secrets": [FAKE_SECRET, BAD_SECRET]}, {}, None),
+        ("getFileUrl 500 counts as a failure", {"secrets": [FAKE_SECRET, BAD_SECRET]}, {"track/getFileUrl": status(500, "{}")}, None),
+    ]
+    calls = [
+        ("album/get", ("get_album_meta", "0634904080853")),
+        ("track/get", ("get_track_meta", "20273753")),
+        ("playlist pages", ("get_plist_meta", "2082798")),
+        ("artist pages", ("get_artist_meta", "50782")),
+        ("label pages", ("get_label_meta", "572190")),
+        ("search albums", ("search_albums", "kind of blue")),
+        ("search tracks", ("search_tracks", "so what", 10)),
+        ("search artists", ("search_artists", "miles & co/x")),
+        ("search playlists", ("search_playlists", "jazz été +1")),
+        ("track URL at 5", ("get_track_url", "20273753", 5)),
+        ("track URL at 27", ("get_track_url", "20273753", 27)),
+        ("track URL at 6", ("get_track_url", 20273753, 6)),
+        ("getFileUrl at 4", ("api_call", "track/getFileUrl", {"id": "1", "fmt_id": 4})),
+        ("file/url at 27", ("api_call", "file/url", {"id": "20273753", "fmt_id": 27})),
+        ("file/url at 5", ("api_call", "file/url", {"id": "20273753", "fmt_id": 5})),
+        ("session/start", ("api_call", "session/start", {})),
+        ("user/get", ("api_call", "user/get", {})),
+    ]
+    for name, opts, overrides, call in scenarios:
+        g.case(name, {"client": dict(CLIENT_DEFAULTS, **opts)}, lambda o=opts, ov=overrides: run_client(o, ov, None))
+    for name, call in calls:
+        g.case(f"call: {name}", {"client": CLIENT_DEFAULTS, "call": list(call)}, lambda call=call: run_client({}, {}, call))
+    bad = [
+        ("getFileUrl 400 at 27", {"track/getFileUrl": lambda q: (400, '{"message":"bad"}') if q["track_id"] == "1" else None},
+         ("api_call", "track/getFileUrl", {"id": "1", "fmt_id": 27})),
+        ("getFileUrl 403 at 27", {"track/getFileUrl": lambda q: (403, '{"message":"no"}') if q["track_id"] == "1" else None},
+         ("api_call", "track/getFileUrl", {"id": "1", "fmt_id": 27})),
+        ("track URL at 5 after a 400", {"track/getFileUrl": lambda q: (400, '{"message":"bad"}') if q["track_id"] == "1" else None},
+         ("get_track_url", "1", 5)),
+        ("album/get 404", {"album/get": status(404, '{"status":"error","code":404,"message":"Album not found"}')},
+         ("get_album_meta", "nope")),
+        ("search error", {"catalog/search": status(500, "{}")}, ("search_albums", "kind of blue")),
+    ]
+    for name, overrides, call in bad:
+        g.case(f"call: {name}", {"client": CLIENT_DEFAULTS, "call": list(call)},
+               lambda ov=overrides, call=call: run_client({}, ov, call))
+    for name, pages in multi_meta_scenarios():
+        g.case(f"multi_meta: {name}", {"client": CLIENT_DEFAULTS, "call": ["get_plist_meta", "77"]},
+               lambda pages=pages: run_client({}, {"playlist/get": pager(pages)}, ("get_plist_meta", "77")))
+    g.write()
+
+
+def pager(pages):
+    state = {"i": 0}
+
+    def answer(q):
+        i = state["i"]
+        state["i"] += 1
+        return 200, json.dumps(pages[i])
+
+    return answer
+
+
+def multi_meta_scenarios():
+    def page(off, n, total=None, count=None, extra=None):
+        tracks = {"offset": off, "limit": 50, "items": [{"id": off + i} for i in range(n)]}
+        if total is not None:
+            tracks["total"] = total
+        p = {"id": 77, "name": "P", "tracks": tracks}
+        if count is not None:
+            p["tracks_count"] = count
+        if extra:
+            p.update(extra)
+        return p
+
+    return [
+        ("total reached", [page(0, 50, 120), page(50, 50, 120), page(100, 20, 120)]),
+        ("empty page stops", [page(0, 50, 200), page(50, 0, 200)]),
+        ("first page empty", [page(0, 0, 0)]),
+        ("tracks_count without total", [page(0, 50, None, 60), page(50, 10, None, 60)]),
+        ("neither total nor count", [page(0, 3)]),
+        ("short page below the total", [page(0, 30, 100), page(30, 30, 100), page(60, 40, 100)]),
+        ("float total", [page(0, 2, 2.5), page(2, 1, 2.5)]),
+        ("null items", [{"id": 77, "tracks": {"items": None, "total": 5}}]),
+        ("null tracks", [{"id": 77, "tracks": None}]),
+        ("string total", [page(0, 2, "2")]),
+    ]
+
+
 def main():
+    logging.disable(logging.CRITICAL)
     if pathvalidate.__version__ != "3.3.1":
         sys.exit(f"pathvalidate {pathvalidate.__version__}: the goldens need 3.3.1")
     GOLDEN.mkdir(parents=True, exist_ok=True)
@@ -842,6 +1327,11 @@ def main():
     gen_smart_discography(index, raw)
     gen_release_type(index, raw)
     gen_settings()
+    write_bundle_fixtures()
+    gen_secrets()
+    gen_signatures()
+    gen_session_key()
+    gen_request_params()
 
 
 if __name__ == "__main__":

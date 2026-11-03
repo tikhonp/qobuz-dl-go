@@ -1,0 +1,197 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "derive 0",
+   "input": {
+    "secret": "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c",
+    "infos": "zmg9p9rC15DXBXGdxjhfGg.FDG1Kahw-plfUNPk0MbDfXFieg"
+   },
+   "output": "8a86c5d89a6e7d409220c24e22e4c37c"
+  },
+  {
+   "name": "derive 1",
+   "input": {
+    "secret": "0f9e8d7c6b5a49382716051423324150",
+    "infos": "X_gKIYhWlXbn6MjNMwLgQg.O2ym2U1SjTn0KKbJH8jw03Fieg"
+   },
+   "output": "6cc89cec3332983771d11a955ba847ae"
+  },
+  {
+   "name": "derive 2",
+   "input": {
+    "secret": "",
+    "infos": "52qGBGiz9o39fYv__0VT6g.ZJY87s8YfRQN3bYcEHjx8HFieg"
+   },
+   "output": "d113a5d4a9afa89b6aa62b22ef779272"
+  },
+  {
+   "name": "derive 3",
+   "input": {
+    "secret": "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c",
+    "infos": ".aW5mbw"
+   },
+   "output": "470fb3e8e3593466760141ec9753ec80"
+  },
+  {
+   "name": "derive 4",
+   "input": {
+    "secret": "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c",
+    "infos": "c2FsdA."
+   },
+   "output": "ba798ad378e395ca83977c877f7e8624"
+  },
+  {
+   "name": "derive 5",
+   "input": {
+    "secret": "5e 1f 0c 2a 9b 7d 4e 3f 8a 6c 1b 0d 2e 4f 6a 8c",
+    "infos": "zmg9p9rC15DXBXGdxjhfGg.FDG1Kahw-plfUNPk0MbDfXFieg"
+   },
+   "output": "8a86c5d89a6e7d409220c24e22e4c37c"
+  },
+  {
+   "name": "derive 6",
+   "input": {
+    "secret": "5E1F0C2A9B7D4E3F8A6C1B0D2E4F6A8C",
+    "infos": "zmg9p9rC15DXBXGdxjhfGg.FDG1Kahw-plfUNPk0MbDfXFieg"
+   },
+   "output": "8a86c5d89a6e7d409220c24e22e4c37c"
+  },
+  {
+   "name": "derive 7",
+   "input": {
+    "secret": "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c",
+    "infos": "no-dot"
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "derive 8",
+   "input": {
+    "secret": "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c",
+    "infos": "a.b.c"
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "derive 9",
+   "input": {
+    "secret": "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c",
+    "infos": "QUJDR.QUJD"
+   },
+   "error": "Error"
+  },
+  {
+   "name": "derive 10",
+   "input": {
+    "secret": "5e1",
+    "infos": "zmg9p9rC15DXBXGdxjhfGg.FDG1Kahw-plfUNPk0MbDfXFieg"
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "derive 11",
+   "input": {
+    "secret": "5e 1f0",
+    "infos": "zmg9p9rC15DXBXGdxjhfGg.FDG1Kahw-plfUNPk0MbDfXFieg"
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "derive 12",
+   "input": {
+    "secret": "zz",
+    "infos": "zmg9p9rC15DXBXGdxjhfGg.FDG1Kahw-plfUNPk0MbDfXFieg"
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "unwrap: raw key of 16 bytes",
+   "input": {
+    "session_key": "8a86c5d89a6e7d409220c24e22e4c37c",
+    "key": "qbz-1.esF74P-D1pdm1yYWfRsqMQGb4HsxNxWo1uctgiazZUs.CtAof2_2lO5_qHCidlZWyQ"
+   },
+   "output": "6d88df06b458eb3917234f14d1e1d993"
+  },
+  {
+   "name": "unwrap: raw key of 15 bytes",
+   "input": {
+    "session_key": "8a86c5d89a6e7d409220c24e22e4c37c",
+    "key": "qbz-1.OySxZqRTELsNGIeyXxqhIQ.iM3jFALRI_ypiusf-zch6A"
+   },
+   "output": "c4f406a7b5c1c097d3e31387833e1f"
+  },
+  {
+   "name": "unwrap: raw key of 32 bytes",
+   "input": {
+    "session_key": "8a86c5d89a6e7d409220c24e22e4c37c",
+    "key": "qbz-1.fAqjk662zazLAPIQ1DiSfwzHyYJPKejEAetgi3X1Y8qTlCUEy6wrsl5VAAsDJwwW.-WkDGMhm7AZdU_76Bt_1lQ"
+   },
+   "output": "49a66dcdf43e948da7a1f3b4c91fec09b6d99f1228f4b4d53a51f060798bfa75"
+  },
+  {
+   "name": "unwrap: raw key of 1 bytes",
+   "input": {
+    "session_key": "8a86c5d89a6e7d409220c24e22e4c37c",
+    "key": "qbz-1.FKsNAr0QcTgkgDMnRNie5w.Z9uk2mwM3zVr-LZ-moLU5A"
+   },
+   "output": "c2"
+  },
+  {
+   "name": "unwrap: wrong session key",
+   "input": {
+    "session_key": "6cc89cec3332983771d11a955ba847ae",
+    "key": "qbz-1.esF74P-D1pdm1yYWfRsqMQGb4HsxNxWo1uctgiazZUs.CtAof2_2lO5_qHCidlZWyQ"
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "unwrap: two parts",
+   "input": {
+    "session_key": "8a86c5d89a6e7d409220c24e22e4c37c",
+    "key": "qbz-1.esF74P-D1pdm1yYWfRsqMQGb4HsxNxWo1uctgiazZUs"
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "unwrap: four parts",
+   "input": {
+    "session_key": "8a86c5d89a6e7d409220c24e22e4c37c",
+    "key": "qbz-1.esF74P-D1pdm1yYWfRsqMQGb4HsxNxWo1uctgiazZUs.CtAof2_2lO5_qHCidlZWyQ.x"
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "unwrap: short IV",
+   "input": {
+    "session_key": "8a86c5d89a6e7d409220c24e22e4c37c",
+    "key": "qbz-1.esF74P-D1pdm1yYWfRsqMQGb4HsxNxWo1uctgiazZUs.c2hvcnQ"
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "unwrap: wrapped not a block multiple",
+   "input": {
+    "session_key": "8a86c5d89a6e7d409220c24e22e4c37c",
+    "key": "qbz-1.esF74P-D1pdm1yYWfRsqMQGb4HsxNxWo1uctgiaz.CtAof2_2lO5_qHCidlZWyQ"
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "unwrap: empty wrapped",
+   "input": {
+    "session_key": "8a86c5d89a6e7d409220c24e22e4c37c",
+    "key": "qbz-1..CtAof2_2lO5_qHCidlZWyQ"
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "unwrap: bad base64",
+   "input": {
+    "session_key": "8a86c5d89a6e7d409220c24e22e4c37c",
+    "key": "qbz-1.esF74P-D1pdm1yYWfRsqMQGb4HsxNxWo1uctgiazZUsQ.CtAof2_2lO5_qHCidlZWyQ"
+   },
+   "error": "ValueError"
+  }
+ ]
+}
