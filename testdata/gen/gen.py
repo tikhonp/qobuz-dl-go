@@ -1912,6 +1912,24 @@ def gen_mp3_tagged(index, raw):
     g.write()
 
 
+# --- qobuzdltest ---------------------------------------------------------
+
+
+FAKE_DATA = ROOT / "qobuzdltest" / "testdata"
+FAKE_AUDIO = ["16-44.1.flac", "24-96.flac", "24-192.flac", "320.mp3", "cover.jpg", "booklet.pdf"]
+
+
+def write_fake_fixtures():
+    """Copies the fixtures the fake Qobuz serves next to it, so that the
+    package embeds them and works from another module's cache."""
+    shutil.rmtree(FAKE_DATA, ignore_errors=True)
+    shutil.copytree(FIXTURES / "api", FAKE_DATA / "api")
+    shutil.copytree(FIXTURES / "bundle", FAKE_DATA / "bundle")
+    (FAKE_DATA / "audio").mkdir()
+    for name in FAKE_AUDIO:
+        shutil.copyfile(AUDIO / name, FAKE_DATA / "audio" / name)
+
+
 def main():
     logging.disable(logging.CRITICAL)
     if pathvalidate.__version__ != "3.3.1":
@@ -1954,6 +1972,7 @@ def main():
     gen_disc_track_total(index, raw)
     gen_flac_tagged(index, raw)
     gen_mp3_tagged(index, raw)
+    write_fake_fixtures()
 
 
 if __name__ == "__main__":

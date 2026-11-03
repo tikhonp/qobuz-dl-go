@@ -1,0 +1,15 @@
+{
+ "track_id": 72775583,
+ "duration": 135,
+ "url": "{{CDN}}/file/72775583/7",
+ "format_id": 6,
+ "mime_type": "audio/flac",
+ "restrictions": [
+  {
+   "code": "FormatRestrictedByFormatAvailability"
+  }
+ ],
+ "sampling_rate": 44.1,
+ "bit_depth": 16,
+ "blob": "{{BLOB}}"
+}

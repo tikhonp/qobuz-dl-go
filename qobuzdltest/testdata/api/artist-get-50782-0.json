@@ -1,0 +1,628 @@
+{
+ "id": 50782,
+ "name": "Tord Gustavsen Trio",
+ "albums_as_primary_artist_count": 8,
+ "albums_as_primary_composer_count": 0,
+ "albums_count": 8,
+ "slug": "tord-gustavsen-trio",
+ "picture": null,
+ "image": {
+  "small": "https://static.qobuz.com/images/artists/covers/small/03fcf51c7f9cb77ca1fb0ee82bfea876.jpg",
+  "medium": "https://static.qobuz.com/images/artists/covers/medium/03fcf51c7f9cb77ca1fb0ee82bfea876.jpg",
+  "large": "https://static.qobuz.com/images/artists/covers/large/03fcf51c7f9cb77ca1fb0ee82bfea876.jpg",
+  "extralarge": "https://static.qobuz.com/images/artists/covers/large/03fcf51c7f9cb77ca1fb0ee82bfea876.jpg",
+  "mega": "https://static.qobuz.com/images/artists/covers/large/03fcf51c7f9cb77ca1fb0ee82bfea876.jpg"
+ },
+ "similar_artist_ids": [
+  4207,
+  38612,
+  41321,
+  53554,
+  54770,
+  373409,
+  652549,
+  784386,
+  1069606,
+  43343,
+  50852,
+  51039,
+  6162062
+ ],
+ "information": null,
+ "biography": {
+  "summary": "<p style=\"font-weight: 400;\">Pianist and composer Tord Gustavsen was born in Oslo, Norway on October 5, 1970. He studied jazz at the Trondheim Conservatory (1993-1996) and musicology at the University of Oslo, where he taught piano and music theory from 1998 to 2002. <br /><br />After accompanying singer Siri Gjære in the duo Aire & Angels, the pianist formed the Tord Gustavsen Trio in 2001 with Harald Johnsen (double bass) and Jarle Vespestad (drums). Their first sessions, s...</p>",
+  "content": "<p style=\"font-weight: 400;\">Pianist and composer Tord Gustavsen was born in Oslo, Norway on October 5, 1970. He studied jazz at the Trondheim Conservatory (1993-1996) and musicology at the University of Oslo, where he taught piano and music theory from 1998 to 2002. <br /><br />After accompanying singer Siri Gjære in the duo Aire & Angels, the pianist formed the Tord Gustavsen Trio in 2001 with Harald Johnsen (double bass) and Jarle Vespestad (drums). Their first sessions, supervised by Manfred Eicher on behalf of the ECM label, lead to the album Changing Places (2003). That debut was followed by The Ground (2005) and Being There (2007). The pianist also collaborated with several artists including the Nymark Collective, Silje Nergaard, Carl Petter Opsahl. He then founded the Tord Gustavsen Ensemble (2009) and the Tord Gustavsen Quartet (2012-2014) expanding the textures of his music without leaving the basic minimalism and lyricism. <br /><br />In 2016, an alternative trio formation including Afghan-German singer Simin Tander, drummer Jarle Vespestad and Tord on piano and electronics/synth bass released the album What was said performing ancient Norwegian hymns re-interpreted as Sufi poems and sung in the Afghan language Pashto. Tord also performs with, among others, Iranian singer Mahsa Vahdat, Norwegian singers Solveig Slettahjell and Kim Rysstad, trumpeter Arve Henriksen, the Oslo Cathedral Choir, the choir SKRUK, and The Norwegian Girls’ Choir.<br /><br />Then, it was again time for the 'classic' trio formation. Tord recorded the comeback album The Other Side (2018), with Jarle Vespestad and bass player Sigurd Hole, followed four years later by Opening (2022), now with bassist Steinar Raknes. A trilogy of recent trio albums is completed in 2024 with the release of 'Seeing', also featuring Steinar Raknes on Bass and Jarle Vespestad on drums.</p>",
+  "source": "Qobuz",
+  "language": "en"
+ },
+ "albums": {
+  "total": 8,
+  "offset": 0,
+  "limit": 50,
+  "items": [
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/72/39/0004400163972_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/72/39/0004400163972_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/72/39/0004400163972_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Tord Gustavsen",
+     "id": 652549,
+     "albums_count": 33,
+     "slug": "tord-gustavsen",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 50782,
+      "name": "Tord Gustavsen Trio",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0004400163972",
+    "released_at": 1047337200,
+    "label": {
+     "name": "ECM Records",
+     "id": 92473,
+     "albums_count": 1991,
+     "supplier_id": 1,
+     "slug": "ecm"
+    },
+    "title": "Changing Places",
+    "qobuz_id": 4249390,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/changing-places-tord-gustavsen-trio/0004400163972",
+    "slug": "changing-places-tord-gustavsen-trio",
+    "duration": 3902,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 13,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "0004400163972",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2003-03-11",
+    "release_date_download": "2003-03-11",
+    "release_date_stream": "2003-03-11",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1780527600,
+    "streamable_at": 1780527600,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 24,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/pc/97/nlskqpkeh97pc_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/pc/97/nlskqpkeh97pc_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/pc/97/nlskqpkeh97pc_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Tord Gustavsen Trio",
+     "id": 50782,
+     "albums_count": 8,
+     "slug": "tord-gustavsen-trio",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 50782,
+      "name": "Tord Gustavsen Trio",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0602445402458",
+    "released_at": 1649368800,
+    "label": {
+     "name": "ECM Records",
+     "id": 92473,
+     "albums_count": 1991,
+     "supplier_id": 1,
+     "slug": "ecm"
+    },
+    "title": "Opening",
+    "qobuz_id": 148290679,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/opening-tord-gustavsen-trio/nlskqpkeh97pc",
+    "slug": "opening-tord-gustavsen-trio",
+    "duration": 2916,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 12,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "nlskqpkeh97pc",
+    "maximum_sampling_rate": 96,
+    "articles": [],
+    "release_date_original": "2022-04-08",
+    "release_date_download": "2022-04-08",
+    "release_date_stream": "2022-04-08",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1793491200,
+    "streamable_at": 1792537200,
+    "hires": true,
+    "hires_streamable": true,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 24,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/8b/72/u97iv4sb9728b_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/8b/72/u97iv4sb9728b_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/8b/72/u97iv4sb9728b_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Tord Gustavsen",
+     "id": 652549,
+     "albums_count": 33,
+     "slug": "tord-gustavsen",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 50782,
+      "name": "Tord Gustavsen Trio",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0602567516217",
+    "released_at": 1535666400,
+    "label": {
+     "name": "ECM Records",
+     "id": 92473,
+     "albums_count": 1991,
+     "supplier_id": 1,
+     "slug": "ecm"
+    },
+    "title": "The Other Side",
+    "qobuz_id": 51691809,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/the-other-side-tord-gustavsen-trio/u97iv4sb9728b",
+    "slug": "the-other-side-tord-gustavsen-trio",
+    "duration": 3209,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 12,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "u97iv4sb9728b",
+    "maximum_sampling_rate": 96,
+    "articles": [],
+    "release_date_original": "2018-08-31",
+    "release_date_download": "2018-08-31",
+    "release_date_stream": "2018-08-31",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1791414000,
+    "streamable_at": 1791414000,
+    "hires": true,
+    "hires_streamable": true,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 24,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/34/00/0060254710034_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/34/00/0060254710034_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/34/00/0060254710034_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Tord Gustavsen",
+     "id": 652549,
+     "albums_count": 33,
+     "slug": "tord-gustavsen",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 50782,
+      "name": "Tord Gustavsen Trio",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0060254710034",
+    "released_at": 1107126000,
+    "label": {
+     "name": "ECM Records",
+     "id": 92473,
+     "albums_count": 1991,
+     "supplier_id": 1,
+     "slug": "ecm"
+    },
+    "title": "The Ground",
+    "qobuz_id": 29928638,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/the-ground-tord-gustavsen-trio/0060254710034",
+    "slug": "the-ground-tord-gustavsen-trio",
+    "duration": 3601,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 12,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "0060254710034",
+    "maximum_sampling_rate": 96,
+    "articles": [],
+    "release_date_original": "2005-01-31",
+    "release_date_download": "2005-01-31",
+    "release_date_stream": "2005-01-31",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1793491200,
+    "streamable_at": 1792537200,
+    "hires": true,
+    "hires_streamable": true,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 24,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/mb/qa/p6ghexbviqamb_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/mb/qa/p6ghexbviqamb_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/mb/qa/p6ghexbviqamb_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Tord Gustavsen Trio",
+     "id": 50782,
+     "albums_count": 8,
+     "slug": "tord-gustavsen-trio",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 50782,
+      "name": "Tord Gustavsen Trio",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0602465168815",
+    "released_at": 1726783200,
+    "label": {
+     "name": "ECM Records",
+     "id": 92473,
+     "albums_count": 1991,
+     "supplier_id": 1,
+     "slug": "ecm"
+    },
+    "title": "Seeing",
+    "qobuz_id": 278643334,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/seeing-tord-gustavsen-trio/p6ghexbviqamb",
+    "slug": "seeing-tord-gustavsen-trio",
+    "duration": 2633,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 10,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "p6ghexbviqamb",
+    "maximum_sampling_rate": 88.2,
+    "articles": [],
+    "release_date_original": "2024-09-20",
+    "release_date_download": "2024-09-20",
+    "release_date_stream": "2024-09-20",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1793491200,
+    "streamable_at": 1792537200,
+    "hires": true,
+    "hires_streamable": true,
+    "ai_generated": false
+   },
+   {
+    "maximum_bit_depth": 24,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/47/00/0060254710047_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/47/00/0060254710047_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/47/00/0060254710047_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Tord Gustavsen",
+     "id": 652549,
+     "albums_count": 33,
+     "slug": "tord-gustavsen",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 50782,
+      "name": "Tord Gustavsen Trio",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0060254710047",
+    "released_at": 1177020000,
+    "label": {
+     "name": "ECM Records",
+     "id": 92473,
+     "albums_count": 1991,
+     "supplier_id": 1,
+     "slug": "ecm"
+    },
+    "title": "Being There",
+    "qobuz_id": 29930929,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/being-there-tord-gustavsen-trio/0060254710047",
+    "slug": "being-there-tord-gustavsen-trio",
+    "duration": 3566,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 13,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "0060254710047",
+    "maximum_sampling_rate": 96,
+    "articles": [],
+    "release_date_original": "2007-04-20",
+    "release_date_download": "2007-04-20",
+    "release_date_stream": "2007-04-20",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1785366000,
+    "streamable_at": 1785366000,
+    "hires": true,
+    "hires_streamable": true,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/fc/st/o6o3s9qcrstfc_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/fc/st/o6o3s9qcrstfc_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/fc/st/o6o3s9qcrstfc_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Tord Gustavsen",
+     "id": 652549,
+     "albums_count": 33,
+     "slug": "tord-gustavsen",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 50782,
+      "name": "Tord Gustavsen Trio",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0602567867746",
+    "released_at": 1533247200,
+    "label": {
+     "name": "ECM Records",
+     "id": 92473,
+     "albums_count": 1991,
+     "supplier_id": 1,
+     "slug": "ecm"
+    },
+    "title": "The Tunnel",
+    "qobuz_id": 51987493,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/the-tunnel-tord-gustavsen-trio/o6o3s9qcrstfc",
+    "slug": "the-tunnel-tord-gustavsen-trio",
+    "duration": 363,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 1,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "o6o3s9qcrstfc",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2018-08-03",
+    "release_date_download": "2018-08-03",
+    "release_date_stream": "2018-08-03",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1782428400,
+    "streamable_at": 1782514800,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/ex/ae/m56th8dvkaeex_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/ex/ae/m56th8dvkaeex_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/ex/ae/m56th8dvkaeex_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Bobo Stenson",
+     "id": 35327,
+     "albums_count": 22,
+     "slug": "bobo-stenson",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 35327,
+      "name": "Bobo Stenson",
+      "roles": [
+       "main-artist"
+      ]
+     },
+     {
+      "id": 50782,
+      "name": "Tord Gustavsen Trio",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0881061202592",
+    "released_at": 1782511200,
+    "label": {
+     "name": "UME - Global Clearing House",
+     "id": 3473966,
+     "albums_count": 53885,
+     "supplier_id": 1,
+     "slug": "ume-global-clearing-house"
+    },
+    "title": "Jazz For Studying",
+    "qobuz_id": 430200939,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/jazz-for-studying-bobo-stenson-tord-gustavsen-trio/m56th8dvkaeex",
+    "slug": "jazz-for-studying-bobo-stenson-tord-gustavsen-trio",
+    "duration": 11392,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 35,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "m56th8dvkaeex",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2026-06-27",
+    "release_date_download": "2026-06-27",
+    "release_date_stream": "2026-06-27",
+    "purchasable": false,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": false,
+    "displayable": true,
+    "purchasable_at": null,
+    "streamable_at": 1788649200,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": false
+   }
+  ]
+ }
+}

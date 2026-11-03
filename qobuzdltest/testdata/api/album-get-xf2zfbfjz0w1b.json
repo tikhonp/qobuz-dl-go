@@ -1,0 +1,339 @@
+{
+ "maximum_bit_depth": 24,
+ "image": {
+  "small": "https://static.qobuz.com/images/covers/1b/0w/xf2zfbfjz0w1b_230.jpg",
+  "thumbnail": "https://static.qobuz.com/images/covers/1b/0w/xf2zfbfjz0w1b_50.jpg",
+  "large": "https://static.qobuz.com/images/covers/1b/0w/xf2zfbfjz0w1b_600.jpg",
+  "back": null
+ },
+ "media_count": 2,
+ "artist": {
+  "image": null,
+  "name": "Budapest Festival Orchestra",
+  "id": 37552,
+  "albums_count": 49,
+  "slug": "budapest-festival-orchestra",
+  "picture": null
+ },
+ "artists": [
+  {
+   "id": 37552,
+   "name": "Budapest Festival Orchestra",
+   "roles": [
+    "main-artist",
+    "orchestra"
+   ]
+  },
+  {
+   "id": 32425,
+   "name": "Iván Fischer",
+   "roles": [
+    "main-artist",
+    "conductor"
+   ]
+  }
+ ],
+ "upc": "0723385235064",
+ "released_at": 1136070000,
+ "label": {
+  "name": "Channel Classics",
+  "id": 4246334,
+  "albums_count": 528,
+  "supplier_id": 129,
+  "slug": "channel-classics"
+ },
+ "title": "Mahler: Symphony No. 2",
+ "qobuz_id": 200786708,
+ "version": null,
+ "url": "https://www.qobuz.com/fr-fr/album/mahler-symphony-no-2-budapest-festival-orchestra-and-ivan-fischer/xf2zfbfjz0w1b",
+ "slug": "mahler-symphony-no-2-budapest-festival-orchestra-and-ivan-fischer",
+ "duration": 4938,
+ "parental_warning": false,
+ "popularity": 0,
+ "tracks_count": 5,
+ "genre": {
+  "path": [
+   10
+  ],
+  "color": "#0070ef",
+  "name": "Classical",
+  "id": 10,
+  "slug": "classique"
+ },
+ "maximum_channel_count": 2,
+ "id": "xf2zfbfjz0w1b",
+ "maximum_sampling_rate": 192,
+ "articles": [],
+ "release_date_original": "2006-01-01",
+ "release_date_download": "2006-01-01",
+ "release_date_stream": "2006-01-01",
+ "purchasable": true,
+ "streamable": true,
+ "previewable": true,
+ "sampleable": true,
+ "downloadable": true,
+ "displayable": true,
+ "purchasable_at": 1784502000,
+ "streamable_at": 1784502000,
+ "hires": true,
+ "hires_streamable": true,
+ "ai_generated": null,
+ "awards": [],
+ "description": "'Resurrection' (1894) is a gigantic work of enormous proportions, extreme contrasts, and a score that surpasses even his First Symphony from two years earlier. Ten horns, eight trumpets, two harps, organ, five percussionists, two vocal soloists (soprano and alto), as well as a large mixed chorus, fill the podium. And behind all this, invisible, is a 'Fernorchester' (distant orchestra) as a symbol of 'the resurrection'. The work lasts for some 80 to 85 minutes, twice as long as Brahms's Fourth or the Franck and D'Indy symphonies of the same period. And relative to a Haydn or Mozart symphony, there is a tripling in size. Only Bruckner approaches it in the length department with his Fifth and Eighth, each lasting about 75 minutes. But then Mahler, in this symphony, is dealing with the themes of life, death, and resurrection, and he took whatever space he felt that he needed. There is a strangely sharp contrast between the untroubled key of C major and the dark and turbulent contents of the work. It has been suggested that the theme of life, death, and resurrection was borne in on Mahler on the occasion of the funeral of the great conductor Hans von Bülow in 1894. In any case, the words of Klopstock that were read on that occasion are the same ones that Mahler used that year for the apotheosis (last movement) of his Second Symphony: “Aufersteh'n, ja aufersteh'n wirst du, mein Staub, nach kurzer Ruh unsterblich Leben wird der dich rief gegeben.” (Thou shalt arise, yes, arise, my dust, after a brief slumber, thou shalt be called to immortal life). And Mahler expanded the text further with his own words: “O glaube, mein Herz. Es geht dir nichts verloren. Dein ist was du gesehnt. Dein, was du geliebt, was du gestritten. O glaube: Du wardst nicht umsonst geboren. Hast nicht umsonst gelebt, gelitten.” (O have faith, my heart. Nothing shall be lost to thee. What thou hast longed for is thine. Thine remains, what thou hast loved, what thou hast battled for. O have faith: thou wast not born for nothing. Thou hast not suffered in vain.) From liner notes (Clemns Romijn)",
+ "description_language": "en",
+ "goodies": [
+  {
+   "id": 156455,
+   "file_format_id": 21,
+   "name": "Livret Numérique",
+   "description": "Budapest Festival Orchestra and Iván Fischer - Mahler: Symphony No. 2",
+   "url": "https://static.qobuz.com/goodies/55/000156455.pdf",
+   "original_url": "https://static.qobuz.com/goodies/55/000156455.pdf"
+  }
+ ],
+ "area": null,
+ "catchline": "",
+ "composer": {
+  "id": 437,
+  "name": "Gustav Mahler",
+  "slug": "gustav-mahler",
+  "albums_count": 3780,
+  "picture": null,
+  "image": null
+ },
+ "created_at": 0,
+ "genres_list": [
+  "Classique"
+ ],
+ "period": null,
+ "copyright": "2006 Channel Classics Records 2006 Channel Classics Records",
+ "is_official": true,
+ "maximum_technical_specifications": "24 bits / 192.0 kHz - Stereo",
+ "product_sales_factors_monthly": 0,
+ "product_sales_factors_weekly": 0,
+ "product_sales_factors_yearly": 0,
+ "product_type": "single",
+ "product_url": "/fr-fr/album/mahler-symphony-no-2-budapest-festival-orchestra-and-ivan-fischer/xf2zfbfjz0w1b",
+ "recording_information": "",
+ "relative_url": "/album/mahler-symphony-no-2-budapest-festival-orchestra-and-ivan-fischer/xf2zfbfjz0w1b",
+ "release_tags": [],
+ "release_type": "album",
+ "subtitle": "Budapest Festival Orchestra and Iván Fischer",
+ "tracks": {
+  "offset": 0,
+  "limit": 500,
+  "total": 5,
+  "items": [
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "2006 Channel Classics Records 2006 Channel Classics Records",
+    "performers": "Gustav Mahler, Composer - Copyright Control, MusicPublisher - Ivan Fischer, Conductor, MainArtist - Budapest Festival Orchestra, Orchestra, MainArtist",
+    "audio_info": {
+     "replaygain_track_peak": 0.926331,
+     "replaygain_track_gain": -0.34
+    },
+    "performer": {
+     "name": "Budapest Festival Orchestra",
+     "id": 37552
+    },
+    "work": "Symphony No. 2 \"Resurrection\"",
+    "composer": {
+     "name": "Gustav Mahler",
+     "id": 437
+    },
+    "isrc": "NLA460810033",
+    "title": "I. Allegro maestoso",
+    "version": null,
+    "duration": 1306,
+    "parental_warning": false,
+    "track_number": 1,
+    "maximum_channel_count": 2,
+    "id": 200786709,
+    "media_number": 1,
+    "maximum_sampling_rate": 192,
+    "release_date_original": "2006-01-01",
+    "release_date_download": "2006-01-01",
+    "release_date_stream": "2006-01-01",
+    "release_date_purchase": "2006-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1784502000,
+    "streamable_at": 1784502000,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "2006 Channel Classics Records 2006 Channel Classics Records",
+    "performers": "Gustav Mahler, Composer - Copyright Control, MusicPublisher - Ivan Fischer, Conductor, MainArtist - Budapest Festival Orchestra, Orchestra, MainArtist",
+    "audio_info": {
+     "replaygain_track_peak": 0.299652,
+     "replaygain_track_gain": 9.47
+    },
+    "performer": {
+     "name": "Budapest Festival Orchestra",
+     "id": 37552
+    },
+    "work": "Symphony No. 2 \"Resurrection\"",
+    "composer": {
+     "name": "Gustav Mahler",
+     "id": 437
+    },
+    "isrc": "NLA460810034",
+    "title": "II. Andante moderato",
+    "version": null,
+    "duration": 602,
+    "parental_warning": false,
+    "track_number": 2,
+    "maximum_channel_count": 2,
+    "id": 200786710,
+    "media_number": 1,
+    "maximum_sampling_rate": 192,
+    "release_date_original": "2006-01-01",
+    "release_date_download": "2006-01-01",
+    "release_date_stream": "2006-01-01",
+    "release_date_purchase": "2006-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1784502000,
+    "streamable_at": 1784502000,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "2006 Channel Classics Records 2006 Channel Classics Records",
+    "performers": "Gustav Mahler, Composer - Copyright Control, MusicPublisher - Ivan Fischer, Conductor, MainArtist - Budapest Festival Orchestra, Orchestra, MainArtist",
+    "audio_info": {
+     "replaygain_track_peak": 0.861572,
+     "replaygain_track_gain": 0.29
+    },
+    "performer": {
+     "name": "Budapest Festival Orchestra",
+     "id": 37552
+    },
+    "work": "Symphony No. 2 \"Resurrection\"",
+    "composer": {
+     "name": "Gustav Mahler",
+     "id": 437
+    },
+    "isrc": "NLA460810035",
+    "title": "III. In ruhig fliessender Bewegung",
+    "version": null,
+    "duration": 678,
+    "parental_warning": false,
+    "track_number": 1,
+    "maximum_channel_count": 2,
+    "id": 200786711,
+    "media_number": 2,
+    "maximum_sampling_rate": 192,
+    "release_date_original": "2006-01-01",
+    "release_date_download": "2006-01-01",
+    "release_date_stream": "2006-01-01",
+    "release_date_purchase": "2006-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1784502000,
+    "streamable_at": 1784502000,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "2006 Channel Classics Records 2006 Channel Classics Records",
+    "performers": "Gustav Mahler, Composer - Copyright Control, MusicPublisher - Birgit Remmert, MainArtist - Ivan Fischer, Conductor, MainArtist - Friedrich Gottlieb Klopstock, Lyricist - Budapest Festival Orchestra, Orchestra, MainArtist",
+    "audio_info": {
+     "replaygain_track_peak": 0.116119,
+     "replaygain_track_gain": 17.7
+    },
+    "performer": {
+     "name": "Budapest Festival Orchestra",
+     "id": 37552
+    },
+    "work": "Symphony No. 2 \"Resurrection\"",
+    "composer": {
+     "name": "Gustav Mahler",
+     "id": 437
+    },
+    "isrc": "NLA460810036",
+    "title": "IV. Urlicht, \"Der Mensch liegt in grösster Not\". Sehr feierlich, aber schlicht (Contralto)",
+    "version": null,
+    "duration": 292,
+    "parental_warning": false,
+    "track_number": 2,
+    "maximum_channel_count": 2,
+    "id": 200786712,
+    "media_number": 2,
+    "maximum_sampling_rate": 192,
+    "release_date_original": "2006-01-01",
+    "release_date_download": "2006-01-01",
+    "release_date_stream": "2006-01-01",
+    "release_date_purchase": "2006-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1784502000,
+    "streamable_at": 1784502000,
+    "hires": true,
+    "hires_streamable": true
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "2006 Channel Classics Records 2006 Channel Classics Records",
+    "performers": "Gustav Mahler, Composer, Lyricist - Copyright Control, MusicPublisher - Birgit Remmert, MainArtist - Ivan Fischer, Conductor, MainArtist - Budapest Festival Orchestra, Orchestra, MainArtist - Lisa Milne, MainArtist - Hungarian Radio Choir, MainArtist",
+    "audio_info": {
+     "replaygain_track_peak": 0.981079,
+     "replaygain_track_gain": -0.83
+    },
+    "performer": {
+     "name": "Budapest Festival Orchestra",
+     "id": 37552
+    },
+    "work": "Symphony No. 2 \"Resurrection\"",
+    "composer": {
+     "name": "Gustav Mahler",
+     "id": 437
+    },
+    "isrc": "NLA460810037",
+    "title": "V. Im Tempo des Scherzos - Langsam. Misterioso, \"Aufersteh'n\" (Chorus, Soprano) - Etwas bewegter, \" O glaube, mein Herz … Aufersteh'n\" (Alto, Soprano, Chorus)",
+    "version": null,
+    "duration": 2060,
+    "parental_warning": false,
+    "track_number": 3,
+    "maximum_channel_count": 2,
+    "id": 200786713,
+    "media_number": 2,
+    "maximum_sampling_rate": 192,
+    "release_date_original": "2006-01-01",
+    "release_date_download": "2006-01-01",
+    "release_date_stream": "2006-01-01",
+    "release_date_purchase": "2006-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1784502000,
+    "streamable_at": 1784502000,
+    "hires": true,
+    "hires_streamable": true
+   }
+  ]
+ }
+}

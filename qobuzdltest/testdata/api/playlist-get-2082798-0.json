@@ -1,0 +1,1147 @@
+{
+ "id": 2082798,
+ "name": "Top 10 Operas",
+ "description": "In the vast world of opera, it’s almost impossible to come up with a credible 'top 10' list for the best operas, so this is more of a newcomer's starter-pack. Read the reviews here: https://www.gramophone.co.uk/feature/top-10-operas",
+ "tracks_count": 10,
+ "users_count": 46,
+ "duration": 3375,
+ "public_at": 1548802800,
+ "created_at": 1548859093,
+ "updated_at": 1773954733,
+ "is_public": true,
+ "is_collaborative": false,
+ "owner": {
+  "id": 326324,
+  "name": "gramophonemagazine"
+ },
+ "slug": "top-10-operas",
+ "genres": [
+  {
+   "id": 10,
+   "name": "Classical",
+   "path": [
+    10
+   ],
+   "slug": "classique",
+   "color": "#0070ef",
+   "percent": 50
+  }
+ ],
+ "images": [
+  "https://static.qobuz.com/images/covers/yc/pg/i70w88mjhpgyc_50.jpg",
+  "https://static.qobuz.com/images/covers/00/66/0002894776600_50.jpg",
+  "https://static.qobuz.com/images/covers/16/43/0825646254316_50.jpg",
+  "https://static.qobuz.com/images/covers/51/25/0002894782551_50.jpg"
+ ],
+ "is_featured": true,
+ "stores": [
+  "GB-en",
+  "IE-en"
+ ],
+ "tags": [
+  {
+   "featured_tag_id": "20",
+   "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+   "slug": "focus",
+   "genre_tag": null,
+   "is_discover": true,
+   "color": ""
+  },
+  {
+   "featured_tag_id": "13",
+   "name_json": "{\"fr\":\"Classique\",\"en\":\"Classical\",\"de\":\"Klassik\",\"it\":\"Musica classica\",\"nl\":\"Classical\",\"es\":\"Cl\\u00e1sica\",\"pt\":\"Cl\\u00e1ssico\"}",
+   "slug": "classical",
+   "genre_tag": {
+    "genre_id": "10",
+    "name": "Classique"
+   },
+   "is_discover": false,
+   "color": ""
+  }
+ ],
+ "image_rectangle": [
+  "https://static.qobuz.com/images/playlists/2082798_19b3f2360fa0cc092575c6807e8c555d_rectangle.jpg"
+ ],
+ "image_rectangle_mini": [
+  "https://static.qobuz.com/images/playlists/2082798_19b3f2360fa0cc092575c6807e8c555d_rectangle_mini.jpg"
+ ],
+ "featured_artists": [],
+ "timestamp_position": 1552604400,
+ "images150": [
+  "https://static.qobuz.com/images/covers/yc/pg/i70w88mjhpgyc_150.jpg",
+  "https://static.qobuz.com/images/covers/00/66/0002894776600_150.jpg",
+  "https://static.qobuz.com/images/covers/16/43/0825646254316_150.jpg",
+  "https://static.qobuz.com/images/covers/51/25/0002894782551_150.jpg"
+ ],
+ "images300": [
+  "https://static.qobuz.com/images/covers/yc/pg/i70w88mjhpgyc_300.jpg",
+  "https://static.qobuz.com/images/covers/00/66/0002894776600_300.jpg",
+  "https://static.qobuz.com/images/covers/16/43/0825646254316_300.jpg",
+  "https://static.qobuz.com/images/covers/51/25/0002894782551_300.jpg"
+ ],
+ "tracks": {
+  "offset": 0,
+  "limit": 50,
+  "total": 10,
+  "items": [
+   {
+    "maximum_bit_depth": 16,
+    "copyright": "2004 harmonia mundi s.a. 2004 harmonia mundi s.a.",
+    "performers": "Wolfgang Amadeus Mozart, Composer - Veronique Gens, MainArtist - Concerto Koln, Orchestra, MainArtist - René Jacobs, Conductor, MainArtist",
+    "audio_info": {
+     "replaygain_track_peak": 0.728455,
+     "replaygain_track_gain": 1.75
+    },
+    "performer": {
+     "name": "Véronique Gens",
+     "id": 26416
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/yc/pg/i70w88mjhpgyc_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/yc/pg/i70w88mjhpgyc_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/yc/pg/i70w88mjhpgyc_600.jpg"
+     },
+     "maximum_bit_depth": 16,
+     "media_count": 3,
+     "artist": {
+      "image": null,
+      "name": "René Jacobs",
+      "id": 32290,
+      "albums_count": 107,
+      "slug": "rene-jacobs",
+      "picture": null
+     },
+     "upc": "5414939984365",
+     "released_at": 1185832800,
+     "label": {
+      "name": "harmonia mundi",
+      "id": 1319264,
+      "albums_count": 1278,
+      "supplier_id": 30,
+      "slug": "harmonia-mundi-5"
+     },
+     "title": "Mozart: Le nozze di Figaro",
+     "qobuz_id": 302412941,
+     "version": null,
+     "duration": 10293,
+     "parental_warning": false,
+     "tracks_count": 62,
+     "genre": {
+      "path": [
+       10
+      ],
+      "name": "Classical",
+      "id": 10,
+      "slug": "classique",
+      "color": "#0070ef"
+     },
+     "maximum_channel_count": 2,
+     "id": "i70w88mjhpgyc",
+     "maximum_sampling_rate": 44.1,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1784070000,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2007-07-31",
+     "release_date_download": "2007-07-31",
+     "release_date_stream": "2007-07-31",
+     "release_date_purchase": "2007-07-31",
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo ",
+     "popularity": 0
+    },
+    "work": "Le nozze di Figaro, K. 492, Atto II Scena 1",
+    "composer": {
+     "name": "Wolfgang Amadeus Mozart",
+     "id": 488
+    },
+    "isrc": "FRZ140309010",
+    "title": "No. 11, Cavatina. Porgi, amor (La Contessa)",
+    "version": null,
+    "duration": 206,
+    "parental_warning": false,
+    "track_number": 1,
+    "maximum_channel_count": 2,
+    "id": 302412962,
+    "media_number": 2,
+    "maximum_sampling_rate": 44.1,
+    "release_date_original": "2007-07-31",
+    "release_date_download": "2007-07-31",
+    "release_date_stream": "2007-07-31",
+    "release_date_purchase": "2007-07-31",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1784070000,
+    "streamable_at": 1784070000,
+    "hires": false,
+    "hires_streamable": false,
+    "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo ",
+    "position": 1,
+    "created_at": 1548859093,
+    "playlist_track_id": 128242643
+   },
+   {
+    "maximum_bit_depth": 16,
+    "copyright": "℗ 2008 Deutsche Grammophon GmbH, Berlin",
+    "performers": "Anna Netrebko, MainArtist, SopranoVocalist - Symphonieorchester des Bayerischen Rundfunks, MainArtist, Orchestra - Bertrand de Billy, MainArtist, Conductor - Christopher Alder, Producer, DigitalEditingEngineer - Ute Fesquet, Producer - Wilhelm Meister, Producer - Rainer Maillard, BalanceEngineer - Peter Urban, BalanceEngineer - Monica Graul, RecordingEngineer - Giacomo Puccini, Composer - Giuseppe Giacosa, Lyricist - Luigi Illica, Lyricist",
+    "audio_info": {
+     "replaygain_track_peak": 0.99527,
+     "replaygain_track_gain": -0.96
+    },
+    "performer": {
+     "name": "Bertrand de Billy",
+     "id": 245580
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/00/66/0002894776600_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/00/66/0002894776600_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/00/66/0002894776600_600.jpg"
+     },
+     "maximum_bit_depth": 16,
+     "media_count": 2,
+     "artist": {
+      "image": null,
+      "name": "Anna Netrebko",
+      "id": 37401,
+      "albums_count": 112,
+      "slug": "anna-netrebko",
+      "picture": null
+     },
+     "upc": "0002894776600",
+     "released_at": 1199142000,
+     "label": {
+      "name": "Deutsche Grammophon (DG)",
+      "id": 80905,
+      "albums_count": 9726,
+      "supplier_id": 1,
+      "slug": "deutsche-grammophon"
+     },
+     "title": "Giacomo Puccini : La Bohème",
+     "qobuz_id": 3213450,
+     "version": null,
+     "duration": 6296,
+     "parental_warning": false,
+     "tracks_count": 34,
+     "genre": {
+      "path": [
+       10
+      ],
+      "name": "Classical",
+      "id": 10,
+      "slug": "classique",
+      "color": "#0070ef"
+     },
+     "maximum_channel_count": 2,
+     "id": "0002894776600",
+     "maximum_sampling_rate": 44.1,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1784156400,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2008-01-01",
+     "release_date_download": "2008-01-01",
+     "release_date_stream": "2008-01-01",
+     "release_date_purchase": "2008-01-01",
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo ",
+     "popularity": 0
+    },
+    "work": "La Bohème / Act 1",
+    "composer": {
+     "name": "Giacomo Puccini",
+     "id": 540
+    },
+    "isrc": "DEN960730309",
+    "title": "Puccini: La Bohème / Act 1: \"Sì. Mi chiamano Mimì\"",
+    "version": "Live",
+    "duration": 318,
+    "parental_warning": false,
+    "track_number": 9,
+    "maximum_channel_count": 2,
+    "id": 611905,
+    "media_number": 1,
+    "maximum_sampling_rate": 44.1,
+    "release_date_original": "2008-01-01",
+    "release_date_download": "2008-01-01",
+    "release_date_stream": "2008-01-01",
+    "release_date_purchase": "2008-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1784156400,
+    "streamable_at": 1784156400,
+    "hires": false,
+    "hires_streamable": false,
+    "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo ",
+    "position": 2,
+    "created_at": 1548859093,
+    "playlist_track_id": 128242644
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "© 1953 Warner Classics, Warner Music UK Ltd. Digital remastering (p) 2014 Warner Classics, Warner Music UK Ltd. A Warner Music Group Company 1997 ℗ 1953 Warner Classics, Warner Music UK Ltd. Digital remastering (p) 2014 Warner Classics, Warner Music UK Ltd",
+    "performers": "Orchestra Del Teatro Alla Scala, Milano, Orchestra, FeaturedArtist - Giacomo Puccini, Composer - Maria Callas, Soprano Vocals, MainArtist - Victor De Sabata, Conductor, FeaturedArtist - Orchestra Del Teatro Alla Scala Di Milano, Orchestra, FeaturedArtist",
+    "audio_info": {
+     "replaygain_track_peak": 0.851501,
+     "replaygain_track_gain": -2.9
+    },
+    "performer": {
+     "name": "Victor De Sabata",
+     "id": 172
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/16/43/0825646254316_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/16/43/0825646254316_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/16/43/0825646254316_600.jpg"
+     },
+     "maximum_bit_depth": 24,
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Maria Callas",
+      "id": 25160,
+      "albums_count": 1365,
+      "slug": "maria-callas",
+      "picture": null
+     },
+     "upc": "0825646254316",
+     "released_at": 1411077600,
+     "label": {
+      "name": "Warner Classics",
+      "id": 8400,
+      "albums_count": 11954,
+      "supplier_id": 5,
+      "slug": "warner-classics"
+     },
+     "title": "Giacomo Puccini : Tosca (1953) - Callas Remastered",
+     "qobuz_id": 19082352,
+     "version": null,
+     "duration": 6521,
+     "parental_warning": false,
+     "tracks_count": 29,
+     "genre": {
+      "path": [
+       10,
+       55
+      ],
+      "name": "Opera",
+      "id": 55,
+      "slug": "opera",
+      "color": "#0070ef"
+     },
+     "maximum_channel_count": 2,
+     "id": "0825646254316",
+     "maximum_sampling_rate": 96,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1777330800,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2014-09-19",
+     "release_date_download": "2014-09-19",
+     "release_date_stream": "2014-09-19",
+     "release_date_purchase": "2014-09-19",
+     "hires": true,
+     "hires_streamable": true,
+     "popularity": 0
+    },
+    "work": "Tosca",
+    "composer": {
+     "name": "Giacomo Puccini",
+     "id": 540
+    },
+    "isrc": "GBDYG1400934",
+    "title": "Tosca, Act 2: \"Vissi d'arte\" (Tosca)",
+    "version": null,
+    "duration": 193,
+    "parental_warning": false,
+    "track_number": 19,
+    "maximum_channel_count": 2,
+    "id": 19082382,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2014-09-19",
+    "release_date_download": "2014-09-19",
+    "release_date_stream": "2014-09-19",
+    "release_date_purchase": "2014-09-19",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1777330800,
+    "streamable_at": 1777330800,
+    "hires": true,
+    "hires_streamable": true,
+    "position": 3,
+    "created_at": 1548859093,
+    "playlist_track_id": 128242645
+   },
+   {
+    "maximum_bit_depth": 16,
+    "copyright": "℗ 2011 Decca Music Group Limited",
+    "performers": "Peter Mattei, MainArtist, BassVocalist - Christof Fischesser, MainArtist, BassVocalist - Falk Struckmann, MainArtist, BassBaritoneVocalist - Jonas Kaufmann, MainArtist, TenorVocalist - Nina Stemme, MainArtist, SopranoVocalist - Rachel Harnisch, MainArtist, SopranoVocalist - Christoph Strehl, MainArtist, TenorVocalist - Arnold Schoenberg Chor, MainArtist, Chorus - Lucerne Festival Orchestra, MainArtist, Orchestra - Mahler Chamber Orchestra, MainArtist, Orchestra - Claudio Abbado, MainArtist, Conductor - Sid McLauchlan, Producer - Jonathan Stokes, RecordingEngineer - Neil Hutchinson, RecordingSecondEngineer - Ludwig van Beethoven, Composer - Joseph Sonnleithner, Lyricist - Georg Friedrich Treitschke, Lyricist - Helga Lühning, WorkEditor - Robert Didio, WorkEditor",
+    "audio_info": {
+     "replaygain_track_peak": 1,
+     "replaygain_track_gain": -1
+    },
+    "performer": {
+     "name": "Peter Mattei",
+     "id": 241662
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/51/25/0002894782551_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/51/25/0002894782551_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/51/25/0002894782551_600.jpg"
+     },
+     "maximum_bit_depth": 16,
+     "media_count": 2,
+     "artist": {
+      "image": null,
+      "name": "Jonas Kaufmann",
+      "id": 52696,
+      "albums_count": 136,
+      "slug": "jonas-kaufmann",
+      "picture": null
+     },
+     "upc": "0002894782551",
+     "released_at": 1307916000,
+     "label": {
+      "name": "Decca Music Group Ltd.",
+      "id": 80295,
+      "albums_count": 9225,
+      "supplier_id": 1,
+      "slug": "decca-music-group-ltd"
+     },
+     "title": "Ludwig van Beethoven : Fidelio",
+     "qobuz_id": 3626478,
+     "version": null,
+     "duration": 6885,
+     "parental_warning": false,
+     "tracks_count": 30,
+     "genre": {
+      "path": [
+       10
+      ],
+      "name": "Classical",
+      "id": 10,
+      "slug": "classique",
+      "color": "#0070ef"
+     },
+     "maximum_channel_count": 2,
+     "id": "0002894782551",
+     "maximum_sampling_rate": 44.1,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1791414000,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2011-06-13",
+     "release_date_download": "2011-06-13",
+     "release_date_stream": "2011-06-13",
+     "release_date_purchase": "2011-06-13",
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo ",
+     "popularity": 0
+    },
+    "work": "Fidelio, Op. 72 (Ed. Lühning & Didion), Act II",
+    "composer": {
+     "name": "Ludwig van Beethoven",
+     "id": 38
+    },
+    "isrc": "GBBBA1045730",
+    "title": "Beethoven: Fidelio, Op. 72 (Ed. Lühning & Didion), Act II: Finale. Heil sei dem Tag… Des besten Königs Wink und Wille... Wer ein holdes Weib errungen",
+    "version": null,
+    "duration": 825,
+    "parental_warning": false,
+    "track_number": 8,
+    "maximum_channel_count": 2,
+    "id": 3622637,
+    "media_number": 2,
+    "maximum_sampling_rate": 44.1,
+    "release_date_original": "2011-06-13",
+    "release_date_download": "2011-06-13",
+    "release_date_stream": "2011-06-13",
+    "release_date_purchase": "2011-06-13",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1791414000,
+    "streamable_at": 1791414000,
+    "hires": false,
+    "hires_streamable": false,
+    "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo ",
+    "position": 4,
+    "created_at": 1548859093,
+    "playlist_track_id": 128242646
+   },
+   {
+    "maximum_bit_depth": 16,
+    "copyright": "© 2009 EMI Records Ltd. A Warner Classics release, ℗ 2005 Parlophone Records Limited",
+    "performers": "David Groves, Producer - Jonathan Allen, Engineer - Richard Wagner, Composer - Antonio Pappano, Conductor, MainArtist - Orchestra of the Royal Opera House, Covent Garden, Orchestra - John Dunkerley, Engineer - Nina Stemme, Soprano Vocals, FeaturedArtist",
+    "audio_info": {
+     "replaygain_track_peak": 0.948303,
+     "replaygain_track_gain": -0.54
+    },
+    "performer": {
+     "name": "Nina Stemme",
+     "id": 44202
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/54/64/5099996686454_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/54/64/5099996686454_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/54/64/5099996686454_600.jpg"
+     },
+     "maximum_bit_depth": 16,
+     "media_count": 3,
+     "artist": {
+      "image": null,
+      "name": "Antonio Pappano",
+      "id": 35163,
+      "albums_count": 91,
+      "slug": "antonio-pappano",
+      "picture": null
+     },
+     "upc": "5099996686454",
+     "released_at": 1141599600,
+     "label": {
+      "name": "Warner Classics",
+      "id": 8400,
+      "albums_count": 11954,
+      "supplier_id": 5,
+      "slug": "warner-classics"
+     },
+     "title": "Wagner: Tristan und Isolde",
+     "qobuz_id": 3184536,
+     "version": null,
+     "duration": 13593,
+     "parental_warning": false,
+     "tracks_count": 33,
+     "genre": {
+      "path": [
+       10
+      ],
+      "name": "Classical",
+      "id": 10,
+      "slug": "classique",
+      "color": "#0070ef"
+     },
+     "maximum_channel_count": 2,
+     "id": "5099996686454",
+     "maximum_sampling_rate": 44.1,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1777244400,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2006-03-06",
+     "release_date_download": "2006-03-06",
+     "release_date_stream": "2006-03-06",
+     "release_date_purchase": "2006-03-06",
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo ",
+     "popularity": 0
+    },
+    "work": null,
+    "composer": {
+     "name": "Richard Wagner",
+     "id": 56455
+    },
+    "isrc": "GBAYC0500740",
+    "title": "Tristan und Isolde, WWV 90, Act 3: \"Mild und leise wir er lächelt\" (Isolde)",
+    "version": null,
+    "duration": 402,
+    "parental_warning": false,
+    "track_number": 12,
+    "maximum_channel_count": 2,
+    "id": 1794294,
+    "media_number": 3,
+    "maximum_sampling_rate": 44.1,
+    "release_date_original": "2006-03-06",
+    "release_date_download": "2006-03-06",
+    "release_date_stream": "2006-03-06",
+    "release_date_purchase": "2006-03-06",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1777244400,
+    "streamable_at": 1777244400,
+    "hires": false,
+    "hires_streamable": false,
+    "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo ",
+    "position": 5,
+    "created_at": 1548859093,
+    "playlist_track_id": 128242647
+   },
+   {
+    "maximum_bit_depth": 16,
+    "copyright": "℗ 1982 Decca Music Group Limited",
+    "performers": "Dalibor Jedlicka, MainArtist, AssociatedPerformer, Bass (Vocal) - Wiener Philharmoniker, MainArtist, Orchestra - Sir Charles Mackerras, MainArtist, Conductor - James Mallinson, Producer - John Dunkerley, StudioPersonnel, Balance Engineer - Simon Eadon, StudioPersonnel, Balance Engineer - Leos Janácek, Composer - Rudolf Těsnohlídek, Author, Original Text Author",
+    "audio_info": {
+     "replaygain_track_peak": 0.513458,
+     "replaygain_track_gain": 4.79
+    },
+    "performer": {
+     "name": "Dalibor Jedlicka",
+     "id": 654777
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/92/12/0002894171292_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/92/12/0002894171292_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/92/12/0002894171292_600.jpg"
+     },
+     "maximum_bit_depth": 16,
+     "media_count": 2,
+     "artist": {
+      "image": null,
+      "name": "Lucia Popp",
+      "id": 34864,
+      "albums_count": 47,
+      "slug": "lucia-popp",
+      "picture": null
+     },
+     "upc": "0002894171292",
+     "released_at": 378687600,
+     "label": {
+      "name": "Decca Music Group Ltd.",
+      "id": 80295,
+      "albums_count": 9231,
+      "supplier_id": 1,
+      "slug": "decca-music-group-ltd"
+     },
+     "title": "Janácek: The Cunning Little Vixen",
+     "qobuz_id": 3208855,
+     "version": null,
+     "duration": 6487,
+     "parental_warning": false,
+     "tracks_count": 31,
+     "genre": {
+      "path": [
+       10
+      ],
+      "name": "Classical",
+      "id": 10,
+      "slug": "classique",
+      "color": "#0070ef"
+     },
+     "maximum_channel_count": 2,
+     "id": "0002894171292",
+     "maximum_sampling_rate": 44.1,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1792623600,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "1982-01-01",
+     "release_date_download": "1982-01-01",
+     "release_date_stream": "1982-01-01",
+     "release_date_purchase": "1982-01-01",
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo ",
+     "popularity": 0
+    },
+    "work": "The Cunning Little Vixen (Prihody Lisky Bystrousky) / Act 1",
+    "composer": {
+     "name": "Leoš Janáček",
+     "id": 336
+    },
+    "isrc": "GBF078140205",
+    "title": "Janáček: The Cunning Little Vixen (Prihody Lisky Bystrousky) / Act 1: Pantomime",
+    "version": null,
+    "duration": 185,
+    "parental_warning": false,
+    "track_number": 5,
+    "maximum_channel_count": 2,
+    "id": 519103,
+    "media_number": 1,
+    "maximum_sampling_rate": 44.1,
+    "release_date_original": "1982-01-01",
+    "release_date_download": "1982-01-01",
+    "release_date_stream": "1982-01-01",
+    "release_date_purchase": "1982-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1792623600,
+    "streamable_at": 1792623600,
+    "hires": false,
+    "hires_streamable": false,
+    "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo ",
+    "position": 6,
+    "created_at": 1548859093,
+    "playlist_track_id": 128242648
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "A Warner Classics release, ℗ 2015 Parlophone Records Limited",
+    "performers": "Giuseppe Verdi, Composer - Antonio Ghislanzoni, Poet - Antonio Pappano, Conductor - Jonas Kaufmann, Tenor Vocals - Orchestra dell'Accademia Nazionale di Santa Cecilia",
+    "audio_info": {
+     "replaygain_track_peak": 0.64975,
+     "replaygain_track_gain": 2.74
+    },
+    "performer": {
+     "name": "Jonas Kaufmann",
+     "id": 52696
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/85/25/0825646052585_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/85/25/0825646052585_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/85/25/0825646052585_600.jpg"
+     },
+     "maximum_bit_depth": 24,
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Coro dell'Accademia Nazionale Di Santa Cecilia",
+      "id": 224765,
+      "albums_count": 9,
+      "slug": "coro-dell-accademia-nazionale-di-santa-cecilia",
+      "picture": null
+     },
+     "upc": "0825646052585",
+     "released_at": 1443736800,
+     "label": {
+      "name": "Warner Classics",
+      "id": 8400,
+      "albums_count": 12205,
+      "supplier_id": 5,
+      "slug": "warner-classics"
+     },
+     "title": "Verdi : Aida",
+     "qobuz_id": 27145220,
+     "version": null,
+     "duration": 8746,
+     "parental_warning": false,
+     "tracks_count": 51,
+     "genre": {
+      "path": [
+       10,
+       55
+      ],
+      "name": "Opera",
+      "id": 55,
+      "slug": "opera",
+      "color": "#0070ef"
+     },
+     "maximum_channel_count": 2,
+     "id": "0825646052585",
+     "maximum_sampling_rate": 96,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1791414000,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2015-10-02",
+     "release_date_download": "2015-10-02",
+     "release_date_stream": "2015-10-02",
+     "release_date_purchase": "2015-10-02",
+     "hires": true,
+     "hires_streamable": true,
+     "popularity": 0
+    },
+    "work": "Aïda",
+    "composer": {
+     "name": "Giuseppe Verdi",
+     "id": 712
+    },
+    "isrc": "GBDYG1501302",
+    "title": "Aida, Act 1: \"Celeste Aida\" (Radamès)",
+    "version": null,
+    "duration": 226,
+    "parental_warning": false,
+    "track_number": 4,
+    "maximum_channel_count": 2,
+    "id": 27145224,
+    "media_number": 1,
+    "maximum_sampling_rate": 96,
+    "release_date_original": "2015-10-02",
+    "release_date_download": "2015-10-02",
+    "release_date_stream": "2015-10-02",
+    "release_date_purchase": "2015-10-02",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1791414000,
+    "streamable_at": 1791414000,
+    "hires": true,
+    "hires_streamable": true,
+    "position": 7,
+    "created_at": 1548859093,
+    "playlist_track_id": 128242649
+   },
+   {
+    "maximum_bit_depth": 24,
+    "copyright": "© 2017 Parlophone Records Limited, a Warner Music Group Company A Warner Music Group Company, ℗ 2017 Digital remastering Parlophone Records Limited",
+    "performers": "Giuseppe Verdi, Composer - Maria Callas, Soprano Vocals, MainArtist - Alfredo Kraus, Tenor Vocals, FeaturedArtist - Francesco Maria Piave, Poet - Franco Ghione, Conductor - Orquestra Sinfónica Do Teatro Nacional De Sao Carlos, Lisboa, Orchestra",
+    "audio_info": {
+     "replaygain_track_peak": 0.816376,
+     "replaygain_track_gain": -2.36
+    },
+    "performer": {
+     "name": "Maria Callas",
+     "id": 25160
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/58/73/0190295767358_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/58/73/0190295767358_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/58/73/0190295767358_600.jpg"
+     },
+     "maximum_bit_depth": 24,
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Maria Callas",
+      "id": 25160,
+      "albums_count": 1375,
+      "slug": "maria-callas",
+      "picture": null
+     },
+     "upc": "0190295767358",
+     "released_at": 1505426400,
+     "label": {
+      "name": "Warner Classics",
+      "id": 8400,
+      "albums_count": 12205,
+      "supplier_id": 5,
+      "slug": "warner-classics"
+     },
+     "title": "Maria Callas Live - Remastered Recordings 1949-1964",
+     "qobuz_id": 42636009,
+     "version": null,
+     "duration": 158539,
+     "parental_warning": false,
+     "tracks_count": 815,
+     "genre": {
+      "path": [
+       10,
+       55
+      ],
+      "name": "Opera",
+      "id": 55,
+      "slug": "opera",
+      "color": "#0070ef"
+     },
+     "maximum_channel_count": 2,
+     "id": "0190295767358",
+     "maximum_sampling_rate": 44.1,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1791414000,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2017-09-15",
+     "release_date_download": "2017-09-15",
+     "release_date_stream": "2017-09-15",
+     "release_date_purchase": "2017-09-15",
+     "hires": true,
+     "hires_streamable": true,
+     "popularity": 0
+    },
+    "work": null,
+    "composer": {
+     "name": "Giuseppe Verdi",
+     "id": 712
+    },
+    "isrc": "GBDYG1702553",
+    "title": "La traviata, Act 1: \"Sempre libera\" (Violetta, Alfredo) [Live]",
+    "version": null,
+    "duration": 256,
+    "parental_warning": false,
+    "track_number": 155,
+    "maximum_channel_count": 2,
+    "id": 42636164,
+    "media_number": 1,
+    "maximum_sampling_rate": 44.1,
+    "release_date_original": "2017-09-15",
+    "release_date_download": "2017-09-15",
+    "release_date_stream": "2017-09-15",
+    "release_date_purchase": "2017-09-15",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1791414000,
+    "streamable_at": 1791414000,
+    "hires": true,
+    "hires_streamable": true,
+    "position": 8,
+    "created_at": 1548859093,
+    "playlist_track_id": 128242650
+   },
+   {
+    "maximum_bit_depth": 16,
+    "copyright": "A Warner Classics/Erato Disques release, ℗ 1996 Warner Music UK Limited",
+    "performers": "Wolfgang Amadeus Mozart, Composer - Les Arts Florissants, MainArtist, Ensemble - William Christie, MainArtist - Natalie Dessay, Soprano Vocals, FeaturedArtist - Emanuel Schikaneder, Poet",
+    "audio_info": {
+     "replaygain_track_peak": 0.585052,
+     "replaygain_track_gain": 3.51
+    },
+    "performer": {
+     "name": "Les Arts Florissants",
+     "id": 44070
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/70/26/0825646192670_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/70/26/0825646192670_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/70/26/0825646192670_600.jpg"
+     },
+     "maximum_bit_depth": 16,
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Natalie Dessay",
+      "id": 34516,
+      "albums_count": 86,
+      "slug": "natalie-dessay",
+      "picture": null
+     },
+     "upc": "0825646192670",
+     "released_at": 1416178800,
+     "label": {
+      "name": "Erato/Warner Classics",
+      "id": 10647591,
+      "albums_count": 23,
+      "supplier_id": 5,
+      "slug": "eratowarner-classics"
+     },
+     "title": "De l'opéra à la chanson",
+     "qobuz_id": 20318169,
+     "version": null,
+     "duration": 9477,
+     "parental_warning": false,
+     "tracks_count": 31,
+     "genre": {
+      "path": [
+       10,
+       44
+      ],
+      "name": "Vocal Music (Secular and Sacred)",
+      "id": 44,
+      "slug": "musique-vocale-profane-et-sacree",
+      "color": "#0070ef"
+     },
+     "maximum_channel_count": 2,
+     "id": "0825646192670",
+     "maximum_sampling_rate": 44.1,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1788994800,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2014-11-17",
+     "release_date_download": "2014-11-17",
+     "release_date_stream": "2014-11-17",
+     "release_date_purchase": "2014-11-17",
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo ",
+     "popularity": 0
+    },
+    "work": null,
+    "composer": {
+     "name": "Wolfgang Amadeus Mozart",
+     "id": 488
+    },
+    "isrc": "FRZ209506907",
+    "title": "Die Zauberflöte, K. 620, Act 1: \"O zittre nicht, mein lieber Sohn!\" (Königin der Nacht)",
+    "version": null,
+    "duration": 284,
+    "parental_warning": false,
+    "track_number": 9,
+    "maximum_channel_count": 2,
+    "id": 20318178,
+    "media_number": 1,
+    "maximum_sampling_rate": 44.1,
+    "release_date_original": "2014-11-17",
+    "release_date_download": "2014-11-17",
+    "release_date_stream": "2014-11-17",
+    "release_date_purchase": "2014-11-17",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1788994800,
+    "streamable_at": 1788994800,
+    "hires": false,
+    "hires_streamable": false,
+    "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo ",
+    "position": 9,
+    "created_at": 1548859093,
+    "playlist_track_id": 128242651
+   },
+   {
+    "maximum_bit_depth": 16,
+    "copyright": "℗ 1978 Deutsche Grammophon GmbH, Berlin",
+    "performers": "Sherrill Milnes, MainArtist, BaritoneVocalist - George Main, MainArtist, Speaker - Robert Lloyd, MainArtist, BassVocalist - Teresa Berganza, MainArtist, Mezzo-SopranoVocalist - Yvonne Kenny, MainArtist, SopranoVocalist - Gordon Sandison, MainArtist, BaritoneVocalist - Geoffrey Pogson, MainArtist, TenorVocalist - Alicia Nafé, MainArtist, Mezzo-SopranoVocalist - Jean Lainé, MainArtist, TenorVocalist - London Symphony Orchestra, MainArtist, Orchestra - Claudio Abbado, MainArtist, Conductor - Ambrosian Singers, MainArtist, Choir - John McCarthy, MainArtist, ChorusMaster - Rainer Brock, Producer - Karl-August Naegler, BalanceEngineer - Joachim Niss, RecordingEngineer, DigitalEditingEngineer - Gernot Westhäuser, RecordingEngineer - Wolf-Dieter Karwatky, RecordingEngineer - Georges Bizet, Composer - Henri Meilhac, Lyricist - Ludovic Halevy, Lyricist - Prosper Mérimée, NonLyricAuthor",
+    "audio_info": {
+     "replaygain_track_peak": 0.980957,
+     "replaygain_track_gain": -0.83
+    },
+    "performer": {
+     "name": "Sherrill Milnes",
+     "id": 37043
+    },
+    "album": {
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/42/53/0002894775342_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/42/53/0002894775342_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/42/53/0002894775342_600.jpg"
+     },
+     "maximum_bit_depth": 16,
+     "media_count": 2,
+     "artist": {
+      "image": null,
+      "name": "Teresa Berganza",
+      "id": 27149,
+      "albums_count": 85,
+      "slug": "teresa-berganza",
+      "picture": null
+     },
+     "upc": "0002894775342",
+     "released_at": 1104534000,
+     "label": {
+      "name": "Deutsche Grammophon (DG)",
+      "id": 80905,
+      "albums_count": 9679,
+      "supplier_id": 1,
+      "slug": "deutsche-grammophon"
+     },
+     "title": "Georges Bizet : Carmen",
+     "qobuz_id": 3213164,
+     "version": null,
+     "duration": 9396,
+     "parental_warning": false,
+     "tracks_count": 49,
+     "genre": {
+      "path": [
+       10
+      ],
+      "name": "Classical",
+      "id": 10,
+      "slug": "classique",
+      "color": "#0070ef"
+     },
+     "maximum_channel_count": 2,
+     "id": "0002894775342",
+     "maximum_sampling_rate": 44.1,
+     "previewable": true,
+     "sampleable": true,
+     "displayable": true,
+     "streamable": true,
+     "streamable_at": 1780441200,
+     "downloadable": false,
+     "purchasable_at": null,
+     "purchasable": false,
+     "release_date_original": "2005-01-01",
+     "release_date_download": "2005-01-01",
+     "release_date_stream": "2005-01-01",
+     "release_date_purchase": "2005-01-01",
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo ",
+     "popularity": 0
+    },
+    "work": "Carmen, Act II",
+    "composer": {
+     "name": "Georges Bizet",
+     "id": 54
+    },
+    "isrc": "DEF057730144",
+    "title": "Bizet: Carmen, Act II: Toreador's Song. Votre toast, je peux vous le rendre – Dialogue",
+    "version": null,
+    "duration": 480,
+    "parental_warning": false,
+    "track_number": 24,
+    "maximum_channel_count": 2,
+    "id": 605310,
+    "media_number": 1,
+    "maximum_sampling_rate": 44.1,
+    "release_date_original": "2005-01-01",
+    "release_date_download": "2005-01-01",
+    "release_date_stream": "2005-01-01",
+    "release_date_purchase": "2005-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1780354800,
+    "streamable_at": 1780441200,
+    "hires": false,
+    "hires_streamable": false,
+    "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo ",
+    "position": 10,
+    "created_at": 1548859093,
+    "playlist_track_id": 128242652
+   }
+  ]
+ }
+}

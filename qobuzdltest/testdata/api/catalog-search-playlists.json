@@ -1,0 +1,1597 @@
+{
+ "query": "jazz",
+ "albums": {
+  "analytics": {
+   "search_external_id": "c76cc79c1db9b5b59124150181b08b4f"
+  },
+  "total": 1000,
+  "items": []
+ },
+ "tracks": {
+  "analytics": {
+   "search_external_id": "c171be633ceff47173e53a2870e0fa50"
+  },
+  "total": 1000,
+  "items": []
+ },
+ "artists": {
+  "analytics": {
+   "search_external_id": "8643737171d6a5d4a2527fd2e975c7ca"
+  },
+  "total": 1000,
+  "items": []
+ },
+ "playlists": {
+  "limit": 10,
+  "offset": 0,
+  "analytics": {
+   "search_external_id": "d878a628395de9230f758903d86b1b25"
+  },
+  "total": 1000,
+  "items": [
+   {
+    "id": 17495305,
+    "name": "Qobuz Club: Jazz For A Rainy Day",
+    "description": "Discover a selection of jazz for a rainy day curated by Qobuz Club!\r\nQobuz Club is the exclusive online club for audiophiles and music lovers.",
+    "tracks_count": 30,
+    "users_count": 2151,
+    "duration": 10441,
+    "public_at": 1698012000,
+    "created_at": 1698065509,
+    "updated_at": 1793707381,
+    "is_public": true,
+    "is_collaborative": false,
+    "owner": {
+     "id": 2097315,
+     "name": "Qobuz Club"
+    },
+    "indexed_at": 1793707381,
+    "slug": "qobuz-club-jazz-for-a-rainy-day",
+    "genres": [
+     {
+      "id": 80,
+      "name": "Jazz",
+      "path": [
+       80
+      ],
+      "slug": "jazz"
+     }
+    ],
+    "images": [
+     "https://static.qobuz.com/images/covers/ba/9w/kni3a999e9wba_50.jpg",
+     "https://static.qobuz.com/images/covers/ub/wb/toi2zbudxwbub_50.jpg",
+     "https://static.qobuz.com/images/covers/va/bq/sr1a81pyqbqva_50.jpg",
+     "https://static.qobuz.com/images/covers/ab/9w/tt4kc3v4u9wab_50.jpg"
+    ],
+    "is_published": true,
+    "is_featured": true,
+    "published_from": 1697134560,
+    "published_to": 1893518160,
+    "stores": [
+     "AU-en",
+     "NZ-en",
+     "DK-en",
+     "FI-en",
+     "NO-en",
+     "SE-en",
+     "BE-nl",
+     "NL-nl",
+     "GB-en",
+     "IE-en",
+     "US-en",
+     "CA-en",
+     "ES-es",
+     "AR-es",
+     "CL-es",
+     "CO-es",
+     "MX-es",
+     "AT-de",
+     "CH-de",
+     "DE-de",
+     "LU-de",
+     "BR-pt",
+     "PT-pt",
+     "IT-it"
+    ],
+    "tags": [
+     {
+      "featured_tag_id": "24",
+      "name_json": "{\"fr\":\"Humeurs\",\"en\":\"Moods\",\"de\":\"Moods\",\"it\":\"Umori\",\"nl\":\"Moods\",\"es\":\"Humores\",\"pt\":\"Moods\",\"pl\":\"Nastr\\u00f3j\",\"ja\":\"\\u30e0\\u30fc\\u30c9\"}",
+      "slug": "mood",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "14",
+      "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+      "slug": "jazz",
+      "genre_tag": {
+       "genre_id": "80",
+       "name": "Jazz"
+      },
+      "is_discover": false
+     }
+    ],
+    "image_rectangle": [
+     "https://static.qobuz.com/images/playlists/17495305_3f4bfd309b47fc75e49d4c20f8fbe140_rectangle.jpg"
+    ],
+    "image_rectangle_mini": [
+     "https://static.qobuz.com/images/playlists/17495305_3f4bfd309b47fc75e49d4c20f8fbe140_rectangle_mini.jpg"
+    ],
+    "featured_artists": [],
+    "timestamp_position": 1697134560,
+    "images150": [
+     "https://static.qobuz.com/images/covers/ba/9w/kni3a999e9wba_150.jpg",
+     "https://static.qobuz.com/images/covers/ub/wb/toi2zbudxwbub_150.jpg",
+     "https://static.qobuz.com/images/covers/va/bq/sr1a81pyqbqva_150.jpg",
+     "https://static.qobuz.com/images/covers/ab/9w/tt4kc3v4u9wab_150.jpg"
+    ],
+    "images300": [
+     "https://static.qobuz.com/images/covers/ba/9w/kni3a999e9wba_300.jpg",
+     "https://static.qobuz.com/images/covers/ub/wb/toi2zbudxwbub_300.jpg",
+     "https://static.qobuz.com/images/covers/va/bq/sr1a81pyqbqva_300.jpg",
+     "https://static.qobuz.com/images/covers/ab/9w/tt4kc3v4u9wab_300.jpg"
+    ]
+   },
+   {
+    "id": 15378564,
+    "name": "50 Jazz Tracks to Test your Speakers",
+    "description": "Get the most out of your audio system with this 100% Hi-Res selection of 50 instrumental and vocal Jazz tracks that will test the limits of your equipment's capabilities and bring out its full potential.\r\n\r\nFeaturing Art Blakey & The Jazz Messengers, John Coltrane, Stan Getz, Miles Davis, Charles Mingus, Sonny Rollins, Lee Morgan, Ben Webster, Herbie Hancock, Manu Katché, Avishai Cohen, Lee Ritenour, Michel Petrucciani, High Pulp, DOMi & JD BECK, Sons of Kemet, Ezra Collective, Ibrahim Maalouf, Nina Simone, Melody Gardot, Diana Krall, Musica Nuda, Gregory Porter, José James...",
+    "tracks_count": 50,
+    "users_count": 2090,
+    "duration": 17325,
+    "public_at": 1685570400,
+    "created_at": 1685614396,
+    "updated_at": 1793640701,
+    "is_public": true,
+    "is_collaborative": false,
+    "owner": {
+     "id": 263468,
+     "name": "Qobuz UK"
+    },
+    "indexed_at": 1793707483,
+    "slug": "50-jazz-tracks-to-test-your-speakers",
+    "genres": [
+     {
+      "id": 80,
+      "name": "Jazz",
+      "path": [
+       80
+      ],
+      "slug": "jazz"
+     }
+    ],
+    "images": [
+     "https://static.qobuz.com/images/covers/43/08/0060253740843_50.jpg",
+     "https://static.qobuz.com/images/covers/nb/oc/lzup2upxyocnb_50.jpg",
+     "https://static.qobuz.com/images/covers/2a/q4/tr097unrzq42a_50.jpg",
+     "https://static.qobuz.com/images/covers/28/44/0886443874428_50.jpg"
+    ],
+    "is_published": true,
+    "is_featured": true,
+    "published_from": 1757110200,
+    "published_to": 1893496440,
+    "stores": [
+     "BE-nl",
+     "NL-nl",
+     "GB-en",
+     "IE-en"
+    ],
+    "tags": [
+     {
+      "featured_tag_id": "84",
+      "name_json": "{\"fr\":\"Testez vos enceintes\",\"en\":\"Test your speakers\",\"de\":\"Testen Ihrer Lautsprecher\",\"it\":\"Prova i tuoi diffusori\",\"nl\":\"Test your speakers\",\"es\":\"Prueba tus altavoces\",\"pt\":\"Teste os seus som\",\"pl\":\"Przetestuj swoje g\\u0142o\\u015bniki\",\"ja\":\"Test you speakers\"}",
+      "slug": "speakers",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "20",
+      "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+      "slug": "focus",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "51",
+      "name_json": "{\"fr\":\"Hi-Res\",\"en\":\"Hi-Res\",\"de\":\"Hi-Res\",\"it\":\"Hi-Res\",\"nl\":\"Hi-Res\",\"es\":\"Hi-Res\",\"pt\":\"Hi-Res\",\"pl\":\"Hi-Res\",\"ja\":\"\\u30cf\\u30a4\\u30ec\\u30be\"}",
+      "slug": "hi-res",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "41",
+      "name_json": "{\"fr\":\"Top playlists\",\"en\":\"Top playlists\",\"de\":\"Top Playlists\",\"it\":\"Top playlists\",\"nl\":\"Top playlists\",\"es\":\"Top playlists\",\"pt\":\"Top playlists\",\"pl\":\"Najpopularniejsze\",\"ja\":\"\\u30c8\\u30c3\\u30d7\\u30fb\\u30d7\\u30ec\\u30a4\\u30ea\\u30b9\\u30c8\"}",
+      "slug": "popular",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "14",
+      "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+      "slug": "jazz",
+      "genre_tag": {
+       "genre_id": "80",
+       "name": "Jazz"
+      },
+      "is_discover": false
+     }
+    ],
+    "image_rectangle": [
+     "https://static.qobuz.com/images/playlists/15378564_c6b68acb17eaf803f1f391a8bc765c42_rectangle.jpg"
+    ],
+    "image_rectangle_mini": [
+     "https://static.qobuz.com/images/playlists/15378564_c6b68acb17eaf803f1f391a8bc765c42_rectangle_mini.jpg"
+    ],
+    "featured_artists": [],
+    "timestamp_position": 1757110200,
+    "images150": [
+     "https://static.qobuz.com/images/covers/43/08/0060253740843_150.jpg",
+     "https://static.qobuz.com/images/covers/nb/oc/lzup2upxyocnb_150.jpg",
+     "https://static.qobuz.com/images/covers/2a/q4/tr097unrzq42a_150.jpg",
+     "https://static.qobuz.com/images/covers/28/44/0886443874428_150.jpg"
+    ],
+    "images300": [
+     "https://static.qobuz.com/images/covers/43/08/0060253740843_300.jpg",
+     "https://static.qobuz.com/images/covers/nb/oc/lzup2upxyocnb_300.jpg",
+     "https://static.qobuz.com/images/covers/2a/q4/tr097unrzq42a_300.jpg",
+     "https://static.qobuz.com/images/covers/28/44/0886443874428_300.jpg"
+    ]
+   },
+   {
+    "id": 4824894,
+    "name": "Hi-Res Masters: Jazz Essentials",
+    "description": "Enjoy Jazz music's finest in the best possible audio quality. 70 legendary tracks in Hi-Res, including Miles Davis, John Coltrane, Duke Ellington, Thelonious Monk, Bill Evans Trio, Art Blakey & The Jazz Messengers, Ornette Coleman, Charles Mingus, Cannonball Adderley, Wayne Shorter, Wes Montgomery, Coleman Hawkins, Herbie Hancock, Ray Charles, Keith Jarrett, Stan Getz, Nina Simone, Louis Armstrong, Ella Fitzgerald, Diana Krall, Norah Jones, Billie Holiday...\r\n\r\n<br><br>Photo : John Coltrane",
+    "tracks_count": 70,
+    "users_count": 1989,
+    "duration": 26246,
+    "public_at": 1603666800,
+    "created_at": 1603706232,
+    "updated_at": 1793564452,
+    "is_public": true,
+    "is_collaborative": false,
+    "owner": {
+     "id": 263468,
+     "name": "Qobuz UK"
+    },
+    "indexed_at": 1793707515,
+    "slug": "hi-res-masters-jazz-essentials",
+    "genres": [
+     {
+      "id": 80,
+      "name": "Jazz",
+      "path": [
+       80
+      ],
+      "slug": "jazz"
+     }
+    ],
+    "images": [
+     "https://static.qobuz.com/images/covers/37/38/0060254733837_50.jpg",
+     "https://static.qobuz.com/images/covers/26/51/0886446175126_50.jpg",
+     "https://static.qobuz.com/images/covers/ob/r9/gkvekvn5rr9ob_50.jpg",
+     "https://static.qobuz.com/images/covers/88/09/0060253780988_50.jpg"
+    ],
+    "is_published": true,
+    "is_featured": true,
+    "published_from": 1745820300,
+    "published_to": 2145913200,
+    "stores": [
+     "BE-nl",
+     "NL-nl",
+     "GB-en",
+     "IE-en"
+    ],
+    "tags": [
+     {
+      "featured_tag_id": "20",
+      "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+      "slug": "focus",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "51",
+      "name_json": "{\"fr\":\"Hi-Res\",\"en\":\"Hi-Res\",\"de\":\"Hi-Res\",\"it\":\"Hi-Res\",\"nl\":\"Hi-Res\",\"es\":\"Hi-Res\",\"pt\":\"Hi-Res\",\"pl\":\"Hi-Res\",\"ja\":\"\\u30cf\\u30a4\\u30ec\\u30be\"}",
+      "slug": "hi-res",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "41",
+      "name_json": "{\"fr\":\"Top playlists\",\"en\":\"Top playlists\",\"de\":\"Top Playlists\",\"it\":\"Top playlists\",\"nl\":\"Top playlists\",\"es\":\"Top playlists\",\"pt\":\"Top playlists\",\"pl\":\"Najpopularniejsze\",\"ja\":\"\\u30c8\\u30c3\\u30d7\\u30fb\\u30d7\\u30ec\\u30a4\\u30ea\\u30b9\\u30c8\"}",
+      "slug": "popular",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "14",
+      "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+      "slug": "jazz",
+      "genre_tag": {
+       "genre_id": "80",
+       "name": "Jazz"
+      },
+      "is_discover": false
+     },
+     {
+      "featured_tag_id": "83",
+      "name_json": "{\"fr\":\"Journ\\u00e9e internationale du jazz\",\"en\":\"International Jazz Day\",\"de\":\"Internationaler Tag des Jazz\",\"it\":\"Giornata internazionale del jazz\",\"nl\":\"International Jazz Day\",\"es\":\"D\\u00eda Internacional del Jazz\",\"pt\":\"Dia Internacional do Jazz\",\"ja\":\"\\u56fd\\u969b\\u30b8\\u30e3\\u30ba\\u30fb\\u30c7\\u30fc\"}",
+      "slug": "jazzday",
+      "genre_tag": null,
+      "is_discover": false
+     }
+    ],
+    "image_rectangle": [
+     "https://static.qobuz.com/images/playlists/4824894_8facf5ad6a4267977d9710618d11685c_rectangle.jpg"
+    ],
+    "image_rectangle_mini": [
+     "https://static.qobuz.com/images/playlists/4824894_8facf5ad6a4267977d9710618d11685c_rectangle_mini.jpg"
+    ],
+    "featured_artists": [],
+    "timestamp_position": 1745820300,
+    "images150": [
+     "https://static.qobuz.com/images/covers/37/38/0060254733837_150.jpg",
+     "https://static.qobuz.com/images/covers/26/51/0886446175126_150.jpg",
+     "https://static.qobuz.com/images/covers/ob/r9/gkvekvn5rr9ob_150.jpg",
+     "https://static.qobuz.com/images/covers/88/09/0060253780988_150.jpg"
+    ],
+    "images300": [
+     "https://static.qobuz.com/images/covers/37/38/0060254733837_300.jpg",
+     "https://static.qobuz.com/images/covers/26/51/0886446175126_300.jpg",
+     "https://static.qobuz.com/images/covers/ob/r9/gkvekvn5rr9ob_300.jpg",
+     "https://static.qobuz.com/images/covers/88/09/0060253780988_300.jpg"
+    ]
+   },
+   {
+    "id": 6029200,
+    "name": "Best of 192 kHz: Jazz",
+    "description": "Rediscover the greatest jazz classics in the highest sound quality, featuring masterpieces by Duke Ellington, Bill Evans, Miles Davis, John Coltrane, Herbie Hancock, Charles Mingus, Ornette Coleman, McCoy Tyner, Freddie Hubbard, Thelonious Monk, Baden Powell, Chat Baker, Billie Holiday, Quincy Jones, Stan Getz, Oscar Peterson, Diana Krall, Ella Fitzgerald, Dexter Gordon, Art Blakey, Wayne Shorter, Nat King Cole, Louis Armstrong, Nina Simone, Norah Jones and many more in 192 kHz!\r\n\r\nPhoto: Ornette Coleman © William Claxton / Atlantic Records",
+    "tracks_count": 80,
+    "users_count": 1298,
+    "duration": 24866,
+    "public_at": 1618783200,
+    "created_at": 1618844035,
+    "updated_at": 1793656094,
+    "is_public": true,
+    "is_collaborative": false,
+    "owner": {
+     "id": 263468,
+     "name": "Qobuz UK"
+    },
+    "indexed_at": 1793707547,
+    "slug": "best-of-192-khz-jazz",
+    "genres": [
+     {
+      "id": 80,
+      "name": "Jazz",
+      "path": [
+       80
+      ],
+      "slug": "jazz"
+     }
+    ],
+    "images": [
+     "https://static.qobuz.com/images/covers/39/69/0603497936939_50.jpg",
+     "https://static.qobuz.com/images/covers/85/48/0060254714885_50.jpg",
+     "https://static.qobuz.com/images/covers/58/64/0060254706458_50.jpg",
+     "https://static.qobuz.com/images/covers/08/48/0060253764808_50.jpg"
+    ],
+    "is_published": true,
+    "is_featured": true,
+    "published_from": 1775257200,
+    "published_to": 1893491760,
+    "stores": [
+     "BE-nl",
+     "NL-nl",
+     "GB-en",
+     "IE-en"
+    ],
+    "tags": [
+     {
+      "featured_tag_id": "20",
+      "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+      "slug": "focus",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "51",
+      "name_json": "{\"fr\":\"Hi-Res\",\"en\":\"Hi-Res\",\"de\":\"Hi-Res\",\"it\":\"Hi-Res\",\"nl\":\"Hi-Res\",\"es\":\"Hi-Res\",\"pt\":\"Hi-Res\",\"pl\":\"Hi-Res\",\"ja\":\"\\u30cf\\u30a4\\u30ec\\u30be\"}",
+      "slug": "hi-res",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "41",
+      "name_json": "{\"fr\":\"Top playlists\",\"en\":\"Top playlists\",\"de\":\"Top Playlists\",\"it\":\"Top playlists\",\"nl\":\"Top playlists\",\"es\":\"Top playlists\",\"pt\":\"Top playlists\",\"pl\":\"Najpopularniejsze\",\"ja\":\"\\u30c8\\u30c3\\u30d7\\u30fb\\u30d7\\u30ec\\u30a4\\u30ea\\u30b9\\u30c8\"}",
+      "slug": "popular",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "14",
+      "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+      "slug": "jazz",
+      "genre_tag": {
+       "genre_id": "80",
+       "name": "Jazz"
+      },
+      "is_discover": false
+     }
+    ],
+    "image_rectangle": [
+     "https://static.qobuz.com/images/playlists/6029200_2f6fb357ecb4977f34fc276dd85a0a16_rectangle.jpg"
+    ],
+    "image_rectangle_mini": [
+     "https://static.qobuz.com/images/playlists/6029200_2f6fb357ecb4977f34fc276dd85a0a16_rectangle_mini.jpg"
+    ],
+    "featured_artists": [],
+    "timestamp_position": 1775257200,
+    "images150": [
+     "https://static.qobuz.com/images/covers/39/69/0603497936939_150.jpg",
+     "https://static.qobuz.com/images/covers/85/48/0060254714885_150.jpg",
+     "https://static.qobuz.com/images/covers/58/64/0060254706458_150.jpg",
+     "https://static.qobuz.com/images/covers/08/48/0060253764808_150.jpg"
+    ],
+    "images300": [
+     "https://static.qobuz.com/images/covers/39/69/0603497936939_300.jpg",
+     "https://static.qobuz.com/images/covers/85/48/0060254714885_300.jpg",
+     "https://static.qobuz.com/images/covers/58/64/0060254706458_300.jpg",
+     "https://static.qobuz.com/images/covers/08/48/0060253764808_300.jpg"
+    ]
+   },
+   {
+    "id": 5688531,
+    "name": "Hi-Res Masters: Vocal Jazz Essentials",
+    "description": "Enjoy Vocal Jazz's finest in the best possible audio quality with our selection of legendary tracks in Hi-Res, featuring Nina Simone, Billie Holiday, Nat King Cole, Sarah Vaughan, Chet Baker, Ella Fitzgerald, Louis Armstrong, Frank Sinatra, Peggy Lee, Mel Tormé, Blossom Dearie, Dizzy Gillespie, Nancy Wilson, Anita O'Day, Billy Eckstine, Chris Connor, Tony Bennett, Dinah Washington, Ray Charles, Diana Krall, Jamie Cullum, Norah Jones, Michael Bublé, Melody Gardot, Gregory Porter, Kat Edmonson...\r\n<br><br>Photo: Billie Holiday",
+    "tracks_count": 75,
+    "users_count": 1278,
+    "duration": 17988,
+    "public_at": 1612306800,
+    "created_at": 1612372391,
+    "updated_at": 1793564458,
+    "is_public": true,
+    "is_collaborative": false,
+    "owner": {
+     "id": 263468,
+     "name": "Qobuz UK"
+    },
+    "indexed_at": 1793707570,
+    "slug": "hi-res-masters-vocal-jazz-essentials",
+    "genres": [
+     {
+      "id": 80,
+      "name": "Jazz",
+      "path": [
+       80
+      ],
+      "slug": "jazz"
+     }
+    ],
+    "images": [
+     "https://static.qobuz.com/images/covers/1b/dy/cqnizhlwddy1b_50.jpg",
+     "https://static.qobuz.com/images/covers/64/71/0886445127164_50.jpg",
+     "https://static.qobuz.com/images/covers/oa/bp/maw7ul1wqbpoa_50.jpg",
+     "https://static.qobuz.com/images/covers/76/27/0060253772776_50.jpg"
+    ],
+    "is_published": true,
+    "is_featured": true,
+    "published_from": 1783807500,
+    "published_to": 1893510600,
+    "stores": [
+     "BE-nl",
+     "NL-nl",
+     "GB-en",
+     "IE-en"
+    ],
+    "tags": [
+     {
+      "featured_tag_id": "20",
+      "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+      "slug": "focus",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "51",
+      "name_json": "{\"fr\":\"Hi-Res\",\"en\":\"Hi-Res\",\"de\":\"Hi-Res\",\"it\":\"Hi-Res\",\"nl\":\"Hi-Res\",\"es\":\"Hi-Res\",\"pt\":\"Hi-Res\",\"pl\":\"Hi-Res\",\"ja\":\"\\u30cf\\u30a4\\u30ec\\u30be\"}",
+      "slug": "hi-res",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "41",
+      "name_json": "{\"fr\":\"Top playlists\",\"en\":\"Top playlists\",\"de\":\"Top Playlists\",\"it\":\"Top playlists\",\"nl\":\"Top playlists\",\"es\":\"Top playlists\",\"pt\":\"Top playlists\",\"pl\":\"Najpopularniejsze\",\"ja\":\"\\u30c8\\u30c3\\u30d7\\u30fb\\u30d7\\u30ec\\u30a4\\u30ea\\u30b9\\u30c8\"}",
+      "slug": "popular",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "14",
+      "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+      "slug": "jazz",
+      "genre_tag": {
+       "genre_id": "80",
+       "name": "Jazz"
+      },
+      "is_discover": false
+     }
+    ],
+    "image_rectangle": [
+     "https://static.qobuz.com/images/playlists/5688531_38685174d1846cb36c1ab7ce862c3d8d_rectangle.jpg"
+    ],
+    "image_rectangle_mini": [
+     "https://static.qobuz.com/images/playlists/5688531_38685174d1846cb36c1ab7ce862c3d8d_rectangle_mini.jpg"
+    ],
+    "featured_artists": [],
+    "timestamp_position": 1783807500,
+    "images150": [
+     "https://static.qobuz.com/images/covers/1b/dy/cqnizhlwddy1b_150.jpg",
+     "https://static.qobuz.com/images/covers/64/71/0886445127164_150.jpg",
+     "https://static.qobuz.com/images/covers/oa/bp/maw7ul1wqbpoa_150.jpg",
+     "https://static.qobuz.com/images/covers/76/27/0060253772776_150.jpg"
+    ],
+    "images300": [
+     "https://static.qobuz.com/images/covers/1b/dy/cqnizhlwddy1b_300.jpg",
+     "https://static.qobuz.com/images/covers/64/71/0886445127164_300.jpg",
+     "https://static.qobuz.com/images/covers/oa/bp/maw7ul1wqbpoa_300.jpg",
+     "https://static.qobuz.com/images/covers/76/27/0060253772776_300.jpg"
+    ]
+   },
+   {
+    "id": 1624073,
+    "name": "Jazz Digestifs",
+    "description": "Up for a little Jazz coffee, tea, digestif? Keith Jarrett, Sonny Rollins, Dexter Gordon and their stooges are there for this last relaxed moment before removing the chairs.",
+    "tracks_count": 41,
+    "users_count": 1145,
+    "duration": 12647,
+    "public_at": 1513897200,
+    "created_at": 1513954183,
+    "updated_at": 1793715306,
+    "is_public": true,
+    "is_collaborative": false,
+    "owner": {
+     "id": 263468,
+     "name": "Qobuz UK"
+    },
+    "indexed_at": 1793715306,
+    "slug": "new-year-s-eve-menu-jazz-coffee",
+    "genres": [
+     {
+      "id": 80,
+      "name": "Jazz",
+      "path": [
+       80
+      ],
+      "slug": "jazz"
+     }
+    ],
+    "images": [
+     "https://static.qobuz.com/images/covers/gc/pc/p41ybyekepcgc_50.jpg",
+     "https://static.qobuz.com/images/covers/lc/84/dtw0632a284lc_50.jpg",
+     "https://static.qobuz.com/images/covers/sb/k3/cvwxwxx9vk3sb_50.jpg",
+     "https://static.qobuz.com/images/covers/78/77/0060253797778_50.jpg"
+    ],
+    "is_published": true,
+    "is_featured": true,
+    "published_from": 1767261600,
+    "published_to": 2145913200,
+    "stores": [
+     "BE-nl",
+     "NL-nl",
+     "GB-en",
+     "IE-en"
+    ],
+    "tags": [
+     {
+      "featured_tag_id": "41",
+      "name_json": "{\"fr\":\"Top playlists\",\"en\":\"Top playlists\",\"de\":\"Top Playlists\",\"it\":\"Top playlists\",\"nl\":\"Top playlists\",\"es\":\"Top playlists\",\"pt\":\"Top playlists\",\"pl\":\"Najpopularniejsze\",\"ja\":\"\\u30c8\\u30c3\\u30d7\\u30fb\\u30d7\\u30ec\\u30a4\\u30ea\\u30b9\\u30c8\"}",
+      "slug": "popular",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "24",
+      "name_json": "{\"fr\":\"Humeurs\",\"en\":\"Moods\",\"de\":\"Moods\",\"it\":\"Umori\",\"nl\":\"Moods\",\"es\":\"Humores\",\"pt\":\"Moods\",\"pl\":\"Nastr\\u00f3j\",\"ja\":\"\\u30e0\\u30fc\\u30c9\"}",
+      "slug": "mood",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "14",
+      "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+      "slug": "jazz",
+      "genre_tag": {
+       "genre_id": "80",
+       "name": "Jazz"
+      },
+      "is_discover": false
+     }
+    ],
+    "image_rectangle": [
+     "https://static.qobuz.com/images/playlists/1624073_9d6fb44892bf110cfbdc1489ed5f24d1_rectangle.jpg"
+    ],
+    "image_rectangle_mini": [
+     "https://static.qobuz.com/images/playlists/1624073_9d6fb44892bf110cfbdc1489ed5f24d1_rectangle_mini.jpg"
+    ],
+    "featured_artists": [],
+    "timestamp_position": 1767261600,
+    "images150": [
+     "https://static.qobuz.com/images/covers/gc/pc/p41ybyekepcgc_150.jpg",
+     "https://static.qobuz.com/images/covers/lc/84/dtw0632a284lc_150.jpg",
+     "https://static.qobuz.com/images/covers/sb/k3/cvwxwxx9vk3sb_150.jpg",
+     "https://static.qobuz.com/images/covers/78/77/0060253797778_150.jpg"
+    ],
+    "images300": [
+     "https://static.qobuz.com/images/covers/gc/pc/p41ybyekepcgc_300.jpg",
+     "https://static.qobuz.com/images/covers/lc/84/dtw0632a284lc_300.jpg",
+     "https://static.qobuz.com/images/covers/sb/k3/cvwxwxx9vk3sb_300.jpg",
+     "https://static.qobuz.com/images/covers/78/77/0060253797778_300.jpg"
+    ]
+   },
+   {
+    "id": 1880726,
+    "name": "ACT Music: Jazz meets Classical",
+    "description": "Find out how the composers, works and instrumentations of classical music inspire the jazz world.",
+    "tracks_count": 60,
+    "users_count": 1105,
+    "duration": 16012,
+    "public_at": 1535642575,
+    "created_at": 1535641522,
+    "updated_at": 1793669457,
+    "is_public": true,
+    "is_collaborative": false,
+    "owner": {
+     "id": 864432,
+     "name": "ACT Music"
+    },
+    "indexed_at": 1793669457,
+    "slug": "classical-jazz",
+    "genres": [
+     {
+      "id": 80,
+      "name": "Jazz",
+      "path": [
+       80
+      ],
+      "slug": "jazz"
+     },
+     {
+      "id": 10,
+      "name": "Classique",
+      "path": [
+       10
+      ],
+      "slug": "classique"
+     }
+    ],
+    "images": [
+     "https://static.qobuz.com/images/covers/29/33/0614427983329_50.jpg",
+     "https://static.qobuz.com/images/covers/23/23/0614427972323_50.jpg",
+     "https://static.qobuz.com/images/covers/25/44/0614427984425_50.jpg",
+     "https://static.qobuz.com/images/covers/jc/dv/gumr8o95jdvjc_50.jpg"
+    ],
+    "is_published": true,
+    "is_featured": true,
+    "published_from": 1746655200,
+    "published_to": 2145913200,
+    "stores": [
+     "AU-en",
+     "NZ-en",
+     "DK-en",
+     "FI-en",
+     "NO-en",
+     "SE-en",
+     "BE-nl",
+     "NL-nl",
+     "GB-en",
+     "IE-en",
+     "US-en",
+     "CA-en",
+     "ES-es",
+     "AR-es",
+     "CL-es",
+     "CO-es",
+     "MX-es",
+     "CA-fr",
+     "BE-fr",
+     "CH-fr",
+     "FR-fr",
+     "LU-fr",
+     "AT-de",
+     "CH-de",
+     "DE-de",
+     "LU-de",
+     "IT-it"
+    ],
+    "tags": [
+     {
+      "featured_tag_id": "20",
+      "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+      "slug": "focus",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "80",
+      "name_json": "{\"fr\":\"ACT Music\",\"en\":\"ACT Music\",\"de\":\"ACT Music\",\"it\":\"ACT Music\",\"nl\":\"ACT Music\",\"es\":\"ACT Music\",\"pt\":\"ACT Music\",\"pl\":\"ACT\",\"ja\":\"ACT Music\"}",
+      "slug": "act",
+      "genre_tag": null,
+      "is_discover": false
+     },
+     {
+      "featured_tag_id": "14",
+      "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+      "slug": "jazz",
+      "genre_tag": {
+       "genre_id": "80",
+       "name": "Jazz"
+      },
+      "is_discover": false
+     },
+     {
+      "featured_tag_id": "13",
+      "name_json": "{\"fr\":\"Classique\",\"en\":\"Classical\",\"de\":\"Klassik\",\"it\":\"Musica classica\",\"nl\":\"Classical\",\"es\":\"Cl\\u00e1sica\",\"pt\":\"Cl\\u00e1ssico\",\"pl\":\"Muzyka klasyczna\",\"ja\":\"Classical\"}",
+      "slug": "classical",
+      "genre_tag": {
+       "genre_id": "10",
+       "name": "Classique"
+      },
+      "is_discover": false
+     }
+    ],
+    "image_rectangle": [
+     "https://static.qobuz.com/images/playlists/1880726_db836846e9415dbb7b04d8ad1deed598_rectangle.jpg"
+    ],
+    "image_rectangle_mini": [
+     "https://static.qobuz.com/images/playlists/1880726_db836846e9415dbb7b04d8ad1deed598_rectangle_mini.jpg"
+    ],
+    "featured_artists": [],
+    "timestamp_position": 1746655200,
+    "images150": [
+     "https://static.qobuz.com/images/covers/29/33/0614427983329_150.jpg",
+     "https://static.qobuz.com/images/covers/23/23/0614427972323_150.jpg",
+     "https://static.qobuz.com/images/covers/25/44/0614427984425_150.jpg",
+     "https://static.qobuz.com/images/covers/jc/dv/gumr8o95jdvjc_150.jpg"
+    ],
+    "images300": [
+     "https://static.qobuz.com/images/covers/29/33/0614427983329_300.jpg",
+     "https://static.qobuz.com/images/covers/23/23/0614427972323_300.jpg",
+     "https://static.qobuz.com/images/covers/25/44/0614427984425_300.jpg",
+     "https://static.qobuz.com/images/covers/jc/dv/gumr8o95jdvjc_300.jpg"
+    ]
+   },
+   {
+    "id": 2707642,
+    "name": "Jazz Classics",
+    "description": "Jazz at its finest! With Oscar Peterson, Herbie Hancock, Glenn Miller, Miles Davis, John Coltrane, Louis Armstrong, Sidney Bechet, Chet Baker, Billie Holiday, Ella Fitzgerald, Sonny Rollins, Django Reinhardt, Duke Ellington, Dave Brubek, Benny Goodman and many others...\r\n\r\nPhoto: John Coltrane © Jim Marshall",
+    "tracks_count": 80,
+    "users_count": 959,
+    "duration": 27180,
+    "public_at": 1579129200,
+    "created_at": 1579186640,
+    "updated_at": 1791895099,
+    "is_public": true,
+    "is_collaborative": false,
+    "owner": {
+     "id": 263468,
+     "name": "Qobuz UK"
+    },
+    "indexed_at": 1793707487,
+    "slug": "ultimate-jazz-classics",
+    "genres": [
+     {
+      "id": 80,
+      "name": "Jazz",
+      "path": [
+       80
+      ],
+      "slug": "jazz"
+     }
+    ],
+    "images": [
+     "https://static.qobuz.com/images/covers/7b/ju/y0xeyuymlju7b_50.jpg",
+     "https://static.qobuz.com/images/covers/32/65/0060253746532_50.jpg",
+     "https://static.qobuz.com/images/covers/21/41/0828766924121_50.jpg",
+     "https://static.qobuz.com/images/covers/oc/yv/po8isu85cyvoc_50.jpg"
+    ],
+    "is_published": true,
+    "is_featured": true,
+    "published_from": 1759529400,
+    "published_to": 2145913200,
+    "stores": [
+     "BE-nl",
+     "NL-nl",
+     "GB-en",
+     "IE-en"
+    ],
+    "tags": [
+     {
+      "featured_tag_id": "20",
+      "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+      "slug": "focus",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "41",
+      "name_json": "{\"fr\":\"Top playlists\",\"en\":\"Top playlists\",\"de\":\"Top Playlists\",\"it\":\"Top playlists\",\"nl\":\"Top playlists\",\"es\":\"Top playlists\",\"pt\":\"Top playlists\",\"pl\":\"Najpopularniejsze\",\"ja\":\"\\u30c8\\u30c3\\u30d7\\u30fb\\u30d7\\u30ec\\u30a4\\u30ea\\u30b9\\u30c8\"}",
+      "slug": "popular",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "14",
+      "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+      "slug": "jazz",
+      "genre_tag": {
+       "genre_id": "80",
+       "name": "Jazz"
+      },
+      "is_discover": false
+     }
+    ],
+    "image_rectangle": [
+     "https://static.qobuz.com/images/playlists/2707642_c28baf696be2afafdade8c786c02a71c_rectangle.jpg"
+    ],
+    "image_rectangle_mini": [
+     "https://static.qobuz.com/images/playlists/2707642_c28baf696be2afafdade8c786c02a71c_rectangle_mini.jpg"
+    ],
+    "featured_artists": [],
+    "timestamp_position": 1759529400,
+    "images150": [
+     "https://static.qobuz.com/images/covers/7b/ju/y0xeyuymlju7b_150.jpg",
+     "https://static.qobuz.com/images/covers/32/65/0060253746532_150.jpg",
+     "https://static.qobuz.com/images/covers/21/41/0828766924121_150.jpg",
+     "https://static.qobuz.com/images/covers/oc/yv/po8isu85cyvoc_150.jpg"
+    ],
+    "images300": [
+     "https://static.qobuz.com/images/covers/7b/ju/y0xeyuymlju7b_300.jpg",
+     "https://static.qobuz.com/images/covers/32/65/0060253746532_300.jpg",
+     "https://static.qobuz.com/images/covers/21/41/0828766924121_300.jpg",
+     "https://static.qobuz.com/images/covers/oc/yv/po8isu85cyvoc_300.jpg"
+    ]
+   },
+   {
+    "id": 5295972,
+    "name": "Hi-Res Masters: Jazz Guitar",
+    "description": "Enjoy Jazz Guitar's finest in the best possible audio quality with our selection of legendary tracks in Hi-Res, featuring Wes Montgomery, Grant Green, Kenny Burrell, Pat Martino, Charlie Haden & Jim Hall, Larry Coryell, John Scofield, Russell Malone, Julian Lage, Al Di Meola, Pat Metheny, Bill Frisell, Marc Ribot, Lionel Loueke, Nels Cline...\r\n\r\nPhoto: Wes Montgomery by Val Wilmer/Redferns/Getty Images",
+    "tracks_count": 60,
+    "users_count": 867,
+    "duration": 20138,
+    "public_at": 1605135600,
+    "created_at": 1605190800,
+    "updated_at": 1793564465,
+    "is_public": true,
+    "is_collaborative": false,
+    "owner": {
+     "id": 263468,
+     "name": "Qobuz UK"
+    },
+    "indexed_at": 1793707502,
+    "slug": "hi-res-masters-jazz-guitar",
+    "genres": [
+     {
+      "id": 80,
+      "name": "Jazz",
+      "path": [
+       80
+      ],
+      "slug": "jazz"
+     }
+    ],
+    "images": [
+     "https://static.qobuz.com/images/covers/pb/or/r9zuaoxlporpb_50.jpg",
+     "https://static.qobuz.com/images/covers/37/54/0060253765437_50.jpg",
+     "https://static.qobuz.com/images/covers/32/48/0060253764832_50.jpg",
+     "https://static.qobuz.com/images/covers/21/52/0088807235221_50.jpg"
+    ],
+    "is_published": true,
+    "is_featured": true,
+    "published_from": 1777759800,
+    "published_to": 2145913200,
+    "stores": [
+     "BE-nl",
+     "NL-nl",
+     "GB-en",
+     "IE-en"
+    ],
+    "tags": [
+     {
+      "featured_tag_id": "20",
+      "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+      "slug": "focus",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "51",
+      "name_json": "{\"fr\":\"Hi-Res\",\"en\":\"Hi-Res\",\"de\":\"Hi-Res\",\"it\":\"Hi-Res\",\"nl\":\"Hi-Res\",\"es\":\"Hi-Res\",\"pt\":\"Hi-Res\",\"pl\":\"Hi-Res\",\"ja\":\"\\u30cf\\u30a4\\u30ec\\u30be\"}",
+      "slug": "hi-res",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "14",
+      "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+      "slug": "jazz",
+      "genre_tag": {
+       "genre_id": "80",
+       "name": "Jazz"
+      },
+      "is_discover": false
+     }
+    ],
+    "image_rectangle": [
+     "https://static.qobuz.com/images/playlists/5295972_0103acb62f8c6babecaf77c9ec24d320_rectangle.jpg"
+    ],
+    "image_rectangle_mini": [
+     "https://static.qobuz.com/images/playlists/5295972_0103acb62f8c6babecaf77c9ec24d320_rectangle_mini.jpg"
+    ],
+    "featured_artists": [],
+    "timestamp_position": 1777759800,
+    "images150": [
+     "https://static.qobuz.com/images/covers/pb/or/r9zuaoxlporpb_150.jpg",
+     "https://static.qobuz.com/images/covers/37/54/0060253765437_150.jpg",
+     "https://static.qobuz.com/images/covers/32/48/0060253764832_150.jpg",
+     "https://static.qobuz.com/images/covers/21/52/0088807235221_150.jpg"
+    ],
+    "images300": [
+     "https://static.qobuz.com/images/covers/pb/or/r9zuaoxlporpb_300.jpg",
+     "https://static.qobuz.com/images/covers/37/54/0060253765437_300.jpg",
+     "https://static.qobuz.com/images/covers/32/48/0060253764832_300.jpg",
+     "https://static.qobuz.com/images/covers/21/52/0088807235221_300.jpg"
+    ]
+   },
+   {
+    "id": 9663926,
+    "name": "Jazz: 100 Cult Albums",
+    "description": "A selection of one hundred essential albums in Jazz history. Featuring Miles Davis, John Coltrane, Charles Mingus, Ornette Coleman, Sonny Rollins, Dave Brubeck, Cannonball Aderley, Bill Evans, Thelonious Monk, Charlie Parker, Keith Jarrett, Art Blakey & The Jazz Messengers, Stan Getz, Wayne Shorter, Erroll Garner, Oliver Nelson, Eric Dolphy, Albert Ayler, Cecil Taylor,  Duke Ellington, Mahavishnu Orchestra, Herbie Hancock, Weather Report, Ahmad Jamal, Wes Montgomery, Horace Silver, McCoy Tyner, Grant Green, Lee Morgan, Oscar Peterson, Dizzy Gillespie...\r\n\r\nPhoto: Miles Davis © Bob Cato - Sony Music Archives",
+    "tracks_count": 100,
+    "users_count": 830,
+    "duration": 38295,
+    "public_at": 1654552800,
+    "created_at": 1654617455,
+    "updated_at": 1792235377,
+    "is_public": true,
+    "is_collaborative": false,
+    "owner": {
+     "id": 263468,
+     "name": "Qobuz UK"
+    },
+    "indexed_at": 1792235377,
+    "slug": "jazz-100-cult-albums",
+    "genres": [
+     {
+      "id": 80,
+      "name": "Jazz",
+      "path": [
+       80
+      ],
+      "slug": "jazz"
+     }
+    ],
+    "images": [
+     "https://static.qobuz.com/images/covers/28/24/5099749522428_50.jpg",
+     "https://static.qobuz.com/images/covers/84/20/0060253742084_50.jpg",
+     "https://static.qobuz.com/images/covers/25/12/5099706551225_50.jpg",
+     "https://static.qobuz.com/images/covers/10/03/0603497920310_50.jpg"
+    ],
+    "is_published": true,
+    "is_featured": true,
+    "published_from": 1746136800,
+    "published_to": 1893515220,
+    "stores": [
+     "BE-nl",
+     "NL-nl",
+     "GB-en",
+     "IE-en"
+    ],
+    "tags": [
+     {
+      "featured_tag_id": "20",
+      "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+      "slug": "focus",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "41",
+      "name_json": "{\"fr\":\"Top playlists\",\"en\":\"Top playlists\",\"de\":\"Top Playlists\",\"it\":\"Top playlists\",\"nl\":\"Top playlists\",\"es\":\"Top playlists\",\"pt\":\"Top playlists\",\"pl\":\"Najpopularniejsze\",\"ja\":\"\\u30c8\\u30c3\\u30d7\\u30fb\\u30d7\\u30ec\\u30a4\\u30ea\\u30b9\\u30c8\"}",
+      "slug": "popular",
+      "genre_tag": null,
+      "is_discover": true
+     },
+     {
+      "featured_tag_id": "14",
+      "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+      "slug": "jazz",
+      "genre_tag": {
+       "genre_id": "80",
+       "name": "Jazz"
+      },
+      "is_discover": false
+     }
+    ],
+    "image_rectangle": [
+     "https://static.qobuz.com/images/playlists/9663926_bdb8c07f70807c71995ef8c62600b917_rectangle.jpg"
+    ],
+    "image_rectangle_mini": [
+     "https://static.qobuz.com/images/playlists/9663926_bdb8c07f70807c71995ef8c62600b917_rectangle_mini.jpg"
+    ],
+    "featured_artists": [],
+    "timestamp_position": 1746136800,
+    "images150": [
+     "https://static.qobuz.com/images/covers/28/24/5099749522428_150.jpg",
+     "https://static.qobuz.com/images/covers/84/20/0060253742084_150.jpg",
+     "https://static.qobuz.com/images/covers/25/12/5099706551225_150.jpg",
+     "https://static.qobuz.com/images/covers/10/03/0603497920310_150.jpg"
+    ],
+    "images300": [
+     "https://static.qobuz.com/images/covers/28/24/5099749522428_300.jpg",
+     "https://static.qobuz.com/images/covers/84/20/0060253742084_300.jpg",
+     "https://static.qobuz.com/images/covers/25/12/5099706551225_300.jpg",
+     "https://static.qobuz.com/images/covers/10/03/0603497920310_300.jpg"
+    ]
+   }
+  ]
+ },
+ "stories": {
+  "analytics": {
+   "search_external_id": "916e7aeead709186fcaa34d03f42c6b3"
+  },
+  "total": 198,
+  "items": []
+ },
+ "most_popular": {
+  "limit": 30,
+  "offset": 0,
+  "analytics": {
+   "search_external_id": "b7c355620fac4f9c65b4498877989fb4"
+  },
+  "total": 1000,
+  "items": [
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/33a9c9bc1f351aa593ac0f7658299e27.jpg"
+     },
+     "name": "Miles Davis",
+     "slug": "miles-davis",
+     "albums_count": 5880,
+     "id": 6760
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/0e15a524758d9a7b9939cf46823d7695.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/0e15a524758d9a7b9939cf46823d7695.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/0e15a524758d9a7b9939cf46823d7695.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/0e15a524758d9a7b9939cf46823d7695.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/0e15a524758d9a7b9939cf46823d7695.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/0e15a524758d9a7b9939cf46823d7695.jpg"
+     },
+     "name": "Melody Gardot",
+     "slug": "melody-gardot",
+     "albums_count": 124,
+     "id": 39297
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/2ce0f3d74b24cb2c7e1f11a7c6f1746d.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/2ce0f3d74b24cb2c7e1f11a7c6f1746d.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/2ce0f3d74b24cb2c7e1f11a7c6f1746d.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/2ce0f3d74b24cb2c7e1f11a7c6f1746d.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/2ce0f3d74b24cb2c7e1f11a7c6f1746d.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/2ce0f3d74b24cb2c7e1f11a7c6f1746d.jpg"
+     },
+     "name": "Keith Jarrett",
+     "slug": "keith-jarrett",
+     "albums_count": 488,
+     "id": 11302
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/bcb3ae07456c8222bdc6fefb52904f3b.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/bcb3ae07456c8222bdc6fefb52904f3b.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/bcb3ae07456c8222bdc6fefb52904f3b.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/bcb3ae07456c8222bdc6fefb52904f3b.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/bcb3ae07456c8222bdc6fefb52904f3b.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/bcb3ae07456c8222bdc6fefb52904f3b.jpg"
+     },
+     "name": "Diana Krall",
+     "slug": "diana-krall",
+     "albums_count": 87,
+     "id": 37277
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/d6a77eea8382ee790177ec011521730b.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/d6a77eea8382ee790177ec011521730b.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/d6a77eea8382ee790177ec011521730b.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/d6a77eea8382ee790177ec011521730b.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/d6a77eea8382ee790177ec011521730b.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/d6a77eea8382ee790177ec011521730b.jpg"
+     },
+     "name": "John Coltrane",
+     "slug": "john-coltrane",
+     "albums_count": 3363,
+     "id": 26028
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/9261c59ae2e2539f22ff8ead938d94d2.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/9261c59ae2e2539f22ff8ead938d94d2.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/9261c59ae2e2539f22ff8ead938d94d2.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/9261c59ae2e2539f22ff8ead938d94d2.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/9261c59ae2e2539f22ff8ead938d94d2.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/9261c59ae2e2539f22ff8ead938d94d2.jpg"
+     },
+     "name": "Norah Jones",
+     "slug": "norah-jones",
+     "albums_count": 321,
+     "id": 34525
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/07a87fedee9e680a368541bc8baa0b35.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/07a87fedee9e680a368541bc8baa0b35.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/07a87fedee9e680a368541bc8baa0b35.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/07a87fedee9e680a368541bc8baa0b35.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/07a87fedee9e680a368541bc8baa0b35.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/07a87fedee9e680a368541bc8baa0b35.jpg"
+     },
+     "name": "Ella Fitzgerald",
+     "slug": "ella-fitzgerald",
+     "albums_count": 5926,
+     "id": 24811
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/824ed76146db76efae09b07b24c2fc1a.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/824ed76146db76efae09b07b24c2fc1a.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/824ed76146db76efae09b07b24c2fc1a.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/824ed76146db76efae09b07b24c2fc1a.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/824ed76146db76efae09b07b24c2fc1a.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/824ed76146db76efae09b07b24c2fc1a.jpg"
+     },
+     "name": "Brad Mehldau",
+     "slug": "brad-mehldau",
+     "albums_count": 101,
+     "id": 50712
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/b003ff76f224cecaa8a9ec075d752087.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/b003ff76f224cecaa8a9ec075d752087.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/b003ff76f224cecaa8a9ec075d752087.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/b003ff76f224cecaa8a9ec075d752087.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/b003ff76f224cecaa8a9ec075d752087.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/b003ff76f224cecaa8a9ec075d752087.jpg"
+     },
+     "name": "Pat Metheny",
+     "slug": "pat-metheny",
+     "albums_count": 328,
+     "id": 14616
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/d3fc6ca1a79deff42212b63a10437341.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/d3fc6ca1a79deff42212b63a10437341.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/d3fc6ca1a79deff42212b63a10437341.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/d3fc6ca1a79deff42212b63a10437341.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/d3fc6ca1a79deff42212b63a10437341.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/d3fc6ca1a79deff42212b63a10437341.jpg"
+     },
+     "name": "Nina Simone",
+     "slug": "nina-simone",
+     "albums_count": 2970,
+     "id": 25046
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/48b61407105ac2ed42e6323141ac64b6.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/48b61407105ac2ed42e6323141ac64b6.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/48b61407105ac2ed42e6323141ac64b6.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/48b61407105ac2ed42e6323141ac64b6.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/48b61407105ac2ed42e6323141ac64b6.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/48b61407105ac2ed42e6323141ac64b6.jpg"
+     },
+     "name": "Charles Mingus",
+     "slug": "charles-mingus",
+     "albums_count": 2801,
+     "id": 14756
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/67a305d65c80533570829dad7e3c8f9d.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/67a305d65c80533570829dad7e3c8f9d.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/67a305d65c80533570829dad7e3c8f9d.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/67a305d65c80533570829dad7e3c8f9d.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/67a305d65c80533570829dad7e3c8f9d.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/67a305d65c80533570829dad7e3c8f9d.jpg"
+     },
+     "name": "Ezra Collective",
+     "slug": "ezra-collective",
+     "albums_count": 103,
+     "id": 3431792
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/1b666fecc8cd41fcc2e59195da3ba839.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/1b666fecc8cd41fcc2e59195da3ba839.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/1b666fecc8cd41fcc2e59195da3ba839.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/1b666fecc8cd41fcc2e59195da3ba839.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/1b666fecc8cd41fcc2e59195da3ba839.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/1b666fecc8cd41fcc2e59195da3ba839.jpg"
+     },
+     "name": "Bill Evans",
+     "slug": "bill-evans",
+     "albums_count": 2198,
+     "id": 27183
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/4c847b8814678ef4678c90f1ccc13560.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/4c847b8814678ef4678c90f1ccc13560.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/4c847b8814678ef4678c90f1ccc13560.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/4c847b8814678ef4678c90f1ccc13560.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/4c847b8814678ef4678c90f1ccc13560.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/4c847b8814678ef4678c90f1ccc13560.jpg"
+     },
+     "name": "Christian McBride",
+     "slug": "christian-mcbride",
+     "albums_count": 89,
+     "id": 39076
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/fc4435eaf1a611902e9d9ea89ed673d2.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/fc4435eaf1a611902e9d9ea89ed673d2.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/fc4435eaf1a611902e9d9ea89ed673d2.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/fc4435eaf1a611902e9d9ea89ed673d2.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/fc4435eaf1a611902e9d9ea89ed673d2.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/fc4435eaf1a611902e9d9ea89ed673d2.jpg"
+     },
+     "name": "Joshua Redman",
+     "slug": "joshua-redman",
+     "albums_count": 70,
+     "id": 261356
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/bfa9f011ce4d06e77c7bb538859bbae4.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/bfa9f011ce4d06e77c7bb538859bbae4.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/bfa9f011ce4d06e77c7bb538859bbae4.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/bfa9f011ce4d06e77c7bb538859bbae4.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/bfa9f011ce4d06e77c7bb538859bbae4.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/bfa9f011ce4d06e77c7bb538859bbae4.jpg"
+     },
+     "name": "Oscar Peterson",
+     "slug": "oscar-peterson",
+     "albums_count": 3239,
+     "id": 16541
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/b9b725f8e97af27d4aec506401e87c5e.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/b9b725f8e97af27d4aec506401e87c5e.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/b9b725f8e97af27d4aec506401e87c5e.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/b9b725f8e97af27d4aec506401e87c5e.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/b9b725f8e97af27d4aec506401e87c5e.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/b9b725f8e97af27d4aec506401e87c5e.jpg"
+     },
+     "name": "Cannonball Adderley",
+     "slug": "cannonball-adderley",
+     "albums_count": 1458,
+     "id": 34626
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/7698b1612bfccded5516eea47149e620.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/7698b1612bfccded5516eea47149e620.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/7698b1612bfccded5516eea47149e620.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/7698b1612bfccded5516eea47149e620.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/7698b1612bfccded5516eea47149e620.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/7698b1612bfccded5516eea47149e620.jpg"
+     },
+     "name": "John Scofield",
+     "slug": "john-scofield",
+     "albums_count": 107,
+     "id": 35377
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/28fad9ddb88f4cabb82f3efbdf29731e.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/28fad9ddb88f4cabb82f3efbdf29731e.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/28fad9ddb88f4cabb82f3efbdf29731e.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/28fad9ddb88f4cabb82f3efbdf29731e.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/28fad9ddb88f4cabb82f3efbdf29731e.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/28fad9ddb88f4cabb82f3efbdf29731e.jpg"
+     },
+     "name": "Sonny Rollins",
+     "slug": "sonny-rollins",
+     "albums_count": 2403,
+     "id": 35032
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/6bce8c4469803dbc704bb32e1bcdefd2.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/6bce8c4469803dbc704bb32e1bcdefd2.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/6bce8c4469803dbc704bb32e1bcdefd2.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/6bce8c4469803dbc704bb32e1bcdefd2.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/6bce8c4469803dbc704bb32e1bcdefd2.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/6bce8c4469803dbc704bb32e1bcdefd2.jpg"
+     },
+     "name": "Charlie Parker",
+     "slug": "charlie-parker",
+     "albums_count": 3033,
+     "id": 16173
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/2598cc6ec0390f06055f7bba6c9d1f39.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/2598cc6ec0390f06055f7bba6c9d1f39.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/2598cc6ec0390f06055f7bba6c9d1f39.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/2598cc6ec0390f06055f7bba6c9d1f39.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/2598cc6ec0390f06055f7bba6c9d1f39.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/2598cc6ec0390f06055f7bba6c9d1f39.jpg"
+     },
+     "name": "Chet Baker",
+     "slug": "chet-baker-5",
+     "albums_count": 3748,
+     "id": 462118
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/02703c6e20cf200748c6d9c92eeadea4.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/02703c6e20cf200748c6d9c92eeadea4.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/02703c6e20cf200748c6d9c92eeadea4.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/02703c6e20cf200748c6d9c92eeadea4.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/02703c6e20cf200748c6d9c92eeadea4.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/02703c6e20cf200748c6d9c92eeadea4.jpg"
+     },
+     "name": "Dave Brubeck",
+     "slug": "dave-brubeck",
+     "albums_count": 2360,
+     "id": 4906
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/35de18017407c0810a7a73adf664f6fa.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/35de18017407c0810a7a73adf664f6fa.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/35de18017407c0810a7a73adf664f6fa.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/35de18017407c0810a7a73adf664f6fa.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/35de18017407c0810a7a73adf664f6fa.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/35de18017407c0810a7a73adf664f6fa.jpg"
+     },
+     "name": "Wynton Marsalis",
+     "slug": "wynton-marsalis",
+     "albums_count": 182,
+     "id": 14141
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/e889da112ddc6e5ee1b5769de30696e2.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/e889da112ddc6e5ee1b5769de30696e2.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/e889da112ddc6e5ee1b5769de30696e2.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/e889da112ddc6e5ee1b5769de30696e2.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/e889da112ddc6e5ee1b5769de30696e2.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/e889da112ddc6e5ee1b5769de30696e2.jpg"
+     },
+     "name": "Joe Lovano",
+     "slug": "joe-lovano",
+     "albums_count": 80,
+     "id": 37583
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/666b15b2f3924c0794f769cade900127.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/666b15b2f3924c0794f769cade900127.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/666b15b2f3924c0794f769cade900127.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/666b15b2f3924c0794f769cade900127.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/666b15b2f3924c0794f769cade900127.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/666b15b2f3924c0794f769cade900127.jpg"
+     },
+     "name": "Yussef Dayes",
+     "slug": "yussef-dayes",
+     "albums_count": 27,
+     "id": 2762950
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/609ae5b15ac3731973186ad136f7ae0b.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/609ae5b15ac3731973186ad136f7ae0b.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/609ae5b15ac3731973186ad136f7ae0b.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/609ae5b15ac3731973186ad136f7ae0b.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/609ae5b15ac3731973186ad136f7ae0b.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/609ae5b15ac3731973186ad136f7ae0b.jpg"
+     },
+     "name": "DOMi & JD BECK",
+     "slug": "domi--jd-beck",
+     "albums_count": 12,
+     "id": 13515425
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/11a7efb983fbd2c6f5df0627d7130528.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/11a7efb983fbd2c6f5df0627d7130528.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/11a7efb983fbd2c6f5df0627d7130528.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/11a7efb983fbd2c6f5df0627d7130528.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/11a7efb983fbd2c6f5df0627d7130528.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/11a7efb983fbd2c6f5df0627d7130528.jpg"
+     },
+     "name": "Louis Cole",
+     "slug": "cole-louis",
+     "albums_count": 65,
+     "id": 188718
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/2fa87c851080e816c3df2aee6554dae3.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/2fa87c851080e816c3df2aee6554dae3.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/2fa87c851080e816c3df2aee6554dae3.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/2fa87c851080e816c3df2aee6554dae3.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/2fa87c851080e816c3df2aee6554dae3.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/2fa87c851080e816c3df2aee6554dae3.jpg"
+     },
+     "name": "Kendrick Scott",
+     "slug": "kendrick-scott",
+     "albums_count": 4,
+     "id": 466605
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/48c295e1f1fa38362911580325631b96.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/48c295e1f1fa38362911580325631b96.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/48c295e1f1fa38362911580325631b96.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/48c295e1f1fa38362911580325631b96.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/48c295e1f1fa38362911580325631b96.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/48c295e1f1fa38362911580325631b96.jpg"
+     },
+     "name": "Jacob Young",
+     "slug": "jacob-young",
+     "albums_count": 92,
+     "id": 35077
+    }
+   },
+   {
+    "type": "artists",
+    "content": {
+     "type": "artists",
+     "picture": "https://static.qobuz.com/images/artists/covers/small/157eabb4c9407476e34bf3a784a043ae.jpg",
+     "image": {
+      "small": "https://static.qobuz.com/images/artists/covers/small/157eabb4c9407476e34bf3a784a043ae.jpg",
+      "medium": "https://static.qobuz.com/images/artists/covers/medium/157eabb4c9407476e34bf3a784a043ae.jpg",
+      "large": "https://static.qobuz.com/images/artists/covers/large/157eabb4c9407476e34bf3a784a043ae.jpg",
+      "extralarge": "https://static.qobuz.com/images/artists/covers/large/157eabb4c9407476e34bf3a784a043ae.jpg",
+      "mega": "https://static.qobuz.com/images/artists/covers/large/157eabb4c9407476e34bf3a784a043ae.jpg"
+     },
+     "name": "Herbie Hancock",
+     "slug": "herbie-hancock",
+     "albums_count": 1326,
+     "id": 10118
+    }
+   }
+  ]
+ }
+}

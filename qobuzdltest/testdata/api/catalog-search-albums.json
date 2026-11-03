@@ -1,0 +1,3872 @@
+{
+ "query": "miles davis kind of blue",
+ "albums": {
+  "limit": 10,
+  "offset": 0,
+  "analytics": {
+   "search_external_id": "284c81793abe68d24bb6407fc8e6781d"
+  },
+  "total": 47,
+  "items": [
+   {
+    "maximum_bit_depth": 24,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/28/24/5099749522428_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/28/24/5099749522428_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/28/24/5099749522428_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Miles Davis",
+     "id": 6760,
+     "albums_count": 5875,
+     "slug": "miles-davis",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 6760,
+      "name": "Miles Davis",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "5099749522428",
+    "released_at": -327459600,
+    "label": {
+     "name": "Columbia",
+     "id": 4592,
+     "albums_count": 28225,
+     "supplier_id": 23,
+     "slug": "columbia"
+    },
+    "title": "Kind Of Blue",
+    "qobuz_id": 13176082,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-miles-davis/5099749522428",
+    "slug": "kind-of-blue-miles-davis",
+    "duration": 2723,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 5,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "5099749522428",
+    "maximum_sampling_rate": 192,
+    "articles": [],
+    "release_date_original": "1959-08-17",
+    "release_date_download": "1959-08-17",
+    "release_date_stream": "1959-08-17",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1792623600,
+    "streamable_at": 1792623600,
+    "hires": true,
+    "hires_streamable": true,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/69/60/0888880696069_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/69/60/0888880696069_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/69/60/0888880696069_600.jpg",
+     "back": null
+    },
+    "media_count": 2,
+    "artist": {
+     "image": null,
+     "name": "Miles Davis",
+     "id": 6760,
+     "albums_count": 5875,
+     "slug": "miles-davis",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 6760,
+      "name": "Miles Davis",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0888880696069",
+    "released_at": 1231974000,
+    "label": {
+     "name": "Columbia/Legacy",
+     "id": 10106072,
+     "albums_count": 2406,
+     "supplier_id": 23,
+     "slug": "columbialegacy-1"
+    },
+    "title": "Kind Of Blue (Legacy Edition)",
+    "qobuz_id": 13273,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-legacy-edition-miles-davis/0888880696069",
+    "slug": "kind-of-blue-legacy-edition-miles-davis",
+    "duration": 7237,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 21,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "0888880696069",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2009-01-15",
+    "release_date_download": "2009-01-15",
+    "release_date_stream": "2009-01-15",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1792623600,
+    "streamable_at": 1792623600,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 24,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/47/07/0886444350747_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/47/07/0886444350747_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/47/07/0886444350747_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Miles Davis",
+     "id": 6760,
+     "albums_count": 5875,
+     "slug": "miles-davis",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 6760,
+      "name": "Miles Davis",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0886444350747",
+    "released_at": -327459600,
+    "label": {
+     "name": "Columbia/Legacy",
+     "id": 10106072,
+     "albums_count": 2406,
+     "supplier_id": 23,
+     "slug": "columbialegacy-1"
+    },
+    "title": "Kind of Blue (Mono)",
+    "qobuz_id": 20273752,
+    "version": "Mono Version",
+    "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-mono-miles-davis/0886444350747",
+    "slug": "kind-of-blue-mono-miles-davis",
+    "duration": 2729,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 5,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "0886444350747",
+    "maximum_sampling_rate": 96,
+    "articles": [],
+    "release_date_original": "1959-08-17",
+    "release_date_download": "1959-08-17",
+    "release_date_stream": "1959-08-17",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1792623600,
+    "streamable_at": 1792623600,
+    "hires": true,
+    "hires_streamable": true,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 24,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Miles Davis",
+     "id": 6760,
+     "albums_count": 5872,
+     "slug": "miles-davis",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 6760,
+      "name": "Miles Davis",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "5056321626073",
+    "released_at": -327459600,
+    "label": {
+     "name": "RevOla",
+     "id": 5626722,
+     "albums_count": 2683,
+     "supplier_id": 249,
+     "slug": "revola-1"
+    },
+    "title": "Kind of Blue",
+    "qobuz_id": 238062269,
+    "version": "Remastered",
+    "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-miles-davis/fdasb7heir98a",
+    "slug": "kind-of-blue-miles-davis",
+    "duration": 2768,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 5,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "fdasb7heir98a",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "1959-08-17",
+    "release_date_download": "1959-08-17",
+    "release_date_stream": "1959-08-17",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1789167600,
+    "streamable_at": 1789167600,
+    "hires": true,
+    "hires_streamable": true,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/2a/jl/x6m24h69ijl2a_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/2a/jl/x6m24h69ijl2a_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/2a/jl/x6m24h69ijl2a_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Miles Davis",
+     "id": 6760,
+     "albums_count": 5860,
+     "slug": "miles-davis",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 6760,
+      "name": "Miles Davis",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "3760300315477",
+    "released_at": 1637362800,
+    "label": {
+     "name": "BDMUSIC",
+     "id": 123730,
+     "albums_count": 317,
+     "supplier_id": 4,
+     "slug": "bdmusic"
+    },
+    "title": "BD Music Presents Kind of Blue",
+    "qobuz_id": 139040714,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/bd-music-presents-kind-of-blue-miles-davis/x6m24h69ijl2a",
+    "slug": "bd-music-presents-kind-of-blue-miles-davis",
+    "duration": 2751,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 5,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "x6m24h69ijl2a",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2021-11-20",
+    "release_date_download": "2021-11-20",
+    "release_date_stream": "2021-11-20",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1788217200,
+    "streamable_at": 1785020400,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/6b/kr/qsieqfb10kr6b_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/6b/kr/qsieqfb10kr6b_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/6b/kr/qsieqfb10kr6b_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Miles Davis",
+     "id": 6760,
+     "albums_count": 5834,
+     "slug": "miles-davis",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 6760,
+      "name": "Miles Davis",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0884385317935",
+    "released_at": 1262300400,
+    "label": {
+     "name": "Techniche Label OMP",
+     "id": 4427,
+     "albums_count": 265,
+     "supplier_id": 17,
+     "slug": "techniche-label-omp"
+    },
+    "title": "Kind Of Blue - HD Re-Mastered 2010",
+    "qobuz_id": 89278482,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-hd-re-mastered-2010-miles-davis/qsieqfb10kr6b",
+    "slug": "kind-of-blue-hd-re-mastered-2010-miles-davis",
+    "duration": 2737,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 5,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "qsieqfb10kr6b",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2010-01-01",
+    "release_date_download": "2010-01-01",
+    "release_date_stream": "2010-01-01",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778022000,
+    "streamable_at": 1778022000,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 24,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/69/55/3610154015569_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/69/55/3610154015569_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/69/55/3610154015569_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Miles Davis",
+     "id": 6760,
+     "albums_count": 5873,
+     "slug": "miles-davis",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 6760,
+      "name": "Miles Davis",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "3610154015569",
+    "released_at": -327459600,
+    "label": {
+     "name": "BNF Collection",
+     "id": 68273,
+     "albums_count": 41920,
+     "supplier_id": 3,
+     "slug": "bnf-collection"
+    },
+    "title": "Kind Of Blue (Stereo Version)",
+    "qobuz_id": 14106036,
+    "version": "Stereo Version",
+    "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-stereo-version-miles-davis/3610154015569",
+    "slug": "kind-of-blue-stereo-version-miles-davis",
+    "duration": 2672,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 5,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "3610154015569",
+    "maximum_sampling_rate": 96,
+    "articles": [],
+    "release_date_original": "1959-08-17",
+    "release_date_download": "1959-08-17",
+    "release_date_stream": "1959-08-17",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1788217200,
+    "streamable_at": 1788217200,
+    "hires": true,
+    "hires_streamable": true,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/9a/9m/gqq1grrc19m9a_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/9a/9m/gqq1grrc19m9a_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/9a/9m/gqq1grrc19m9a_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Miles Davis",
+     "id": 6760,
+     "albums_count": 5860,
+     "slug": "miles-davis",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 6760,
+      "name": "Miles Davis",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0192231133371",
+    "released_at": 1542927600,
+    "label": {
+     "name": "Nightclub Records",
+     "id": 223961,
+     "albums_count": 88,
+     "supplier_id": 89,
+     "slug": "nightclub-records-1"
+    },
+    "title": "Kind of Blue",
+    "qobuz_id": 57261066,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-miles-davis/gqq1grrc19m9a",
+    "slug": "kind-of-blue-miles-davis",
+    "duration": 2665,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 5,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "gqq1grrc19m9a",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "2018-11-23",
+    "release_date_download": "2018-11-23",
+    "release_date_stream": "2018-11-23",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1784415600,
+    "streamable_at": 1784415600,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 24,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/41/86/0191018878641_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/41/86/0191018878641_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/41/86/0191018878641_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Solo Sounds",
+     "id": 3272149,
+     "albums_count": 89,
+     "slug": "solosounds-10003272149",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 3272149,
+      "name": "Solo Sounds",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "0191018878641",
+    "released_at": 1489705200,
+    "label": {
+     "name": "Solo Sounds",
+     "id": 157517,
+     "albums_count": 95,
+     "supplier_id": 17,
+     "slug": "solo-sounds"
+    },
+    "title": "Solo Wurlitzer Electric Piano: Miles Davis' Kind of Blue",
+    "qobuz_id": 39429719,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/solo-wurlitzer-electric-piano-miles-davis-kind-of-blue-solo-sounds/0191018878641",
+    "slug": "solo-wurlitzer-electric-piano-miles-davis-kind-of-blue-solo-sounds",
+    "duration": 1152,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 5,
+    "genre": {
+     "path": [
+      80
+     ],
+     "color": "#0070ef",
+     "name": "Jazz",
+     "id": 80,
+     "slug": "jazz"
+    },
+    "maximum_channel_count": 2,
+    "id": "0191018878641",
+    "maximum_sampling_rate": 192,
+    "articles": [],
+    "release_date_original": "2017-03-17",
+    "release_date_download": "2017-03-17",
+    "release_date_stream": "2017-03-17",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1778281200,
+    "streamable_at": 1778281200,
+    "hires": true,
+    "hires_streamable": true,
+    "ai_generated": null
+   },
+   {
+    "maximum_bit_depth": 16,
+    "image": {
+     "small": "https://static.qobuz.com/images/covers/6b/gv/nkknk1v08gv6b_230.jpg",
+     "thumbnail": "https://static.qobuz.com/images/covers/6b/gv/nkknk1v08gv6b_50.jpg",
+     "large": "https://static.qobuz.com/images/covers/6b/gv/nkknk1v08gv6b_600.jpg",
+     "back": null
+    },
+    "media_count": 1,
+    "artist": {
+     "image": null,
+     "name": "Miles Davis Quintet",
+     "id": 50709,
+     "albums_count": 402,
+     "slug": "miles-davis-quintet",
+     "picture": null
+    },
+    "artists": [
+     {
+      "id": 50709,
+      "name": "Miles Davis Quintet",
+      "roles": [
+       "main-artist"
+      ]
+     }
+    ],
+    "upc": "4099496699696",
+    "released_at": -327459600,
+    "label": {
+     "name": "DECCO Recordings",
+     "id": 6419724,
+     "albums_count": 42,
+     "supplier_id": 132,
+     "slug": "decco-recordings"
+    },
+    "title": "Kind of Blue",
+    "qobuz_id": 261564788,
+    "version": null,
+    "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-miles-davis-sextet/nkknk1v08gv6b",
+    "slug": "kind-of-blue-miles-davis-sextet",
+    "duration": 2723,
+    "parental_warning": false,
+    "popularity": 0,
+    "tracks_count": 5,
+    "genre": {
+     "path": [
+      112,
+      117
+     ],
+     "color": "#0070ef",
+     "name": "Pop",
+     "id": 117,
+     "slug": "pop"
+    },
+    "maximum_channel_count": 2,
+    "id": "nkknk1v08gv6b",
+    "maximum_sampling_rate": 44.1,
+    "articles": [],
+    "release_date_original": "1959-08-17",
+    "release_date_download": "1959-08-17",
+    "release_date_stream": "1959-08-17",
+    "purchasable": true,
+    "streamable": true,
+    "previewable": true,
+    "sampleable": true,
+    "downloadable": true,
+    "displayable": true,
+    "purchasable_at": 1789686000,
+    "streamable_at": 1789686000,
+    "hires": false,
+    "hires_streamable": false,
+    "ai_generated": false
+   }
+  ]
+ },
+ "tracks": {
+  "analytics": {
+   "search_external_id": "01f228589ac4ae65d31194edcb215f73"
+  },
+  "total": 488,
+  "items": []
+ },
+ "artists": {
+  "analytics": {
+   "search_external_id": "da6df37c31623af2aa91e15f631803f9"
+  },
+  "total": 0,
+  "items": []
+ },
+ "playlists": {
+  "analytics": {
+   "search_external_id": "cae0e5c23b6194b3cd02224ac5d0c5f7"
+  },
+  "total": 20,
+  "items": []
+ },
+ "stories": {
+  "analytics": {
+   "search_external_id": "ed1a9fa573472943b056c8b21aebece2"
+  },
+  "total": 0,
+  "items": []
+ },
+ "most_popular": {
+  "limit": 30,
+  "offset": 0,
+  "analytics": {
+   "search_external_id": "5ddb32ef22830d0173f6fc9fb2a7d896"
+  },
+  "total": 240,
+  "items": [
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/28/24/5099749522428_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/28/24/5099749522428_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/28/24/5099749522428_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "5099749522428",
+     "released_at": -327459600,
+     "label": {
+      "name": "Columbia",
+      "id": 4592,
+      "albums_count": 28225,
+      "supplier_id": 23,
+      "slug": "columbia"
+     },
+     "title": "Kind Of Blue",
+     "qobuz_id": 13176082,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-miles-davis/5099749522428",
+     "slug": "kind-of-blue-miles-davis",
+     "duration": 2723,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "5099749522428",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, Associated Performer, Main Artist, Trumpet, Associated Performer, Trumpet\r - Irving Townsend, Producer\r - Jimmy Cobb, Drums\r - M. Davis, Composer, Lyricist\r - Patti Matheny\r - Bill Evans, Piano\r - Darren Salmieri\r - Seth Foster, Mastering Engineer\r - Paul Chambers, Bass\r - Fred Plaut, Recording Engineer\r - John Coltrane, Tenor Saxophone",
+     "audio_info": {
+      "replaygain_track_peak": 0.973236,
+      "replaygain_track_gain": -0.76
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 31993566,
+      "SMR": 31993567,
+      "SM2": 316766657
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/28/24/5099749522428_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/28/24/5099749522428_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/28/24/5099749522428_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5875,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "5099749522428",
+      "released_at": -327459600,
+      "label": {
+       "name": "Columbia",
+       "id": 4592,
+       "albums_count": 28225,
+       "supplier_id": 23,
+       "slug": "columbia"
+      },
+      "title": "Kind Of Blue",
+      "qobuz_id": 13176082,
+      "version": null,
+      "duration": 2723,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "5099749522428",
+      "maximum_sampling_rate": 192,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1792623600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM15900115",
+     "title": "Blue in Green",
+     "version": null,
+     "duration": 335,
+     "parental_warning": false,
+     "track_number": 3,
+     "maximum_channel_count": 2,
+     "id": 13176085,
+     "media_number": 1,
+     "maximum_sampling_rate": 192,
+     "articles": [
+      {
+       "id": 31993566,
+       "url": "/order/31993566",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 31993567,
+       "url": "/order/31993567",
+       "price": 2.19,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      },
+      {
+       "id": 316766657,
+       "url": "/order/316766657",
+       "price": 2.99,
+       "currency": "GBP",
+       "type": "sm2",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 192 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/69/60/0888880696069_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/69/60/0888880696069_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/69/60/0888880696069_600.jpg",
+      "back": null
+     },
+     "media_count": 2,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0888880696069",
+     "released_at": 1231974000,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2406,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Kind Of Blue (Legacy Edition)",
+     "qobuz_id": 13273,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-legacy-edition-miles-davis/0888880696069",
+     "slug": "kind-of-blue-legacy-edition-miles-davis",
+     "duration": 7237,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 21,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0888880696069",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2009-01-15",
+     "release_date_download": "2009-01-15",
+     "release_date_stream": "2009-01-15",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, Associated Performer, Composer, Lyricist, Main Artist, Trumpet, Associated Performer, Composer, Lyricist, Trumpet\r - Irving Townsend, Producer\r - Jimmy Cobb, Drums\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone",
+     "audio_info": {
+      "replaygain_track_peak": 0.800446,
+      "replaygain_track_gain": 0.93
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 31993569,
+      "SMR": 31993570,
+      "SM2": 316766658
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/28/24/5099749522428_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/28/24/5099749522428_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/28/24/5099749522428_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5875,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "5099749522428",
+      "released_at": -327459600,
+      "label": {
+       "name": "Columbia",
+       "id": 4592,
+       "albums_count": 28225,
+       "supplier_id": 23,
+       "slug": "columbia"
+      },
+      "title": "Kind Of Blue",
+      "qobuz_id": 13176082,
+      "version": null,
+      "duration": 2723,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "5099749522428",
+      "maximum_sampling_rate": 192,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1792623600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM15900116",
+     "title": "All Blues",
+     "version": null,
+     "duration": 692,
+     "parental_warning": false,
+     "track_number": 4,
+     "maximum_channel_count": 2,
+     "id": 13176086,
+     "media_number": 1,
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "purchasable": false,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": false,
+     "displayable": true,
+     "purchasable_at": null,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 16,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Fred Plaut, Recording Engineer - Irving Townsend, Producer - Paul Chambers, Bass - Bill Evans, Piano - Seth Foster, Mastering Engineer - M. Davis, Lyricist - M. Davis, Composer - Miles Davis, Performer - Miles Davis, Trumpet - John Coltrane, Tenor Saxophone - Patti Matheny, A&R Coordinator - Darren Salmieri, A&R Coordinator - Jimmy Cobb, Drums - ",
+     "audio_info": {
+      "replaygain_track_peak": 0.718231,
+      "replaygain_track_gain": 1.87
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 8430237,
+      "SMR": 16891872,
+      "SM2": 305046585
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/69/60/0888880696069_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/69/60/0888880696069_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/69/60/0888880696069_600.jpg"
+      },
+      "maximum_bit_depth": 16,
+      "media_count": 2,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5875,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0888880696069",
+      "released_at": 1231974000,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2405,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind Of Blue (Legacy Edition)",
+      "qobuz_id": 13273,
+      "version": null,
+      "duration": 7237,
+      "parental_warning": false,
+      "tracks_count": 21,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0888880696069",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1792623600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2009-01-15",
+      "release_date_download": "2009-01-15",
+      "release_date_stream": "2009-01-15",
+      "release_date_purchase": "2009-01-15",
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM15900115",
+     "title": "Blue in Green",
+     "version": "Album Version",
+     "duration": 337,
+     "parental_warning": false,
+     "track_number": 3,
+     "maximum_channel_count": 2,
+     "id": 13276,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 8430237,
+       "url": "/order/8430237",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2009-01-15",
+     "release_date_download": "2009-01-15",
+     "release_date_stream": "2009-01-15",
+     "release_date_purchase": "2009-01-15",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_600.jpg",
+      "back": null
+     },
+     "media_count": 2,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0888880983541",
+     "released_at": 1231974000,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2406,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Kind Of Blue (Legacy Edition)",
+     "qobuz_id": 48097769,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-legacy-edition-miles-davis/pmm9oz4jkwbsc",
+     "slug": "kind-of-blue-legacy-edition-miles-davis",
+     "duration": 7237,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 21,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "pmm9oz4jkwbsc",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2009-01-15",
+     "release_date_download": "2009-01-15",
+     "release_date_stream": "2009-01-15",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786143600,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/61/07/0886444350761_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/61/07/0886444350761_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/61/07/0886444350761_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0886444350761",
+     "released_at": -327459600,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2406,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Kind of Blue (Mono)",
+     "qobuz_id": 20273758,
+     "version": "Mono Version",
+     "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-mono-miles-davis/0886444350761",
+     "slug": "kind-of-blue-mono-miles-davis",
+     "duration": 2729,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0886444350761",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786143600,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/47/07/0886444350747_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/47/07/0886444350747_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/47/07/0886444350747_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0886444350747",
+     "released_at": -327459600,
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": 10106072,
+      "albums_count": 2406,
+      "supplier_id": 23,
+      "slug": "columbialegacy-1"
+     },
+     "title": "Kind of Blue (Mono)",
+     "qobuz_id": 20273752,
+     "version": "Mono Version",
+     "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-mono-miles-davis/0886444350747",
+     "slug": "kind-of-blue-mono-miles-davis",
+     "duration": 2729,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0886444350747",
+     "maximum_sampling_rate": 96,
+     "articles": [],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5872,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "5056321626073",
+     "released_at": -327459600,
+     "label": {
+      "name": "RevOla",
+      "id": 5626722,
+      "albums_count": 2683,
+      "supplier_id": 249,
+      "slug": "revola-1"
+     },
+     "title": "Kind of Blue",
+     "qobuz_id": 238062269,
+     "version": "Remastered",
+     "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-miles-davis/fdasb7heir98a",
+     "slug": "kind-of-blue-miles-davis",
+     "duration": 2768,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "fdasb7heir98a",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1789167600,
+     "streamable_at": 1789167600,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 16,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, MainArtist, AssociatedPerformer, Soloist, Trumpet, Composer - John Coltrane, FeaturedArtist, AssociatedPerformer, Soloist, Tenor Saxophone - Bill Evans, FeaturedArtist, AssociatedPerformer, Piano, Soloist - Miles Davis feat. John Coltrane & Bill Evans, AssociatedPerformer - Cannonball Adderley, Alto Saxophone - Paul Chambers, Bass - Jimmy Cobb, Drums - Irving Townsend, Producer - Fred Plaut, Recording Engineer",
+     "audio_info": {
+      "replaygain_track_peak": 0.718231,
+      "replaygain_track_gain": 1.87
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 117880252,
+      "SMR": 117880253,
+      "SM2": 346186571
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_600.jpg"
+      },
+      "maximum_bit_depth": 16,
+      "media_count": 2,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5864,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0888880983541",
+      "released_at": 1521759600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2356,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind Of Blue (Legacy Edition)",
+      "qobuz_id": 48097769,
+      "version": null,
+      "duration": 7237,
+      "parental_warning": false,
+      "tracks_count": 21,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "pmm9oz4jkwbsc",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1786143600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2018-03-23",
+      "release_date_download": "2018-03-23",
+      "release_date_stream": "2018-03-23",
+      "release_date_purchase": "2018-03-23",
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM15900115",
+     "title": "Blue in Green",
+     "version": null,
+     "duration": 337,
+     "parental_warning": false,
+     "track_number": 3,
+     "maximum_channel_count": 2,
+     "id": 48097772,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 117880252,
+       "url": "/order/117880252",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2018-03-23",
+     "release_date_download": "2018-03-23",
+     "release_date_stream": "2018-03-23",
+     "release_date_purchase": "2018-03-23",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786143600,
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 16,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, MainArtist, AssociatedPerformer, Soloist, Trumpet, Composer - John Coltrane, FeaturedArtist, AssociatedPerformer, Soloist, Tenor Saxophone - Cannonball Adderley, FeaturedArtist, Alto Saxophone, AssociatedPerformer, Soloist - Bill Evans, FeaturedArtist, AssociatedPerformer, Piano, Soloist - Miles Davis feat. John Coltrane, Cannonball Adderley & Bill Evans, AssociatedPerformer - Paul Chambers, Bass - Jimmy Cobb, Drums - Irving Townsend, Producer - Fred Plaut, Recording Engineer",
+     "audio_info": {
+      "replaygain_track_peak": 0.902771,
+      "replaygain_track_gain": -0.11
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 117880255,
+      "SMR": 117880256,
+      "SM2": 346186572
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_600.jpg"
+      },
+      "maximum_bit_depth": 16,
+      "media_count": 2,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5864,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0888880983541",
+      "released_at": 1521759600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2356,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind Of Blue (Legacy Edition)",
+      "qobuz_id": 48097769,
+      "version": null,
+      "duration": 7237,
+      "parental_warning": false,
+      "tracks_count": 21,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "pmm9oz4jkwbsc",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1786143600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2018-03-23",
+      "release_date_download": "2018-03-23",
+      "release_date_stream": "2018-03-23",
+      "release_date_purchase": "2018-03-23",
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM15900116",
+     "title": "All Blues",
+     "version": null,
+     "duration": 692,
+     "parental_warning": false,
+     "track_number": 4,
+     "maximum_channel_count": 2,
+     "id": 48097773,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2018-03-23",
+     "release_date_download": "2018-03-23",
+     "release_date_stream": "2018-03-23",
+     "release_date_purchase": "2018-03-23",
+     "purchasable": false,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": false,
+     "displayable": true,
+     "purchasable_at": null,
+     "streamable_at": 1786143600,
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 16,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Jimmy Cobb, Drums - Bill Evans, Piano - Irving Townsend, Producer - Paul Chambers, Bass - John Coltrane, Tenor Saxophone - Julian Cannonball Adderley, Alto Saxophone - Miles Davis, Composer - Miles Davis, Performer - Miles Davis, Trumpet - Miles Davis, Lyricist - ",
+     "audio_info": {
+      "replaygain_track_peak": 0.902771,
+      "replaygain_track_gain": -0.11
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 8430239,
+      "SMR": 16891880,
+      "SM2": 305046586
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/69/60/0888880696069_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/69/60/0888880696069_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/69/60/0888880696069_600.jpg"
+      },
+      "maximum_bit_depth": 16,
+      "media_count": 2,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5875,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0888880696069",
+      "released_at": 1231974000,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2405,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind Of Blue (Legacy Edition)",
+      "qobuz_id": 13273,
+      "version": null,
+      "duration": 7237,
+      "parental_warning": false,
+      "tracks_count": 21,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0888880696069",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1792623600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2009-01-15",
+      "release_date_download": "2009-01-15",
+      "release_date_stream": "2009-01-15",
+      "release_date_purchase": "2009-01-15",
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM15900116",
+     "title": "All Blues",
+     "version": "Album Version",
+     "duration": 692,
+     "parental_warning": false,
+     "track_number": 4,
+     "maximum_channel_count": 2,
+     "id": 13277,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2009-01-15",
+     "release_date_download": "2009-01-15",
+     "release_date_stream": "2009-01-15",
+     "release_date_purchase": "2009-01-15",
+     "purchasable": false,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": false,
+     "displayable": true,
+     "purchasable_at": null,
+     "streamable_at": 1792623600,
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, Associated Performer, Composer, Main Artist, Trumpet\r - Jimmy Cobb, Drums\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - John Coltrane, Tenor Saxophone\r - Irving Townsend, Producer\r - Patti Matheny\r - Darren Salmieri\r - Seth Foster, Mastering Engineer\r - Fred Plaut, Recording Engineer",
+     "audio_info": {
+      "replaygain_track_peak": 0.730164,
+      "replaygain_track_gain": 1.73
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 48154142,
+      "SMR": 48154143,
+      "SM2": 322082186
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/61/07/0886444350761_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/61/07/0886444350761_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/61/07/0886444350761_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5864,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0886444350761",
+      "released_at": -327459600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2356,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind of Blue (Mono)",
+      "qobuz_id": 20273758,
+      "version": "Mono Version",
+      "duration": 2729,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0886444350761",
+      "maximum_sampling_rate": 192,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1786143600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM11304995",
+     "title": "Blue in Green",
+     "version": "Mono Version",
+     "duration": 335,
+     "parental_warning": false,
+     "track_number": 3,
+     "maximum_channel_count": 2,
+     "id": 20273761,
+     "media_number": 1,
+     "maximum_sampling_rate": 192,
+     "articles": [
+      {
+       "id": 48154142,
+       "url": "/order/48154142",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 48154143,
+       "url": "/order/48154143",
+       "price": 2.19,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      },
+      {
+       "id": 322082186,
+       "url": "/order/322082186",
+       "price": 2.99,
+       "currency": "GBP",
+       "type": "sm2",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 192 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786143600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, Associated Performer, Composer, Main Artist, Trumpet\r - Jimmy Cobb, Drums\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone\r - Irving Townsend, Producer",
+     "audio_info": {
+      "replaygain_track_peak": 0.843903,
+      "replaygain_track_gain": 0.47
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 48154145,
+      "SMR": 48154146,
+      "SM2": 322082187
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/61/07/0886444350761_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/61/07/0886444350761_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/61/07/0886444350761_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5864,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0886444350761",
+      "released_at": -327459600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2356,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind of Blue (Mono)",
+      "qobuz_id": 20273758,
+      "version": "Mono Version",
+      "duration": 2729,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0886444350761",
+      "maximum_sampling_rate": 192,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1786143600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM11304996",
+     "title": "All Blues",
+     "version": "Mono Version",
+     "duration": 692,
+     "parental_warning": false,
+     "track_number": 4,
+     "maximum_channel_count": 2,
+     "id": 20273762,
+     "media_number": 1,
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "purchasable": false,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": false,
+     "displayable": true,
+     "purchasable_at": null,
+     "streamable_at": 1786143600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/29/20/3610154522029_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/29/20/3610154522029_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/29/20/3610154522029_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5875,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "3610154522029",
+     "released_at": -327459600,
+     "label": {
+      "name": "BNF Collection",
+      "id": 68273,
+      "albums_count": 41920,
+      "supplier_id": 3,
+      "slug": "bnf-collection"
+     },
+     "title": "Kind of Blue",
+     "qobuz_id": 14107612,
+     "version": "Mono Version",
+     "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-miles-davis/3610154522029",
+     "slug": "kind-of-blue-miles-davis",
+     "duration": 2725,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "3610154522029",
+     "maximum_sampling_rate": 96,
+     "articles": [],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1788217200,
+     "streamable_at": 1788217200,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "2010 RevOla Records 2010 RevOla Records",
+     "performers": "Miles Davis, MainArtist - Kobalt Music, MusicPublisher",
+     "audio_info": {
+      "replaygain_track_peak": 0.889008,
+      "replaygain_track_gain": 0.02
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 883114592,
+      "SMR": 883114593
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5872,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "5056321626073",
+      "released_at": -327459600,
+      "label": {
+       "name": "RevOla",
+       "id": 5626722,
+       "albums_count": 2683,
+       "supplier_id": 249,
+       "slug": "revola-1"
+      },
+      "title": "Kind of Blue",
+      "qobuz_id": 238062269,
+      "version": "Remastered",
+      "duration": 2768,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "fdasb7heir98a",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1789167600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "isrc": "UKPFB1891853",
+     "title": "All Blues",
+     "version": "Remastered",
+     "duration": 698,
+     "parental_warning": false,
+     "track_number": 4,
+     "maximum_channel_count": 2,
+     "id": 238062273,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 883114592,
+       "url": "/order/883114592",
+       "price": 2.27,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 883114593,
+       "url": "/order/883114593",
+       "price": 2.83,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1789167600,
+     "streamable_at": 1789167600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 16,
+     "copyright": "Originally recorded 1959 & released 2008. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, MainArtist, AssociatedPerformer, Soloist, Trumpet, Composer - John Coltrane, Tenor Saxophone - Cannonball Adderley, Alto Saxophone - Bill Evans, Piano, Soloist - Paul Chambers, Bass - Jimmy Cobb, Drums - Irving Townsend, Producer - Fred Plaut, Recording Engineer",
+     "audio_info": {
+      "replaygain_track_peak": 0.333771,
+      "replaygain_track_gain": 8.42
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 117880279,
+      "SMR": 117880280,
+      "SM2": 346186580
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_600.jpg"
+      },
+      "maximum_bit_depth": 16,
+      "media_count": 2,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5864,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0888880983541",
+      "released_at": 1521759600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2356,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind Of Blue (Legacy Edition)",
+      "qobuz_id": 48097769,
+      "version": null,
+      "duration": 7237,
+      "parental_warning": false,
+      "tracks_count": 21,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "pmm9oz4jkwbsc",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1786143600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2018-03-23",
+      "release_date_download": "2018-03-23",
+      "release_date_stream": "2018-03-23",
+      "release_date_purchase": "2018-03-23",
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM10802766",
+     "title": "Blue in Green",
+     "version": "Studio Sequence",
+     "duration": 116,
+     "parental_warning": false,
+     "track_number": 12,
+     "maximum_channel_count": 2,
+     "id": 48097781,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 117880279,
+       "url": "/order/117880279",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2018-03-23",
+     "release_date_download": "2018-03-23",
+     "release_date_stream": "2018-03-23",
+     "release_date_purchase": "2018-03-23",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1786143600,
+     "streamable_at": 1786143600,
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/2a/jl/x6m24h69ijl2a_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/2a/jl/x6m24h69ijl2a_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/2a/jl/x6m24h69ijl2a_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5860,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "3760300315477",
+     "released_at": 1637362800,
+     "label": {
+      "name": "BDMUSIC",
+      "id": 123730,
+      "albums_count": 317,
+      "supplier_id": 4,
+      "slug": "bdmusic"
+     },
+     "title": "BD Music Presents Kind of Blue",
+     "qobuz_id": 139040714,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/bd-music-presents-kind-of-blue-miles-davis/x6m24h69ijl2a",
+     "slug": "bd-music-presents-kind-of-blue-miles-davis",
+     "duration": 2751,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "x6m24h69ijl2a",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2021-11-20",
+     "release_date_download": "2021-11-20",
+     "release_date_stream": "2021-11-20",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1788217200,
+     "streamable_at": 1785020400,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "2010 RevOla Records 2010 RevOla Records",
+     "performers": "Miles Davis, MainArtist - Kobalt Music, MusicPublisher",
+     "audio_info": {
+      "replaygain_track_peak": 0.470093,
+      "replaygain_track_gain": 5.56
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 883114589,
+      "SMR": 883114590
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5872,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "5056321626073",
+      "released_at": -327459600,
+      "label": {
+       "name": "RevOla",
+       "id": 5626722,
+       "albums_count": 2683,
+       "supplier_id": 249,
+       "slug": "revola-1"
+      },
+      "title": "Kind of Blue",
+      "qobuz_id": 238062269,
+      "version": "Remastered",
+      "duration": 2768,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "fdasb7heir98a",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1789167600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "isrc": "UKPFB1891852",
+     "title": "Blue in Green",
+     "version": "Remastered",
+     "duration": 341,
+     "parental_warning": false,
+     "track_number": 3,
+     "maximum_channel_count": 2,
+     "id": 238062272,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 883114589,
+       "url": "/order/883114589",
+       "price": 0.86,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 883114590,
+       "url": "/order/883114590",
+       "price": 1.08,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1789167600,
+     "streamable_at": 1789167600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 16,
+     "copyright": "Originally recorded 1959 & released 2008. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Paul Chambers, Bass - Irving Townsend, Producer - Fred Plaut, Recording Engineer - Bill Evans, Piano - M. Davis, Lyricist - M. Davis, Composer - Miles Davis, Trumpet - Miles Davis, Performer - John Coltrane, Tenor Saxophone - Cannonball Adderley, Alto Saxophone - Jimmy Cobb, Drums - ",
+     "audio_info": {
+      "replaygain_track_peak": 0.333771,
+      "replaygain_track_gain": 8.42
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 8430250,
+      "SMR": 16891924,
+      "SM2": 305046594
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/69/60/0888880696069_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/69/60/0888880696069_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/69/60/0888880696069_600.jpg"
+      },
+      "maximum_bit_depth": 16,
+      "media_count": 2,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5875,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0888880696069",
+      "released_at": 1231974000,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2405,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind Of Blue (Legacy Edition)",
+      "qobuz_id": 13273,
+      "version": null,
+      "duration": 7237,
+      "parental_warning": false,
+      "tracks_count": 21,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0888880696069",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1792623600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2009-01-15",
+      "release_date_download": "2009-01-15",
+      "release_date_stream": "2009-01-15",
+      "release_date_purchase": "2009-01-15",
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM10802766",
+     "title": "Blue in Green",
+     "version": "Studio Sequence",
+     "duration": 116,
+     "parental_warning": false,
+     "track_number": 12,
+     "maximum_channel_count": 2,
+     "id": 13285,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 8430250,
+       "url": "/order/8430250",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2009-01-15",
+     "release_date_download": "2009-01-15",
+     "release_date_stream": "2009-01-15",
+     "release_date_purchase": "2009-01-15",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/41/86/0191018878641_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/41/86/0191018878641_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/41/86/0191018878641_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Solo Sounds",
+      "id": 3272149,
+      "albums_count": 89,
+      "slug": "solosounds-10003272149",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 3272149,
+       "name": "Solo Sounds",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0191018878641",
+     "released_at": 1489705200,
+     "label": {
+      "name": "Solo Sounds",
+      "id": 157517,
+      "albums_count": 95,
+      "supplier_id": 17,
+      "slug": "solo-sounds"
+     },
+     "title": "Solo Wurlitzer Electric Piano: Miles Davis' Kind of Blue",
+     "qobuz_id": 39429719,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/solo-wurlitzer-electric-piano-miles-davis-kind-of-blue-solo-sounds/0191018878641",
+     "slug": "solo-wurlitzer-electric-piano-miles-davis-kind-of-blue-solo-sounds",
+     "duration": 1152,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "0191018878641",
+     "maximum_sampling_rate": 192,
+     "articles": [],
+     "release_date_original": "2017-03-17",
+     "release_date_download": "2017-03-17",
+     "release_date_stream": "2017-03-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1778281200,
+     "streamable_at": 1778281200,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, Associated Performer, Composer, Main Artist, Trumpet\r - Jimmy Cobb, Drums\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone\r - Irving Townsend, Producer",
+     "audio_info": {
+      "replaygain_track_peak": 0.825714,
+      "replaygain_track_gain": 0.66
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 48154127,
+      "SMR": 48154128,
+      "SM2": 322082180
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/47/07/0886444350747_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/47/07/0886444350747_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/47/07/0886444350747_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5875,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0886444350747",
+      "released_at": -327459600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2405,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind of Blue (Mono)",
+      "qobuz_id": 20273752,
+      "version": "Mono Version",
+      "duration": 2729,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0886444350747",
+      "maximum_sampling_rate": 96,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1792623600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM11304996",
+     "title": "All Blues",
+     "version": "Mono Version",
+     "duration": 692,
+     "parental_warning": false,
+     "track_number": 4,
+     "maximum_channel_count": 2,
+     "id": 20273756,
+     "media_number": 1,
+     "maximum_sampling_rate": 96,
+     "articles": [],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "purchasable": false,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": false,
+     "displayable": true,
+     "purchasable_at": null,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "performers": "Miles Davis, Associated Performer, Composer, Main Artist, Trumpet\r - Jimmy Cobb, Drums\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - John Coltrane, Tenor Saxophone\r - Irving Townsend, Producer\r - Patti Matheny\r - Darren Salmieri\r - Seth Foster, Mastering Engineer\r - Fred Plaut, Recording Engineer",
+     "audio_info": {
+      "replaygain_track_peak": 0.716125,
+      "replaygain_track_gain": 1.9
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 48154124,
+      "SMR": 48154125,
+      "SM2": 322082179
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/47/07/0886444350747_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/47/07/0886444350747_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/47/07/0886444350747_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5875,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0886444350747",
+      "released_at": -327459600,
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": 10106072,
+       "albums_count": 2405,
+       "supplier_id": 23,
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind of Blue (Mono)",
+      "qobuz_id": 20273752,
+      "version": "Mono Version",
+      "duration": 2729,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0886444350747",
+      "maximum_sampling_rate": 96,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1792623600,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "USSM11304995",
+     "title": "Blue in Green",
+     "version": "Mono Version",
+     "duration": 335,
+     "parental_warning": false,
+     "track_number": 3,
+     "maximum_channel_count": 2,
+     "id": 20273755,
+     "media_number": 1,
+     "maximum_sampling_rate": 96,
+     "articles": [
+      {
+       "id": 48154124,
+       "url": "/order/48154124",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 48154125,
+       "url": "/order/48154125",
+       "price": 2.19,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1792623600,
+     "streamable_at": 1792623600,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 24,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/69/55/3610154015569_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/69/55/3610154015569_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/69/55/3610154015569_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5873,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "3610154015569",
+     "released_at": -327459600,
+     "label": {
+      "name": "BNF Collection",
+      "id": 68273,
+      "albums_count": 41920,
+      "supplier_id": 3,
+      "slug": "bnf-collection"
+     },
+     "title": "Kind Of Blue (Stereo Version)",
+     "qobuz_id": 14106036,
+     "version": "Stereo Version",
+     "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-stereo-version-miles-davis/3610154015569",
+     "slug": "kind-of-blue-stereo-version-miles-davis",
+     "duration": 2672,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "3610154015569",
+     "maximum_sampling_rate": 96,
+     "articles": [],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1788217200,
+     "streamable_at": 1788217200,
+     "hires": true,
+     "hires_streamable": true,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "(C) 2017 Solo Sounds (P) 2017 Solo Sounds",
+     "performers": "Miles Davis, Composer - Rob Arthur, FeaturedArtist - KOBALT SONGS MUSIC PUBLISH OBO JAZZ HORN MUSIC CORP, MusicPublisher - EAST ST. LOUIS MUSIC, INC., MusicPublisher - Solo Sounds, MainArtist",
+     "audio_info": {
+      "replaygain_track_peak": 0.891449,
+      "replaygain_track_gain": -4.33
+     },
+     "performer": {
+      "name": "Solo Sounds",
+      "id": 3272149
+     },
+     "article_ids": {
+      "LLS": 94192798,
+      "SMR": 94192799,
+      "SM2": 337771605
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/41/86/0191018878641_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/41/86/0191018878641_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/41/86/0191018878641_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Solo Sounds",
+       "id": 3272149,
+       "albums_count": 89,
+       "slug": "solosounds-10003272149",
+       "picture": null
+      },
+      "upc": "0191018878641",
+      "released_at": 1489705200,
+      "label": {
+       "name": "Solo Sounds",
+       "id": 157517,
+       "albums_count": 95,
+       "supplier_id": 17,
+       "slug": "solo-sounds"
+      },
+      "title": "Solo Wurlitzer Electric Piano: Miles Davis' Kind of Blue",
+      "qobuz_id": 39429719,
+      "version": null,
+      "duration": 1152,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "0191018878641",
+      "maximum_sampling_rate": 192,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1778281200,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2017-03-17",
+      "release_date_download": "2017-03-17",
+      "release_date_stream": "2017-03-17",
+      "release_date_purchase": "2017-03-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "QM3HJ1700070",
+     "title": "Blue in Green",
+     "version": null,
+     "duration": 200,
+     "parental_warning": false,
+     "track_number": 3,
+     "maximum_channel_count": 2,
+     "id": 39429722,
+     "media_number": 1,
+     "maximum_sampling_rate": 192,
+     "articles": [
+      {
+       "id": 94192798,
+       "url": "/order/94192798",
+       "price": 1.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 94192799,
+       "url": "/order/94192799",
+       "price": 2.19,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      },
+      {
+       "id": 337771605,
+       "url": "/order/337771605",
+       "price": 2.99,
+       "currency": "GBP",
+       "type": "sm2",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 192 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2017-03-17",
+     "release_date_download": "2017-03-17",
+     "release_date_stream": "2017-03-17",
+     "release_date_purchase": "2017-03-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1778281200,
+     "streamable_at": 1778281200,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/6b/kr/qsieqfb10kr6b_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/6b/kr/qsieqfb10kr6b_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/6b/kr/qsieqfb10kr6b_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5834,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0884385317935",
+     "released_at": 1262300400,
+     "label": {
+      "name": "Techniche Label OMP",
+      "id": 4427,
+      "albums_count": 265,
+      "supplier_id": 17,
+      "slug": "techniche-label-omp"
+     },
+     "title": "Kind Of Blue - HD Re-Mastered 2010",
+     "qobuz_id": 89278482,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-hd-re-mastered-2010-miles-davis/qsieqfb10kr6b",
+     "slug": "kind-of-blue-hd-re-mastered-2010-miles-davis",
+     "duration": 2737,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "qsieqfb10kr6b",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2010-01-01",
+     "release_date_download": "2010-01-01",
+     "release_date_stream": "2010-01-01",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1778022000,
+     "streamable_at": 1778022000,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "albums",
+    "content": {
+     "type": "albums",
+     "maximum_bit_depth": 16,
+     "image": {
+      "small": "https://static.qobuz.com/images/covers/9a/9m/gqq1grrc19m9a_230.jpg",
+      "thumbnail": "https://static.qobuz.com/images/covers/9a/9m/gqq1grrc19m9a_50.jpg",
+      "large": "https://static.qobuz.com/images/covers/9a/9m/gqq1grrc19m9a_600.jpg",
+      "back": null
+     },
+     "media_count": 1,
+     "artist": {
+      "image": null,
+      "name": "Miles Davis",
+      "id": 6760,
+      "albums_count": 5860,
+      "slug": "miles-davis",
+      "picture": null
+     },
+     "artists": [
+      {
+       "id": 6760,
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "upc": "0192231133371",
+     "released_at": 1542927600,
+     "label": {
+      "name": "Nightclub Records",
+      "id": 223961,
+      "albums_count": 88,
+      "supplier_id": 89,
+      "slug": "nightclub-records-1"
+     },
+     "title": "Kind of Blue",
+     "qobuz_id": 57261066,
+     "version": null,
+     "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-miles-davis/gqq1grrc19m9a",
+     "slug": "kind-of-blue-miles-davis",
+     "duration": 2665,
+     "parental_warning": false,
+     "popularity": 0,
+     "tracks_count": 5,
+     "genre": {
+      "path": [
+       80
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": 80,
+      "slug": "jazz"
+     },
+     "maximum_channel_count": 2,
+     "id": "gqq1grrc19m9a",
+     "maximum_sampling_rate": 44.1,
+     "articles": [],
+     "release_date_original": "2018-11-23",
+     "release_date_download": "2018-11-23",
+     "release_date_stream": "2018-11-23",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1784415600,
+     "streamable_at": 1784415600,
+     "hires": false,
+     "hires_streamable": false,
+     "ai_generated": null
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 24,
+     "copyright": "1960 - BNF Collection 2014",
+     "performers": "Miles Davis, Performer, Composer",
+     "audio_info": {
+      "replaygain_track_peak": 0.55188,
+      "replaygain_track_gain": 4.16
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 35257761,
+      "SMR": 35257762,
+      "SM2": 317529407
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/29/20/3610154522029_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/29/20/3610154522029_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/29/20/3610154522029_600.jpg"
+      },
+      "maximum_bit_depth": 24,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5875,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "3610154522029",
+      "released_at": -327459600,
+      "label": {
+       "name": "BNF Collection",
+       "id": 68273,
+       "albums_count": 41920,
+       "supplier_id": 3,
+       "slug": "bnf-collection"
+      },
+      "title": "Kind of Blue",
+      "qobuz_id": 14107612,
+      "version": "Mono Version",
+      "duration": 2725,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "3610154522029",
+      "maximum_sampling_rate": 96,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1788217200,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "hires": true,
+      "hires_streamable": true
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "FRS181234918",
+     "title": "Blue in Green",
+     "version": null,
+     "duration": 327,
+     "parental_warning": false,
+     "track_number": 3,
+     "maximum_channel_count": 2,
+     "id": 14107615,
+     "media_number": 1,
+     "maximum_sampling_rate": 96,
+     "articles": [
+      {
+       "id": 35257761,
+       "url": "/order/35257761",
+       "price": 0.89,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      },
+      {
+       "id": 35257762,
+       "url": "/order/35257762",
+       "price": 1.19,
+       "currency": "GBP",
+       "type": "smr",
+       "label": "Hi-Res",
+       "description": "Up to 24 bits 96 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "1959-08-17",
+     "release_date_download": "1959-08-17",
+     "release_date_stream": "1959-08-17",
+     "release_date_purchase": "1959-08-17",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1788217200,
+     "streamable_at": 1788217200,
+     "hires": true,
+     "hires_streamable": true
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 16,
+     "copyright": "(C) 2010 One Media Publishing (P) 2010 One Media Publishing",
+     "performers": "Miles Davis, MainArtist - Davis Miles, Composer",
+     "audio_info": {
+      "replaygain_track_peak": 0.751617,
+      "replaygain_track_gain": 0.63
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 243194469,
+      "SMR": 243194470,
+      "SM2": 390744702
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/6b/kr/qsieqfb10kr6b_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/6b/kr/qsieqfb10kr6b_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/6b/kr/qsieqfb10kr6b_600.jpg"
+      },
+      "maximum_bit_depth": 16,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5834,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "0884385317935",
+      "released_at": 1262300400,
+      "label": {
+       "name": "Techniche Label OMP",
+       "id": 4427,
+       "albums_count": 265,
+       "supplier_id": 17,
+       "slug": "techniche-label-omp"
+      },
+      "title": "Kind Of Blue - HD Re-Mastered 2010",
+      "qobuz_id": 89278482,
+      "version": null,
+      "duration": 2737,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "qsieqfb10kr6b",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1778022000,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2010-01-01",
+      "release_date_download": "2010-01-01",
+      "release_date_stream": "2010-01-01",
+      "release_date_purchase": "2010-01-01",
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     "work": null,
+     "composer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "isrc": "GBQRF0846653",
+     "title": "Blue In Green",
+     "version": null,
+     "duration": 335,
+     "parental_warning": false,
+     "track_number": 3,
+     "maximum_channel_count": 2,
+     "id": 89278485,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 243194469,
+       "url": "/order/243194469",
+       "price": 1.49,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2010-01-01",
+     "release_date_download": "2010-01-01",
+     "release_date_stream": "2010-01-01",
+     "release_date_purchase": "2010-01-01",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1778022000,
+     "streamable_at": 1778022000,
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    }
+   },
+   {
+    "type": "tracks",
+    "content": {
+     "type": "tracks",
+     "maximum_bit_depth": 16,
+     "copyright": "2021 Bdjazz 2021 Bdjazz",
+     "performers": "Miles Davis, Trumpet, MainArtist - Gerry Mulligan, Composer",
+     "audio_info": {
+      "replaygain_track_peak": 0.787384,
+      "replaygain_track_gain": 1.08
+     },
+     "performer": {
+      "name": "Miles Davis",
+      "id": 6760
+     },
+     "article_ids": {
+      "LLS": 540164970,
+      "SMR": 540164971,
+      "SM2": 540164972
+     },
+     "album": {
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/2a/jl/x6m24h69ijl2a_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/2a/jl/x6m24h69ijl2a_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/2a/jl/x6m24h69ijl2a_600.jpg"
+      },
+      "maximum_bit_depth": 16,
+      "media_count": 1,
+      "artist": {
+       "image": null,
+       "name": "Miles Davis",
+       "id": 6760,
+       "albums_count": 5860,
+       "slug": "miles-davis",
+       "picture": null
+      },
+      "upc": "3760300315477",
+      "released_at": 1637362800,
+      "label": {
+       "name": "BDMUSIC",
+       "id": 123730,
+       "albums_count": 317,
+       "supplier_id": 4,
+       "slug": "bdmusic"
+      },
+      "title": "BD Music Presents Kind of Blue",
+      "qobuz_id": 139040714,
+      "version": null,
+      "duration": 2751,
+      "parental_warning": false,
+      "tracks_count": 5,
+      "genre": {
+       "path": [
+        80
+       ],
+       "name": "Jazz",
+       "id": 80,
+       "slug": "jazz"
+      },
+      "maximum_channel_count": 2,
+      "id": "x6m24h69ijl2a",
+      "maximum_sampling_rate": 44.1,
+      "previewable": true,
+      "sampleable": true,
+      "displayable": true,
+      "streamable": true,
+      "streamable_at": 1785020400,
+      "downloadable": false,
+      "purchasable_at": null,
+      "purchasable": false,
+      "release_date_original": "2021-11-20",
+      "release_date_download": "2021-11-20",
+      "release_date_stream": "2021-11-20",
+      "release_date_purchase": "2021-11-20",
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     "work": null,
+     "composer": {
+      "name": "Gerry Mulligan",
+      "id": 25078
+     },
+     "isrc": "FR8X02100003",
+     "title": "Blue In Green",
+     "version": null,
+     "duration": 337,
+     "parental_warning": false,
+     "track_number": 2,
+     "maximum_channel_count": 2,
+     "id": 139040716,
+     "media_number": 1,
+     "maximum_sampling_rate": 44.1,
+     "articles": [
+      {
+       "id": 540164970,
+       "url": "/order/540164970",
+       "price": 0.86,
+       "currency": "GBP",
+       "type": "lls",
+       "label": "CD-quality",
+       "description": "Lossless 16-bit 44,1 kHz (FLAC)"
+      }
+     ],
+     "release_date_original": "2021-11-20",
+     "release_date_download": "2021-11-20",
+     "release_date_stream": "2021-11-20",
+     "release_date_purchase": "2021-11-20",
+     "purchasable": true,
+     "streamable": true,
+     "previewable": true,
+     "sampleable": true,
+     "downloadable": true,
+     "displayable": true,
+     "purchasable_at": 1785020400,
+     "streamable_at": 1785020400,
+     "hires": false,
+     "hires_streamable": false,
+     "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+    }
+   }
+  ]
+ }
+}

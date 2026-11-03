@@ -1,0 +1,15 @@
+{
+ "track_id": 34202917,
+ "duration": 265,
+ "url": "{{CDN}}/file/34202917/7",
+ "format_id": 6,
+ "mime_type": "audio/flac",
+ "restrictions": [
+  {
+   "code": "FormatRestrictedByFormatAvailability"
+  }
+ ],
+ "sampling_rate": 44.1,
+ "bit_depth": 16,
+ "blob": "{{BLOB}}"
+}

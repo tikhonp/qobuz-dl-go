@@ -1,0 +1,169 @@
+{
+ "album": {
+  "maximum_bit_depth": 24,
+  "image": {
+   "small": "https://static.qobuz.com/images/covers/47/07/0886444350747_230.jpg",
+   "thumbnail": "https://static.qobuz.com/images/covers/47/07/0886444350747_50.jpg",
+   "large": "https://static.qobuz.com/images/covers/47/07/0886444350747_600.jpg",
+   "back": null
+  },
+  "media_count": 1,
+  "artist": {
+   "image": null,
+   "name": "Miles Davis",
+   "id": 6760,
+   "albums_count": 5875,
+   "slug": "miles-davis",
+   "picture": null
+  },
+  "artists": [
+   {
+    "id": 6760,
+    "name": "Miles Davis",
+    "roles": [
+     "main-artist"
+    ]
+   }
+  ],
+  "upc": "0886444350747",
+  "released_at": -327459600,
+  "label": {
+   "name": "Columbia/Legacy",
+   "id": 10106072,
+   "albums_count": 2406,
+   "supplier_id": 23,
+   "slug": "columbialegacy-1"
+  },
+  "title": "Kind of Blue (Mono)",
+  "qobuz_id": 20273752,
+  "version": "Mono Version",
+  "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-mono-miles-davis/0886444350747",
+  "slug": "kind-of-blue-mono-miles-davis",
+  "duration": 2729,
+  "parental_warning": false,
+  "popularity": 0,
+  "tracks_count": 5,
+  "genre": {
+   "path": [
+    80
+   ],
+   "color": "#0070ef",
+   "name": "Jazz",
+   "id": 80,
+   "slug": "jazz"
+  },
+  "maximum_channel_count": 2,
+  "id": "0886444350747",
+  "maximum_sampling_rate": 96,
+  "articles": [],
+  "release_date_original": "1959-08-17",
+  "release_date_download": "1959-08-17",
+  "release_date_stream": "1959-08-17",
+  "purchasable": true,
+  "streamable": true,
+  "previewable": true,
+  "sampleable": true,
+  "downloadable": true,
+  "displayable": true,
+  "purchasable_at": 1792623600,
+  "streamable_at": 1792623600,
+  "hires": true,
+  "hires_streamable": true,
+  "ai_generated": null,
+  "awards": [
+   {
+    "name": "The Qobuz Ideal Discography",
+    "slug": "qobuz",
+    "award_slug": "discotheque_ideale",
+    "awarded_at": 1422745200,
+    "award_id": "70",
+    "publication_id": "2",
+    "publication_name": "Qobuz",
+    "publication_slug": "qobuz"
+   }
+  ],
+  "goodies": [
+   {
+    "id": 71160,
+    "file_format_id": 21,
+    "name": "Livret Numérique",
+    "description": "Miles Davis - Kind of Blue ",
+    "url": "https://static.qobuz.com/goodies/06/000071160.pdf",
+    "original_url": "https://static.qobuz.com/goodies/06/000071160.pdf"
+   }
+  ],
+  "area": null,
+  "catchline": "",
+  "composer": {
+   "id": 6760,
+   "name": "Miles Davis",
+   "slug": "miles-davis",
+   "albums_count": 5875,
+   "picture": null,
+   "image": null
+  },
+  "created_at": 0,
+  "genres_list": [
+   "Jazz"
+  ],
+  "period": null,
+  "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+  "is_official": true,
+  "maximum_technical_specifications": "24 bits / 96.0 kHz - Stereo",
+  "product_sales_factors_monthly": 0,
+  "product_sales_factors_weekly": 0,
+  "product_sales_factors_yearly": 0,
+  "product_type": "single",
+  "product_url": "/fr-fr/album/kind-of-blue-mono-miles-davis/0886444350747",
+  "recording_information": "",
+  "relative_url": "/album/kind-of-blue-mono-miles-davis/0886444350747",
+  "release_tags": [],
+  "release_type": "album",
+  "subtitle": "Miles Davis",
+  "description": ""
+ },
+ "created_at": 1679995726,
+ "indexed_at": 1792789735,
+ "id": 20273753,
+ "isrc": "USSM11304993",
+ "parental_warning": false,
+ "track_number": 1,
+ "media_number": 1,
+ "duration": 547,
+ "title": "So What",
+ "performers": "Miles Davis, Associated Performer, Composer, Main Artist, Trumpet\r - Jimmy Cobb, Drums\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone\r - Irving Townsend, Producer",
+ "version": "Mono Version",
+ "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+ "work": null,
+ "audio_info": {
+  "replaygain_track_gain": 0.24,
+  "replaygain_track_peak": 0.824371
+ },
+ "maximum_sampling_rate": 96,
+ "maximum_bit_depth": 24,
+ "maximum_channel_count": 2,
+ "performer": {
+  "id": 6760,
+  "name": "Miles Davis"
+ },
+ "composer": {
+  "id": 6760,
+  "name": "Miles Davis"
+ },
+ "articles": [],
+ "release_date_original": "1959-08-17",
+ "release_date_download": "1959-08-17",
+ "release_date_stream": "1959-08-17",
+ "release_date_purchase": "1959-08-17",
+ "purchasable": true,
+ "streamable": true,
+ "previewable": true,
+ "sampleable": true,
+ "downloadable": true,
+ "displayable": true,
+ "purchasable_at": 1792623600,
+ "streamable_at": 1792623600,
+ "hires": true,
+ "hires_streamable": true,
+ "has_lyrics": false
+}
