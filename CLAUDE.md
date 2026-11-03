@@ -2,15 +2,15 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-qobuz-dl-go is a Go library and a small CLI that port qobuz-dl, a Python Qobuz downloader, file by file. The first user is Music Shelf, in `~/projects/proj-x` with the module `github.com/tikhonp/shelf`, which imports the package. Docs, code and logs are in English.
+qobuz-dl-go is a Go library and a small CLI that port qobuz-dl, a Python Qobuz downloader, file by file. The first user is Music Shelf, in `~/projects/shelf` with the module `github.com/tikhonp/shelf`, which imports the package. Docs, code and logs are in English.
 
-State: docs only, no code yet. The next session designs the port with `docs/prompts/01-design.md`, writing `docs/design.md` and the step contracts in `docs/build/`. Music Shelf tracks this work as its step 1c. `docs/status.md` says what is done and what comes next.
+State: designed, no code yet. The work runs in eleven steps, one session each, with the contracts in `docs/build/` and `docs/prompts/02-step.md`. Music Shelf tracks this work as its step 1c. `docs/status.md` says what is done and what comes next.
 
 ## Read first
 
 - `docs/status.md`: where the work stands.
 - `docs/requirements.md`: what the port must do and when it is done.
-- `docs/design.md` and the current step's contract in `docs/build/`, once the design session has written them. Before that, `docs/design-questions.md`.
+- `docs/design.md` and the current step's contract in `docs/build/`. `docs/design-questions.md` records why each design choice was made.
 - `UPSTREAM.md`: the ported version, the map from Python functions to Go functions, and the deliberate differences.
 - `docs/port-spec.md`: how qobuz-dl behaves, as notes for the port.
 - `docs/reference.md`: where the upstream source is, the Python venv for golden data, the tools on this machine, the rules for the Qobuz token, and the conventions.
@@ -39,26 +39,33 @@ State: docs only, no code yet. The next session designs the port with `docs/prom
 
 ## Commands
 
-Added with the code. Planned:
+Added in step 1; planned until then:
 
 ```sh
 make check                # gofmt, vet, go test -race
 make lint                 # golangci-lint and govulncheck in Docker
 make golden               # regenerate testdata/golden from qobuz-dl in testdata/gen/.venv
+make record               # re-record testdata/fixtures/api from Qobuz; needs QOBUZ_TOKEN
 make upstream-diff TO=v2.6.0   # diff of the ported upstream files since UPSTREAM.md's tag
 make parity URL=<album>   # one album through Python qobuz-dl and the Go CLI, then compare files and tags
 ```
 
 ## Layout
 
-Planned:
+Planned, from `docs/design.md`:
 
 ```
-bundle.go qopy.go core.go downloader.go metadata.go utils.go settings.go constants.go errors.go format.go progress.go
+constants.go errors.go settings.go bundle.go qopy.go utils.go metadata.go downloader.go core.go
+                          one file per Python module
+pyvalue.go pystr.go pyre.go format.go pathvalidate.go textwrap.go
+                          Python behavior: values, strings, regexes, str.format, pathvalidate, textwrap
+flac.go catalog.go progress.go transport.go
+                          FLAC blocks, typed views, Progress and Result, timeouts and redaction
 downloadsdb/              the Python-compatible downloads table, in SQLite
 qobuzdltest/              a fake API and CDN for tests here and in Music Shelf
 cmd/qobuz-dl/             dl and search, for parity runs
-testdata/gen/gen.py       writes golden files from Python qobuz-dl
+testdata/gen/             gen.py, record.py, parity.py, compare.py, pinned requirements.txt
+testdata/fixtures/        recorded API answers, string corpora, audio
 testdata/golden/          the golden files
 ```
 
@@ -68,8 +75,8 @@ Docs:
 docs/status.md            the running log
 docs/requirements.md      what the port must do
 docs/design-questions.md  the questions the design answers
-docs/design.md            the design, written by the design session
-docs/build/               step contracts, written by the design session
+docs/design.md            the design
+docs/build/               step contracts
 docs/port-spec.md         notes on upstream behavior
 docs/reference.md         sources, tools, token rules, conventions
 docs/prompts/             session prompts

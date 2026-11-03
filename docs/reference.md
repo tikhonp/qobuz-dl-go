@@ -22,7 +22,7 @@ Where the sources are, which tools exist on this machine, and the conventions to
 
   ```sh
   /opt/homebrew/opt/python@3.14/bin/python3.14 -m venv testdata/gen/.venv
-  testdata/gen/.venv/bin/pip install qobuz-dl-ultimate==2.5.9
+  testdata/gen/.venv/bin/pip install -r testdata/gen/requirements.txt
   testdata/gen/.venv/bin/python -I testdata/gen/gen.py
   ```
 

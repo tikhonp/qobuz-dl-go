@@ -14,6 +14,6 @@ What it does:
 import "github.com/tikhonp/qobuz-dl-go"
 ```
 
-The API is described in [docs/port-spec.md](docs/port-spec.md) until the package exists.
+The API is described in [docs/design.md](docs/design.md) until the package exists.
 
 Licence: GPL-3.0, like qobuz-dl.

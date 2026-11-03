@@ -4,7 +4,7 @@ What qobuz-dl-go must do, who uses it, and how to tell it is done. The design in
 
 ## Users
 
-- Music Shelf's Qobuz module, `internal/modules/qobuz` in `~/projects/proj-x`. It searches, resolves items for its UI, downloads into the music library with live progress, asks its own database whether an item was downloaded before, and sends traffic through its own `*http.Client`, which may use a proxy. Read `~/projects/proj-x/docs/sources/qobuz.md`, `docs/provenance.md`, `docs/build/1c.md` and `docs/build/1d.md` there.
+- Music Shelf's Qobuz module, `internal/modules/qobuz` in `~/projects/shelf`. It searches, resolves items for its UI, downloads into the music library with live progress, asks its own database whether an item was downloaded before, and sends traffic through its own `*http.Client`, which may use a proxy. Read `~/projects/shelf/docs/sources/qobuz.md`, `docs/provenance.md`, `docs/build/1c.md` and `docs/build/1d.md` there.
 - The `qobuz-dl` CLI in this repo, for parity runs against Python qobuz-dl and for manual downloads.
 
 ## Parity target
@@ -61,7 +61,7 @@ For the same album, the port must write the same folder names, file names, tags,
 ## Done for v0.1.0
 
 - Golden tests pass for `clean_filename`, `get_url_info`, folder and track naming, the FLAC and MP3 tag maps, request signatures, secret derivation, the smart discography filter, m3u8 ordering, release types and per-disc track totals.
-- The scenario tests listed in `~/projects/proj-x/docs/build/1c.md` pass.
+- The scenario tests listed in `~/projects/shelf/docs/build/1c.md` pass.
 - `make parity` on a multi-disc hi-res album, a CD-quality album and a playlist shows only the differences in `UPSTREAM.md`.
 - Music Shelf's step 1d can build its tests on `qobuzdltest`.
 - CI is green and `v0.1.0` is tagged.

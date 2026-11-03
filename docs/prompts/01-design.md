@@ -5,7 +5,7 @@ The first session in this repo. It writes docs and commits them; it writes no li
 ```text
 We're starting qobuz-dl-go, a Go port of qobuz-dl 2.5.9 that Music Shelf will import. This session designs it. Write no library code yet.
 
-Read first: CLAUDE.md, docs/requirements.md, docs/design-questions.md, docs/reference.md, UPSTREAM.md, docs/port-spec.md and docs/status.md. Fetch the upstream source as docs/reference.md describes, and read bundle.py, qopy.py, core.py, downloader.py, metadata.py, utils.py, settings.py, constants.py, exceptions.py and db.py at v2.5.9. Then read what Music Shelf needs from the library: ~/projects/proj-x/docs/sources/qobuz.md, docs/provenance.md, docs/build/1c.md and docs/build/1d.md.
+Read first: CLAUDE.md, docs/requirements.md, docs/design-questions.md, docs/reference.md, UPSTREAM.md, docs/port-spec.md and docs/status.md. Fetch the upstream source as docs/reference.md describes, and read bundle.py, qopy.py, core.py, downloader.py, metadata.py, utils.py, settings.py, constants.py, exceptions.py and db.py at v2.5.9. Then read what Music Shelf needs from the library: ~/projects/shelf/docs/sources/qobuz.md, docs/provenance.md, docs/build/1c.md and docs/build/1d.md.
 
 Then:
 
