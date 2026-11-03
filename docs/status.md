@@ -2,17 +2,17 @@
 
 ## Now
 
-Step 1 is done: the module, Makefile, CI, the golden generator, the recorded API fixtures, the goldens and the audio fixtures. No ported code yet.
+Steps 1 and 2 are done: the module, CI, goldens and fixtures, and the Python compatibility layer (values, string methods, regex classes, `str.format`, `textwrap.fill`). No qobuz-dl file is ported yet.
 
-Next: step 2, [Python compatibility layer](build/02-pycompat.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
+Next: step 3, [utils, settings, errors, pathvalidate](build/03-utils.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
 
 ## Steps
 
 | Step | Contract | State |
 | --- | --- | --- |
 | 1 | [golden generator and fixtures](build/01-golden.md) | done |
-| 2 | [Python compatibility layer](build/02-pycompat.md) | next |
-| 3 | [utils, settings, errors, pathvalidate](build/03-utils.md) | |
+| 2 | [Python compatibility layer](build/02-pycompat.md) | done |
+| 3 | [utils, settings, errors, pathvalidate](build/03-utils.md) | next |
 | 4 | [bundle and API client](build/04-client.md) | |
 | 5 | [tags](build/05-tags.md) | |
 | 6 | [fake Qobuz](build/06-fake.md) | |
@@ -60,3 +60,5 @@ Filled in by the parity run in step 11.
 - Step 1. `go.mod`, `doc.go`, `Makefile`, CI, `testdata/gen/` with `record.py`, `gen.py`, the venv pins and a README, 367 recorded answers, the string corpora, ten golden files and the audio fixtures. `make golden` is reproducible byte for byte. Details and notes for later steps are in [01-golden.md](build/01-golden.md) under As built.
 - The bundle's app ID is `798273057` today, the ID `Client.__init__` treats as legacy, so the bot fetches the bundle twice and keeps the empty secret. `port-spec.md` and step 4's contract said the branch never runs. Both now say it does.
 - For shelf: `docs/sources/qobuz.md` says the module fetches the bundle once, which holds only while the bundle's app ID isn't `798273057`. `get_url_info` reads label URLs with an extra segment, such as `/label/<slug>/download-streaming-albums/<id>`, as the ID `download`.
+- Step 2. `pyvalue.go`, `pystr.go`, `pyre.go`, `format.go` and `textwrap.go` with their tests; every case of `pystr`, `format`, `strings`, `textwrap` and `regex` passes. A new golden, `unicode.json`, checks every code point's properties and case mappings against Python. Go and x/text are on Unicode 17.0 and Python 3.14 on 16.0; `newerThanPython` and three small fixes close the gap. Details are in [02-pycompat.md](build/02-pycompat.md) under As built.
+- design.md had combining marks in `\w`, which Python's `\w` lacks, and said textwrap collapses whitespace runs, which it doesn't. Both now follow the source. UPSTREAM.md has three new deliberate differences: template attributes, a cap on format widths, and JSON ints beyond int64.

@@ -465,8 +465,8 @@ def _cased(c):
 
 def _case_ignorable(c):
     # Final sigma skips case-ignorable characters on both sides. A cased
-    # character before the sigma would decide the result, so cased ones are
-    # tested after it.
+    # character before the sigma would decide the result, so the test puts
+    # cased ones after it.
     if _cased(c):
         return ("AΣ" + c).lower()[1] == "ς"
     return _sigma_final("A" + c + "Σ")

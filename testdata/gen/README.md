@@ -33,6 +33,7 @@ Each golden is `{"generator", "cases": [{"name", "input", "output"} or {"name", 
 | `strings.json` | `lower`, `upper`, `casefold`, `title`, `capitalize`, `strip()`, `strip(' ."-_\'')` and its `lstrip` and `rstrip`, `isdigit`, `len`, NFC over the corpus |
 | `textwrap.json` | `textwrap.fill(width=70)` over the recorded descriptions, raw and split into paragraphs as the tracklist does, hand-picked wrapping cases and the corpus |
 | `regex.json` | the code points Python's `\w`, `\s` and `\d` match, as hex ranges |
+| `unicode.json` | Python's Unicode version; the assigned, `isdigit`, `isdecimal`, `isspace`, `isprintable`, Cased and Case_Ignorable code points as hex ranges; every character that `lower`, `upper`, `title` or `casefold` changes, with its mapping |
 | `clean_filename.json` | `clean_filename` with and without `legacy_charmap` over the corpus, the recorded titles and names, and folder names formatted from the recorded albums |
 | `pathvalidate.json` | `sanitize_filename` and `sanitize_filepath` with replacement `""` and `"_"` over the corpus, reserved names, long names up to 1,000 bytes, cleaned recorded titles and paths |
 | `url_info.json` | `get_url_info` over `strings/urls.txt`: the groups, or `AttributeError` when nothing matches |

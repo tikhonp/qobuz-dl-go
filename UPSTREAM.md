@@ -124,6 +124,19 @@ When two Python modules have private functions with the same name, the Go name g
 | `pathvalidate.sanitize_filename`, `sanitize_filepath` 3.3.1 | `sanitizeFilename`, `sanitizeFilepath` in `pathvalidate.go` |
 | `textwrap.fill` | `textwrapFill` in `textwrap.go` |
 
+### Python built-ins
+
+These port no qobuz-dl file. They stand in for CPython 3.14 behavior the port relies on.
+
+| Python | Go |
+| --- | --- |
+| `json.loads` | `decodeJSON` in `pyvalue.go` |
+| `dict.get`, `d[key]`, `str()`, `repr()`, `ascii()`, `bool()`, `int()` | `(*pyDict).get`, `(*pyDict).item`, `pyStr`, `pyRepr`, `pyASCII`, `pyTruthy`, `pyInt` |
+| `KeyError`, `TypeError`, `ValueError`, `AttributeError`, `IndexError`, `OverflowError` | `pyError` with a `pyKind`, checked with `isPy` |
+| `str.lower`, `upper`, `casefold`, `title`, `capitalize`, `strip`, `lstrip`, `rstrip`, `isdigit`, `ljust`, `len`, slicing | `pyLower`, `pyUpper`, `pyCasefold`, `pyTitle`, `pyCapitalize`, `pyStrip`, `pyLstrip`, `pyRstrip`, `pyIsDigit`, `pyLjust`, `pyLen`, `pySlice` |
+| `re`'s `\w`, `\s`, `\d` and their negations | `reW`, `reS`, `reD`, `reNotW`, `reNotS`, `reNotD` in `pyre.go` |
+| `format(value, spec)` | `pyFormatValue` |
+
 ### settings.py, constants.py, exceptions.py, db.py
 
 | Python | Go |
@@ -160,6 +173,9 @@ When two Python modules have private functions with the same name, the Go name g
 | A track skipped because its file exists reports its format, read from the file. | shelf records the delivered format for every file. |
 | MP3 frame order and ID3 padding differ from mutagen's. | `id3v2` writes frames in map order and adds no padding; players show neither. |
 | `cfg_setup` logs a warning when no secret works. | Python silently uses the first, and later calls fail without a clue. |
+| In a template, `{x.name}` knows only `real`, `imag`, `numerator` and `denominator` on numbers; any other attribute is an AttributeError. Python returns methods and classes, which print with a memory address. | No template can use such output in a file name. |
+| A format width, or a float precision, over 2^24 is a ValueError. Python tries to build the string and runs out of memory. | A typo in a template must not take the process down. |
+| JSON ints beyond int64 fail to decode and `int()` beyond int64 is an OverflowError; Python makes a big int. JSON's `NaN` and `Infinity` are refused, and a lone surrogate in a string becomes U+FFFD. | Go has no big ints in the value model, and Go strings hold UTF-8. Qobuz sends none of these. |
 
 ## Not ported
 

@@ -175,7 +175,7 @@ func wrapChunks(chunks []string, width int) []string {
 	return lines
 }
 
-// handleLongWord is _handle_long_word: it puts as much of the next chunk as
+// handleLongWord is _handle_long_word. It puts as much of the next chunk as
 // fits on the line, cutting after a hyphen when it can, and leaves the rest
 // in place.
 func handleLongWord(rev, cur []string, curLen, width int) []string {

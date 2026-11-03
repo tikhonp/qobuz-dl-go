@@ -94,6 +94,7 @@ const (
     pyValueError
     pyAttributeError
     pyIndexError
+    pyOverflowError // int(inf), format(-1, "c")
 )
 
 type pyError struct{ kind pyKind; msg string }
@@ -121,8 +122,8 @@ A Python exception that nothing catches would crash the Python CLI. In Go it lea
 | Python | Go | Note |
 | --- | --- | --- |
 | `len(s)`, `s[a:b]` | `pyLen`, `pySlice` | code points, negative indices |
-| `s.lower()`, `s.upper()` | `pyLower`, `pyUpper` | full case mapping from `x/text/cases`, so `İ` lowers to `i̇` |
-| `s.casefold()` | `pyCasefold` | `cases.Fold()` |
+| `s.lower()`, `s.upper()` | `pyLower`, `pyUpper` | full case mapping from `x/text/cases`, one character at a time as CPython does, so `İ` lowers to `i̇`; final sigma by CPython's rule |
+| `s.casefold()` | `pyCasefold` | `cases.Fold()`, except Cherokee capitals, which fold to themselves |
 | `s.title()`, `s.capitalize()` | `pyTitle`, `pyCapitalize` | Python's rules: title case after any non-letter |
 | `s.strip(chars)`, `lstrip`, `rstrip` | `pyStrip`, … | no argument strips Python's whitespace set, which is wider than `unicode.IsSpace` |
 | `s.isdigit()` | `pyIsDigit` | Unicode digits, `²` included |
@@ -135,9 +136,11 @@ A Python exception that nothing catches would crash the Python CLI. In Go it lea
 Python's `re` treats `\w`, `\W`, `\s`, `\d` and `\b` as Unicode classes; RE2 treats them as ASCII. Patterns use explicit classes from `pyre.go`:
 
 ```go
-const reW = `[\p{L}\p{N}_\p{Mn}\p{Mc}]`  // Python's \w: str.isalnum() or '_'; the exact set comes from the goldens
-const reS = `[\s\x1c-\x1f\x85\p{Z}]`      // Python's \s
+var reW, reNotW, reS, reNotS, reD, reNotD string // [...] and [^...]
+var reWordChars, reSpaceChars, reDigitChars string // the insides, to combine with other characters
 ```
+
+Python's `\w` is `str.isalnum()` or `_`, which is the L and N categories and no marks. Go 1.27's tables are Unicode 17.0 and Python 3.14's are 16.0, so the classes are built from Go's tables minus `newerThanPython`, the code points 17.0 added. The `regex.json` and `unicode.json` goldens check them code point by code point.
 
 `clean_filename`'s step 4 uses lookbehind, lookahead and `\b`, which RE2 lacks. It is a hand-written scanner in `pyre.go` with goldens over random strings. Every regex in the port lists its Python source in a comment.
 
@@ -172,7 +175,7 @@ The port follows pathvalidate's source: invalid characters, reserved names, trai
 
 ### textwrap
 
-`textwrap.go` ports `textwrap.fill(text, width=70)` with its defaults: tabs expanded, whitespace runs collapsed to single spaces, words split by `TextWrapper.wordsep_re` with hyphen breaking, long words broken. The tracklist uses it; goldens over album descriptions cover it.
+`textwrap.go` ports `textwrap.fill(text, width=70)` with its defaults: tabs expanded, each ASCII whitespace character turned into a space, words split by `TextWrapper.wordsep_re` with hyphen breaking, whitespace dropped at line ends but kept inside lines, long words broken. `wordsep_re` needs lookbehind, so a scanner replaces it. The tracklist uses it; goldens over album descriptions cover it.
 
 ## Public API
 

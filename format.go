@@ -152,8 +152,9 @@ loop:
 	return f, 0, pyErr(pyValueError, "unmatched '{' in format spec")
 }
 
-// renderMarkup is output_markup: look the field up, convert it, expand its
-// spec, format it, in that order, so the first failing step names the error.
+// renderMarkup is output_markup. It looks the field up, converts it, expands
+// its spec and formats it, in that order, so the first failing step decides
+// the error.
 func renderMarkup(f field, attrs pyAttrs, depth int) (string, error) {
 	v, err := fieldValue(f.name, attrs)
 	if err != nil {
@@ -202,7 +203,7 @@ func fieldInteger(s []rune) (int64, error) {
 	return acc, nil
 }
 
-// fieldValue is get_field_object: the first part names a keyword argument,
+// fieldValue is get_field_object. The first part names a keyword argument,
 // then each .attr or [key] applies in turn.
 func fieldValue(name []rune, attrs pyAttrs) (any, error) {
 	i := 0
@@ -300,7 +301,7 @@ func getAttr(v any, name string) (any, error) {
 	return nil, pyErr(pyAttributeError, "'%s' object has no attribute %s", pyTypeName(v), pyRepr(name))
 }
 
-// getItem is v[key] in a field: an all-digit key is an int, anything else a
+// getItem is v[key] in a field. An all-digit key is an int, any other key a
 // str.
 func getItem(v any, key string, idx int64) (any, error) {
 	switch t := v.(type) {
@@ -633,8 +634,8 @@ func formatInt(x int64, sp formatSpec) (string, error) {
 		if x < 0 || x > 0x10ffff {
 			return "", pyErr(pyOverflowError, "%%c arg not in range(0x110000)")
 		}
-		// As CPython does, the character goes out as a remainder: it is
-		// copied, never grouped.
+		// As in CPython, the character goes out as a remainder, which is
+		// copied and never grouped.
 		p.remainder = string(rune(x))
 	} else {
 		base, prefix := 10, ""
@@ -936,7 +937,7 @@ func dtoa(v float64, mode, n int) (digits string, decpt int) {
 		decpt -= len(all) - len(trimmed)
 		trimmed = strings.TrimRight(trimmed, "0")
 		if trimmed == "" {
-			// Rounded to zero: no digits, fcvt style.
+			// A value that rounds to zero has no digits, as fcvt gives.
 			return "", -n
 		}
 		return trimmed, decpt

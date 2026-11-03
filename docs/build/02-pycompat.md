@@ -95,4 +95,31 @@ func textwrapFill(text string, width int) string
 
 ## As built
 
-Filled in at the end of the step.
+Done on 2026-11-03. `make check` and `make lint` pass: 0 golangci-lint issues, no vulnerabilities.
+
+### Differences from the contract
+
+- A sixth kind, `pyOverflowError`. `format(-1, "c")` and `format(1234567, "c")` raise it in `format.json`, and `int(inf)` does too.
+- Python's `\w` is the L and N categories plus `_`, with no marks; design.md had `\p{Mn}\p{Mc}`. The classes are `var` strings built at init from Go's tables, not `const`, and come as `reW`, `reNotW`, `reS`, `reNotS`, `reD`, `reNotD`, with the insides `reWordChars`, `reSpaceChars` and `reDigitChars` for combining with other characters.
+- Go's `unicode` and x/text's `cases` and `norm` are all Unicode 17.0; Python 3.14 is 16.0. `newerThanPython` in `pystr.go` lists the 4,803 code points 17.0 added, and every predicate and mapping leaves them out. Two more differences needed code: U+0295 ʕ is Ll in 16.0 and Lo in 17.0, and x/text maps U+A7D3 and U+A7D5 to capitals that are new in 17.0, so any mapping to a code point Python doesn't know keeps the character.
+- x/text's `Fold` lowers Cherokee capitals U+13A0 to U+13F5; CaseFolding.txt and Python leave them, since Cherokee folds to its capitals. `pyCasefold` keeps them.
+- The case methods map one character at a time with x/text, as CPython does, and handle final sigma with CPython's `handle_capital_sigma`. Title and capitalize follow CPython's code; the port uses no whole-string x/text caser.
+- A new golden, `unicode.json`, from `gen_unicode` in `gen.py`: Python's Unicode version, the assigned, `isdigit`, `isdecimal`, `isspace`, `isprintable`, Cased and Case_Ignorable sets, and every character `lower`, `upper`, `title` and `casefold` change. The tests check every code point against it. The other goldens came out byte for byte the same.
+- More helpers than the signature list: `pyRepr`, `pyASCII`, `pyTypeName`, `pyIter`, `pyIsDecimal`, `pyDecimalValue`, `pyIsDigitRune`, `pyIsPrintable`, `pyIsCased`, `pyIsCaseIgnorable`.
+- `(*pyDict).list` iterates as Python does: a string gives its characters and a dict its keys; None and numbers are a TypeError. `asDict` and `dict()` raise AttributeError with "has no attribute 'get'".
+- `decodeJSON` keeps the first place of a repeated key with the last value, as Python's dict does, and decodes out-of-range floats as ±inf or 0. It refuses ints beyond int64.
+- In templates, `{x.attr}` knows only `real`, `imag`, `numerator` and `denominator`; widths and float precisions over 2^24 are a ValueError. Both are in UPSTREAM.md.
+- `golden_test.go` now loads goldens with `decodeJSON` into `*pyDict`; `goldenDict` is gone. It also has `goldenRanges`, `inRanges`, `goldenByName` and `eachRune`.
+- `textwrap.go` replaces `wordsep_re` with a scanner, since the pattern needs lookbehind.
+
+### Checks
+
+Beyond the goldens, throwaway differential runs against the venv's Python, not committed: 140,000 random format specs over ints, big ints, floats, bools, None and strings; 60,000 random templates; 200,000 floats by bit pattern with ten specs; 100,000 `textwrap.fill` calls at widths 1 to 70; 100,000 strings of Greek sigma, combining marks, digraphs and ligatures through the five case methods. No differences.
+
+### Notes for later steps
+
+- Step 3: build every regex with the classes from `pyre.go` and name its Python source. `[-\w\d]` in `get_url_info` becomes `"[-" + reWordChars + reDigitChars + "]"`. The lookaround in `clean_filename` step 4 still needs a scanner; `wordsepSplit` in `textwrap.go` shows the shape.
+- Step 3: `pyStrip(s, "")` is `s.strip()`. To strip a literal empty set, don't call it.
+- Step 4: `normalize_json.json` loads; `TestNormalizeJSONStringsGolden` comes with `normalizeJSONStrings`.
+- The test run is about 8 seconds under `-race`, most of it the per-code-point checks in `TestUnicodePropertiesGolden` and `TestCaseMapsGolden`, which run in parallel.
+- When Go's Unicode version changes, `TestUnicodePropertiesGolden` fails until `newerThanPython` is updated. When the bot's Python moves past 3.14, regenerate the goldens and shrink the table.
