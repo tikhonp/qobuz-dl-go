@@ -56,6 +56,17 @@ func (d *pyDict) set(key string, v any) {
 	d.vals[key] = v
 }
 
+// pop is d.pop(key, def).
+func (d *pyDict) pop(key string, def any) any {
+	v, ok := d.vals[key]
+	if !ok {
+		return def
+	}
+	delete(d.vals, key)
+	d.keys = slices.DeleteFunc(d.keys, func(k string) bool { return k == key })
+	return v
+}
+
 func (d *pyDict) has(key string) bool {
 	_, ok := d.vals[key]
 	return ok

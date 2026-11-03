@@ -470,3 +470,62 @@ func pyNFC(s string) string {
 	b.WriteString(norm.NFC.String(s[start:]))
 	return b.String()
 }
+
+// pyDecodeUTF8 is b.decode("utf-8", "replace"). Python replaces each maximal
+// invalid subsequence with one U+FFFD, as Unicode recommends, where ranging
+// over a Go string gives one per byte.
+func pyDecodeUTF8(b []byte) string {
+	if utf8.Valid(b) {
+		return string(b)
+	}
+	var out strings.Builder
+	for len(b) > 0 {
+		r, n := utf8.DecodeRune(b)
+		if r != utf8.RuneError || n > 1 {
+			out.Write(b[:n])
+			b = b[n:]
+			continue
+		}
+		out.WriteRune(utf8.RuneError)
+		b = b[utf8InvalidPrefix(b):]
+	}
+	return out.String()
+}
+
+// utf8InvalidPrefix is the length of the maximal subpart at the start of b,
+// which doesn't start a valid sequence: the lead byte and the continuation
+// bytes that could still have completed it, and at least one byte.
+func utf8InvalidPrefix(b []byte) int {
+	var need int
+	lo, hi := byte(0x80), byte(0xbf)
+	switch c := b[0]; {
+	case c >= 0xc2 && c <= 0xdf:
+		need = 1
+	case c >= 0xe0 && c <= 0xef:
+		need = 2
+		switch c {
+		case 0xe0:
+			lo = 0xa0
+		case 0xed:
+			hi = 0x9f
+		}
+	case c >= 0xf0 && c <= 0xf4:
+		need = 3
+		switch c {
+		case 0xf0:
+			lo = 0x90
+		case 0xf4:
+			hi = 0x8f
+		}
+	default:
+		return 1
+	}
+	n := 1
+	for ; n <= need && n < len(b); n++ {
+		if b[n] < lo || b[n] > hi {
+			break
+		}
+		lo, hi = 0x80, 0xbf
+	}
+	return n
+}

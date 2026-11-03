@@ -1,0 +1,8142 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "album/multi_disc",
+   "input": {
+    "album": {
+     "id": "evz7usmruz35a",
+     "title": "Ummagumma",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Pink Floyd",
+      "id": {
+       "py": "int",
+       "v": 38324
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 625
+      },
+      "slug": "pink-floyd",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 38324
+       },
+       "name": "Pink Floyd",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "1969-10-25",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Rock",
+      "id": {
+       "py": "int",
+       "v": 119
+      },
+      "slug": "rock"
+     },
+     "genres_list": [
+      "Pop/Rock",
+      "Pop/Rock→Rock"
+     ],
+     "copyright": "(P) 2016 The copyright in this sound recording is owned by Pink Floyd Music Ltd., marketed and distributed by Sony Music Entertainment",
+     "label": {
+      "name": "Pink Floyd Records",
+      "id": {
+       "py": "int",
+       "v": 205168
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 27
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 23
+      },
+      "slug": "pinkfloydrecords"
+     },
+     "upc": "0886445613223",
+     "product_type": "album",
+     "release_type": "album",
+     "media_count": {
+      "py": "int",
+      "v": 2
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 16
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "album/hires_96",
+   "input": {
+    "album": {
+     "id": "k43q1q3kx88fa",
+     "title": "Begin Again",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Norah Jones",
+      "id": {
+       "py": "int",
+       "v": 34525
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 319
+      },
+      "slug": "norah-jones",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 34525
+       },
+       "name": "Norah Jones",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2019-04-12",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Pop/Rock",
+      "id": {
+       "py": "int",
+       "v": 112
+      },
+      "slug": "pop-rock"
+     },
+     "genres_list": [
+      "Pop/Rock"
+     ],
+     "copyright": "© 2019 Capitol Records, LLC ℗ 2019 Capitol Records, LLC",
+     "label": {
+      "name": "Blue Note Records",
+      "id": {
+       "py": "int",
+       "v": 47868
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 3584
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "blue-note-1"
+     },
+     "upc": "0602577440397",
+     "product_type": "album",
+     "release_type": "album",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 7
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "album/cd",
+   "input": {
+    "album": {
+     "id": "0634904080853",
+     "title": "Com Lag: 2+2=5",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Radiohead",
+      "id": {
+       "py": "int",
+       "v": 43840
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 617
+      },
+      "slug": "radiohead",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 43840
+       },
+       "name": "Radiohead",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2004-03-24",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 113
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Alternative & Indie",
+      "id": {
+       "py": "int",
+       "v": 113
+      },
+      "slug": "alternatif-et-inde"
+     },
+     "genres_list": [
+      "Pop/Rock",
+      "Pop/Rock→Rock",
+      "Pop/Rock→Rock→Alternatif et Indé"
+     ],
+     "copyright": "2004 XL Recordings Ltd 2004 XL Recordings Ltd",
+     "label": {
+      "name": "XL Recordings",
+      "id": {
+       "py": "int",
+       "v": 9313
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1806
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 28
+      },
+      "slug": "xl-recordings"
+     },
+     "upc": "0634904080853",
+     "product_type": "album",
+     "release_type": "epmini",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 10
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "album/compilation",
+   "input": {
+    "album": {
+     "id": "zcs2h686vhj4b",
+     "title": "Now That's Not What I Call Music",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Various Artists",
+      "id": {
+       "py": "int",
+       "v": 145383
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1531313
+      },
+      "slug": "various-artists",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [],
+     "release_date_original": "2002-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 118
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Punk / New Wave",
+      "id": {
+       "py": "int",
+       "v": 118
+      },
+      "slug": "punk-new-wave"
+     },
+     "genres_list": [
+      "Pop/Rock",
+      "Pop/Rock→Rock",
+      "Pop/Rock→Rock→Punk - New Wave"
+     ],
+     "copyright": "(C) 2001 Aven Deja Music / Dey Martin (P) 2002 Naked Jain Records / Dey Martin Producer",
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0646189100126",
+     "product_type": "album",
+     "release_type": "album",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 20
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "album/with_version",
+   "input": {
+    "album": {
+     "id": "b2d4k8h8pu6zb",
+     "title": "…‘Til We Meet Again",
+     "version": "Live",
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Norah Jones",
+      "id": {
+       "py": "int",
+       "v": 34525
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 319
+      },
+      "slug": "norah-jones",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 34525
+       },
+       "name": "Norah Jones",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2021-04-16",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 117
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Pop",
+      "id": {
+       "py": "int",
+       "v": 117
+      },
+      "slug": "pop"
+     },
+     "genres_list": [
+      "Pop/Rock",
+      "Pop/Rock→Pop"
+     ],
+     "copyright": "© 2021 Capitol Records, LLC ℗ 2021 Capitol Records, LLC",
+     "label": {
+      "name": "Blue Note Records",
+      "id": {
+       "py": "int",
+       "v": 47868
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 3584
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "blue-note-1"
+     },
+     "upc": "0602435689821",
+     "product_type": "album",
+     "release_type": "album",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 14
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "album/classical",
+   "input": {
+    "album": {
+     "id": "xf2zfbfjz0w1b",
+     "title": "Mahler: Symphony No. 2",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Budapest Festival Orchestra",
+      "id": {
+       "py": "int",
+       "v": 37552
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 49
+      },
+      "slug": "budapest-festival-orchestra",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 37552
+       },
+       "name": "Budapest Festival Orchestra",
+       "roles": [
+        "main-artist",
+        "orchestra"
+       ]
+      },
+      {
+       "id": {
+        "py": "int",
+        "v": 32425
+       },
+       "name": "Iván Fischer",
+       "roles": [
+        "main-artist",
+        "conductor"
+       ]
+      }
+     ],
+     "release_date_original": "2006-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 10
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Classical",
+      "id": {
+       "py": "int",
+       "v": 10
+      },
+      "slug": "classique"
+     },
+     "genres_list": [
+      "Classique"
+     ],
+     "copyright": "2006 Channel Classics Records 2006 Channel Classics Records",
+     "label": {
+      "name": "Channel Classics",
+      "id": {
+       "py": "int",
+       "v": 4246334
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 528
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 129
+      },
+      "slug": "channel-classics"
+     },
+     "upc": "0723385235064",
+     "product_type": "single",
+     "release_type": "album",
+     "media_count": {
+      "py": "int",
+      "v": 2
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 5
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "album/goodies",
+   "input": {
+    "album": {
+     "id": "el3qez8zpc8bc",
+     "title": "Beethoven: Symphony No. 3 \"Eroica\" & Coriolan Overture",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Iván Fischer",
+      "id": {
+       "py": "int",
+       "v": 32425
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 92
+      },
+      "slug": "ivan-fischer",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 32425
+       },
+       "name": "Iván Fischer",
+       "roles": [
+        "main-artist",
+        "conductor"
+       ]
+      },
+      {
+       "id": {
+        "py": "int",
+        "v": 37552
+       },
+       "name": "Budapest Festival Orchestra",
+       "roles": [
+        "main-artist",
+        "orchestra"
+       ]
+      }
+     ],
+     "release_date_original": "2024-04-05",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 10
+       },
+       {
+        "py": "int",
+        "v": 37
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Symphonic Music",
+      "id": {
+       "py": "int",
+       "v": 37
+      },
+      "slug": "musique-orchestrale"
+     },
+     "genres_list": [
+      "Classique",
+      "Classique→Musique symphonique"
+     ],
+     "copyright": "2024 Channel Classics Records / Outhere Music France 2024 Channel Classics Records / Outhere Music France",
+     "label": {
+      "name": "Channel Classics",
+      "id": {
+       "py": "int",
+       "v": 4246334
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 523
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 129
+      },
+      "slug": "channel-classics"
+     },
+     "upc": "0723385465249",
+     "product_type": "single",
+     "release_type": "album",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 5
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "track/20273753/album",
+   "input": {
+    "album": {
+     "id": "0886444350747",
+     "title": "Kind of Blue (Mono)",
+     "version": "Mono Version",
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Miles Davis",
+      "id": {
+       "py": "int",
+       "v": 6760
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 5875
+      },
+      "slug": "miles-davis",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 6760
+       },
+       "name": "Miles Davis",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "1959-08-17",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 80
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": {
+       "py": "int",
+       "v": 80
+      },
+      "slug": "jazz"
+     },
+     "genres_list": [
+      "Jazz"
+     ],
+     "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+     "label": {
+      "name": "Columbia/Legacy",
+      "id": {
+       "py": "int",
+       "v": 10106072
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 2406
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 23
+      },
+      "slug": "columbialegacy-1"
+     },
+     "upc": "0886444350747",
+     "product_type": "single",
+     "release_type": "album",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 5
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "playlist/302412962/album",
+   "input": {
+    "album": {
+     "id": "i70w88mjhpgyc",
+     "title": "Mozart: Le nozze di Figaro",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "René Jacobs",
+      "id": {
+       "py": "int",
+       "v": 32290
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 107
+      },
+      "slug": "rene-jacobs",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "release_date_original": "2007-07-31",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 10
+       }
+      ],
+      "name": "Classical",
+      "id": {
+       "py": "int",
+       "v": 10
+      },
+      "slug": "classique",
+      "color": "#0070ef"
+     },
+     "label": {
+      "name": "harmonia mundi",
+      "id": {
+       "py": "int",
+       "v": 1319264
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1278
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 30
+      },
+      "slug": "harmonia-mundi-5"
+     },
+     "upc": "5414939984365",
+     "media_count": {
+      "py": "int",
+      "v": 3
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 62
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "playlist/611905/album",
+   "input": {
+    "album": {
+     "id": "0002894776600",
+     "title": "Giacomo Puccini : La Bohème",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Anna Netrebko",
+      "id": {
+       "py": "int",
+       "v": 37401
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 112
+      },
+      "slug": "anna-netrebko",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "release_date_original": "2008-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 10
+       }
+      ],
+      "name": "Classical",
+      "id": {
+       "py": "int",
+       "v": 10
+      },
+      "slug": "classique",
+      "color": "#0070ef"
+     },
+     "label": {
+      "name": "Deutsche Grammophon (DG)",
+      "id": {
+       "py": "int",
+       "v": 80905
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 9726
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "deutsche-grammophon"
+     },
+     "upc": "0002894776600",
+     "media_count": {
+      "py": "int",
+      "v": 2
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 34
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "playlist/19082382/album",
+   "input": {
+    "album": {
+     "id": "0825646254316",
+     "title": "Giacomo Puccini : Tosca (1953) - Callas Remastered",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Maria Callas",
+      "id": {
+       "py": "int",
+       "v": 25160
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1365
+      },
+      "slug": "maria-callas",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "release_date_original": "2014-09-19",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 10
+       },
+       {
+        "py": "int",
+        "v": 55
+       }
+      ],
+      "name": "Opera",
+      "id": {
+       "py": "int",
+       "v": 55
+      },
+      "slug": "opera",
+      "color": "#0070ef"
+     },
+     "label": {
+      "name": "Warner Classics",
+      "id": {
+       "py": "int",
+       "v": 8400
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 11954
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 5
+      },
+      "slug": "warner-classics"
+     },
+     "upc": "0825646254316",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 29
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "playlist/3622637/album",
+   "input": {
+    "album": {
+     "id": "0002894782551",
+     "title": "Ludwig van Beethoven : Fidelio",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Jonas Kaufmann",
+      "id": {
+       "py": "int",
+       "v": 52696
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 136
+      },
+      "slug": "jonas-kaufmann",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "release_date_original": "2011-06-13",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 10
+       }
+      ],
+      "name": "Classical",
+      "id": {
+       "py": "int",
+       "v": 10
+      },
+      "slug": "classique",
+      "color": "#0070ef"
+     },
+     "label": {
+      "name": "Decca Music Group Ltd.",
+      "id": {
+       "py": "int",
+       "v": 80295
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 9225
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "decca-music-group-ltd"
+     },
+     "upc": "0002894782551",
+     "media_count": {
+      "py": "int",
+      "v": 2
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 30
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "playlist/1794294/album",
+   "input": {
+    "album": {
+     "id": "5099996686454",
+     "title": "Wagner: Tristan und Isolde",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Antonio Pappano",
+      "id": {
+       "py": "int",
+       "v": 35163
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 91
+      },
+      "slug": "antonio-pappano",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "release_date_original": "2006-03-06",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 10
+       }
+      ],
+      "name": "Classical",
+      "id": {
+       "py": "int",
+       "v": 10
+      },
+      "slug": "classique",
+      "color": "#0070ef"
+     },
+     "label": {
+      "name": "Warner Classics",
+      "id": {
+       "py": "int",
+       "v": 8400
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 11954
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 5
+      },
+      "slug": "warner-classics"
+     },
+     "upc": "5099996686454",
+     "media_count": {
+      "py": "int",
+      "v": 3
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 33
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "playlist/519103/album",
+   "input": {
+    "album": {
+     "id": "0002894171292",
+     "title": "Janácek: The Cunning Little Vixen",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Lucia Popp",
+      "id": {
+       "py": "int",
+       "v": 34864
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 47
+      },
+      "slug": "lucia-popp",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "release_date_original": "1982-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 10
+       }
+      ],
+      "name": "Classical",
+      "id": {
+       "py": "int",
+       "v": 10
+      },
+      "slug": "classique",
+      "color": "#0070ef"
+     },
+     "label": {
+      "name": "Decca Music Group Ltd.",
+      "id": {
+       "py": "int",
+       "v": 80295
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 9231
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "decca-music-group-ltd"
+     },
+     "upc": "0002894171292",
+     "media_count": {
+      "py": "int",
+      "v": 2
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 31
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "playlist/27145224/album",
+   "input": {
+    "album": {
+     "id": "0825646052585",
+     "title": "Verdi : Aida",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Coro dell'Accademia Nazionale Di Santa Cecilia",
+      "id": {
+       "py": "int",
+       "v": 224765
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 9
+      },
+      "slug": "coro-dell-accademia-nazionale-di-santa-cecilia",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "release_date_original": "2015-10-02",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 10
+       },
+       {
+        "py": "int",
+        "v": 55
+       }
+      ],
+      "name": "Opera",
+      "id": {
+       "py": "int",
+       "v": 55
+      },
+      "slug": "opera",
+      "color": "#0070ef"
+     },
+     "label": {
+      "name": "Warner Classics",
+      "id": {
+       "py": "int",
+       "v": 8400
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 12205
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 5
+      },
+      "slug": "warner-classics"
+     },
+     "upc": "0825646052585",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 51
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "playlist/42636164/album",
+   "input": {
+    "album": {
+     "id": "0190295767358",
+     "title": "Maria Callas Live - Remastered Recordings 1949-1964",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Maria Callas",
+      "id": {
+       "py": "int",
+       "v": 25160
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1375
+      },
+      "slug": "maria-callas",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "release_date_original": "2017-09-15",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 10
+       },
+       {
+        "py": "int",
+        "v": 55
+       }
+      ],
+      "name": "Opera",
+      "id": {
+       "py": "int",
+       "v": 55
+      },
+      "slug": "opera",
+      "color": "#0070ef"
+     },
+     "label": {
+      "name": "Warner Classics",
+      "id": {
+       "py": "int",
+       "v": 8400
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 12205
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 5
+      },
+      "slug": "warner-classics"
+     },
+     "upc": "0190295767358",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 815
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "playlist/20318178/album",
+   "input": {
+    "album": {
+     "id": "0825646192670",
+     "title": "De l'opéra à la chanson",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Natalie Dessay",
+      "id": {
+       "py": "int",
+       "v": 34516
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 86
+      },
+      "slug": "natalie-dessay",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "release_date_original": "2014-11-17",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 10
+       },
+       {
+        "py": "int",
+        "v": 44
+       }
+      ],
+      "name": "Vocal Music (Secular and Sacred)",
+      "id": {
+       "py": "int",
+       "v": 44
+      },
+      "slug": "musique-vocale-profane-et-sacree",
+      "color": "#0070ef"
+     },
+     "label": {
+      "name": "Erato/Warner Classics",
+      "id": {
+       "py": "int",
+       "v": 10647591
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 23
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 5
+      },
+      "slug": "eratowarner-classics"
+     },
+     "upc": "0825646192670",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 31
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "playlist/605310/album",
+   "input": {
+    "album": {
+     "id": "0002894775342",
+     "title": "Georges Bizet : Carmen",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Teresa Berganza",
+      "id": {
+       "py": "int",
+       "v": 27149
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 85
+      },
+      "slug": "teresa-berganza",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "release_date_original": "2005-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 10
+       }
+      ],
+      "name": "Classical",
+      "id": {
+       "py": "int",
+       "v": 10
+      },
+      "slug": "classique",
+      "color": "#0070ef"
+     },
+     "label": {
+      "name": "Deutsche Grammophon (DG)",
+      "id": {
+       "py": "int",
+       "v": 80905
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 9679
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "deutsche-grammophon"
+     },
+     "upc": "0002894775342",
+     "media_count": {
+      "py": "int",
+      "v": 2
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 49
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "artist/0004400163972",
+   "input": {
+    "album": {
+     "id": "0004400163972",
+     "title": "Changing Places",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Tord Gustavsen",
+      "id": {
+       "py": "int",
+       "v": 652549
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 33
+      },
+      "slug": "tord-gustavsen",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 50782
+       },
+       "name": "Tord Gustavsen Trio",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2003-03-11",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 80
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": {
+       "py": "int",
+       "v": 80
+      },
+      "slug": "jazz"
+     },
+     "label": {
+      "name": "ECM Records",
+      "id": {
+       "py": "int",
+       "v": 92473
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1991
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "ecm"
+     },
+     "upc": "0004400163972",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 13
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "artist/nlskqpkeh97pc",
+   "input": {
+    "album": {
+     "id": "nlskqpkeh97pc",
+     "title": "Opening",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Tord Gustavsen Trio",
+      "id": {
+       "py": "int",
+       "v": 50782
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 8
+      },
+      "slug": "tord-gustavsen-trio",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 50782
+       },
+       "name": "Tord Gustavsen Trio",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2022-04-08",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 80
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": {
+       "py": "int",
+       "v": 80
+      },
+      "slug": "jazz"
+     },
+     "label": {
+      "name": "ECM Records",
+      "id": {
+       "py": "int",
+       "v": 92473
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1991
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "ecm"
+     },
+     "upc": "0602445402458",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 12
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "artist/u97iv4sb9728b",
+   "input": {
+    "album": {
+     "id": "u97iv4sb9728b",
+     "title": "The Other Side",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Tord Gustavsen",
+      "id": {
+       "py": "int",
+       "v": 652549
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 33
+      },
+      "slug": "tord-gustavsen",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 50782
+       },
+       "name": "Tord Gustavsen Trio",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2018-08-31",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 80
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": {
+       "py": "int",
+       "v": 80
+      },
+      "slug": "jazz"
+     },
+     "label": {
+      "name": "ECM Records",
+      "id": {
+       "py": "int",
+       "v": 92473
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1991
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "ecm"
+     },
+     "upc": "0602567516217",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 12
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "artist/0060254710034",
+   "input": {
+    "album": {
+     "id": "0060254710034",
+     "title": "The Ground",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Tord Gustavsen",
+      "id": {
+       "py": "int",
+       "v": 652549
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 33
+      },
+      "slug": "tord-gustavsen",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 50782
+       },
+       "name": "Tord Gustavsen Trio",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2005-01-31",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 80
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": {
+       "py": "int",
+       "v": 80
+      },
+      "slug": "jazz"
+     },
+     "label": {
+      "name": "ECM Records",
+      "id": {
+       "py": "int",
+       "v": 92473
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1991
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "ecm"
+     },
+     "upc": "0060254710034",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 12
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "artist/p6ghexbviqamb",
+   "input": {
+    "album": {
+     "id": "p6ghexbviqamb",
+     "title": "Seeing",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Tord Gustavsen Trio",
+      "id": {
+       "py": "int",
+       "v": 50782
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 8
+      },
+      "slug": "tord-gustavsen-trio",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 50782
+       },
+       "name": "Tord Gustavsen Trio",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2024-09-20",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 80
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": {
+       "py": "int",
+       "v": 80
+      },
+      "slug": "jazz"
+     },
+     "label": {
+      "name": "ECM Records",
+      "id": {
+       "py": "int",
+       "v": 92473
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1991
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "ecm"
+     },
+     "upc": "0602465168815",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 10
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "artist/0060254710047",
+   "input": {
+    "album": {
+     "id": "0060254710047",
+     "title": "Being There",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Tord Gustavsen",
+      "id": {
+       "py": "int",
+       "v": 652549
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 33
+      },
+      "slug": "tord-gustavsen",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 50782
+       },
+       "name": "Tord Gustavsen Trio",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2007-04-20",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 80
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": {
+       "py": "int",
+       "v": 80
+      },
+      "slug": "jazz"
+     },
+     "label": {
+      "name": "ECM Records",
+      "id": {
+       "py": "int",
+       "v": 92473
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1991
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "ecm"
+     },
+     "upc": "0060254710047",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 13
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "artist/o6o3s9qcrstfc",
+   "input": {
+    "album": {
+     "id": "o6o3s9qcrstfc",
+     "title": "The Tunnel",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Tord Gustavsen",
+      "id": {
+       "py": "int",
+       "v": 652549
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 33
+      },
+      "slug": "tord-gustavsen",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 50782
+       },
+       "name": "Tord Gustavsen Trio",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2018-08-03",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 80
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": {
+       "py": "int",
+       "v": 80
+      },
+      "slug": "jazz"
+     },
+     "label": {
+      "name": "ECM Records",
+      "id": {
+       "py": "int",
+       "v": 92473
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1991
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "ecm"
+     },
+     "upc": "0602567867746",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 1
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "artist/m56th8dvkaeex",
+   "input": {
+    "album": {
+     "id": "m56th8dvkaeex",
+     "title": "Jazz For Studying",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Bobo Stenson",
+      "id": {
+       "py": "int",
+       "v": 35327
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 22
+      },
+      "slug": "bobo-stenson",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 35327
+       },
+       "name": "Bobo Stenson",
+       "roles": [
+        "main-artist"
+       ]
+      },
+      {
+       "id": {
+        "py": "int",
+        "v": 50782
+       },
+       "name": "Tord Gustavsen Trio",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2026-06-27",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 80
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Jazz",
+      "id": {
+       "py": "int",
+       "v": 80
+      },
+      "slug": "jazz"
+     },
+     "label": {
+      "name": "UME - Global Clearing House",
+      "id": {
+       "py": "int",
+       "v": 3473966
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 53885
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "ume-global-clearing-house"
+     },
+     "upc": "0881061202592",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 35
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "label/u7bw21slwnbha",
+   "input": {
+    "album": {
+     "id": "u7bw21slwnbha",
+     "title": "Dancing Barefoot",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Jacqui J Brown",
+      "id": {
+       "py": "int",
+       "v": 22039831
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 6
+      },
+      "slug": "jacqui-j-brown",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 26820331
+       },
+       "name": "Dey Martin",
+       "roles": [
+        "main-artist"
+       ]
+      },
+      {
+       "id": {
+        "py": "int",
+        "v": 22039831
+       },
+       "name": "Jacqui J Brown",
+       "roles": [
+        "featured-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2025-08-15",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 113
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Alternative & Indie",
+      "id": {
+       "py": "int",
+       "v": 113
+      },
+      "slug": "alternatif-et-inde"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0199538329087",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 1
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "label/uivxqdei1woxc",
+   "input": {
+    "album": {
+     "id": "uivxqdei1woxc",
+     "title": "Berlin Wall",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Dey Martin",
+      "id": {
+       "py": "int",
+       "v": 26820331
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 2
+      },
+      "slug": "dey-martin",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 26820331
+       },
+       "name": "Dey Martin",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2025-03-15",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 116
+       },
+       {
+        "py": "int",
+        "v": 115
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Hard Rock",
+      "id": {
+       "py": "int",
+       "v": 115
+      },
+      "slug": "hard-rock"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0646189315247",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 4
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "label/rl03iycrisvlb",
+   "input": {
+    "album": {
+     "id": "rl03iycrisvlb",
+     "title": "Supermodel Horse Auction",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Woodpecker",
+      "id": {
+       "py": "int",
+       "v": 3877888
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 46
+      },
+      "slug": "woodpecker-10003877888",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 3877888
+       },
+       "name": "Woodpecker",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2005-04-29",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Rock",
+      "id": {
+       "py": "int",
+       "v": 119
+      },
+      "slug": "rock"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0646189430520",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 12
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "label/pdipmsg4pe19a",
+   "input": {
+    "album": {
+     "id": "pdipmsg4pe19a",
+     "title": "Goodbye Forever, Again….",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Furious IV",
+      "id": {
+       "py": "int",
+       "v": 966767
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 3
+      },
+      "slug": "furious-iv",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 966767
+       },
+       "name": "Furious IV",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2005-03-15",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 118
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Punk / New Wave",
+      "id": {
+       "py": "int",
+       "v": 118
+      },
+      "slug": "punk-new-wave"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0646189315520",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 12
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "label/s1re73kv2xbla",
+   "input": {
+    "album": {
+     "id": "s1re73kv2xbla",
+     "title": "Fallback",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Fallback",
+      "id": {
+       "py": "int",
+       "v": 5402183
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 8
+      },
+      "slug": "fallback",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 5402183
+       },
+       "name": "Fallback",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2004-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 118
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Punk / New Wave",
+      "id": {
+       "py": "int",
+       "v": 118
+      },
+      "slug": "punk-new-wave"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0646189031727",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 7
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "label/l5yynyhh2ohbb",
+   "input": {
+    "album": {
+     "id": "l5yynyhh2ohbb",
+     "title": "Is That You?",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Furious IV",
+      "id": {
+       "py": "int",
+       "v": 966767
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 3
+      },
+      "slug": "furious-iv",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 966767
+       },
+       "name": "Furious IV",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2003-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 118
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Punk / New Wave",
+      "id": {
+       "py": "int",
+       "v": 118
+      },
+      "slug": "punk-new-wave"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0646189325321",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 15
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "label/vshd448jcbnhb",
+   "input": {
+    "album": {
+     "id": "vshd448jcbnhb",
+     "title": "Four Dollar Whore",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "The Strap-Ons",
+      "id": {
+       "py": "int",
+       "v": 5402179
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 14
+      },
+      "slug": "the-strap-ons",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 5402179
+       },
+       "name": "The Strap-Ons",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2003-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 118
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Punk / New Wave",
+      "id": {
+       "py": "int",
+       "v": 118
+      },
+      "slug": "punk-new-wave"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0646189715320",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 16
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "label/ha9y21ympcexa",
+   "input": {
+    "album": {
+     "id": "ha9y21ympcexa",
+     "title": "Only When I'm Punk",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Lewinski",
+      "id": {
+       "py": "int",
+       "v": 5402182
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 2
+      },
+      "slug": "lewinski",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 5402182
+       },
+       "name": "Lewinski",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2002-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 118
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Punk / New Wave",
+      "id": {
+       "py": "int",
+       "v": 118
+      },
+      "slug": "punk-new-wave"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0646189110521",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 6
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "label/zcs2h686vhj4b",
+   "input": {
+    "album": {
+     "id": "zcs2h686vhj4b",
+     "title": "Now That's Not What I Call Music",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Various Artists",
+      "id": {
+       "py": "int",
+       "v": 145383
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1531313
+      },
+      "slug": "various-artists",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [],
+     "release_date_original": "2002-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 118
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Punk / New Wave",
+      "id": {
+       "py": "int",
+       "v": 118
+      },
+      "slug": "punk-new-wave"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0646189100126",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 20
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "label/xrdm5aqhh7wgb",
+   "input": {
+    "album": {
+     "id": "xrdm5aqhh7wgb",
+     "title": "Super Mediocrity",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Lung Cookie",
+      "id": {
+       "py": "int",
+       "v": 5402066
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 2
+      },
+      "slug": "lung-cookie",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 5402066
+       },
+       "name": "Lung Cookie",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2002-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 118
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Punk / New Wave",
+      "id": {
+       "py": "int",
+       "v": 118
+      },
+      "slug": "punk-new-wave"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0646189617419",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 13
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "label/uikdnnhdjm6la",
+   "input": {
+    "album": {
+     "id": "uikdnnhdjm6la",
+     "title": "Geeking Dream",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "The Strap-Ons",
+      "id": {
+       "py": "int",
+       "v": 5402179
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 14
+      },
+      "slug": "the-strap-ons",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 5402179
+       },
+       "name": "The Strap-Ons",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2000-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 118
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Punk / New Wave",
+      "id": {
+       "py": "int",
+       "v": 118
+      },
+      "slug": "punk-new-wave"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0750458276129",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 25
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "label/nv0s9jqve33lb",
+   "input": {
+    "album": {
+     "id": "nv0s9jqve33lb",
+     "title": "Surf",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Jalopy Kinfolk",
+      "id": {
+       "py": "int",
+       "v": 5402184
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "jalopy-kinfolk",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 5402184
+       },
+       "name": "Jalopy Kinfolk",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "2000-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 118
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Punk / New Wave",
+      "id": {
+       "py": "int",
+       "v": 118
+      },
+      "slug": "punk-new-wave"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0646189115151",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 15
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "label/bvl3ng40juedb",
+   "input": {
+    "album": {
+     "id": "bvl3ng40juedb",
+     "title": "Lucky 13",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Brown Sox",
+      "id": {
+       "py": "int",
+       "v": 5402187
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 1
+      },
+      "slug": "brown-sox",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 5402187
+       },
+       "name": "Brown Sox",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "1999-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 118
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Punk / New Wave",
+      "id": {
+       "py": "int",
+       "v": 118
+      },
+      "slug": "punk-new-wave"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0665066433423",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 13
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "label/clob4mi8ah7fc",
+   "input": {
+    "album": {
+     "id": "clob4mi8ah7fc",
+     "title": "Zymurgy",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Lung Cookie",
+      "id": {
+       "py": "int",
+       "v": 5402066
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 2
+      },
+      "slug": "lung-cookie",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 5402066
+       },
+       "name": "Lung Cookie",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "1998-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 118
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Punk / New Wave",
+      "id": {
+       "py": "int",
+       "v": 118
+      },
+      "slug": "punk-new-wave"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0646189598121",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 16
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "label/czl4l1y85qgrb",
+   "input": {
+    "album": {
+     "id": "czl4l1y85qgrb",
+     "title": "Uno",
+     "version": {
+      "py": "none"
+     },
+     "artist": {
+      "image": {
+       "py": "none"
+      },
+      "name": "Woodpecker",
+      "id": {
+       "py": "int",
+       "v": 3877888
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 47
+      },
+      "slug": "woodpecker-10003877888",
+      "picture": {
+       "py": "none"
+      }
+     },
+     "artists": [
+      {
+       "id": {
+        "py": "int",
+        "v": 3877888
+       },
+       "name": "Woodpecker",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ],
+     "release_date_original": "1997-01-01",
+     "genre": {
+      "path": [
+       {
+        "py": "int",
+        "v": 112
+       },
+       {
+        "py": "int",
+        "v": 119
+       },
+       {
+        "py": "int",
+        "v": 118
+       }
+      ],
+      "color": "#0070ef",
+      "name": "Punk / New Wave",
+      "id": {
+       "py": "int",
+       "v": 118
+      },
+      "slug": "punk-new-wave"
+     },
+     "label": {
+      "name": "Naked Jain Records",
+      "id": {
+       "py": "int",
+       "v": 572190
+      },
+      "albums_count": {
+       "py": "int",
+       "v": 15
+      },
+      "supplier_id": {
+       "py": "int",
+       "v": 17
+      },
+      "slug": "naked-jain-records"
+     },
+     "upc": "0646189897125",
+     "media_count": {
+      "py": "int",
+      "v": 1
+     },
+     "tracks_count": {
+      "py": "int",
+      "v": 13
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type missing product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type missing product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type missing product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type missing product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type missing product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type missing product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type missing product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type missing product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type None product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": {
+      "py": "none"
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type None product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": {
+      "py": "none"
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type None product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": {
+      "py": "none"
+     },
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type None product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": {
+      "py": "none"
+     },
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type None product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": {
+      "py": "none"
+     },
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type None product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": {
+      "py": "none"
+     },
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type None product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": {
+      "py": "none"
+     },
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type None product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": {
+      "py": "none"
+     },
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type '' product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": ""
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type '' product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": ""
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type '' product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type '' product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type '' product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type '' product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type '' product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type '' product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'album' product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'album' product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'album' product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "album",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'album' product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "album",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'album' product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "album",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'album' product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "album",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'album' product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "album",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'album' product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "album",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'Album' product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "Album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'Album' product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "Album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'Album' product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "Album",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'Album' product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "Album",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'Album' product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "Album",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'Album' product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "Album",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'Album' product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "Album",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'Album' product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "Album",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'ALBUM' product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "ALBUM"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'ALBUM' product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "ALBUM"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'ALBUM' product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "ALBUM",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'ALBUM' product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "ALBUM",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'ALBUM' product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "ALBUM",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'ALBUM' product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "ALBUM",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'ALBUM' product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "ALBUM",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'ALBUM' product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "ALBUM",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'single' product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "single"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "single"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'single' product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "single"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "single",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'single' product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "single",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "single"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'single' product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "single",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "single",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'single' product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "single",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "single"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'single' product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "single",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "single",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'single' product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "single",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "single"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'single' product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "single",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "single",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'ep' product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'ep' product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'ep' product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "ep",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'ep' product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "ep",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'ep' product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "ep",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'ep' product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "ep",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'ep' product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "ep",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'ep' product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "ep",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'EP' product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "EP"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'EP' product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "EP"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'EP' product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "EP",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'EP' product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "EP",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'EP' product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "EP",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'EP' product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "EP",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'EP' product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "EP",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'EP' product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "EP",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'compilation' product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'compilation' product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'compilation' product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "compilation",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'compilation' product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "compilation",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'compilation' product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "compilation",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'compilation' product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "compilation",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'compilation' product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "compilation",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'compilation' product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "compilation",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'Compilation' product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "Compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'Compilation' product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "Compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'Compilation' product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "Compilation",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'Compilation' product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "Compilation",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'Compilation' product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "Compilation",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'Compilation' product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "Compilation",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'Compilation' product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "Compilation",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'Compilation' product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "Compilation",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'epmini' product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "epmini"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'epmini' product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "epmini"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'epmini' product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "epmini",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'epmini' product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "epmini",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'epmini' product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "epmini",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'epmini' product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "epmini",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'epmini' product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "epmini",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'epmini' product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "epmini",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'live' product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "live"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'live' product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "live"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'live' product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "live",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'live' product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "live",
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'live' product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "live",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'live' product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "live",
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 'live' product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "live",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 'live' product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "live",
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 0 product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 0
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 0 product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 0
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 0 product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 0
+     },
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 0 product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 0
+     },
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 0 product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 0
+     },
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 0 product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 0
+     },
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "ep",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 0 product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 0
+     },
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 0 product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 0
+     },
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 5 product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 5
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 5 product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 5
+     }
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 5 product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 5
+     },
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 5 product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 5
+     },
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 5 product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 5
+     },
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 5 product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 5
+     },
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type 5 product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 5
+     },
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type 5 product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": {
+      "py": "int",
+      "v": 5
+     },
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type True product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": true
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type True product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": true
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type True product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": true,
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type True product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": true,
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type True product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": true,
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type True product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": true,
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type True product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": true,
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type True product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": true,
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type ['album'] product_type missing artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": [
+      "album"
+     ]
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type ['album'] product_type missing artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": [
+      "album"
+     ]
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type ['album'] product_type 'album' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": [
+      "album"
+     ],
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type ['album'] product_type 'album' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": [
+      "album"
+     ],
+     "product_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type ['album'] product_type 'ep' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": [
+      "album"
+     ],
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type ['album'] product_type 'ep' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": [
+      "album"
+     ],
+     "product_type": "ep"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "release_type ['album'] product_type 'compilation' artist 'Main'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": [
+      "album"
+     ],
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [],
+    "various": false
+   }
+  },
+  {
+   "name": "release_type ['album'] product_type 'compilation' artist 'Various Artists'",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": [
+      "album"
+     ],
+     "product_type": "compilation"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "artist None",
+   "input": {
+    "album": {
+     "artist": {
+      "py": "none"
+     },
+     "release_type": "album"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "error": "AttributeError"
+  },
+  {
+   "name": "artists an error",
+   "input": {
+    "album": {
+     "artists": {
+      "py": "int",
+      "v": 5
+     },
+     "artist": {
+      "name": "VA"
+     },
+     "release_type": "single"
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "single",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "artist name a number",
+   "input": {
+    "album": {
+     "artist": {
+      "name": {
+       "py": "int",
+       "v": 5
+      }
+     },
+     "release_type": "single"
+    },
+    "aliases": [
+     "5"
+    ]
+   },
+   "output": {
+    "types": [
+     "single",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "custom aliases",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Main"
+     },
+     "release_type": "single"
+    },
+    "aliases": [
+     "main"
+    ]
+   },
+   "output": {
+    "types": [
+     "single",
+     "compilation"
+    ],
+    "various": true
+   }
+  },
+  {
+   "name": "no aliases",
+   "input": {
+    "album": {
+     "artist": {
+      "name": "Various Artists"
+     },
+     "release_type": "single"
+    },
+    "aliases": []
+   },
+   "output": {
+    "types": [
+     "single"
+    ],
+    "various": false
+   }
+  },
+  {
+   "name": "several main artists one alias",
+   "input": {
+    "album": {
+     "artists": [
+      {
+       "name": "A",
+       "roles": [
+        "main-artist"
+       ]
+      },
+      {
+       "name": " VA ",
+       "roles": [
+        "main-artist"
+       ]
+      }
+     ]
+    },
+    "aliases": [
+     "artistes divers",
+     "artisti vari",
+     "va",
+     "vari",
+     "varios artistas",
+     "various",
+     "various artists",
+     "verschiedene interpreten"
+    ]
+   },
+   "output": {
+    "types": [
+     "album",
+     "compilation"
+    ],
+    "various": true
+   }
+  }
+ ]
+}

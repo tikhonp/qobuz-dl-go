@@ -16,6 +16,7 @@ loader refuses a plain JSON number or null as a generator bug.
 
 import base64
 import contextlib
+import copy
 import hashlib
 import io
 import json
@@ -23,7 +24,10 @@ import logging
 import math
 import random
 import re
+import shutil
+import struct
 import sys
+import tempfile
 import textwrap
 import unicodedata
 import urllib.parse
@@ -31,15 +35,18 @@ from http import HTTPStatus
 from pathlib import Path
 from types import SimpleNamespace
 
+import mutagen
+import mutagen.id3 as id3
 import pathvalidate
 import requests
 from cryptography.hazmat.primitives import padding
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+from mutagen.flac import FLAC
 from pathvalidate import sanitize_filename, sanitize_filepath
 from requests.adapters import BaseAdapter
 
 from qobuz_dl import bundle as bundle_mod
-from qobuz_dl import constants, downloader, qopy, utils
+from qobuz_dl import constants, downloader, metadata, qopy, utils
 from qobuz_dl.settings import QobuzDLSettings
 from qobuz_dl.downloader import Download
 from qobuz_dl.qopy import Client
@@ -1297,6 +1304,614 @@ def multi_meta_scenarios():
     ]
 
 
+# --- Tags -----------------------------------------------------------------
+
+AUDIO = FIXTURES / "audio"
+MISSING = object()
+# The album keys _get_tags_to_add and get_album_artist read. Cases built from
+# the fixtures keep only these, so that each doesn't carry the track list.
+TAG_ALBUM_KEYS = ("id", "title", "version", "artist", "artists", "release_date_original", "genre",
+                  "genres_list", "copyright", "label", "upc", "product_type", "release_type",
+                  "media_count", "tracks_count")
+FLAC_LIMIT = metadata.FLAC_MAX_BLOCKSIZE
+
+
+def tag_settings(over):
+    s = QobuzDLSettings()
+    for k, v in over.items():
+        if not hasattr(s, k):
+            raise ValueError(f"no setting {k}")
+        setattr(s, k, QobuzDLSettings.parse_aliases(v) if k == "various_artists_aliases" else v)
+    return s
+
+
+def no_tag_settings():
+    return sorted(k for k in vars(QobuzDLSettings()) if k.startswith("no_") and k.endswith("_tag"))
+
+
+def tag_album(album, tracks=False):
+    out = {k: album[k] for k in TAG_ALBUM_KEYS if k in album}
+    if tracks:
+        out["tracks"] = {"items": [{k: t[k] for k in ("media_number",) if k in t}
+                                   for t in album["tracks"]["items"]]}
+    return out
+
+
+def overridden(base, over):
+    out = copy.deepcopy(base)
+    for k, v in (over or {}).items():
+        if v is MISSING:
+            out.pop(k, None)
+        else:
+            out[k] = v
+    return out
+
+
+def base_album(**over):
+    return overridden({
+        "id": "alb1", "title": "Album", "version": None, "artist": {"name": "Main"},
+        "release_date_original": "2020-05-17", "genre": {"name": "Jazz"}, "genres_list": ["Jazz"],
+        "copyright": "(P) 2020 Label (C) 2020 Label", "label": {"name": "Label"}, "upc": "0123456789012",
+        "product_type": "album", "release_type": "album", "tracks_count": 1, "media_count": 1,
+    }, over)
+
+
+def base_item(**over):
+    return overridden({
+        "id": 1, "title": "Song", "version": None, "performer": {"name": "Main"},
+        "performers": "Main, MainArtist", "isrc": "XX0000000001", "track_number": 1, "media_number": 1,
+        "parental_warning": False,
+        "audio_info": {"replaygain_track_gain": -6.5, "replaygain_track_peak": 0.98},
+    }, over)
+
+
+def tag_fixture_inputs(index, raw):
+    items = index["items"]
+    for kind, album_id in items["albums"].items():
+        album = normalize(raw[f"album-get-{album_id}.json"])
+        for t in album["tracks"]["items"]:
+            yield f"fixture/album/{kind}/{t['id']}", tag_album(album), t
+    album = normalize(raw[f"album-get-{items['albums']['classical']}.json"])
+    yield "fixture/whole classical album", album, album["tracks"]["items"][0]
+    track = normalize(raw[f"track-get-{items['track']}.json"])
+    yield f"fixture/track/{items['track']}", track["album"], track
+    for t in normalize(raw[f"playlist-get-{items['playlist']}-0.json"])["tracks"]["items"]:
+        yield f"fixture/playlist/{t['id']}", t["album"], t
+
+
+def built_tag_inputs():
+    A, I = base_album, base_item
+    pf = lambda *blocks: " - ".join(blocks)
+    yield "basic", A(), I(), {}
+    yield "empty album", {}, I(), {}
+    yield "album None", None, I(), {}
+    yield "empty item", A(), {}, {}
+
+    # Titles and versions
+    yield "title/version appended", A(version="Deluxe"), I(version="Live"), {}
+    yield "title/version already in title", A(title="Album (DELUXE Edition)", version="deluxe"), I(title="Song - live", version="Live"), {}
+    yield "title/version empty", A(version=""), I(version=""), {}
+    yield "title/title missing", A(title=MISSING), I(title=MISSING), {}
+    yield "title/title None without version", A(title=None), I(title=None), {}
+    yield "title/title None with version", A(title=None, version="Live"), I(), {}
+    yield "title/version a number", A(version=2), I(), {}
+    yield "title/title a number", A(title=5), I(title=7), {}
+    yield "title/title a number with version", A(), I(title=7, version="Live"), {}
+    yield "title/casefold is not lower", A(title="STRASSE", version="straße"), I(title="İ", version="i̇"), {}
+
+    # ARTIST
+    yield "artist/featured", A(), I(performers=pf("Main, MainArtist", "Guest, FeaturedArtist", "Prod, Producer")), {}
+    yield "artist/main repeated in another case", A(), I(performers=pf("MAIN, MainArtist", "main, FeaturedArtist")), {}
+    yield "artist/combined credit dropped", A(), I(performer={"name": "A & B"}, performers=pf("A, MainArtist", "B, MainArtist")), {}
+    yield "artist/combined credit with comma", A(), I(performer={"name": "A, B & C"}, performers=pf("a, MainArtist", "B, MainArtist", "c, FeaturedArtist")), {}
+    yield "artist/combined credit partly listed", A(), I(performer={"name": "A & B"}, performers=pf("A, MainArtist", "C, MainArtist")), {}
+    yield "artist/band name with comma", A(), I(performer={"name": "Earth, Wind & Fire"}, performers=pf("Earth, Wind & Fire, MainArtist", "Guest, FeaturedArtist")), {}
+    yield "artist/band name with ampersand", A(), I(performer={"name": "Mumford & Sons"}, performers=pf("Mumford & Sons, MainArtist")), {}
+    yield "artist/band name parts listed", A(), I(performer={"name": "Mumford & Sons"}, performers=pf("Mumford, MainArtist", "Sons, MainArtist")), {}
+    yield "artist/only roles that aren't artists", A(), I(performers=pf("Writer, Composer", "Main, Producer")), {}
+    yield "artist/name only blocks ignored", A(), I(performers=pf("Lonely", "Guest, FeaturedArtist")), {}
+    yield "artist/empty name", A(), I(performers=pf(", MainArtist", "Guest, FeaturedArtist")), {}
+    yield "artist/spaces around parts", A(), I(performers=" Guest ,  FeaturedArtist  - Other , MainArtist"), {}
+    yield "artist/casefold dedupe", A(), I(performer={"name": "STRASSE"}, performers=pf("straße, MainArtist")), {}
+    yield "artist/album artist fallback", A(), I(performer=MISSING, performers=MISSING), {}
+    yield "artist/performer name empty", A(artist={"name": "Album Artist"}), I(performer={"name": ""}), {}
+    yield "artist/nobody", A(artist={}), I(performer={}, performers=""), {}
+    yield "artist/nobody but performers", A(artist={}), I(performer={}, performers=pf("X, MainArtist", "Y, FeaturedArtist")), {}
+    yield "artist/main artist a number", A(), I(performer={"name": 5}, performers=MISSING), {}
+    yield "artist/main artist a number with performers", A(), I(performer={"name": 5}), {}
+    yield "artist/performer None", A(), I(performer=None), {}
+    yield "artist/album artist None", A(artist=None), I(performer={}), {}
+    yield "artist/performers a list", A(), I(performers=["Main, MainArtist"]), {}
+    yield "artist/performers None", A(), I(performers=None), {}
+    yield "artist/main with only one part", A(), I(performer={"name": "Solo,"}, performers=pf("Solo, MainArtist", "Guest, FeaturedArtist")), {}
+
+    # COMPOSER
+    yield "composer/from performers", A(), I(performers=pf("Main, MainArtist", "Writer, Composer", "Lyr, ComposerLyricist, Lyricist")), {}
+    yield "composer/repeated in another case", A(), I(performers=pf("Writer, Composer", "WRITER, ComposerLyricist")), {}
+    yield "composer/fallback", A(), I(composer={"name": "Fallback"}), {}
+    yield "composer/performers win over fallback", A(), I(composer={"name": "Fallback"}, performers=pf("Writer, Composer")), {}
+    yield "composer/none", A(), I(composer={}), {}
+    yield "composer/name a number", A(), I(composer={"name": 5}), {}
+    yield "composer/composer None", A(), I(composer=None), {}
+    yield "composer/lyricist only", A(), I(performers=pf("Lyr, Lyricist")), {}
+
+    # DATE
+    yield "date/missing", A(release_date_original=MISSING), I(), {}
+    yield "date/None", A(release_date_original=None), I(), {}
+
+    # GENRE
+    yield "genre/main replaces first", A(genre={"name": "Rock"}, genres_list=["Pop/Rock", "Pop/Rock→Rock→Hard Rock"]), I(), {}
+    yield "genre/french main", A(genre={"name": "Classique"}, genres_list=["Classique", "Classique→Opéra"]), I(), {}
+    yield "genre/french list", A(genre={"name": "Jazz"}, genres_list=["Jazz", "Jazz→Jazz Vocal", "Musiques du monde"]), I(), {}
+    yield "genre/repeats dropped", A(genre={"name": "Rock"}, genres_list=["Rock", "Rock", "Rock→Rock"]), I(), {}
+    yield "genre/list empty", A(genre={"name": "Électronique"}, genres_list=[]), I(), {}
+    yield "genre/list missing", A(genres_list=MISSING), I(), {}
+    yield "genre/no main", A(genre={}, genres_list=["Classique→Opéra"]), I(), {}
+    yield "genre/genre missing", A(genre=MISSING, genres_list=["Pop"]), I(), {}
+    yield "genre/nothing", A(genre={}, genres_list=[]), I(), {}
+    yield "genre/blank pieces", A(genre={"name": "Jazz"}, genres_list=["Jazz", " ", "→→", " Blues "]), I(), {}
+    yield "genre/slash kept", A(genre={"name": "Pop/Rock"}, genres_list=["x"]), I(), {}
+    yield "genre/list None without main", A(genre={}, genres_list=None), I(), {}
+    yield "genre/list None with main", A(genres_list=None), I(), {}
+    yield "genre/list a string without main", A(genre={}, genres_list="Pop"), I(), {}
+    yield "genre/list a string with main", A(genres_list="Pop"), I(), {}
+    yield "genre/list with a number", A(genre={}, genres_list=["Pop", 5]), I(), {}
+    yield "genre/main a number", A(genre={"name": 5}), I(), {}
+    yield "genre/main a list", A(genre={"name": ["Jazz"]}), I(), {}
+    yield "genre/main empty", A(genre={"name": ""}, genres_list=["Pop"]), I(), {}
+    yield "genre/genre None", A(genre=None), I(), {}
+    yield "genre/list a dict without main", A(genre={}, genres_list={"Pop": 1, "Rock": 2}), I(), {}
+    yield "genre/list a dict with main", A(genres_list={"Pop": 1}), I(), {}
+
+    # COPYRIGHT
+    yield "copyright/missing", A(copyright=MISSING), I(), {}
+    yield "copyright/null", A(copyright=None), I(), {}
+    yield "copyright/empty", A(copyright=""), I(), {}
+    yield "copyright/symbols", A(copyright="(P)(C) (p) (c) ((P))"), I(), {}
+    yield "copyright/a number", A(copyright=2020), I(), {}
+    yield "copyright/zero", A(copyright=0), I(), {}
+
+    # LABEL
+    yield "label/whitespace runs", A(label={"name": " Big\t\tLabel  Records\n"}), I(), {}
+    yield "label/missing", A(label=MISSING), I(), {}
+    yield "label/name missing", A(label={}), I(), {}
+    yield "label/None", A(label=None), I(), {}
+    yield "label/name None", A(label={"name": None}), I(), {}
+
+    # ISRC, BARCODE, MEDIATYPE, ITUNESADVISORY
+    yield "values/isrc and upc missing", A(upc=MISSING), I(isrc=MISSING), {}
+    yield "values/isrc and upc None", A(upc=None), I(isrc=None), {}
+    yield "values/isrc and upc numbers", A(upc=123), I(isrc=5), {}
+    yield "values/media type cases", A(product_type="straße épée"), I(), {}
+    yield "values/media type missing", A(product_type=MISSING), I(), {}
+    yield "values/media type None", A(product_type=None), I(), {}
+    yield "values/explicit", A(), I(parental_warning=True), {}
+    yield "values/explicit truthy", A(), I(parental_warning="yes"), {}
+    yield "values/explicit missing", A(), I(parental_warning=MISSING), {}
+
+    # COMPILATION and RELEASETYPE
+    yield "compilation/various artists", A(artist={"name": "Various Artists"}, release_type="album"), I(), {}
+    yield "compilation/alias with spaces and case", A(artist={"name": "  VA "}, release_type=None, product_type="album"), I(), {}
+    yield "compilation/main artists list", A(artists=[{"name": "Varios Artistas", "roles": ["main-artist"]}]), I(), {}
+    yield "compilation/release type compilation", A(release_type="compilation"), I(), {}
+    yield "compilation/custom aliases", A(artist={"name": "Main"}), I(), {"various_artists_aliases": "main, other"}
+    yield "compilation/aliases empty", A(artist={"name": "Various Artists"}), I(), {"various_artists_aliases": ""}
+    yield "compilation/epmini", A(release_type="epmini", product_type="ep"), I(), {}
+    yield "compilation/no type", A(release_type=None, product_type=""), I(), {}
+    yield "compilation/no type various", A(release_type=None, product_type="", artist={"name": "Various"}), I(), {}
+
+    # ReplayGain
+    for name, gain, peak in [
+        ("negative", -6.5, 0.98), ("ints", -7, 1), ("zero", 0, 0.0), ("negative zero", -0.0, -0.0),
+        ("small", 1e-05, 0.0001), ("large", 1e16, 123456789012345678), ("many digits", -10.123456789012345, 0.1 + 0.2),
+        ("strings", "-6.5", "0.98"), ("bools", True, False), ("None", None, None),
+    ]:
+        yield f"replaygain/{name}", A(), I(audio_info={"replaygain_track_gain": gain, "replaygain_track_peak": peak}), {}
+    yield "replaygain/missing keys", A(), I(audio_info={"other": 1}), {}
+    yield "replaygain/audio_info missing", A(), I(audio_info=MISSING), {}
+    yield "replaygain/audio_info None", A(), I(audio_info=None), {}
+    yield "replaygain/audio_info empty list", A(), I(audio_info=[]), {}
+    yield "replaygain/audio_info a string", A(), I(audio_info="x"), {}
+    yield "replaygain/off", A(), I(), {"no_replaygain_tag": True}
+
+    # Classical
+    yield "classical/work conductor ensemble", A(), I(work="Symphony No. 9", performers=pf(
+        "Ludwig van Beethoven, Composer", "Herbert von Karajan, Conductor, MainArtist",
+        "Berliner Philharmoniker, Orchestra, MainArtist", "Wiener Singverein, Choir", "Ensemble X, Ensemble")), {}
+    yield "classical/two conductors", A(), I(performers=pf("C1, Conductor", "C2, Conductor", "C1, Conductor")), {}
+    yield "classical/work a number", A(), I(work=9), {}
+    yield "classical/work empty", A(), I(work=""), {}
+    yield "classical/everything off", A(), I(work="W", performers=pf("C, Conductor", "O, Orchestra")), {
+        "no_work_tag": True, "no_conductor_tag": True, "no_ensemble_tag": True}
+
+    # IDs and the album URL
+    yield "ids/zero and empty", A(id=""), I(id=0), {}
+    yield "ids/None", A(id=None), I(id=None), {}
+    yield "ids/numbers", A(id=12345), I(id=1.5), {}
+    for title in ["Mahler: Symphony No. 2", "...'Til We Meet Again (Live)", "Ümlaut & Co", "---", "İstanbul", "", "ABC 123 xyz"]:
+        yield f"url/title {title!r}", A(title=title), I(), {}
+    yield "url/title missing", A(title=MISSING), I(), {}
+    yield "url/title None", A(title=None), I(), {}
+    yield "url/title a number", A(title=42), I(), {}
+    yield "url/off", A(), I(), {"no_album_url_tag": True}
+
+
+def gen_tags(index, raw):
+    g = Golden("tags")
+
+    def run(album, item, over):
+        return metadata._get_tags_to_add(copy.deepcopy(album), copy.deepcopy(item), settings=tag_settings(over))
+
+    def case(name, album, item, over):
+        g.case(name, {"album": album, "item": item, "settings": over}, lambda: run(album, item, over))
+
+    for name, album, item in tag_fixture_inputs(index, raw):
+        case(name, album, item, {})
+    for name, album, item, over in built_tag_inputs():
+        case(name, album, item, over)
+
+    album = tag_album(normalize(raw[f"album-get-{index['items']['albums']['classical']}.json"]))
+    item = normalize(raw[f"album-get-{index['items']['albums']['classical']}.json"])["tracks"]["items"][0]
+    comp = normalize(raw[f"album-get-{index['items']['albums']['compilation']}.json"])
+    for key in no_tag_settings():
+        case(f"settings/{key}/classical", album, item, {key: True})
+        case(f"settings/{key}/compilation", tag_album(comp), comp["tracks"]["items"][0], {key: True})
+    case("settings/all off", album, item, {k: True for k in no_tag_settings()})
+    g.write()
+
+
+def gen_metadata_helpers():
+    g = Golden("metadata_helpers")
+    for title, version in [("T", ""), ("T", None), ("T", "Live"), ("T (Live)", "live"), ("", "Live"),
+                           (None, None), (None, "Live"), (5, None), ("T", 0), ("T", 5), ("ǅ", "ǆ"), ("STRASSE", "straße")]:
+        g.case(f"title_with_version {title!r} {version!r}", {"fn": "title_with_version", "title": title, "version": version},
+               lambda t=title, v=version: metadata._get_title_with_version(t, v))
+    for d in [{"title": "T"}, {"title": "T", "version": "Live"}, {"title": "T (Live)", "version": "Live"},
+              {"title": "T", "work": "W"}, {"title": "T", "version": "V", "work": "W"}, {"title": None},
+              {"title": 5, "version": 1.5, "work": True}, {"version": "V"}, {"title": "T", "version": None, "work": ""}]:
+        g.case(f"get_title {d!r}", {"fn": "get_title", "track": d}, lambda d=d: metadata._get_title(d))
+    for s in ["", None, "(P) 2020 (C) 2021", "((P))", "(p)", 0, 5]:
+        g.case(f"format_copyright {s!r}", {"fn": "format_copyright", "s": s}, lambda s=s: metadata._format_copyright(s))
+    for genres in [[], ["Pop"], ["Pop/Rock", "Rock"], ["Pop→Rock", "Rock/Pop"], ["a//b", "→", "a"], [" x ", "x"], ["Pop", 5]]:
+        g.case(f"format_genres {genres!r}", {"fn": "format_genres", "genres": genres},
+               lambda gs=genres: metadata._format_genres(gs))
+    g.write()
+
+
+def gen_release_types(index, raw):
+    g = Golden("release_types")
+    default = sorted(QobuzDLSettings().various_artists_aliases)
+
+    def case(name, album, aliases):
+        g.case(name, {"album": album, "aliases": aliases},
+               lambda: {"types": metadata._release_types(copy.deepcopy(album), set(aliases)),
+                        "various": metadata._is_various_artists(copy.deepcopy(album), set(aliases))})
+
+    for name, album in album_dicts(index, raw):
+        case(name, tag_album(album), default)
+    raws = [MISSING, None, "", "album", "Album", "ALBUM", "single", "ep", "EP", "compilation", "Compilation",
+            "epmini", "live", 0, 5, True, ["album"]]
+    for rt in raws:
+        for pt in (MISSING, "album", "ep", "compilation"):
+            for artist in ("Main", "Various Artists"):
+                album = overridden({"artist": {"name": artist}}, {"release_type": rt, "product_type": pt})
+                case(f"release_type {'missing' if rt is MISSING else repr(rt)} product_type "
+                     f"{'missing' if pt is MISSING else repr(pt)} artist {artist!r}", album, default)
+    case("artist None", {"artist": None, "release_type": "album"}, default)
+    case("artists an error", {"artists": 5, "artist": {"name": "VA"}, "release_type": "single"}, default)
+    case("artist name a number", {"artist": {"name": 5}, "release_type": "single"}, ["5"])
+    case("custom aliases", {"artist": {"name": "Main"}, "release_type": "single"}, ["main"])
+    case("no aliases", {"artist": {"name": "Various Artists"}, "release_type": "single"}, [])
+    case("several main artists one alias", {"artists": [{"name": "A", "roles": ["main-artist"]},
+                                                        {"name": " VA ", "roles": ["main-artist"]}]}, default)
+    g.write()
+
+
+def gen_disc_track_total(index, raw):
+    g = Golden("disc_track_total")
+
+    def case(name, album, item):
+        g.case(name, {"album": album, "item": item},
+               lambda: metadata._disc_track_total(copy.deepcopy(album), copy.deepcopy(item)))
+
+    items = index["items"]
+    for kind, album_id in items["albums"].items():
+        album = normalize(raw[f"album-get-{album_id}.json"])
+        trimmed = {k: album[k] for k in ("tracks_count", "media_count") if k in album}
+        trimmed["tracks"] = tag_album(album, tracks=True)["tracks"]
+        for t in album["tracks"]["items"]:
+            case(f"album/{kind}/{t['id']}", trimmed, {k: t[k] for k in ("media_number",) if k in t})
+    track = normalize(raw[f"track-get-{items['track']}.json"])
+    case(f"track/{items['track']}", track["album"], track)
+    for t in normalize(raw[f"playlist-get-{items['playlist']}-0.json"])["tracks"]["items"]:
+        case(f"playlist/{t['id']}", t["album"], t)
+
+    disc = lambda *ns: {"items": [{"media_number": n} if n is not MISSING else {} for n in ns]}
+    built = [
+        ("two discs complete", {"tracks_count": 5, "media_count": 2, "tracks": disc(1, 1, 1, 2, 2)}, {"media_number": 2}),
+        ("two discs complete first", {"tracks_count": 5, "media_count": 2, "tracks": disc(1, 1, 1, 2, 2)}, {"media_number": 1}),
+        ("two discs incomplete", {"tracks_count": 6, "media_count": 2, "tracks": disc(1, 1, 1, 2, 2)}, {"media_number": 2}),
+        ("one disc", {"tracks_count": 5, "media_count": 1, "tracks": disc(1, 1, 1, 2, 2)}, {"media_number": 2}),
+        ("disc not in list", {"tracks_count": 2, "media_count": 2, "tracks": disc(1, 1)}, {"media_number": 3}),
+        ("media_number missing", {"tracks_count": 3, "media_count": 2, "tracks": disc(MISSING, 1, 2)}, {}),
+        ("media_number a string", {"tracks_count": 2, "media_count": 2, "tracks": disc(1, 2)}, {"media_number": "1"}),
+        ("media_number a float", {"tracks_count": 2, "media_count": 2, "tracks": disc(1, 2)}, {"media_number": 1.0}),
+        ("media_number None", {"tracks_count": 2, "media_count": 2, "tracks": disc(None, 2)}, {"media_number": None}),
+        ("nothing", {}, {}),
+        ("tracks_count zero", {"tracks_count": 0}, {}),
+        ("tracks_count None", {"tracks_count": None}, {}),
+        ("tracks_count a string", {"tracks_count": "5", "media_count": 2, "tracks": disc(1, 1, 1, 2, 2)}, {"media_number": 2}),
+        ("tracks_count a float", {"tracks_count": 5.0, "media_count": 2, "tracks": disc(1, 1, 1, 2, 2)}, {"media_number": 2}),
+        ("media_count a string", {"tracks_count": 2, "media_count": "2", "tracks": disc(1, 2)}, {"media_number": 1}),
+        ("media_count a float", {"tracks_count": 2, "media_count": 1.5, "tracks": disc(1, 2)}, {"media_number": 1}),
+        ("media_count None", {"tracks_count": 2, "media_count": None, "tracks": disc(1, 2)}, {"media_number": 1}),
+        ("media_count True", {"tracks_count": 2, "media_count": True, "tracks": disc(1, 2)}, {"media_number": 1}),
+        ("tracks None", {"tracks_count": 2, "media_count": 2, "tracks": None}, {"media_number": 1}),
+        ("tracks a string", {"tracks_count": 2, "media_count": 2, "tracks": "ab"}, {"media_number": 1}),
+        ("items None", {"tracks_count": 2, "media_count": 2, "tracks": {"items": None}}, {"media_number": 1}),
+        ("items a string", {"tracks_count": 2, "media_count": 2, "tracks": {"items": "ab"}}, {"media_number": 1}),
+        ("items a dict", {"tracks_count": 2, "media_count": 2, "tracks": {"items": {"a": 1, "b": 2}}}, {"media_number": 1}),
+        ("items a number", {"tracks_count": 2, "media_count": 2, "tracks": {"items": 5}}, {"media_number": 1}),
+        ("item not a dict", {"tracks_count": 2, "media_count": 2, "tracks": {"items": [{"media_number": 1}, 5]}}, {"media_number": 1}),
+        ("album None", None, {"media_number": 1}),
+    ]
+    for name, album, item in built:
+        case(f"built/{name}", album, item)
+    g.write()
+
+
+# Audio fixtures made from the ffmpeg ones, so the taggers meet block layouts
+# and frames that ffmpeg doesn't write.
+
+def syncsafe(n):
+    return bytes([(n >> 21) & 0x7F, (n >> 14) & 0x7F, (n >> 7) & 0x7F, n & 0x7F])
+
+
+def unsyncsafe(b):
+    return (b[0] & 0x7F) << 21 | (b[1] & 0x7F) << 14 | (b[2] & 0x7F) << 7 | (b[3] & 0x7F)
+
+
+def flac_offset(data):
+    if data[:3] == b"ID3":
+        return 10 + unsyncsafe(data[6:10])
+    return 0
+
+
+def flac_parts(data):
+    """The bytes before fLaC, the metadata blocks and the audio."""
+    start = flac_offset(data)
+    if data[start:start + 4] != b"fLaC":
+        raise ValueError("not a FLAC file")
+    pos, blocks = start + 4, []
+    while True:
+        h = data[pos]
+        size = int.from_bytes(data[pos + 1:pos + 4], "big")
+        blocks.append((h & 0x7F, data[pos + 4:pos + 4 + size]))
+        pos += 4 + size
+        if h & 0x80:
+            return data[:start], blocks, data[pos:]
+
+
+def flac_bytes(blocks, audio, prefix=b""):
+    out = bytearray(prefix + b"fLaC")
+    for i, (code, body) in enumerate(blocks):
+        out.append(code | (0x80 if i == len(blocks) - 1 else 0))
+        out += len(body).to_bytes(3, "big") + body
+    return bytes(out) + audio
+
+
+def vorbis_block(vendor, comments):
+    out = struct.pack("<I", len(vendor)) + vendor + struct.pack("<I", len(comments))
+    for c in comments:
+        out += struct.pack("<I", len(c)) + c
+    return out
+
+
+def picture_block(ptype, mime, desc, data):
+    return (struct.pack(">2I", ptype, len(mime)) + mime + struct.pack(">I", len(desc)) + desc
+            + struct.pack(">5I", 0, 0, 0, 0, len(data)) + data)
+
+
+def write_tag_fixtures():
+    _, blocks, audio = flac_parts((AUDIO / "16-44.1.flac").read_bytes())
+    streaminfo = blocks[0][1]
+    cover = (AUDIO / "cover.jpg").read_bytes()
+    comments = [b"TITLE=Old", b"encoder=Lavf", b"Encoded_By=someone", b"ENCODED-BY=x", b"title=Old again",
+                b"NOEQUALS", b"=empty key", b"K~EY=tilde", "KÉY=not ascii".encode(), b"BAD=\xff\xfeok\xe2\x82",
+                b"GENRE=Old Genre", b"Comment=kept"]
+    # One seek point and the start of another, which mutagen drops.
+    seektable = struct.pack(">QQH", 0, 0, 4096) + b"\x01\x02\x03"
+    (AUDIO / "blocks.flac").write_bytes(flac_bytes([
+        (0, streaminfo),
+        (1, bytes(16)),
+        (2, b"qdlgapplication data"),
+        (4, vorbis_block(b"reference libFLAC 1.4.3", comments)),
+        (3, seektable),
+        (6, picture_block(4, b"image/jpeg", b"back", cover)),
+        (4, vorbis_block(b"second", [b"SECOND=1"])),
+        (1, bytes(4)),
+    ], audio))
+    (AUDIO / "no-comments.flac").write_bytes(flac_bytes([(0, streaminfo), (1, bytes(8))], audio))
+    tit2 = b"TIT2" + syncsafe(5) + b"\x00\x00" + b"\x00Old\x00"
+    prefix = b"ID3\x04\x00\x00" + syncsafe(len(tit2) + 6) + tit2 + bytes(6)
+    _, blocks, audio = flac_parts((AUDIO / "16-44.1-tagged.flac").read_bytes())
+    (AUDIO / "id3-prefixed.flac").write_bytes(flac_bytes(blocks, audio, prefix))
+
+    mp3 = (AUDIO / "320.mp3").read_bytes()
+    bare = mp3[10 + unsyncsafe(mp3[6:10]):]
+    (AUDIO / "320-bare.mp3").write_bytes(bare)
+    path = AUDIO / "320-tagged.mp3"
+    path.write_bytes(bare)
+    t = id3.ID3()
+    t.add(id3.TPE1(encoding=1, text="Old Artist"))
+    t.add(id3.TOPE(encoding=0, text="Original Artist"))
+    t.add(id3.TENC(encoding=1, text="Encoder"))
+    t.add(id3.TSSE(encoding=0, text="Lavf"))
+    t.add(id3.TXXX(encoding=1, desc="QOBUZTRACKID", text="stale"))
+    t.add(id3.TXXX(encoding=1, desc="Other", text="kept"))
+    t.add(id3.TXXX(encoding=0, desc="Latin", text="kept too"))
+    t.add(id3.COMM(encoding=1, lang="eng", desc="c", text="a comment"))
+    t.add(id3.APIC(encoding=1, mime="image/jpeg", type=3, desc="", data=b"old cover"))
+    t.add(id3.APIC(encoding=0, mime="image/jpeg", type=4, desc="back", data=cover))
+    t.save(str(path), v2_version=3)
+
+
+def place_cover(root, cover):
+    """Puts embed_cover.jpg where a case wants it: in the track's folder, its parent, or both."""
+    data = (AUDIO / "cover.jpg").read_bytes()
+    if cover in ("folder", "both"):
+        (root / metadata.EMB_COVER_NAME).write_bytes(data)
+    if cover in ("parent", "both"):
+        (root.parent / metadata.EMB_COVER_NAME).write_bytes(data[::-1] if cover == "both" else data)
+    # Not zeros: mutagen reads a v2.3 APIC whose data is all zeros as empty.
+    if cover == "large":
+        (root / metadata.EMB_COVER_NAME).write_bytes(b"\xff" * (FLAC_LIMIT + 1))
+    if cover == "limit":
+        (root / metadata.EMB_COVER_NAME).write_bytes(b"\xff" * FLAC_LIMIT)
+
+
+def run_tagger(tagger, inp, read):
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp) / "parent" / "album"
+        root.mkdir(parents=True)
+        place_cover(root, inp["cover"])
+        filename, final = root / "~tmp_01.tmp", root / "01 - final"
+        shutil.copyfile(AUDIO / inp["file"], filename)
+        tagger(str(filename), str(root), str(final), copy.deepcopy(inp["d"]), copy.deepcopy(inp["album"]),
+               inp["istrack"], inp["em_image"], settings=tag_settings(inp["settings"]))
+        if filename.exists() or not final.exists():
+            raise RuntimeError("the tagger didn't rename the file")
+        return read(final)
+
+
+def sha(b):
+    return hashlib.sha256(b).hexdigest()
+
+
+def flac_result(path):
+    data = path.read_bytes()
+    prefix, blocks, audio = flac_parts(data)
+    f = FLAC(str(path))
+    return {
+        "prefix": sha(prefix),
+        "blocks": [[code, len(body)] for code, body in blocks],
+        "vendor": f.tags.vendor if f.tags is not None else None,
+        "comments": [[k, v] for k, v in f.tags] if f.tags is not None else [],
+        "pictures": [[p.type, p.mime, p.desc, sha(p.data)] for p in f.pictures],
+        "audio": sha(audio),
+        "sha256": sha(data),
+    }
+
+
+def mp3_frame(f):
+    out = {"key": f.HashKey, "encoding": int(f.encoding)}
+    if isinstance(f, id3.APIC):
+        out.update(mime=f.mime, type=int(f.type), data=sha(f.data))
+    else:
+        out["text"] = [str(x) for x in f.text]
+    return out
+
+
+def mp3_result(path):
+    data = path.read_bytes()
+    if data[:3] != b"ID3":
+        raise ValueError("no ID3 tag")
+    end = 10 + unsyncsafe(data[6:10])
+    raws, pos = [], 10
+    while pos + 10 <= end and data[pos:pos + 4] != bytes(4):
+        size = int.from_bytes(data[pos + 4:pos + 8], "big")
+        raws.append(sha(data[pos:pos + 10 + size]))
+        pos += 10 + size
+    tags = id3.ID3(str(path), translate=False)
+    frames = sorted((mp3_frame(f) for f in tags.values()), key=lambda f: json.dumps(f, ensure_ascii=False))
+    return {"version": data[3], "frames": frames, "raw": sorted(raws), "audio": sha(data[end:])}
+
+
+def tagger_inputs(index, raw, mp3):
+    items = index["items"]
+    albums = {k: normalize(raw[f"album-get-{v}.json"]) for k, v in items["albums"].items()}
+    track = normalize(raw[f"track-get-{items['track']}.json"])
+    playlist = normalize(raw[f"playlist-get-{items['playlist']}-0.json"])["tracks"]["items"]
+    files = ["320.mp3", "320-tagged.mp3", "320-bare.mp3"] if mp3 else \
+        ["16-44.1.flac", "24-96.flac", "24-192.flac", "16-44.1-tagged.flac"]
+
+    def inp(file, d, album=None, istrack=False, em_image=False, cover="none", settings=None):
+        return {"file": file, "d": d, "album": album, "istrack": istrack, "em_image": em_image,
+                "cover": cover, "settings": settings or {}}
+
+    def album_track(kind, n=0):
+        a = albums[kind]
+        return a["tracks"]["items"][n], tag_album(a, tracks=True)
+
+    for i, kind in enumerate(albums):
+        for n in sorted({0, len(albums[kind]["tracks"]["items"]) - 1}):
+            d, a = album_track(kind, n)
+            yield f"album/{kind}/{d['id']}", inp(files[(i + n) % len(files)], d, a)
+    yield f"track/{items['track']}", inp(files[0], track, track, istrack=True)
+    for t in playlist[:3]:
+        yield f"playlist/{t['id']}", inp(files[1], t, t, istrack=True)
+
+    d, a = album_track("classical")
+    for cover in ("folder", "parent", "both", "none", "large") + (() if mp3 else ("limit",)):
+        yield f"cover/{cover}", inp(files[1], d, a, em_image=True, cover=cover)
+    yield "cover/em_image off", inp(files[1], d, a, cover="folder")
+    for key in ("no_track_number_tag", "no_track_total_tag", "no_disc_number_tag", "no_disc_total_tag"):
+        yield f"numbers/{key}", inp(files[0], d, a, settings={key: True})
+    yield "numbers/number and total off", inp(files[0], d, a, settings={"no_track_number_tag": True, "no_disc_number_tag": True})
+    yield "settings/all off", inp(files[1], d, a, settings={k: True for k in no_tag_settings()})
+
+    A, I = base_album, base_item
+    multi = A(genre={"name": "Rock"}, genres_list=["Pop/Rock", "Pop/Rock→Rock", "Jazz"], copyright="(P) A, B",
+              label={"name": "One, Two"})
+    multi_item = I(performer={"name": "Earth, Wind & Fire"}, performers="Earth, Wind & Fire, MainArtist")
+    for on in (True, False):
+        yield f"multi_value_tags/{on}", inp(files[1], multi_item, multi, settings={"multi_value_tags": on})
+    yield "multi_value_tags/one genre", inp(files[1], I(), A(), settings={"multi_value_tags": True})
+    yield "values/artists list", inp(files[0], I(performers="Main, MainArtist - Guest, FeaturedArtist"), A())
+    yield "values/nul in title", inp(files[0], I(title="A\x00B"), A())
+    yield "values/isrc a number", inp(files[0], I(isrc=5), A())
+    yield "values/work a number", inp(files[0], I(work=5), A())
+    yield "values/album artist numbers", inp(files[0], I(), A(artists=[{"name": 7, "roles": ["main-artist"]}]))
+    yield "values/album artist empty", inp(files[0], I(), A(artists=[{"name": "", "roles": ["main-artist"]}]))
+    yield "values/ensembles list", inp(files[0], I(performers="O1, Orchestra - O2, Choir"), A())
+    yield "values/empty strings skipped", inp(files[0], I(isrc="", parental_warning=False), A(upc="", copyright=""))
+    yield "values/album None", inp(files[0], I(album=None), None, istrack=True)
+    yield "values/album None, numbers off", inp(files[0], I(album=None), None, istrack=True, settings={
+        "no_track_number_tag": True, "no_track_total_tag": True, "no_disc_number_tag": True, "no_disc_total_tag": True})
+    yield "values/track without album", inp(files[0], I(), None, istrack=True)
+    if mp3:
+        for name, date in [("year only", "2020"), ("full", "2020-05-17"), ("short parts", "2020-5-17"),
+                           ("letters", "abcd-ef-gh"), ("superscript", "²⁰²⁰-⁰⁵-¹⁷"), ("empty", ""),
+                           ("None", None), ("a number", 2020), ("a list", ["2020"])]:
+            yield f"date/{name}", inp(files[0], I(), A(release_date_original=date))
+        yield "date/off", inp(files[0], I(), A(), settings={"no_release_date_tag": True})
+        yield "existing/all", inp("320-tagged.mp3", d, a, em_image=True, cover="folder")
+        yield "existing/no cover", inp("320-tagged.mp3", I(), A())
+        yield "file/flac", inp("16-44.1.flac", I(), A())
+    else:
+        yield "blocks/all", inp("blocks.flac", d, a, em_image=True, cover="folder")
+        yield "blocks/tags off", inp("blocks.flac", I(album={}), None, istrack=True, settings={k: True for k in no_tag_settings()})
+        yield "blocks/no comments, nothing to set", inp("no-comments.flac", I(album={}), None, istrack=True,
+                                                         settings={k: True for k in no_tag_settings()})
+        yield "blocks/no comments", inp("no-comments.flac", d, a, em_image=True, cover="folder")
+        yield "blocks/id3 prefix", inp("id3-prefixed.flac", d, a)
+        yield "file/mp3", inp("320.mp3", I(), A())
+
+
+def gen_flac_tagged(index, raw):
+    g = Golden("flac_tagged")
+    for name, inp in tagger_inputs(index, raw, mp3=False):
+        g.case(name, inp, lambda inp=inp: run_tagger(metadata.tag_flac, inp, flac_result))
+    g.write()
+
+
+def gen_mp3_tagged(index, raw):
+    g = Golden("mp3_tagged")
+    for name, inp in tagger_inputs(index, raw, mp3=True):
+        g.case(name, inp, lambda inp=inp: run_tagger(metadata.tag_mp3, inp, mp3_result))
+    g.write()
+
+
 def main():
     logging.disable(logging.CRITICAL)
     if pathvalidate.__version__ != "3.3.1":
@@ -1332,6 +1947,13 @@ def main():
     gen_signatures()
     gen_session_key()
     gen_request_params()
+    write_tag_fixtures()
+    gen_tags(index, raw)
+    gen_metadata_helpers()
+    gen_release_types(index, raw)
+    gen_disc_track_total(index, raw)
+    gen_flac_tagged(index, raw)
+    gen_mp3_tagged(index, raw)
 
 
 if __name__ == "__main__":

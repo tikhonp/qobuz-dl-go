@@ -1,0 +1,394 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "title_with_version 'T' ''",
+   "input": {
+    "fn": "title_with_version",
+    "title": "T",
+    "version": ""
+   },
+   "output": "T"
+  },
+  {
+   "name": "title_with_version 'T' None",
+   "input": {
+    "fn": "title_with_version",
+    "title": "T",
+    "version": {
+     "py": "none"
+    }
+   },
+   "output": "T"
+  },
+  {
+   "name": "title_with_version 'T' 'Live'",
+   "input": {
+    "fn": "title_with_version",
+    "title": "T",
+    "version": "Live"
+   },
+   "output": "T (Live)"
+  },
+  {
+   "name": "title_with_version 'T (Live)' 'live'",
+   "input": {
+    "fn": "title_with_version",
+    "title": "T (Live)",
+    "version": "live"
+   },
+   "output": "T (Live)"
+  },
+  {
+   "name": "title_with_version '' 'Live'",
+   "input": {
+    "fn": "title_with_version",
+    "title": "",
+    "version": "Live"
+   },
+   "output": " (Live)"
+  },
+  {
+   "name": "title_with_version None None",
+   "input": {
+    "fn": "title_with_version",
+    "title": {
+     "py": "none"
+    },
+    "version": {
+     "py": "none"
+    }
+   },
+   "output": {
+    "py": "none"
+   }
+  },
+  {
+   "name": "title_with_version None 'Live'",
+   "input": {
+    "fn": "title_with_version",
+    "title": {
+     "py": "none"
+    },
+    "version": "Live"
+   },
+   "error": "AttributeError"
+  },
+  {
+   "name": "title_with_version 5 None",
+   "input": {
+    "fn": "title_with_version",
+    "title": {
+     "py": "int",
+     "v": 5
+    },
+    "version": {
+     "py": "none"
+    }
+   },
+   "output": {
+    "py": "int",
+    "v": 5
+   }
+  },
+  {
+   "name": "title_with_version 'T' 0",
+   "input": {
+    "fn": "title_with_version",
+    "title": "T",
+    "version": {
+     "py": "int",
+     "v": 0
+    }
+   },
+   "output": "T"
+  },
+  {
+   "name": "title_with_version 'T' 5",
+   "input": {
+    "fn": "title_with_version",
+    "title": "T",
+    "version": {
+     "py": "int",
+     "v": 5
+    }
+   },
+   "error": "AttributeError"
+  },
+  {
+   "name": "title_with_version 'ǅ' 'ǆ'",
+   "input": {
+    "fn": "title_with_version",
+    "title": "ǅ",
+    "version": "ǆ"
+   },
+   "output": "ǅ"
+  },
+  {
+   "name": "title_with_version 'STRASSE' 'straße'",
+   "input": {
+    "fn": "title_with_version",
+    "title": "STRASSE",
+    "version": "straße"
+   },
+   "output": "STRASSE (straße)"
+  },
+  {
+   "name": "get_title {'title': 'T'}",
+   "input": {
+    "fn": "get_title",
+    "track": {
+     "title": "T"
+    }
+   },
+   "output": "T"
+  },
+  {
+   "name": "get_title {'title': 'T', 'version': 'Live'}",
+   "input": {
+    "fn": "get_title",
+    "track": {
+     "title": "T",
+     "version": "Live"
+    }
+   },
+   "output": "T (Live)"
+  },
+  {
+   "name": "get_title {'title': 'T (Live)', 'version': 'Live'}",
+   "input": {
+    "fn": "get_title",
+    "track": {
+     "title": "T (Live)",
+     "version": "Live"
+    }
+   },
+   "output": "T (Live) (Live)"
+  },
+  {
+   "name": "get_title {'title': 'T', 'work': 'W'}",
+   "input": {
+    "fn": "get_title",
+    "track": {
+     "title": "T",
+     "work": "W"
+    }
+   },
+   "output": "W: T"
+  },
+  {
+   "name": "get_title {'title': 'T', 'version': 'V', 'work': 'W'}",
+   "input": {
+    "fn": "get_title",
+    "track": {
+     "title": "T",
+     "version": "V",
+     "work": "W"
+    }
+   },
+   "output": "W: T (V)"
+  },
+  {
+   "name": "get_title {'title': None}",
+   "input": {
+    "fn": "get_title",
+    "track": {
+     "title": {
+      "py": "none"
+     }
+    }
+   },
+   "output": {
+    "py": "none"
+   }
+  },
+  {
+   "name": "get_title {'title': 5, 'version': 1.5, 'work': True}",
+   "input": {
+    "fn": "get_title",
+    "track": {
+     "title": {
+      "py": "int",
+      "v": 5
+     },
+     "version": {
+      "py": "float",
+      "v": 1.5
+     },
+     "work": true
+    }
+   },
+   "output": "True: 5 (1.5)"
+  },
+  {
+   "name": "get_title {'version': 'V'}",
+   "input": {
+    "fn": "get_title",
+    "track": {
+     "version": "V"
+    }
+   },
+   "error": "KeyError"
+  },
+  {
+   "name": "get_title {'title': 'T', 'version': None, 'work': ''}",
+   "input": {
+    "fn": "get_title",
+    "track": {
+     "title": "T",
+     "version": {
+      "py": "none"
+     },
+     "work": ""
+    }
+   },
+   "output": "T"
+  },
+  {
+   "name": "format_copyright ''",
+   "input": {
+    "fn": "format_copyright",
+    "s": ""
+   },
+   "output": ""
+  },
+  {
+   "name": "format_copyright None",
+   "input": {
+    "fn": "format_copyright",
+    "s": {
+     "py": "none"
+    }
+   },
+   "output": {
+    "py": "none"
+   }
+  },
+  {
+   "name": "format_copyright '(P) 2020 (C) 2021'",
+   "input": {
+    "fn": "format_copyright",
+    "s": "(P) 2020 (C) 2021"
+   },
+   "output": "℗ 2020 © 2021"
+  },
+  {
+   "name": "format_copyright '((P))'",
+   "input": {
+    "fn": "format_copyright",
+    "s": "((P))"
+   },
+   "output": "(℗)"
+  },
+  {
+   "name": "format_copyright '(p)'",
+   "input": {
+    "fn": "format_copyright",
+    "s": "(p)"
+   },
+   "output": "(p)"
+  },
+  {
+   "name": "format_copyright 0",
+   "input": {
+    "fn": "format_copyright",
+    "s": {
+     "py": "int",
+     "v": 0
+    }
+   },
+   "output": {
+    "py": "int",
+    "v": 0
+   }
+  },
+  {
+   "name": "format_copyright 5",
+   "input": {
+    "fn": "format_copyright",
+    "s": {
+     "py": "int",
+     "v": 5
+    }
+   },
+   "error": "AttributeError"
+  },
+  {
+   "name": "format_genres []",
+   "input": {
+    "fn": "format_genres",
+    "genres": []
+   },
+   "output": ""
+  },
+  {
+   "name": "format_genres ['Pop']",
+   "input": {
+    "fn": "format_genres",
+    "genres": [
+     "Pop"
+    ]
+   },
+   "output": "Pop"
+  },
+  {
+   "name": "format_genres ['Pop/Rock', 'Rock']",
+   "input": {
+    "fn": "format_genres",
+    "genres": [
+     "Pop/Rock",
+     "Rock"
+    ]
+   },
+   "output": "Pop, Rock"
+  },
+  {
+   "name": "format_genres ['Pop→Rock', 'Rock/Pop']",
+   "input": {
+    "fn": "format_genres",
+    "genres": [
+     "Pop→Rock",
+     "Rock/Pop"
+    ]
+   },
+   "output": "Pop, Rock"
+  },
+  {
+   "name": "format_genres ['a//b', '→', 'a']",
+   "input": {
+    "fn": "format_genres",
+    "genres": [
+     "a//b",
+     "→",
+     "a"
+    ]
+   },
+   "output": "a, b"
+  },
+  {
+   "name": "format_genres [' x ', 'x']",
+   "input": {
+    "fn": "format_genres",
+    "genres": [
+     " x ",
+     "x"
+    ]
+   },
+   "output": " x , x"
+  },
+  {
+   "name": "format_genres ['Pop', 5]",
+   "input": {
+    "fn": "format_genres",
+    "genres": [
+     "Pop",
+     {
+      "py": "int",
+      "v": 5
+     }
+    ]
+   },
+   "error": "TypeError"
+  }
+ ]
+}
