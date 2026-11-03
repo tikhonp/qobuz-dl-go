@@ -67,4 +67,33 @@ testdata/golden/clean_filename.json  pathvalidate.json  url_info.json  normalize
 
 ## As built
 
-Filled in at the end of the step.
+Done on 2026-11-03. First CI run, green: [41662609568](https://github.com/tikhonp/qobuz-dl-go/actions/runs/41662609568), with gofmt, build, vet, `go test -race` with ffmpeg installed, golangci-lint v2.15.0 and govulncheck v1.9.0.
+
+### Differences from the contract
+
+- `record.py` also replaces the `blob` field of `getFileUrl` answers with `{{BLOB}}`. It is a signed token that upstream never reads.
+- `record.py` saves each raw response body, which a `requests` response hook captures. What `api_call` returns has already been through `_normalize_json_strings`, and the Go client runs that itself.
+- `testdata/fixtures/api/index.json` lists every recorded request: endpoint, parameters, status and file. File names are `<endpoint with - for />-<id>[-<offset or format>].json`, such as `album-get-evz7usmruz35a.json`, `playlist-get-2082798-0.json` and `track-getFileUrl-20273753-27.json`. Searches are `catalog-search-<type>.json`.
+- `record.py` records `getFileUrl` for every track of every recorded album, the single track and the playlist, at formats 5, 6, 7 and 27: 352 answers. All 367 answers are 200s.
+- `gen.py` tags every int, float and None in the goldens, not only those whose type matters, so the loader can refuse a plain number or null as a generator bug. Non-finite floats are `{"py": "float", "v": "inf"}`, `"-inf"` or `"nan"`.
+- `regex.json` gives the full code-point sets of `\w`, `\s` and `\d` as hex ranges such as `"0030-0039"`, a superset of "which corpus characters".
+- `format.json` runs the full template list only against the album sets at quality 27, the first track of each album, the single track and its file set. The other sets get every key at once plus the bot and default templates, which keeps the file at 1.7 MB.
+- `strings.json` also has `lstrip` and `rstrip` with `' ."-_\''`, which `_shorten_utf8` uses.
+- The corpus format allows `\\`, `\uXXXX` and `\UXXXXXXXX`, and any other escape stops `gen.py`. `strings/reserved.txt` and `strings/urls.txt` sit next to `handpicked.txt` and `random.txt`.
+- The audio fixtures are `16-44.1.flac`, `24-96.flac`, `24-192.flac`, `16-44.1-tagged.flac`, `320.mp3`, `cover.jpg` and `booklet.pdf`. ffmpeg overwrites any `ENCODER` or `TSSE` given with `-metadata` with its own `Lavf63.1.102`, so the tagged FLAC's `ENCODER` and the MP3's `TSSE` are that value. The FLAC also has `TITLE`, `ARTIST` and `DESCRIPTION`; the MP3 is ID3v2.3 with `TIT2` and `TSSE`.
+- `make parity` exists, but the `parity.py` and `compare.py` it runs come with step 10.
+
+### Checks
+
+- `make golden` twice gives the same files byte for byte, `random.txt` included. `diff -r` between two runs, each with its own hash seed, shows no difference.
+- The README's ffmpeg and PDF commands, run again, give byte-identical audio fixtures.
+- `make check` and `make lint` pass: 0 golangci-lint issues, no vulnerabilities.
+
+### Notes for later steps
+
+- `golden_test.go` decodes objects into `*goldenDict`, which keeps key order. Step 2 can make the loader build `*pyDict` instead, or convert, and drop `goldenDict`.
+- Go 1.27.3's `unicode` tables are Unicode 17.0.0; Python 3.14's `unicodedata` is 16.0.0. Code points assigned in 17.0 are in Go's `\p{L}` but not in Python's `\w`, so `pyre.go`'s classes have to follow `regex.json`, not `unicode` categories alone. The random corpus draws only code points assigned in Python's tables. x/text's `norm` and `cases` have their own Unicode version; check it in step 2.
+- `getFileUrl` answers mix number types: `"sampling_rate": 96` is an int and `44.1` a float, and a request at 27 for a 24/96 track answers `format_id` 7 with a `FormatRestrictedByFormatAvailability` restriction. `url` in the fixture names the requested format, not the delivered one.
+- `get_url_info` reads a URL with an extra path segment, such as `/label/<slug>/download-streaming-albums/<id>`, as `('label', 'download')`, and `/playlists/...` (plural) not at all. That is upstream's behavior and the goldens keep it; shelf may want to know.
+- On 2026-11-03 the bundle's app ID was `798273057`, which `Client.__init__` treats as the legacy ID: the bot fetches the bundle twice and keeps the empty secret. This session corrected `port-spec.md` and step 4's contract.
+- `album/get` answers have `tracks_count`, not `track_count`, so `{track_count}` is 1 in every album set, as port-spec says.

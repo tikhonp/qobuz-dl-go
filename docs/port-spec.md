@@ -28,7 +28,7 @@ Quirks that look like upstream bugs are kept on purpose and marked "kept". The p
 
 `Client(email, pwd, app_id, secrets, user_auth_token, force_english)`:
 
-1. When `app_id` is empty or `798273057`, the client fetches the bundle itself and takes its app ID and all its secret values, empty ones included. Any failure there is ignored and the given values stay. `QobuzDL` always passes the app ID from `get_tokens`, so this branch does not run in the bot.
+1. When `app_id` is empty or `798273057`, the client fetches the bundle itself and takes its app ID and all its secret values, empty ones included. Any failure there is ignored and the given values stay. `QobuzDL` passes the app ID from `get_tokens`, but on 2026-11-03 the web player's bundle itself carried `798273057`, so the bot runs this branch: a second bundle fetch, and the secrets `get_tokens` filtered are replaced by all of the bundle's values, empty ones included, in the same order. `cfg_setup` then tries an empty secret like any other, and it fails.
 2. Session headers. With `force_english`, the default:
 
    ```

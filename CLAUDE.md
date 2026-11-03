@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 qobuz-dl-go is a Go library and a small CLI that port qobuz-dl, a Python Qobuz downloader, file by file. The first user is Music Shelf, in `~/projects/shelf` with the module `github.com/tikhonp/shelf`, which imports the package. Docs, code and logs are in English.
 
-State: designed, no code yet. The work runs in eleven steps, one session each, with the contracts in `docs/build/` and `docs/prompts/02-step.md`. Music Shelf tracks this work as its step 1c. `docs/status.md` says what is done and what comes next.
+State: step 1 done (module, CI, golden generator, fixtures, goldens); no ported code yet. The work runs in eleven steps, one session each, with the contracts in `docs/build/` and `docs/prompts/02-step.md`. Music Shelf tracks this work as its step 1c. `docs/status.md` says what is done and what comes next.
 
 ## Read first
 
@@ -39,11 +39,12 @@ State: designed, no code yet. The work runs in eleven steps, one session each, w
 
 ## Commands
 
-Added in step 1; planned until then:
+From step 1; `make parity` needs the `parity.py` and `compare.py` of step 10:
 
 ```sh
 make check                # gofmt, vet, go test -race
 make lint                 # golangci-lint and govulncheck in Docker
+make venv                 # create testdata/gen/.venv from requirements.txt
 make golden               # regenerate testdata/golden from qobuz-dl in testdata/gen/.venv
 make record               # re-record testdata/fixtures/api from Qobuz; needs QOBUZ_TOKEN
 make upstream-diff TO=v2.6.0   # diff of the ported upstream files since UPSTREAM.md's tag

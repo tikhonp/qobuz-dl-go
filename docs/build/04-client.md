@@ -20,7 +20,7 @@
 | Headers | Set per request from a fixed list in Python's order; the `force_english` set only when on. | Same request as Python. |
 | `normalizeJSONStrings` | Applied to every decoded answer before anything reads it. | Tags and names depend on it. |
 | Auth | `sys.exit` paths return `ErrAuthentication`; other `user/get` failures go on as "bypassed". | Upstream behavior without exiting. |
-| Bundle inside `NewClient` | Ported: an empty or legacy app ID fetches the bundle, ignoring failures. | Same as Python, though the bot never hits it. |
+| Bundle inside `NewClient` | Ported: an empty or legacy app ID fetches the bundle, ignoring failures. | Same as Python. The bot hits it while the bundle carries `798273057`, as it did on 2026-11-03: two bundle fetches, and the client keeps the empty secret. |
 | `cfg_setup` | Each secret tried in order; failure on all keeps the first, with a warning log the Python lacks. | Callers should see why later calls fail. |
 | Search | Typed `SearchPage` with `offset` passed when non-zero; errors returned. | shelf pages search; deliberate difference. |
 | Raw | `Raw` is the normalized dict marshaled in key order; `TrackURL.Raw` drops `url`, `url_template` and `key`. | Signed values stay out of callers' logs. |
