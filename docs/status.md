@@ -4,7 +4,9 @@
 
 Steps 1 to 10 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` with `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py`, with the typed views, the taggers from `metadata.py`, `qobuzdltest`, the fake Qobuz, `downloader.py`, both transfers included, with `Progress` and the results, `core.py`, `db.py` as `downloadsdb`, the `qobuz-dl` CLI, and the parity tools `parity.py` and `compare.py`.
 
-Next: step 11, [parity and v0.1.0](build/11-parity.md). It needs `QOBUZ_TOKEN` exported and downloads real albums.
+Step 11's parity runs against Qobuz are done. The multi-disc hi-res album, the CD album and the playlist came out byte for byte the same from Python and Go, a resumed Go run skipped every track, and Go skipped an album Python had recorded in a shared `qobuz_dl.db`. The results are under Reference albums.
+
+Next: the rest of step 11, tagging and releasing `v0.1.0` with [prompt 4](prompts/04-release.md).
 
 ## Steps
 
@@ -20,7 +22,7 @@ Next: step 11, [parity and v0.1.0](build/11-parity.md). It needs `QOBUZ_TOKEN` e
 | 8 | [segmented path](build/08-segments.md) | done |
 | 9 | [core, m3u8, downloadsdb](build/09-core.md) | done |
 | 10 | [CLI and parity tools](build/10-cli.md) | done |
-| 11 | [parity and v0.1.0](build/11-parity.md) | next, needs `QOBUZ_TOKEN` |
+| 11 | [parity and v0.1.0](build/11-parity.md) | parity done; the tag and release are next |
 
 ## Fixture items
 
@@ -44,7 +46,16 @@ Searches, limit 10: albums `miles davis kind of blue`, tracks `so what miles dav
 
 ## Reference albums
 
-Filled in by the parity run in step 11.
+The parity runs of step 11, on 2026-11-04, with qobuz-dl 2.5.9 in `testdata/gen/.venv` and the CLI at quality 27. Later parity runs use the same links. `make parity` runs Python, then Go, then Go again over Go's tree; `make parity-db` is the shared-database run.
+
+| Run | Link | Item | Result |
+| --- | --- | --- | --- |
+| `make parity N=1` | https://open.qobuz.com/album/evz7usmruz35a | Pink Floyd, Ummagumma: 2 discs, 16 tracks, FLAC 24/192, 3.6 GB | 18 files, all byte for byte the same, the tracks in `CD 01` and `CD 02`, `cover.jpg` and the tracklist. `compare.py` found 0 differences. The resumed run found all 16 tracks. |
+| `make parity N=2` | https://open.qobuz.com/album/0634904080853 | Radiohead, Com Lag: 2+2=5: 10 tracks, FLAC 16/44.1, 234 MB | 12 files, all byte for byte the same; the colon in the folder name became `：` on both sides. 0 differences. The resumed run found all 10. |
+| `make parity N=3` | https://open.qobuz.com/playlist/2082798 | Top 10 Operas: 10 tracks, 7 at 16/44.1, 2 at 24/96, 1 at 24/44.1, 314 MB | 11 files, all byte for byte the same, `Top 10 Operas.m3u8` included. 0 differences. The resumed run found all 10, and the m3u8 stayed the same. |
+| `make parity-db N=4` | https://open.qobuz.com/album/0634904080853 | the CD album | Python downloaded it and recorded `0634904080853`, `album`, quality 27, `FLAC`. The CLI, given the same `qobuz_dl.db`, logged "This release ID (0634904080853) was already downloaded according to the local database." and wrote nothing. |
+
+None of the three items has a booklet PDF. Only the fake runs compared booklets, on Mahler 2 and Beethoven 3 in step 10's `make parity FAKE=1`. No track took the segmented path. `parity-allow.txt` stays empty.
 
 ## Log
 
@@ -97,3 +108,8 @@ Filled in by the parity run in step 11.
 - During this step a manual CLI run reached the real Qobuz API once by mistake, because `QOBUZ_TOKEN` was set in the session's shell. It fetched the bundle, signed in and asked `album/get` for the ID `x`, which answered 404. Nothing was downloaded or printed, and the empty `QobuzDownloads` folder and the `~/.config/qobuz-dl/qobuz_dl.db` the run created were removed. Later commands ran with the variable unset, and `TestParityAgainstFake` replaces any `QOBUZ_TOKEN` with the fake's.
 - The commits of this step have no `Co-Authored-By` line, at the user's request.
 - For shelf: nothing in the library changed. `cmd/qobuz-dl dl -q 27 --db <shelf's file> URL` runs what the bot runs, for a manual check. The printer in `cmd/qobuz-dl/printer.go` is a small example of a `Progress`.
+- Step 11, the parity part. `make parity` ran against Qobuz on the three reference items and `make parity-db` on the CD album. Every file came out byte for byte the same, and the resumed and shared-database runs skipped everything. Nothing in the port changed, and `parity-allow.txt` stays empty. The runs and their results are under Reference albums, the details in [11-parity.md](build/11-parity.md) under As built.
+- `make parity` now takes `N` and runs into `out/parity/<N>`, keeps each run's output in `py.log`, `go.log` and `resume.log`, and ends with the resumed run and a second compare. `make parity-db` is new. `make parity FAKE=1` now writes to `out/parity/fake/`, since it used to replace the trees of the real runs.
+- `QOBUZ_TOKEN` appears in none of the run logs.
+- The commits of this step have no `Co-Authored-By` line, at the user's request. `v0.1.0` is not tagged yet.
+- For shelf: every line of 1d's checklist can build on `qobuzdltest` as it is. `ExampleNew` passes, `PlaylistEmpty`, `ArtistEmpty` and `LabelEmpty` cover `TestResolveEmptyCollection`, `ExpireToken` covers `TestHealthTokenExpired`, and `ClientOptions`, `Configure` and `Requests` cover the rest. 1d now has playlists going through `HandleID` and a client without `Timeout`, which settles the first note of 2026-11-03. 1d has to do two things itself. `GetURLInfo` doesn't accept `/interpreter/` links, as upstream doesn't, so `ParseLink` maps them. And qobuz-dl-go exports no version string, so `DownloadResult.Tool` takes the module version from `runtime/debug.ReadBuildInfo` and the qobuz-dl version, 2.5.9, from `UPSTREAM.md`.
