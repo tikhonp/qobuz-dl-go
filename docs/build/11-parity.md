@@ -40,7 +40,7 @@
 
 ## As built
 
-The parity runs took place on 2026-11-04. The tag, the release and shelf's 1c As built are still to do, with [prompt 4](../prompts/04-release.md). `make check` and `make lint` pass, with 0 golangci-lint issues and no vulnerabilities.
+The parity runs took place on 2026-11-04. The release followed on the same day with [prompt 4](../prompts/04-release.md). `v0.1.0` is tagged at `e6861b4`, proxy.golang.org resolves it, and shelf's 1c As built has the version. `make check` and `make lint` pass, with 0 golangci-lint issues and no vulnerabilities.
 
 ### Runs
 

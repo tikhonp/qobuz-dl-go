@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 qobuz-dl-go is a Go library and a small CLI that port qobuz-dl, a Python Qobuz downloader, file by file. The first user is Music Shelf, in `~/projects/shelf` with the module `github.com/tikhonp/shelf`, which imports the package. Docs, code and logs are in English.
 
-State: steps 1 to 10 done; step 11, the parity runs against Qobuz and `v0.1.0`, is next. The work runs in eleven steps, one session each, with the contracts in `docs/build/` and `docs/prompts/02-step.md`. Music Shelf tracks this work as its step 1c. `docs/status.md` says what is done and what comes next.
+State: all eleven steps are done, and `v0.1.0` is released. Later work ports upstream releases after 2.5.9. The work ran in eleven steps, one session each, with the contracts in `docs/build/` and `docs/prompts/02-step.md`. Music Shelf tracks this work as its step 1c. `docs/status.md` says what is done and what comes next.
 
 ## Read first
 

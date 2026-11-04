@@ -2,11 +2,13 @@
 
 ## Now
 
-Steps 1 to 10 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` with `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py`, with the typed views, the taggers from `metadata.py`, `qobuzdltest`, the fake Qobuz, `downloader.py`, both transfers included, with `Progress` and the results, `core.py`, `db.py` as `downloadsdb`, the `qobuz-dl` CLI, and the parity tools `parity.py` and `compare.py`.
+Steps 1 to 11 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` with `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py`, with the typed views, the taggers from `metadata.py`, `qobuzdltest`, the fake Qobuz, `downloader.py`, both transfers included, with `Progress` and the results, `core.py`, `db.py` as `downloadsdb`, the `qobuz-dl` CLI, and the parity tools `parity.py` and `compare.py`.
 
 Step 11's parity runs against Qobuz are done. The multi-disc hi-res album, the CD album and the playlist came out byte for byte the same from Python and Go, a resumed Go run skipped every track, and Go skipped an album Python had recorded in a shared `qobuz_dl.db`. The results are under Reference albums.
 
-Next: the rest of step 11, tagging and releasing `v0.1.0` with [prompt 4](prompts/04-release.md).
+`v0.1.0` is tagged at `e6861b4` and pushed, and `go list -m` resolves it through proxy.golang.org.
+
+Next: Music Shelf's step 1d builds its Qobuz module on `v0.1.0`. Here, the next work is porting upstream releases after 2.5.9 with `make upstream-diff`.
 
 ## Steps
 
@@ -22,7 +24,7 @@ Next: the rest of step 11, tagging and releasing `v0.1.0` with [prompt 4](prompt
 | 8 | [segmented path](build/08-segments.md) | done |
 | 9 | [core, m3u8, downloadsdb](build/09-core.md) | done |
 | 10 | [CLI and parity tools](build/10-cli.md) | done |
-| 11 | [parity and v0.1.0](build/11-parity.md) | parity done; the tag and release are next |
+| 11 | [parity and v0.1.0](build/11-parity.md) | done |
 
 ## Fixture items
 
@@ -111,5 +113,7 @@ None of the three items has a booklet PDF. Only the fake runs compared booklets,
 - Step 11, the parity part. `make parity` ran against Qobuz on the three reference items and `make parity-db` on the CD album. Every file came out byte for byte the same, and the resumed and shared-database runs skipped everything. Nothing in the port changed, and `parity-allow.txt` stays empty. The runs and their results are under Reference albums, the details in [11-parity.md](build/11-parity.md) under As built.
 - `make parity` now takes `N` and runs into `out/parity/<N>`, keeps each run's output in `py.log`, `go.log` and `resume.log`, and ends with the resumed run and a second compare. `make parity-db` is new. `make parity FAKE=1` now writes to `out/parity/fake/`, since it used to replace the trees of the real runs.
 - `QOBUZ_TOKEN` appears in none of the run logs.
-- The commits of this step have no `Co-Authored-By` line, at the user's request. `v0.1.0` is not tagged yet.
+- The commits of this step have no `Co-Authored-By` line, at the user's request.
 - For shelf: every line of 1d's checklist can build on `qobuzdltest` as it is. `ExampleNew` passes, `PlaylistEmpty`, `ArtistEmpty` and `LabelEmpty` cover `TestResolveEmptyCollection`, `ExpireToken` covers `TestHealthTokenExpired`, and `ClientOptions`, `Configure` and `Requests` cover the rest. 1d now has playlists going through `HandleID` and a client without `Timeout`, which settles the first note of 2026-11-03. 1d has to do two things itself. `GetURLInfo` doesn't accept `/interpreter/` links, as upstream doesn't, so `ParseLink` maps them. And qobuz-dl-go exports no version string, so `DownloadResult.Tool` takes the module version from `runtime/debug.ReadBuildInfo` and the qobuz-dl version, 2.5.9, from `UPSTREAM.md`.
+- Step 11, the release. CI was green on `main`, the README example compiled against the API, and `make check` passed. `UPSTREAM.md` and the README now name `v0.1.0`. `v0.1.0` is tagged at `e6861b4` and pushed, and `GOPROXY=https://proxy.golang.org go list -m github.com/tikhonp/qobuz-dl-go@v0.1.0` resolves it.
+- For shelf: shelf's `docs/status.md` now marks 1c done, and the As built section of its `docs/build/1c.md` has the version and the notes for 1d from this log.
