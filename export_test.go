@@ -3,6 +3,7 @@ package qobuzdl
 import (
 	"context"
 	"os"
+	"strings"
 	"testing"
 )
 
@@ -15,13 +16,16 @@ func DownloadIDByType(ctx context.Context, c *Client, o Options, id string, trac
 	return newDownload(c, o, id, o.Directory, p).downloadIDByType(ctx, track)
 }
 
-// LayoutCase is a case of layout_album.json or layout_track.json.
+// LayoutCase is a case of a layout golden.
 type LayoutCase struct {
 	Name, Kind, ID string
 	// Configure applies the case's options on top of the fake's.
 	Configure func(o *Options)
 	// Check compares the tree under root with Python's.
 	Check func(t *testing.T, root string)
+	// CheckDB compares the downloads database's rows with the ones Python
+	// wrote, saved_path relative to root; nil for goldens without them.
+	CheckDB func(t *testing.T, root string, rows []map[string]any)
 }
 
 // LayoutCases reads a layout golden.
@@ -34,7 +38,16 @@ func LayoutCases(t *testing.T, golden string) []LayoutCase {
 		}
 		in := c.Input.(*pyDict)
 		opts := in.get("options", nil).(*pyDict)
-		want := c.Output.([]any)
+		var want []any
+		var checkDB func(t *testing.T, root string, rows []map[string]any)
+		switch o := c.Output.(type) {
+		case []any:
+			want = o
+		case *pyDict:
+			want = o.get("tree", nil).([]any)
+			wantRows := o.get("db", nil).([]any)
+			checkDB = func(t *testing.T, root string, rows []map[string]any) { checkDBRows(t, root, rows, wantRows) }
+		}
 		out = append(out, LayoutCase{
 			Name: c.Name,
 			Kind: in.get("kind", nil).(string),
@@ -45,11 +58,14 @@ func LayoutCases(t *testing.T, golden string) []LayoutCase {
 				o.EmbedArt = opts.get("embed_art", nil).(bool)
 				o.IgnoreSinglesEPs = opts.get("albums_only", nil).(bool)
 				o.NoCredits = opts.get("no_credits", nil).(bool)
+				o.NoM3UForPlaylists = opts.get("no_m3u", false).(bool)
+				o.SmartDiscography = opts.get("smart", false).(bool)
 				o.FolderFormat = strOrEmpty(opts.get("folder_format", nil))
 				o.TrackFormat = strOrEmpty(opts.get("track_format", nil))
 				applyDownloadSettings(t, &o.Settings, opts.get("settings", nil).(*pyDict))
 			},
-			Check: func(t *testing.T, root string) { checkLayout(t, root, want) },
+			Check:   func(t *testing.T, root string) { checkLayout(t, root, want) },
+			CheckDB: checkDB,
 		})
 	}
 	return out
@@ -103,4 +119,58 @@ func FLACStreamInfo(t *testing.T, path string) (bitDepth, rate int, samples int6
 		t.Fatal(err)
 	}
 	return bitDepth, rate, samples
+}
+
+// checkDBRows compares rows read from a downloads database, in id and
+// quality order, with gen.py's.
+func checkDBRows(t *testing.T, root string, got []map[string]any, want []any) {
+	t.Helper()
+	if len(got) != len(want) {
+		t.Fatalf("%d rows, want %d", len(got), len(want))
+	}
+	for i, w := range want {
+		w := w.(*pyDict)
+		g := got[i]
+		if p, ok := g["saved_path"].(string); ok {
+			if rest, ok := strings.CutPrefix(p, root+"/"); ok {
+				g["saved_path"] = rest
+			}
+		}
+		if len(g) != len(w.keys) {
+			t.Errorf("row %d: columns %v, want %v", i, g, w.keys)
+		}
+		for _, k := range w.keys {
+			if gv, wv := g[k], w.get(k, nil); !pyEqual(gv, wv) || pyTypeName(gv) != pyTypeName(wv) {
+				t.Errorf("row %d (%v): %s = %s, want %s", i, g["id"], k, pyRepr(gv), pyRepr(wv))
+			}
+		}
+	}
+}
+
+// SearchGolden is search_text.json: each case's item type, its items and
+// Python's lines, or the error's class name.
+func SearchGolden(t *testing.T) map[string]struct {
+	Type  string
+	Lines []SearchResult
+	Error string
+} {
+	t.Helper()
+	out := map[string]struct {
+		Type  string
+		Lines []SearchResult
+		Error string
+	}{}
+	for _, c := range loadGolden(t, "search_text") {
+		e := out[c.Name]
+		e.Type = c.Input.(*pyDict).get("type", nil).(string)
+		e.Error = c.Error
+		if list, ok := c.Output.([]any); ok {
+			for _, r := range list {
+				r := r.(*pyDict)
+				e.Lines = append(e.Lines, SearchResult{Text: r.get("text", nil).(string), URL: r.get("url", nil).(string)})
+			}
+		}
+		out[c.Name] = e
+	}
+	return out
 }
