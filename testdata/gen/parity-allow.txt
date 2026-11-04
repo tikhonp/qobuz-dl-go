@@ -1,0 +1,11 @@
+# Differences compare.py lets through: the ones the port makes on purpose.
+#
+#   KIND PATH-PATTERN [KEY-PATTERN] -- UPSTREAM.md: TEXT
+#
+# KIND is only-py, only-go, size, content, tags, stream or unreadable. In the
+# patterns * matches any run of characters, / included, and ? one character.
+# TEXT must appear in UPSTREAM.md, in the row that explains the difference.
+# compare.py's docstring has the details.
+#
+# Empty until the parity runs of step 11 find a difference the port makes on
+# purpose.
