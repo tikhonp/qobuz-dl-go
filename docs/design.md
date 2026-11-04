@@ -870,8 +870,9 @@ Fixture recording needs the token; the user chose to record in step 01, so that 
 | `golden` | `gen.py` in the venv |
 | `record` | `record.py`; needs `QOBUZ_TOKEN` |
 | `upstream-diff TO=<tag>` | fetches tags in `.upstream/qobuz-dl` and diffs the ported files from `UPSTREAM.md`'s tag to `TO` |
-| `parity URL=<url>` | `parity.py` into `out/parity/py`, the CLI into `out/parity/go`, then `compare.py` |
-| `parity FAKE=1 [URL=...]` | the same three steps against `qobuzdltest`, in `TestParityAgainstFake`, into `out/parity/<n>/` |
+| `parity URL=<url> [N=<n>]` | `parity.py` into `out/parity/<n>/py`, the CLI into `out/parity/<n>/go`, `compare.py`, then the CLI again over its tree, which must find every track there |
+| `parity-db URL=<album> [N=<n>]` | `parity.py` with a downloads database, then the CLI with the same database, which must skip the album |
+| `parity FAKE=1 [URL=...]` | the first three steps against `qobuzdltest`, in `TestParityAgainstFake`, into `out/parity/fake/<n>/` |
 | `compare-test` | `compare_test.py`, the tests of `compare.py` |
 
 ## Logs and secrets

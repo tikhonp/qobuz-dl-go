@@ -155,11 +155,13 @@ EOF
 
 ## Parity
 
-`make parity URL=<url>` runs `parity.py` into `out/parity/py`, the Go CLI with `-q 27 --no-db` into `out/parity/go`, and `compare.py` on the two. It needs `QOBUZ_TOKEN`.
+`make parity URL=<url> N=<n>` empties `out/parity/<n>`, runs `parity.py` into `out/parity/<n>/py`, then the Go CLI with `-q 27 --no-db` into `out/parity/<n>/go`, and `compare.py` on the two. Then it runs the CLI again over its finished tree, fails if that run downloads or fails a track, and compares again. Each run's output goes to `py.log`, `go.log` and `resume.log` beside the trees. `N` defaults to 1. It needs `QOBUZ_TOKEN`.
+
+`make parity-db URL=<album> N=<n>` is the shared-database run. `parity.py --db out/parity/<n>/qobuz_dl.db` downloads the album, then the CLI gets the same `--db` and an empty folder. It fails unless the CLI says the release is in the database and writes nothing.
 
 `parity.py` builds `QobuzDL(directory, quality=27, quality_fallback=True, downloads_db=None, settings=QobuzDLSettings(user_auth_token=token))`, then calls `get_tokens`, `initialize_client("", token, app_id, secrets)` and `handle_url(url)`, which is how the bot runs. `--db FILE` passes a downloads database instead of none. With `--fake BASE` it patches requests' `HTTPAdapter.send` to send `https://www.qobuz.com/api.json/0.2/` and `https://play.qobuz.com/` to `BASE`, and makes `time.sleep` return at once.
 
-`make parity FAKE=1` runs the same three steps offline in the Go test `TestParityAgainstFake`. Each URL gets a fresh `qobuzdltest` server, and its trees go to `out/parity/<n>/py` and `out/parity/<n>/go`. `URL` may list fixture URLs separated by spaces; without it the test runs the multi-disc album, the CD album and the playlist. The test gives `parity.py` the fake's token in place of any `QOBUZ_TOKEN` in the environment.
+`make parity FAKE=1` runs the same three steps offline in the Go test `TestParityAgainstFake`. Each URL gets a fresh `qobuzdltest` server, and its trees go to `out/parity/fake/<n>/py` and `out/parity/fake/<n>/go`, apart from the runs against Qobuz. `URL` may list fixture URLs separated by spaces; without it the test runs the multi-disc album, the CD album and the playlist. The test gives `parity.py` the fake's token in place of any `QOBUZ_TOKEN` in the environment.
 
 `compare.py` walks both trees. A path on one side only is `only-py` or `only-go`. A non-audio file of another size is `size`, and one of the same size with other bytes is `content`. For `.flac` and `.mp3` files it reads with mutagen:
 
