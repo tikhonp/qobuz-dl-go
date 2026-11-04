@@ -1,6 +1,6 @@
 # Requirements
 
-What qobuz-dl-go must do, who uses it, and how to tell it is done. The design in `docs/design.md` and the step contracts in `docs/build/` have to meet everything here.
+What qobuz-dl-go must do, who uses it, and how to tell it is done. The design in `docs/design.md` has to meet everything here.
 
 ## Users
 

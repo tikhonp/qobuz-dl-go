@@ -184,7 +184,7 @@ Decided: as recommended, `go 1.27.3`. See [design.md](design.md#versions).
 
 ## 24. Step order
 
-A suggested order for `docs/build/`, to be changed if the design needs it:
+A suggested order for the build steps, to be changed if the design needs it:
 
 1. Golden generator, fixtures and the first goldens.
 2. `format.go`, `utils.go` and `constants.go`: naming, sanitizing, URL parsing.

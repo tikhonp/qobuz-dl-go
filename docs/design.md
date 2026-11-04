@@ -1,6 +1,6 @@
 # Design
 
-How qobuz-dl-go ports qobuz-dl 2.5.9. Upstream behavior is in [port-spec.md](port-spec.md); the steps that build this are in [build/](build/). Each section answers questions from [design-questions.md](design-questions.md).
+How qobuz-dl-go ports qobuz-dl 2.5.9. Upstream behavior is in [port-spec.md](port-spec.md). [Steps](#steps) lists the steps that built it. Each section answers questions from [design-questions.md](design-questions.md).
 
 ## Package layout
 
@@ -905,16 +905,18 @@ Added to `UPSTREAM.md` by this design, beyond the ones already there:
 
 ## Steps
 
-| Step | Contract | Builds |
+The repo no longer has the step contracts. `git show 39d1736:docs/build/<name>.md` shows one.
+
+| Step | Name | Builds |
 | --- | --- | --- |
-| 1 | [01-golden.md](build/01-golden.md) | module, Makefile, CI, venv pins, `record.py`, fixtures, `gen.py` with the Python-helper goldens |
-| 2 | [02-pycompat.md](build/02-pycompat.md) | `pyvalue.go`, `pystr.go`, `pyre.go`, `format.go`, `textwrap.go` |
-| 3 | [03-utils.md](build/03-utils.md) | `constants.go`, `errors.go`, `settings.go`, `pathvalidate.go`, `utils.go` without `make_m3u` |
-| 4 | [04-client.md](build/04-client.md) | `bundle.go`, `qopy.go`, `catalog.go`, `transport.go` |
-| 5 | [05-tags.md](build/05-tags.md) | `flac.go`, `metadata.go` |
-| 6 | [06-fake.md](build/06-fake.md) | `qobuzdltest` without the segmented path |
-| 7 | [07-downloader.md](build/07-downloader.md) | `downloader.go` direct path, `progress.go` |
-| 8 | [08-segments.md](build/08-segments.md) | the segmented path in `qopy.go`, `downloader.go` and `qobuzdltest` |
-| 9 | [09-core.md](build/09-core.md) | `core.go`, `MakeM3U`, `SmartDiscographyFilter`, `downloadsdb/` |
-| 10 | [10-cli.md](build/10-cli.md) | `cmd/qobuz-dl`, README usage, `parity.py`, `compare.py` |
-| 11 | [11-parity.md](build/11-parity.md) | the parity runs and `v0.1.0` |
+| 1 | `01-golden` | module, Makefile, CI, venv pins, `record.py`, fixtures, `gen.py` with the Python-helper goldens |
+| 2 | `02-pycompat` | `pyvalue.go`, `pystr.go`, `pyre.go`, `format.go`, `textwrap.go` |
+| 3 | `03-utils` | `constants.go`, `errors.go`, `settings.go`, `pathvalidate.go`, `utils.go` without `make_m3u` |
+| 4 | `04-client` | `bundle.go`, `qopy.go`, `catalog.go`, `transport.go` |
+| 5 | `05-tags` | `flac.go`, `metadata.go` |
+| 6 | `06-fake` | `qobuzdltest` without the segmented path |
+| 7 | `07-downloader` | `downloader.go` direct path, `progress.go` |
+| 8 | `08-segments` | the segmented path in `qopy.go`, `downloader.go` and `qobuzdltest` |
+| 9 | `09-core` | `core.go`, `MakeM3U`, `SmartDiscographyFilter`, `downloadsdb/` |
+| 10 | `10-cli` | `cmd/qobuz-dl`, README usage, `parity.py`, `compare.py` |
+| 11 | `11-parity` | the parity runs and `v0.1.0` |

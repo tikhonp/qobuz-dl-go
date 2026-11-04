@@ -4,18 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 qobuz-dl-go is a Go library and a small CLI that port qobuz-dl, a Python Qobuz downloader, file by file. The first user is Music Shelf, in `~/projects/shelf` with the module `github.com/tikhonp/shelf`, which imports the package. Docs, code and logs are in English.
 
-State: all eleven steps are done, and `v0.1.0` is released. Later work ports upstream releases after 2.5.9. The work ran in eleven steps, one session each, with the contracts in `docs/build/` and `docs/prompts/02-step.md`. Music Shelf tracks this work as its step 1c. `docs/status.md` says what is done and what comes next.
+State: all eleven steps are done, and `v0.1.0` is released. Later work ports upstream releases after 2.5.9. The work ran in eleven steps, one session each. The repo no longer has their contracts; `git show 39d1736:docs/build/<file>` shows one. Music Shelf tracks this work as its step 1c. `docs/status.md` says what is done and what comes next.
 
 ## Read first
 
 - `docs/status.md`: where the work stands.
 - `docs/requirements.md`: what the port must do and when it is done.
-- `docs/design.md` and the current step's contract in `docs/build/`. `docs/design-questions.md` records why each design choice was made.
+- `docs/design.md`: the design. `docs/design-questions.md` records why each design choice was made.
 - `UPSTREAM.md`: the ported version, the map from Python functions to Go functions, and the deliberate differences.
 - `docs/port-spec.md`: how qobuz-dl behaves, as notes for the port.
 - `docs/reference.md`: where the upstream source is, the Python venv for golden data, the tools on this machine, the rules for the Qobuz token, and the conventions.
 - The upstream source at the tag in `UPSTREAM.md`. When the notes and the source disagree, the source wins.
-- `docs/prompts/README.md` lists the prompts the user starts sessions with.
+- `docs/prompts/README.md` lists the prompt for porting an upstream release.
 
 ## Rules for all code
 
@@ -79,10 +79,9 @@ docs/status.md            the running log
 docs/requirements.md      what the port must do
 docs/design-questions.md  the questions the design answers
 docs/design.md            the design
-docs/build/               step contracts
 docs/port-spec.md         notes on upstream behavior
 docs/reference.md         sources, tools, token rules, conventions
-docs/prompts/             session prompts
+docs/prompts/             the upstream-sync prompt
 ```
 
 ## Releases
