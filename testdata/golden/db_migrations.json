@@ -1,0 +1,1210 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "v1.db",
+   "input": {
+    "file": "v1.db"
+   },
+   "output": {
+    "schema": [
+     [
+      "index",
+      "sqlite_autoindex_downloads_1",
+      "downloads",
+      {
+       "py": "none"
+      }
+     ],
+     [
+      "table",
+      "downloads",
+      "downloads",
+      "CREATE TABLE downloads (\n                  \"id\" text NOT NULL,\n                  \"media_type\" text NOT NULL DEFAULT 'album',\n                  \"quality\" integer NOT NULL DEFAULT 27,\n                  \"file_format\" text NOT NULL DEFAULT 'FLAC',\n                  \"quality_met\" integer NOT NULL DEFAULT 0,\n                  \"bit_depth\" text,\n                  \"sampling_rate\" text,\n                  \"saved_path\" text NOT NULL DEFAULT '',\n                  \"status\" text NOT NULL DEFAULT 'downloaded',\n                  \"url\" text NOT NULL DEFAULT '',\n                  \"release_date\" text NOT NULL DEFAULT '',\n                  \"artist\" text NOT NULL DEFAULT '',\n                  \"album\" text NOT NULL DEFAULT '',\n                  PRIMARY KEY (\"id\", \"quality\")\n                )"
+     ]
+    ],
+    "columns": [
+     [
+      {
+       "py": "int",
+       "v": 0
+      },
+      "id",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 1
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 1
+      },
+      "media_type",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'album'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 2
+      },
+      "quality",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "27",
+      {
+       "py": "int",
+       "v": 2
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 3
+      },
+      "file_format",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'FLAC'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 4
+      },
+      "quality_met",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "0",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 5
+      },
+      "bit_depth",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 6
+      },
+      "sampling_rate",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 7
+      },
+      "saved_path",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 8
+      },
+      "status",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'downloaded'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 9
+      },
+      "url",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 10
+      },
+      "release_date",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 11
+      },
+      "artist",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 12
+      },
+      "album",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ]
+    ],
+    "rows": [
+     {
+      "id": "0634904080853",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 0
+      },
+      "bit_depth": {
+       "py": "none"
+      },
+      "sampling_rate": {
+       "py": "none"
+      },
+      "saved_path": "",
+      "status": "downloaded",
+      "url": "",
+      "release_date": "",
+      "artist": "",
+      "album": ""
+     },
+     {
+      "id": "20273753",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 0
+      },
+      "bit_depth": {
+       "py": "none"
+      },
+      "sampling_rate": {
+       "py": "none"
+      },
+      "saved_path": "",
+      "status": "downloaded",
+      "url": "",
+      "release_date": "",
+      "artist": "",
+      "album": ""
+     },
+     {
+      "id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 0
+      },
+      "bit_depth": {
+       "py": "none"
+      },
+      "sampling_rate": {
+       "py": "none"
+      },
+      "saved_path": "",
+      "status": "downloaded",
+      "url": "",
+      "release_date": "",
+      "artist": "",
+      "album": ""
+     }
+    ]
+   }
+  },
+  {
+   "name": "v2.db",
+   "input": {
+    "file": "v2.db"
+   },
+   "output": {
+    "schema": [
+     [
+      "index",
+      "sqlite_autoindex_downloads_1",
+      "downloads",
+      {
+       "py": "none"
+      }
+     ],
+     [
+      "table",
+      "downloads",
+      "downloads",
+      "CREATE TABLE downloads (\n                  \"id\" text NOT NULL,\n                  \"media_type\" text NOT NULL DEFAULT 'album',\n                  \"quality\" integer NOT NULL DEFAULT 27,\n                  \"file_format\" text NOT NULL DEFAULT 'FLAC',\n                  \"quality_met\" integer NOT NULL DEFAULT 0,\n                  \"bit_depth\" text,\n                  \"sampling_rate\" text,\n                  \"saved_path\" text NOT NULL DEFAULT '',\n                  \"status\" text NOT NULL DEFAULT 'downloaded',\n                  \"url\" text NOT NULL DEFAULT '',\n                  \"release_date\" text NOT NULL DEFAULT '', artist text NOT NULL DEFAULT '', album text NOT NULL DEFAULT '',\n                  PRIMARY KEY (\"id\", \"quality\")\n                )"
+     ]
+    ],
+    "columns": [
+     [
+      {
+       "py": "int",
+       "v": 0
+      },
+      "id",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 1
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 1
+      },
+      "media_type",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'album'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 2
+      },
+      "quality",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "27",
+      {
+       "py": "int",
+       "v": 2
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 3
+      },
+      "file_format",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'FLAC'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 4
+      },
+      "quality_met",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "0",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 5
+      },
+      "bit_depth",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 6
+      },
+      "sampling_rate",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 7
+      },
+      "saved_path",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 8
+      },
+      "status",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'downloaded'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 9
+      },
+      "url",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 10
+      },
+      "release_date",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 11
+      },
+      "artist",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 12
+      },
+      "album",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ]
+    ],
+    "rows": [
+     {
+      "id": "20273753",
+      "media_type": "track",
+      "quality": {
+       "py": "int",
+       "v": 6
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 0
+      },
+      "bit_depth": {
+       "py": "none"
+      },
+      "sampling_rate": {
+       "py": "none"
+      },
+      "saved_path": "",
+      "status": "downloaded",
+      "url": "",
+      "release_date": "",
+      "artist": "",
+      "album": ""
+     },
+     {
+      "id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "24",
+      "sampling_rate": "192.0",
+      "saved_path": "/music/Ummagumma",
+      "status": "downloaded",
+      "url": "https://x",
+      "release_date": "1969-11-07",
+      "artist": "",
+      "album": ""
+     }
+    ]
+   }
+  },
+  {
+   "name": "shared.db",
+   "input": {
+    "file": "shared.db"
+   },
+   "output": {
+    "schema": [
+     [
+      "index",
+      "sqlite_autoindex_downloads_1",
+      "downloads",
+      {
+       "py": "none"
+      }
+     ],
+     [
+      "table",
+      "downloads",
+      "downloads",
+      "CREATE TABLE downloads (\n                  \"id\" text NOT NULL,\n                  \"media_type\" text NOT NULL DEFAULT 'album',\n                  \"quality\" integer NOT NULL DEFAULT 27,\n                  \"file_format\" text NOT NULL DEFAULT 'FLAC',\n                  \"quality_met\" integer NOT NULL DEFAULT 0,\n                  \"bit_depth\" text,\n                  \"sampling_rate\" text,\n                  \"saved_path\" text NOT NULL DEFAULT '',\n                  \"status\" text NOT NULL DEFAULT 'downloaded',\n                  \"url\" text NOT NULL DEFAULT '',\n                  \"release_date\" text NOT NULL DEFAULT '',\n                  \"artist\" text NOT NULL DEFAULT '',\n                  \"album\" text NOT NULL DEFAULT '',\n                  PRIMARY KEY (\"id\", \"quality\")\n                )"
+     ]
+    ],
+    "columns": [
+     [
+      {
+       "py": "int",
+       "v": 0
+      },
+      "id",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 1
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 1
+      },
+      "media_type",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'album'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 2
+      },
+      "quality",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "27",
+      {
+       "py": "int",
+       "v": 2
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 3
+      },
+      "file_format",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'FLAC'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 4
+      },
+      "quality_met",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "0",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 5
+      },
+      "bit_depth",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 6
+      },
+      "sampling_rate",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 7
+      },
+      "saved_path",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 8
+      },
+      "status",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'downloaded'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 9
+      },
+      "url",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 10
+      },
+      "release_date",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 11
+      },
+      "artist",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 12
+      },
+      "album",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ]
+    ],
+    "rows": [
+     {
+      "id": "20273753",
+      "media_type": "track",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 0
+      },
+      "bit_depth": "24",
+      "sampling_rate": "96.0",
+      "saved_path": "/music/Miles Davis - So What (1959) [24B-96.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/x",
+      "release_date": "1959-08-17",
+      "artist": "Miles Davis",
+      "album": "So What"
+     },
+     {
+      "id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 6
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "16",
+      "sampling_rate": "44.1",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma"
+     },
+     {
+      "id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "24",
+      "sampling_rate": "192.0",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma"
+     }
+    ]
+   }
+  },
+  {
+   "name": "no file",
+   "input": {
+    "file": {
+     "py": "none"
+    }
+   },
+   "output": {
+    "schema": [
+     [
+      "index",
+      "sqlite_autoindex_downloads_1",
+      "downloads",
+      {
+       "py": "none"
+      }
+     ],
+     [
+      "table",
+      "downloads",
+      "downloads",
+      "CREATE TABLE downloads (\n                  \"id\" text NOT NULL,\n                  \"media_type\" text NOT NULL DEFAULT 'album',\n                  \"quality\" integer NOT NULL DEFAULT 27,\n                  \"file_format\" text NOT NULL DEFAULT 'FLAC',\n                  \"quality_met\" integer NOT NULL DEFAULT 0,\n                  \"bit_depth\" text,\n                  \"sampling_rate\" text,\n                  \"saved_path\" text NOT NULL DEFAULT '',\n                  \"status\" text NOT NULL DEFAULT 'downloaded',\n                  \"url\" text NOT NULL DEFAULT '',\n                  \"release_date\" text NOT NULL DEFAULT '',\n                  \"artist\" text NOT NULL DEFAULT '',\n                  \"album\" text NOT NULL DEFAULT '',\n                  PRIMARY KEY (\"id\", \"quality\")\n                )"
+     ]
+    ],
+    "columns": [
+     [
+      {
+       "py": "int",
+       "v": 0
+      },
+      "id",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 1
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 1
+      },
+      "media_type",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'album'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 2
+      },
+      "quality",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "27",
+      {
+       "py": "int",
+       "v": 2
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 3
+      },
+      "file_format",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'FLAC'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 4
+      },
+      "quality_met",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "0",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 5
+      },
+      "bit_depth",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 6
+      },
+      "sampling_rate",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 7
+      },
+      "saved_path",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 8
+      },
+      "status",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'downloaded'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 9
+      },
+      "url",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 10
+      },
+      "release_date",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 11
+      },
+      "artist",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 12
+      },
+      "album",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ]
+    ],
+    "rows": []
+   }
+  }
+ ]
+}

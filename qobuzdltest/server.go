@@ -92,6 +92,11 @@ const (
 	PlaylistEmpty = "9000000" // a first page without tracks
 	ArtistEmpty   = "9000000" // a first page without albums
 	LabelEmpty    = "9000000" // a first page without albums
+	// ArtistAlbums is "Norah Jones" with three recorded albums, so that
+	// every album/get it leads to has an answer: AlbumHiRes96 and
+	// AlbumWithVersion by her, and AlbumCD by Radiohead. Smart discography
+	// keeps only AlbumHiRes96.
+	ArtistAlbums = "9000002"
 )
 
 const (

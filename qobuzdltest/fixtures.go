@@ -332,7 +332,40 @@ func buildCatalog() (*catalog, error) {
 		}
 		c.collections[s.endpoint+" "+s.id] = repeatCollection(o, s.endpoint, s.id, s.times)
 	}
+	page, ok, err := fixture(fixtureFile("artist/get", Artist, "0"))
+	if err != nil || !ok {
+		return nil, fmt.Errorf("qobuzdltest: no first page of artist/get %s: %v", Artist, err)
+	}
+	var albums []*object
+	for _, id := range []string{AlbumHiRes96, AlbumWithVersion, AlbumCD} {
+		a, ok, err := fixture(fixtureFile("album/get", id))
+		if err != nil || !ok {
+			return nil, fmt.Errorf("qobuzdltest: no album/get %s: %v", id, err)
+		}
+		albums = append(albums, a)
+	}
+	c.collections["artist/get "+ArtistAlbums] = albumsCollection(page, ArtistAlbums, "Norah Jones", albums)
 	return c, nil
+}
+
+// albumsCollection is an artist's recorded first page listing the given
+// albums, as album/get answers them less their tracks, under a new ID and
+// name.
+func albumsCollection(page *object, id, name string, albums []*object) *object {
+	o := clone(page).(*object)
+	items := make([]any, len(albums))
+	for i, a := range albums {
+		a = clone(a).(*object)
+		a.del("tracks")
+		items[i] = a
+	}
+	sub := o.object("albums")
+	sub.set("items", items)
+	sub.set("total", len(items))
+	o.set("id", json.Number(id))
+	o.set("albums_count", len(items))
+	o.set("name", name)
+	return o
 }
 
 // itemsKey is the key multi_meta reads a collection's items from.

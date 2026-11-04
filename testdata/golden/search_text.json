@@ -1,0 +1,6603 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "recorded albums",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/28/24/5099749522428_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/28/24/5099749522428_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/28/24/5099749522428_600.jpg",
+       "back": {
+        "py": "none"
+       }
+      },
+      "media_count": {
+       "py": "int",
+       "v": 1
+      },
+      "artist": {
+       "image": {
+        "py": "none"
+       },
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 5875
+       },
+       "slug": "miles-davis",
+       "picture": {
+        "py": "none"
+       }
+      },
+      "artists": [
+       {
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "name": "Miles Davis",
+        "roles": [
+         "main-artist"
+        ]
+       }
+      ],
+      "upc": "5099749522428",
+      "released_at": {
+       "py": "int",
+       "v": -327459600
+      },
+      "label": {
+       "name": "Columbia",
+       "id": {
+        "py": "int",
+        "v": 4592
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 28225
+       },
+       "supplier_id": {
+        "py": "int",
+        "v": 23
+       },
+       "slug": "columbia"
+      },
+      "title": "Kind Of Blue",
+      "qobuz_id": {
+       "py": "int",
+       "v": 13176082
+      },
+      "version": {
+       "py": "none"
+      },
+      "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-miles-davis/5099749522428",
+      "slug": "kind-of-blue-miles-davis",
+      "duration": {
+       "py": "int",
+       "v": 2723
+      },
+      "parental_warning": false,
+      "popularity": {
+       "py": "int",
+       "v": 0
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 5
+      },
+      "genre": {
+       "path": [
+        {
+         "py": "int",
+         "v": 80
+        }
+       ],
+       "color": "#0070ef",
+       "name": "Jazz",
+       "id": {
+        "py": "int",
+        "v": 80
+       },
+       "slug": "jazz"
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": "5099749522428",
+      "maximum_sampling_rate": {
+       "py": "int",
+       "v": 192
+      },
+      "articles": [],
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1792623600
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1792623600
+      },
+      "hires": true,
+      "hires_streamable": true,
+      "ai_generated": {
+       "py": "none"
+      }
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 16
+      },
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/69/60/0888880696069_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/69/60/0888880696069_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/69/60/0888880696069_600.jpg",
+       "back": {
+        "py": "none"
+       }
+      },
+      "media_count": {
+       "py": "int",
+       "v": 2
+      },
+      "artist": {
+       "image": {
+        "py": "none"
+       },
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 5875
+       },
+       "slug": "miles-davis",
+       "picture": {
+        "py": "none"
+       }
+      },
+      "artists": [
+       {
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "name": "Miles Davis",
+        "roles": [
+         "main-artist"
+        ]
+       }
+      ],
+      "upc": "0888880696069",
+      "released_at": {
+       "py": "int",
+       "v": 1231974000
+      },
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": {
+        "py": "int",
+        "v": 10106072
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 2406
+       },
+       "supplier_id": {
+        "py": "int",
+        "v": 23
+       },
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind Of Blue (Legacy Edition)",
+      "qobuz_id": {
+       "py": "int",
+       "v": 13273
+      },
+      "version": {
+       "py": "none"
+      },
+      "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-legacy-edition-miles-davis/0888880696069",
+      "slug": "kind-of-blue-legacy-edition-miles-davis",
+      "duration": {
+       "py": "int",
+       "v": 7237
+      },
+      "parental_warning": false,
+      "popularity": {
+       "py": "int",
+       "v": 0
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 21
+      },
+      "genre": {
+       "path": [
+        {
+         "py": "int",
+         "v": 80
+        }
+       ],
+       "color": "#0070ef",
+       "name": "Jazz",
+       "id": {
+        "py": "int",
+        "v": 80
+       },
+       "slug": "jazz"
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": "0888880696069",
+      "maximum_sampling_rate": {
+       "py": "float",
+       "v": 44.1
+      },
+      "articles": [],
+      "release_date_original": "2009-01-15",
+      "release_date_download": "2009-01-15",
+      "release_date_stream": "2009-01-15",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1792623600
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1792623600
+      },
+      "hires": false,
+      "hires_streamable": false,
+      "ai_generated": {
+       "py": "none"
+      }
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/47/07/0886444350747_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/47/07/0886444350747_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/47/07/0886444350747_600.jpg",
+       "back": {
+        "py": "none"
+       }
+      },
+      "media_count": {
+       "py": "int",
+       "v": 1
+      },
+      "artist": {
+       "image": {
+        "py": "none"
+       },
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 5875
+       },
+       "slug": "miles-davis",
+       "picture": {
+        "py": "none"
+       }
+      },
+      "artists": [
+       {
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "name": "Miles Davis",
+        "roles": [
+         "main-artist"
+        ]
+       }
+      ],
+      "upc": "0886444350747",
+      "released_at": {
+       "py": "int",
+       "v": -327459600
+      },
+      "label": {
+       "name": "Columbia/Legacy",
+       "id": {
+        "py": "int",
+        "v": 10106072
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 2406
+       },
+       "supplier_id": {
+        "py": "int",
+        "v": 23
+       },
+       "slug": "columbialegacy-1"
+      },
+      "title": "Kind of Blue (Mono)",
+      "qobuz_id": {
+       "py": "int",
+       "v": 20273752
+      },
+      "version": "Mono Version",
+      "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-mono-miles-davis/0886444350747",
+      "slug": "kind-of-blue-mono-miles-davis",
+      "duration": {
+       "py": "int",
+       "v": 2729
+      },
+      "parental_warning": false,
+      "popularity": {
+       "py": "int",
+       "v": 0
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 5
+      },
+      "genre": {
+       "path": [
+        {
+         "py": "int",
+         "v": 80
+        }
+       ],
+       "color": "#0070ef",
+       "name": "Jazz",
+       "id": {
+        "py": "int",
+        "v": 80
+       },
+       "slug": "jazz"
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": "0886444350747",
+      "maximum_sampling_rate": {
+       "py": "int",
+       "v": 96
+      },
+      "articles": [],
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1792623600
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1792623600
+      },
+      "hires": true,
+      "hires_streamable": true,
+      "ai_generated": {
+       "py": "none"
+      }
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_600.jpg",
+       "back": {
+        "py": "none"
+       }
+      },
+      "media_count": {
+       "py": "int",
+       "v": 1
+      },
+      "artist": {
+       "image": {
+        "py": "none"
+       },
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 5872
+       },
+       "slug": "miles-davis",
+       "picture": {
+        "py": "none"
+       }
+      },
+      "artists": [
+       {
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "name": "Miles Davis",
+        "roles": [
+         "main-artist"
+        ]
+       }
+      ],
+      "upc": "5056321626073",
+      "released_at": {
+       "py": "int",
+       "v": -327459600
+      },
+      "label": {
+       "name": "RevOla",
+       "id": {
+        "py": "int",
+        "v": 5626722
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 2683
+       },
+       "supplier_id": {
+        "py": "int",
+        "v": 249
+       },
+       "slug": "revola-1"
+      },
+      "title": "Kind of Blue",
+      "qobuz_id": {
+       "py": "int",
+       "v": 238062269
+      },
+      "version": "Remastered",
+      "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-miles-davis/fdasb7heir98a",
+      "slug": "kind-of-blue-miles-davis",
+      "duration": {
+       "py": "int",
+       "v": 2768
+      },
+      "parental_warning": false,
+      "popularity": {
+       "py": "int",
+       "v": 0
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 5
+      },
+      "genre": {
+       "path": [
+        {
+         "py": "int",
+         "v": 80
+        }
+       ],
+       "color": "#0070ef",
+       "name": "Jazz",
+       "id": {
+        "py": "int",
+        "v": 80
+       },
+       "slug": "jazz"
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": "fdasb7heir98a",
+      "maximum_sampling_rate": {
+       "py": "float",
+       "v": 44.1
+      },
+      "articles": [],
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1789167600
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1789167600
+      },
+      "hires": true,
+      "hires_streamable": true,
+      "ai_generated": {
+       "py": "none"
+      }
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 16
+      },
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/2a/jl/x6m24h69ijl2a_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/2a/jl/x6m24h69ijl2a_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/2a/jl/x6m24h69ijl2a_600.jpg",
+       "back": {
+        "py": "none"
+       }
+      },
+      "media_count": {
+       "py": "int",
+       "v": 1
+      },
+      "artist": {
+       "image": {
+        "py": "none"
+       },
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 5860
+       },
+       "slug": "miles-davis",
+       "picture": {
+        "py": "none"
+       }
+      },
+      "artists": [
+       {
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "name": "Miles Davis",
+        "roles": [
+         "main-artist"
+        ]
+       }
+      ],
+      "upc": "3760300315477",
+      "released_at": {
+       "py": "int",
+       "v": 1637362800
+      },
+      "label": {
+       "name": "BDMUSIC",
+       "id": {
+        "py": "int",
+        "v": 123730
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 317
+       },
+       "supplier_id": {
+        "py": "int",
+        "v": 4
+       },
+       "slug": "bdmusic"
+      },
+      "title": "BD Music Presents Kind of Blue",
+      "qobuz_id": {
+       "py": "int",
+       "v": 139040714
+      },
+      "version": {
+       "py": "none"
+      },
+      "url": "https://www.qobuz.com/fr-fr/album/bd-music-presents-kind-of-blue-miles-davis/x6m24h69ijl2a",
+      "slug": "bd-music-presents-kind-of-blue-miles-davis",
+      "duration": {
+       "py": "int",
+       "v": 2751
+      },
+      "parental_warning": false,
+      "popularity": {
+       "py": "int",
+       "v": 0
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 5
+      },
+      "genre": {
+       "path": [
+        {
+         "py": "int",
+         "v": 80
+        }
+       ],
+       "color": "#0070ef",
+       "name": "Jazz",
+       "id": {
+        "py": "int",
+        "v": 80
+       },
+       "slug": "jazz"
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": "x6m24h69ijl2a",
+      "maximum_sampling_rate": {
+       "py": "float",
+       "v": 44.1
+      },
+      "articles": [],
+      "release_date_original": "2021-11-20",
+      "release_date_download": "2021-11-20",
+      "release_date_stream": "2021-11-20",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1788217200
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1785020400
+      },
+      "hires": false,
+      "hires_streamable": false,
+      "ai_generated": {
+       "py": "none"
+      }
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 16
+      },
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/6b/kr/qsieqfb10kr6b_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/6b/kr/qsieqfb10kr6b_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/6b/kr/qsieqfb10kr6b_600.jpg",
+       "back": {
+        "py": "none"
+       }
+      },
+      "media_count": {
+       "py": "int",
+       "v": 1
+      },
+      "artist": {
+       "image": {
+        "py": "none"
+       },
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 5834
+       },
+       "slug": "miles-davis",
+       "picture": {
+        "py": "none"
+       }
+      },
+      "artists": [
+       {
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "name": "Miles Davis",
+        "roles": [
+         "main-artist"
+        ]
+       }
+      ],
+      "upc": "0884385317935",
+      "released_at": {
+       "py": "int",
+       "v": 1262300400
+      },
+      "label": {
+       "name": "Techniche Label OMP",
+       "id": {
+        "py": "int",
+        "v": 4427
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 265
+       },
+       "supplier_id": {
+        "py": "int",
+        "v": 17
+       },
+       "slug": "techniche-label-omp"
+      },
+      "title": "Kind Of Blue - HD Re-Mastered 2010",
+      "qobuz_id": {
+       "py": "int",
+       "v": 89278482
+      },
+      "version": {
+       "py": "none"
+      },
+      "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-hd-re-mastered-2010-miles-davis/qsieqfb10kr6b",
+      "slug": "kind-of-blue-hd-re-mastered-2010-miles-davis",
+      "duration": {
+       "py": "int",
+       "v": 2737
+      },
+      "parental_warning": false,
+      "popularity": {
+       "py": "int",
+       "v": 0
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 5
+      },
+      "genre": {
+       "path": [
+        {
+         "py": "int",
+         "v": 80
+        }
+       ],
+       "color": "#0070ef",
+       "name": "Jazz",
+       "id": {
+        "py": "int",
+        "v": 80
+       },
+       "slug": "jazz"
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": "qsieqfb10kr6b",
+      "maximum_sampling_rate": {
+       "py": "float",
+       "v": 44.1
+      },
+      "articles": [],
+      "release_date_original": "2010-01-01",
+      "release_date_download": "2010-01-01",
+      "release_date_stream": "2010-01-01",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1778022000
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1778022000
+      },
+      "hires": false,
+      "hires_streamable": false,
+      "ai_generated": {
+       "py": "none"
+      }
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/69/55/3610154015569_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/69/55/3610154015569_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/69/55/3610154015569_600.jpg",
+       "back": {
+        "py": "none"
+       }
+      },
+      "media_count": {
+       "py": "int",
+       "v": 1
+      },
+      "artist": {
+       "image": {
+        "py": "none"
+       },
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 5873
+       },
+       "slug": "miles-davis",
+       "picture": {
+        "py": "none"
+       }
+      },
+      "artists": [
+       {
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "name": "Miles Davis",
+        "roles": [
+         "main-artist"
+        ]
+       }
+      ],
+      "upc": "3610154015569",
+      "released_at": {
+       "py": "int",
+       "v": -327459600
+      },
+      "label": {
+       "name": "BNF Collection",
+       "id": {
+        "py": "int",
+        "v": 68273
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 41920
+       },
+       "supplier_id": {
+        "py": "int",
+        "v": 3
+       },
+       "slug": "bnf-collection"
+      },
+      "title": "Kind Of Blue (Stereo Version)",
+      "qobuz_id": {
+       "py": "int",
+       "v": 14106036
+      },
+      "version": "Stereo Version",
+      "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-stereo-version-miles-davis/3610154015569",
+      "slug": "kind-of-blue-stereo-version-miles-davis",
+      "duration": {
+       "py": "int",
+       "v": 2672
+      },
+      "parental_warning": false,
+      "popularity": {
+       "py": "int",
+       "v": 0
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 5
+      },
+      "genre": {
+       "path": [
+        {
+         "py": "int",
+         "v": 80
+        }
+       ],
+       "color": "#0070ef",
+       "name": "Jazz",
+       "id": {
+        "py": "int",
+        "v": 80
+       },
+       "slug": "jazz"
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": "3610154015569",
+      "maximum_sampling_rate": {
+       "py": "int",
+       "v": 96
+      },
+      "articles": [],
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1788217200
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1788217200
+      },
+      "hires": true,
+      "hires_streamable": true,
+      "ai_generated": {
+       "py": "none"
+      }
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 16
+      },
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/9a/9m/gqq1grrc19m9a_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/9a/9m/gqq1grrc19m9a_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/9a/9m/gqq1grrc19m9a_600.jpg",
+       "back": {
+        "py": "none"
+       }
+      },
+      "media_count": {
+       "py": "int",
+       "v": 1
+      },
+      "artist": {
+       "image": {
+        "py": "none"
+       },
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 5860
+       },
+       "slug": "miles-davis",
+       "picture": {
+        "py": "none"
+       }
+      },
+      "artists": [
+       {
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "name": "Miles Davis",
+        "roles": [
+         "main-artist"
+        ]
+       }
+      ],
+      "upc": "0192231133371",
+      "released_at": {
+       "py": "int",
+       "v": 1542927600
+      },
+      "label": {
+       "name": "Nightclub Records",
+       "id": {
+        "py": "int",
+        "v": 223961
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 88
+       },
+       "supplier_id": {
+        "py": "int",
+        "v": 89
+       },
+       "slug": "nightclub-records-1"
+      },
+      "title": "Kind of Blue",
+      "qobuz_id": {
+       "py": "int",
+       "v": 57261066
+      },
+      "version": {
+       "py": "none"
+      },
+      "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-miles-davis/gqq1grrc19m9a",
+      "slug": "kind-of-blue-miles-davis",
+      "duration": {
+       "py": "int",
+       "v": 2665
+      },
+      "parental_warning": false,
+      "popularity": {
+       "py": "int",
+       "v": 0
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 5
+      },
+      "genre": {
+       "path": [
+        {
+         "py": "int",
+         "v": 80
+        }
+       ],
+       "color": "#0070ef",
+       "name": "Jazz",
+       "id": {
+        "py": "int",
+        "v": 80
+       },
+       "slug": "jazz"
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": "gqq1grrc19m9a",
+      "maximum_sampling_rate": {
+       "py": "float",
+       "v": 44.1
+      },
+      "articles": [],
+      "release_date_original": "2018-11-23",
+      "release_date_download": "2018-11-23",
+      "release_date_stream": "2018-11-23",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1784415600
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1784415600
+      },
+      "hires": false,
+      "hires_streamable": false,
+      "ai_generated": {
+       "py": "none"
+      }
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/41/86/0191018878641_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/41/86/0191018878641_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/41/86/0191018878641_600.jpg",
+       "back": {
+        "py": "none"
+       }
+      },
+      "media_count": {
+       "py": "int",
+       "v": 1
+      },
+      "artist": {
+       "image": {
+        "py": "none"
+       },
+       "name": "Solo Sounds",
+       "id": {
+        "py": "int",
+        "v": 3272149
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 89
+       },
+       "slug": "solosounds-10003272149",
+       "picture": {
+        "py": "none"
+       }
+      },
+      "artists": [
+       {
+        "id": {
+         "py": "int",
+         "v": 3272149
+        },
+        "name": "Solo Sounds",
+        "roles": [
+         "main-artist"
+        ]
+       }
+      ],
+      "upc": "0191018878641",
+      "released_at": {
+       "py": "int",
+       "v": 1489705200
+      },
+      "label": {
+       "name": "Solo Sounds",
+       "id": {
+        "py": "int",
+        "v": 157517
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 95
+       },
+       "supplier_id": {
+        "py": "int",
+        "v": 17
+       },
+       "slug": "solo-sounds"
+      },
+      "title": "Solo Wurlitzer Electric Piano: Miles Davis' Kind of Blue",
+      "qobuz_id": {
+       "py": "int",
+       "v": 39429719
+      },
+      "version": {
+       "py": "none"
+      },
+      "url": "https://www.qobuz.com/fr-fr/album/solo-wurlitzer-electric-piano-miles-davis-kind-of-blue-solo-sounds/0191018878641",
+      "slug": "solo-wurlitzer-electric-piano-miles-davis-kind-of-blue-solo-sounds",
+      "duration": {
+       "py": "int",
+       "v": 1152
+      },
+      "parental_warning": false,
+      "popularity": {
+       "py": "int",
+       "v": 0
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 5
+      },
+      "genre": {
+       "path": [
+        {
+         "py": "int",
+         "v": 80
+        }
+       ],
+       "color": "#0070ef",
+       "name": "Jazz",
+       "id": {
+        "py": "int",
+        "v": 80
+       },
+       "slug": "jazz"
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": "0191018878641",
+      "maximum_sampling_rate": {
+       "py": "int",
+       "v": 192
+      },
+      "articles": [],
+      "release_date_original": "2017-03-17",
+      "release_date_download": "2017-03-17",
+      "release_date_stream": "2017-03-17",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1778281200
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1778281200
+      },
+      "hires": true,
+      "hires_streamable": true,
+      "ai_generated": {
+       "py": "none"
+      }
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 16
+      },
+      "image": {
+       "small": "https://static.qobuz.com/images/covers/6b/gv/nkknk1v08gv6b_230.jpg",
+       "thumbnail": "https://static.qobuz.com/images/covers/6b/gv/nkknk1v08gv6b_50.jpg",
+       "large": "https://static.qobuz.com/images/covers/6b/gv/nkknk1v08gv6b_600.jpg",
+       "back": {
+        "py": "none"
+       }
+      },
+      "media_count": {
+       "py": "int",
+       "v": 1
+      },
+      "artist": {
+       "image": {
+        "py": "none"
+       },
+       "name": "Miles Davis Quintet",
+       "id": {
+        "py": "int",
+        "v": 50709
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 402
+       },
+       "slug": "miles-davis-quintet",
+       "picture": {
+        "py": "none"
+       }
+      },
+      "artists": [
+       {
+        "id": {
+         "py": "int",
+         "v": 50709
+        },
+        "name": "Miles Davis Quintet",
+        "roles": [
+         "main-artist"
+        ]
+       }
+      ],
+      "upc": "4099496699696",
+      "released_at": {
+       "py": "int",
+       "v": -327459600
+      },
+      "label": {
+       "name": "DECCO Recordings",
+       "id": {
+        "py": "int",
+        "v": 6419724
+       },
+       "albums_count": {
+        "py": "int",
+        "v": 42
+       },
+       "supplier_id": {
+        "py": "int",
+        "v": 132
+       },
+       "slug": "decco-recordings"
+      },
+      "title": "Kind of Blue",
+      "qobuz_id": {
+       "py": "int",
+       "v": 261564788
+      },
+      "version": {
+       "py": "none"
+      },
+      "url": "https://www.qobuz.com/fr-fr/album/kind-of-blue-miles-davis-sextet/nkknk1v08gv6b",
+      "slug": "kind-of-blue-miles-davis-sextet",
+      "duration": {
+       "py": "int",
+       "v": 2723
+      },
+      "parental_warning": false,
+      "popularity": {
+       "py": "int",
+       "v": 0
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 5
+      },
+      "genre": {
+       "path": [
+        {
+         "py": "int",
+         "v": 112
+        },
+        {
+         "py": "int",
+         "v": 117
+        }
+       ],
+       "color": "#0070ef",
+       "name": "Pop",
+       "id": {
+        "py": "int",
+        "v": 117
+       },
+       "slug": "pop"
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": "nkknk1v08gv6b",
+      "maximum_sampling_rate": {
+       "py": "float",
+       "v": 44.1
+      },
+      "articles": [],
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1789686000
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1789686000
+      },
+      "hires": false,
+      "hires_streamable": false,
+      "ai_generated": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Miles Davis            Kind Of Blue                          Album      1959   [HI-RES] 24b/192kHz",
+     "url": "https://play.qobuz.com/album/5099749522428"
+    },
+    {
+     "text": "Miles Davis            Kind Of Blue (Legacy Edition)         Album      2009   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/0888880696069"
+    },
+    {
+     "text": "Miles Davis            Kind of Blue (Mono) (Mono Version)    Album      1959   [HI-RES] 24b/96kHz",
+     "url": "https://play.qobuz.com/album/0886444350747"
+    },
+    {
+     "text": "Miles Davis            Kind of Blue (Remastered)             Album      1959   [HI-RES] 24b/44.1kHz",
+     "url": "https://play.qobuz.com/album/fdasb7heir98a"
+    },
+    {
+     "text": "Miles Davis            BD Music Presents Kind of Blue        Album      2021   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/x6m24h69ijl2a"
+    },
+    {
+     "text": "Miles Davis            Kind Of Blue - HD Re-Mastered 2010    Album      2010   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/qsieqfb10kr6b"
+    },
+    {
+     "text": "Miles Davis            Kind Of Blue (Stereo Version) (S...   Album      1959   [HI-RES] 24b/96kHz",
+     "url": "https://play.qobuz.com/album/3610154015569"
+    },
+    {
+     "text": "Miles Davis            Kind of Blue                          Album      2018   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/gqq1grrc19m9a"
+    },
+    {
+     "text": "Solo Sounds            Solo Wurlitzer Electric Piano: M...   EP         2017   [HI-RES] 24b/192kHz",
+     "url": "https://play.qobuz.com/album/0191018878641"
+    },
+    {
+     "text": "Miles Davis Quintet    Kind of Blue                          Album      1959   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/nkknk1v08gv6b"
+    }
+   ]
+  },
+  {
+   "name": "recorded tracks",
+   "input": {
+    "type": "track",
+    "items": [
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+      "performers": "Miles Davis, Associated Performer, Main Artist, Trumpet, Associated Performer, Trumpet\r - Irving Townsend, Producer\r - Jimmy Cobb, Drums\r - M. Davis, Composer, Lyricist\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone",
+      "audio_info": {
+       "replaygain_track_peak": {
+        "py": "float",
+        "v": 0.877747
+       },
+       "replaygain_track_gain": {
+        "py": "float",
+        "v": 0.13
+       }
+      },
+      "performer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "album": {
+       "image": {
+        "small": "https://static.qobuz.com/images/covers/28/24/5099749522428_230.jpg",
+        "thumbnail": "https://static.qobuz.com/images/covers/28/24/5099749522428_50.jpg",
+        "large": "https://static.qobuz.com/images/covers/28/24/5099749522428_600.jpg"
+       },
+       "maximum_bit_depth": {
+        "py": "int",
+        "v": 24
+       },
+       "media_count": {
+        "py": "int",
+        "v": 1
+       },
+       "artist": {
+        "image": {
+         "py": "none"
+        },
+        "name": "Miles Davis",
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 5875
+        },
+        "slug": "miles-davis",
+        "picture": {
+         "py": "none"
+        }
+       },
+       "upc": "5099749522428",
+       "released_at": {
+        "py": "int",
+        "v": -327459600
+       },
+       "label": {
+        "name": "Columbia",
+        "id": {
+         "py": "int",
+         "v": 4592
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 28225
+        },
+        "supplier_id": {
+         "py": "int",
+         "v": 23
+        },
+        "slug": "columbia"
+       },
+       "title": "Kind Of Blue",
+       "qobuz_id": {
+        "py": "int",
+        "v": 13176082
+       },
+       "version": {
+        "py": "none"
+       },
+       "duration": {
+        "py": "int",
+        "v": 2723
+       },
+       "parental_warning": false,
+       "tracks_count": {
+        "py": "int",
+        "v": 5
+       },
+       "genre": {
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "name": "Jazz",
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "slug": "jazz"
+       },
+       "maximum_channel_count": {
+        "py": "int",
+        "v": 2
+       },
+       "id": "5099749522428",
+       "maximum_sampling_rate": {
+        "py": "int",
+        "v": 192
+       },
+       "previewable": true,
+       "sampleable": true,
+       "displayable": true,
+       "streamable": true,
+       "streamable_at": {
+        "py": "int",
+        "v": 1792623600
+       },
+       "downloadable": false,
+       "purchasable_at": {
+        "py": "none"
+       },
+       "purchasable": false,
+       "release_date_original": "1959-08-17",
+       "release_date_download": "1959-08-17",
+       "release_date_stream": "1959-08-17",
+       "release_date_purchase": "1959-08-17",
+       "hires": true,
+       "hires_streamable": true
+      },
+      "work": {
+       "py": "none"
+      },
+      "composer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "isrc": "USSM15900113",
+      "title": "So What",
+      "version": {
+       "py": "none"
+      },
+      "duration": {
+       "py": "int",
+       "v": 547
+      },
+      "parental_warning": false,
+      "track_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": {
+       "py": "int",
+       "v": 13176083
+      },
+      "media_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_sampling_rate": {
+       "py": "int",
+       "v": 192
+      },
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1792623600
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1792623600
+      },
+      "hires": true,
+      "hires_streamable": true
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 16
+      },
+      "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+      "performers": "Jimmy Cobb, Drums - Bill Evans, Piano - Irving Townsend, Producer - M. Davis, Lyricist - M. Davis, Composer - Paul Chambers, Bass - John Coltrane, Tenor Saxophone - Julian Cannonball Adderley, Alto Saxophone - Miles Davis, Performer - Miles Davis, Trumpet - ",
+      "audio_info": {
+       "replaygain_track_peak": {
+        "py": "int",
+        "v": 1
+       },
+       "replaygain_track_gain": {
+        "py": "int",
+        "v": -1
+       }
+      },
+      "performer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "album": {
+       "image": {
+        "small": "https://static.qobuz.com/images/covers/69/60/0888880696069_230.jpg",
+        "thumbnail": "https://static.qobuz.com/images/covers/69/60/0888880696069_50.jpg",
+        "large": "https://static.qobuz.com/images/covers/69/60/0888880696069_600.jpg"
+       },
+       "maximum_bit_depth": {
+        "py": "int",
+        "v": 16
+       },
+       "media_count": {
+        "py": "int",
+        "v": 2
+       },
+       "artist": {
+        "image": {
+         "py": "none"
+        },
+        "name": "Miles Davis",
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 5875
+        },
+        "slug": "miles-davis",
+        "picture": {
+         "py": "none"
+        }
+       },
+       "upc": "0888880696069",
+       "released_at": {
+        "py": "int",
+        "v": 1231974000
+       },
+       "label": {
+        "name": "Columbia/Legacy",
+        "id": {
+         "py": "int",
+         "v": 10106072
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 2405
+        },
+        "supplier_id": {
+         "py": "int",
+         "v": 23
+        },
+        "slug": "columbialegacy-1"
+       },
+       "title": "Kind Of Blue (Legacy Edition)",
+       "qobuz_id": {
+        "py": "int",
+        "v": 13273
+       },
+       "version": {
+        "py": "none"
+       },
+       "duration": {
+        "py": "int",
+        "v": 7237
+       },
+       "parental_warning": false,
+       "tracks_count": {
+        "py": "int",
+        "v": 21
+       },
+       "genre": {
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "name": "Jazz",
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "slug": "jazz"
+       },
+       "maximum_channel_count": {
+        "py": "int",
+        "v": 2
+       },
+       "id": "0888880696069",
+       "maximum_sampling_rate": {
+        "py": "float",
+        "v": 44.1
+       },
+       "previewable": true,
+       "sampleable": true,
+       "displayable": true,
+       "streamable": true,
+       "streamable_at": {
+        "py": "int",
+        "v": 1792623600
+       },
+       "downloadable": false,
+       "purchasable_at": {
+        "py": "none"
+       },
+       "purchasable": false,
+       "release_date_original": "2009-01-15",
+       "release_date_download": "2009-01-15",
+       "release_date_stream": "2009-01-15",
+       "release_date_purchase": "2009-01-15",
+       "hires": false,
+       "hires_streamable": false,
+       "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+      },
+      "work": {
+       "py": "none"
+      },
+      "composer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "isrc": "USSM15900113",
+      "title": "So What",
+      "version": "Album Version",
+      "duration": {
+       "py": "int",
+       "v": 562
+      },
+      "parental_warning": false,
+      "track_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": {
+       "py": "int",
+       "v": 13274
+      },
+      "media_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_sampling_rate": {
+       "py": "float",
+       "v": 44.1
+      },
+      "release_date_original": "2009-01-15",
+      "release_date_download": "2009-01-15",
+      "release_date_stream": "2009-01-15",
+      "release_date_purchase": "2009-01-15",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1792623600
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1792623600
+      },
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 16
+      },
+      "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+      "performers": "Miles Davis, MainArtist, AssociatedPerformer, Soloist, Trumpet, Composer - John Coltrane, FeaturedArtist, AssociatedPerformer, Soloist, Tenor Saxophone - Cannonball Adderley, FeaturedArtist, Alto Saxophone, AssociatedPerformer, Soloist - Bill Evans, FeaturedArtist, AssociatedPerformer, Piano, Soloist - Miles Davis feat. John Coltrane, Cannonball Adderley & Bill Evans, AssociatedPerformer - Paul Chambers, Bass - Jimmy Cobb, Drums - Irving Townsend, Producer - Fred Plaut, Recording Engineer",
+      "audio_info": {
+       "replaygain_track_peak": {
+        "py": "int",
+        "v": 1
+       },
+       "replaygain_track_gain": {
+        "py": "int",
+        "v": -1
+       }
+      },
+      "performer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "album": {
+       "image": {
+        "small": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_230.jpg",
+        "thumbnail": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_50.jpg",
+        "large": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_600.jpg"
+       },
+       "maximum_bit_depth": {
+        "py": "int",
+        "v": 16
+       },
+       "media_count": {
+        "py": "int",
+        "v": 2
+       },
+       "artist": {
+        "image": {
+         "py": "none"
+        },
+        "name": "Miles Davis",
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 5864
+        },
+        "slug": "miles-davis",
+        "picture": {
+         "py": "none"
+        }
+       },
+       "upc": "0888880983541",
+       "released_at": {
+        "py": "int",
+        "v": 1521759600
+       },
+       "label": {
+        "name": "Columbia/Legacy",
+        "id": {
+         "py": "int",
+         "v": 10106072
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 2356
+        },
+        "supplier_id": {
+         "py": "int",
+         "v": 23
+        },
+        "slug": "columbialegacy-1"
+       },
+       "title": "Kind Of Blue (Legacy Edition)",
+       "qobuz_id": {
+        "py": "int",
+        "v": 48097769
+       },
+       "version": {
+        "py": "none"
+       },
+       "duration": {
+        "py": "int",
+        "v": 7237
+       },
+       "parental_warning": false,
+       "tracks_count": {
+        "py": "int",
+        "v": 21
+       },
+       "genre": {
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "name": "Jazz",
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "slug": "jazz"
+       },
+       "maximum_channel_count": {
+        "py": "int",
+        "v": 2
+       },
+       "id": "pmm9oz4jkwbsc",
+       "maximum_sampling_rate": {
+        "py": "float",
+        "v": 44.1
+       },
+       "previewable": true,
+       "sampleable": true,
+       "displayable": true,
+       "streamable": true,
+       "streamable_at": {
+        "py": "int",
+        "v": 1786143600
+       },
+       "downloadable": false,
+       "purchasable_at": {
+        "py": "none"
+       },
+       "purchasable": false,
+       "release_date_original": "2018-03-23",
+       "release_date_download": "2018-03-23",
+       "release_date_stream": "2018-03-23",
+       "release_date_purchase": "2018-03-23",
+       "hires": false,
+       "hires_streamable": false,
+       "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+      },
+      "work": {
+       "py": "none"
+      },
+      "composer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "isrc": "USSM15900113",
+      "title": "So What",
+      "version": {
+       "py": "none"
+      },
+      "duration": {
+       "py": "int",
+       "v": 562
+      },
+      "parental_warning": false,
+      "track_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": {
+       "py": "int",
+       "v": 48097770
+      },
+      "media_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_sampling_rate": {
+       "py": "float",
+       "v": 44.1
+      },
+      "release_date_original": "2018-03-23",
+      "release_date_download": "2018-03-23",
+      "release_date_stream": "2018-03-23",
+      "release_date_purchase": "2018-03-23",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1786143600
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1786143600
+      },
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+      "performers": "Miles Davis, Associated Performer, Composer, Main Artist, Trumpet\r - Jimmy Cobb, Drums\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone\r - Irving Townsend, Producer",
+      "audio_info": {
+       "replaygain_track_peak": {
+        "py": "float",
+        "v": 0.824371
+       },
+       "replaygain_track_gain": {
+        "py": "float",
+        "v": 0.24
+       }
+      },
+      "performer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "album": {
+       "image": {
+        "small": "https://static.qobuz.com/images/covers/47/07/0886444350747_230.jpg",
+        "thumbnail": "https://static.qobuz.com/images/covers/47/07/0886444350747_50.jpg",
+        "large": "https://static.qobuz.com/images/covers/47/07/0886444350747_600.jpg"
+       },
+       "maximum_bit_depth": {
+        "py": "int",
+        "v": 24
+       },
+       "media_count": {
+        "py": "int",
+        "v": 1
+       },
+       "artist": {
+        "image": {
+         "py": "none"
+        },
+        "name": "Miles Davis",
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 5875
+        },
+        "slug": "miles-davis",
+        "picture": {
+         "py": "none"
+        }
+       },
+       "upc": "0886444350747",
+       "released_at": {
+        "py": "int",
+        "v": -327459600
+       },
+       "label": {
+        "name": "Columbia/Legacy",
+        "id": {
+         "py": "int",
+         "v": 10106072
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 2405
+        },
+        "supplier_id": {
+         "py": "int",
+         "v": 23
+        },
+        "slug": "columbialegacy-1"
+       },
+       "title": "Kind of Blue (Mono)",
+       "qobuz_id": {
+        "py": "int",
+        "v": 20273752
+       },
+       "version": "Mono Version",
+       "duration": {
+        "py": "int",
+        "v": 2729
+       },
+       "parental_warning": false,
+       "tracks_count": {
+        "py": "int",
+        "v": 5
+       },
+       "genre": {
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "name": "Jazz",
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "slug": "jazz"
+       },
+       "maximum_channel_count": {
+        "py": "int",
+        "v": 2
+       },
+       "id": "0886444350747",
+       "maximum_sampling_rate": {
+        "py": "int",
+        "v": 96
+       },
+       "previewable": true,
+       "sampleable": true,
+       "displayable": true,
+       "streamable": true,
+       "streamable_at": {
+        "py": "int",
+        "v": 1792623600
+       },
+       "downloadable": false,
+       "purchasable_at": {
+        "py": "none"
+       },
+       "purchasable": false,
+       "release_date_original": "1959-08-17",
+       "release_date_download": "1959-08-17",
+       "release_date_stream": "1959-08-17",
+       "release_date_purchase": "1959-08-17",
+       "hires": true,
+       "hires_streamable": true
+      },
+      "work": {
+       "py": "none"
+      },
+      "composer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "isrc": "USSM11304993",
+      "title": "So What",
+      "version": "Mono Version",
+      "duration": {
+       "py": "int",
+       "v": 547
+      },
+      "parental_warning": false,
+      "track_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": {
+       "py": "int",
+       "v": 20273753
+      },
+      "media_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_sampling_rate": {
+       "py": "int",
+       "v": 96
+      },
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1792623600
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1792623600
+      },
+      "hires": true,
+      "hires_streamable": true
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+      "performers": "Miles Davis, Associated Performer, Composer, Main Artist, Trumpet\r - Jimmy Cobb, Drums\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone\r - Irving Townsend, Producer",
+      "audio_info": {
+       "replaygain_track_peak": {
+        "py": "float",
+        "v": 0.841888
+       },
+       "replaygain_track_gain": {
+        "py": "float",
+        "v": 0.07
+       }
+      },
+      "performer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "album": {
+       "image": {
+        "small": "https://static.qobuz.com/images/covers/61/07/0886444350761_230.jpg",
+        "thumbnail": "https://static.qobuz.com/images/covers/61/07/0886444350761_50.jpg",
+        "large": "https://static.qobuz.com/images/covers/61/07/0886444350761_600.jpg"
+       },
+       "maximum_bit_depth": {
+        "py": "int",
+        "v": 24
+       },
+       "media_count": {
+        "py": "int",
+        "v": 1
+       },
+       "artist": {
+        "image": {
+         "py": "none"
+        },
+        "name": "Miles Davis",
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 5864
+        },
+        "slug": "miles-davis",
+        "picture": {
+         "py": "none"
+        }
+       },
+       "upc": "0886444350761",
+       "released_at": {
+        "py": "int",
+        "v": -327459600
+       },
+       "label": {
+        "name": "Columbia/Legacy",
+        "id": {
+         "py": "int",
+         "v": 10106072
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 2356
+        },
+        "supplier_id": {
+         "py": "int",
+         "v": 23
+        },
+        "slug": "columbialegacy-1"
+       },
+       "title": "Kind of Blue (Mono)",
+       "qobuz_id": {
+        "py": "int",
+        "v": 20273758
+       },
+       "version": "Mono Version",
+       "duration": {
+        "py": "int",
+        "v": 2729
+       },
+       "parental_warning": false,
+       "tracks_count": {
+        "py": "int",
+        "v": 5
+       },
+       "genre": {
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "name": "Jazz",
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "slug": "jazz"
+       },
+       "maximum_channel_count": {
+        "py": "int",
+        "v": 2
+       },
+       "id": "0886444350761",
+       "maximum_sampling_rate": {
+        "py": "int",
+        "v": 192
+       },
+       "previewable": true,
+       "sampleable": true,
+       "displayable": true,
+       "streamable": true,
+       "streamable_at": {
+        "py": "int",
+        "v": 1786143600
+       },
+       "downloadable": false,
+       "purchasable_at": {
+        "py": "none"
+       },
+       "purchasable": false,
+       "release_date_original": "1959-08-17",
+       "release_date_download": "1959-08-17",
+       "release_date_stream": "1959-08-17",
+       "release_date_purchase": "1959-08-17",
+       "hires": true,
+       "hires_streamable": true
+      },
+      "work": {
+       "py": "none"
+      },
+      "composer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "isrc": "USSM11304993",
+      "title": "So What",
+      "version": "Mono Version",
+      "duration": {
+       "py": "int",
+       "v": 547
+      },
+      "parental_warning": false,
+      "track_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": {
+       "py": "int",
+       "v": 20273759
+      },
+      "media_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_sampling_rate": {
+       "py": "int",
+       "v": 192
+      },
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1786143600
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1786143600
+      },
+      "hires": true,
+      "hires_streamable": true
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 16
+      },
+      "copyright": "Originally recorded 1959 & released 2008. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+      "performers": "Miles Davis, MainArtist, AssociatedPerformer, Trumpet, Composer - John Coltrane, Tenor Saxophone - Cannonball Adderley, Alto Saxophone - Bill Evans, Piano, Soloist - Paul Chambers, Bass, Soloist - Jimmy Cobb, Drums - Irving Townsend, Producer - Fred Plaut, Recording Engineer",
+      "audio_info": {
+       "replaygain_track_peak": {
+        "py": "float",
+        "v": 0.33609
+       },
+       "replaygain_track_gain": {
+        "py": "float",
+        "v": 8.47
+       }
+      },
+      "performer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "album": {
+       "image": {
+        "small": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_230.jpg",
+        "thumbnail": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_50.jpg",
+        "large": "https://static.qobuz.com/images/covers/sc/wb/pmm9oz4jkwbsc_600.jpg"
+       },
+       "maximum_bit_depth": {
+        "py": "int",
+        "v": 16
+       },
+       "media_count": {
+        "py": "int",
+        "v": 2
+       },
+       "artist": {
+        "image": {
+         "py": "none"
+        },
+        "name": "Miles Davis",
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 5864
+        },
+        "slug": "miles-davis",
+        "picture": {
+         "py": "none"
+        }
+       },
+       "upc": "0888880983541",
+       "released_at": {
+        "py": "int",
+        "v": 1521759600
+       },
+       "label": {
+        "name": "Columbia/Legacy",
+        "id": {
+         "py": "int",
+         "v": 10106072
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 2356
+        },
+        "supplier_id": {
+         "py": "int",
+         "v": 23
+        },
+        "slug": "columbialegacy-1"
+       },
+       "title": "Kind Of Blue (Legacy Edition)",
+       "qobuz_id": {
+        "py": "int",
+        "v": 48097769
+       },
+       "version": {
+        "py": "none"
+       },
+       "duration": {
+        "py": "int",
+        "v": 7237
+       },
+       "parental_warning": false,
+       "tracks_count": {
+        "py": "int",
+        "v": 21
+       },
+       "genre": {
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "name": "Jazz",
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "slug": "jazz"
+       },
+       "maximum_channel_count": {
+        "py": "int",
+        "v": 2
+       },
+       "id": "pmm9oz4jkwbsc",
+       "maximum_sampling_rate": {
+        "py": "float",
+        "v": 44.1
+       },
+       "previewable": true,
+       "sampleable": true,
+       "displayable": true,
+       "streamable": true,
+       "streamable_at": {
+        "py": "int",
+        "v": 1786143600
+       },
+       "downloadable": false,
+       "purchasable_at": {
+        "py": "none"
+       },
+       "purchasable": false,
+       "release_date_original": "2018-03-23",
+       "release_date_download": "2018-03-23",
+       "release_date_stream": "2018-03-23",
+       "release_date_purchase": "2018-03-23",
+       "hires": false,
+       "hires_streamable": false,
+       "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+      },
+      "work": {
+       "py": "none"
+      },
+      "composer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "isrc": "USSM10802764",
+      "title": "So What",
+      "version": "Studio Sequence 1",
+      "duration": {
+       "py": "int",
+       "v": 114
+      },
+      "parental_warning": false,
+      "track_number": {
+       "py": "int",
+       "v": 10
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": {
+       "py": "int",
+       "v": 48097779
+      },
+      "media_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_sampling_rate": {
+       "py": "float",
+       "v": 44.1
+      },
+      "release_date_original": "2018-03-23",
+      "release_date_download": "2018-03-23",
+      "release_date_stream": "2018-03-23",
+      "release_date_purchase": "2018-03-23",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1786143600
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1786143600
+      },
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "copyright": "2010 RevOla Records 2010 RevOla Records",
+      "performers": "Miles Davis, MainArtist - Kobalt Music, MusicPublisher",
+      "audio_info": {
+       "replaygain_track_peak": {
+        "py": "float",
+        "v": 0.953156
+       },
+       "replaygain_track_gain": {
+        "py": "float",
+        "v": -0.58
+       }
+      },
+      "performer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "album": {
+       "image": {
+        "small": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_230.jpg",
+        "thumbnail": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_50.jpg",
+        "large": "https://static.qobuz.com/images/covers/8a/r9/fdasb7heir98a_600.jpg"
+       },
+       "maximum_bit_depth": {
+        "py": "int",
+        "v": 24
+       },
+       "media_count": {
+        "py": "int",
+        "v": 1
+       },
+       "artist": {
+        "image": {
+         "py": "none"
+        },
+        "name": "Miles Davis",
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 5872
+        },
+        "slug": "miles-davis",
+        "picture": {
+         "py": "none"
+        }
+       },
+       "upc": "5056321626073",
+       "released_at": {
+        "py": "int",
+        "v": -327459600
+       },
+       "label": {
+        "name": "RevOla",
+        "id": {
+         "py": "int",
+         "v": 5626722
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 2683
+        },
+        "supplier_id": {
+         "py": "int",
+         "v": 249
+        },
+        "slug": "revola-1"
+       },
+       "title": "Kind of Blue",
+       "qobuz_id": {
+        "py": "int",
+        "v": 238062269
+       },
+       "version": "Remastered",
+       "duration": {
+        "py": "int",
+        "v": 2768
+       },
+       "parental_warning": false,
+       "tracks_count": {
+        "py": "int",
+        "v": 5
+       },
+       "genre": {
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "name": "Jazz",
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "slug": "jazz"
+       },
+       "maximum_channel_count": {
+        "py": "int",
+        "v": 2
+       },
+       "id": "fdasb7heir98a",
+       "maximum_sampling_rate": {
+        "py": "float",
+        "v": 44.1
+       },
+       "previewable": true,
+       "sampleable": true,
+       "displayable": true,
+       "streamable": true,
+       "streamable_at": {
+        "py": "int",
+        "v": 1789167600
+       },
+       "downloadable": false,
+       "purchasable_at": {
+        "py": "none"
+       },
+       "purchasable": false,
+       "release_date_original": "1959-08-17",
+       "release_date_download": "1959-08-17",
+       "release_date_stream": "1959-08-17",
+       "release_date_purchase": "1959-08-17",
+       "hires": true,
+       "hires_streamable": true
+      },
+      "work": {
+       "py": "none"
+      },
+      "isrc": "UKPFB1891850",
+      "title": "So What?",
+      "version": "Remastered",
+      "duration": {
+       "py": "int",
+       "v": 567
+      },
+      "parental_warning": false,
+      "track_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": {
+       "py": "int",
+       "v": 238062270
+      },
+      "media_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_sampling_rate": {
+       "py": "float",
+       "v": 44.1
+      },
+      "release_date_original": "1959-08-17",
+      "release_date_download": "1959-08-17",
+      "release_date_stream": "1959-08-17",
+      "release_date_purchase": "1959-08-17",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1789167600
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1789167600
+      },
+      "hires": true,
+      "hires_streamable": true
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 16
+      },
+      "copyright": "Originally released 1959. All rights reserved by Columbia Records, a division of Sony Music Entertainment",
+      "performers": "Miles Davis, Associated Performer, Main Artist, Trumpet, Associated Performer, Trumpet\r - Irving Townsend, Producer\r - Jimmy Cobb, Drums\r - M. Davis, Composer, Lyricist\r - Bill Evans, Piano\r - Paul Chambers, Bass\r - Julian \"Cannonball\" Adderley, Alto Saxophone\r - John Coltrane, Tenor Saxophone",
+      "audio_info": {
+       "replaygain_track_peak": {
+        "py": "float",
+        "v": 0.944153
+       },
+       "replaygain_track_gain": {
+        "py": "float",
+        "v": -2.82
+       }
+      },
+      "performer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "album": {
+       "image": {
+        "small": "https://static.qobuz.com/images/covers/24/29/0696998682924_230.jpg",
+        "thumbnail": "https://static.qobuz.com/images/covers/24/29/0696998682924_50.jpg",
+        "large": "https://static.qobuz.com/images/covers/24/29/0696998682924_600.jpg"
+       },
+       "maximum_bit_depth": {
+        "py": "int",
+        "v": 16
+       },
+       "media_count": {
+        "py": "int",
+        "v": 1
+       },
+       "artist": {
+        "image": {
+         "py": "none"
+        },
+        "name": "Miles Davis",
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 5864
+        },
+        "slug": "miles-davis",
+        "picture": {
+         "py": "none"
+        }
+       },
+       "upc": "0696998682924",
+       "released_at": {
+        "py": "int",
+        "v": 1031004000
+       },
+       "label": {
+        "name": "Columbia/Legacy",
+        "id": {
+         "py": "int",
+         "v": 10106072
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 2356
+        },
+        "supplier_id": {
+         "py": "int",
+         "v": 23
+        },
+        "slug": "columbialegacy-1"
+       },
+       "title": "The Best Of Miles Davis",
+       "qobuz_id": {
+        "py": "int",
+        "v": 15124586
+       },
+       "version": {
+        "py": "none"
+       },
+       "duration": {
+        "py": "int",
+        "v": 4312
+       },
+       "parental_warning": false,
+       "tracks_count": {
+        "py": "int",
+        "v": 11
+       },
+       "genre": {
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "name": "Jazz",
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "slug": "jazz"
+       },
+       "maximum_channel_count": {
+        "py": "int",
+        "v": 2
+       },
+       "id": "0696998682924",
+       "maximum_sampling_rate": {
+        "py": "float",
+        "v": 44.1
+       },
+       "previewable": true,
+       "sampleable": true,
+       "displayable": true,
+       "streamable": true,
+       "streamable_at": {
+        "py": "int",
+        "v": 1786143600
+       },
+       "downloadable": false,
+       "purchasable_at": {
+        "py": "none"
+       },
+       "purchasable": false,
+       "release_date_original": "2002-09-03",
+       "release_date_download": "2002-09-03",
+       "release_date_stream": "2002-09-03",
+       "release_date_purchase": "2002-09-03",
+       "hires": false,
+       "hires_streamable": false,
+       "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+      },
+      "work": {
+       "py": "none"
+      },
+      "composer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "isrc": "USSM15900113",
+      "title": "So What",
+      "version": {
+       "py": "none"
+      },
+      "duration": {
+       "py": "int",
+       "v": 561
+      },
+      "parental_warning": false,
+      "track_number": {
+       "py": "int",
+       "v": 3
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": {
+       "py": "int",
+       "v": 15124594
+      },
+      "media_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_sampling_rate": {
+       "py": "float",
+       "v": 44.1
+      },
+      "release_date_original": "2002-09-03",
+      "release_date_download": "2002-09-03",
+      "release_date_stream": "2002-09-03",
+      "release_date_purchase": "2002-09-03",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1786143600
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1786143600
+      },
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "copyright": "2009 RevOla Records 2010 RevOla Records",
+      "performers": "Miles Davis, MainArtist - Downtown Music, MusicPublisher",
+      "audio_info": {
+       "replaygain_track_peak": {
+        "py": "int",
+        "v": 1
+       },
+       "replaygain_track_gain": {
+        "py": "float",
+        "v": -2.83
+       }
+      },
+      "performer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "album": {
+       "image": {
+        "small": "https://static.qobuz.com/images/covers/ra/ub/kbabn6g4zubra_230.jpg",
+        "thumbnail": "https://static.qobuz.com/images/covers/ra/ub/kbabn6g4zubra_50.jpg",
+        "large": "https://static.qobuz.com/images/covers/ra/ub/kbabn6g4zubra_600.jpg"
+       },
+       "maximum_bit_depth": {
+        "py": "int",
+        "v": 24
+       },
+       "media_count": {
+        "py": "int",
+        "v": 1
+       },
+       "artist": {
+        "image": {
+         "py": "none"
+        },
+        "name": "Miles Davis",
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 5872
+        },
+        "slug": "miles-davis",
+        "picture": {
+         "py": "none"
+        }
+       },
+       "upc": "5056321643032",
+       "released_at": {
+        "py": "int",
+        "v": 1627596000
+       },
+       "label": {
+        "name": "RevOla",
+        "id": {
+         "py": "int",
+         "v": 5626722
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 2683
+        },
+        "supplier_id": {
+         "py": "int",
+         "v": 249
+        },
+        "slug": "revola-1"
+       },
+       "title": "A Touch Of Blue",
+       "qobuz_id": {
+        "py": "int",
+        "v": 238180373
+       },
+       "version": "Remastered",
+       "duration": {
+        "py": "int",
+        "v": 3313
+       },
+       "parental_warning": false,
+       "tracks_count": {
+        "py": "int",
+        "v": 6
+       },
+       "genre": {
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "name": "Jazz",
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "slug": "jazz"
+       },
+       "maximum_channel_count": {
+        "py": "int",
+        "v": 2
+       },
+       "id": "kbabn6g4zubra",
+       "maximum_sampling_rate": {
+        "py": "int",
+        "v": 96
+       },
+       "previewable": true,
+       "sampleable": true,
+       "displayable": true,
+       "streamable": true,
+       "streamable_at": {
+        "py": "int",
+        "v": 1789167600
+       },
+       "downloadable": false,
+       "purchasable_at": {
+        "py": "none"
+       },
+       "purchasable": false,
+       "release_date_original": "2021-07-30",
+       "release_date_download": "2021-07-30",
+       "release_date_stream": "2021-07-30",
+       "release_date_purchase": "2021-07-30",
+       "hires": true,
+       "hires_streamable": true
+      },
+      "work": {
+       "py": "none"
+      },
+      "isrc": "UKPFB2004872",
+      "title": "So What?",
+      "version": "Remastered",
+      "duration": {
+       "py": "int",
+       "v": 562
+      },
+      "parental_warning": false,
+      "track_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": {
+       "py": "int",
+       "v": 238180374
+      },
+      "media_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_sampling_rate": {
+       "py": "int",
+       "v": 96
+      },
+      "release_date_original": "2021-07-30",
+      "release_date_download": "2021-07-30",
+      "release_date_stream": "2021-07-30",
+      "release_date_purchase": "2021-07-30",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1789167600
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1789167600
+      },
+      "hires": true,
+      "hires_streamable": true
+     },
+     {
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 16
+      },
+      "copyright": "(C) 2009 Saland Publishing (P) 2009 Saland Publishing",
+      "performers": "Davis, Composer - Miles Davis, MainArtist - Copyright Control, MusicPublisher",
+      "audio_info": {
+       "replaygain_track_peak": {
+        "py": "int",
+        "v": 1
+       },
+       "replaygain_track_gain": {
+        "py": "int",
+        "v": -1
+       }
+      },
+      "performer": {
+       "name": "Miles Davis",
+       "id": {
+        "py": "int",
+        "v": 6760
+       }
+      },
+      "album": {
+       "image": {
+        "small": "https://static.qobuz.com/images/covers/54/16/5060122331654_230.jpg",
+        "thumbnail": "https://static.qobuz.com/images/covers/54/16/5060122331654_50.jpg",
+        "large": "https://static.qobuz.com/images/covers/54/16/5060122331654_600.jpg"
+       },
+       "maximum_bit_depth": {
+        "py": "int",
+        "v": 16
+       },
+       "media_count": {
+        "py": "int",
+        "v": 1
+       },
+       "artist": {
+        "image": {
+         "py": "none"
+        },
+        "name": "Miles Davis",
+        "id": {
+         "py": "int",
+         "v": 6760
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 5839
+        },
+        "slug": "miles-davis",
+        "picture": {
+         "py": "none"
+        }
+       },
+       "upc": "5060122331654",
+       "released_at": {
+        "py": "int",
+        "v": 1234134000
+       },
+       "label": {
+        "name": "Past Classics Jazz",
+        "id": {
+         "py": "int",
+         "v": 12114
+        },
+        "albums_count": {
+         "py": "int",
+         "v": 249
+        },
+        "supplier_id": {
+         "py": "int",
+         "v": 17
+        },
+        "slug": "past-classics-jazz"
+       },
+       "title": "The Essential Miles Davis Collection",
+       "qobuz_id": {
+        "py": "int",
+        "v": 4047585
+       },
+       "version": {
+        "py": "none"
+       },
+       "duration": {
+        "py": "int",
+        "v": 3374
+       },
+       "parental_warning": false,
+       "tracks_count": {
+        "py": "int",
+        "v": 12
+       },
+       "genre": {
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "name": "Jazz",
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "slug": "jazz"
+       },
+       "maximum_channel_count": {
+        "py": "int",
+        "v": 2
+       },
+       "id": "5060122331654",
+       "maximum_sampling_rate": {
+        "py": "float",
+        "v": 44.1
+       },
+       "previewable": true,
+       "sampleable": true,
+       "displayable": true,
+       "streamable": true,
+       "streamable_at": {
+        "py": "int",
+        "v": 1778713200
+       },
+       "downloadable": false,
+       "purchasable_at": {
+        "py": "none"
+       },
+       "purchasable": false,
+       "release_date_original": "2009-02-09",
+       "release_date_download": "2009-02-09",
+       "release_date_stream": "2009-02-09",
+       "release_date_purchase": "2009-02-09",
+       "hires": false,
+       "hires_streamable": false,
+       "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+      },
+      "work": {
+       "py": "none"
+      },
+      "composer": {
+       "name": "Davis",
+       "id": {
+        "py": "int",
+        "v": 74813
+       }
+      },
+      "isrc": "GBMNA0910857",
+      "title": "So What",
+      "version": {
+       "py": "none"
+      },
+      "duration": {
+       "py": "int",
+       "v": 560
+      },
+      "parental_warning": false,
+      "track_number": {
+       "py": "int",
+       "v": 12
+      },
+      "maximum_channel_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": {
+       "py": "int",
+       "v": 4047597
+      },
+      "media_number": {
+       "py": "int",
+       "v": 1
+      },
+      "maximum_sampling_rate": {
+       "py": "float",
+       "v": 44.1
+      },
+      "release_date_original": "2009-02-09",
+      "release_date_download": "2009-02-09",
+      "release_date_stream": "2009-02-09",
+      "release_date_purchase": "2009-02-09",
+      "purchasable": true,
+      "streamable": true,
+      "previewable": true,
+      "sampleable": true,
+      "downloadable": true,
+      "displayable": true,
+      "purchasable_at": {
+       "py": "int",
+       "v": 1778713200
+      },
+      "streamable_at": {
+       "py": "int",
+       "v": 1778713200
+      },
+      "hires": false,
+      "hires_streamable": false,
+      "maximum_technical_specifications": "16 bits / 44.1 kHz - Stereo "
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Miles Davis            So What                               Track      1959   [HI-RES] 24b/192kHz",
+     "url": "https://play.qobuz.com/track/13176083"
+    },
+    {
+     "text": "Miles Davis            So What (Album Version)               Track      2009   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/track/13274"
+    },
+    {
+     "text": "Miles Davis            So What                               Track      2018   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/track/48097770"
+    },
+    {
+     "text": "Miles Davis            So What (Mono Version)                Track      1959   [HI-RES] 24b/96kHz",
+     "url": "https://play.qobuz.com/track/20273753"
+    },
+    {
+     "text": "Miles Davis            So What (Mono Version)                Track      1959   [HI-RES] 24b/192kHz",
+     "url": "https://play.qobuz.com/track/20273759"
+    },
+    {
+     "text": "Miles Davis            So What (Studio Sequence 1)           Track      2018   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/track/48097779"
+    },
+    {
+     "text": "Miles Davis            So What? (Remastered)                 Track      1959   [HI-RES] 24b/44.1kHz",
+     "url": "https://play.qobuz.com/track/238062270"
+    },
+    {
+     "text": "Miles Davis            So What                               Track      2002   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/track/15124594"
+    },
+    {
+     "text": "Miles Davis            So What? (Remastered)                 Track      2021   [HI-RES] 24b/96kHz",
+     "url": "https://play.qobuz.com/track/238180374"
+    },
+    {
+     "text": "Miles Davis            So What                               Track      2009   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/track/4047597"
+    }
+   ]
+  },
+  {
+   "name": "recorded artists",
+   "input": {
+    "type": "artist",
+    "items": [
+     {
+      "picture": "https://static.qobuz.com/images/artists/covers/small/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+      "image": {
+       "small": "https://static.qobuz.com/images/artists/covers/small/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+       "medium": "https://static.qobuz.com/images/artists/covers/medium/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+       "large": "https://static.qobuz.com/images/artists/covers/large/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+       "extralarge": "https://static.qobuz.com/images/artists/covers/large/33a9c9bc1f351aa593ac0f7658299e27.jpg",
+       "mega": "https://static.qobuz.com/images/artists/covers/large/33a9c9bc1f351aa593ac0f7658299e27.jpg"
+      },
+      "name": "Miles Davis",
+      "slug": "miles-davis",
+      "albums_count": {
+       "py": "int",
+       "v": 5880
+      },
+      "id": {
+       "py": "int",
+       "v": 6760
+      }
+     },
+     {
+      "picture": "https://static.qobuz.com/images/artists/covers/small/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+      "image": {
+       "small": "https://static.qobuz.com/images/artists/covers/small/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+       "medium": "https://static.qobuz.com/images/artists/covers/medium/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+       "large": "https://static.qobuz.com/images/artists/covers/large/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+       "extralarge": "https://static.qobuz.com/images/artists/covers/large/cf5e1961e8386b7b549d4260d4d9e570.jpg",
+       "mega": "https://static.qobuz.com/images/artists/covers/large/cf5e1961e8386b7b549d4260d4d9e570.jpg"
+      },
+      "name": "Miles Davis Quintet",
+      "slug": "miles-davis-quintet",
+      "albums_count": {
+       "py": "int",
+       "v": 405
+      },
+      "id": {
+       "py": "int",
+       "v": 50709
+      }
+     },
+     {
+      "picture": {
+       "py": "none"
+      },
+      "image": {
+       "py": "none"
+      },
+      "name": "Miles Davis (trumpet), Barney Wilen (tenor sax), Rene Urtreger (piano), Pierre Michelot (bass), Kenny Clarke (drums)",
+      "slug": "miles-davis-trumpet-barney-wilen-tenor-sax-rene-urtreger-piano-pierre-michelot-bass-kenny-clarke-drums",
+      "albums_count": {
+       "py": "int",
+       "v": 1
+      },
+      "id": {
+       "py": "int",
+       "v": 8720258
+      }
+     },
+     {
+      "picture": "https://static.qobuz.com/images/artists/covers/small/e8312df4c6188b27a7b08dbb2bcf1bf9.jpg",
+      "image": {
+       "small": "https://static.qobuz.com/images/artists/covers/small/e8312df4c6188b27a7b08dbb2bcf1bf9.jpg",
+       "medium": "https://static.qobuz.com/images/artists/covers/medium/e8312df4c6188b27a7b08dbb2bcf1bf9.jpg",
+       "large": "https://static.qobuz.com/images/artists/covers/large/e8312df4c6188b27a7b08dbb2bcf1bf9.jpg",
+       "extralarge": "https://static.qobuz.com/images/artists/covers/large/e8312df4c6188b27a7b08dbb2bcf1bf9.jpg",
+       "mega": "https://static.qobuz.com/images/artists/covers/large/e8312df4c6188b27a7b08dbb2bcf1bf9.jpg"
+      },
+      "name": "Miles Davis, John Coltrane",
+      "slug": "miles-davis-john-coltrane-4",
+      "albums_count": {
+       "py": "int",
+       "v": 7
+      },
+      "id": {
+       "py": "int",
+       "v": 496443
+      }
+     },
+     {
+      "picture": "https://static.qobuz.com/images/artists/covers/small/4169339a29efc2ee028d8e78db7fd959.jpg",
+      "image": {
+       "small": "https://static.qobuz.com/images/artists/covers/small/4169339a29efc2ee028d8e78db7fd959.jpg",
+       "medium": "https://static.qobuz.com/images/artists/covers/medium/4169339a29efc2ee028d8e78db7fd959.jpg",
+       "large": "https://static.qobuz.com/images/artists/covers/large/4169339a29efc2ee028d8e78db7fd959.jpg",
+       "extralarge": "https://static.qobuz.com/images/artists/covers/large/4169339a29efc2ee028d8e78db7fd959.jpg",
+       "mega": "https://static.qobuz.com/images/artists/covers/large/4169339a29efc2ee028d8e78db7fd959.jpg"
+      },
+      "name": "Charlie Parker and Miles Davis",
+      "slug": "charlie-parker-and-miles-davis",
+      "albums_count": {
+       "py": "int",
+       "v": 7
+      },
+      "id": {
+       "py": "int",
+       "v": 833836
+      }
+     },
+     {
+      "picture": {
+       "py": "none"
+      },
+      "image": {
+       "py": "none"
+      },
+      "name": "Miles Davis and the Modern Jazz Giants",
+      "slug": "miles-davis-and-the-modern-jazz-giants",
+      "albums_count": {
+       "py": "int",
+       "v": 4
+      },
+      "id": {
+       "py": "int",
+       "v": 1756721
+      }
+     },
+     {
+      "picture": "https://static.qobuz.com/images/artists/covers/small/b52a5f4bc1371240940c280a70cdfda0.jpg",
+      "image": {
+       "small": "https://static.qobuz.com/images/artists/covers/small/b52a5f4bc1371240940c280a70cdfda0.jpg",
+       "medium": "https://static.qobuz.com/images/artists/covers/medium/b52a5f4bc1371240940c280a70cdfda0.jpg",
+       "large": "https://static.qobuz.com/images/artists/covers/large/b52a5f4bc1371240940c280a70cdfda0.jpg",
+       "extralarge": "https://static.qobuz.com/images/artists/covers/large/b52a5f4bc1371240940c280a70cdfda0.jpg",
+       "mega": "https://static.qobuz.com/images/artists/covers/large/b52a5f4bc1371240940c280a70cdfda0.jpg"
+      },
+      "name": "Miles Davis & John Coltrane",
+      "slug": "miles-davis-john-coltrane-6",
+      "albums_count": {
+       "py": "int",
+       "v": 7
+      },
+      "id": {
+       "py": "int",
+       "v": 35606
+      }
+     },
+     {
+      "picture": {
+       "py": "none"
+      },
+      "image": {
+       "py": "none"
+      },
+      "name": "Miles Davis & Gil Evans Orchestra",
+      "slug": "miles-davis-gil-evans-orchestra",
+      "albums_count": {
+       "py": "int",
+       "v": 2
+      },
+      "id": {
+       "py": "int",
+       "v": 972894
+      }
+     },
+     {
+      "picture": {
+       "py": "none"
+      },
+      "image": {
+       "py": "none"
+      },
+      "name": "Miles Davis and his favorite Tenors",
+      "slug": "miles-davis-and-his-favorite-tenors",
+      "albums_count": {
+       "py": "int",
+       "v": 20
+      },
+      "id": {
+       "py": "int",
+       "v": 7846586
+      }
+     },
+     {
+      "picture": {
+       "py": "none"
+      },
+      "image": {
+       "py": "none"
+      },
+      "name": "Miles Davis, Yo-Yo Ma, Carlo Maria Giulini, Dave Brubeck",
+      "slug": "milesdavisyo-yomacarlomariagiulinidavebrubeck-10003535435",
+      "albums_count": {
+       "py": "int",
+       "v": 1
+      },
+      "id": {
+       "py": "int",
+       "v": 3535435
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Miles Davis                                          5880 albums",
+     "url": "https://play.qobuz.com/artist/6760"
+    },
+    {
+     "text": "Miles Davis Quintet                                  405 albums",
+     "url": "https://play.qobuz.com/artist/50709"
+    },
+    {
+     "text": "Miles Davis (trumpet), Barney Wilen (tenor sax)...   1 albums",
+     "url": "https://play.qobuz.com/artist/8720258"
+    },
+    {
+     "text": "Miles Davis, John Coltrane                           7 albums",
+     "url": "https://play.qobuz.com/artist/496443"
+    },
+    {
+     "text": "Charlie Parker and Miles Davis                       7 albums",
+     "url": "https://play.qobuz.com/artist/833836"
+    },
+    {
+     "text": "Miles Davis and the Modern Jazz Giants               4 albums",
+     "url": "https://play.qobuz.com/artist/1756721"
+    },
+    {
+     "text": "Miles Davis & John Coltrane                          7 albums",
+     "url": "https://play.qobuz.com/artist/35606"
+    },
+    {
+     "text": "Miles Davis & Gil Evans Orchestra                    2 albums",
+     "url": "https://play.qobuz.com/artist/972894"
+    },
+    {
+     "text": "Miles Davis and his favorite Tenors                  20 albums",
+     "url": "https://play.qobuz.com/artist/7846586"
+    },
+    {
+     "text": "Miles Davis, Yo-Yo Ma, Carlo Maria Giulini, Dav...   1 albums",
+     "url": "https://play.qobuz.com/artist/3535435"
+    }
+   ]
+  },
+  {
+   "name": "recorded playlists",
+   "input": {
+    "type": "playlist",
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 17495305
+      },
+      "name": "Qobuz Club: Jazz For A Rainy Day",
+      "description": "Discover a selection of jazz for a rainy day curated by Qobuz Club!\r\nQobuz Club is the exclusive online club for audiophiles and music lovers.",
+      "tracks_count": {
+       "py": "int",
+       "v": 30
+      },
+      "users_count": {
+       "py": "int",
+       "v": 2151
+      },
+      "duration": {
+       "py": "int",
+       "v": 10441
+      },
+      "public_at": {
+       "py": "int",
+       "v": 1698012000
+      },
+      "created_at": {
+       "py": "int",
+       "v": 1698065509
+      },
+      "updated_at": {
+       "py": "int",
+       "v": 1793707381
+      },
+      "is_public": true,
+      "is_collaborative": false,
+      "owner": {
+       "id": {
+        "py": "int",
+        "v": 2097315
+       },
+       "name": "Qobuz Club"
+      },
+      "indexed_at": {
+       "py": "int",
+       "v": 1793707381
+      },
+      "slug": "qobuz-club-jazz-for-a-rainy-day",
+      "genres": [
+       {
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "name": "Jazz",
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "slug": "jazz"
+       }
+      ],
+      "images": [
+       "https://static.qobuz.com/images/covers/ba/9w/kni3a999e9wba_50.jpg",
+       "https://static.qobuz.com/images/covers/ub/wb/toi2zbudxwbub_50.jpg",
+       "https://static.qobuz.com/images/covers/va/bq/sr1a81pyqbqva_50.jpg",
+       "https://static.qobuz.com/images/covers/ab/9w/tt4kc3v4u9wab_50.jpg"
+      ],
+      "is_published": true,
+      "is_featured": true,
+      "published_from": {
+       "py": "int",
+       "v": 1697134560
+      },
+      "published_to": {
+       "py": "int",
+       "v": 1893518160
+      },
+      "stores": [
+       "AU-en",
+       "NZ-en",
+       "DK-en",
+       "FI-en",
+       "NO-en",
+       "SE-en",
+       "BE-nl",
+       "NL-nl",
+       "GB-en",
+       "IE-en",
+       "US-en",
+       "CA-en",
+       "ES-es",
+       "AR-es",
+       "CL-es",
+       "CO-es",
+       "MX-es",
+       "AT-de",
+       "CH-de",
+       "DE-de",
+       "LU-de",
+       "BR-pt",
+       "PT-pt",
+       "IT-it"
+      ],
+      "tags": [
+       {
+        "featured_tag_id": "24",
+        "name_json": "{\"fr\":\"Humeurs\",\"en\":\"Moods\",\"de\":\"Moods\",\"it\":\"Umori\",\"nl\":\"Moods\",\"es\":\"Humores\",\"pt\":\"Moods\",\"pl\":\"Nastr\\u00f3j\",\"ja\":\"\\u30e0\\u30fc\\u30c9\"}",
+        "slug": "mood",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "14",
+        "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+        "slug": "jazz",
+        "genre_tag": {
+         "genre_id": "80",
+         "name": "Jazz"
+        },
+        "is_discover": false
+       }
+      ],
+      "image_rectangle": [
+       "https://static.qobuz.com/images/playlists/17495305_3f4bfd309b47fc75e49d4c20f8fbe140_rectangle.jpg"
+      ],
+      "image_rectangle_mini": [
+       "https://static.qobuz.com/images/playlists/17495305_3f4bfd309b47fc75e49d4c20f8fbe140_rectangle_mini.jpg"
+      ],
+      "featured_artists": [],
+      "timestamp_position": {
+       "py": "int",
+       "v": 1697134560
+      },
+      "images150": [
+       "https://static.qobuz.com/images/covers/ba/9w/kni3a999e9wba_150.jpg",
+       "https://static.qobuz.com/images/covers/ub/wb/toi2zbudxwbub_150.jpg",
+       "https://static.qobuz.com/images/covers/va/bq/sr1a81pyqbqva_150.jpg",
+       "https://static.qobuz.com/images/covers/ab/9w/tt4kc3v4u9wab_150.jpg"
+      ],
+      "images300": [
+       "https://static.qobuz.com/images/covers/ba/9w/kni3a999e9wba_300.jpg",
+       "https://static.qobuz.com/images/covers/ub/wb/toi2zbudxwbub_300.jpg",
+       "https://static.qobuz.com/images/covers/va/bq/sr1a81pyqbqva_300.jpg",
+       "https://static.qobuz.com/images/covers/ab/9w/tt4kc3v4u9wab_300.jpg"
+      ]
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 15378564
+      },
+      "name": "50 Jazz Tracks to Test your Speakers",
+      "description": "Get the most out of your audio system with this 100% Hi-Res selection of 50 instrumental and vocal Jazz tracks that will test the limits of your equipment's capabilities and bring out its full potential.\r\n\r\nFeaturing Art Blakey & The Jazz Messengers, John Coltrane, Stan Getz, Miles Davis, Charles Mingus, Sonny Rollins, Lee Morgan, Ben Webster, Herbie Hancock, Manu Katché, Avishai Cohen, Lee Ritenour, Michel Petrucciani, High Pulp, DOMi & JD BECK, Sons of Kemet, Ezra Collective, Ibrahim Maalouf, Nina Simone, Melody Gardot, Diana Krall, Musica Nuda, Gregory Porter, José James…",
+      "tracks_count": {
+       "py": "int",
+       "v": 50
+      },
+      "users_count": {
+       "py": "int",
+       "v": 2090
+      },
+      "duration": {
+       "py": "int",
+       "v": 17325
+      },
+      "public_at": {
+       "py": "int",
+       "v": 1685570400
+      },
+      "created_at": {
+       "py": "int",
+       "v": 1685614396
+      },
+      "updated_at": {
+       "py": "int",
+       "v": 1793640701
+      },
+      "is_public": true,
+      "is_collaborative": false,
+      "owner": {
+       "id": {
+        "py": "int",
+        "v": 263468
+       },
+       "name": "Qobuz UK"
+      },
+      "indexed_at": {
+       "py": "int",
+       "v": 1793707483
+      },
+      "slug": "50-jazz-tracks-to-test-your-speakers",
+      "genres": [
+       {
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "name": "Jazz",
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "slug": "jazz"
+       }
+      ],
+      "images": [
+       "https://static.qobuz.com/images/covers/43/08/0060253740843_50.jpg",
+       "https://static.qobuz.com/images/covers/nb/oc/lzup2upxyocnb_50.jpg",
+       "https://static.qobuz.com/images/covers/2a/q4/tr097unrzq42a_50.jpg",
+       "https://static.qobuz.com/images/covers/28/44/0886443874428_50.jpg"
+      ],
+      "is_published": true,
+      "is_featured": true,
+      "published_from": {
+       "py": "int",
+       "v": 1757110200
+      },
+      "published_to": {
+       "py": "int",
+       "v": 1893496440
+      },
+      "stores": [
+       "BE-nl",
+       "NL-nl",
+       "GB-en",
+       "IE-en"
+      ],
+      "tags": [
+       {
+        "featured_tag_id": "84",
+        "name_json": "{\"fr\":\"Testez vos enceintes\",\"en\":\"Test your speakers\",\"de\":\"Testen Ihrer Lautsprecher\",\"it\":\"Prova i tuoi diffusori\",\"nl\":\"Test your speakers\",\"es\":\"Prueba tus altavoces\",\"pt\":\"Teste os seus som\",\"pl\":\"Przetestuj swoje g\\u0142o\\u015bniki\",\"ja\":\"Test you speakers\"}",
+        "slug": "speakers",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "20",
+        "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+        "slug": "focus",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "51",
+        "name_json": "{\"fr\":\"Hi-Res\",\"en\":\"Hi-Res\",\"de\":\"Hi-Res\",\"it\":\"Hi-Res\",\"nl\":\"Hi-Res\",\"es\":\"Hi-Res\",\"pt\":\"Hi-Res\",\"pl\":\"Hi-Res\",\"ja\":\"\\u30cf\\u30a4\\u30ec\\u30be\"}",
+        "slug": "hi-res",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "41",
+        "name_json": "{\"fr\":\"Top playlists\",\"en\":\"Top playlists\",\"de\":\"Top Playlists\",\"it\":\"Top playlists\",\"nl\":\"Top playlists\",\"es\":\"Top playlists\",\"pt\":\"Top playlists\",\"pl\":\"Najpopularniejsze\",\"ja\":\"\\u30c8\\u30c3\\u30d7\\u30fb\\u30d7\\u30ec\\u30a4\\u30ea\\u30b9\\u30c8\"}",
+        "slug": "popular",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "14",
+        "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+        "slug": "jazz",
+        "genre_tag": {
+         "genre_id": "80",
+         "name": "Jazz"
+        },
+        "is_discover": false
+       }
+      ],
+      "image_rectangle": [
+       "https://static.qobuz.com/images/playlists/15378564_c6b68acb17eaf803f1f391a8bc765c42_rectangle.jpg"
+      ],
+      "image_rectangle_mini": [
+       "https://static.qobuz.com/images/playlists/15378564_c6b68acb17eaf803f1f391a8bc765c42_rectangle_mini.jpg"
+      ],
+      "featured_artists": [],
+      "timestamp_position": {
+       "py": "int",
+       "v": 1757110200
+      },
+      "images150": [
+       "https://static.qobuz.com/images/covers/43/08/0060253740843_150.jpg",
+       "https://static.qobuz.com/images/covers/nb/oc/lzup2upxyocnb_150.jpg",
+       "https://static.qobuz.com/images/covers/2a/q4/tr097unrzq42a_150.jpg",
+       "https://static.qobuz.com/images/covers/28/44/0886443874428_150.jpg"
+      ],
+      "images300": [
+       "https://static.qobuz.com/images/covers/43/08/0060253740843_300.jpg",
+       "https://static.qobuz.com/images/covers/nb/oc/lzup2upxyocnb_300.jpg",
+       "https://static.qobuz.com/images/covers/2a/q4/tr097unrzq42a_300.jpg",
+       "https://static.qobuz.com/images/covers/28/44/0886443874428_300.jpg"
+      ]
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 4824894
+      },
+      "name": "Hi-Res Masters: Jazz Essentials",
+      "description": "Enjoy Jazz music's finest in the best possible audio quality. 70 legendary tracks in Hi-Res, including Miles Davis, John Coltrane, Duke Ellington, Thelonious Monk, Bill Evans Trio, Art Blakey & The Jazz Messengers, Ornette Coleman, Charles Mingus, Cannonball Adderley, Wayne Shorter, Wes Montgomery, Coleman Hawkins, Herbie Hancock, Ray Charles, Keith Jarrett, Stan Getz, Nina Simone, Louis Armstrong, Ella Fitzgerald, Diana Krall, Norah Jones, Billie Holiday…\r\n\r\n<br><br>Photo : John Coltrane",
+      "tracks_count": {
+       "py": "int",
+       "v": 70
+      },
+      "users_count": {
+       "py": "int",
+       "v": 1989
+      },
+      "duration": {
+       "py": "int",
+       "v": 26246
+      },
+      "public_at": {
+       "py": "int",
+       "v": 1603666800
+      },
+      "created_at": {
+       "py": "int",
+       "v": 1603706232
+      },
+      "updated_at": {
+       "py": "int",
+       "v": 1793564452
+      },
+      "is_public": true,
+      "is_collaborative": false,
+      "owner": {
+       "id": {
+        "py": "int",
+        "v": 263468
+       },
+       "name": "Qobuz UK"
+      },
+      "indexed_at": {
+       "py": "int",
+       "v": 1793707515
+      },
+      "slug": "hi-res-masters-jazz-essentials",
+      "genres": [
+       {
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "name": "Jazz",
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "slug": "jazz"
+       }
+      ],
+      "images": [
+       "https://static.qobuz.com/images/covers/37/38/0060254733837_50.jpg",
+       "https://static.qobuz.com/images/covers/26/51/0886446175126_50.jpg",
+       "https://static.qobuz.com/images/covers/ob/r9/gkvekvn5rr9ob_50.jpg",
+       "https://static.qobuz.com/images/covers/88/09/0060253780988_50.jpg"
+      ],
+      "is_published": true,
+      "is_featured": true,
+      "published_from": {
+       "py": "int",
+       "v": 1745820300
+      },
+      "published_to": {
+       "py": "int",
+       "v": 2145913200
+      },
+      "stores": [
+       "BE-nl",
+       "NL-nl",
+       "GB-en",
+       "IE-en"
+      ],
+      "tags": [
+       {
+        "featured_tag_id": "20",
+        "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+        "slug": "focus",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "51",
+        "name_json": "{\"fr\":\"Hi-Res\",\"en\":\"Hi-Res\",\"de\":\"Hi-Res\",\"it\":\"Hi-Res\",\"nl\":\"Hi-Res\",\"es\":\"Hi-Res\",\"pt\":\"Hi-Res\",\"pl\":\"Hi-Res\",\"ja\":\"\\u30cf\\u30a4\\u30ec\\u30be\"}",
+        "slug": "hi-res",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "41",
+        "name_json": "{\"fr\":\"Top playlists\",\"en\":\"Top playlists\",\"de\":\"Top Playlists\",\"it\":\"Top playlists\",\"nl\":\"Top playlists\",\"es\":\"Top playlists\",\"pt\":\"Top playlists\",\"pl\":\"Najpopularniejsze\",\"ja\":\"\\u30c8\\u30c3\\u30d7\\u30fb\\u30d7\\u30ec\\u30a4\\u30ea\\u30b9\\u30c8\"}",
+        "slug": "popular",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "14",
+        "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+        "slug": "jazz",
+        "genre_tag": {
+         "genre_id": "80",
+         "name": "Jazz"
+        },
+        "is_discover": false
+       },
+       {
+        "featured_tag_id": "83",
+        "name_json": "{\"fr\":\"Journ\\u00e9e internationale du jazz\",\"en\":\"International Jazz Day\",\"de\":\"Internationaler Tag des Jazz\",\"it\":\"Giornata internazionale del jazz\",\"nl\":\"International Jazz Day\",\"es\":\"D\\u00eda Internacional del Jazz\",\"pt\":\"Dia Internacional do Jazz\",\"ja\":\"\\u56fd\\u969b\\u30b8\\u30e3\\u30ba\\u30fb\\u30c7\\u30fc\"}",
+        "slug": "jazzday",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": false
+       }
+      ],
+      "image_rectangle": [
+       "https://static.qobuz.com/images/playlists/4824894_8facf5ad6a4267977d9710618d11685c_rectangle.jpg"
+      ],
+      "image_rectangle_mini": [
+       "https://static.qobuz.com/images/playlists/4824894_8facf5ad6a4267977d9710618d11685c_rectangle_mini.jpg"
+      ],
+      "featured_artists": [],
+      "timestamp_position": {
+       "py": "int",
+       "v": 1745820300
+      },
+      "images150": [
+       "https://static.qobuz.com/images/covers/37/38/0060254733837_150.jpg",
+       "https://static.qobuz.com/images/covers/26/51/0886446175126_150.jpg",
+       "https://static.qobuz.com/images/covers/ob/r9/gkvekvn5rr9ob_150.jpg",
+       "https://static.qobuz.com/images/covers/88/09/0060253780988_150.jpg"
+      ],
+      "images300": [
+       "https://static.qobuz.com/images/covers/37/38/0060254733837_300.jpg",
+       "https://static.qobuz.com/images/covers/26/51/0886446175126_300.jpg",
+       "https://static.qobuz.com/images/covers/ob/r9/gkvekvn5rr9ob_300.jpg",
+       "https://static.qobuz.com/images/covers/88/09/0060253780988_300.jpg"
+      ]
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 6029200
+      },
+      "name": "Best of 192 kHz: Jazz",
+      "description": "Rediscover the greatest jazz classics in the highest sound quality, featuring masterpieces by Duke Ellington, Bill Evans, Miles Davis, John Coltrane, Herbie Hancock, Charles Mingus, Ornette Coleman, McCoy Tyner, Freddie Hubbard, Thelonious Monk, Baden Powell, Chat Baker, Billie Holiday, Quincy Jones, Stan Getz, Oscar Peterson, Diana Krall, Ella Fitzgerald, Dexter Gordon, Art Blakey, Wayne Shorter, Nat King Cole, Louis Armstrong, Nina Simone, Norah Jones and many more in 192 kHz!\r\n\r\nPhoto: Ornette Coleman © William Claxton / Atlantic Records",
+      "tracks_count": {
+       "py": "int",
+       "v": 80
+      },
+      "users_count": {
+       "py": "int",
+       "v": 1298
+      },
+      "duration": {
+       "py": "int",
+       "v": 24866
+      },
+      "public_at": {
+       "py": "int",
+       "v": 1618783200
+      },
+      "created_at": {
+       "py": "int",
+       "v": 1618844035
+      },
+      "updated_at": {
+       "py": "int",
+       "v": 1793656094
+      },
+      "is_public": true,
+      "is_collaborative": false,
+      "owner": {
+       "id": {
+        "py": "int",
+        "v": 263468
+       },
+       "name": "Qobuz UK"
+      },
+      "indexed_at": {
+       "py": "int",
+       "v": 1793707547
+      },
+      "slug": "best-of-192-khz-jazz",
+      "genres": [
+       {
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "name": "Jazz",
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "slug": "jazz"
+       }
+      ],
+      "images": [
+       "https://static.qobuz.com/images/covers/39/69/0603497936939_50.jpg",
+       "https://static.qobuz.com/images/covers/85/48/0060254714885_50.jpg",
+       "https://static.qobuz.com/images/covers/58/64/0060254706458_50.jpg",
+       "https://static.qobuz.com/images/covers/08/48/0060253764808_50.jpg"
+      ],
+      "is_published": true,
+      "is_featured": true,
+      "published_from": {
+       "py": "int",
+       "v": 1775257200
+      },
+      "published_to": {
+       "py": "int",
+       "v": 1893491760
+      },
+      "stores": [
+       "BE-nl",
+       "NL-nl",
+       "GB-en",
+       "IE-en"
+      ],
+      "tags": [
+       {
+        "featured_tag_id": "20",
+        "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+        "slug": "focus",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "51",
+        "name_json": "{\"fr\":\"Hi-Res\",\"en\":\"Hi-Res\",\"de\":\"Hi-Res\",\"it\":\"Hi-Res\",\"nl\":\"Hi-Res\",\"es\":\"Hi-Res\",\"pt\":\"Hi-Res\",\"pl\":\"Hi-Res\",\"ja\":\"\\u30cf\\u30a4\\u30ec\\u30be\"}",
+        "slug": "hi-res",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "41",
+        "name_json": "{\"fr\":\"Top playlists\",\"en\":\"Top playlists\",\"de\":\"Top Playlists\",\"it\":\"Top playlists\",\"nl\":\"Top playlists\",\"es\":\"Top playlists\",\"pt\":\"Top playlists\",\"pl\":\"Najpopularniejsze\",\"ja\":\"\\u30c8\\u30c3\\u30d7\\u30fb\\u30d7\\u30ec\\u30a4\\u30ea\\u30b9\\u30c8\"}",
+        "slug": "popular",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "14",
+        "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+        "slug": "jazz",
+        "genre_tag": {
+         "genre_id": "80",
+         "name": "Jazz"
+        },
+        "is_discover": false
+       }
+      ],
+      "image_rectangle": [
+       "https://static.qobuz.com/images/playlists/6029200_2f6fb357ecb4977f34fc276dd85a0a16_rectangle.jpg"
+      ],
+      "image_rectangle_mini": [
+       "https://static.qobuz.com/images/playlists/6029200_2f6fb357ecb4977f34fc276dd85a0a16_rectangle_mini.jpg"
+      ],
+      "featured_artists": [],
+      "timestamp_position": {
+       "py": "int",
+       "v": 1775257200
+      },
+      "images150": [
+       "https://static.qobuz.com/images/covers/39/69/0603497936939_150.jpg",
+       "https://static.qobuz.com/images/covers/85/48/0060254714885_150.jpg",
+       "https://static.qobuz.com/images/covers/58/64/0060254706458_150.jpg",
+       "https://static.qobuz.com/images/covers/08/48/0060253764808_150.jpg"
+      ],
+      "images300": [
+       "https://static.qobuz.com/images/covers/39/69/0603497936939_300.jpg",
+       "https://static.qobuz.com/images/covers/85/48/0060254714885_300.jpg",
+       "https://static.qobuz.com/images/covers/58/64/0060254706458_300.jpg",
+       "https://static.qobuz.com/images/covers/08/48/0060253764808_300.jpg"
+      ]
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 5688531
+      },
+      "name": "Hi-Res Masters: Vocal Jazz Essentials",
+      "description": "Enjoy Vocal Jazz's finest in the best possible audio quality with our selection of legendary tracks in Hi-Res, featuring Nina Simone, Billie Holiday, Nat King Cole, Sarah Vaughan, Chet Baker, Ella Fitzgerald, Louis Armstrong, Frank Sinatra, Peggy Lee, Mel Tormé, Blossom Dearie, Dizzy Gillespie, Nancy Wilson, Anita O'Day, Billy Eckstine, Chris Connor, Tony Bennett, Dinah Washington, Ray Charles, Diana Krall, Jamie Cullum, Norah Jones, Michael Bublé, Melody Gardot, Gregory Porter, Kat Edmonson…\r\n<br><br>Photo: Billie Holiday",
+      "tracks_count": {
+       "py": "int",
+       "v": 75
+      },
+      "users_count": {
+       "py": "int",
+       "v": 1278
+      },
+      "duration": {
+       "py": "int",
+       "v": 17988
+      },
+      "public_at": {
+       "py": "int",
+       "v": 1612306800
+      },
+      "created_at": {
+       "py": "int",
+       "v": 1612372391
+      },
+      "updated_at": {
+       "py": "int",
+       "v": 1793564458
+      },
+      "is_public": true,
+      "is_collaborative": false,
+      "owner": {
+       "id": {
+        "py": "int",
+        "v": 263468
+       },
+       "name": "Qobuz UK"
+      },
+      "indexed_at": {
+       "py": "int",
+       "v": 1793707570
+      },
+      "slug": "hi-res-masters-vocal-jazz-essentials",
+      "genres": [
+       {
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "name": "Jazz",
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "slug": "jazz"
+       }
+      ],
+      "images": [
+       "https://static.qobuz.com/images/covers/1b/dy/cqnizhlwddy1b_50.jpg",
+       "https://static.qobuz.com/images/covers/64/71/0886445127164_50.jpg",
+       "https://static.qobuz.com/images/covers/oa/bp/maw7ul1wqbpoa_50.jpg",
+       "https://static.qobuz.com/images/covers/76/27/0060253772776_50.jpg"
+      ],
+      "is_published": true,
+      "is_featured": true,
+      "published_from": {
+       "py": "int",
+       "v": 1783807500
+      },
+      "published_to": {
+       "py": "int",
+       "v": 1893510600
+      },
+      "stores": [
+       "BE-nl",
+       "NL-nl",
+       "GB-en",
+       "IE-en"
+      ],
+      "tags": [
+       {
+        "featured_tag_id": "20",
+        "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+        "slug": "focus",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "51",
+        "name_json": "{\"fr\":\"Hi-Res\",\"en\":\"Hi-Res\",\"de\":\"Hi-Res\",\"it\":\"Hi-Res\",\"nl\":\"Hi-Res\",\"es\":\"Hi-Res\",\"pt\":\"Hi-Res\",\"pl\":\"Hi-Res\",\"ja\":\"\\u30cf\\u30a4\\u30ec\\u30be\"}",
+        "slug": "hi-res",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "41",
+        "name_json": "{\"fr\":\"Top playlists\",\"en\":\"Top playlists\",\"de\":\"Top Playlists\",\"it\":\"Top playlists\",\"nl\":\"Top playlists\",\"es\":\"Top playlists\",\"pt\":\"Top playlists\",\"pl\":\"Najpopularniejsze\",\"ja\":\"\\u30c8\\u30c3\\u30d7\\u30fb\\u30d7\\u30ec\\u30a4\\u30ea\\u30b9\\u30c8\"}",
+        "slug": "popular",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "14",
+        "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+        "slug": "jazz",
+        "genre_tag": {
+         "genre_id": "80",
+         "name": "Jazz"
+        },
+        "is_discover": false
+       }
+      ],
+      "image_rectangle": [
+       "https://static.qobuz.com/images/playlists/5688531_38685174d1846cb36c1ab7ce862c3d8d_rectangle.jpg"
+      ],
+      "image_rectangle_mini": [
+       "https://static.qobuz.com/images/playlists/5688531_38685174d1846cb36c1ab7ce862c3d8d_rectangle_mini.jpg"
+      ],
+      "featured_artists": [],
+      "timestamp_position": {
+       "py": "int",
+       "v": 1783807500
+      },
+      "images150": [
+       "https://static.qobuz.com/images/covers/1b/dy/cqnizhlwddy1b_150.jpg",
+       "https://static.qobuz.com/images/covers/64/71/0886445127164_150.jpg",
+       "https://static.qobuz.com/images/covers/oa/bp/maw7ul1wqbpoa_150.jpg",
+       "https://static.qobuz.com/images/covers/76/27/0060253772776_150.jpg"
+      ],
+      "images300": [
+       "https://static.qobuz.com/images/covers/1b/dy/cqnizhlwddy1b_300.jpg",
+       "https://static.qobuz.com/images/covers/64/71/0886445127164_300.jpg",
+       "https://static.qobuz.com/images/covers/oa/bp/maw7ul1wqbpoa_300.jpg",
+       "https://static.qobuz.com/images/covers/76/27/0060253772776_300.jpg"
+      ]
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 1624073
+      },
+      "name": "Jazz Digestifs",
+      "description": "Up for a little Jazz coffee, tea, digestif? Keith Jarrett, Sonny Rollins, Dexter Gordon and their stooges are there for this last relaxed moment before removing the chairs.",
+      "tracks_count": {
+       "py": "int",
+       "v": 41
+      },
+      "users_count": {
+       "py": "int",
+       "v": 1145
+      },
+      "duration": {
+       "py": "int",
+       "v": 12647
+      },
+      "public_at": {
+       "py": "int",
+       "v": 1513897200
+      },
+      "created_at": {
+       "py": "int",
+       "v": 1513954183
+      },
+      "updated_at": {
+       "py": "int",
+       "v": 1793715306
+      },
+      "is_public": true,
+      "is_collaborative": false,
+      "owner": {
+       "id": {
+        "py": "int",
+        "v": 263468
+       },
+       "name": "Qobuz UK"
+      },
+      "indexed_at": {
+       "py": "int",
+       "v": 1793715306
+      },
+      "slug": "new-year-s-eve-menu-jazz-coffee",
+      "genres": [
+       {
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "name": "Jazz",
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "slug": "jazz"
+       }
+      ],
+      "images": [
+       "https://static.qobuz.com/images/covers/gc/pc/p41ybyekepcgc_50.jpg",
+       "https://static.qobuz.com/images/covers/lc/84/dtw0632a284lc_50.jpg",
+       "https://static.qobuz.com/images/covers/sb/k3/cvwxwxx9vk3sb_50.jpg",
+       "https://static.qobuz.com/images/covers/78/77/0060253797778_50.jpg"
+      ],
+      "is_published": true,
+      "is_featured": true,
+      "published_from": {
+       "py": "int",
+       "v": 1767261600
+      },
+      "published_to": {
+       "py": "int",
+       "v": 2145913200
+      },
+      "stores": [
+       "BE-nl",
+       "NL-nl",
+       "GB-en",
+       "IE-en"
+      ],
+      "tags": [
+       {
+        "featured_tag_id": "41",
+        "name_json": "{\"fr\":\"Top playlists\",\"en\":\"Top playlists\",\"de\":\"Top Playlists\",\"it\":\"Top playlists\",\"nl\":\"Top playlists\",\"es\":\"Top playlists\",\"pt\":\"Top playlists\",\"pl\":\"Najpopularniejsze\",\"ja\":\"\\u30c8\\u30c3\\u30d7\\u30fb\\u30d7\\u30ec\\u30a4\\u30ea\\u30b9\\u30c8\"}",
+        "slug": "popular",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "24",
+        "name_json": "{\"fr\":\"Humeurs\",\"en\":\"Moods\",\"de\":\"Moods\",\"it\":\"Umori\",\"nl\":\"Moods\",\"es\":\"Humores\",\"pt\":\"Moods\",\"pl\":\"Nastr\\u00f3j\",\"ja\":\"\\u30e0\\u30fc\\u30c9\"}",
+        "slug": "mood",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "14",
+        "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+        "slug": "jazz",
+        "genre_tag": {
+         "genre_id": "80",
+         "name": "Jazz"
+        },
+        "is_discover": false
+       }
+      ],
+      "image_rectangle": [
+       "https://static.qobuz.com/images/playlists/1624073_9d6fb44892bf110cfbdc1489ed5f24d1_rectangle.jpg"
+      ],
+      "image_rectangle_mini": [
+       "https://static.qobuz.com/images/playlists/1624073_9d6fb44892bf110cfbdc1489ed5f24d1_rectangle_mini.jpg"
+      ],
+      "featured_artists": [],
+      "timestamp_position": {
+       "py": "int",
+       "v": 1767261600
+      },
+      "images150": [
+       "https://static.qobuz.com/images/covers/gc/pc/p41ybyekepcgc_150.jpg",
+       "https://static.qobuz.com/images/covers/lc/84/dtw0632a284lc_150.jpg",
+       "https://static.qobuz.com/images/covers/sb/k3/cvwxwxx9vk3sb_150.jpg",
+       "https://static.qobuz.com/images/covers/78/77/0060253797778_150.jpg"
+      ],
+      "images300": [
+       "https://static.qobuz.com/images/covers/gc/pc/p41ybyekepcgc_300.jpg",
+       "https://static.qobuz.com/images/covers/lc/84/dtw0632a284lc_300.jpg",
+       "https://static.qobuz.com/images/covers/sb/k3/cvwxwxx9vk3sb_300.jpg",
+       "https://static.qobuz.com/images/covers/78/77/0060253797778_300.jpg"
+      ]
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 1880726
+      },
+      "name": "ACT Music: Jazz meets Classical",
+      "description": "Find out how the composers, works and instrumentations of classical music inspire the jazz world.",
+      "tracks_count": {
+       "py": "int",
+       "v": 60
+      },
+      "users_count": {
+       "py": "int",
+       "v": 1105
+      },
+      "duration": {
+       "py": "int",
+       "v": 16012
+      },
+      "public_at": {
+       "py": "int",
+       "v": 1535642575
+      },
+      "created_at": {
+       "py": "int",
+       "v": 1535641522
+      },
+      "updated_at": {
+       "py": "int",
+       "v": 1793669457
+      },
+      "is_public": true,
+      "is_collaborative": false,
+      "owner": {
+       "id": {
+        "py": "int",
+        "v": 864432
+       },
+       "name": "ACT Music"
+      },
+      "indexed_at": {
+       "py": "int",
+       "v": 1793669457
+      },
+      "slug": "classical-jazz",
+      "genres": [
+       {
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "name": "Jazz",
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "slug": "jazz"
+       },
+       {
+        "id": {
+         "py": "int",
+         "v": 10
+        },
+        "name": "Classique",
+        "path": [
+         {
+          "py": "int",
+          "v": 10
+         }
+        ],
+        "slug": "classique"
+       }
+      ],
+      "images": [
+       "https://static.qobuz.com/images/covers/29/33/0614427983329_50.jpg",
+       "https://static.qobuz.com/images/covers/23/23/0614427972323_50.jpg",
+       "https://static.qobuz.com/images/covers/25/44/0614427984425_50.jpg",
+       "https://static.qobuz.com/images/covers/jc/dv/gumr8o95jdvjc_50.jpg"
+      ],
+      "is_published": true,
+      "is_featured": true,
+      "published_from": {
+       "py": "int",
+       "v": 1746655200
+      },
+      "published_to": {
+       "py": "int",
+       "v": 2145913200
+      },
+      "stores": [
+       "AU-en",
+       "NZ-en",
+       "DK-en",
+       "FI-en",
+       "NO-en",
+       "SE-en",
+       "BE-nl",
+       "NL-nl",
+       "GB-en",
+       "IE-en",
+       "US-en",
+       "CA-en",
+       "ES-es",
+       "AR-es",
+       "CL-es",
+       "CO-es",
+       "MX-es",
+       "CA-fr",
+       "BE-fr",
+       "CH-fr",
+       "FR-fr",
+       "LU-fr",
+       "AT-de",
+       "CH-de",
+       "DE-de",
+       "LU-de",
+       "IT-it"
+      ],
+      "tags": [
+       {
+        "featured_tag_id": "20",
+        "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+        "slug": "focus",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "80",
+        "name_json": "{\"fr\":\"ACT Music\",\"en\":\"ACT Music\",\"de\":\"ACT Music\",\"it\":\"ACT Music\",\"nl\":\"ACT Music\",\"es\":\"ACT Music\",\"pt\":\"ACT Music\",\"pl\":\"ACT\",\"ja\":\"ACT Music\"}",
+        "slug": "act",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": false
+       },
+       {
+        "featured_tag_id": "14",
+        "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+        "slug": "jazz",
+        "genre_tag": {
+         "genre_id": "80",
+         "name": "Jazz"
+        },
+        "is_discover": false
+       },
+       {
+        "featured_tag_id": "13",
+        "name_json": "{\"fr\":\"Classique\",\"en\":\"Classical\",\"de\":\"Klassik\",\"it\":\"Musica classica\",\"nl\":\"Classical\",\"es\":\"Cl\\u00e1sica\",\"pt\":\"Cl\\u00e1ssico\",\"pl\":\"Muzyka klasyczna\",\"ja\":\"Classical\"}",
+        "slug": "classical",
+        "genre_tag": {
+         "genre_id": "10",
+         "name": "Classique"
+        },
+        "is_discover": false
+       }
+      ],
+      "image_rectangle": [
+       "https://static.qobuz.com/images/playlists/1880726_db836846e9415dbb7b04d8ad1deed598_rectangle.jpg"
+      ],
+      "image_rectangle_mini": [
+       "https://static.qobuz.com/images/playlists/1880726_db836846e9415dbb7b04d8ad1deed598_rectangle_mini.jpg"
+      ],
+      "featured_artists": [],
+      "timestamp_position": {
+       "py": "int",
+       "v": 1746655200
+      },
+      "images150": [
+       "https://static.qobuz.com/images/covers/29/33/0614427983329_150.jpg",
+       "https://static.qobuz.com/images/covers/23/23/0614427972323_150.jpg",
+       "https://static.qobuz.com/images/covers/25/44/0614427984425_150.jpg",
+       "https://static.qobuz.com/images/covers/jc/dv/gumr8o95jdvjc_150.jpg"
+      ],
+      "images300": [
+       "https://static.qobuz.com/images/covers/29/33/0614427983329_300.jpg",
+       "https://static.qobuz.com/images/covers/23/23/0614427972323_300.jpg",
+       "https://static.qobuz.com/images/covers/25/44/0614427984425_300.jpg",
+       "https://static.qobuz.com/images/covers/jc/dv/gumr8o95jdvjc_300.jpg"
+      ]
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 2707642
+      },
+      "name": "Jazz Classics",
+      "description": "Jazz at its finest! With Oscar Peterson, Herbie Hancock, Glenn Miller, Miles Davis, John Coltrane, Louis Armstrong, Sidney Bechet, Chet Baker, Billie Holiday, Ella Fitzgerald, Sonny Rollins, Django Reinhardt, Duke Ellington, Dave Brubek, Benny Goodman and many others…\r\n\r\nPhoto: John Coltrane © Jim Marshall",
+      "tracks_count": {
+       "py": "int",
+       "v": 80
+      },
+      "users_count": {
+       "py": "int",
+       "v": 959
+      },
+      "duration": {
+       "py": "int",
+       "v": 27180
+      },
+      "public_at": {
+       "py": "int",
+       "v": 1579129200
+      },
+      "created_at": {
+       "py": "int",
+       "v": 1579186640
+      },
+      "updated_at": {
+       "py": "int",
+       "v": 1791895099
+      },
+      "is_public": true,
+      "is_collaborative": false,
+      "owner": {
+       "id": {
+        "py": "int",
+        "v": 263468
+       },
+       "name": "Qobuz UK"
+      },
+      "indexed_at": {
+       "py": "int",
+       "v": 1793707487
+      },
+      "slug": "ultimate-jazz-classics",
+      "genres": [
+       {
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "name": "Jazz",
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "slug": "jazz"
+       }
+      ],
+      "images": [
+       "https://static.qobuz.com/images/covers/7b/ju/y0xeyuymlju7b_50.jpg",
+       "https://static.qobuz.com/images/covers/32/65/0060253746532_50.jpg",
+       "https://static.qobuz.com/images/covers/21/41/0828766924121_50.jpg",
+       "https://static.qobuz.com/images/covers/oc/yv/po8isu85cyvoc_50.jpg"
+      ],
+      "is_published": true,
+      "is_featured": true,
+      "published_from": {
+       "py": "int",
+       "v": 1759529400
+      },
+      "published_to": {
+       "py": "int",
+       "v": 2145913200
+      },
+      "stores": [
+       "BE-nl",
+       "NL-nl",
+       "GB-en",
+       "IE-en"
+      ],
+      "tags": [
+       {
+        "featured_tag_id": "20",
+        "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+        "slug": "focus",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "41",
+        "name_json": "{\"fr\":\"Top playlists\",\"en\":\"Top playlists\",\"de\":\"Top Playlists\",\"it\":\"Top playlists\",\"nl\":\"Top playlists\",\"es\":\"Top playlists\",\"pt\":\"Top playlists\",\"pl\":\"Najpopularniejsze\",\"ja\":\"\\u30c8\\u30c3\\u30d7\\u30fb\\u30d7\\u30ec\\u30a4\\u30ea\\u30b9\\u30c8\"}",
+        "slug": "popular",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "14",
+        "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+        "slug": "jazz",
+        "genre_tag": {
+         "genre_id": "80",
+         "name": "Jazz"
+        },
+        "is_discover": false
+       }
+      ],
+      "image_rectangle": [
+       "https://static.qobuz.com/images/playlists/2707642_c28baf696be2afafdade8c786c02a71c_rectangle.jpg"
+      ],
+      "image_rectangle_mini": [
+       "https://static.qobuz.com/images/playlists/2707642_c28baf696be2afafdade8c786c02a71c_rectangle_mini.jpg"
+      ],
+      "featured_artists": [],
+      "timestamp_position": {
+       "py": "int",
+       "v": 1759529400
+      },
+      "images150": [
+       "https://static.qobuz.com/images/covers/7b/ju/y0xeyuymlju7b_150.jpg",
+       "https://static.qobuz.com/images/covers/32/65/0060253746532_150.jpg",
+       "https://static.qobuz.com/images/covers/21/41/0828766924121_150.jpg",
+       "https://static.qobuz.com/images/covers/oc/yv/po8isu85cyvoc_150.jpg"
+      ],
+      "images300": [
+       "https://static.qobuz.com/images/covers/7b/ju/y0xeyuymlju7b_300.jpg",
+       "https://static.qobuz.com/images/covers/32/65/0060253746532_300.jpg",
+       "https://static.qobuz.com/images/covers/21/41/0828766924121_300.jpg",
+       "https://static.qobuz.com/images/covers/oc/yv/po8isu85cyvoc_300.jpg"
+      ]
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 5295972
+      },
+      "name": "Hi-Res Masters: Jazz Guitar",
+      "description": "Enjoy Jazz Guitar's finest in the best possible audio quality with our selection of legendary tracks in Hi-Res, featuring Wes Montgomery, Grant Green, Kenny Burrell, Pat Martino, Charlie Haden & Jim Hall, Larry Coryell, John Scofield, Russell Malone, Julian Lage, Al Di Meola, Pat Metheny, Bill Frisell, Marc Ribot, Lionel Loueke, Nels Cline…\r\n\r\nPhoto: Wes Montgomery by Val Wilmer/Redferns/Getty Images",
+      "tracks_count": {
+       "py": "int",
+       "v": 60
+      },
+      "users_count": {
+       "py": "int",
+       "v": 867
+      },
+      "duration": {
+       "py": "int",
+       "v": 20138
+      },
+      "public_at": {
+       "py": "int",
+       "v": 1605135600
+      },
+      "created_at": {
+       "py": "int",
+       "v": 1605190800
+      },
+      "updated_at": {
+       "py": "int",
+       "v": 1793564465
+      },
+      "is_public": true,
+      "is_collaborative": false,
+      "owner": {
+       "id": {
+        "py": "int",
+        "v": 263468
+       },
+       "name": "Qobuz UK"
+      },
+      "indexed_at": {
+       "py": "int",
+       "v": 1793707502
+      },
+      "slug": "hi-res-masters-jazz-guitar",
+      "genres": [
+       {
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "name": "Jazz",
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "slug": "jazz"
+       }
+      ],
+      "images": [
+       "https://static.qobuz.com/images/covers/pb/or/r9zuaoxlporpb_50.jpg",
+       "https://static.qobuz.com/images/covers/37/54/0060253765437_50.jpg",
+       "https://static.qobuz.com/images/covers/32/48/0060253764832_50.jpg",
+       "https://static.qobuz.com/images/covers/21/52/0088807235221_50.jpg"
+      ],
+      "is_published": true,
+      "is_featured": true,
+      "published_from": {
+       "py": "int",
+       "v": 1777759800
+      },
+      "published_to": {
+       "py": "int",
+       "v": 2145913200
+      },
+      "stores": [
+       "BE-nl",
+       "NL-nl",
+       "GB-en",
+       "IE-en"
+      ],
+      "tags": [
+       {
+        "featured_tag_id": "20",
+        "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+        "slug": "focus",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "51",
+        "name_json": "{\"fr\":\"Hi-Res\",\"en\":\"Hi-Res\",\"de\":\"Hi-Res\",\"it\":\"Hi-Res\",\"nl\":\"Hi-Res\",\"es\":\"Hi-Res\",\"pt\":\"Hi-Res\",\"pl\":\"Hi-Res\",\"ja\":\"\\u30cf\\u30a4\\u30ec\\u30be\"}",
+        "slug": "hi-res",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "14",
+        "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+        "slug": "jazz",
+        "genre_tag": {
+         "genre_id": "80",
+         "name": "Jazz"
+        },
+        "is_discover": false
+       }
+      ],
+      "image_rectangle": [
+       "https://static.qobuz.com/images/playlists/5295972_0103acb62f8c6babecaf77c9ec24d320_rectangle.jpg"
+      ],
+      "image_rectangle_mini": [
+       "https://static.qobuz.com/images/playlists/5295972_0103acb62f8c6babecaf77c9ec24d320_rectangle_mini.jpg"
+      ],
+      "featured_artists": [],
+      "timestamp_position": {
+       "py": "int",
+       "v": 1777759800
+      },
+      "images150": [
+       "https://static.qobuz.com/images/covers/pb/or/r9zuaoxlporpb_150.jpg",
+       "https://static.qobuz.com/images/covers/37/54/0060253765437_150.jpg",
+       "https://static.qobuz.com/images/covers/32/48/0060253764832_150.jpg",
+       "https://static.qobuz.com/images/covers/21/52/0088807235221_150.jpg"
+      ],
+      "images300": [
+       "https://static.qobuz.com/images/covers/pb/or/r9zuaoxlporpb_300.jpg",
+       "https://static.qobuz.com/images/covers/37/54/0060253765437_300.jpg",
+       "https://static.qobuz.com/images/covers/32/48/0060253764832_300.jpg",
+       "https://static.qobuz.com/images/covers/21/52/0088807235221_300.jpg"
+      ]
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 9663926
+      },
+      "name": "Jazz: 100 Cult Albums",
+      "description": "A selection of one hundred essential albums in Jazz history. Featuring Miles Davis, John Coltrane, Charles Mingus, Ornette Coleman, Sonny Rollins, Dave Brubeck, Cannonball Aderley, Bill Evans, Thelonious Monk, Charlie Parker, Keith Jarrett, Art Blakey & The Jazz Messengers, Stan Getz, Wayne Shorter, Erroll Garner, Oliver Nelson, Eric Dolphy, Albert Ayler, Cecil Taylor,  Duke Ellington, Mahavishnu Orchestra, Herbie Hancock, Weather Report, Ahmad Jamal, Wes Montgomery, Horace Silver, McCoy Tyner, Grant Green, Lee Morgan, Oscar Peterson, Dizzy Gillespie…\r\n\r\nPhoto: Miles Davis © Bob Cato - Sony Music Archives",
+      "tracks_count": {
+       "py": "int",
+       "v": 100
+      },
+      "users_count": {
+       "py": "int",
+       "v": 830
+      },
+      "duration": {
+       "py": "int",
+       "v": 38295
+      },
+      "public_at": {
+       "py": "int",
+       "v": 1654552800
+      },
+      "created_at": {
+       "py": "int",
+       "v": 1654617455
+      },
+      "updated_at": {
+       "py": "int",
+       "v": 1792235377
+      },
+      "is_public": true,
+      "is_collaborative": false,
+      "owner": {
+       "id": {
+        "py": "int",
+        "v": 263468
+       },
+       "name": "Qobuz UK"
+      },
+      "indexed_at": {
+       "py": "int",
+       "v": 1792235377
+      },
+      "slug": "jazz-100-cult-albums",
+      "genres": [
+       {
+        "id": {
+         "py": "int",
+         "v": 80
+        },
+        "name": "Jazz",
+        "path": [
+         {
+          "py": "int",
+          "v": 80
+         }
+        ],
+        "slug": "jazz"
+       }
+      ],
+      "images": [
+       "https://static.qobuz.com/images/covers/28/24/5099749522428_50.jpg",
+       "https://static.qobuz.com/images/covers/84/20/0060253742084_50.jpg",
+       "https://static.qobuz.com/images/covers/25/12/5099706551225_50.jpg",
+       "https://static.qobuz.com/images/covers/10/03/0603497920310_50.jpg"
+      ],
+      "is_published": true,
+      "is_featured": true,
+      "published_from": {
+       "py": "int",
+       "v": 1746136800
+      },
+      "published_to": {
+       "py": "int",
+       "v": 1893515220
+      },
+      "stores": [
+       "BE-nl",
+       "NL-nl",
+       "GB-en",
+       "IE-en"
+      ],
+      "tags": [
+       {
+        "featured_tag_id": "20",
+        "name_json": "{\"fr\":\"Th\\u00e9matiques\",\"en\":\"Focus\",\"de\":\"Fokus\",\"it\":\"Focus\",\"nl\":\"Focus\",\"es\":\"Foco\",\"pt\":\"Em Foco\",\"pl\":\"Tematy\",\"ja\":\"\\u30d5\\u30a9\\u30fc\\u30ab\\u30b9\"}",
+        "slug": "focus",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "41",
+        "name_json": "{\"fr\":\"Top playlists\",\"en\":\"Top playlists\",\"de\":\"Top Playlists\",\"it\":\"Top playlists\",\"nl\":\"Top playlists\",\"es\":\"Top playlists\",\"pt\":\"Top playlists\",\"pl\":\"Najpopularniejsze\",\"ja\":\"\\u30c8\\u30c3\\u30d7\\u30fb\\u30d7\\u30ec\\u30a4\\u30ea\\u30b9\\u30c8\"}",
+        "slug": "popular",
+        "genre_tag": {
+         "py": "none"
+        },
+        "is_discover": true
+       },
+       {
+        "featured_tag_id": "14",
+        "name_json": "{\"fr\":\"Jazz\",\"en\":\"Jazz\",\"de\":\"Jazz\",\"it\":\"Jazz\",\"nl\":\"Jazz\",\"es\":\"Jazz\",\"pt\":\"Jazz\",\"pl\":\"Jazz\",\"ja\":\"\\u30b8\\u30e3\\u30ba\"}",
+        "slug": "jazz",
+        "genre_tag": {
+         "genre_id": "80",
+         "name": "Jazz"
+        },
+        "is_discover": false
+       }
+      ],
+      "image_rectangle": [
+       "https://static.qobuz.com/images/playlists/9663926_bdb8c07f70807c71995ef8c62600b917_rectangle.jpg"
+      ],
+      "image_rectangle_mini": [
+       "https://static.qobuz.com/images/playlists/9663926_bdb8c07f70807c71995ef8c62600b917_rectangle_mini.jpg"
+      ],
+      "featured_artists": [],
+      "timestamp_position": {
+       "py": "int",
+       "v": 1746136800
+      },
+      "images150": [
+       "https://static.qobuz.com/images/covers/28/24/5099749522428_150.jpg",
+       "https://static.qobuz.com/images/covers/84/20/0060253742084_150.jpg",
+       "https://static.qobuz.com/images/covers/25/12/5099706551225_150.jpg",
+       "https://static.qobuz.com/images/covers/10/03/0603497920310_150.jpg"
+      ],
+      "images300": [
+       "https://static.qobuz.com/images/covers/28/24/5099749522428_300.jpg",
+       "https://static.qobuz.com/images/covers/84/20/0060253742084_300.jpg",
+       "https://static.qobuz.com/images/covers/25/12/5099706551225_300.jpg",
+       "https://static.qobuz.com/images/covers/10/03/0603497920310_300.jpg"
+      ]
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Qobuz Club: Jazz For A Rainy Day                     30 tracks",
+     "url": "https://play.qobuz.com/playlist/17495305"
+    },
+    {
+     "text": "50 Jazz Tracks to Test your Speakers                 50 tracks",
+     "url": "https://play.qobuz.com/playlist/15378564"
+    },
+    {
+     "text": "Hi-Res Masters: Jazz Essentials                      70 tracks",
+     "url": "https://play.qobuz.com/playlist/4824894"
+    },
+    {
+     "text": "Best of 192 kHz: Jazz                                80 tracks",
+     "url": "https://play.qobuz.com/playlist/6029200"
+    },
+    {
+     "text": "Hi-Res Masters: Vocal Jazz Essentials                75 tracks",
+     "url": "https://play.qobuz.com/playlist/5688531"
+    },
+    {
+     "text": "Jazz Digestifs                                       41 tracks",
+     "url": "https://play.qobuz.com/playlist/1624073"
+    },
+    {
+     "text": "ACT Music: Jazz meets Classical                      60 tracks",
+     "url": "https://play.qobuz.com/playlist/1880726"
+    },
+    {
+     "text": "Jazz Classics                                        80 tracks",
+     "url": "https://play.qobuz.com/playlist/2707642"
+    },
+    {
+     "text": "Hi-Res Masters: Jazz Guitar                          60 tracks",
+     "url": "https://play.qobuz.com/playlist/5295972"
+    },
+    {
+     "text": "Jazz: 100 Cult Albums                                100 tracks",
+     "url": "https://play.qobuz.com/playlist/9663926"
+    }
+   ]
+  },
+  {
+   "name": "album: no type, long",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "hires_streamable": false,
+      "duration": {
+       "py": "int",
+       "v": 1740
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 2
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: no type, 1739 seconds",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "hires_streamable": false,
+      "duration": {
+       "py": "int",
+       "v": 1739
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 2
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 EP         2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: no type, 7 tracks",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "hires_streamable": false,
+      "duration": {
+       "py": "int",
+       "v": 10
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 7
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: no type, 1 track",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "hires_streamable": false,
+      "duration": {
+       "py": "int",
+       "v": 200
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 1
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Single     2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: no type, nothing known",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: no type, zeros",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "hires_streamable": false,
+      "duration": {
+       "py": "int",
+       "v": 0
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 0
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: no type, duration only",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "hires_streamable": false,
+      "duration": {
+       "py": "int",
+       "v": 100
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 EP         2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: no type, float duration",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "hires_streamable": false,
+      "duration": {
+       "py": "float",
+       "v": 1740.0
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 0
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: empty type",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "",
+      "hires_streamable": false,
+      "tracks_count": {
+       "py": "int",
+       "v": 1
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Single     2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: product type",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": {
+       "py": "none"
+      },
+      "hires_streamable": false,
+      "product_type": "single"
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Single     2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: ep",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "ep",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 EP         2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: EP upper",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "EP",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 EP         2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: epmini",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "epmini",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Epmini     2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: two words",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "live album",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Live ...   2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: hi-res",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": true,
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "maximum_sampling_rate": {
+       "py": "int",
+       "v": 192
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      2020   [HI-RES] 24b/192kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: hi-res float",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": true,
+      "maximum_bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "maximum_sampling_rate": {
+       "py": "float",
+       "v": 44.1
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      2020   [HI-RES] 24b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: hi-res defaults",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": true
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      2020   [HI-RES] 24b/96.0kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: hi-res None",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": true,
+      "maximum_bit_depth": {
+       "py": "none"
+      },
+      "maximum_sampling_rate": {
+       "py": "none"
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      2020   [HI-RES] Noneb/NonekHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: version and explicit",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": false,
+      "version": "Deluxe",
+      "parental_warning": true
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title (Deluxe) [E]                    Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: performer",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": false,
+      "performer": {
+       "name": "Performer"
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Performer              Title                                 Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: artist without name",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {},
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": false,
+      "performer": {
+       "name": "Performer"
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Performer              Title                                 Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: unknown artist",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Unknown                Title                                 Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: name for title",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": false,
+      "name": "Name"
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Name                                  Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: unknown title",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": {
+       "py": "none"
+      },
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Unknown                               Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: release date",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": {
+       "py": "none"
+      },
+      "release_type": "album",
+      "hires_streamable": false,
+      "release_date": "1999-12-31"
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      1999   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: no date",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_type": "album",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album             [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: int date",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": {
+       "py": "int",
+       "v": 2001
+      },
+      "release_type": "album",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      2001   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: short date",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "99",
+      "release_type": "album",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      99   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: long names",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+      "artist": {
+       "name": "An Artist Name Of Twenty"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "compilation",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "An Artist Name Of...   TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT   Compi...   2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: exact widths",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "artist": {
+       "name": "AAAAAAAAAAAAAAAAAAAA"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "soundtra",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "AAAAAAAAAAAAAAAAAAAA   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB   Soundtra   2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: one over",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "artist": {
+       "name": "AAAAAAAAAAAAAAAAAAAAA"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "soundtrac",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "AAAAAAAAAAAAAAAAA...   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB...   Sound...   2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: wide characters",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語",
+      "artist": {
+       "name": "ΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩ"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "ΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩ...   日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本...   Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: no id",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/"
+    }
+   ]
+  },
+  {
+   "name": "album: int id",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 123
+      },
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/123"
+    }
+   ]
+  },
+  {
+   "name": "album: several",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": false
+     },
+     {
+      "id": "a2",
+      "title": "Second",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a1"
+    },
+    {
+     "text": "Artist                 Second                                Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/album/a2"
+    }
+   ]
+  },
+  {
+   "name": "album: none",
+   "input": {
+    "type": "album",
+    "items": []
+   },
+   "output": []
+  },
+  {
+   "name": "track: no type",
+   "input": {
+    "type": "track",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "hires_streamable": false,
+      "duration": {
+       "py": "int",
+       "v": 3000
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 9
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Artist                 Title                                 Track      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/track/a1"
+    }
+   ]
+  },
+  {
+   "name": "track: performer",
+   "input": {
+    "type": "track",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": false,
+      "performer": {
+       "name": "P"
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "P                      Title                                 Album      2020   [ CD ] 16b/44.1kHz",
+     "url": "https://play.qobuz.com/track/a1"
+    }
+   ]
+  },
+  {
+   "name": "album: artist None",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "py": "none"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": "album",
+      "hires_streamable": false
+     }
+    ]
+   },
+   "error": "AttributeError"
+  },
+  {
+   "name": "album: type not a string",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "release_type": {
+       "py": "int",
+       "v": 5
+      },
+      "hires_streamable": false
+     }
+    ]
+   },
+   "error": "AttributeError"
+  },
+  {
+   "name": "album: None duration",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "hires_streamable": false,
+      "tracks_count": {
+       "py": "int",
+       "v": 3
+      },
+      "duration": {
+       "py": "none"
+      }
+     }
+    ]
+   },
+   "error": "TypeError"
+  },
+  {
+   "name": "album: string count",
+   "input": {
+    "type": "album",
+    "items": [
+     {
+      "id": "a1",
+      "title": "Title",
+      "artist": {
+       "name": "Artist"
+      },
+      "release_date_original": "2020-05-06",
+      "hires_streamable": false,
+      "tracks_count": "7"
+     }
+    ]
+   },
+   "error": "TypeError"
+  },
+  {
+   "name": "artist: albums",
+   "input": {
+    "type": "artist",
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 7
+      },
+      "name": "Name",
+      "albums_count": {
+       "py": "int",
+       "v": 12
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Name                                                 12 albums",
+     "url": "https://play.qobuz.com/artist/7"
+    }
+   ]
+  },
+  {
+   "name": "artist: tracks",
+   "input": {
+    "type": "artist",
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 7
+      },
+      "name": "Name",
+      "tracks_count": {
+       "py": "int",
+       "v": 3
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Name                                                 3 tracks",
+     "url": "https://play.qobuz.com/artist/7"
+    }
+   ]
+  },
+  {
+   "name": "artist: albums None",
+   "input": {
+    "type": "artist",
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 7
+      },
+      "name": "Name",
+      "albums_count": {
+       "py": "none"
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 3
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Name                                                 None albums",
+     "url": "https://play.qobuz.com/artist/7"
+    }
+   ]
+  },
+  {
+   "name": "artist: no counts",
+   "input": {
+    "type": "artist",
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 1
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Unknown                                              0 tracks",
+     "url": "https://play.qobuz.com/artist/1"
+    }
+   ]
+  },
+  {
+   "name": "artist: long name",
+   "input": {
+    "type": "artist",
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 7
+      },
+      "name": "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",
+      "tracks_count": {
+       "py": "int",
+       "v": 1
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN...   1 tracks",
+     "url": "https://play.qobuz.com/artist/7"
+    }
+   ]
+  },
+  {
+   "name": "artist: name None",
+   "input": {
+    "type": "artist",
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 7
+      },
+      "name": {
+       "py": "none"
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 1
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "None                                                 1 tracks",
+     "url": "https://play.qobuz.com/artist/7"
+    }
+   ]
+  },
+  {
+   "name": "playlist: albums",
+   "input": {
+    "type": "playlist",
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 7
+      },
+      "name": "Name",
+      "albums_count": {
+       "py": "int",
+       "v": 12
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Name                                                 12 albums",
+     "url": "https://play.qobuz.com/playlist/7"
+    }
+   ]
+  },
+  {
+   "name": "playlist: tracks",
+   "input": {
+    "type": "playlist",
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 7
+      },
+      "name": "Name",
+      "tracks_count": {
+       "py": "int",
+       "v": 3
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Name                                                 3 tracks",
+     "url": "https://play.qobuz.com/playlist/7"
+    }
+   ]
+  },
+  {
+   "name": "playlist: albums None",
+   "input": {
+    "type": "playlist",
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 7
+      },
+      "name": "Name",
+      "albums_count": {
+       "py": "none"
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 3
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Name                                                 None albums",
+     "url": "https://play.qobuz.com/playlist/7"
+    }
+   ]
+  },
+  {
+   "name": "playlist: no counts",
+   "input": {
+    "type": "playlist",
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 1
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "Unknown                                              0 tracks",
+     "url": "https://play.qobuz.com/playlist/1"
+    }
+   ]
+  },
+  {
+   "name": "playlist: long name",
+   "input": {
+    "type": "playlist",
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 7
+      },
+      "name": "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",
+      "tracks_count": {
+       "py": "int",
+       "v": 1
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN...   1 tracks",
+     "url": "https://play.qobuz.com/playlist/7"
+    }
+   ]
+  },
+  {
+   "name": "playlist: name None",
+   "input": {
+    "type": "playlist",
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 7
+      },
+      "name": {
+       "py": "none"
+      },
+      "tracks_count": {
+       "py": "int",
+       "v": 1
+      }
+     }
+    ]
+   },
+   "output": [
+    {
+     "text": "None                                                 1 tracks",
+     "url": "https://play.qobuz.com/playlist/7"
+    }
+   ]
+  }
+ ]
+}

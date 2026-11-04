@@ -12,3 +12,4 @@ testdata/gen/.venv/
 .idea/
 .vscode/
 __pycache__/
+!testdata/fixtures/db/*.db

@@ -1,0 +1,2602 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "new database",
+   "input": {
+    "calls": []
+   },
+   "output": {
+    "schema": [
+     [
+      "index",
+      "sqlite_autoindex_downloads_1",
+      "downloads",
+      {
+       "py": "none"
+      }
+     ],
+     [
+      "table",
+      "downloads",
+      "downloads",
+      "CREATE TABLE downloads (\n                  \"id\" text NOT NULL,\n                  \"media_type\" text NOT NULL DEFAULT 'album',\n                  \"quality\" integer NOT NULL DEFAULT 27,\n                  \"file_format\" text NOT NULL DEFAULT 'FLAC',\n                  \"quality_met\" integer NOT NULL DEFAULT 0,\n                  \"bit_depth\" text,\n                  \"sampling_rate\" text,\n                  \"saved_path\" text NOT NULL DEFAULT '',\n                  \"status\" text NOT NULL DEFAULT 'downloaded',\n                  \"url\" text NOT NULL DEFAULT '',\n                  \"release_date\" text NOT NULL DEFAULT '',\n                  \"artist\" text NOT NULL DEFAULT '',\n                  \"album\" text NOT NULL DEFAULT '',\n                  PRIMARY KEY (\"id\", \"quality\")\n                )"
+     ]
+    ],
+    "columns": [
+     [
+      {
+       "py": "int",
+       "v": 0
+      },
+      "id",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 1
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 1
+      },
+      "media_type",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'album'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 2
+      },
+      "quality",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "27",
+      {
+       "py": "int",
+       "v": 2
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 3
+      },
+      "file_format",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'FLAC'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 4
+      },
+      "quality_met",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "0",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 5
+      },
+      "bit_depth",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 6
+      },
+      "sampling_rate",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 7
+      },
+      "saved_path",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 8
+      },
+      "status",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'downloaded'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 9
+      },
+      "url",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 10
+      },
+      "release_date",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 11
+      },
+      "artist",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 12
+      },
+      "album",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ]
+    ],
+    "rows": [],
+    "has": []
+   }
+  },
+  {
+   "name": "album and track",
+   "input": {
+    "calls": [
+     {
+      "item_id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": true,
+      "bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "sampling_rate": {
+       "py": "float",
+       "v": 192.0
+      },
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma",
+      "add": true
+     },
+     {
+      "item_id": "20273753",
+      "media_type": "track",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": false,
+      "bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "sampling_rate": {
+       "py": "float",
+       "v": 96.0
+      },
+      "saved_path": "/music/Miles Davis - So What (1959) [24B-96.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/x",
+      "release_date": "1959-08-17",
+      "artist": "Miles Davis",
+      "album": "So What",
+      "add": true
+     },
+     {
+      "add": false,
+      "item_id": "evz7usmruz35a",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "media_type": "album"
+     },
+     {
+      "add": false,
+      "item_id": "20273753",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "media_type": "album"
+     },
+     {
+      "add": false,
+      "item_id": "evz7usmruz35a",
+      "quality": {
+       "py": "int",
+       "v": 6
+      },
+      "media_type": "album"
+     },
+     {
+      "add": false,
+      "item_id": "missing",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "media_type": "album"
+     }
+    ]
+   },
+   "output": {
+    "schema": [
+     [
+      "index",
+      "sqlite_autoindex_downloads_1",
+      "downloads",
+      {
+       "py": "none"
+      }
+     ],
+     [
+      "table",
+      "downloads",
+      "downloads",
+      "CREATE TABLE downloads (\n                  \"id\" text NOT NULL,\n                  \"media_type\" text NOT NULL DEFAULT 'album',\n                  \"quality\" integer NOT NULL DEFAULT 27,\n                  \"file_format\" text NOT NULL DEFAULT 'FLAC',\n                  \"quality_met\" integer NOT NULL DEFAULT 0,\n                  \"bit_depth\" text,\n                  \"sampling_rate\" text,\n                  \"saved_path\" text NOT NULL DEFAULT '',\n                  \"status\" text NOT NULL DEFAULT 'downloaded',\n                  \"url\" text NOT NULL DEFAULT '',\n                  \"release_date\" text NOT NULL DEFAULT '',\n                  \"artist\" text NOT NULL DEFAULT '',\n                  \"album\" text NOT NULL DEFAULT '',\n                  PRIMARY KEY (\"id\", \"quality\")\n                )"
+     ]
+    ],
+    "columns": [
+     [
+      {
+       "py": "int",
+       "v": 0
+      },
+      "id",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 1
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 1
+      },
+      "media_type",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'album'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 2
+      },
+      "quality",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "27",
+      {
+       "py": "int",
+       "v": 2
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 3
+      },
+      "file_format",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'FLAC'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 4
+      },
+      "quality_met",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "0",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 5
+      },
+      "bit_depth",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 6
+      },
+      "sampling_rate",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 7
+      },
+      "saved_path",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 8
+      },
+      "status",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'downloaded'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 9
+      },
+      "url",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 10
+      },
+      "release_date",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 11
+      },
+      "artist",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 12
+      },
+      "album",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ]
+    ],
+    "rows": [
+     {
+      "id": "20273753",
+      "media_type": "track",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 0
+      },
+      "bit_depth": "24",
+      "sampling_rate": "96.0",
+      "saved_path": "/music/Miles Davis - So What (1959) [24B-96.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/x",
+      "release_date": "1959-08-17",
+      "artist": "Miles Davis",
+      "album": "So What"
+     },
+     {
+      "id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "24",
+      "sampling_rate": "192.0",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma"
+     }
+    ],
+    "has": [
+     true,
+     true,
+     false,
+     false
+    ]
+   }
+  },
+  {
+   "name": "media type ignored",
+   "input": {
+    "calls": [
+     {
+      "item_id": "20273753",
+      "media_type": "track",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": false,
+      "bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "sampling_rate": {
+       "py": "float",
+       "v": 96.0
+      },
+      "saved_path": "/music/Miles Davis - So What (1959) [24B-96.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/x",
+      "release_date": "1959-08-17",
+      "artist": "Miles Davis",
+      "album": "So What",
+      "add": true
+     },
+     {
+      "add": false,
+      "item_id": "20273753",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "media_type": "album"
+     }
+    ]
+   },
+   "output": {
+    "schema": [
+     [
+      "index",
+      "sqlite_autoindex_downloads_1",
+      "downloads",
+      {
+       "py": "none"
+      }
+     ],
+     [
+      "table",
+      "downloads",
+      "downloads",
+      "CREATE TABLE downloads (\n                  \"id\" text NOT NULL,\n                  \"media_type\" text NOT NULL DEFAULT 'album',\n                  \"quality\" integer NOT NULL DEFAULT 27,\n                  \"file_format\" text NOT NULL DEFAULT 'FLAC',\n                  \"quality_met\" integer NOT NULL DEFAULT 0,\n                  \"bit_depth\" text,\n                  \"sampling_rate\" text,\n                  \"saved_path\" text NOT NULL DEFAULT '',\n                  \"status\" text NOT NULL DEFAULT 'downloaded',\n                  \"url\" text NOT NULL DEFAULT '',\n                  \"release_date\" text NOT NULL DEFAULT '',\n                  \"artist\" text NOT NULL DEFAULT '',\n                  \"album\" text NOT NULL DEFAULT '',\n                  PRIMARY KEY (\"id\", \"quality\")\n                )"
+     ]
+    ],
+    "columns": [
+     [
+      {
+       "py": "int",
+       "v": 0
+      },
+      "id",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 1
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 1
+      },
+      "media_type",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'album'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 2
+      },
+      "quality",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "27",
+      {
+       "py": "int",
+       "v": 2
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 3
+      },
+      "file_format",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'FLAC'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 4
+      },
+      "quality_met",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "0",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 5
+      },
+      "bit_depth",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 6
+      },
+      "sampling_rate",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 7
+      },
+      "saved_path",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 8
+      },
+      "status",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'downloaded'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 9
+      },
+      "url",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 10
+      },
+      "release_date",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 11
+      },
+      "artist",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 12
+      },
+      "album",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ]
+    ],
+    "rows": [
+     {
+      "id": "20273753",
+      "media_type": "track",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 0
+      },
+      "bit_depth": "24",
+      "sampling_rate": "96.0",
+      "saved_path": "/music/Miles Davis - So What (1959) [24B-96.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/x",
+      "release_date": "1959-08-17",
+      "artist": "Miles Davis",
+      "album": "So What"
+     }
+    ],
+    "has": [
+     true
+    ]
+   }
+  },
+  {
+   "name": "duplicate",
+   "input": {
+    "calls": [
+     {
+      "item_id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": true,
+      "bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "sampling_rate": {
+       "py": "float",
+       "v": 192.0
+      },
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma",
+      "add": true
+     },
+     {
+      "item_id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": true,
+      "bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "sampling_rate": {
+       "py": "float",
+       "v": 192.0
+      },
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Other",
+      "album": "Ummagumma",
+      "add": true
+     },
+     {
+      "add": false,
+      "item_id": "evz7usmruz35a",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "media_type": "album"
+     }
+    ]
+   },
+   "output": {
+    "schema": [
+     [
+      "index",
+      "sqlite_autoindex_downloads_1",
+      "downloads",
+      {
+       "py": "none"
+      }
+     ],
+     [
+      "table",
+      "downloads",
+      "downloads",
+      "CREATE TABLE downloads (\n                  \"id\" text NOT NULL,\n                  \"media_type\" text NOT NULL DEFAULT 'album',\n                  \"quality\" integer NOT NULL DEFAULT 27,\n                  \"file_format\" text NOT NULL DEFAULT 'FLAC',\n                  \"quality_met\" integer NOT NULL DEFAULT 0,\n                  \"bit_depth\" text,\n                  \"sampling_rate\" text,\n                  \"saved_path\" text NOT NULL DEFAULT '',\n                  \"status\" text NOT NULL DEFAULT 'downloaded',\n                  \"url\" text NOT NULL DEFAULT '',\n                  \"release_date\" text NOT NULL DEFAULT '',\n                  \"artist\" text NOT NULL DEFAULT '',\n                  \"album\" text NOT NULL DEFAULT '',\n                  PRIMARY KEY (\"id\", \"quality\")\n                )"
+     ]
+    ],
+    "columns": [
+     [
+      {
+       "py": "int",
+       "v": 0
+      },
+      "id",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 1
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 1
+      },
+      "media_type",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'album'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 2
+      },
+      "quality",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "27",
+      {
+       "py": "int",
+       "v": 2
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 3
+      },
+      "file_format",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'FLAC'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 4
+      },
+      "quality_met",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "0",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 5
+      },
+      "bit_depth",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 6
+      },
+      "sampling_rate",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 7
+      },
+      "saved_path",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 8
+      },
+      "status",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'downloaded'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 9
+      },
+      "url",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 10
+      },
+      "release_date",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 11
+      },
+      "artist",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 12
+      },
+      "album",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ]
+    ],
+    "rows": [
+     {
+      "id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "24",
+      "sampling_rate": "192.0",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma"
+     }
+    ],
+    "has": [
+     true
+    ]
+   }
+  },
+  {
+   "name": "same ID, other quality",
+   "input": {
+    "calls": [
+     {
+      "item_id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": true,
+      "bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "sampling_rate": {
+       "py": "float",
+       "v": 192.0
+      },
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma",
+      "add": true
+     },
+     {
+      "item_id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 6
+      },
+      "file_format": "FLAC",
+      "quality_met": true,
+      "bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "sampling_rate": {
+       "py": "float",
+       "v": 192.0
+      },
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma",
+      "add": true
+     },
+     {
+      "add": false,
+      "item_id": "evz7usmruz35a",
+      "quality": {
+       "py": "int",
+       "v": 6
+      },
+      "media_type": "album"
+     }
+    ]
+   },
+   "output": {
+    "schema": [
+     [
+      "index",
+      "sqlite_autoindex_downloads_1",
+      "downloads",
+      {
+       "py": "none"
+      }
+     ],
+     [
+      "table",
+      "downloads",
+      "downloads",
+      "CREATE TABLE downloads (\n                  \"id\" text NOT NULL,\n                  \"media_type\" text NOT NULL DEFAULT 'album',\n                  \"quality\" integer NOT NULL DEFAULT 27,\n                  \"file_format\" text NOT NULL DEFAULT 'FLAC',\n                  \"quality_met\" integer NOT NULL DEFAULT 0,\n                  \"bit_depth\" text,\n                  \"sampling_rate\" text,\n                  \"saved_path\" text NOT NULL DEFAULT '',\n                  \"status\" text NOT NULL DEFAULT 'downloaded',\n                  \"url\" text NOT NULL DEFAULT '',\n                  \"release_date\" text NOT NULL DEFAULT '',\n                  \"artist\" text NOT NULL DEFAULT '',\n                  \"album\" text NOT NULL DEFAULT '',\n                  PRIMARY KEY (\"id\", \"quality\")\n                )"
+     ]
+    ],
+    "columns": [
+     [
+      {
+       "py": "int",
+       "v": 0
+      },
+      "id",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 1
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 1
+      },
+      "media_type",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'album'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 2
+      },
+      "quality",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "27",
+      {
+       "py": "int",
+       "v": 2
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 3
+      },
+      "file_format",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'FLAC'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 4
+      },
+      "quality_met",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "0",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 5
+      },
+      "bit_depth",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 6
+      },
+      "sampling_rate",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 7
+      },
+      "saved_path",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 8
+      },
+      "status",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'downloaded'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 9
+      },
+      "url",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 10
+      },
+      "release_date",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 11
+      },
+      "artist",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 12
+      },
+      "album",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ]
+    ],
+    "rows": [
+     {
+      "id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 6
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "24",
+      "sampling_rate": "192.0",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma"
+     },
+     {
+      "id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "24",
+      "sampling_rate": "192.0",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma"
+     }
+    ],
+    "has": [
+     true
+    ]
+   }
+  },
+  {
+   "name": "values",
+   "input": {
+    "calls": [
+     {
+      "item_id": "a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": false,
+      "bit_depth": {
+       "py": "int",
+       "v": 16
+      },
+      "sampling_rate": {
+       "py": "float",
+       "v": 44.1
+      },
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma",
+      "add": true
+     },
+     {
+      "item_id": "b",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "Unknown",
+      "quality_met": true,
+      "bit_depth": {
+       "py": "none"
+      },
+      "sampling_rate": {
+       "py": "none"
+      },
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma",
+      "add": true
+     },
+     {
+      "item_id": "c",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "MP3",
+      "quality_met": true,
+      "bit_depth": "24",
+      "sampling_rate": "96",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma",
+      "add": true
+     },
+     {
+      "item_id": "d",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": true,
+      "bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "sampling_rate": {
+       "py": "float",
+       "v": 88.2
+      },
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma",
+      "add": true
+     },
+     {
+      "item_id": "e",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": true,
+      "bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "sampling_rate": {
+       "py": "float",
+       "v": 176.4
+      },
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma",
+      "add": true
+     },
+     {
+      "item_id": "f",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": true,
+      "bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "sampling_rate": {
+       "py": "float",
+       "v": 0.30000000000000004
+      },
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma",
+      "add": true
+     },
+     {
+      "item_id": "g",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": true,
+      "bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "sampling_rate": {
+       "py": "float",
+       "v": 22.05
+      },
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Ünïcode, Ärtists",
+      "album": "日本",
+      "add": true
+     },
+     {
+      "item_id": "h",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": true,
+      "bit_depth": {
+       "py": "int",
+       "v": 24
+      },
+      "sampling_rate": {
+       "py": "float",
+       "v": 192.0
+      },
+      "saved_path": "",
+      "status": "downloaded",
+      "url": "",
+      "release_date": "",
+      "artist": "",
+      "album": "",
+      "add": true
+     }
+    ]
+   },
+   "output": {
+    "schema": [
+     [
+      "index",
+      "sqlite_autoindex_downloads_1",
+      "downloads",
+      {
+       "py": "none"
+      }
+     ],
+     [
+      "table",
+      "downloads",
+      "downloads",
+      "CREATE TABLE downloads (\n                  \"id\" text NOT NULL,\n                  \"media_type\" text NOT NULL DEFAULT 'album',\n                  \"quality\" integer NOT NULL DEFAULT 27,\n                  \"file_format\" text NOT NULL DEFAULT 'FLAC',\n                  \"quality_met\" integer NOT NULL DEFAULT 0,\n                  \"bit_depth\" text,\n                  \"sampling_rate\" text,\n                  \"saved_path\" text NOT NULL DEFAULT '',\n                  \"status\" text NOT NULL DEFAULT 'downloaded',\n                  \"url\" text NOT NULL DEFAULT '',\n                  \"release_date\" text NOT NULL DEFAULT '',\n                  \"artist\" text NOT NULL DEFAULT '',\n                  \"album\" text NOT NULL DEFAULT '',\n                  PRIMARY KEY (\"id\", \"quality\")\n                )"
+     ]
+    ],
+    "columns": [
+     [
+      {
+       "py": "int",
+       "v": 0
+      },
+      "id",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 1
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 1
+      },
+      "media_type",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'album'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 2
+      },
+      "quality",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "27",
+      {
+       "py": "int",
+       "v": 2
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 3
+      },
+      "file_format",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'FLAC'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 4
+      },
+      "quality_met",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "0",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 5
+      },
+      "bit_depth",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 6
+      },
+      "sampling_rate",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 7
+      },
+      "saved_path",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 8
+      },
+      "status",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'downloaded'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 9
+      },
+      "url",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 10
+      },
+      "release_date",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 11
+      },
+      "artist",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 12
+      },
+      "album",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ]
+    ],
+    "rows": [
+     {
+      "id": "a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 0
+      },
+      "bit_depth": "16",
+      "sampling_rate": "44.1",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma"
+     },
+     {
+      "id": "b",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "Unknown",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": {
+       "py": "none"
+      },
+      "sampling_rate": {
+       "py": "none"
+      },
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma"
+     },
+     {
+      "id": "c",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "MP3",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "24",
+      "sampling_rate": "96",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma"
+     },
+     {
+      "id": "d",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "24",
+      "sampling_rate": "88.2",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma"
+     },
+     {
+      "id": "e",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "24",
+      "sampling_rate": "176.4",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma"
+     },
+     {
+      "id": "f",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "24",
+      "sampling_rate": "0.30000000000000004",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma"
+     },
+     {
+      "id": "g",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "24",
+      "sampling_rate": "22.05",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Ünïcode, Ärtists",
+      "album": "日本"
+     },
+     {
+      "id": "h",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "24",
+      "sampling_rate": "192.0",
+      "saved_path": "",
+      "status": "downloaded",
+      "url": "",
+      "release_date": "",
+      "artist": "",
+      "album": ""
+     }
+    ],
+    "has": []
+   }
+  },
+  {
+   "name": "shared file",
+   "input": {
+    "file": "shared.db"
+   },
+   "output": {
+    "schema": [
+     [
+      "index",
+      "sqlite_autoindex_downloads_1",
+      "downloads",
+      {
+       "py": "none"
+      }
+     ],
+     [
+      "table",
+      "downloads",
+      "downloads",
+      "CREATE TABLE downloads (\n                  \"id\" text NOT NULL,\n                  \"media_type\" text NOT NULL DEFAULT 'album',\n                  \"quality\" integer NOT NULL DEFAULT 27,\n                  \"file_format\" text NOT NULL DEFAULT 'FLAC',\n                  \"quality_met\" integer NOT NULL DEFAULT 0,\n                  \"bit_depth\" text,\n                  \"sampling_rate\" text,\n                  \"saved_path\" text NOT NULL DEFAULT '',\n                  \"status\" text NOT NULL DEFAULT 'downloaded',\n                  \"url\" text NOT NULL DEFAULT '',\n                  \"release_date\" text NOT NULL DEFAULT '',\n                  \"artist\" text NOT NULL DEFAULT '',\n                  \"album\" text NOT NULL DEFAULT '',\n                  PRIMARY KEY (\"id\", \"quality\")\n                )"
+     ]
+    ],
+    "columns": [
+     [
+      {
+       "py": "int",
+       "v": 0
+      },
+      "id",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 1
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 1
+      },
+      "media_type",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'album'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 2
+      },
+      "quality",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "27",
+      {
+       "py": "int",
+       "v": 2
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 3
+      },
+      "file_format",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'FLAC'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 4
+      },
+      "quality_met",
+      "INTEGER",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "0",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 5
+      },
+      "bit_depth",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 6
+      },
+      "sampling_rate",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 0
+      },
+      {
+       "py": "none"
+      },
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 7
+      },
+      "saved_path",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 8
+      },
+      "status",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "'downloaded'",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 9
+      },
+      "url",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 10
+      },
+      "release_date",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 11
+      },
+      "artist",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ],
+     [
+      {
+       "py": "int",
+       "v": 12
+      },
+      "album",
+      "TEXT",
+      {
+       "py": "int",
+       "v": 1
+      },
+      "''",
+      {
+       "py": "int",
+       "v": 0
+      }
+     ]
+    ],
+    "rows": [
+     {
+      "id": "20273753",
+      "media_type": "track",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 0
+      },
+      "bit_depth": "24",
+      "sampling_rate": "96.0",
+      "saved_path": "/music/Miles Davis - So What (1959) [24B-96.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/x",
+      "release_date": "1959-08-17",
+      "artist": "Miles Davis",
+      "album": "So What"
+     },
+     {
+      "id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 6
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "16",
+      "sampling_rate": "44.1",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma"
+     },
+     {
+      "id": "evz7usmruz35a",
+      "media_type": "album",
+      "quality": {
+       "py": "int",
+       "v": 27
+      },
+      "file_format": "FLAC",
+      "quality_met": {
+       "py": "int",
+       "v": 1
+      },
+      "bit_depth": "24",
+      "sampling_rate": "192.0",
+      "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]",
+      "status": "downloaded",
+      "url": "https://www.qobuz.com/album/evz7usmruz35a",
+      "release_date": "1969-11-07",
+      "artist": "Pink Floyd",
+      "album": "Ummagumma"
+     }
+    ]
+   }
+  }
+ ]
+}

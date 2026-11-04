@@ -26,6 +26,7 @@ import math
 import random
 import re
 import shutil
+import sqlite3
 import struct
 import sys
 import tempfile
@@ -49,7 +50,8 @@ from pathvalidate import sanitize_filename, sanitize_filepath
 from requests.adapters import BaseAdapter
 
 from qobuz_dl import bundle as bundle_mod
-from qobuz_dl import constants, downloader, metadata, qopy, utils
+from qobuz_dl import constants, core, db, downloader, metadata, qopy, utils
+from qobuz_dl.core import QobuzDL
 from qobuz_dl.settings import QobuzDLSettings
 from qobuz_dl.downloader import Download
 from qobuz_dl.qopy import Client
@@ -2274,19 +2276,114 @@ class LayoutHandler(BaseHTTPRequestHandler):
         self.wfile.write(data[start:])
 
 
+# The artist qobuzdltest builds from recorded albums, as ArtistAlbums.
+ARTIST_ALBUMS_ID = 9000002
+ARTIST_ALBUMS_NAME = "Norah Jones"
+ARTIST_ALBUMS = ("hires_96", "with_version", "cd")
+
+
+def track_sources(raw):
+    """The tracks qobuzdltest answers track/get for that nothing recorded,
+    found as its buildCatalog finds them: recorded track/get answers, then
+    each album's tracks in file order, then the playlist's."""
+    out = {}
+    for name in sorted(raw):
+        if name.startswith("track-get-"):
+            out[str(raw[name]["id"])] = (raw[name], None)
+    for name in sorted(raw):
+        if name.startswith("album-get-") and isinstance(raw[name].get("tracks"), dict):
+            for t in raw[name]["tracks"].get("items", []):
+                out.setdefault(str(t["id"]), (t, raw[name]))
+    for name in sorted(raw):
+        if name.startswith("playlist-get-"):
+            for t in raw[name]["tracks"]["items"]:
+                out.setdefault(str(t["id"]), (t, None))
+    return out
+
+
+def built_track_get(item, album):
+    """qobuzdltest's track/get for a listed track: the album's track with the
+    album less its tracks in front, or the playlist's track less the keys
+    only a playlist has."""
+    item = copy.deepcopy(item)
+    if album is None:
+        for k in ("position", "created_at", "playlist_track_id"):
+            item.pop(k, None)
+        return item
+    album = copy.deepcopy(album)
+    album.pop("tracks", None)
+    return {"album": album, **item}
+
+
+def artist_albums(index, raw):
+    """qobuzdltest's ArtistAlbums: the recorded artist's first page listing
+    recorded albums, as album/get answers them less their tracks."""
+    page = copy.deepcopy(raw[f"artist-get-{index['items']['artist']}-0.json"])
+    items = []
+    for kind in ARTIST_ALBUMS:
+        a = copy.deepcopy(raw[f"album-get-{index['items']['albums'][kind]}.json"])
+        a.pop("tracks", None)
+        items.append(a)
+    page["albums"]["items"] = items
+    page["albums"]["total"] = len(items)
+    page["id"] = ARTIST_ALBUMS_ID
+    page["albums_count"] = len(items)
+    page["name"] = ARTIST_ALBUMS_NAME
+    return page
+
+
 class LayoutClient:
     """Answers as qobuzdltest does: the recorded answers, static URLs on the
     local server, and getFileUrl URLs naming the delivered format."""
 
     def __init__(self, index, raw, base):
-        self.raw, self.base = raw, base
+        self.index, self.raw, self.base = index, raw, base
         self.urls = FakeClient(index, raw).urls
+        self.tracks = track_sources(raw)
+
+    def answer(self, d):
+        return rewrite_static(normalize(d), self.base)
 
     def get_album_meta(self, id):
-        return rewrite_static(normalize(self.raw[f"album-get-{id}.json"]), self.base)
+        return self.answer(self.raw[f"album-get-{id}.json"])
 
     def get_track_meta(self, id):
-        return rewrite_static(normalize(self.raw[f"track-get-{id}.json"]), self.base)
+        name = f"track-get-{id}.json"
+        if name in self.raw:
+            return self.answer(self.raw[name])
+        return self.answer(built_track_get(*self.tracks[str(id)]))
+
+    def multi_meta(self, epoint, key, id):
+        """qopy's multi_meta over the fake's pages: each page the whole
+        collection with its items cut by offset and limit."""
+        if epoint == "artist/get" and str(id) == str(ARTIST_ALBUMS_ID):
+            whole = artist_albums(self.index, self.raw)
+        else:
+            whole = self.raw[f"{epoint.replace('/', '-')}-{id}-0.json"]
+        items_key = "tracks" if "playlist" in epoint else "albums"
+        offset = 0
+        while True:
+            page = copy.deepcopy(whole)
+            sub = page[items_key]
+            sub["offset"], sub["limit"] = offset, 50
+            sub["items"] = sub["items"][offset:offset + 50]
+            res = self.answer(page)
+            items = res.get(items_key, {}).get("items", [])
+            if not items:
+                break
+            yield res
+            offset += len(items)
+            if offset >= res.get(items_key, {}).get("total", res.get(key, 0)):
+                break
+
+    def get_plist_meta(self, id):
+        return self.multi_meta("playlist/get", "tracks_count", id)
+
+    def get_artist_meta(self, id):
+        return self.multi_meta("artist/get", "albums_count", id)
+
+    def get_label_meta(self, id):
+        return self.multi_meta("label/get", "albums_count", id)
 
     def get_track_url(self, id, fmt_id, force_segments=False):
         if force_segments:
@@ -2306,7 +2403,7 @@ def layout_tree(root):
             out.append({"path": rel, "type": "flac", "result": flac_result(p)})
         elif p.suffix == ".mp3":
             out.append({"path": rel, "type": "mp3", "result": mp3_result(p)})
-        elif p.suffix == ".txt":
+        elif p.suffix in (".txt", ".m3u8"):
             out.append({"path": rel, "type": "text", "text": p.read_text(encoding="utf-8")})
         else:
             out.append({"path": rel, "type": "file", "sha256": sha(p.read_bytes())})
@@ -2381,6 +2478,551 @@ def gen_layout(index, raw):
     finally:
         srv.shutdown()
         downloader.time = real_time
+
+
+# --- Core: collections, m3u8, search, downloads database -------------------
+
+
+def run_core_layout(client, inp):
+    """handle_url on a collection, with a downloads database: the tree, and
+    the rows with saved_path relative to the download folder."""
+    o = inp["options"]
+    s = dl_settings(o["settings"])
+    with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as dbdir, \
+            open(os.devnull, "w") as null, contextlib.redirect_stderr(null):
+        dbpath = os.path.join(dbdir, "qobuz_dl.db")
+        qdl = QobuzDL(directory=tmp, quality=o["quality"], embed_art=o["embed_art"],
+                      ignore_singles_eps=o["albums_only"], no_m3u_for_playlists=o["no_m3u"],
+                      quality_fallback=o["fallback"], downloads_db=dbpath, folder_format=o["folder_format"],
+                      track_format=o["track_format"], smart_discography=o["smart"], no_credits=o["no_credits"],
+                      settings=s)
+        qdl.client = client
+        downloader.abort_event.clear()
+        with sorted_walk():
+            qdl.handle_url(f"https://play.qobuz.com/{inp['kind']}/{inp['id']}")
+        gc_sqlite()
+        rows = db_dump(dbpath)["rows"]
+        for r in rows:
+            if r["saved_path"] != tmp and not r["saved_path"].startswith(tmp + "/"):
+                raise ValueError(f"saved_path {r['saved_path']!r} is outside {tmp}")
+            r["saved_path"] = r["saved_path"][len(tmp) + 1:]
+        return {"tree": layout_tree(tmp), "db": rows}
+
+
+def core_layout_inputs(index, kind):
+    def inp(id, quality=27, fallback=True, embed_art=False, albums_only=False, no_credits=False, no_m3u=False,
+            smart=False, ff=BOT_FOLDER, tf=BOT_TRACK, settings=None):
+        return {"kind": kind, "id": str(id), "options": {
+            "quality": quality, "fallback": fallback, "embed_art": embed_art, "albums_only": albums_only,
+            "no_credits": no_credits, "no_m3u": no_m3u, "smart": smart, "folder_format": ff, "track_format": tf,
+            "settings": settings or {}}}
+
+    if kind == "playlist":
+        p = index["items"]["playlist"]
+        yield "bot", inp(p)
+        yield "q5", inp(p, quality=5)
+        yield "q6", inp(p, quality=6)
+        yield "no m3u", inp(p, no_m3u=True)
+        yield "no fallback q7", inp(p, quality=7, fallback=False)
+        yield "embedded cover", inp(p, embed_art=True, settings={"embed_art": True})
+        yield "defaults", inp(p, ff=None, tf=None)
+        yield "one worker", inp(p, settings={"max_workers": 1})
+        return
+    yield "bot", inp(ARTIST_ALBUMS_ID)
+    yield "smart discography", inp(ARTIST_ALBUMS_ID, smart=True)
+    yield "smart discography q6", inp(ARTIST_ALBUMS_ID, smart=True, quality=6)
+
+
+def gen_core_layout(index, raw):
+    real_time = downloader.time
+    downloader.time = SimpleNamespace(sleep=lambda s: real_time.sleep(min(s, 0.002)))
+    srv = ThreadingHTTPServer(("127.0.0.1", 0), LayoutHandler)
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    try:
+        client = LayoutClient(index, raw, f"http://127.0.0.1:{srv.server_address[1]}")
+        with quiet_downloader():
+            for kind in ("playlist", "artist"):
+                g = Golden(f"layout_{kind}")
+                for name, inp in core_layout_inputs(index, kind):
+                    g.case(name, inp, lambda inp=inp: run_core_layout(client, inp))
+                g.write()
+    finally:
+        srv.shutdown()
+        downloader.time = real_time
+
+
+@contextlib.contextmanager
+def sorted_walk():
+    """os.walk with each folder's files sorted by name, as the port lists
+    them; Python's order is the file system's."""
+    real = os.walk
+
+    def walk(top, *a, **k):
+        for root, dirs, files in real(top, *a, **k):
+            files.sort()
+            yield root, dirs, files
+
+    os.walk = walk
+    try:
+        yield
+    finally:
+        os.walk = real
+
+
+M3U = FIXTURES / "m3u"
+# Offsets in 320-bare.mp3's first frame: the Info header at 36, its frame
+# count after the flags at 44, and the encoder string after the byte count,
+# the TOC and the VBR scale at 156.
+MP3_XING, MP3_FRAMES, MP3_ENCODER = 36, 44, 156
+
+
+def mp3_variant(kind):
+    data = bytearray((AUDIO / "320-bare.mp3").read_bytes())
+    if data[MP3_XING:MP3_XING + 4] != b"Info" or data[MP3_ENCODER:MP3_ENCODER + 4] != b"Lavc":
+        raise ValueError("320-bare.mp3 has moved its Info header")
+    if kind == "frames":
+        # 40,000 frames of 1,152 samples at 44.1 kHz: 1,044.9 seconds.
+        data[MP3_FRAMES:MP3_FRAMES + 4] = struct.pack(">I", 40000)
+    elif kind == "lame":
+        # 3,829 frames are 100.02 seconds; LAME's delay and padding of 2,076
+        # samples take it under 100.
+        data[MP3_FRAMES:MP3_FRAMES + 4] = struct.pack(">I", 3829)
+        lame = bytearray(27)
+        lame[12:15] = bytes([576 >> 4, (576 & 0xF) << 4 | 1500 >> 8, 1500 & 0xFF])
+        data[MP3_ENCODER:MP3_ENCODER + 36] = b"LAME3.100" + bytes(lame)
+    elif kind == "cbr":
+        # No frame count, so the length comes from the size at 32 kbps: 1.57 s.
+        data[2] = 0x10
+        data[MP3_XING + 4:MP3_XING + 8] = struct.pack(">I", 0x0E)
+    elif kind == "vbri":
+        # 5,000 frames: 130.6 seconds.
+        vbri = b"VBRI" + struct.pack(">HHHIIHHHH", 1, 0, 50, 1_000_000, 5000, 0, 1, 2, 1)
+        data[MP3_XING:MP3_XING + len(vbri)] = vbri
+    elif kind != "bare":
+        raise ValueError(kind)
+    return bytes(data)
+
+
+def flac_variant(src, samples=None):
+    prefix, blocks, audio = flac_parts((AUDIO / src).read_bytes())
+    if samples is not None:
+        info = bytearray(blocks[0][1])
+        info[13] = (info[13] & 0xF0) | (samples >> 32)
+        info[14:18] = struct.pack(">I", samples & 0xFFFFFFFF)
+        blocks[0] = (0, bytes(info))
+    return flac_bytes(blocks, audio, prefix)
+
+
+def tag_flac_file(path, tags):
+    f = FLAC(str(path))
+    for k, v in tags.items():
+        f[k] = v
+    f.save()
+
+
+def tag_mp3_file(path, frames, version=3):
+    t = id3.ID3()
+    for f in frames:
+        t.add(f)
+    t.save(str(path), v2_version=version)
+
+
+def write_m3u_fixtures():
+    """The audio files the m3u8 cases put in their folders: tagged copies of
+    the fixtures, with lengths of whole seconds, and broken files."""
+    shutil.rmtree(M3U, ignore_errors=True)
+    M3U.mkdir(parents=True)
+
+    def flac(name, tags=None, src="16-44.1.flac", samples=None):
+        (M3U / name).write_bytes(flac_variant(src, samples))
+        if tags:
+            tag_flac_file(M3U / name, tags)
+
+    def mp3(name, kind, frames=None, version=3, prefix=b""):
+        (M3U / name).write_bytes(prefix + mp3_variant(kind))
+        if frames:
+            tag_mp3_file(M3U / name, frames, version)
+
+    flac("alpha.flac", {"QOBUZTRACKID": "101", "ISRC": "ISRC00000101", "TITLE": "Alpha", "ARTIST": "Artist A"},
+         samples=44100 * 61 + 44099)
+    flac("beta.flac", {"QOBUZTRACKID": "102", "TITLE": "Beta", "ARTIST": "Artist B"}, src="24-96.flac")
+    flac("gamma.flac", {"ISRC": "ISRC00000103", "TITLE": "Gamma", "ARTIST": "Artist C"}, src="24-192.flac",
+         samples=192000 * 3600)
+    flac("delta.flac", {"TITLE": "  Delta Title  "})
+    flac("lower.flac", {"qobuztrackid": "105", "title": "Épsilon", "artist": "Ärtist E"})
+    flac("multi.flac", {"QOBUZTRACKID": ["106", "107"], "TITLE": ["Zeta", "Second"], "ARTIST": ["One", "Two"]})
+    flac("alpha-again.flac", {"TITLE": "alpha", "ARTIST": "Another"})
+    flac("untagged.flac", src="no-comments.flac")
+    flac("prefixed.flac", src="id3-prefixed.flac", samples=44100 * 2)
+    (M3U / "bad.flac").write_bytes(b"fLaC but not really" * 4)
+    mp3("omega.mp3", "frames", [id3.TXXX(encoding=1, desc="QOBUZTRACKID", text="201"),
+                                id3.TSRC(encoding=0, text="ISRC00000201"), id3.TIT2(encoding=1, text="Ωmega"),
+                                id3.TPE1(encoding=1, text="Artíst M")])
+    mp3("lame.mp3", "lame", [id3.TXXX(encoding=0, desc="qobuztrackid", text="202"),
+                             id3.TIT2(encoding=0, text="Lame"), id3.TPE1(encoding=0, text="Encoder")])
+    mp3("cbr.mp3", "cbr", [id3.TIT2(encoding=0, text="Cbr")])
+    mp3("vbri.mp3", "vbri", [id3.TIT2(encoding=3, text="Vbri"), id3.TPE1(encoding=3, text=["One", "Two"])], 4)
+    mp3("notitle.mp3", "frames", [id3.TSSE(encoding=0, text="Lavf")])
+    mp3("bare.mp3", "bare")
+    # A false sync whose bitrate is invalid, then zeros, then the frames.
+    mp3("junk.mp3", "frames", [id3.TIT2(encoding=0, text="Junk")], prefix=b"\xff\xfb\x00\x00" + bytes(300))
+    # make_m3u takes the length only from a file with tags: mutagen's
+    # FileType is false without any.
+    mp3("untagged.mp3", "frames")
+    flac("untagged-long.flac", src="no-comments.flac", samples=44100 * 10)
+    flac("empty-tags.flac", src="no-comments.flac", samples=44100 * 10)
+    f = FLAC(str(M3U / "empty-tags.flac"))
+    f.add_tags()
+    f.save()
+    (M3U / "garbage.mp3").write_bytes(b"not an mp3 at all " * 8)
+    (M3U / "empty.mp3").write_bytes(b"")
+    (M3U / "cover.jpg").write_bytes((AUDIO / "cover.jpg").read_bytes())
+
+
+def run_m3u(inp):
+    with tempfile.TemporaryDirectory() as tmp:
+        folder = Path(tmp) / inp["dir"]
+        folder.mkdir()
+        for dest, src in inp["files"].items():
+            (folder / dest).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(M3U / src, folder / dest)
+        with sorted_walk():
+            utils.make_m3u(str(folder), copy.deepcopy(inp["items"]))
+        written = sorted(p.name for p in folder.iterdir() if p.suffix == ".m3u8")
+        if not written:
+            return None
+        if written != [inp["dir"] + ".m3u8"]:
+            raise ValueError(f"unexpected playlist files {written}")
+        return (folder / written[0]).read_text(encoding="utf-8")
+
+
+def m3u_inputs():
+    def inp(files, items=None, dir="My Playlist"):
+        if isinstance(files, list):
+            files = {f: f for f in files}
+        return {"dir": dir, "files": files, "items": items}
+
+    def item(id, title, isrc=None, artist="Album Artist", performer="Performer", **more):
+        out = {"id": id, "title": title}
+        if isrc is not None:
+            out["isrc"] = isrc
+        out["performer"] = {"name": performer}
+        out["album"] = {"artist": {"name": artist}}
+        out.update(more)
+        return out
+
+    for name in sorted(p.name for p in M3U.iterdir() if p.suffix in (".flac", ".mp3")):
+        yield f"length and tags: {name}", inp([name])
+    four = ["alpha.flac", "beta.flac", "gamma.flac", "omega.mp3"]
+    yield "natural order without items", inp(four)
+    yield "natural order with an empty list", inp(four, [])
+    yield "by track ID", inp(four, [item(201, "x"), item(102, "x"), item(101, "x")])
+    yield "track ID as a string", inp(four, [item("102", "x")])
+    yield "by ISRC", inp(four, [item(1, "x", isrc="ISRC00000103"), item(2, "x", isrc="ISRC00000201")])
+    yield "ISRC missing is the text None", inp(four, [item(1, "x")])
+    yield "by title, stripped and lower case", inp(
+        ["delta.flac", "beta.flac"], [item(1, "  delta title "), item(2, "BETA")])
+    yield "ID before ISRC before title", inp(
+        four, [item(102, "Gamma", isrc="ISRC00000101"), item(9, "Gamma", isrc="ISRC00000101"), item(9, "Gamma")])
+    yield "by file name", inp({"01 - Some Song (Live).flac": "beta.flac", "02 - Other.flac": "delta.flac"},
+                              [item(1, "some song"), item(2, "OTHER")])
+    yield "file name match takes the first file", inp(
+        {"a Song.flac": "untagged.flac", "b song.flac": "untagged.flac"}, [item(1, "song")])
+    yield "duplicates kept", inp(four, [item(101, "x"), item(101, "x"), item(102, "x"), item(101, "x")])
+    yield "nothing matched falls back to natural order", inp(four, [item(9, "nope"), item(8, "none")])
+    yield "misses between matches", inp(four, [item(9, "nope"), item(102, "x"), item(8, "Missing", artist="Various Artists")])
+    yield "title missing is Unknown Title", inp(four, [{"id": 9}, item(101, "x")])
+    yield "title None", inp(four, [{"id": 9, "title": None}])
+    yield "album None", inp(four, [{"id": 101, "title": "x", "album": None}])
+    yield "item with no album or performer", inp(four, [{"id": 9, "title": "nope"}, item(102, "x")])
+    yield "empty title matches any file name", inp(four, [{"id": 9, "title": ""}])
+    yield "later file wins a title clash", inp(["alpha.flac", "alpha-again.flac"], [item(9, "ALPHA")])
+    yield "case-insensitive Vorbis keys", inp(["lower.flac", "beta.flac"], [item(105, "x"), item(9, "épsilon")])
+    yield "multiple values take the first", inp(["multi.flac"], [item(107, "x"), item(106, "x"), item(9, "second")])
+    yield "MP3 TXXX description ignores case", inp(["lame.mp3", "omega.mp3"], [item(202, "x"), item(201, "x")])
+    yield "broken files fall back to their names", inp(
+        ["bad.flac", "garbage.mp3", "empty.mp3", "bare.mp3"], [item(9, "garbage"), item(9, "bad"), item(9, "bare")])
+    yield "subfolders sorted", inp({"b/2.flac": "beta.flac", "a/1.flac": "alpha.flac", "c.flac": "gamma.flac",
+                                    "a/z/0.flac": "delta.flac"})
+    yield "subfolders with items", inp({"b/2.flac": "beta.flac", "a/1.flac": "alpha.flac"},
+                                       [item(102, "x"), item(101, "x")])
+    yield "extensions in any case", inp({"one.FLAC": "alpha.flac", "two.Mp3": "omega.mp3", "three.flac.txt": "beta.flac",
+                                         "cover.jpg": "cover.jpg"})
+    yield "numbers sort by value", inp({"track 10.flac": "alpha.flac", "track 2.flac": "beta.flac",
+                                        "Track 1.flac": "gamma.flac", "track 02.flac": "delta.flac",
+                                        "track \u0663.flac": "untagged.flac", "track.flac": "multi.flac"})
+    yield "a digit Python can't read as a number", inp({"1\u00b22.flac": "alpha.flac", "b.flac": "beta.flac"})
+    yield "only other files", inp({"cover.jpg": "cover.jpg"})
+    yield "empty folder", inp({})
+    yield "folder name with spaces and accents", inp(["alpha.flac"], dir="Café del Mar: Vol. 1")
+
+
+def gen_m3u():
+    g = Golden("m3u")
+    for name, inp in m3u_inputs():
+        g.case(name, inp, lambda inp=inp: run_m3u(inp))
+    g.write()
+
+
+class SearchClient:
+    """Answers each search with the given items."""
+
+    def __init__(self, items):
+        self.items = items
+
+    def _answer(self, key):
+        return {key: {"items": copy.deepcopy(self.items)}}
+
+    def search_albums(self, query, limit=20):
+        return self._answer("albums")
+
+    def search_tracks(self, query, limit=20):
+        return self._answer("tracks")
+
+    def search_artists(self, query, limit=20):
+        return self._answer("artists")
+
+    def search_playlists(self, query, limit=20):
+        return self._answer("playlists")
+
+    def get_favorites(self, fav_type="albums", limit=100, offset=0):
+        raise NotImplementedError("favorites are not ported")
+
+
+def run_search(inp):
+    me = SimpleNamespace(client=SearchClient(inp["items"]))
+    return QobuzDL.search_by_type(me, "query", inp["type"], 10)
+
+
+def search_inputs(raw):
+    for typ in ("albums", "tracks", "artists", "playlists"):
+        items = normalize(raw[f"catalog-search-{typ}.json"])[typ]["items"]
+        yield f"recorded {typ}", {"type": typ[:-1], "items": items}
+
+    def album(**over):
+        out = {"id": "a1", "title": "Title", "artist": {"name": "Artist"}, "release_date_original": "2020-05-06",
+               "release_type": "album", "hires_streamable": False}
+        for k, v in over.items():
+            if v is MISSING:
+                out.pop(k, None)
+            else:
+                out[k] = v
+        return out
+
+    guesses = [
+        ("no type, long", dict(release_type=MISSING, duration=1740, tracks_count=2)),
+        ("no type, 1739 seconds", dict(release_type=MISSING, duration=1739, tracks_count=2)),
+        ("no type, 7 tracks", dict(release_type=MISSING, duration=10, tracks_count=7)),
+        ("no type, 1 track", dict(release_type=MISSING, duration=200, tracks_count=1)),
+        ("no type, nothing known", dict(release_type=MISSING)),
+        ("no type, zeros", dict(release_type=MISSING, duration=0, tracks_count=0)),
+        ("no type, duration only", dict(release_type=MISSING, duration=100)),
+        ("no type, float duration", dict(release_type=MISSING, duration=1740.0, tracks_count=0)),
+        ("empty type", dict(release_type="", tracks_count=1)),
+        ("product type", dict(release_type=None, product_type="single")),
+        ("ep", dict(release_type="ep")),
+        ("EP upper", dict(release_type="EP")),
+        ("epmini", dict(release_type="epmini")),
+        ("two words", dict(release_type="live album")),
+        ("hi-res", dict(hires_streamable=True, maximum_bit_depth=24, maximum_sampling_rate=192)),
+        ("hi-res float", dict(hires_streamable=True, maximum_bit_depth=24, maximum_sampling_rate=44.1)),
+        ("hi-res defaults", dict(hires_streamable=True)),
+        ("hi-res None", dict(hires_streamable=True, maximum_bit_depth=None, maximum_sampling_rate=None)),
+        ("version and explicit", dict(version="Deluxe", parental_warning=True)),
+        ("performer", dict(artist=MISSING, performer={"name": "Performer"})),
+        ("artist without name", dict(artist={}, performer={"name": "Performer"})),
+        ("unknown artist", dict(artist=MISSING)),
+        ("name for title", dict(title=MISSING, name="Name")),
+        ("unknown title", dict(title=None)),
+        ("release date", dict(release_date_original=None, release_date="1999-12-31")),
+        ("no date", dict(release_date_original=MISSING)),
+        ("int date", dict(release_date_original=2001)),
+        ("short date", dict(release_date_original="99")),
+        ("long names", dict(artist={"name": "An Artist Name Of Twenty"}, title="T" * 35, release_type="compilation")),
+        ("exact widths", dict(artist={"name": "A" * 20}, title="B" * 35, release_type="soundtra")),
+        ("one over", dict(artist={"name": "A" * 21}, title="B" * 36, release_type="soundtrac")),
+        ("wide characters", dict(artist={"name": "Ω" * 25}, title="日本語" * 13)),
+        ("no id", dict(id=MISSING)),
+        ("int id", dict(id=123)),
+    ]
+    for name, over in guesses:
+        yield f"album: {name}", {"type": "album", "items": [album(**over)]}
+    yield "album: several", {"type": "album", "items": [album(), album(id="a2", title="Second")]}
+    yield "album: none", {"type": "album", "items": []}
+    yield "track: no type", {"type": "track", "items": [album(release_type=MISSING, duration=3000, tracks_count=9)]}
+    yield "track: performer", {"type": "track", "items": [album(artist=MISSING, performer={"name": "P"})]}
+    yield "album: artist None", {"type": "album", "items": [album(artist=None)]}
+    yield "album: type not a string", {"type": "album", "items": [album(release_type=5)]}
+    yield "album: None duration", {"type": "album", "items": [album(release_type=MISSING, tracks_count=3, duration=None)]}
+    yield "album: string count", {"type": "album", "items": [album(release_type=MISSING, tracks_count="7")]}
+
+    def named(**over):
+        out = {"id": 7, "name": "Name"}
+        out.update(over)
+        return out
+
+    for typ in ("artist", "playlist"):
+        yield f"{typ}: albums", {"type": typ, "items": [named(albums_count=12)]}
+        yield f"{typ}: tracks", {"type": typ, "items": [named(tracks_count=3)]}
+        yield f"{typ}: albums None", {"type": typ, "items": [named(albums_count=None, tracks_count=3)]}
+        yield f"{typ}: no counts", {"type": typ, "items": [{"id": 1}]}
+        yield f"{typ}: long name", {"type": typ, "items": [named(name="N" * 51, tracks_count=1)]}
+        yield f"{typ}: name None", {"type": typ, "items": [named(name=None, tracks_count=1)]}
+
+
+def gen_search_text(raw):
+    g = Golden("search_text")
+    for name, inp in search_inputs(raw):
+        g.case(name, inp, lambda inp=inp: run_search(inp))
+    g.write()
+
+
+DB = FIXTURES / "db"
+V1_SCHEMA = "CREATE TABLE downloads (id TEXT UNIQUE NOT NULL);"
+# db.py's table before the artist and album columns.
+V2_SCHEMA = """
+                CREATE TABLE downloads (
+                  "id" text NOT NULL,
+                  "media_type" text NOT NULL DEFAULT 'album',
+                  "quality" integer NOT NULL DEFAULT 27,
+                  "file_format" text NOT NULL DEFAULT 'FLAC',
+                  "quality_met" integer NOT NULL DEFAULT 0,
+                  "bit_depth" text,
+                  "sampling_rate" text,
+                  "saved_path" text NOT NULL DEFAULT '',
+                  "status" text NOT NULL DEFAULT 'downloaded',
+                  "url" text NOT NULL DEFAULT '',
+                  "release_date" text NOT NULL DEFAULT '',
+                  PRIMARY KEY ("id", "quality")
+                );
+                """
+
+# Rows as the downloader adds them: handle_download_id's keyword arguments.
+DB_ALBUM = {"item_id": "evz7usmruz35a", "media_type": "album", "quality": 27, "file_format": "FLAC",
+            "quality_met": True, "bit_depth": 24, "sampling_rate": 192.0,
+            "saved_path": "/music/Pink Floyd - Ummagumma (1969) [24B-192.0kHz]", "status": "downloaded",
+            "url": "https://www.qobuz.com/album/evz7usmruz35a", "release_date": "1969-11-07",
+            "artist": "Pink Floyd", "album": "Ummagumma"}
+DB_TRACK = {"item_id": "20273753", "media_type": "track", "quality": 27, "file_format": "FLAC",
+            "quality_met": False, "bit_depth": 24, "sampling_rate": 96.0,
+            "saved_path": "/music/Miles Davis - So What (1959) [24B-96.0kHz]", "status": "downloaded",
+            "url": "https://www.qobuz.com/album/x", "release_date": "1959-08-17",
+            "artist": "Miles Davis", "album": "So What"}
+
+
+def db_dump(path):
+    conn = sqlite3.connect(path)
+    try:
+        schema = [list(r) for r in conn.execute(
+            "SELECT type, name, tbl_name, sql FROM sqlite_master ORDER BY type, name")]
+        columns = [list(r) for r in conn.execute("PRAGMA table_info(downloads)")]
+        names = [c[1] for c in columns]
+        rows = [dict(zip(names, r)) for r in conn.execute("SELECT * FROM downloads ORDER BY id, quality")]
+        return {"schema": schema, "columns": columns, "rows": rows}
+    finally:
+        conn.close()
+
+
+def build_db(path, schema, rows):
+    path.unlink(missing_ok=True)
+    conn = sqlite3.connect(path)
+    try:
+        conn.execute(schema)
+        for r in rows:
+            cols = ", ".join(r)
+            conn.execute(f"INSERT INTO downloads ({cols}) VALUES ({', '.join('?' * len(r))})", tuple(r.values()))
+        conn.commit()
+    finally:
+        conn.close()
+
+
+def write_db_fixtures():
+    DB.mkdir(parents=True, exist_ok=True)
+    build_db(DB / "v1.db", V1_SCHEMA, [{"id": "0634904080853"}, {"id": "evz7usmruz35a"}, {"id": "20273753"}])
+    build_db(DB / "v2.db", V2_SCHEMA, [
+        {"id": "evz7usmruz35a", "media_type": "album", "quality": 27, "file_format": "FLAC", "quality_met": 1,
+         "bit_depth": "24", "sampling_rate": "192.0", "saved_path": "/music/Ummagumma", "url": "https://x",
+         "release_date": "1969-11-07"},
+        {"id": "20273753", "media_type": "track", "quality": 6, "file_format": "FLAC", "quality_met": 0,
+         "bit_depth": None, "sampling_rate": None}])
+    shared = DB / "shared.db"
+    shared.unlink(missing_ok=True)
+    db.create_db(str(shared))
+    for rec in (DB_ALBUM, DB_TRACK, dict(DB_ALBUM, quality=6, bit_depth=16, sampling_rate=44.1)):
+        rec = dict(rec)
+        db.handle_download_id(str(shared), rec.pop("item_id"), add_id=True, **rec)
+    gc_sqlite()
+
+
+def gc_sqlite():
+    # db.py's `with sqlite3.connect()` commits but never closes; collecting
+    # the connections releases the files.
+    import gc
+    gc.collect()
+
+
+def run_db_calls(calls):
+    with tempfile.TemporaryDirectory() as tmp:
+        path = str(Path(tmp) / "qobuz_dl.db")
+        db.create_db(path)
+        has = []
+        for c in calls:
+            c = dict(c)
+            if c.pop("add"):
+                db.handle_download_id(path, c.pop("item_id"), add_id=True, **c)
+            else:
+                has.append(db.handle_download_id(path, c["item_id"], quality=c["quality"]) is not None)
+        gc_sqlite()
+        return dict(db_dump(path), has=has)
+
+
+def db_row_inputs():
+    def add(base, **over):
+        out = dict(base, add=True)
+        out.update(over)
+        return out
+
+    def has(id, quality, media_type="album"):
+        return {"add": False, "item_id": id, "quality": quality, "media_type": media_type}
+
+    yield "new database", []
+    yield "album and track", [add(DB_ALBUM), add(DB_TRACK), has("evz7usmruz35a", 27), has("20273753", 27),
+                              has("evz7usmruz35a", 6), has("missing", 27)]
+    yield "media type ignored", [add(DB_TRACK), has("20273753", 27, "album")]
+    yield "duplicate", [add(DB_ALBUM), add(DB_ALBUM, artist="Other"), has("evz7usmruz35a", 27)]
+    yield "same ID, other quality", [add(DB_ALBUM), add(DB_ALBUM, quality=6), has("evz7usmruz35a", 6)]
+    yield "values", [
+        add(DB_ALBUM, item_id="a", bit_depth=16, sampling_rate=44.1, quality_met=False),
+        add(DB_ALBUM, item_id="b", bit_depth=None, sampling_rate=None, file_format="Unknown"),
+        add(DB_ALBUM, item_id="c", bit_depth="24", sampling_rate="96", file_format="MP3"),
+        add(DB_ALBUM, item_id="d", bit_depth=24, sampling_rate=88.2),
+        add(DB_ALBUM, item_id="e", bit_depth=24, sampling_rate=176.4),
+        add(DB_ALBUM, item_id="f", bit_depth=24, sampling_rate=0.1 + 0.2),
+        add(DB_ALBUM, item_id="g", bit_depth=24, sampling_rate=22.05, artist="Ünïcode, Ärtists", album="日本"),
+        add(DB_ALBUM, item_id="h", saved_path="", url="", release_date="", artist="", album=""),
+    ]
+
+
+def gen_db():
+    g = Golden("db_rows")
+    for name, calls in db_row_inputs():
+        g.case(name, {"calls": calls}, lambda calls=calls: run_db_calls(calls))
+    g.case("shared file", {"file": "shared.db"}, lambda: db_dump(DB / "shared.db"))
+    g.write()
+
+    def migrate(name):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "qobuz_dl.db"
+            if name is not None:
+                shutil.copyfile(DB / name, path)
+            db.create_db(str(path))
+            gc_sqlite()
+            return db_dump(path)
+
+    g = Golden("db_migrations")
+    for name in ("v1.db", "v2.db", "shared.db", None):
+        g.case(name or "no file", {"file": name}, lambda name=name: migrate(name))
+    g.write()
 
 
 # --- Segments -------------------------------------------------------------
@@ -2650,6 +3292,12 @@ def main():
     gen_naming(index, raw)
     gen_tracklist(index, raw)
     gen_layout(index, raw)
+    gen_core_layout(index, raw)
+    write_m3u_fixtures()
+    gen_m3u()
+    gen_search_text(raw)
+    write_db_fixtures()
+    gen_db()
     write_segment_fixtures()
     gen_segments()
     write_fake_fixtures()

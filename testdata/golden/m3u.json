@@ -1,0 +1,1364 @@
+{
+ "generator": "qobuz-dl 2.5.9",
+ "cases": [
+  {
+   "name": "length and tags: alpha-again.flac",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha-again.flac": "alpha-again.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Another - alpha\nalpha-again.flac"
+  },
+  {
+   "name": "length and tags: alpha.flac",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:61, Artist A - Alpha\nalpha.flac"
+  },
+  {
+   "name": "length and tags: bad.flac",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "bad.flac": "bad.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Unknown Artist - bad\nbad.flac"
+  },
+  {
+   "name": "length and tags: bare.mp3",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "bare.mp3": "bare.mp3"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Unknown Artist - bare\nbare.mp3"
+  },
+  {
+   "name": "length and tags: beta.flac",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "beta.flac": "beta.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Artist B - Beta\nbeta.flac"
+  },
+  {
+   "name": "length and tags: cbr.mp3",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "cbr.mp3": "cbr.mp3"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:1, Unknown Artist - Cbr\ncbr.mp3"
+  },
+  {
+   "name": "length and tags: delta.flac",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "delta.flac": "delta.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Unknown Artist -   Delta Title  \ndelta.flac"
+  },
+  {
+   "name": "length and tags: empty-tags.flac",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "empty-tags.flac": "empty-tags.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Unknown Artist - Unknown Title\nempty-tags.flac"
+  },
+  {
+   "name": "length and tags: empty.mp3",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "empty.mp3": "empty.mp3"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Unknown Artist - empty\nempty.mp3"
+  },
+  {
+   "name": "length and tags: gamma.flac",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "gamma.flac": "gamma.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:3600, Artist C - Gamma\ngamma.flac"
+  },
+  {
+   "name": "length and tags: garbage.mp3",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "garbage.mp3": "garbage.mp3"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Unknown Artist - garbage\ngarbage.mp3"
+  },
+  {
+   "name": "length and tags: junk.mp3",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "junk.mp3": "junk.mp3"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:1044, Unknown Artist - Junk\njunk.mp3"
+  },
+  {
+   "name": "length and tags: lame.mp3",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "lame.mp3": "lame.mp3"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:99, Encoder - Lame\nlame.mp3"
+  },
+  {
+   "name": "length and tags: lower.flac",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "lower.flac": "lower.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Ärtist E - Épsilon\nlower.flac"
+  },
+  {
+   "name": "length and tags: multi.flac",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "multi.flac": "multi.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:0, One - Zeta\nmulti.flac"
+  },
+  {
+   "name": "length and tags: notitle.mp3",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "notitle.mp3": "notitle.mp3"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:1044, Unknown Artist - Unknown Title\nnotitle.mp3"
+  },
+  {
+   "name": "length and tags: omega.mp3",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "omega.mp3": "omega.mp3"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:1044, Artíst M - Ωmega\nomega.mp3"
+  },
+  {
+   "name": "length and tags: prefixed.flac",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "prefixed.flac": "prefixed.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:2, Old Artist - Old Title\nprefixed.flac"
+  },
+  {
+   "name": "length and tags: untagged-long.flac",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "untagged-long.flac": "untagged-long.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Unknown Artist - Unknown Title\nuntagged-long.flac"
+  },
+  {
+   "name": "length and tags: untagged.flac",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "untagged.flac": "untagged.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Unknown Artist - Unknown Title\nuntagged.flac"
+  },
+  {
+   "name": "length and tags: untagged.mp3",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "untagged.mp3": "untagged.mp3"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Unknown Artist - untagged\nuntagged.mp3"
+  },
+  {
+   "name": "length and tags: vbri.mp3",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "vbri.mp3": "vbri.mp3"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:130, One - Vbri\nvbri.mp3"
+  },
+  {
+   "name": "natural order without items",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:61, Artist A - Alpha\nalpha.flac\n#EXTINF:0, Artist B - Beta\nbeta.flac\n#EXTINF:3600, Artist C - Gamma\ngamma.flac\n#EXTINF:1044, Artíst M - Ωmega\nomega.mp3"
+  },
+  {
+   "name": "natural order with an empty list",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": []
+   },
+   "output": "#EXTM3U\n#EXTINF:61, Artist A - Alpha\nalpha.flac\n#EXTINF:0, Artist B - Beta\nbeta.flac\n#EXTINF:3600, Artist C - Gamma\ngamma.flac\n#EXTINF:1044, Artíst M - Ωmega\nomega.mp3"
+  },
+  {
+   "name": "by track ID",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 201
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 102
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 101
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:1044, Artíst M - Ωmega\nomega.mp3\n#EXTINF:0, Artist B - Beta\nbeta.flac\n#EXTINF:61, Artist A - Alpha\nalpha.flac"
+  },
+  {
+   "name": "track ID as a string",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": [
+     {
+      "id": "102",
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Artist B - Beta\nbeta.flac"
+  },
+  {
+   "name": "by ISRC",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 1
+      },
+      "title": "x",
+      "isrc": "ISRC00000103",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 2
+      },
+      "title": "x",
+      "isrc": "ISRC00000201",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:3600, Artist C - Gamma\ngamma.flac\n#EXTINF:1044, Artíst M - Ωmega\nomega.mp3"
+  },
+  {
+   "name": "ISRC missing is the text None",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 1
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:61, Artist A - Alpha\nalpha.flac\n#EXTINF:0, Artist B - Beta\nbeta.flac\n#EXTINF:3600, Artist C - Gamma\ngamma.flac\n#EXTINF:1044, Artíst M - Ωmega\nomega.mp3"
+  },
+  {
+   "name": "by title, stripped and lower case",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "delta.flac": "delta.flac",
+     "beta.flac": "beta.flac"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 1
+      },
+      "title": "  delta title ",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 2
+      },
+      "title": "BETA",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Unknown Artist -   Delta Title  \ndelta.flac\n#EXTINF:0, Artist B - Beta\nbeta.flac"
+  },
+  {
+   "name": "ID before ISRC before title",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 102
+      },
+      "title": "Gamma",
+      "isrc": "ISRC00000101",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 9
+      },
+      "title": "Gamma",
+      "isrc": "ISRC00000101",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 9
+      },
+      "title": "Gamma",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Artist B - Beta\nbeta.flac\n#EXTINF:61, Artist A - Alpha\nalpha.flac\n#EXTINF:3600, Artist C - Gamma\ngamma.flac"
+  },
+  {
+   "name": "by file name",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "01 - Some Song (Live).flac": "beta.flac",
+     "02 - Other.flac": "delta.flac"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 1
+      },
+      "title": "some song",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 2
+      },
+      "title": "OTHER",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Artist B - Beta\n01 - Some Song (Live).flac\n#EXTINF:0, Unknown Artist -   Delta Title  \n02 - Other.flac"
+  },
+  {
+   "name": "file name match takes the first file",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "a Song.flac": "untagged.flac",
+     "b song.flac": "untagged.flac"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 1
+      },
+      "title": "song",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Unknown Artist - Unknown Title\na Song.flac"
+  },
+  {
+   "name": "duplicates kept",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 101
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 101
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 102
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 101
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:61, Artist A - Alpha\nalpha.flac\n#EXTINF:61, Artist A - Alpha\nalpha.flac\n#EXTINF:0, Artist B - Beta\nbeta.flac\n#EXTINF:61, Artist A - Alpha\nalpha.flac"
+  },
+  {
+   "name": "nothing matched falls back to natural order",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 9
+      },
+      "title": "nope",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 8
+      },
+      "title": "none",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:61, Artist A - Alpha\nalpha.flac\n#EXTINF:0, Artist B - Beta\nbeta.flac\n#EXTINF:3600, Artist C - Gamma\ngamma.flac\n#EXTINF:1044, Artíst M - Ωmega\nomega.mp3"
+  },
+  {
+   "name": "misses between matches",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 9
+      },
+      "title": "nope",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 102
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 8
+      },
+      "title": "Missing",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Various Artists"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Artist B - Beta\nbeta.flac"
+  },
+  {
+   "name": "title missing is Unknown Title",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 9
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 101
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:61, Artist A - Alpha\nalpha.flac"
+  },
+  {
+   "name": "title None",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 9
+      },
+      "title": {
+       "py": "none"
+      }
+     }
+    ]
+   },
+   "error": "AttributeError"
+  },
+  {
+   "name": "album None",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 101
+      },
+      "title": "x",
+      "album": {
+       "py": "none"
+      }
+     }
+    ]
+   },
+   "error": "AttributeError"
+  },
+  {
+   "name": "item with no album or performer",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 9
+      },
+      "title": "nope"
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 102
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Artist B - Beta\nbeta.flac"
+  },
+  {
+   "name": "empty title matches any file name",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "beta.flac": "beta.flac",
+     "gamma.flac": "gamma.flac",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 9
+      },
+      "title": ""
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:61, Artist A - Alpha\nalpha.flac"
+  },
+  {
+   "name": "later file wins a title clash",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "alpha.flac": "alpha.flac",
+     "alpha-again.flac": "alpha-again.flac"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 9
+      },
+      "title": "ALPHA",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:61, Artist A - Alpha\nalpha.flac"
+  },
+  {
+   "name": "case-insensitive Vorbis keys",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "lower.flac": "lower.flac",
+     "beta.flac": "beta.flac"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 105
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 9
+      },
+      "title": "épsilon",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Ärtist E - Épsilon\nlower.flac\n#EXTINF:0, Ärtist E - Épsilon\nlower.flac"
+  },
+  {
+   "name": "multiple values take the first",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "multi.flac": "multi.flac"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 107
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 106
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 9
+      },
+      "title": "second",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:0, One - Zeta\nmulti.flac"
+  },
+  {
+   "name": "MP3 TXXX description ignores case",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "lame.mp3": "lame.mp3",
+     "omega.mp3": "omega.mp3"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 202
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 201
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:99, Encoder - Lame\nlame.mp3\n#EXTINF:1044, Artíst M - Ωmega\nomega.mp3"
+  },
+  {
+   "name": "broken files fall back to their names",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "bad.flac": "bad.flac",
+     "garbage.mp3": "garbage.mp3",
+     "empty.mp3": "empty.mp3",
+     "bare.mp3": "bare.mp3"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 9
+      },
+      "title": "garbage",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 9
+      },
+      "title": "bad",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 9
+      },
+      "title": "bare",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Unknown Artist - garbage\ngarbage.mp3\n#EXTINF:0, Unknown Artist - bad\nbad.flac\n#EXTINF:0, Unknown Artist - bare\nbare.mp3"
+  },
+  {
+   "name": "subfolders sorted",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "b/2.flac": "beta.flac",
+     "a/1.flac": "alpha.flac",
+     "c.flac": "gamma.flac",
+     "a/z/0.flac": "delta.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Unknown Artist -   Delta Title  \na/z/0.flac\n#EXTINF:61, Artist A - Alpha\na/1.flac\n#EXTINF:0, Artist B - Beta\nb/2.flac\n#EXTINF:3600, Artist C - Gamma\nc.flac"
+  },
+  {
+   "name": "subfolders with items",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "b/2.flac": "beta.flac",
+     "a/1.flac": "alpha.flac"
+    },
+    "items": [
+     {
+      "id": {
+       "py": "int",
+       "v": 102
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     },
+     {
+      "id": {
+       "py": "int",
+       "v": 101
+      },
+      "title": "x",
+      "performer": {
+       "name": "Performer"
+      },
+      "album": {
+       "artist": {
+        "name": "Album Artist"
+       }
+      }
+     }
+    ]
+   },
+   "output": "#EXTM3U\n#EXTINF:0, Artist B - Beta\nb/2.flac\n#EXTINF:61, Artist A - Alpha\na/1.flac"
+  },
+  {
+   "name": "extensions in any case",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "one.FLAC": "alpha.flac",
+     "two.Mp3": "omega.mp3",
+     "three.flac.txt": "beta.flac",
+     "cover.jpg": "cover.jpg"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:61, Artist A - Alpha\none.FLAC\n#EXTINF:1044, Artíst M - Ωmega\ntwo.Mp3"
+  },
+  {
+   "name": "numbers sort by value",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "track 10.flac": "alpha.flac",
+     "track 2.flac": "beta.flac",
+     "Track 1.flac": "gamma.flac",
+     "track 02.flac": "delta.flac",
+     "track ٣.flac": "untagged.flac",
+     "track.flac": "multi.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:3600, Artist C - Gamma\nTrack 1.flac\n#EXTINF:0, Unknown Artist -   Delta Title  \ntrack 02.flac\n#EXTINF:0, Artist B - Beta\ntrack 2.flac\n#EXTINF:0, Unknown Artist - Unknown Title\ntrack ٣.flac\n#EXTINF:61, Artist A - Alpha\ntrack 10.flac\n#EXTINF:0, One - Zeta\ntrack.flac"
+  },
+  {
+   "name": "a digit Python can't read as a number",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "1²2.flac": "alpha.flac",
+     "b.flac": "beta.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "error": "ValueError"
+  },
+  {
+   "name": "only other files",
+   "input": {
+    "dir": "My Playlist",
+    "files": {
+     "cover.jpg": "cover.jpg"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": {
+    "py": "none"
+   }
+  },
+  {
+   "name": "empty folder",
+   "input": {
+    "dir": "My Playlist",
+    "files": {},
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": {
+    "py": "none"
+   }
+  },
+  {
+   "name": "folder name with spaces and accents",
+   "input": {
+    "dir": "Café del Mar: Vol. 1",
+    "files": {
+     "alpha.flac": "alpha.flac"
+    },
+    "items": {
+     "py": "none"
+    }
+   },
+   "output": "#EXTM3U\n#EXTINF:61, Artist A - Alpha\nalpha.flac"
+  }
+ ]
+}
