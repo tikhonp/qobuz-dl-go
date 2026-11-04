@@ -8,7 +8,7 @@
 | Tag | `v2.5.9` |
 | Commit | `e21f92a`, 2026-10-07 |
 | PyPI | `qobuz-dl-ultimate` 2.5.9 |
-| Ported in | qobuz-dl-go `v0.1.0`, not tagged yet |
+| Ported in | qobuz-dl-go `v0.1.0` |
 
 ## Files
 
