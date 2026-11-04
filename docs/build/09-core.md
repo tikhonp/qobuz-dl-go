@@ -92,4 +92,30 @@ func (db *DB) Close() error
 
 ## As built
 
-Filled in at the end of the step.
+Done on 2026-11-04. `make check` and `make lint` pass: 0 golangci-lint issues, no vulnerabilities. `make golden` twice gives the same files, the new fixtures included.
+
+### Differences from the contract
+
+- `HandleURL` and `HandleID` share `(*DL).handle`. `HandleID` builds `https://play.qobuz.com/<kind>/<id>` for the lines that name the URL. An unknown kind is `ErrInvalidURL`, as Python's `possibles[url_type]` KeyError lands in the invalid-URL branch. An invalid URL returns an empty `*Result`, not nil.
+- `ErrUnhandled` wraps with `%w: %w`, not `%w: %v`, so `errors.As` still finds the `*APIError` inside, such as the 401 of an expired token on `playlist/get`. `unhandled` leaves the context's end alone. design.md now says so.
+- A playlist's tracks that never reach a transfer, such as one in the database, a demo, or the ones after the loop stopped, get their `TrackEnd` from `handle`, as skipped or failed, so every track its `ReleaseStart` planned ends. design.md's Progress section says so.
+- `MakeM3U` returns the path it wrote, or "". `makeM3U` takes a logger for the table of missing tracks; `MakeM3U` discards it.
+- mutagen's `FileType` is false when the file has no tags, so `make_m3u`'s `if audio_gen and audio_gen.info` leaves the length at 0 for an untagged file. The port does the same. port-spec.md and design.md now say so.
+- The MP3 length is a port of mutagen's `MPEGInfo` in a new file, `mp3.go`: the sync search in the first MiB after any ID3v2 tags, four frames in a row or one with a Xing, Info or VBRI header, LAME's delay and padding taken off, else the bitrate over the file size. The contract had a simpler rule; the goldens on built files decide, and they include LAME, VBRI, CBR, junk before the first frame and broken files.
+- `createAndReturnDir` now makes folders through `makeDirs`, 0755 whatever the umask; it used `os.MkdirAll`.
+- The fake has a new built collection, `ArtistAlbums`: "Norah Jones" listing `AlbumHiRes96`, `AlbumWithVersion` and `AlbumCD`, as `album/get` answers them less their tracks. The recorded artist's albums have no recorded `album/get`, so a download of it is all 404s; the artist golden needs albums that download. Smart discography keeps only Begin Again. gen.py builds the same page.
+- The playlist and artist goldens also hold the downloads database's rows, from a database Python's run wrote, with `saved_path` relative to the download folder. `LayoutCase.CheckDB` compares them.
+- `TestDownloadFromIDErrors` changes answers with a wrapping `http.RoundTripper`, since the fake has no switch for a non-streamable album or a broken answer. Removing `tracks` won't work, because `_get_format` raises NonStreamable for an album without tracks; the test breaks `media_count` instead.
+- `downloadsdb` binds `quality_met` as 0 or 1, opens the file as a SQLite URI with `_pragma=busy_timeout(5000)`, runs the v1 migration in one transaction, and returns nil for any constraint failure. `Open` logs nothing; it takes no logger.
+- `.gitignore` ignored `*.db`; it now lets `testdata/fixtures/db/*.db` through.
+- Extra tests: `TestGetTokensAndInitializeClient`, `TestPlaylistWithoutM3U`, `TestPlaylistPaging`, `TestHandleURLAlbumAndTrack`, `TestDownloadsDBFailingHasStops`, `TestCancelMidPlaylist`, `TestSearchByType` on the fake, `TestMP3Length`, `TestNaturalKey`, `TestAlignText`, `TestNewMakesTheDirectory`, `TestNewCopiesTheOptions`, `TestUnhandledKeepsTheChain`, `TestDownloadsDBConcurrent`, `TestOpenKeepsOddFileNames`, `TestOpenFailsOnAFolder`.
+
+### Checks
+
+`make golden` twice gives the same files byte for byte, the SQLite fixtures included; Python 3.14's sqlite3 is SQLite 3.54.1. The Go playlist and artist trees match Python's, FLAC files byte for byte, and so do the database rows.
+
+### Notes for later steps
+
+- Step 10: the CLI builds `Options` from flags, opens `--db` with `downloadsdb.Open`, calls `New`, `GetTokens`, `InitializeClient(ctx, "", "", d.AppID(), d.Secrets())`, then `HandleURL` per URL. Exit 1 when any release in the `Result` is not done or skipped, or on an error. `SearchByType` takes the singular type, `album`, `track`, `artist` or `playlist`; the CLI's `albums` maps to it.
+- Step 10: `HandleURL` for an invalid URL returns `ErrInvalidURL` and logs Python's line; the CLI can print the error and go on to the next URL, as Python does.
+- Step 11: a real playlist's m3u8 lengths are whole seconds of the delivered files; the parity run compares them with Python's.

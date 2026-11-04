@@ -96,8 +96,8 @@ var qualities = map[int]string{
 }
 
 // DL is QobuzDL. It is safe for concurrent use once InitializeClient has
-// run: each call copies the options it changes, where Python changes the
-// shared ones.
+// run, because each call copies the options it changes, where Python changes
+// the shared ones.
 type DL struct {
 	opts Options
 
@@ -395,8 +395,8 @@ func (d *DL) handle(ctx context.Context, url, kind, id string, p Progress) (*Res
 	}
 	log.Info(fmt.Sprintf("%d downloads in queue", len(items)))
 
-	// The playlist's flat folder: Python sets these on the shared object and
-	// restores them after the loop; the copy keeps other calls apart.
+	// Python sets the playlist's flat folder on the shared object and restores
+	// it after the loop; the copy keeps other calls apart.
 	opts := d.opts
 	isPlaylist := kind == "playlist"
 	if isPlaylist {
@@ -408,14 +408,30 @@ func (d *DL) handle(ctx context.Context, url, kind, id string, p Progress) (*Res
 		})
 	}
 
+	// A playlist's planned tracks that the loop never reaches still end, so
+	// that each one the ReleaseStart planned gets its TrackEnd.
+	endRest := func(from int, err error) {
+		if !isPlaylist || p == nil {
+			return
+		}
+		for j := from; j < len(items); j++ {
+			it, _ := items[j].(*pyDict)
+			tr := newTrackResult(it, j+1)
+			tr.Outcome, tr.Err = OutcomeFailed, err
+			p.TrackEnd(tr)
+		}
+	}
 	var queued []*pyDict
 	for idx, item := range items {
 		if ctx.Err() != nil {
+			endRest(idx, stopped(ctx))
 			return res, stopped(ctx)
 		}
 		itemID, err := pyGetItem(item, "id")
 		if err != nil {
-			return res, unhandled(ctx, err)
+			err = unhandled(ctx, err)
+			endRest(idx, err)
+			return res, err
 		}
 		queued = append(queued, item.(*pyDict))
 		r, err := d.downloadFromID(ctx, opts, DownloadRequest{
@@ -427,6 +443,7 @@ func (d *DL) handle(ctx context.Context, url, kind, id string, p Progress) (*Res
 			endUnstartedTrack(p, r, item.(*pyDict), idx+1)
 		}
 		if err != nil {
+			endRest(idx+1, err)
 			return res, err
 		}
 	}

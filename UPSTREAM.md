@@ -16,14 +16,14 @@
 | --- | --- | --- |
 | `bundle.py` | `bundle.go` | ported |
 | `qopy.py` | `qopy.go` | ported |
-| `core.py` | `core.go` | `Options` and `DefaultOptions` only; the rest planned |
+| `core.py` | `core.go` | ported |
 | `downloader.py` | `downloader.go`, with `Progress` and the results in `progress.go` | ported |
 | `metadata.py` | `metadata.go`, with mutagen's FLAC blocks in `flac.go` | ported |
-| `utils.py` | `utils.go` | ported, but for `make_m3u` |
+| `utils.py` | `utils.go`, with mutagen's MP3 length in `mp3.go` | ported |
 | `settings.py` | `settings.go` | ported |
 | `constants.py` | `constants.go` | ported |
 | `exceptions.py` | `errors.go` | ported |
-| `db.py` | `downloadsdb/` | planned |
+| `db.py` | `downloadsdb/downloadsdb.go` | ported |
 | `cli.py`, `commands.py`, `color.py`, `__main__.py`, `radar.py`, `sync.py`, `sync_playlist.py`, `retro_tagger.py`, `lastfm_parser.py`, `lyrics_engine.py` | none | not ported, see below |
 
 ## Functions
@@ -71,9 +71,10 @@ When two Python modules have private functions with the same name, the Go name g
 | `initialize_client` | `(*DL).InitializeClient` |
 | `get_tokens` | `(*DL).GetTokens` |
 | `download_from_id` | `(*DL).DownloadFromID(ctx, DownloadRequest)` |
-| `handle_url` | `(*DL).HandleURL`, which parses the URL and calls `(*DL).HandleID` with the rest of the body |
-| `search_by_type` | `(*DL).SearchByType`, without lucky mode or favorites |
+| `handle_url` | `(*DL).HandleURL`, which parses the URL; `(*DL).HandleID` and `(*DL).handle` are the rest of the body |
+| `search_by_type` | `(*DL).SearchByType`, without lucky mode or favorites; its loop is `searchResults`, with `searchLine` for albums and tracks and `searchNameLine` for artists and playlists |
 | `_align_text` | `alignText` |
+| `WEB_URL`, `QUALITIES` | `webURL`, `qualities` |
 | `mark_url_done_in_file`, `download_list_of_urls`, `download_from_txt_file`, `lucky_mode`, `interactive`, `download_lastfm_pl` | not ported |
 
 ### downloader.py
@@ -121,7 +122,8 @@ When two Python modules have private functions with the same name, the Go name g
 
 | Python | Go |
 | --- | --- |
-| `make_m3u` | `MakeM3U` |
+| `make_m3u` | `MakeM3U`; `makeM3U` takes a logger, and its parts are `walkAudio`, `readM3UFile`, `matchM3U` and `naturalKey` |
+| mutagen's `MPEGInfo`, `MPEGFrame`, `XingHeader`, `LAMEHeader.parse_version`, `VBRIHeader`, `skip_id3` | `mp3Length`, `readMPEGFrame`, `readXing`, `lameHasHeader`, `readVBRI`, `skipID3` in `mp3.go` |
 | `smart_discography_filter` | `SmartDiscographyFilter` |
 | `format_duration` | `FormatDuration` |
 | `create_and_return_dir` | `createAndReturnDir` |
@@ -166,7 +168,7 @@ These port no qobuz-dl file. They stand in for CPython 3.14 behavior the port re
 | `from_arguments_configparser` | not ported |
 | `DEFAULT_FOLDER`, `DEFAULT_TRACK`, `DEFAULT_MULTIPLE_DISC_TRACK`, `DEFAULT_VARIOUS_ARTISTS_ALIASES`, `OK_MAX_CHARACTER_LENGTH` | the same names in Go style |
 | `AuthenticationError`, `IneligibleError`, `InvalidAppIdError`, `InvalidAppSecretError`, `InvalidQuality`, `NonStreamable` | `ErrAuthentication`, `ErrIneligible`, `ErrInvalidAppID`, `ErrInvalidAppSecret`, `ErrInvalidQuality`, `ErrNonStreamable` |
-| `create_db` | `downloadsdb.Open`, both migrations included |
+| `create_db` | `downloadsdb.Open`, both migrations included, in `createDB` |
 | `handle_download_id` | the `DownloadsDB` interface, `Has` and `Add`; `downloadsdb.DB` implements it |
 | `get_stats` | not ported |
 
@@ -190,6 +192,10 @@ These port no qobuz-dl file. They stand in for CPython 3.14 behavior the port re
 | A tagging failure removes the temp file. | Python leaves it for the CLI to clean. |
 | `DownloadsDB.Has` gets the media type. | shelf keys its table on it; `downloadsdb` ignores it, as Python does. |
 | `ErrUnhandled` is returned where an uncaught Python exception would crash the process. | A library must not crash its caller. |
+| `SearchByType` returns `ErrQueryTooShort` for a short query and an error for a type other than album, track, artist and playlist; Python logs and returns None. | The CLI prints the error; shelf uses the typed search. |
+| `downloadsdb` logs nothing: not the migration lines, not "Already in the database". The v1 migration runs in one transaction, where Python commits the rename and the new table before copying the IDs. | `Open` takes no logger; a failed migration leaves the old table as it was. |
+| The database's `bit_depth` and `sampling_rate` are bound as `str()` of Python's value; Python binds the number and SQLite turns it into text. The two differ only for floats of 1e16 and up, which SQLite writes as `10000000000000000.0` or `1.0e+20`. | `DownloadRecord` holds strings, for implementations other than SQLite. No rate is that large. |
+| `MakeM3U` reads a `.flac` file as FLAC and an `.mp3` file as MP3 with an ID3v2.3 or 2.4 tag. `mutagen.File` guesses the type from the content too, and mutagen reads ID3v2.2 tags. A text frame with no value reads as empty, where mutagen raises IndexError and falls back to the file name. | `id3v2` refuses v2.2 tags and doesn't tell an empty value from none. Files this port and Python write show no difference. |
 | A track skipped because its file exists reports its format, read from the file. | shelf records the delivered format for every file. |
 | The transfer's 404 rule looks for `404` in Go's error text, which never holds the URL; requests' errors print the URL, so Python also gives up at once on a connection error to a URL with `404` in it. | URLs carry signatures and stay out of errors. |
 | Progress lines are shorter: `[+] In progress` has no size in MB, and nothing draws a bar. `_clean_embed_art` doesn't sleep half a second first. | The sizes and bars are tqdm's; the sleep waits for Windows file locks. |

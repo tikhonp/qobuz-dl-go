@@ -605,6 +605,15 @@ func TestDownloadFromIDErrors(t *testing.T) {
 			t.Fatalf("playlist: %v", err)
 		}
 	})
+	t.Run("an expired token is reported", func(t *testing.T) {
+		d, srv, _ := newDL(t, nil)
+		srv.ExpireToken()
+		res, err := d.DownloadFromID(t.Context(), qobuzdl.DownloadRequest{ID: qobuzdltest.AlbumCD, Album: true})
+		var ae *qobuzdl.APIError
+		if err != nil || !errors.As(res.Releases[0].Err, &ae) || ae.Status != http.StatusUnauthorized {
+			t.Fatalf("%+v, %v", res, err)
+		}
+	})
 	t.Run("a collection's failed page is unhandled", func(t *testing.T) {
 		d, srv, _ := newDL(t, nil)
 		srv.ExpireToken()
@@ -642,6 +651,20 @@ func TestCancelMidPlaylist(t *testing.T) {
 	}
 	if len(res.Releases) != 3 || res.M3U != "" {
 		t.Fatalf("%d releases, m3u %q", len(res.Releases), res.M3U)
+	}
+	// Every planned track ends, the ones never started as failed.
+	ev.mu.Lock()
+	defer ev.mu.Unlock()
+	var positions []int
+	for _, e := range ev.ends {
+		positions = append(positions, e.Position)
+		if e.Position > 3 && (e.Outcome != qobuzdl.OutcomeFailed || !errors.Is(e.Err, context.Canceled)) {
+			t.Errorf("track %d: %v, %v", e.Position, e.Outcome, e.Err)
+		}
+	}
+	slices.Sort(positions)
+	if !slices.Equal(positions, []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}) {
+		t.Errorf("TrackEnd positions %v", positions)
 	}
 }
 

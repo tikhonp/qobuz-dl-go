@@ -479,6 +479,7 @@ A frame's text goes through mutagen's `MultiSpec`: a str is split on NUL, each l
 7. Playlists set the folder template to `.` and `multiple_disc_one_dir` to true for the loop, and restore them after.
 8. Each item, numbered from 1: `download_from_id(item.id, album = kind is not playlist, alt_path = folder, is_playlist, playlist_index)`.
 9. Playlists, unless `no_m3u_for_playlists`: `make_m3u(folder, queued items)`.
+10. Nothing here catches an exception: a failed page, a page without `name`, an item without `id`, a failure in `smart_discography_filter` or `make_m3u`, or one `download_from_id` lets through, ends the call, and the items after it are not downloaded. A playlist's item IDs are ints, an album's strings; both reach the database as text.
 
 ### download_from_id
 
@@ -489,10 +490,11 @@ A frame's text goes through mutagen's `MultiSpec`: a str is split on NUL, each l
 ### make_m3u
 
 1. Walk the folder, directories sorted, files in the order the OS lists them. Keep `.mp3` and `.flac`, by extension in lower case.
-2. For each: the length is `int(info.length)`. FLAC reads `QOBUZTRACKID`, `ISRC`, `TITLE` and `ARTIST`; MP3 reads `TXXX:QOBUZTRACKID`, `TSRC`, `TIT2`, `TPE1`. Each takes its first value. A read error uses the file name without its extension as the title.
+2. For each: the length is `int(info.length)` from `mutagen.File`, but only when the file has at least one tag, since `if audio_gen and audio_gen.info` tests the `FileType`, which is false without tags; an untagged file gets 0. FLAC reads `QOBUZTRACKID`, `ISRC`, `TITLE` and `ARTIST`, ignoring the case of the keys; a missing ID or ISRC is None, a missing title or artist "". MP3 reads `TXXX` frames whose description is `QOBUZTRACKID` in upper case, then `TSRC`, `TIT2`, `TPE1`. Each takes its first value. A read error, such as an MP3 without an ID3 tag or a file mutagen can't parse, keeps what was read before it and uses the file name without its extension as the title.
+   - mutagen's MP3 length: past any ID3v2 tags, it searches the first MiB for syncs. At each, it reads up to four frames in a row; a layer III frame with a Xing or Info header at offset 36, 21 or 13 (by version and mode), or a VBRI header at 36, is enough on its own. The header's frame count times 1,152 samples (576 for MPEG 2 and 2.5), less a LAME tag's encoder delay and padding, over the rate gives the length. Without a frame count, the first frame's bitrate over the file size from that frame does. Two frames found at some sync are kept in case nothing better follows.
 3. Index by track ID, by ISRC, and by stripped lower-case title; a later file wins a clash.
-4. For each queued item in order: match by ID, then ISRC, then title, then the first file whose name contains the lower-case title. Duplicates are allowed. Misses are logged in a table.
-5. Without queued items, or when nothing matched, the files in natural order by name.
+4. For each queued item in order: match by ID, then ISRC, then title, then the first file whose name contains the lower-case title. Duplicates are allowed. Misses are logged in a table. `str(item.get("isrc", ""))` makes a missing ISRC the text `None` when the key holds None. The title's `strip()` runs only when ID and ISRC miss, so a non-string title fails only then; an `album` or `performer` that isn't a dict always fails.
+5. Without queued items, or when nothing matched, the files in natural order by name: the base name split at runs of Unicode decimal digits, the runs compared as numbers, the rest in lower case. A run of digits that aren't decimal, such as `²`, makes `int()` raise ValueError.
 6. Lines: `#EXTM3U`, then per file `#EXTINF:<length>, <artist or "Unknown Artist"> - <title or "Unknown Title">` and the path relative to the folder. Joined with `\n`, no trailing newline. Written as `<folder name>.m3u8` in UTF-8, only when there is at least one file.
 
 ### smart_discography_filter
@@ -582,7 +584,7 @@ CREATE TABLE downloads (
 
 - `create_db`: a missing table is created. A table without `quality` is the v1 layout: renamed, recreated, its IDs copied, the old one dropped. A table without `artist` gets `artist` and `album` added.
 - `handle_download_id` without `add_id` selects by ID and quality, whatever the media type. With it, inserts; a duplicate logs "Already in the database".
-- Values are bound as Python gives them: `bit_depth` 24 and `sampling_rate` 44.1 or 96.0 go into text columns, which SQLite stores as `'24'`, `'44.1'`, `'96.0'`; `None` as NULL; `quality_met` true as 1.
+- Values are bound as Python gives them: `bit_depth` 24 and `sampling_rate` 44.1 or 96.0 go into text columns, which SQLite stores as `'24'`, `'44.1'`, `'96.0'`; `None` as NULL; `quality_met` true as 1. SQLite 3.54 writes a float as its shortest round trip, as `str()` does, but with its own forms for large values: `1e+16` becomes `'10000000000000000.0'` and `1e+20` becomes `'1.0e+20'`. No sampling rate is that large.
 - Albums are recorded only when no track failed, with the gate's format, `quality_met`, bit depth and rate, the final folder, `url`, `release_date_original`, the album artists joined with `, ` and the album title with its version.
 - Tracks are recorded as `track`, with the track folder, the album's `url`, the track's `release_date_original`, `track_attr.artist` and `track_attr.album`.
 - Playlists, artists and labels are never recorded; their tracks and albums are.

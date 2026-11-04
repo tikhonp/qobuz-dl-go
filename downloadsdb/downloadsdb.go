@@ -18,8 +18,8 @@ import (
 	sqlite3 "modernc.org/sqlite/lib"
 )
 
-// createTable is db.py's CREATE TABLE, whitespace included: SQLite keeps the
-// statement's text in sqlite_master, which then matches a table Python made.
+// createTable is db.py's CREATE TABLE, whitespace included, since SQLite keeps
+// the statement's text in sqlite_master and it must match a table Python made.
 const createTable = `CREATE TABLE downloads (
                   "id" text NOT NULL,
                   "media_type" text NOT NULL DEFAULT 'album',

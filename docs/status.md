@@ -2,9 +2,9 @@
 
 ## Now
 
-Steps 1 to 8 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` without `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py`, with the typed views, the taggers from `metadata.py`, `qobuzdltest`, the fake Qobuz, with `Options` from `core.py`, and `downloader.py`, both transfers included, with `Progress` and the results.
+Steps 1 to 9 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` with `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py`, with the typed views, the taggers from `metadata.py`, `qobuzdltest`, the fake Qobuz, `downloader.py`, both transfers included, with `Progress` and the results, `core.py`, and `db.py` as `downloadsdb`.
 
-Next: step 9, [core, m3u8, downloadsdb](build/09-core.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
+Next: step 10, [CLI and parity tools](build/10-cli.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
 
 ## Steps
 
@@ -18,8 +18,8 @@ Next: step 9, [core, m3u8, downloadsdb](build/09-core.md). Start Claude Code in 
 | 6 | [fake Qobuz](build/06-fake.md) | done |
 | 7 | [downloader, direct path](build/07-downloader.md) | done |
 | 8 | [segmented path](build/08-segments.md) | done |
-| 9 | [core, m3u8, downloadsdb](build/09-core.md) | next |
-| 10 | [CLI and parity tools](build/10-cli.md) | |
+| 9 | [core, m3u8, downloadsdb](build/09-core.md) | done |
+| 10 | [CLI and parity tools](build/10-cli.md) | next |
 | 11 | [parity and v0.1.0](build/11-parity.md) | needs `QOBUZ_TOKEN` |
 
 ## Fixture items
@@ -85,3 +85,11 @@ Filled in by the parity run in step 11.
 - port-spec.md now says how the decryption reads past the end, which inputs raise, and that the UUID walk needs 24 bytes. design.md describes the fake's segmented path and the session's two mutexes.
 - The commits of this step have no `Co-Authored-By` line, at the user's request, and were not pushed.
 - For shelf: a failed direct transfer now retries on the segmented path in the same tier, as Python does, so a test that wants a track to fail needs `Fail404`, enough `FailTimes`, or a missing `FFmpegPath`. `TrackInfo.Segmented` is true for the segmented attempt. The bot's host needs ffmpeg on PATH, or `Options.FFmpegPath`, for tracks Qobuz serves only segmented; without it such tracks fall to the next tier and then fail. `qobuzdltest.Segmented(id)` makes a track take the path; `Fail404`, `FailTimes` and `CutAfter` also hit its segments, and `EmptyAnswer` also empties `file/url`.
+- Step 9. `core.go` with `New`, `GetTokens`, `InitializeClient`, `DownloadFromID`, `HandleURL`, `HandleID` and `SearchByType`; `MakeM3U` in `utils.go`, with mutagen's MP3 length in a new `mp3.go`; and `downloadsdb`, modernc SQLite with Python's table and both migrations. Six new goldens: `layout_playlist.json` and `layout_artist.json`, whole `handle_url` runs with the database's rows, `m3u.json`, `search_text.json`, `db_rows.json` and `db_migrations.json`. `gen.py` also writes `testdata/fixtures/m3u/` and `testdata/fixtures/db/`. The Go trees, m3u8 files and rows match Python's. Details are in [09-core.md](build/09-core.md) under As built.
+- `make_m3u` gives an untagged file the length 0, because mutagen's `FileType` is false without tags and `make_m3u` reads the length only when it is true. port-spec.md and design.md now say so, and how mutagen measures an MP3.
+- The fake has `ArtistAlbums`, an artist page listing three recorded albums, since the recorded artist's albums answer 404 on `album/get`. design.md's qobuzdltest section lists it.
+- `ErrUnhandled` now wraps with `%w: %w`, so `errors.As` finds an `*APIError` inside. design.md says so.
+- The commits of this step have no `Co-Authored-By` line, at the user's request, and were pushed.
+- For shelf: a 401 on `album/get` or `track/get` during `DownloadFromID` is a request error, which Python logs and skips. The call returns no error, and the release has `StatusFailed` with an `*APIError` of status 401 in `Release.Err`. To mark the source unhealthy on an expired token, shelf has to look there. A 401 on a playlist's pages in `HandleID` returns `ErrUnhandled` with the `*APIError` reachable through `errors.As`.
+- For shelf: `HandleID` on a playlist sends one `ReleaseStart` of kind `playlist` and a `TrackEnd` for every planned track, a track already in the downloads database included, as `OutcomeSkipped`. `Result.M3U` is the m3u8's path. An invalid URL returns `ErrInvalidURL` with an empty, non-nil `Result`.
+- For shelf: `qobuzdltest.ArtistAlbums` is an artist whose every album downloads; the recorded `Artist` and `Label` lead to 404s on `album/get`, but for the label's compilation. `go.mod` now requires `modernc.org/sqlite` for `downloadsdb`; the root package and `qobuzdltest` don't import it.

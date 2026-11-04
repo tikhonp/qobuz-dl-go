@@ -24,6 +24,7 @@ format.go         str.format
 pathvalidate.go   pathvalidate 3.3.1 sanitize_filename and sanitize_filepath, universal platform
 textwrap.go       textwrap.fill
 flac.go           FLAC metadata blocks, read and written without loading the audio
+mp3.go            an MP3's length as mutagen computes it, for make_m3u
 catalog.go        the typed views: Album, Track, Playlist, Artist, Label, SearchPage, TrackURL
 progress.go       Progress, Result and their types
 transport.go      timeouts, retries' sleeps, URL redaction
@@ -113,7 +114,7 @@ Catch points map as follows:
 | `except NonStreamable` | `errors.Is(err, ErrNonStreamable)` |
 | `except Exception` | any error except `context.Canceled` and `context.DeadlineExceeded`, which always propagate |
 
-A Python exception that nothing catches would crash the Python CLI. In Go it leaves the exported function wrapped in `ErrUnhandled`, with the kind and message: `fmt.Errorf("%w: %v", ErrUnhandled, err)`. A worker goroutine returns its error like a Python future does.
+A Python exception that nothing catches would crash the Python CLI. In Go it leaves the exported function wrapped in `ErrUnhandled`, with the kind and message: `fmt.Errorf("%w: %w", ErrUnhandled, err)`, so `errors.As` still finds an `*APIError` inside. A worker goroutine returns its error like a Python future does.
 
 ### Strings
 
@@ -511,7 +512,7 @@ type TrackInfo struct {
 - `ReleaseStart` fires once per album or single track, after the folder exists and before the extras. A playlist fires it once with every track planned, and its tracks fire no `ReleaseStart` of their own. Artists and labels fire one per album.
 - `TrackStart` fires when a transfer starts, once per tier tried.
 - `TrackBytes` fires at most every 250 ms per track and once more when the transfer ends. `total` is 0 when unknown. Covers and goodies don't report bytes.
-- `TrackEnd` fires once per planned track, also for tracks that fail before a transfer or never start because the context ended. Its `Path` is in the work folder; the `Result` has the final one.
+- `TrackEnd` fires once per planned track, also for tracks that fail before a transfer or never start because the context ended. Its `Path` is in the work folder; the `Result` has the final one. A playlist track that never reaches the downloader's transfer, such as one in the downloads database, a demo, or one after the loop stopped, gets its `TrackEnd` from `HandleID`, as skipped or failed.
 - `Log` gets the lines Python prints or logs at info level and above, without colors. The same lines go to the `*slog.Logger`, which also gets debug lines.
 
 ```go
@@ -644,7 +645,7 @@ The remux is the only external process. A missing ffmpeg fails the tier, and the
 
 ### Extras and m3u8
 
-`getExtra`, `downloadGoodies`, `cleanEmbedArt` and `generateTracklist` port their namesakes. The tracklist uses `pyLjust` and `textwrap.fill`. `MakeM3U(dir string, items []*pyDict) error` reads tags back through `flac.go` and `id3v2`, the length from FLAC STREAMINFO as `int(samples / rate)`, and for MP3 from the Xing header, else from the frame count of a constant bitrate; the goldens on fixture files decide.
+`getExtra`, `downloadGoodies`, `cleanEmbedArt` and `generateTracklist` port their namesakes. The tracklist uses `pyLjust` and `textwrap.fill`. `MakeM3U(dir string, items []*pyDict) (string, error)` returns the file it wrote, or "" when the folder holds no audio. It reads tags back through `flac.go` and `id3v2`, the length from FLAC STREAMINFO as `int(samples / rate)`, and for MP3 through `mp3.go`, which ports mutagen's `MPEGInfo`: the first frame with a Xing, Info or VBRI header gives the frame count, less LAME's encoder delay and padding, else four frames in a row give the bitrate for the file size. The length counts only for a file with at least one tag, since mutagen's `FileType` is false without any. The goldens in `m3u.json` run on built files in `testdata/fixtures/m3u/`.
 
 Python lists files in the order the OS gives them, which only matters when two files tie on a title or for unmatched items. The port sorts names, and `UPSTREAM.md` lists that.
 
@@ -697,9 +698,10 @@ func (db *DB) Add(ctx context.Context, rec qobuzdl.DownloadRecord) error
 func (db *DB) Close() error
 ```
 
-- modernc SQLite through `database/sql`, with a 5-second busy timeout like Python's `sqlite3`. The journal mode is left alone, so Python and Go can share one `qobuz_dl.db`.
-- `Open` ports `create_db` with both migrations. They are short, and the goldens test them on databases built by Python's code from older layouts.
-- `Has` and `Add` run the same SQL as Python.
+- modernc SQLite through `database/sql`, with a 5-second busy timeout like Python's `sqlite3`. The journal mode is left alone, so Python and Go can share one `qobuz_dl.db`. The file is opened as a SQLite URI, so `?` and `#` in its name stay part of it.
+- `Open` ports `create_db` with both migrations. They are short, and the goldens test them on databases `gen.py` builds in the v1 and v2 layouts. The v1 migration runs in one transaction; Python commits the rename and the new table before the copy.
+- `Has` and `Add` run the same SQL as Python, `CREATE TABLE` text included, which SQLite keeps in `sqlite_master`.
+- `Add` returns nil for any constraint failure, a duplicate included, where Python logs "Already in the database"; `downloadsdb` has no logger. Other failures return.
 - A failing `Has` stops the download with its error. A failing `Add` is logged, as Python logs it, and leaves the release done.
 
 ## qobuzdltest
@@ -727,6 +729,7 @@ const (
 const (
     PlaylistLong, ArtistLong                string = … // 120 items, pages at 0, 50 and 100
     PlaylistEmpty, ArtistEmpty, LabelEmpty  string = … // a first page without items
+    ArtistAlbums                            string = … // "Norah Jones" listing three recorded albums
 )
 
 type Server struct {
@@ -766,7 +769,7 @@ type Request struct {
 - Every API call needs the X-App-Id `AppID`, else 400, and the X-User-Auth-Token `Token`, else 401. Errors have Qobuz's shape, `{"status": "error", "code": …, "message": …}`; unknown IDs get 404.
 - `user/get` answers a Studio account with `UserID`.
 - `album/get` and `track/get` answer the recorded files. `track/get` also answers for every track of a recorded album, as the album lists it with the album/get answer, less its tracks, in front as `album`; and for every track of the recorded playlist, as the playlist lists it, less `position`, `created_at` and `playlist_track_id`. A playlist download calls `track/get` for each track, so it needs these; step 9's Python generator has to build the same answers.
-- `playlist/get`, `artist/get` and `label/get` cut the recorded first page, or a built collection, by `offset` and `limit`, keeping `total`.
+- `playlist/get`, `artist/get` and `label/get` cut the recorded first page, or a built collection, by `offset` and `limit`, keeping `total`. The recorded artist's and label's albums have no recorded `album/get`, so they answer 404; `ArtistAlbums` lists `AlbumHiRes96`, `AlbumWithVersion` and `AlbumCD`, as `album/get` answers them less their tracks, so an artist download has answers for every album. Step 9's Python generator builds the same page.
 - `catalog/search` answers the recorded search of the requested type, whatever the query, cut by `offset` and `limit`.
 - `track/getFileUrl` checks `request_sig` with `Secret` and answers 400 on a mismatch, as Qobuz does. It answers the recorded file for the track and format, or one built from the format table: 5 is MP3 16/44.1, 6 FLAC 16/44.1, 7 FLAC 24/96, 27 FLAC 24/192. Its `url` points at the fake CDN, `/cdn/file/<track>/<format>` with a query standing for the signature, and names the delivered format, not the requested one.
 - The CDN serves one file per format, the tiny FLACs at 16/44.1, 24/96 and 24/192 and the MP3 from step 1, through `http.ServeContent`: `Range` gives 206, and a range past the end 416.

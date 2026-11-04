@@ -15,7 +15,10 @@
 //     or it gets 400, and the X-User-Auth-Token Token, or it gets 401.
 //     user/get answers a Studio account. album/get, track/get and the
 //     first pages of playlist/get, artist/get and label/get answer the
-//     recorded fixtures; pages honor offset and limit. track/get also
+//     recorded fixtures; pages honor offset and limit. Only the Album
+//     constants have an album/get answer, so most of the recorded artist's
+//     and label's albums get 404; ArtistAlbums lists recorded ones only.
+//     track/get also
 //     answers for every track of a recorded album, with that album in
 //     front as "album", and of the recorded playlist, as the playlist lists
 //     it. catalog/search answers the recorded search of the requested type,
