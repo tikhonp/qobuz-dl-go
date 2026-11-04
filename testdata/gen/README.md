@@ -6,8 +6,9 @@ The scripts here run qobuz-dl 2.5.9 to make the test data. Go tests read only th
 | --- | --- | --- |
 | `gen.py` | reads `testdata/fixtures/` and writes `testdata/golden/*.json`, `testdata/fixtures/strings/random.txt`, the bundle, built audio, segment, m3u8 and database fixtures, and the copy of the fixtures in `qobuzdltest/testdata/` | none |
 | `record.py` | records the Qobuz API answers into `testdata/fixtures/api/`; `--search` lists candidate IDs | Qobuz, needs `QOBUZ_TOKEN` |
-
-`parity.py` and `compare.py` come with step 10.
+| `parity.py` | downloads one URL with `QobuzDL` as Music Shelf's bot does | Qobuz, needs `QOBUZ_TOKEN`; with `--fake`, a `qobuzdltest` server on localhost |
+| `compare.py` | compares two download trees and fails on any difference not in `parity-allow.txt` | none |
+| `compare_test.py` | tests `compare.py` on trees built from the audio fixtures; `make compare-test` | none |
 
 ## The venv
 
@@ -151,3 +152,19 @@ EOF
 ## Database fixtures
 
 `gen.py` writes `testdata/fixtures/db/` on every run. `v1.db` is the first qobuz-dl's table, `id TEXT UNIQUE NOT NULL`, with three IDs. `v2.db` is db.py's table before `artist` and `album`, with two rows. `shared.db` is a database `create_db` made and `handle_download_id` filled with two albums and a track, for the test that Go reads and writes Python's file.
+
+## Parity
+
+`make parity URL=<url>` runs `parity.py` into `out/parity/py`, the Go CLI with `-q 27 --no-db` into `out/parity/go`, and `compare.py` on the two. It needs `QOBUZ_TOKEN`.
+
+`parity.py` builds `QobuzDL(directory, quality=27, quality_fallback=True, downloads_db=None, settings=QobuzDLSettings(user_auth_token=token))`, then calls `get_tokens`, `initialize_client("", token, app_id, secrets)` and `handle_url(url)`, which is how the bot runs. `--db FILE` passes a downloads database instead of none. With `--fake BASE` it patches requests' `HTTPAdapter.send` to send `https://www.qobuz.com/api.json/0.2/` and `https://play.qobuz.com/` to `BASE`, and makes `time.sleep` return at once.
+
+`make parity FAKE=1` runs the same three steps offline in the Go test `TestParityAgainstFake`. Each URL gets a fresh `qobuzdltest` server, and its trees go to `out/parity/<n>/py` and `out/parity/<n>/go`. `URL` may list fixture URLs separated by spaces; without it the test runs the multi-disc album, the CD album and the playlist. The test gives `parity.py` the fake's token in place of any `QOBUZ_TOKEN` in the environment.
+
+`compare.py` walks both trees. A path on one side only is `only-py` or `only-go`. A non-audio file of another size is `size`, and one of the same size with other bytes is `content`. For `.flac` and `.mp3` files it reads with mutagen:
+
+- `tags`: FLAC comments key by key, then their order, the vendor string, and the pictures; MP3 frames as a set per hash key, and the ID3 version.
+- `stream`: FLAC rate, bit depth, channels, sample count and MD5 signature, or MP3 rate, bitrate, channels, mode and length; and a SHA-256 of the audio frames.
+- `unreadable`: mutagen fails on one side.
+
+`parity-allow.txt` lists the differences the port makes on purpose. Each line is `KIND PATH-PATTERN [KEY-PATTERN] -- UPSTREAM.md: TEXT`, split as a shell splits, so quote a pattern with spaces. `*` matches any run of characters and `?` one character. `TEXT` must appear in `UPSTREAM.md`, so every allowed difference points at the row that explains it. `compare.py` exits 0 when every difference is allowed, 1 otherwise, and 2 for a bad allow list.

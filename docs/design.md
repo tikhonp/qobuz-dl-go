@@ -32,7 +32,7 @@ transport.go      timeouts, retries' sleeps, URL redaction
 downloadsdb/      the SQLite downloads table, Python-compatible
 qobuzdltest/      a fake Qobuz API and CDN for tests here and in shelf
 cmd/qobuz-dl/     the CLI
-testdata/gen/     gen.py, record.py, parity.py, compare.py, requirements.txt
+testdata/gen/     gen.py, record.py, parity.py, compare.py with compare_test.py and parity-allow.txt, requirements.txt
 testdata/fixtures/  inputs to gen.py: recorded API answers, string corpora, template matrices
 testdata/golden/  gen.py's output, committed
 ```
@@ -789,6 +789,8 @@ qobuz-dl search [-l limit] albums|tracks|artists|playlists QUERY...
 
 The token comes only from `QOBUZ_TOKEN`; the CLI passes it as `Settings.UserAuthToken`. Progress lines go to stdout, logs to stderr, `-v` for debug. Exit status 0 when every release is done or skipped, 1 otherwise, 2 for usage errors.
 
+The printer writes one line per release start, per finished track and per line `Progress.Log` gets, with paths relative to the download folder. The lines `NewClient` and `InitializeClient` log, such as `Set max quality`, reach only the `-v` logger, because they don't go through a `Progress`. Flags may follow the URLs, as with argparse; everything after `--` is a URL. Like `download_list_of_urls`, `dl` reads `open.qobuz.com` as `play.qobuz.com`. After an invalid URL or empty content it goes on to the next URL, as Python does. Any other error stops the run with status 1, where Python's CLI would crash.
+
 `dl` flags follow Python's `dl` names where a ported setting exists. Go's `flag` package accepts `-ff` and `--folder-format` alike:
 
 | Flag | Sets |
@@ -812,21 +814,27 @@ The token comes only from `QOBUZ_TOKEN`; the CLI passes it as `Settings.UserAuth
 | `--multiple-disc-prefix`, `--multiple-disc-one-dir`, `--multiple-disc-track-format` | disc settings |
 | `--max-workers` | `Settings.MaxWorkers` |
 | `--legacy-charmap`, `--disable-smart-truncation` | config-only in Python; flags here |
+| `--with-credits` | cancels `--no-credits`, as in `cli.py` |
+| `-v` | debug logs on stderr |
+
+The tag switches are the 19 of `commands.py` and `--no-conductor-tag`, `--no-ensemble-tag` and `--no-work-tag`, which only `config.ini` sets in Python. An empty value for a template, the directory or the disc prefix takes the default, as Python's `or` does. `--max-workers 0` means 3. `--og-cover`, `--no-lyrics`, `--no-lrc-files` and `--no-embed-lyrics` are accepted and change nothing, since nothing here reads `og_cover` or fetches lyrics. `-b`, `--blacklist`, `--filter-label`, `--playlist-as-albums` and `--booklet-only` are usage errors, because their features are not ported.
 
 Defaults are `QobuzDL`'s and `QobuzDLSettings`', not those of Python's `config.ini`, so `qobuz-dl dl -q 27 --db <path> <url>` runs what the bot runs.
 
-`search` prints `SearchByType`'s lines and URLs, 10 by default as in `search_by_type`.
+`search` prints `SearchByType`'s results, 10 by default as in `search_by_type`, one per line: the text, three spaces, the URL. The type may be plural or singular. A query under 3 characters is a usage error. `New` creates its folder, so a search runs with the current folder as `Directory`.
+
+Tests run the CLI in process through a `cli` value with its own streams, environment and a hook that `qobuzdltest`'s `Configure` fills; the binary has no switch that points it at another server.
 
 ## Golden generation
 
-`testdata/gen/` holds four scripts, run with `testdata/gen/.venv/bin/python -I`:
+`testdata/gen/` holds four scripts and `compare_test.py`, the tests of `compare.py`, run with `testdata/gen/.venv/bin/python -I`:
 
 | Script | Does | Network |
 | --- | --- | --- |
 | `gen.py` | reads `testdata/fixtures/`, calls qobuz-dl 2.5.9 functions, writes `testdata/golden/*.json` | none; one test binds a localhost port |
 | `record.py` | fetches the fixture API answers with `QOBUZ_TOKEN` through upstream's `Client`, cleans them, writes `testdata/fixtures/api/` | Qobuz |
-| `parity.py` | runs `QobuzDL` with the bot's settings on one URL into a folder | Qobuz |
-| `compare.py` | compares two download trees: names, sizes of non-audio files, FLAC and MP3 tags read with mutagen | none |
+| `parity.py` | runs `QobuzDL` with the bot's settings on one URL into a folder; `--fake BASE` sends the API and web player requests to a `qobuzdltest` server instead | Qobuz, or localhost |
+| `compare.py` | compares two download trees: names, sizes and bytes of non-audio files, FLAC and MP3 tags and stream info read with mutagen, a hash of the audio frames; differences in `parity-allow.txt` pass | none |
 
 - `requirements.txt` pins the venv to `pip freeze` from the design session: `qobuz-dl-ultimate==2.5.9`, `mutagen==1.48.1`, `pathvalidate==3.3.1`, `cryptography==50.0.2`, `requests==2.34.2` and the rest. Goldens depend on mutagen's and pathvalidate's versions, so the pins move only with an upstream sync.
 - `gen.py` may call private functions such as `qobuz_dl.utils.clean_filename` or `qobuz_dl.metadata._get_tags_to_add`, construct `Bundle` without `__init__` and set its text, and run `Download` with a fake client object that answers from fixtures and a localhost HTTP server for files. The end-to-end goldens, file trees with tags, come from that.
@@ -863,6 +871,8 @@ Fixture recording needs the token; the user chose to record in step 01, so that 
 | `record` | `record.py`; needs `QOBUZ_TOKEN` |
 | `upstream-diff TO=<tag>` | fetches tags in `.upstream/qobuz-dl` and diffs the ported files from `UPSTREAM.md`'s tag to `TO` |
 | `parity URL=<url>` | `parity.py` into `out/parity/py`, the CLI into `out/parity/go`, then `compare.py` |
+| `parity FAKE=1 [URL=...]` | the same three steps against `qobuzdltest`, in `TestParityAgainstFake`, into `out/parity/<n>/` |
+| `compare-test` | `compare_test.py`, the tests of `compare.py` |
 
 ## Logs and secrets
 

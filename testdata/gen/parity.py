@@ -1,12 +1,14 @@
 """Downloads one Qobuz URL with qobuz-dl 2.5.9 the way Music Shelf's bot does.
 
-    QOBUZ_TOKEN=... testdata/gen/.venv/bin/python -I testdata/gen/parity.py URL OUTDIR
+    QOBUZ_TOKEN=... testdata/gen/.venv/bin/python -I testdata/gen/parity.py [--db FILE] URL OUTDIR
     testdata/gen/.venv/bin/python -I testdata/gen/parity.py --fake BASE URL OUTDIR
 
 It builds QobuzDL as the bot does: quality 27, quality fallback on, no
 downloads database, the token as the settings' user_auth_token. Then it runs
 get_tokens, initialize_client and handle_url. That is the production path,
-not the Python CLI's, which reads config.ini.
+not the Python CLI's, which reads config.ini. --db FILE gives it a
+downloads database instead, for the run that checks Go skips what Python
+recorded.
 
 --fake BASE sends every request for https://www.qobuz.com/api.json/0.2/ and
 https://play.qobuz.com to BASE, a running qobuzdltest server, and makes
@@ -53,6 +55,7 @@ def redirect_to(base):
 def main(argv):
     parser = argparse.ArgumentParser(description="Download one URL as the bot does.")
     parser.add_argument("--fake", metavar="BASE", help="a qobuzdltest server to use instead of Qobuz")
+    parser.add_argument("--db", metavar="FILE", help="a downloads database; the bot runs without one")
     parser.add_argument("url")
     parser.add_argument("outdir")
     args = parser.parse_args(argv)
@@ -71,7 +74,7 @@ def main(argv):
         args.outdir,
         quality=27,
         quality_fallback=True,
-        downloads_db=None,
+        downloads_db=args.db,
         settings=QobuzDLSettings(user_auth_token=token),
     )
     qobuz.get_tokens()

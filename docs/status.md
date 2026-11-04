@@ -2,9 +2,9 @@
 
 ## Now
 
-Steps 1 to 9 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` with `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py`, with the typed views, the taggers from `metadata.py`, `qobuzdltest`, the fake Qobuz, `downloader.py`, both transfers included, with `Progress` and the results, `core.py`, and `db.py` as `downloadsdb`.
+Steps 1 to 10 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` with `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py`, with the typed views, the taggers from `metadata.py`, `qobuzdltest`, the fake Qobuz, `downloader.py`, both transfers included, with `Progress` and the results, `core.py`, `db.py` as `downloadsdb`, the `qobuz-dl` CLI, and the parity tools `parity.py` and `compare.py`.
 
-Next: step 10, [CLI and parity tools](build/10-cli.md). Start Claude Code in this repo and paste the prompt from [prompts/02-step.md](prompts/02-step.md). It needs no token.
+Next: step 11, [parity and v0.1.0](build/11-parity.md). It needs `QOBUZ_TOKEN` exported and downloads real albums.
 
 ## Steps
 
@@ -19,8 +19,8 @@ Next: step 10, [CLI and parity tools](build/10-cli.md). Start Claude Code in thi
 | 7 | [downloader, direct path](build/07-downloader.md) | done |
 | 8 | [segmented path](build/08-segments.md) | done |
 | 9 | [core, m3u8, downloadsdb](build/09-core.md) | done |
-| 10 | [CLI and parity tools](build/10-cli.md) | next |
-| 11 | [parity and v0.1.0](build/11-parity.md) | needs `QOBUZ_TOKEN` |
+| 10 | [CLI and parity tools](build/10-cli.md) | done |
+| 11 | [parity and v0.1.0](build/11-parity.md) | next, needs `QOBUZ_TOKEN` |
 
 ## Fixture items
 
@@ -93,3 +93,7 @@ Filled in by the parity run in step 11.
 - For shelf: a 401 on `album/get` or `track/get` during `DownloadFromID` is a request error, which Python logs and skips. The call returns no error, and the release has `StatusFailed` with an `*APIError` of status 401 in `Release.Err`. To mark the source unhealthy on an expired token, shelf has to look there. A 401 on a playlist's pages in `HandleID` returns `ErrUnhandled` with the `*APIError` reachable through `errors.As`.
 - For shelf: `HandleID` on a playlist sends one `ReleaseStart` of kind `playlist` and a `TrackEnd` for every planned track, a track already in the downloads database included, as `OutcomeSkipped`. `Result.M3U` is the m3u8's path. An invalid URL returns `ErrInvalidURL` with an empty, non-nil `Result`.
 - For shelf: `qobuzdltest.ArtistAlbums` is an artist whose every album downloads; the recorded `Artist` and `Label` lead to 404s on `album/get`, but for the label's compilation. `go.mod` now requires `modernc.org/sqlite` for `downloadsdb`; the root package and `qobuzdltest` don't import it.
+- Step 10. `cmd/qobuz-dl` with `dl` and `search`, every Python `dl` flag registered, the token only from `QOBUZ_TOKEN`, a line printer on stdout, and exit statuses 0, 1 and 2. `parity.py` runs `QobuzDL` as the bot does, or against a `qobuzdltest` server with `--fake`; `compare.py` compares two trees by names, file bytes, tags, stream info and audio hashes, with an allow list that must quote `UPSTREAM.md`. `make parity FAKE=1` runs all three steps offline: the three default URLs and every other fixture item give 0 differences. `compare_test.py` passes, 16 tests. The README shows library and CLI usage. Details are in [10-cli.md](build/10-cli.md) under As built.
+- During this step a manual CLI run reached the real Qobuz API once by mistake, because `QOBUZ_TOKEN` was set in the session's shell. It fetched the bundle, signed in and asked `album/get` for the ID `x`, which answered 404. Nothing was downloaded or printed, and the empty `QobuzDownloads` folder and the `~/.config/qobuz-dl/qobuz_dl.db` the run created were removed. Later commands ran with the variable unset, and `TestParityAgainstFake` replaces any `QOBUZ_TOKEN` with the fake's.
+- The commits of this step have no `Co-Authored-By` line, at the user's request.
+- For shelf: nothing in the library changed. `cmd/qobuz-dl dl -q 27 --db <shelf's file> URL` runs what the bot runs, for a manual check. The printer in `cmd/qobuz-dl/printer.go` is a small example of a `Progress`.

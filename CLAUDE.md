@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 qobuz-dl-go is a Go library and a small CLI that port qobuz-dl, a Python Qobuz downloader, file by file. The first user is Music Shelf, in `~/projects/shelf` with the module `github.com/tikhonp/shelf`, which imports the package. Docs, code and logs are in English.
 
-State: step 1 done (module, CI, golden generator, fixtures, goldens); no ported code yet. The work runs in eleven steps, one session each, with the contracts in `docs/build/` and `docs/prompts/02-step.md`. Music Shelf tracks this work as its step 1c. `docs/status.md` says what is done and what comes next.
+State: steps 1 to 10 done; step 11, the parity runs against Qobuz and `v0.1.0`, is next. The work runs in eleven steps, one session each, with the contracts in `docs/build/` and `docs/prompts/02-step.md`. Music Shelf tracks this work as its step 1c. `docs/status.md` says what is done and what comes next.
 
 ## Read first
 
@@ -39,7 +39,7 @@ State: step 1 done (module, CI, golden generator, fixtures, goldens); no ported 
 
 ## Commands
 
-From step 1; `make parity` needs the `parity.py` and `compare.py` of step 10:
+From step 1, with the parity tools of step 10:
 
 ```sh
 make check                # gofmt, vet, go test -race
@@ -49,6 +49,8 @@ make golden               # regenerate testdata/golden from qobuz-dl in testdata
 make record               # re-record testdata/fixtures/api from Qobuz; needs QOBUZ_TOKEN
 make upstream-diff TO=v2.6.0   # diff of the ported upstream files since UPSTREAM.md's tag
 make parity URL=<album>   # one album through Python qobuz-dl and the Go CLI, then compare files and tags
+make parity FAKE=1        # the same against qobuzdltest, offline
+make compare-test         # the tests of compare.py
 ```
 
 ## Layout
@@ -65,7 +67,7 @@ flac.go catalog.go progress.go transport.go
 downloadsdb/              the Python-compatible downloads table, in SQLite
 qobuzdltest/              a fake API and CDN for tests here and in Music Shelf
 cmd/qobuz-dl/             dl and search, for parity runs
-testdata/gen/             gen.py, record.py, parity.py, compare.py, pinned requirements.txt
+testdata/gen/             gen.py, record.py, parity.py, compare.py, compare_test.py, parity-allow.txt, pinned requirements.txt
 testdata/fixtures/        recorded API answers, string corpora, audio
 testdata/golden/          the golden files
 ```

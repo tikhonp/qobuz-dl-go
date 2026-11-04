@@ -24,7 +24,8 @@
 | `constants.py` | `constants.go` | ported |
 | `exceptions.py` | `errors.go` | ported |
 | `db.py` | `downloadsdb/downloadsdb.go` | ported |
-| `cli.py`, `commands.py`, `color.py`, `__main__.py`, `radar.py`, `sync.py`, `sync_playlist.py`, `retro_tagger.py`, `lastfm_parser.py`, `lyrics_engine.py` | none | not ported, see below |
+| `commands.py`, `cli.py` | `cmd/qobuz-dl`: the `dl` flags of the ported settings in `dl.go`, and a `search` command | partly ported, see below |
+| `color.py`, `__main__.py`, `radar.py`, `sync.py`, `sync_playlist.py`, `retro_tagger.py`, `lastfm_parser.py`, `lyrics_engine.py` | none | not ported, see below |
 
 ## Functions
 
@@ -75,7 +76,8 @@ When two Python modules have private functions with the same name, the Go name g
 | `search_by_type` | `(*DL).SearchByType`, without lucky mode or favorites; its loop is `searchResults`, with `searchLine` for albums and tracks and `searchNameLine` for artists and playlists |
 | `_align_text` | `alignText` |
 | `WEB_URL`, `QUALITIES` | `webURL`, `qualities` |
-| `mark_url_done_in_file`, `download_list_of_urls`, `download_from_txt_file`, `lucky_mode`, `interactive`, `download_lastfm_pl` | not ported |
+| `download_list_of_urls` | `(*cli).dl` in `cmd/qobuz-dl/dl.go`, for Qobuz URLs only |
+| `mark_url_done_in_file`, `download_from_txt_file`, `lucky_mode`, `interactive`, `download_lastfm_pl` | not ported |
 
 ### downloader.py
 
@@ -220,7 +222,7 @@ These port no qobuz-dl file. They stand in for CPython 3.14 behavior the port re
 
 ## Not ported
 
-- The CLI and its helpers: `cli.py`, `commands.py`, `color.py`, `__main__.py`, `read_config_file`, `from_arguments_configparser`. `cmd/qobuz-dl` has its own small CLI for parity runs.
+- Most of the CLI: `config.ini`, the keyring, the setup wizard, the update check, `--reset`, `--purge`, `--sync-db`, `--show-config`, `stats`, `radar`, the `interactive`, `lucky`, `lyrics` and `sync-playlist` commands, `validate_config_formats`, `_remove_leftovers`, `color.py`, `__main__.py`, `read_config_file` and `from_arguments_configparser`. `cmd/qobuz-dl` keeps the `dl` flags of ported settings with `QobuzDL`'s defaults, reads the token from `QOBUZ_TOKEN`, and adds `search`. It accepts `--og-cover`, `--no-lyrics`, `--no-lrc-files` and `--no-embed-lyrics` and ignores them, and refuses `-b`, `--blacklist`, `--filter-label`, `--playlist-as-albums` and `--booklet-only`.
 - Lyrics: `lyrics_engine.py` and `_append_lyrics_to_booklet`. Music Shelf runs with lyrics off.
 - Sync and imports: `sync.py`, `sync_playlist.py`, `retro_tagger.py`, `radar.py`, `lastfm_parser.py`, `get_track_ids_from_list`.
 - Interactive and lucky modes, batch downloads from text files, favorites, the blacklist, and booklet-only downloads.

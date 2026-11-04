@@ -5,7 +5,7 @@ GO_IMAGE := golang:1.27.3
 PY := testdata/gen/.venv/bin/python -I
 UPSTREAM := .upstream/qobuz-dl
 # The Python files UPSTREAM.md maps to Go code; the rest of upstream is not ported.
-PORTED := bundle.py qopy.py core.py downloader.py metadata.py utils.py settings.py constants.py exceptions.py db.py
+PORTED := bundle.py qopy.py core.py downloader.py metadata.py utils.py settings.py constants.py exceptions.py db.py commands.py
 UPSTREAM_TAG = $(shell sed -n 's/^| Tag | `\(v[^`]*\)` |$$/\1/p' UPSTREAM.md)
 
 .PHONY: check lint golden record upstream-diff parity compare-test venv
