@@ -1,4 +1,4 @@
-# Prompt 5: port an upstream release
+# Port an upstream release
 
 For a new qobuz-dl release. Put its tag on the last line.
 

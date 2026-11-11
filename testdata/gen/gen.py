@@ -840,7 +840,7 @@ def gen_settings():
 # --- Bundle and client ----------------------------------------------------
 
 # The synthetic bundle carries the app ID and secret qobuzdltest will use, so
-# the fake of step 6 can serve these files as they are.
+# qobuzdltest can serve these files as they are.
 FAKE_APP_ID = "123456789"
 FAKE_SECRET = "5e1f0c2a9b7d4e3f8a6c1b0d2e4f6a8c"
 BAD_SECRET = "0f9e8d7c6b5a49382716051423324150"

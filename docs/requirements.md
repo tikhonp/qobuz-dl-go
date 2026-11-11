@@ -1,10 +1,10 @@
 # Requirements
 
-What qobuz-dl-go must do, who uses it, and how to tell it is done. The design in `docs/design.md` has to meet everything here.
+What qobuz-dl-go must do and who uses it. `docs/design.md` describes how it does it.
 
 ## Users
 
-- Music Shelf's Qobuz module, `internal/modules/qobuz` in `~/projects/shelf`. It searches, resolves items for its UI, downloads into the music library with live progress, asks its own database whether an item was downloaded before, and sends traffic through its own `*http.Client`, which may use a proxy. Read `~/projects/shelf/docs/sources/qobuz.md`, `docs/provenance.md`, `docs/build/1c.md` and `docs/build/1d.md` there.
+- Music Shelf's Qobuz module, `internal/modules/qobuz` in `~/projects/shelf`. It searches, resolves items for its UI, downloads into the music library with live progress, asks its own database whether an item was downloaded before, and sends traffic through its own `*http.Client`, which may use a proxy. Its needs are in `~/projects/shelf/docs/sources/qobuz.md` and `docs/provenance.md` there.
 - The `qobuz-dl` CLI in this repo, for parity runs against Python qobuz-dl and for manual downloads.
 
 ## Parity target
@@ -58,14 +58,11 @@ For the same album, the port must write the same folder names, file names, tags,
 - Tests use the standard `testing` package only, with no network in unit tests, and pass under `-race`. Golden data comes from running Python 2.5.9.
 - CI on GitHub Actions: gofmt, vet, `go test -race`, golangci-lint v2.15.0, govulncheck.
 
-## Done for v0.1.0
+## Parity checks
 
-- Golden tests pass for `clean_filename`, `get_url_info`, folder and track naming, the FLAC and MP3 tag maps, request signatures, secret derivation, the smart discography filter, m3u8 ordering, release types and per-disc track totals.
-- The scenario tests listed in `~/projects/shelf/docs/build/1c.md` pass.
-- `make parity` on a multi-disc hi-res album, a CD-quality album and a playlist shows only the differences in `UPSTREAM.md`.
-- Music Shelf's step 1d can build its tests on `qobuzdltest`.
-- CI is green and `v0.1.0` is tagged.
+- Golden tests cover `clean_filename`, `get_url_info`, folder and track naming, the FLAC and MP3 tag maps, request signatures, secret derivation, the smart discography filter, m3u8 ordering, release types and per-disc track totals.
+- `make parity` on a multi-disc hi-res album, a CD-quality album and a playlist shows only the differences in `UPSTREAM.md`. `docs/status.md` lists the reference albums.
 
-## Not in v0.1.0
+## Not ported
 
 Everything under Not ported in `UPSTREAM.md`: the Python CLI and its config file, lyrics, sync and imports, interactive and lucky modes, batch files, favorites, the blacklist and booklet-only downloads.

@@ -2,31 +2,11 @@
 
 ## Now
 
-Steps 1 to 11 are done: the module, CI, goldens and fixtures, the Python compatibility layer, `constants.py`, `exceptions.py`, `settings.py`, `utils.py` with `make_m3u`, pathvalidate's sanitizers, the API client from `bundle.py` and `qopy.py`, with the typed views, the taggers from `metadata.py`, `qobuzdltest`, the fake Qobuz, `downloader.py`, both transfers included, with `Progress` and the results, `core.py`, `db.py` as `downloadsdb`, the `qobuz-dl` CLI, and the parity tools `parity.py` and `compare.py`.
+qobuz-dl-go ports qobuz-dl 2.5.9. `v0.1.1` is the latest tag, at `7ae8648`; it has the dependency update of 2026-11-11 and the same API as `v0.1.0`. Music Shelf builds its Qobuz module on it.
 
-Step 11's parity runs against Qobuz are done. The multi-disc hi-res album, the CD album and the playlist came out byte for byte the same from Python and Go, a resumed Go run skipped every track, and Go skipped an album Python had recorded in a shared `qobuz_dl.db`. The results are under Reference albums.
+Parity runs against Qobuz on 2026-11-04 gave the same files from Python and Go, byte for byte. Reference albums lists them.
 
-`v0.1.0` is tagged at `e6861b4` and pushed, and `go list -m` resolves it through proxy.golang.org. `v0.1.1` has the dependency update of 2026-11-11 and ports the same qobuz-dl 2.5.9.
-
-Next: Music Shelf's step 1d builds its Qobuz module on `v0.1.1`. Here, the next work is porting upstream releases after 2.5.9 with `make upstream-diff`.
-
-The repo no longer has the step contracts in `docs/build/` or the prompts for the design, the steps, parity and the release. `git show 39d1736:docs/build/<file>` shows a contract with its As built notes.
-
-## Steps
-
-| Step | Work | State |
-| --- | --- | --- |
-| 1 | golden generator and fixtures | done |
-| 2 | Python compatibility layer | done |
-| 3 | utils, settings, errors, pathvalidate | done |
-| 4 | bundle and API client | done |
-| 5 | tags | done |
-| 6 | fake Qobuz | done |
-| 7 | downloader, direct path | done |
-| 8 | segmented path | done |
-| 9 | core, m3u8, downloadsdb | done |
-| 10 | CLI and parity tools | done |
-| 11 | parity and v0.1.0 | done |
+Next: port the next upstream tag with `docs/prompts/upstream-sync.md` once it appears. Upstream's last tag is still `v2.5.9`.
 
 ## Fixture items
 
@@ -50,7 +30,7 @@ Searches, limit 10: albums `miles davis kind of blue`, tracks `so what miles dav
 
 ## Reference albums
 
-The parity runs of step 11, on 2026-11-04, with qobuz-dl 2.5.9 in `testdata/gen/.venv` and the CLI at quality 27. Later parity runs use the same links. `make parity` runs Python, then Go, then Go again over Go's tree; `make parity-db` is the shared-database run.
+The parity runs of 2026-11-04, with qobuz-dl 2.5.9 in `testdata/gen/.venv` and the CLI at quality 27. Later parity runs use the same links. `make parity` runs Python, then Go, then Go again over Go's tree; `make parity-db` is the shared-database run.
 
 | Run | Link | Item | Result |
 | --- | --- | --- | --- |
@@ -59,72 +39,16 @@ The parity runs of step 11, on 2026-11-04, with qobuz-dl 2.5.9 in `testdata/gen/
 | `make parity N=3` | https://open.qobuz.com/playlist/2082798 | Top 10 Operas: 10 tracks, 7 at 16/44.1, 2 at 24/96, 1 at 24/44.1, 314 MB | 11 files, all byte for byte the same, `Top 10 Operas.m3u8` included. 0 differences. The resumed run found all 10, and the m3u8 stayed the same. |
 | `make parity-db N=4` | https://open.qobuz.com/album/0634904080853 | the CD album | Python downloaded it and recorded `0634904080853`, `album`, quality 27, `FLAC`. The CLI, given the same `qobuz_dl.db`, logged "This release ID (0634904080853) was already downloaded according to the local database." and wrote nothing. |
 
-None of the three items has a booklet PDF. Only the fake runs compared booklets, on Mahler 2 and Beethoven 3 in step 10's `make parity FAKE=1`. No track took the segmented path. `parity-allow.txt` stays empty.
+None of the three items has a booklet PDF. Only the fake runs compared booklets, on Mahler 2 and Beethoven 3 in `make parity FAKE=1`. No track took the segmented path. `parity-allow.txt` stays empty.
 
 ## Log
 
-### 2026-11-03
-
-- Repo initialised. `CLAUDE.md`, `README.md`, `UPSTREAM.md`, `docs/port-spec.md`, `LICENSE` from qobuz-dl 2.5.9.
-- `origin` set to `git@github.com:tikhonp/qobuz-dl-go.git` and pushed.
-- `docs/requirements.md`, `docs/design-questions.md`, `docs/reference.md`, and the session prompts in `docs/prompts/`.
-- Design session. The upstream source at `v2.5.9` matches the PyPI build. `docs/port-spec.md` checked line by line against it and rewritten: about 40 corrections and additions, among them auth bypassing non-401 failures, `COMPILATION` set only for various-artists albums, the tracklist format, the transfer's short-read and overshoot rules, and which names use which pathvalidate replacement.
-- Decisions by the user: dynamic values inside with typed views outside; explicit error returns for Python exceptions; tag libraries with workarounds only where needed; fixtures recorded in step 1; `HandleID` next to `HandleURL` for playlists.
-- `docs/design.md`, eleven contracts in `docs/build/`, every question in `docs/design-questions.md` marked decided.
-- For shelf: its 1d contract has playlists going through `DownloadFromID` (they go through `HandleID`) and an `http.Client` with a 30-second timeout (the client must have none; the library sets per-call timeouts). Its 1c contract mentions `PartialFormatter`, which upstream never uses, and typed structs, which are now the outer layer only.
-- Step 1. `go.mod`, `doc.go`, `Makefile`, CI, `testdata/gen/` with `record.py`, `gen.py`, the venv pins and a README, 367 recorded answers, the string corpora, ten golden files and the audio fixtures. `make golden` is reproducible byte for byte.
-- The bundle's app ID is `798273057` today, the ID `Client.__init__` treats as legacy, so the bot fetches the bundle twice and keeps the empty secret. `port-spec.md` and step 4's contract said the branch never runs. Both now say it does.
-- For shelf: `docs/sources/qobuz.md` says the module fetches the bundle once, which holds only while the bundle's app ID isn't `798273057`. `get_url_info` reads label URLs with an extra segment, such as `/label/<slug>/download-streaming-albums/<id>`, as the ID `download`.
-- Step 2. `pyvalue.go`, `pystr.go`, `pyre.go`, `format.go` and `textwrap.go` with their tests; every case of `pystr`, `format`, `strings`, `textwrap` and `regex` passes. A new golden, `unicode.json`, checks every code point's properties and case mappings against Python. Go and x/text are on Unicode 17.0 and Python 3.14 on 16.0; `newerThanPython` and three small fixes close the gap.
-- design.md had combining marks in `\w`, which Python's `\w` lacks, and said textwrap collapses whitespace runs, which it doesn't. Both now follow the source. UPSTREAM.md has three new deliberate differences: template attributes, a cap on format widths, and JSON ints beyond int64.
-- Step 3. `constants.go`, `errors.go`, `settings.go`, `pathvalidate.go` and `utils.go` without `MakeM3U`, with their tests; every case of `clean_filename`, `pathvalidate`, `url_info`, `album_artist`, `smart_discography` and `settings` passes. Four new goldens: `album_artist.json`, `smart_discography.json`, `release_type.json` and `settings.json`.
-- `sanitize_filepath` cuts each entry to 260 bytes and empties a relative path with a blank entry; design.md and port-spec.md now say so. design.md's NFC row now names `pyNFC`, since x/text's Unicode 17.0 tables give 34 new code points a combining class that Python doesn't know.
-- Step 4. `bundle.go`, `qopy.go` without the segmented branch, `catalog.go` and `transport.go`, with their tests. Four new goldens: `secrets.json`, `signatures.json`, `session_key.json`, and `request_params.json`, a transcript of 58 runs of upstream's `Client` against a recording transport that the Go client must match request by request. `gen.py` also writes a synthetic login page and bundle into `testdata/fixtures/bundle/`.
-- Python 3.14's base64 decoding is lenient in ways the bundle depends on; `pyB64Decode` ports it. port-spec.md now says how, and that requests keeps `User-Agent` first and `X-App-Id` last on the wire.
-- Step 5. `metadata.go` and `flac.go` with their tests. Six new goldens: `tags.json`, `metadata_helpers.json`, `release_types.json`, `disc_track_total.json`, `flac_tagged.json` and `mp3_tagged.json`, and five audio fixtures `gen.py` builds from the ffmpeg ones. Tagged FLAC files are byte for byte mutagen's, and every MP3 frame's bytes are too.
-- mutagen keeps FLAC blocks in file order and adds a new comment block and pictures at the end; design.md and port-spec.md had VORBIS_COMMENT and PICTURE always last. Both now follow the source, and port-spec.md also says how mutagen translates existing ID3 frames on load.
-- `id3v2` v2.1.4 writes UTF-16 TXXX values and APIC data one byte off. `metadata.go` writes those frames with its own `Framer` types through `id3v2`; design.md now says so.
-- For shelf: `docs/sources/qobuz.md` says MP3 frame order and padding differ from mutagen's. That still holds, and each frame's bytes match mutagen's. Two more differences show only on MP3s that arrive with a tag: frames mutagen translates to v2.4 on load stay as they are, and an ID3v2.2 tag fails the track. Tagged FLAC files are byte for byte Python's.
-- Step 6. `qobuzdltest` with `server.go`, `fixtures.go`, `cdn.go` and `switches.go`, and `Options`, `DefaultOptions` and `DownloadsDB` in `core.go`, which `Configure` needs. `make golden` copies the fixtures into `qobuzdltest/testdata/`, which the package embeds. A client built from `ClientOptions()` reads all 367 recorded answers.
-- The fake also answers `track/get` for the tracks of the recorded albums and playlist, since a playlist download calls it for each track and only one answer is recorded. It has built collections for paging and empty answers, and `Request` has the headers and the status. design.md's qobuzdltest section now says all this.
-- For shelf: `qobuzdltest` has `PlaylistEmpty`, `ArtistEmpty` and `LabelEmpty` for 1d's `TestResolveEmptyCollection`, and `ExpireToken` for `TestHealthTokenExpired`. `catalog/search` answers the recorded search of each type whatever the query, so search tests can't check that a query reached Qobuz except through `Requests()`. `Configure` replaces `Options.HTTPClient` with the fake's; tests of shelf's own client, such as `TestHTTPClientHasNoTimeout` and `TestProxyOptIn`, can instead set `APIBase`, `PlayBase` and `Settings.UserAuthToken` by hand, since the fake is plain HTTP on localhost.
-- Step 7. `downloader.go` without the segmented transfer, `progress.go`, `isRequestError`, and a `FailStatic` switch in the fake. Four new goldens: `naming.json`, `tracklist.json`, and `layout_album.json` and `layout_track.json`, whole download trees from upstream's `Download` run against a client that answers as the fake does. The Go trees match them, FLAC files byte for byte.
-- port-spec.md said a short body retries without sleeping. That holds only when a short body matches its own `Content-Length`. A dropped connection raises urllib3's `IncompleteRead`, which loses the unfinished 64 KiB chunk and sleeps before the retry. Python runs in the venv showed both, and port-spec.md now says so.
-- `genreTag` now changes a copy of `genres_list`, where Python writes into the shared album; the workers raced on it. `TagMP3` now sets 0644 on the file `id3v2` saves.
-- The commits of this step have no `Co-Authored-By` line, at the user's request, and were not pushed.
-- For shelf: `DefaultOptions().Quality` is Python's 6; the bot runs 27. `Progress.TrackEnd` gets the track's path in the work folder, `[IN PROGRESS] <name>` for albums, and the `Result` has the final path. `TrackEnd` also fires for tracks that never started because the context ended. `qobuzdltest` has `FailStatic`, 404 on every cover and goody.
-
-### 2026-11-04
-
-- Step 8. The segmented branch of `get_track_url` with `startSession`, and `transferSegments`, `qobuzSegmentUUID`, `decryptQobuzSegment` and the ffmpeg remux in `downloader.go`. The fake serves `session/start`, `file/url` and encrypted segments, and has a `Segmented` switch. A new golden, `segments.json`, and 26 segmented cases in `request_params.json`. The segments come from three fragmented MP4s that ffmpeg made once; `gen.py` encrypts them and checks them with upstream's own decryption. A track forced onto the path downloads, decrypts, remuxes to the same audio frames as the source FLAC, and tags.
-- port-spec.md now says how the decryption reads past the end, which inputs raise, and that the UUID walk needs 24 bytes. design.md describes the fake's segmented path and the session's two mutexes.
-- The commits of this step have no `Co-Authored-By` line, at the user's request, and were not pushed.
-- For shelf: a failed direct transfer now retries on the segmented path in the same tier, as Python does, so a test that wants a track to fail needs `Fail404`, enough `FailTimes`, or a missing `FFmpegPath`. `TrackInfo.Segmented` is true for the segmented attempt. The bot's host needs ffmpeg on PATH, or `Options.FFmpegPath`, for tracks Qobuz serves only segmented; without it such tracks fall to the next tier and then fail. `qobuzdltest.Segmented(id)` makes a track take the path; `Fail404`, `FailTimes` and `CutAfter` also hit its segments, and `EmptyAnswer` also empties `file/url`.
-- Step 9. `core.go` with `New`, `GetTokens`, `InitializeClient`, `DownloadFromID`, `HandleURL`, `HandleID` and `SearchByType`; `MakeM3U` in `utils.go`, with mutagen's MP3 length in a new `mp3.go`; and `downloadsdb`, modernc SQLite with Python's table and both migrations. Six new goldens: `layout_playlist.json` and `layout_artist.json`, whole `handle_url` runs with the database's rows, `m3u.json`, `search_text.json`, `db_rows.json` and `db_migrations.json`. `gen.py` also writes `testdata/fixtures/m3u/` and `testdata/fixtures/db/`. The Go trees, m3u8 files and rows match Python's.
-- `make_m3u` gives an untagged file the length 0, because mutagen's `FileType` is false without tags and `make_m3u` reads the length only when it is true. port-spec.md and design.md now say so, and how mutagen measures an MP3.
-- The fake has `ArtistAlbums`, an artist page listing three recorded albums, since the recorded artist's albums answer 404 on `album/get`. design.md's qobuzdltest section lists it.
-- `ErrUnhandled` now wraps with `%w: %w`, so `errors.As` finds an `*APIError` inside. design.md says so.
-- The commits of this step have no `Co-Authored-By` line, at the user's request, and were pushed.
-- For shelf: a 401 on `album/get` or `track/get` during `DownloadFromID` is a request error, which Python logs and skips. The call returns no error, and the release has `StatusFailed` with an `*APIError` of status 401 in `Release.Err`. To mark the source unhealthy on an expired token, shelf has to look there. A 401 on a playlist's pages in `HandleID` returns `ErrUnhandled` with the `*APIError` reachable through `errors.As`.
-- For shelf: `HandleID` on a playlist sends one `ReleaseStart` of kind `playlist` and a `TrackEnd` for every planned track, a track already in the downloads database included, as `OutcomeSkipped`. `Result.M3U` is the m3u8's path. An invalid URL returns `ErrInvalidURL` with an empty, non-nil `Result`.
-- For shelf: `qobuzdltest.ArtistAlbums` is an artist whose every album downloads; the recorded `Artist` and `Label` lead to 404s on `album/get`, but for the label's compilation. `go.mod` now requires `modernc.org/sqlite` for `downloadsdb`; the root package and `qobuzdltest` don't import it.
-- Step 10. `cmd/qobuz-dl` with `dl` and `search`, every Python `dl` flag registered, the token only from `QOBUZ_TOKEN`, a line printer on stdout, and exit statuses 0, 1 and 2. `parity.py` runs `QobuzDL` as the bot does, or against a `qobuzdltest` server with `--fake`; `compare.py` compares two trees by names, file bytes, tags, stream info and audio hashes, with an allow list that must quote `UPSTREAM.md`. `make parity FAKE=1` runs all three steps offline: the three default URLs and every other fixture item give 0 differences. `compare_test.py` passes, 16 tests. The README shows library and CLI usage.
-- During this step a manual CLI run reached the real Qobuz API once by mistake, because `QOBUZ_TOKEN` was set in the session's shell. It fetched the bundle, signed in and asked `album/get` for the ID `x`, which answered 404. Nothing was downloaded or printed, and the empty `QobuzDownloads` folder and the `~/.config/qobuz-dl/qobuz_dl.db` the run created were removed. Later commands ran with the variable unset, and `TestParityAgainstFake` replaces any `QOBUZ_TOKEN` with the fake's.
-- The commits of this step have no `Co-Authored-By` line, at the user's request.
-- For shelf: nothing in the library changed. `cmd/qobuz-dl dl -q 27 --db <shelf's file> URL` runs what the bot runs, for a manual check. The printer in `cmd/qobuz-dl/printer.go` is a small example of a `Progress`.
-- Step 11, the parity part. `make parity` ran against Qobuz on the three reference items and `make parity-db` on the CD album. Every file came out byte for byte the same, and the resumed and shared-database runs skipped everything. Nothing in the port changed, and `parity-allow.txt` stays empty. The runs and their results are under Reference albums.
-- `make parity` now takes `N` and runs into `out/parity/<N>`, keeps each run's output in `py.log`, `go.log` and `resume.log`, and ends with the resumed run and a second compare. `make parity-db` is new. `make parity FAKE=1` now writes to `out/parity/fake/`, since it used to replace the trees of the real runs.
-- `QOBUZ_TOKEN` appears in none of the run logs.
-- The commits of this step have no `Co-Authored-By` line, at the user's request.
-- For shelf: every line of 1d's checklist can build on `qobuzdltest` as it is. `ExampleNew` passes, `PlaylistEmpty`, `ArtistEmpty` and `LabelEmpty` cover `TestResolveEmptyCollection`, `ExpireToken` covers `TestHealthTokenExpired`, and `ClientOptions`, `Configure` and `Requests` cover the rest. 1d now has playlists going through `HandleID` and a client without `Timeout`, which settles the first note of 2026-11-03. 1d has to do two things itself. `GetURLInfo` doesn't accept `/interpreter/` links, as upstream doesn't, so `ParseLink` maps them. And qobuz-dl-go exports no version string, so `DownloadResult.Tool` takes the module version from `runtime/debug.ReadBuildInfo` and the qobuz-dl version, 2.5.9, from `UPSTREAM.md`.
-- Step 11, the release. CI was green on `main`, the README example compiled against the API, and `make check` passed. `UPSTREAM.md` and the README now name `v0.1.0`. `v0.1.0` is tagged at `e6861b4` and pushed, and `GOPROXY=https://proxy.golang.org go list -m github.com/tikhonp/qobuz-dl-go@v0.1.0` resolves it.
-- For shelf: shelf's `docs/status.md` now marks 1c done, and the As built section of its `docs/build/1c.md` has the version and the notes for 1d from this log.
-- Removed the step contracts in `docs/build/` and prompts 01 to 04, which the finished steps no longer need. Prompt 05, for upstream releases, stays.
-
 ### 2026-11-11
 
-- Checked upstream. The last tag is still `v2.5.9`, and PyPI's last release of `qobuz-dl-ultimate` is 2.5.9, so there is nothing to port. `master` is at `a57a8ad`, with commits named v2.6.0 to v2.6.7 that were never tagged or published. They add lyrics options, formats for the `ALBUM`, `DATE` and `GENRE` tags, and an interactive menu for an artist's albums. They write an `ALBUMVERSION` tag by default, add the format keys `{primary_genre}`, `{album_version}` and `{version_tag}`, and drop `{disc_number}`. `handle_url` on `master` calls `download_from_id` twice for each item, once in the new queue loop and again in the old one, so `master` is not ready to port. When a 2.6 tag appears, port it with prompt 05.
+- Checked upstream. The last tag is still `v2.5.9`, and PyPI's last release of `qobuz-dl-ultimate` is 2.5.9, so there is nothing to port. `master` is at `a57a8ad`, with commits named v2.6.0 to v2.6.7 that were never tagged or published. They add lyrics options, formats for the `ALBUM`, `DATE` and `GENRE` tags, and an interactive menu for an artist's albums. They write an `ALBUMVERSION` tag by default, add the format keys `{primary_genre}`, `{album_version}` and `{version_tag}`, and drop `{disc_number}`. `handle_url` on `master` calls `download_from_id` twice for each item, once in the new queue loop and again in the old one, so `master` is not ready to port. When a 2.6 tag appears, port it with `docs/prompts/upstream-sync.md`.
 - Updated the dependencies: Go 1.27.4 in `go.mod` and the lint image, as in Music Shelf; `golang.org/x/text` v0.44.0, `golang.org/x/sys` v0.50.0, `modernc.org/sqlite` v1.62.0 and `modernc.org/libc` v1.81.0; `soupsieve` 4.1 in the golden venv. `pick` stays 1.6.0, which qobuz-dl pins. golangci-lint v2.15.0, govulncheck v1.9.0 and the GitHub actions were already the latest. `make golden` gives the same files, and `make check`, `make lint` and `make compare-test` pass.
 - Homebrew had removed Python 3.14, so `make venv` failed; `brew install python@3.14` brought it back. reference.md now says so.
 - For shelf: nothing in the API changed. The module now needs Go 1.27.4, which shelf already uses.
 - `v0.1.1` is tagged at `7ae8648` and pushed. For shelf: move to `v0.1.1` for the new dependencies; the API is the same.
+- CI's test job hung on `apt-get install ffmpeg` until the step timed out, twice in a row, while the same step had taken 22 seconds 20 minutes earlier. Short apt timeouts didn't help. The job now downloads BtbN's static ffmpeg 9.0 build from GitHub and checks it against the release's `checksums.sha256`. CI is green at `140e645`.
+- Removed what only the build needed: `docs/design-questions.md`, the steps in `docs/design.md`, and the per-step log here. `git show ce371e4:<path>` shows them.

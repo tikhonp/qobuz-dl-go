@@ -7,4 +7,4 @@
 # TEXT must appear in UPSTREAM.md, in the row that explains the difference.
 # compare.py's docstring has the details.
 #
-# Empty, since the parity runs of step 11 on 2026-11-04 found no difference.
+# Empty, since the parity runs of 2026-11-04 found no difference.

@@ -38,7 +38,7 @@ Where the sources are, which tools exist on this machine, and the conventions to
 | Docker | 29.9.2, used by `make lint` |
 | golangci-lint | not installed on the host; run it in Docker or in CI |
 | metaflac | not installed; `brew install flac`, or read tags with `ffprobe -show_format` |
-| gh | not installed |
+| gh | installed, not logged in. The public GitHub API reads this repo's CI runs without it. |
 
 ## Qobuz token for real runs
 
@@ -50,21 +50,20 @@ Unit tests never need a token. The parity run and manual CLI runs do.
 
 ## Conventions
 
-These come from the user's other Go projects, mainly `~/projects/proxier` and `~/projects/vk2tg`:
+These come from the user's other Go projects, mainly `~/projects/proxier` and `~/projects/vk2tg`.
 
 - Standard `testing` only, no testify. Test names are CamelCase sentences, such as `TestResumeAfter200StartsOver`. Fakes and `httptest` servers instead of mocks. `testing/synctest` for time-based code. No sleeps over 100 ms.
 - `go test -race`.
 - Errors wrapped with `%w`, sentinel errors for conditions callers check, `errors.Join` for several at once.
 - slog for logs.
 - golangci-lint v2.15.0 with its default linters and no config file, plus govulncheck v1.9.0.
-- For the CI job shape, read `~/projects/proxier/.forgejo/workflows/ci.yaml` and rewrite it for GitHub Actions: `actions/checkout`, `actions/setup-go` with `go-version-file: go.mod`, `golangci/golangci-lint-action` pinned to v2.15.0, then govulncheck.
 
 ## Python behaviors that trip a port
 
 Check each against the source and the goldens:
 
 - `\w` in Python 3 matches Unicode letters, digits and the underscore. Go's RE2 `\w` is ASCII only, so a direct copy breaks non-Latin titles.
-- `str.format` with format specs, and the `PartialFormatter` behavior for missing keys.
+- `str.format` with format specs. Upstream defines `PartialFormatter` but never uses it.
 - `str()` of a float keeps `.0`, so `96.0` prints as `96.0`. `str(None)` is `None`, `str(True)` is `True`.
 - `str.casefold` is not `strings.ToLower`.
 - NFC normalization, from `golang.org/x/text/unicode/norm`.

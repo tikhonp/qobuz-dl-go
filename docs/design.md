@@ -1,6 +1,6 @@
 # Design
 
-How qobuz-dl-go ports qobuz-dl 2.5.9. Upstream behavior is in [port-spec.md](port-spec.md). [Steps](#steps) lists the steps that built it. Each section answers questions from [design-questions.md](design-questions.md).
+How qobuz-dl-go ports qobuz-dl 2.5.9. Upstream behavior is in [port-spec.md](port-spec.md), and the deliberate differences from it are in [UPSTREAM.md](../UPSTREAM.md).
 
 ## Package layout
 
@@ -180,7 +180,7 @@ The port follows pathvalidate's source: invalid characters, reserved names, trai
 
 ## Public API
 
-Signatures below are the contract; the steps may add unexported helpers only.
+These are the exported signatures. Unexported helpers are not part of the API.
 
 ### core.go
 
@@ -224,7 +224,7 @@ type DownloadRequest struct {
 type SearchResult struct{ Text, URL string }
 ```
 
-`HandleID` is a Go-only split of `handle_url`, so shelf can download a playlist by ID with its m3u8; the user chose it over widening `DownloadFromID`. Shelf's 1d docs say playlists go through `DownloadFromID` and need that line changed.
+`HandleID` is a Go-only split of `handle_url`, so shelf can download a playlist by ID with its m3u8; the user chose it over widening `DownloadFromID`.
 
 ### qopy.go and bundle.go
 
@@ -623,7 +623,7 @@ Timeouts mirror requests' `timeout=(10, 60)` on the caller's client, without tou
 - An idle timer of `Idle` runs from `GotConn` to the first response byte, then restarts on every body read.
 - Either timer cancels a context derived from the call's. The error says which timed out.
 
-API calls get `context.WithTimeout(ctx, Timeouts.API)`. shelf must hand over a client without `http.Client.Timeout`, since that would cut long transfers; shelf's 1d contract says otherwise and needs that line changed.
+API calls get `context.WithTimeout(ctx, Timeouts.API)`. The caller's client must have no `http.Client.Timeout`, since that would cut long transfers.
 
 Sleeps between attempts use `RetryDelays` and end early when the context does. `TrackPause` is the one-second sleep before each track. Tests set both to zero or run under `testing/synctest`.
 
@@ -706,7 +706,7 @@ func (db *DB) Close() error
 
 ## qobuzdltest
 
-A fake Qobuz for tests in this repo and in shelf's 1d.
+A fake Qobuz for tests in this repo and in Music Shelf.
 
 ```go
 package qobuzdltest
@@ -768,11 +768,11 @@ type Request struct {
 - The fixtures are the recorded answers from `testdata/fixtures/api/`, which `make golden` copies into `qobuzdltest/testdata/` with the bundle files and the audio, and the package embeds. Answers keep their key order and the text of their numbers, so `96` stays an int and `44.1` a float.
 - Every API call needs the X-App-Id `AppID`, else 400, and the X-User-Auth-Token `Token`, else 401. Errors have Qobuz's shape, `{"status": "error", "code": …, "message": …}`; unknown IDs get 404.
 - `user/get` answers a Studio account with `UserID`.
-- `album/get` and `track/get` answer the recorded files. `track/get` also answers for every track of a recorded album, as the album lists it with the album/get answer, less its tracks, in front as `album`; and for every track of the recorded playlist, as the playlist lists it, less `position`, `created_at` and `playlist_track_id`. A playlist download calls `track/get` for each track, so it needs these; step 9's Python generator has to build the same answers.
-- `playlist/get`, `artist/get` and `label/get` cut the recorded first page, or a built collection, by `offset` and `limit`, keeping `total`. The recorded artist's and label's albums have no recorded `album/get`, so they answer 404; `ArtistAlbums` lists `AlbumHiRes96`, `AlbumWithVersion` and `AlbumCD`, as `album/get` answers them less their tracks, so an artist download has answers for every album. Step 9's Python generator builds the same page.
+- `album/get` and `track/get` answer the recorded files. `track/get` also answers for every track of a recorded album, as the album lists it with the album/get answer, less its tracks, in front as `album`; and for every track of the recorded playlist, as the playlist lists it, less `position`, `created_at` and `playlist_track_id`. A playlist download calls `track/get` for each track, so it needs these; `gen.py` builds the same answers for the playlist goldens.
+- `playlist/get`, `artist/get` and `label/get` cut the recorded first page, or a built collection, by `offset` and `limit`, keeping `total`. The recorded artist's and label's albums have no recorded `album/get`, so they answer 404; `ArtistAlbums` lists `AlbumHiRes96`, `AlbumWithVersion` and `AlbumCD`, as `album/get` answers them less their tracks, so an artist download has answers for every album. `gen.py` builds the same page.
 - `catalog/search` answers the recorded search of the requested type, whatever the query, cut by `offset` and `limit`.
 - `track/getFileUrl` checks `request_sig` with `Secret` and answers 400 on a mismatch, as Qobuz does. It answers the recorded file for the track and format, or one built from the format table: 5 is MP3 16/44.1, 6 FLAC 16/44.1, 7 FLAC 24/96, 27 FLAC 24/192. Its `url` points at the fake CDN, `/cdn/file/<track>/<format>` with a query standing for the signature, and names the delivered format, not the requested one.
-- The CDN serves one file per format, the tiny FLACs at 16/44.1, 24/96 and 24/192 and the MP3 from step 1, through `http.ServeContent`: `Range` gives 206, and a range past the end 416.
+- The CDN serves one file per format, the tiny FLACs at 16/44.1, 24/96 and 24/192 and the MP3 fixture, through `http.ServeContent`: `Range` gives 206, and a range past the end 416.
 - The fake rewrites every `https://static.qobuz.com/` URL in an answer to its own `/static/`, which serves the JPEG for `.jpg` and the PDF for `.pdf`.
 - The segmented path serves encrypted segments that `gen.py` builds and checks with upstream's own decryption, together with the `session/start` infos and the wrapped key that go with `Secret`. `session/start` and `file/url` check `request_sig` by `_modern_sig`'s rule; `file/url` also needs the `X-Session-Id` the fake handed out, else 400, takes formats 6, 7 and 27, and delivers the format getFileUrl would, with its restrictions, at least 6. Its answer has the rate in Hz and `bits_depth`, as the web player's API does, and a `url_template` on `/cdn/seg/<track>/<format>/$SEGMENT$`. `file/url` and the segments work for every track; `Segmented` only takes the direct path away. `Fail404`, `FailTimes` and `CutAfter` apply to the segments as to the file.
 - The bundle at `/login` and its script carry `AppID` and secrets that decode to `BadSecret`, `Secret` and an empty one, in Python's order.
@@ -836,13 +836,13 @@ Tests run the CLI in process through a `cli` value with its own streams, environ
 | `parity.py` | runs `QobuzDL` with the bot's settings on one URL into a folder; `--fake BASE` sends the API and web player requests to a `qobuzdltest` server instead | Qobuz, or localhost |
 | `compare.py` | compares two download trees: names, sizes and bytes of non-audio files, FLAC and MP3 tags and stream info read with mutagen, a hash of the audio frames; differences in `parity-allow.txt` pass | none |
 
-- `requirements.txt` pins the venv to `pip freeze` from the design session: `qobuz-dl-ultimate==2.5.9`, `mutagen==1.48.1`, `pathvalidate==3.3.1`, `cryptography==50.0.2`, `requests==2.34.2` and the rest. Goldens depend on mutagen's and pathvalidate's versions, so the pins move only with an upstream sync.
+- `requirements.txt` pins the venv: `qobuz-dl-ultimate==2.5.9`, `mutagen==1.48.1`, `pathvalidate==3.3.1`, `cryptography==50.0.2`, `requests==2.34.2` and the rest. Goldens depend on mutagen's and pathvalidate's versions, so the pins move only with an upstream sync.
 - `gen.py` may call private functions such as `qobuz_dl.utils.clean_filename` or `qobuz_dl.metadata._get_tags_to_add`, construct `Bundle` without `__init__` and set its text, and run `Download` with a fake client object that answers from fixtures and a localhost HTTP server for files. The end-to-end goldens, file trees with tags, come from that.
 - Each golden is one JSON file with a `cases` list of `{"name", "input", "output"}` or `{"name", "input", "error"}`, where `error` is the Python exception class name. Go tests load them with a small helper in `golden_test.go`.
-- `record.py` cleans: signed `url` values become `{{CDN}}/<kind>/<id>/<format>`, `url_template` likewise, user fields and the token go, and the answers keep their key order. The recording step picks the IDs by search and lists them in `docs/status.md` under Fixture items.
+- `record.py` cleans: signed `url` values become `{{CDN}}/<kind>/<id>/<format>`, `url_template` likewise, user fields and the token go, and the answers keep their key order. `record.py --search` finds the IDs, and they are listed in `docs/status.md` under Fixture items.
 - Goldens are committed, so CI never runs Python. `make golden` rebuilds them; a diff after `make golden` is a bug or an upstream change.
 
-Fixture recording needs the token; the user chose to record in step 01, so that session needs `QOBUZ_TOKEN` exported.
+`make record` needs `QOBUZ_TOKEN` exported.
 
 ## Testing
 
@@ -851,13 +851,12 @@ Fixture recording needs the token; the user chose to record in step 01, so that 
 - Retries, backoff, timeouts and the 250 ms throttle run under `testing/synctest`; no test sleeps more than 100 ms.
 - The remux tests run ffmpeg on the fake's segments, cut by `gen.py` from fragmented MP4s that ffmpeg made once from the FLAC fixtures, and skip when `ffmpeg` is not on `PATH`. A shell script that exits 1 stands in for a failing ffmpeg.
 - No network outside `httptest` and localhost. `go test -race ./...` passes.
-- Each step's checklist maps edge cases to test names; shelf's 1c checklist is included in the steps.
 
 ## CI and Make
 
-`.github/workflows/ci.yaml`, from proxier's job shape:
+`.github/workflows/ci.yaml`:
 
-- `test`: checkout, `setup-go` with `go-version-file: go.mod`, `go mod download`, gofmt check, `go build ./...`, `go vet ./...`, `go test -race ./...`. ffmpeg is installed with apt so the remux test runs.
+- `test`: checkout, `setup-go` with `go-version-file: go.mod`, `go mod download`, gofmt check, `go build ./...`, `go vet ./...`, `go test -race ./...`. ffmpeg comes from BtbN's static 9.0 build on GitHub, checked against its `checksums.sha256`, so the remux test runs. `apt-get install ffmpeg` hung on the runner.
 - `lint`: `golangci/golangci-lint-action` with `version: v2.15.0`, no config file; `go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...`.
 - On pushes to `main`, tags `v*` and pull requests.
 
@@ -872,7 +871,7 @@ Fixture recording needs the token; the user chose to record in step 01, so that 
 | `upstream-diff TO=<tag>` | fetches tags in `.upstream/qobuz-dl` and diffs the ported files from `UPSTREAM.md`'s tag to `TO` |
 | `parity URL=<url> [N=<n>]` | `parity.py` into `out/parity/<n>/py`, the CLI into `out/parity/<n>/go`, `compare.py`, then the CLI again over its tree, which must find every track there |
 | `parity-db URL=<album> [N=<n>]` | `parity.py` with a downloads database, then the CLI with the same database, which must skip the album |
-| `parity FAKE=1 [URL=...]` | the first three steps against `qobuzdltest`, in `TestParityAgainstFake`, into `out/parity/fake/<n>/` |
+| `parity FAKE=1 [URL=...]` | the Python run, the Go run and the compare against `qobuzdltest`, in `TestParityAgainstFake`, into `out/parity/fake/<n>/` |
 | `compare-test` | `compare_test.py`, the tests of `compare.py` |
 
 ## Logs and secrets
@@ -888,35 +887,4 @@ Fixture recording needs the token; the user chose to record in step 01, so that 
 
 ## Deliberate differences
 
-Added to `UPSTREAM.md` by this design, beyond the ones already there:
-
-| Difference | Why |
-| --- | --- |
-| `HandleID` is `handle_url` without the URL parsing. | Callers that already have a kind and an ID, such as shelf's playlist downloads. |
-| A context end leaves `[INCOMPLETE]` and returns an error; Python exits the process. | A library must not exit. |
-| Each call copies the settings a playlist changes. | Concurrent calls on one `DL`. |
-| `make_m3u` sorts file names. | Python's order is the file system's and varies between machines. |
-| A tagging failure removes the temp file. | Python leaves it for the CLI to clean. |
-| `DownloadsDB.Has` gets the media type. | shelf keys its table on it; `downloadsdb` ignores it. |
-| Search errors are returned. | Python returns `{}` and logs "Invalid type". |
-| `ErrUnhandled` where Python would crash. | A library must not crash its caller. |
-| A skipped track reports its format from the file. | shelf records the delivered format for every file. |
-| MP3 frame order and padding differ from mutagen's. | `id3v2` writes in map order and pads nothing; players don't show either. |
-
-## Steps
-
-The repo no longer has the step contracts. `git show 39d1736:docs/build/<name>.md` shows one.
-
-| Step | Name | Builds |
-| --- | --- | --- |
-| 1 | `01-golden` | module, Makefile, CI, venv pins, `record.py`, fixtures, `gen.py` with the Python-helper goldens |
-| 2 | `02-pycompat` | `pyvalue.go`, `pystr.go`, `pyre.go`, `format.go`, `textwrap.go` |
-| 3 | `03-utils` | `constants.go`, `errors.go`, `settings.go`, `pathvalidate.go`, `utils.go` without `make_m3u` |
-| 4 | `04-client` | `bundle.go`, `qopy.go`, `catalog.go`, `transport.go` |
-| 5 | `05-tags` | `flac.go`, `metadata.go` |
-| 6 | `06-fake` | `qobuzdltest` without the segmented path |
-| 7 | `07-downloader` | `downloader.go` direct path, `progress.go` |
-| 8 | `08-segments` | the segmented path in `qopy.go`, `downloader.go` and `qobuzdltest` |
-| 9 | `09-core` | `core.go`, `MakeM3U`, `SmartDiscographyFilter`, `downloadsdb/` |
-| 10 | `10-cli` | `cmd/qobuz-dl`, README usage, `parity.py`, `compare.py` |
-| 11 | `11-parity` | the parity runs and `v0.1.0` |
+`UPSTREAM.md` lists every place the port differs from Python on purpose, with the reason.
