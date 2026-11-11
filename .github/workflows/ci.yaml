@@ -22,9 +22,13 @@ jobs:
         run: go mod download
 
       # The remux test skips without ffmpeg; CI should run it.
+      # A stalled Ubuntu mirror once hung apt past the step timeout; short timeouts with retries move on to another try.
       - name: Install ffmpeg
         timeout-minutes: 10
-        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+        run: |
+          opts="-o Acquire::Retries=5 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30"
+          sudo apt-get $opts update
+          sudo apt-get $opts install -y --no-install-recommends ffmpeg
 
       - name: gofmt
         run: |
