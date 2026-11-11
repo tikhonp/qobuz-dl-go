@@ -17,7 +17,7 @@ Where the sources are, which tools exist on this machine, and the conventions to
 
 ## Python for golden data
 
-- Use Python 3.14, the version the production bot runs: `/opt/homebrew/opt/python@3.14/bin/python3.14`. The default `python3` here is 3.15.
+- Use Python 3.14, the version the production bot runs: `/opt/homebrew/opt/python@3.14/bin/python3.14`. The default `python3` here is 3.15. If Homebrew removed 3.14 on an upgrade, `brew install python@3.14` brings it back.
 - The venv lives in `testdata/gen/.venv`, ignored by git:
 
   ```sh
@@ -33,7 +33,7 @@ Where the sources are, which tools exist on this machine, and the conventions to
 
 | Tool | State |
 | --- | --- |
-| Go | 1.27.3 |
+| Go | 1.27.4 |
 | ffmpeg, ffprobe | 9.0.2 |
 | Docker | 29.9.2, used by `make lint` |
 | golangci-lint | not installed on the host; run it in Docker or in CI |

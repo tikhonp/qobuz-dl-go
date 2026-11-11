@@ -120,3 +120,10 @@ None of the three items has a booklet PDF. Only the fake runs compared booklets,
 - Step 11, the release. CI was green on `main`, the README example compiled against the API, and `make check` passed. `UPSTREAM.md` and the README now name `v0.1.0`. `v0.1.0` is tagged at `e6861b4` and pushed, and `GOPROXY=https://proxy.golang.org go list -m github.com/tikhonp/qobuz-dl-go@v0.1.0` resolves it.
 - For shelf: shelf's `docs/status.md` now marks 1c done, and the As built section of its `docs/build/1c.md` has the version and the notes for 1d from this log.
 - Removed the step contracts in `docs/build/` and prompts 01 to 04, which the finished steps no longer need. Prompt 05, for upstream releases, stays.
+
+### 2026-11-11
+
+- Checked upstream. The last tag is still `v2.5.9`, and PyPI's last release of `qobuz-dl-ultimate` is 2.5.9, so there is nothing to port. `master` is at `a57a8ad`, with commits named v2.6.0 to v2.6.7 that were never tagged or published. They add lyrics options, formats for the `ALBUM`, `DATE` and `GENRE` tags, and an interactive menu for an artist's albums. They write an `ALBUMVERSION` tag by default, add the format keys `{primary_genre}`, `{album_version}` and `{version_tag}`, and drop `{disc_number}`. `handle_url` on `master` calls `download_from_id` twice for each item, once in the new queue loop and again in the old one, so `master` is not ready to port. When a 2.6 tag appears, port it with prompt 05.
+- Updated the dependencies: Go 1.27.4 in `go.mod` and the lint image, as in Music Shelf; `golang.org/x/text` v0.44.0, `golang.org/x/sys` v0.50.0, `modernc.org/sqlite` v1.62.0 and `modernc.org/libc` v1.81.0; `soupsieve` 4.1 in the golden venv. `pick` stays 1.6.0, which qobuz-dl pins. golangci-lint v2.15.0, govulncheck v1.9.0 and the GitHub actions were already the latest. `make golden` gives the same files, and `make check`, `make lint` and `make compare-test` pass.
+- Homebrew had removed Python 3.14, so `make venv` failed; `brew install python@3.14` brought it back. reference.md now says so.
+- For shelf: nothing in the API changed. The module now needs Go 1.27.4, which shelf already uses.

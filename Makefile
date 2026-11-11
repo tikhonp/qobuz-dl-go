@@ -1,6 +1,6 @@
 GOLANGCI_LINT_VERSION := v2.15.0
 GOVULNCHECK_VERSION := v1.9.0
-GO_IMAGE := golang:1.27.3
+GO_IMAGE := golang:1.27.4
 
 PY := testdata/gen/.venv/bin/python -I
 UPSTREAM := .upstream/qobuz-dl

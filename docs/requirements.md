@@ -47,7 +47,7 @@ For the same album, the port must write the same folder names, file names, tags,
 
 ## Constraints
 
-- Go 1.27.3, module `github.com/tikhonp/qobuz-dl-go`, package `qobuzdl` at the repo root. Pure Go, builds with `CGO_ENABLED=0`.
+- Go 1.27.4, module `github.com/tikhonp/qobuz-dl-go`, package `qobuzdl` at the repo root. Pure Go, builds with `CGO_ENABLED=0`.
 - No package-level mutable state. A `Client` is safe for concurrent calls.
 - Every network call takes a `context.Context` and has a timeout.
 - No `os.Exit`, no printing outside `cmd/qobuz-dl`. Logs go to an injected `*slog.Logger`.

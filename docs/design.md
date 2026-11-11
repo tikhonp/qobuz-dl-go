@@ -39,7 +39,7 @@ testdata/golden/  gen.py's output, committed
 
 The root package never imports `downloadsdb`, so it stays free of SQLite. `qobuzdltest` and `downloadsdb` import the root package for its types.
 
-Go 1.27.3, as in the user's other projects. Module `github.com/tikhonp/qobuz-dl-go`. `CGO_ENABLED=0` everywhere; modernc SQLite is pure Go.
+Go 1.27.4, as in Music Shelf. Module `github.com/tikhonp/qobuz-dl-go`. `CGO_ENABLED=0` everywhere; modernc SQLite is pure Go.
 
 Dependencies:
 
@@ -884,7 +884,7 @@ Fixture recording needs the token; the user chose to record in step 01, so that 
 ## Versions
 
 - Tags are this repo's semver, `v0.x` until shelf's phase 1 is deployed. `UPSTREAM.md` maps each tag to the qobuz-dl version it ports.
-- `go 1.27.3` in `go.mod`, as proxier.
+- `go 1.27.4` in `go.mod`, as in Music Shelf.
 
 ## Deliberate differences
 
