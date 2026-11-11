@@ -2,7 +2,7 @@
 
 A Go port of [qobuz-dl](https://github.com/Sei969/qobuz-dl), the Qobuz downloader by Sei969, which builds on [vitiko98/qobuz-dl](https://github.com/vitiko98/qobuz-dl). It ports version 2.5.9 file by file, so later upstream releases can be ported as diffs. [UPSTREAM.md](UPSTREAM.md) tracks what is ported and where the Go code differs on purpose.
 
-Status: `v0.1.0`, see [docs/status.md](docs/status.md). The first user is [Music Shelf](https://github.com/tikhonp/shelf).
+Status: `v0.1.1`, see [docs/status.md](docs/status.md). The first user is [Music Shelf](https://github.com/tikhonp/shelf).
 
 What it does:
 

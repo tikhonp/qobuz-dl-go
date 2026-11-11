@@ -6,9 +6,9 @@ Steps 1 to 11 are done: the module, CI, goldens and fixtures, the Python compati
 
 Step 11's parity runs against Qobuz are done. The multi-disc hi-res album, the CD album and the playlist came out byte for byte the same from Python and Go, a resumed Go run skipped every track, and Go skipped an album Python had recorded in a shared `qobuz_dl.db`. The results are under Reference albums.
 
-`v0.1.0` is tagged at `e6861b4` and pushed, and `go list -m` resolves it through proxy.golang.org.
+`v0.1.0` is tagged at `e6861b4` and pushed, and `go list -m` resolves it through proxy.golang.org. `v0.1.1` has the dependency update of 2026-11-11 and ports the same qobuz-dl 2.5.9.
 
-Next: Music Shelf's step 1d builds its Qobuz module on `v0.1.0`. Here, the next work is porting upstream releases after 2.5.9 with `make upstream-diff`.
+Next: Music Shelf's step 1d builds its Qobuz module on `v0.1.1`. Here, the next work is porting upstream releases after 2.5.9 with `make upstream-diff`.
 
 The repo no longer has the step contracts in `docs/build/` or the prompts for the design, the steps, parity and the release. `git show 39d1736:docs/build/<file>` shows a contract with its As built notes.
 
