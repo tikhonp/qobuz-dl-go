@@ -22,13 +22,20 @@ jobs:
         run: go mod download
 
       # The remux test skips without ffmpeg; CI should run it.
-      # A stalled Ubuntu mirror once hung apt past the step timeout; short timeouts with retries move on to another try.
+      # apt-get hung past the step timeout on the runner, even with short network
+      # timeouts, so a static build comes from GitHub instead. Dated BtbN builds
+      # are pruned; the release-branch file in "latest" stays put.
       - name: Install ffmpeg
         timeout-minutes: 10
         run: |
-          opts="-o Acquire::Retries=5 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30"
-          sudo apt-get $opts update
-          sudo apt-get $opts install -y --no-install-recommends ffmpeg
+          name=ffmpeg-n9.0-latest-linux64-gpl-9.0
+          base=https://github.com/BtbN/FFmpeg-Builds/releases/download/latest
+          cd "$RUNNER_TEMP"
+          curl -fsSL --retry 5 -O "$base/$name.tar.xz" -O "$base/checksums.sha256"
+          grep " $name.tar.xz\$" checksums.sha256 | sha256sum -c -
+          tar -xJf "$name.tar.xz"
+          echo "$RUNNER_TEMP/$name/bin" >> "$GITHUB_PATH"
+          "$name/bin/ffmpeg" -version | head -1
 
       - name: gofmt
         run: |
