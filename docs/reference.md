@@ -44,8 +44,7 @@ Where the sources are, which tools exist on this machine, and the conventions to
 
 Unit tests never need a token. The parity run and manual CLI runs do.
 
-- The production token is `QOBUZ_PASSWORD` in `~/projects/sh-blackberry/secrets/blackberry/music-download.env`. qobuz-dl treats it as the user auth token because it is longer than 60 characters.
-- The user exports it as `QOBUZ_TOKEN` before a session that needs it. Never print it, never write it into the repo, never pass it as a command-line argument that ends up in logs, and keep it out of error messages.
+- The user gives the token for each run that needs it, and it goes in `QOBUZ_TOKEN`. qobuz-dl treats it as the user auth token because it is longer than 60 characters. Never print it, never write it into the repo, never pass it as a command-line argument that ends up in logs, and keep it out of error messages.
 - Production reaches Qobuz without a proxy. If the API is unreachable from this machine, ask the user.
 
 ## Conventions
