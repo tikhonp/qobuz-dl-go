@@ -127,3 +127,4 @@ None of the three items has a booklet PDF. Only the fake runs compared booklets,
 - Updated the dependencies: Go 1.27.4 in `go.mod` and the lint image, as in Music Shelf; `golang.org/x/text` v0.44.0, `golang.org/x/sys` v0.50.0, `modernc.org/sqlite` v1.62.0 and `modernc.org/libc` v1.81.0; `soupsieve` 4.1 in the golden venv. `pick` stays 1.6.0, which qobuz-dl pins. golangci-lint v2.15.0, govulncheck v1.9.0 and the GitHub actions were already the latest. `make golden` gives the same files, and `make check`, `make lint` and `make compare-test` pass.
 - Homebrew had removed Python 3.14, so `make venv` failed; `brew install python@3.14` brought it back. reference.md now says so.
 - For shelf: nothing in the API changed. The module now needs Go 1.27.4, which shelf already uses.
+- `v0.1.1` is tagged at `7ae8648` and pushed. For shelf: move to `v0.1.1` for the new dependencies; the API is the same.
