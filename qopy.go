@@ -732,9 +732,7 @@ func (c *Client) lookupTrackURL(ctx context.Context, id string, fmtID int, force
 				if d.has("url") {
 					return d, nil, nil
 				}
-				if pyTruthy(d.get("sample", false)) {
-					directErr = ErrPreviewOnly
-				}
+				directErr = trackURLResponseError(d)
 			}
 		} else {
 			if ctx.Err() != nil {
@@ -746,6 +744,20 @@ func (c *Client) lookupTrackURL(ctx context.Context, id string, fmtID int, force
 
 	answer, err = c.getSegmentedTrackURL(ctx, kw)
 	return answer, directErr, err
+}
+
+// trackURLResponseError reads failure signals in a successful HTTP response.
+func trackURLResponseError(answer *pyDict) error {
+	var previewErr error
+	if pyTruthy(answer.get("sample", false)) {
+		previewErr = ErrPreviewOnly
+	}
+	for _, restriction := range viewDicts(answer, "restrictions") {
+		if viewStr(restriction, "code") == "UserUncredentialed" {
+			return errors.Join(previewErr, ErrUserUncredentialed)
+		}
+	}
+	return previewErr
 }
 
 func (c *Client) getSegmentedTrackURL(ctx context.Context, kw []kv) (*pyDict, error) {

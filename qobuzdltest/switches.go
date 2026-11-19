@@ -5,17 +5,18 @@ package qobuzdltest
 
 // switches is the fake's misbehavior, guarded by Server.mu.
 type switches struct {
-	fail404     map[string]bool
-	failTimes   map[string]failure
-	cutAfter    map[string]int64
-	ignoreRange map[string]bool
-	sample      map[trackFormat]bool
-	empty       map[string]bool
-	restrict    map[trackFormat]bool
-	deliver     map[string]int
-	segmented   map[string]bool
-	expired     bool
-	staticDown  bool
+	fail404        map[string]bool
+	failTimes      map[string]failure
+	cutAfter       map[string]int64
+	ignoreRange    map[string]bool
+	sample         map[trackFormat]bool
+	uncredentialed map[string]bool
+	empty          map[string]bool
+	restrict       map[trackFormat]bool
+	deliver        map[string]int
+	segmented      map[string]bool
+	expired        bool
+	staticDown     bool
 }
 
 type failure struct{ left, status int }
@@ -27,15 +28,16 @@ type trackFormat struct {
 
 func newSwitches() switches {
 	return switches{
-		fail404:     map[string]bool{},
-		failTimes:   map[string]failure{},
-		cutAfter:    map[string]int64{},
-		ignoreRange: map[string]bool{},
-		sample:      map[trackFormat]bool{},
-		empty:       map[string]bool{},
-		restrict:    map[trackFormat]bool{},
-		deliver:     map[string]int{},
-		segmented:   map[string]bool{},
+		fail404:        map[string]bool{},
+		failTimes:      map[string]failure{},
+		cutAfter:       map[string]int64{},
+		ignoreRange:    map[string]bool{},
+		sample:         map[trackFormat]bool{},
+		uncredentialed: map[string]bool{},
+		empty:          map[string]bool{},
+		restrict:       map[trackFormat]bool{},
+		deliver:        map[string]int{},
+		segmented:      map[string]bool{},
 	}
 }
 
@@ -78,6 +80,14 @@ func (s *Server) Sample(trackID string, fmtID int) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	s.sw.sample[trackFormat{trackID, fmtID}] = true
+}
+
+// Uncredentialed makes getFileUrl answer with an MP3 sample and the
+// UserUncredentialed restriction at every format for the track.
+func (s *Server) Uncredentialed(trackID string) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	s.sw.uncredentialed[trackID] = true
 }
 
 // EmptyAnswer makes getFileUrl and file/url answer {} for the track at

@@ -31,6 +31,8 @@ var (
 	ErrAllTiers = errors.New("qobuzdl: track discarded after all downgrades")
 	// ErrPreviewOnly indicates that Qobuz returned a sample for an attempted format.
 	ErrPreviewOnly = errors.New("qobuzdl: preview only")
+	// ErrUserUncredentialed indicates Qobuz returned the UserUncredentialed restriction.
+	ErrUserUncredentialed = errors.New("qobuzdl: UserUncredentialed restriction")
 	// ErrTransfer marks a failed direct or segmented transfer and wraps its cause.
 	ErrTransfer = errors.New("qobuzdl: transfer failed")
 )

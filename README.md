@@ -56,12 +56,13 @@ for _, t := range res.Tracks() {
 Read `TrackResult.Err` for each failed track. When every format attempt fails, `errors.Is(err, qobuzdl.ErrAllTiers)` returns true. The error wraps each format's causes in fallback order. A track can have more than one kind of failure, so run each check.
 
 - `errors.Is(err, qobuzdl.ErrPreviewOnly)` reports a preview at an attempted format.
+- `errors.Is(err, qobuzdl.ErrUserUncredentialed)` reports that Qobuz returned the `UserUncredentialed` restriction at an attempted format.
 - Declare `var apiErr *qobuzdl.APIError` and call `errors.As(err, &apiErr)` to find the first API error. Read its `Endpoint`, `Status` and redacted `Body`.
 - `errors.Is(err, qobuzdl.ErrTransfer)` reports a failed direct or segmented transfer. The error wraps the transfer's original cause.
 
-Subscription expiry remains unverified. All 352 recorded `track/getFileUrl` responses contain URLs. The recorder omits `user/get`.
+On a live account with a confirmed expired subscription, `user/get` returned HTTP 200 with `subscription: null`. `track/getFileUrl` returned HTTP 200 with `sample: true` and `restrictions[].code: "UserUncredentialed"` for all 12 tracks on Tom Petty's *Full Moon Fever* at MP3. The first track returned the same restriction at all four formats. None of the 352 previously recorded `track/getFileUrl` responses had that restriction.
 
-To verify expiry detection, capture a `user/get` or `track/getFileUrl` response from an account with a confirmed expired subscription. Keep the HTTP status and the exact response field or API error code. Remove credentials, signed URLs and personal information. Use a response from an active account or Qobuz API documentation to check what the field or code means. For previews, exhausted fallback and HTTP 401, leave the subscription status unknown.
+Shelf can report missing streaming access when it sees `ErrUserUncredentialed`. The reason for that status remains unknown. To verify expiry specifically, look for an explicit expiry field or code in a sanitized response or Qobuz API documentation. A preview, exhausted fallback, or HTTP 401 alone leaves the subscription status unknown.
 
 For tests, `qobuzdltest` is a fake Qobuz with recorded answers, a CDN and switches that make it fail the ways Qobuz does:
 

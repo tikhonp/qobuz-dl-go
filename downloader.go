@@ -1047,9 +1047,13 @@ func (d *download) tryTier(ctx context.Context, track *pyDict, fmtID int, filena
 		d.log.Debug("tier failed", "track", pyStr(id), "format", fmtID, "error", err)
 		return nil, errors.Join(lookupErr, err)
 	}
-	// A sample at this tier moves on to the next one.
-	if pyTruthy(answer.get("sample", false)) {
-		return nil, errors.Join(lookupErr, ErrPreviewOnly)
+	responseErr := trackURLResponseError(answer)
+	if responseErr != nil {
+		lookupErr = errors.Join(lookupErr, responseErr)
+		// A sample at this tier moves on to the next one.
+		if errors.Is(responseErr, ErrPreviewOnly) {
+			return nil, lookupErr
+		}
 	}
 	title := pyStr(track.get("title", nil))
 	var directTransferErr error
@@ -1073,8 +1077,8 @@ func (d *download) tryTier(ctx context.Context, track *pyDict, fmtID int, filena
 			d.log.Debug("tier failed", "track", pyStr(id), "format", fmtID, "error", err)
 			return nil, errors.Join(lookupErr, directTransferErr, err)
 		}
-		if pyTruthy(answer.get("sample", false)) {
-			lookupErr = errors.Join(lookupErr, ErrPreviewOnly)
+		if responseErr := trackURLResponseError(answer); responseErr != nil {
+			lookupErr = errors.Join(lookupErr, responseErr)
 		}
 	}
 	if answer.has("url_template") {

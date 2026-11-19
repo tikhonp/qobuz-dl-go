@@ -390,7 +390,7 @@ func TestAllTiersPreviewOnly(t *testing.T) {
 		var apiErr *qobuzdl.APIError
 		if tr.Outcome != qobuzdl.OutcomeFailed || !errors.Is(tr.Err, qobuzdl.ErrAllTiers) ||
 			!errors.Is(tr.Err, qobuzdl.ErrPreviewOnly) || errors.Is(tr.Err, qobuzdl.ErrTransfer) ||
-			errors.As(tr.Err, &apiErr) {
+			errors.Is(tr.Err, qobuzdl.ErrUserUncredentialed) || errors.As(tr.Err, &apiErr) {
 			t.Errorf("track %s: %+v", tr.ID, tr)
 		}
 	}
@@ -400,6 +400,25 @@ func TestAllTiersPreviewOnly(t *testing.T) {
 	}
 	if len(ev.starts) != 0 {
 		t.Errorf("started transfers for previews: %+v", ev.starts)
+	}
+}
+
+func TestUserUncredentialedRestrictionSurvivesFallback(t *testing.T) {
+	e := newEnv(t)
+	id := e.trackIDs(t, qobuzdltest.AlbumHiRes96)[1]
+	e.srv.Uncredentialed(id)
+	rel := e.mustDownload(t, qobuzdltest.AlbumHiRes96, false, nil)
+	if rel.Status != qobuzdl.StatusPartial || rel.Tracks[0].Outcome != qobuzdl.OutcomeDone {
+		t.Fatalf("release: %+v", rel)
+	}
+	tr := rel.Tracks[1]
+	if tr.Outcome != qobuzdl.OutcomeFailed || !errors.Is(tr.Err, qobuzdl.ErrAllTiers) ||
+		!errors.Is(tr.Err, qobuzdl.ErrPreviewOnly) || !errors.Is(tr.Err, qobuzdl.ErrUserUncredentialed) {
+		t.Errorf("track %s: %+v", id, tr)
+	}
+	want := []string{"getFileUrl 27", "getFileUrl 27", "getFileUrl 7", "getFileUrl 6", "getFileUrl 5"}
+	if got := trackRequests(e.srv, id); !slices.Equal(got, want) {
+		t.Errorf("requests %q, want %q", got, want)
 	}
 }
 
@@ -455,6 +474,7 @@ func TestAllTiersPreserveAPIErrors(t *testing.T) {
 		var apiErr *qobuzdl.APIError
 		if tc.track.Outcome != qobuzdl.OutcomeFailed || !errors.Is(err, qobuzdl.ErrAllTiers) ||
 			!errors.Is(err, qobuzdl.ErrPreviewOnly) || errors.Is(err, qobuzdl.ErrTransfer) != tc.isTransfer ||
+			errors.Is(err, qobuzdl.ErrUserUncredentialed) ||
 			!errors.As(err, &apiErr) || apiErr.Endpoint != "track/getFileUrl" || apiErr.Status != tc.status {
 			t.Errorf("track %s: %v", tc.track.ID, err)
 		}

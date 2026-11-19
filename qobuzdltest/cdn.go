@@ -57,6 +57,7 @@ func (s *Server) serveFileURL(w http.ResponseWriter, cat *catalog, q url.Values)
 	s.mu.Lock()
 	empty := s.sw.empty[id]
 	sample := s.sw.sample[trackFormat{id, fmtID}]
+	uncredentialed := s.sw.uncredentialed[id]
 	segmented := s.sw.segmented[id]
 	s.mu.Unlock()
 
@@ -64,10 +65,22 @@ func (s *Server) serveFileURL(w http.ResponseWriter, cat *catalog, q url.Values)
 		writeJSON(w, http.StatusOK, newObject())
 		return
 	}
-	answer, delivered, err := s.fileURLAnswer(cat, id, fmtID)
-	if err != nil {
-		apiError(w, http.StatusInternalServerError, err.Error())
-		return
+	var answer *object
+	var delivered int
+	if uncredentialed {
+		delivered = 5
+		answer = builtFileURL(cat, id, delivered, false)
+		account := newObject()
+		account.set("code", "UserUncredentialed")
+		purchase := newObject()
+		purchase.set("code", "TrackRestrictedByPurchaseCredentials")
+		answer.set("restrictions", []any{account, purchase})
+	} else {
+		answer, delivered, err = s.fileURLAnswer(cat, id, fmtID)
+		if err != nil {
+			apiError(w, http.StatusInternalServerError, err.Error())
+			return
+		}
 	}
 	answer.set("url", s.cdnURL(id, delivered))
 	if segmented {
@@ -76,7 +89,7 @@ func (s *Server) serveFileURL(w http.ResponseWriter, cat *catalog, q url.Values)
 	if answer.str("blob") != "" {
 		answer.set("blob", "qobuzdltest-blob")
 	}
-	if sample {
+	if sample || uncredentialed {
 		answer.set("sample", true)
 	}
 	writeJSON(w, http.StatusOK, answer)
