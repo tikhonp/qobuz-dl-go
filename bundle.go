@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"regexp"
 	"strings"
+	"time"
 	"unicode/utf8"
 )
 
@@ -48,7 +49,7 @@ func fetchBundle(ctx context.Context, hc *http.Client, playBase string, t Timeou
 	if playBase == "" {
 		playBase = defaultPlayBase
 	}
-	page, err := getText(ctx, hc, t, "login page", playBase+"/login")
+	page, err := getText(ctx, hc, t.API, "login page", playBase+"/login")
 	if err != nil {
 		return nil, err
 	}
@@ -56,7 +57,8 @@ func fetchBundle(ctx context.Context, hc *http.Client, playBase string, t Timeou
 	if m == nil {
 		return nil, fmt.Errorf("%w: no bundle script in the login page", ErrBundle)
 	}
-	text, err := getText(ctx, hc, t, "bundle", playBase+m[1])
+	// The player script can exceed 9 MB and take minutes to download.
+	text, err := getText(ctx, hc, 5*time.Minute, "bundle", playBase+m[1])
 	if err != nil {
 		return nil, err
 	}
@@ -64,7 +66,7 @@ func fetchBundle(ctx context.Context, hc *http.Client, playBase string, t Timeou
 }
 
 // getText is a GET with response.raise_for_status().
-func getText(ctx context.Context, hc *http.Client, t Timeouts, op, u string) (string, error) {
+func getText(ctx context.Context, hc *http.Client, timeout time.Duration, op, u string) (string, error) {
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, u, nil)
 	if err != nil {
 		return "", fmt.Errorf("qobuzdl: %s: %w", op, err)
@@ -72,7 +74,7 @@ func getText(ctx context.Context, hc *http.Client, t Timeouts, op, u string) (st
 	// A plain requests Session sends these; Go's transport adds the rest.
 	req.Header.Set("User-Agent", "python-requests/2.34.2")
 	req.Header.Set("Accept", "*/*")
-	status, body, err := fetch(ctx, hc, t, op, req)
+	status, body, err := fetch(ctx, hc, Timeouts{API: timeout}, op, req)
 	if err != nil {
 		return "", err
 	}

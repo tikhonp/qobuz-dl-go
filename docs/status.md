@@ -4,6 +4,8 @@
 
 qobuz-dl-go ports qobuz-dl 2.5.9. `v0.1.2` preserves the causes of format fallback failures in `TrackResult.Err`. Music Shelf can check `ErrUserUncredentialed` when Qobuz reports that the account lacks streaming access.
 
+In `v0.1.3`, the web player script has a five-minute download deadline. The login page and API calls still default to 30 seconds.
+
 Parity runs against Qobuz on 2026-11-04 gave the same files from Python and Go, byte for byte. Reference albums lists them.
 
 Next: port the next upstream tag with `docs/prompts/upstream-sync.md` once it appears. Upstream's last tag is still `v2.5.9`.

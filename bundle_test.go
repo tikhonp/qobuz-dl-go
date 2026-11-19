@@ -4,12 +4,15 @@ import (
 	"context"
 	"encoding/hex"
 	"errors"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"os"
 	"path/filepath"
 	"strings"
 	"testing"
+	"testing/synctest"
+	"time"
 )
 
 func readFixture(tb testing.TB, parts ...string) string {
@@ -197,4 +200,29 @@ func TestFetchBundleHTTPError(t *testing.T) {
 	if !errors.As(err, &ae) || ae.Status != http.StatusBadGateway {
 		t.Fatalf("got %v, want an APIError with 502", err)
 	}
+}
+
+type bundleDeadlineProbe struct{ t *testing.T }
+
+func (p bundleDeadlineProbe) RoundTrip(req *http.Request) (*http.Response, error) {
+	want := 5 * time.Minute
+	body := "player script"
+	if req.URL.Path == "/login" {
+		want = 30 * time.Second
+		body = `<script src="/resources/8.1.0-b019/bundle.js"></script>`
+	}
+	deadline, ok := req.Context().Deadline()
+	if !ok || time.Until(deadline) != want {
+		p.t.Errorf("%s deadline in %s, want %s", req.URL.Path, time.Until(deadline), want)
+	}
+	return &http.Response{StatusCode: http.StatusOK, Body: io.NopCloser(strings.NewReader(body))}, nil
+}
+
+func TestBundleRequestDeadlines(t *testing.T) {
+	synctest.Test(t, func(t *testing.T) {
+		hc := &http.Client{Transport: bundleDeadlineProbe{t}}
+		if _, err := FetchBundle(t.Context(), hc, "https://player.test"); err != nil {
+			t.Fatal(err)
+		}
+	})
 }
