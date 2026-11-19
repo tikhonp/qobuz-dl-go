@@ -713,21 +713,42 @@ func (c *Client) trackMeta(ctx context.Context, id string) (*pyDict, error) {
 // session, then file/url, with bits_depth copied to bit_depth, the rate in
 // kHz and the track key unwrapped into raw_key.
 func (c *Client) getTrackURL(ctx context.Context, id string, fmtID int, force bool) (*pyDict, error) {
+	answer, _, err := c.lookupTrackURL(ctx, id, fmtID, force)
+	return answer, err
+}
+
+// lookupTrackURL returns the direct lookup error separately because a
+// segmented lookup can succeed and still lead to a failed transfer.
+func (c *Client) lookupTrackURL(ctx context.Context, id string, fmtID int, force bool) (answer *pyDict, directErr, err error) {
 	kw := []kv{{"id", id}, {"fmt_id", int64(fmtID)}}
 	if fmtID == 5 {
-		return c.apiCall(ctx, "track/getFileUrl", kw)
+		answer, err := c.apiCall(ctx, "track/getFileUrl", kw)
+		return answer, nil, err
 	}
 	if !force {
 		v, err := c.apiCallValue(ctx, "track/getFileUrl", kw)
 		if err == nil {
-			if d, ok := v.(*pyDict); ok && d.has("url") {
-				return d, nil
+			if d, ok := v.(*pyDict); ok {
+				if d.has("url") {
+					return d, nil, nil
+				}
+				if pyTruthy(d.get("sample", false)) {
+					directErr = ErrPreviewOnly
+				}
 			}
-		} else if ctx.Err() != nil {
-			return nil, err
+		} else {
+			if ctx.Err() != nil {
+				return nil, nil, err
+			}
+			directErr = err
 		}
 	}
 
+	answer, err = c.getSegmentedTrackURL(ctx, kw)
+	return answer, directErr, err
+}
+
+func (c *Client) getSegmentedTrackURL(ctx context.Context, kw []kv) (*pyDict, error) {
 	if err := c.startSession(ctx); err != nil {
 		return nil, err
 	}

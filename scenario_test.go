@@ -238,7 +238,8 @@ func TestFolderStates(t *testing.T) {
 	if rel.Folder != filepath.Join(dir, "[INCOMPLETE] "+name) || rel.Status != qobuzdl.StatusPartial {
 		t.Errorf("after a failed track: %q, status %v", rel.Folder, rel.Status)
 	}
-	if fails := rel.Tracks[2]; fails.Outcome != qobuzdl.OutcomeFailed || !errors.Is(fails.Err, qobuzdl.ErrAllTiers) {
+	if fails := rel.Tracks[2]; fails.Outcome != qobuzdl.OutcomeFailed ||
+		!errors.Is(fails.Err, qobuzdl.ErrAllTiers) || !errors.Is(fails.Err, qobuzdl.ErrTransfer) {
 		t.Errorf("track 3: %+v", fails)
 	}
 
@@ -351,7 +352,7 @@ func TestSampleMovesToNextTier(t *testing.T) {
 	e.srv.Sample(id, 27)
 	ev := &events{}
 	rel := e.mustDownload(t, qobuzdltest.AlbumMultiDisc, false, ev)
-	if tr := rel.Tracks[1]; tr.Outcome != qobuzdl.OutcomeDone || tr.FormatID != 7 || tr.SamplingRate != 96 {
+	if tr := rel.Tracks[1]; tr.Outcome != qobuzdl.OutcomeDone || tr.Err != nil || tr.FormatID != 7 || tr.SamplingRate != 96 {
 		t.Errorf("track 2: %+v", tr)
 	}
 	var formats []string
@@ -368,6 +369,99 @@ func TestSampleMovesToNextTier(t *testing.T) {
 		if s.Position == 2 && s.FormatID != 7 {
 			t.Errorf("a transfer at %d", s.FormatID)
 		}
+	}
+}
+
+func TestAllTiersPreviewOnly(t *testing.T) {
+	e := newEnv(t)
+	ids := e.trackIDs(t, qobuzdltest.AlbumHiRes96)
+	for _, id := range ids {
+		for _, format := range []int{27, 7, 6, 5} {
+			e.srv.Sample(id, format)
+		}
+	}
+	ev := &events{}
+	rel := e.mustDownload(t, qobuzdltest.AlbumHiRes96, false, ev)
+	if rel.Status != qobuzdl.StatusFailed || rel.Err == nil ||
+		rel.Err.Error() != "qobuzdl: 7 of 7 tracks failed" || len(rel.Tracks) != len(ids) {
+		t.Fatalf("release: %+v", rel)
+	}
+	for _, tr := range rel.Tracks {
+		var apiErr *qobuzdl.APIError
+		if tr.Outcome != qobuzdl.OutcomeFailed || !errors.Is(tr.Err, qobuzdl.ErrAllTiers) ||
+			!errors.Is(tr.Err, qobuzdl.ErrPreviewOnly) || errors.Is(tr.Err, qobuzdl.ErrTransfer) ||
+			errors.As(tr.Err, &apiErr) {
+			t.Errorf("track %s: %+v", tr.ID, tr)
+		}
+	}
+	want := []string{"getFileUrl 27", "getFileUrl 27", "getFileUrl 7", "getFileUrl 6", "getFileUrl 5"}
+	if got := trackRequests(e.srv, ids[1]); !slices.Equal(got, want) {
+		t.Errorf("requests %q, want %q", got, want)
+	}
+	if len(ev.starts) != 0 {
+		t.Errorf("started transfers for previews: %+v", ev.starts)
+	}
+}
+
+func TestAllTiersPreserveAPIErrors(t *testing.T) {
+	e := newEnv(t)
+	ids := e.trackIDs(t, qobuzdltest.AlbumHiRes96)
+	losslessID, mp3ID := ids[1], ids[2]
+	for _, format := range []int{27, 6, 5} {
+		e.srv.Sample(losslessID, format)
+	}
+	e.srv.Fail404(losslessID) // The segmented URL lookup succeeds, then the CDN fails.
+	for _, format := range []int{27, 7, 6} {
+		e.srv.Sample(mp3ID, format)
+	}
+
+	opts := e.srv.ClientOptions()
+	base := opts.HTTPClient.Transport
+	opts.HTTPClient = &http.Client{Transport: roundTripFunc(func(r *http.Request) (*http.Response, error) {
+		if strings.HasSuffix(r.URL.Path, "/track/getFileUrl") {
+			q := r.URL.Query()
+			switch {
+			case q.Get("track_id") == losslessID && q.Get("format_id") == "7":
+				// Let the fake validate and reject the signature with HTTP 400.
+				r = r.Clone(r.Context())
+				q.Set("request_sig", "bad")
+				r.URL.RawQuery = q.Encode()
+			case q.Get("track_id") == mp3ID && q.Get("format_id") == "5":
+				r = r.Clone(r.Context())
+				r.Header.Del("X-User-Auth-Token")
+			}
+		}
+		return base.RoundTrip(r)
+	})}
+	var err error
+	e.c, err = qobuzdl.NewClient(t.Context(), opts)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	rel := e.mustDownload(t, qobuzdltest.AlbumHiRes96, false, nil)
+	if rel.Status != qobuzdl.StatusPartial || rel.Tracks[0].Outcome != qobuzdl.OutcomeDone {
+		t.Fatalf("release: %+v", rel)
+	}
+	for _, tc := range []struct {
+		track      qobuzdl.TrackResult
+		status     int
+		isTransfer bool
+	}{
+		{rel.Tracks[1], http.StatusBadRequest, true},
+		{rel.Tracks[2], http.StatusUnauthorized, false},
+	} {
+		err := tc.track.Err
+		var apiErr *qobuzdl.APIError
+		if tc.track.Outcome != qobuzdl.OutcomeFailed || !errors.Is(err, qobuzdl.ErrAllTiers) ||
+			!errors.Is(err, qobuzdl.ErrPreviewOnly) || errors.Is(err, qobuzdl.ErrTransfer) != tc.isTransfer ||
+			!errors.As(err, &apiErr) || apiErr.Endpoint != "track/getFileUrl" || apiErr.Status != tc.status {
+			t.Errorf("track %s: %v", tc.track.ID, err)
+		}
+	}
+	if err := rel.Tracks[1].Err; !errors.Is(err, qobuzdl.ErrInvalidAppSecret) ||
+		!strings.Contains(err.Error(), "segment: HTTP 404") {
+		t.Errorf("lost the signature or CDN failure: %v", err)
 	}
 }
 

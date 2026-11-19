@@ -122,7 +122,7 @@ type TrackResult struct {
 	BitDepth                int    // delivered, from the tier's answer
 	SamplingRate            float64
 	Outcome                 Outcome
-	Err                     error
+	Err                     error // may wrap ErrAllTiers and its per-format causes
 }
 
 // Outcome is how a track ended.

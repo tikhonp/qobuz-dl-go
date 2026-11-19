@@ -51,6 +51,18 @@ for _, t := range res.Tracks() {
 
 `HandleURL` takes album, track, playlist, artist and label URLs; `HandleID` takes a kind and an ID; `DownloadFromID` downloads one album or track. Pass a `Progress` instead of nil to follow releases, tracks and bytes. `Client` has typed reads and searches of the catalog. The package prints nothing and never exits.
 
+### Download failures
+
+Read `TrackResult.Err` for each failed track. When every format attempt fails, `errors.Is(err, qobuzdl.ErrAllTiers)` returns true. The error wraps each format's causes in fallback order. A track can have more than one kind of failure, so run each check.
+
+- `errors.Is(err, qobuzdl.ErrPreviewOnly)` reports a preview at an attempted format.
+- Declare `var apiErr *qobuzdl.APIError` and call `errors.As(err, &apiErr)` to find the first API error. Read its `Endpoint`, `Status` and redacted `Body`.
+- `errors.Is(err, qobuzdl.ErrTransfer)` reports a failed direct or segmented transfer. The error wraps the transfer's original cause.
+
+Subscription expiry remains unverified. All 352 recorded `track/getFileUrl` responses contain URLs. The recorder omits `user/get`.
+
+To verify expiry detection, capture a `user/get` or `track/getFileUrl` response from an account with a confirmed expired subscription. Keep the HTTP status and the exact response field or API error code. Remove credentials, signed URLs and personal information. Use a response from an active account or Qobuz API documentation to check what the field or code means. For previews, exhausted fallback and HTTP 401, leave the subscription status unknown.
+
 For tests, `qobuzdltest` is a fake Qobuz with recorded answers, a CDN and switches that make it fail the ways Qobuz does:
 
 ```go

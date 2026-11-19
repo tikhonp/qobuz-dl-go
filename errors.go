@@ -25,6 +25,14 @@ var (
 	ErrEmptyContent  = errors.New("qobuzdl: content empty or unavailable")
 	ErrQueryTooShort = errors.New("qobuzdl: search query shorter than 3 characters")
 	ErrUnhandled     = errors.New("qobuzdl: exception upstream does not handle")
+
+	// ErrAllTiers indicates that all enabled format attempts failed. The error
+	// wraps the causes from each attempted format.
+	ErrAllTiers = errors.New("qobuzdl: track discarded after all downgrades")
+	// ErrPreviewOnly indicates that Qobuz returned a sample for an attempted format.
+	ErrPreviewOnly = errors.New("qobuzdl: preview only")
+	// ErrTransfer marks a failed direct or segmented transfer and wraps its cause.
+	ErrTransfer = errors.New("qobuzdl: transfer failed")
 )
 
 // apiErrorBodyMax is the most of a response body an APIError keeps.

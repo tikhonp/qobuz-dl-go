@@ -89,12 +89,8 @@ func FLACPictures(t *testing.T, path string) int {
 	return len(pics)
 }
 
-// ErrDemo and ErrAllTiers are the failures of a demo track and of a track
-// no tier could deliver.
-var (
-	ErrDemo     = errDemo
-	ErrAllTiers = errAllTiers
-)
+// ErrDemo is the failure of a demo track.
+var ErrDemo = errDemo
 
 // FLACAudio returns a FLAC file's audio frames, the bytes after its
 // metadata blocks.

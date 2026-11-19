@@ -389,9 +389,12 @@ func TestSegmentTempRemoved(t *testing.T) {
 			}
 			return base.RoundTrip(r)
 		})}
-		_, err := qobuzdl.DownloadIDByType(ctx, e.c, e.opts, qobuzdltest.TrackSingle, true, nil)
+		rel, err := qobuzdl.DownloadIDByType(ctx, e.c, e.opts, qobuzdltest.TrackSingle, true, nil)
 		if !errors.Is(err, context.Canceled) {
 			t.Fatalf("got %v", err)
+		}
+		if tr := rel.Tracks[0]; !errors.Is(tr.Err, context.Canceled) || errors.Is(tr.Err, qobuzdl.ErrAllTiers) {
+			t.Errorf("track: %+v", tr)
 		}
 		if !sawMP4 {
 			t.Error("the .mp4 never existed")

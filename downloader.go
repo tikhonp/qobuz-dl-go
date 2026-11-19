@@ -669,9 +669,6 @@ func (d *download) releaseBody(ctx context.Context, albumMeta *pyDict, dirn stri
 // errDemo is a track whose getFileUrl answer was empty.
 var errDemo = errors.New("qobuzdl: demo track: getFileUrl answered nothing")
 
-// errAllTiers is a track no tier could deliver.
-var errAllTiers = errors.New("qobuzdl: track discarded after all downgrades")
-
 // downloadTrack is download_track.
 func (d *download) downloadTrack(ctx context.Context) (*Release, error) {
 	rel := &Release{Kind: "track", ID: d.itemID}
@@ -976,7 +973,7 @@ func (d *download) downloadAndTag(ctx context.Context, rootDir string, tmpCount 
 		qualities = fallbackTiers[startIdx:]
 	}
 	var fresh *pyDict
-	success := false
+	var tierErrors []error
 	finalFmt := quality
 	for _, attempt := range qualities {
 		if ctx.Err() != nil {
@@ -985,22 +982,20 @@ func (d *download) downloadAndTag(ctx context.Context, rootDir string, tmpCount 
 		if attempt != quality {
 			d.warn(fmt.Sprintf("[!] Automatic downgrade: Attempting to save in %s...", tierNames[attempt]))
 		}
-		answer, ok := d.tryTier(ctx, track, attempt, filename, desc, pos)
-		if answer != nil {
-			fresh = answer
-		}
-		if ok {
-			success, finalFmt = true, attempt
+		answer, err := d.tryTier(ctx, track, attempt, filename, desc, pos)
+		if err == nil {
+			fresh, finalFmt = answer, attempt
 			break
 		}
 		if ctx.Err() != nil {
 			return fail(stopped(ctx))
 		}
+		tierErrors = append(tierErrors, fmt.Errorf("format %d: %w", attempt, err))
 	}
-	if !success {
+	if fresh == nil {
 		d.warn(fmt.Sprintf("[!] TRACK %s DEFINITIVELY DISCARDED AFTER ALL DOWNGRADES.", trackNo))
 		d.warn("[!] Skipping to the next track...")
-		return fail(errAllTiers)
+		return fail(fmt.Errorf("%w: %w", ErrAllTiers, errors.Join(tierErrors...)))
 	}
 
 	// The format the server delivered, such as MP3 after falling back from
@@ -1038,25 +1033,26 @@ func (d *download) downloadAndTag(ctx context.Context, rootDir string, tmpCount 
 }
 
 // tryTier is one pass of the tier loop: a fresh URL, then the direct
-// transfer, then the segmented one. Python catches every exception here,
-// so a failure only moves on to the next tier. answer is the last
-// getFileUrl answer, which decides the delivered format.
-func (d *download) tryTier(ctx context.Context, track *pyDict, fmtID int, filename, desc string, pos int) (answer *pyDict, ok bool) {
+// transfer, then the segmented one. On success the URL answer describes the
+// delivered format. On failure the caller can retain the causes and try the
+// next tier.
+func (d *download) tryTier(ctx context.Context, track *pyDict, fmtID int, filename, desc string, pos int) (*pyDict, error) {
 	id, err := track.item("id")
 	if err != nil {
-		return nil, false
+		return nil, err
 	}
 	d.log.Debug("tier", "track", pyStr(id), "format", fmtID)
-	answer, err = d.client.getTrackURL(ctx, pyStr(id), fmtID, false)
+	answer, lookupErr, err := d.client.lookupTrackURL(ctx, pyStr(id), fmtID, false)
 	if err != nil {
 		d.log.Debug("tier failed", "track", pyStr(id), "format", fmtID, "error", err)
-		return nil, false
+		return nil, errors.Join(lookupErr, err)
 	}
 	// A sample at this tier moves on to the next one.
 	if pyTruthy(answer.get("sample", false)) {
-		return answer, false
+		return nil, errors.Join(lookupErr, ErrPreviewOnly)
 	}
 	title := pyStr(track.get("title", nil))
+	var directTransferErr error
 	if answer.has("url") {
 		d.progress.TrackStart(TrackInfo{Position: pos, ID: pyStr(id), Title: title, FormatID: fmtID})
 		d.info("[+] In progress: " + desc)
@@ -1065,16 +1061,20 @@ func (d *download) tryTier(ctx context.Context, track *pyDict, fmtID int, filena
 		meter.finish()
 		if err == nil {
 			d.info("  L Completed: " + desc)
-			return answer, true
+			return answer, nil
 		}
 		if ctx.Err() != nil {
-			return answer, false
+			return nil, stopped(ctx)
 		}
+		directTransferErr = fmt.Errorf("%w: direct: %w", ErrTransfer, err)
 		d.warn("[!] Akamai block detected. Activating fallback segmented download...")
 		answer, err = d.client.getTrackURL(ctx, pyStr(id), fmtID, true)
 		if err != nil {
 			d.log.Debug("tier failed", "track", pyStr(id), "format", fmtID, "error", err)
-			return nil, false
+			return nil, errors.Join(lookupErr, directTransferErr, err)
+		}
+		if pyTruthy(answer.get("sample", false)) {
+			lookupErr = errors.Join(lookupErr, ErrPreviewOnly)
 		}
 	}
 	if answer.has("url_template") {
@@ -1085,12 +1085,15 @@ func (d *download) tryTier(ctx context.Context, track *pyDict, fmtID int, filena
 		meter.finish()
 		if err != nil {
 			d.log.Debug("tier failed", "track", pyStr(id), "format", fmtID, "error", err)
-			return answer, false
+			return nil, errors.Join(lookupErr, directTransferErr, fmt.Errorf("%w: segmented: %w", ErrTransfer, err))
 		}
 		d.info("  L Completed: " + desc)
-		return answer, true
+		return answer, nil
 	}
-	return answer, false
+	if directTransferErr != nil {
+		return nil, errors.Join(lookupErr, directTransferErr)
+	}
+	return nil, errors.Join(lookupErr, fmt.Errorf("%w: no download URL", ErrEmptyContent))
 }
 
 // existingFormat fills a skipped track's format from its file: STREAMINFO
