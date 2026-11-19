@@ -2,7 +2,7 @@
 
 ## Now
 
-qobuz-dl-go ports qobuz-dl 2.5.9. `v0.1.1` is the latest tag, at `7ae8648`; it has the dependency update of 2026-11-11 and the same API as `v0.1.0`. Music Shelf builds its Qobuz module on it.
+qobuz-dl-go ports qobuz-dl 2.5.9. `v0.1.2` preserves the causes of format fallback failures in `TrackResult.Err`. Music Shelf can check `ErrUserUncredentialed` when Qobuz reports that the account lacks streaming access.
 
 Parity runs against Qobuz on 2026-11-04 gave the same files from Python and Go, byte for byte. Reference albums lists them.
 
