@@ -47,6 +47,7 @@ type ClientOptions struct {
 	APITimeout      time.Duration // per call; 0 means 30s
 	APIBase         string        // "" means https://www.qobuz.com/api.json/0.2/
 	PlayBase        string        // "" means https://play.qobuz.com
+	KeepAppID       bool          // keep a non-empty AppID even if it is legacyAppID
 }
 
 // Client is the Qobuz API client. It is safe for concurrent use: NewClient
@@ -81,8 +82,8 @@ type kv struct {
 }
 
 // NewClient ports Client.__init__, auth and cfg_setup. An empty or legacy app
-// ID makes it fetch the bundle and take the bundle's app ID and every secret,
-// empty ones included; a failed fetch keeps the given values.
+// ID fetches the bundle and takes its app ID and secrets; a failed fetch keeps
+// the given values. KeepAppID keeps a non-empty AppID even when it is legacy.
 func NewClient(ctx context.Context, o ClientOptions) (*Client, error) {
 	if o.HTTPClient == nil {
 		return nil, errors.New("qobuzdl: ClientOptions.HTTPClient is nil")
@@ -103,11 +104,11 @@ func NewClient(ctx context.Context, o ClientOptions) (*Client, error) {
 		c.base = defaultAPIBase
 	}
 	c.log.Info("Logging...")
-	if c.id == "" || c.id == legacyAppID {
+	if c.id == "" || (!o.KeepAppID && c.id == legacyAppID) {
 		if err := c.useBundle(ctx, o.PlayBase); err != nil {
 			return nil, err
 		}
-	} else {
+	} else if !o.KeepAppID {
 		c.log.Info("[+] Using custom legacy App ID: " + c.id)
 	}
 	if err := c.auth(ctx, o.Email, o.Password, o.UserAuthToken); err != nil {
@@ -244,7 +245,8 @@ func (c *Client) readProfile(info *pyDict) error {
 }
 
 // cfgSetup ports cfg_setup: the first secret that getFileUrl accepts wins.
-// When none does, it keeps the first and logs a warning Python doesn't give.
+// A 401 fails with ErrAuthentication. When no secret passes, it keeps the
+// first and logs a warning Python doesn't give.
 func (c *Client) cfgSetup(ctx context.Context) error {
 	found := false
 	for i, s := range c.secrets {
@@ -255,6 +257,10 @@ func (c *Client) cfgSetup(ctx context.Context) error {
 		}
 		if ctx.Err() != nil {
 			return err
+		}
+		var ae *APIError
+		if errors.As(err, &ae) && ae.Status == http.StatusUnauthorized {
+			return fmt.Errorf("%w: %w", ErrAuthentication, err)
 		}
 		c.log.Debug("app secret rejected", "index", i, "err", err)
 	}

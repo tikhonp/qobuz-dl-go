@@ -6,6 +6,8 @@ qobuz-dl-go ports qobuz-dl 2.5.9. `v0.1.2` preserves the causes of format fallba
 
 In `v0.1.3`, the web player script has a five-minute download deadline. The login page and API calls still default to 30 seconds.
 
+In `v0.1.4`, `DL.InitializeClient` skips a second bundle fetch after `DL.GetTokens`, `Options.Client` shares a `*Client` across `DL` instances, and `cfg_setup` returns `ErrAuthentication` on 401.
+
 Parity runs against Qobuz on 2026-11-04 gave the same files from Python and Go, byte for byte. Reference albums lists them.
 
 Next: port the next upstream tag with `docs/prompts/upstream-sync.md` once it appears. Upstream's last tag is still `v2.5.9`.

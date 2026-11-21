@@ -818,3 +818,110 @@ func TestGetTrackURLWithoutURLGoesSegmented(t *testing.T) {
 		t.Errorf("format 5 called %s", last)
 	}
 }
+
+func TestNewClientKeepAppID(t *testing.T) {
+	bundleJS := readFixture(t, "bundle", "bundle.js")
+	var bundleHits atomic.Int32
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		switch {
+		case r.URL.Path == "/login":
+			bundleHits.Add(1)
+			_, _ = io.WriteString(w, `<script src="/resources/8.1.0-b019/bundle.js"></script>`)
+		case r.URL.Path == "/resources/8.1.0-b019/bundle.js":
+			bundleHits.Add(1)
+			_, _ = io.WriteString(w, bundleJS)
+		case r.URL.Path == "/api.json/0.2/user/get":
+			_, _ = io.WriteString(w, `{"id": 1, "credential": {"parameters": {"short_label": "Studio"}}}`)
+		case r.URL.Path == "/api.json/0.2/track/getFileUrl":
+			q := r.URL.Query()
+			want := md5Hex("trackgetFileUrlformat_id" + q.Get("format_id") + "intentstreamtrack_id" + q.Get("track_id") +
+				q.Get("request_ts") + testSecret)
+			if q.Get("request_sig") != want {
+				w.WriteHeader(http.StatusBadRequest)
+				return
+			}
+			_, _ = io.WriteString(w, `{"url": "https://cdn.test/f"}`)
+		default:
+			http.NotFound(w, r)
+		}
+	}))
+	t.Cleanup(srv.Close)
+
+	base := ClientOptions{
+		AppID:         legacyAppID,
+		Secrets:       []string{testSecret},
+		UserAuthToken: testToken,
+		ForceEnglish:  true,
+		HTTPClient:    srv.Client(),
+		APIBase:       srv.URL + "/api.json/0.2/",
+		PlayBase:      srv.URL,
+	}
+
+	// KeepAppID skips the bundle fetch when AppID equals legacyAppID.
+	o := base
+	o.KeepAppID = true
+	c, err := NewClient(context.Background(), o)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if c.AppID() != legacyAppID {
+		t.Errorf("app ID %q, want %q", c.AppID(), legacyAppID)
+	}
+	if n := bundleHits.Load(); n != 0 {
+		t.Errorf("%d bundle hits with KeepAppID, want 0", n)
+	}
+
+	// Default (KeepAppID false) still fetches the bundle for legacyAppID.
+	c, err = NewClient(context.Background(), base)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if c.AppID() != testAppID {
+		t.Errorf("app ID %q, want %q", c.AppID(), testAppID)
+	}
+	if n := bundleHits.Load(); n != 2 {
+		t.Errorf("%d bundle hits without KeepAppID, want 2", n)
+	}
+
+	// Empty AppID still fetches the bundle even when KeepAppID is true.
+	bundleHits.Store(0)
+	o = base
+	o.AppID = ""
+	o.KeepAppID = true
+	c, err = NewClient(context.Background(), o)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if c.AppID() != testAppID || bundleHits.Load() != 2 {
+		t.Errorf("empty AppID with KeepAppID: id=%q hits=%d", c.AppID(), bundleHits.Load())
+	}
+}
+
+func TestCfgSetup401ReturnsAuthError(t *testing.T) {
+	f := &fakeAPI{
+		userGet: func(w http.ResponseWriter) { w.WriteHeader(http.StatusInternalServerError) },
+		handlers: map[string]http.HandlerFunc{
+			"track/getFileUrl": func(w http.ResponseWriter, r *http.Request) {
+				w.WriteHeader(http.StatusUnauthorized)
+				_, _ = io.WriteString(w, `{"message": "User authentication is required."}`)
+			},
+		},
+	}
+	o := startFake(t, f)
+	o.Secrets = []string{badSecret, testSecret}
+	_, err := NewClient(context.Background(), o)
+	var ae *APIError
+	if !errors.Is(err, ErrAuthentication) || !errors.As(err, &ae) || ae.Status != http.StatusUnauthorized {
+		t.Fatalf("got %v, want ErrAuthentication wrapping 401", err)
+	}
+	// Stops on the first 401 instead of probing the rest of the secrets.
+	var probes int
+	for _, q := range f.seen() {
+		if strings.HasPrefix(q, "track/getFileUrl?") {
+			probes++
+		}
+	}
+	if probes != 1 {
+		t.Errorf("probes=%d, want 1", probes)
+	}
+}

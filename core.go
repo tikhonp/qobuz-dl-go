@@ -33,7 +33,8 @@ type Options struct {
 	NoCredits         bool
 	Settings          Settings
 
-	HTTPClient  *http.Client // required; without a Timeout, which would cut long transfers
+	HTTPClient  *http.Client // required unless Client is set (defaults to Client's); no Timeout, which cuts long transfers
+	Client      *Client      // optional shared Client; API calls use its settings, transfers use Options.HTTPClient
 	Logger      *slog.Logger // nil discards
 	FFmpegPath  string       // "ffmpeg"
 	Timeouts    Timeouts
@@ -95,16 +96,17 @@ var qualities = map[int]string{
 	27: "27 - 24 bit, >96kHz",
 }
 
-// DL is QobuzDL. It is safe for concurrent use once InitializeClient has
-// run, because each call copies the options it changes, where Python changes
-// the shared ones.
+// DL is QobuzDL. It is safe for concurrent use once InitializeClient has run
+// or Options.Client was set, because each call copies the options it changes,
+// where Python changes the shared ones.
 type DL struct {
 	opts Options
 
-	mu      sync.Mutex
-	client  *Client
-	appID   string
-	secrets []string
+	mu           sync.Mutex
+	client       *Client
+	appID        string
+	secrets      []string
+	bundleLoaded bool
 }
 
 // DownloadRequest is download_from_id's arguments.
@@ -123,10 +125,13 @@ type DownloadRequest struct {
 type SearchResult struct{ Text, URL string }
 
 // New ports QobuzDL.__init__. It makes Directory absolute and creates it, as
-// create_and_return_dir does. It rejects what Python would fail on later:
-// no HTTP client, fewer than one worker, and a quality outside 5, 6, 7 and
-// 27, which initialize_client looks up in QUALITIES.
+// create_and_return_dir does. It rejects a missing HTTP client (unless
+// Options.Client is set, whose client it reuses), fewer than one worker, and a
+// quality outside 5, 6, 7 and 27.
 func New(opts Options) (*DL, error) {
+	if opts.HTTPClient == nil && opts.Client != nil {
+		opts.HTTPClient = opts.Client.hc
+	}
 	if opts.HTTPClient == nil {
 		return nil, errors.New("qobuzdl: Options.HTTPClient is nil")
 	}
@@ -143,7 +148,9 @@ func New(opts Options) (*DL, error) {
 	opts.Directory = dir
 	opts.Settings.VariousArtistsAliases = slices.Clone(opts.Settings.VariousArtistsAliases)
 	opts.RetryDelays = slices.Clone(opts.RetryDelays)
-	return &DL{opts: opts}, nil
+	client := opts.Client
+	opts.Client = nil
+	return &DL{opts: opts, client: client}, nil
 }
 
 // logger is the options' logger with Python's shown lines also going to p.
@@ -177,7 +184,7 @@ func (d *DL) GetTokens(ctx context.Context) error {
 		}
 	}
 	d.mu.Lock()
-	d.appID, d.secrets = appID, secrets
+	d.appID, d.secrets, d.bundleLoaded = appID, secrets, true
 	d.mu.Unlock()
 	return nil
 }
@@ -198,13 +205,18 @@ func (d *DL) Secrets() []string {
 
 // InitializeClient ports initialize_client: a Client with
 // Settings.UserAuthToken as the token, or pwd when it is longer than 60
-// characters and no token is set.
+// characters and no token is set. It skips a second bundle fetch when passed
+// the exact app ID and non-empty secrets GetTokens just loaded.
 func (d *DL) InitializeClient(ctx context.Context, email, pwd, appID string, secrets []string) error {
+	d.mu.Lock()
+	keepAppID := d.bundleLoaded && appID != "" && appID == d.appID &&
+		len(d.secrets) > 0 && slices.Equal(secrets, d.secrets)
+	d.mu.Unlock()
 	c, err := NewClient(ctx, ClientOptions{
 		Email: email, Password: pwd, AppID: appID, Secrets: secrets,
 		UserAuthToken: d.opts.Settings.UserAuthToken, ForceEnglish: d.opts.ForceEnglish,
 		HTTPClient: d.opts.HTTPClient, Logger: d.opts.Logger, APITimeout: d.opts.Timeouts.API,
-		APIBase: d.opts.APIBase, PlayBase: d.opts.PlayBase,
+		APIBase: d.opts.APIBase, PlayBase: d.opts.PlayBase, KeepAppID: keepAppID,
 	})
 	if err != nil {
 		return err
@@ -216,7 +228,7 @@ func (d *DL) InitializeClient(ctx context.Context, email, pwd, appID string, sec
 	return nil
 }
 
-// Client is the client InitializeClient made, or nil.
+// Client is the client InitializeClient or Options.Client attached, or nil.
 func (d *DL) Client() *Client {
 	d.mu.Lock()
 	defer d.mu.Unlock()

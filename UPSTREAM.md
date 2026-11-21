@@ -181,6 +181,9 @@ These port no qobuz-dl file. They stand in for CPython 3.14 behavior the port re
 | Every network call takes a `context.Context` and has a timeout. Python's API calls have none. | A stalled call must not block a server forever. |
 | Errors are returned. Python calls `sys.exit` on a 401 during auth and only logs most other failures. | A library must not exit. |
 | Secrets are a list, scraped once by `GetTokens`. | The old bot passed a comma-joined string and scraped up to three times. |
+| `DL.InitializeClient` sets `ClientOptions.KeepAppID` when passed the exact app ID and non-empty secrets `DL.GetTokens` just fetched. | The live bundle still uses `798273057`, so calling both fetched the script twice. |
+| `Options.Client` attaches an existing `*Client` at `New`. API calls use its credentials, base, timeout and `HTTPClient`; transfers use `Options.HTTPClient` (defaulting to the client's). | Callers with one `DL` per quality or database share a single login and session. |
+| `cfg_setup` returns `ErrAuthentication` on 401. | After a bypassed `user/get`, a 401 probe must fail sign-in instead of keeping a secret. |
 | The `Progress` interface replaces tqdm, `safe_print` and colored log lines. | Callers show progress their own way. |
 | Download functions return the final folder and an outcome per track. Python only logs them. | Callers need the result. |
 | Temp files `~tmp_NN.tmp` are removed when a track fails. Python leaves them for the CLI to clean. | Nothing else cleans up after a library. |

@@ -140,6 +140,183 @@ func TestGetTokensAndInitializeClient(t *testing.T) {
 	}
 }
 
+func TestGetTokensThenInitializeClientFetchesBundleOnce(t *testing.T) {
+	srv := qobuzdltest.New(t)
+	var loginHits, bundleHits int
+	// Rewrite the fake's app ID to the legacy ID "798273057" so this exercises
+	// the live Qobuz bundle, which still carries that ID.
+	const liveLegacyID = "798273057"
+	rt := roundTripFunc(func(req *http.Request) (*http.Response, error) {
+		r := req.Clone(req.Context())
+		if r.Header.Get("X-App-Id") == liveLegacyID {
+			r.Header.Set("X-App-Id", qobuzdltest.AppID)
+		}
+		if r.URL.Path == "/login" {
+			loginHits++
+		}
+		if strings.HasSuffix(r.URL.Path, "/bundle.js") {
+			bundleHits++
+		}
+		resp, err := srv.ClientOptions().HTTPClient.Do(r)
+		if err != nil || !strings.HasSuffix(r.URL.Path, "/bundle.js") {
+			return resp, err
+		}
+		b, err := io.ReadAll(resp.Body)
+		_ = resp.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		patched := strings.ReplaceAll(string(b), qobuzdltest.AppID, liveLegacyID)
+		resp.Body = io.NopCloser(strings.NewReader(patched))
+		resp.ContentLength = int64(len(patched))
+		return resp, nil
+	})
+	proxy := &http.Client{Transport: rt}
+
+	o := qobuzdl.DefaultOptions()
+	srv.Configure(&o)
+	o.HTTPClient = proxy
+	o.Directory = t.TempDir()
+	d, err := qobuzdl.New(o)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := d.GetTokens(t.Context()); err != nil {
+		t.Fatal(err)
+	}
+	if d.AppID() != liveLegacyID {
+		t.Fatalf("app ID %q, want %q", d.AppID(), liveLegacyID)
+	}
+	if err := d.InitializeClient(t.Context(), "", "", d.AppID(), d.Secrets()); err != nil {
+		t.Fatal(err)
+	}
+	if loginHits != 1 || bundleHits != 1 {
+		t.Errorf("loginHits=%d bundleHits=%d, want 1 and 1", loginHits, bundleHits)
+	}
+	if d.Client().AppID() != liveLegacyID {
+		t.Errorf("client app ID %q, want %q", d.Client().AppID(), liveLegacyID)
+	}
+
+	// Passing a different secret with the legacy app ID must still refresh from the bundle.
+	if err := d.InitializeClient(t.Context(), "", "", d.AppID(), []string{"stale"}); err != nil {
+		t.Fatal(err)
+	}
+	if loginHits != 2 || bundleHits != 2 {
+		t.Errorf("stale secret: loginHits=%d bundleHits=%d, want 2 and 2", loginHits, bundleHits)
+	}
+}
+
+func TestGetTokensEmptySecretsFallsBackToBundle(t *testing.T) {
+	srv := qobuzdltest.New(t)
+	const liveLegacyID = "798273057"
+	var bundleHits int
+	rt := roundTripFunc(func(req *http.Request) (*http.Response, error) {
+		r := req.Clone(req.Context())
+		if r.Header.Get("X-App-Id") == liveLegacyID {
+			r.Header.Set("X-App-Id", qobuzdltest.AppID)
+		}
+		resp, err := srv.ClientOptions().HTTPClient.Do(r)
+		if err != nil || !strings.HasSuffix(r.URL.Path, "/bundle.js") {
+			return resp, err
+		}
+		bundleHits++
+		b, err := io.ReadAll(resp.Body)
+		_ = resp.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		// First fetch returns a bundle whose decoded secrets are empty; second returns the full bundle.
+		body := strings.ReplaceAll(string(b), qobuzdltest.AppID, liveLegacyID)
+		if bundleHits == 1 {
+			body = `production:{api:{appId:"798273057",appSecret:"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"}}` +
+				`a.initialSeed("c2hvcnQ=",window.utimezone.abidjan)` +
+				`b.initialSeed("c2hvcnQ=",window.utimezone.paris)`
+		}
+		resp.Body = io.NopCloser(strings.NewReader(body))
+		resp.ContentLength = int64(len(body))
+		return resp, nil
+	})
+	o := qobuzdl.DefaultOptions()
+	srv.Configure(&o)
+	o.HTTPClient = &http.Client{Transport: rt}
+	o.Directory = t.TempDir()
+	d, err := qobuzdl.New(o)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := d.GetTokens(t.Context()); err != nil {
+		t.Fatal(err)
+	}
+	if len(d.Secrets()) != 0 {
+		t.Fatalf("got secrets %v, want empty", d.Secrets())
+	}
+	if err := d.InitializeClient(t.Context(), "", "", d.AppID(), d.Secrets()); err != nil {
+		t.Fatal(err)
+	}
+	if bundleHits != 2 {
+		t.Errorf("bundleHits=%d, want 2", bundleHits)
+	}
+}
+
+func TestOptionsClientSharesClientAndOwnership(t *testing.T) {
+	first, srv, o := newDL(t, nil)
+	srv.Reset()
+
+	// Omitting HTTPClient inherits the shared client's HTTPClient.
+	o1 := o
+	o1.Quality = 6
+	o1.DownloadsDB = nil
+	o1.HTTPClient = nil
+	o1.Client = first.Client()
+	second, err := qobuzdl.New(o1)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if second.Client() != first.Client() {
+		t.Fatal("Options.Client did not attach the shared client")
+	}
+	res, err := second.DownloadFromID(t.Context(), qobuzdl.DownloadRequest{ID: qobuzdltest.TrackSingle})
+	if err != nil || len(res.Releases) != 1 || res.Releases[0].Status != qobuzdl.StatusDone {
+		t.Fatalf("res=%+v err=%v", res, err)
+	}
+	for _, r := range srv.Requests() {
+		if r.Path == "/login" || strings.HasSuffix(r.Path, "/bundle.js") || strings.HasSuffix(r.Path, "/user/get") {
+			t.Errorf("unexpected login/bundle request %s", r.Path)
+		}
+	}
+
+	// Setting a distinct Options.HTTPClient routes transfers through it while
+	// API calls stay on the attached Client's transport.
+	var transferAPIHits, transferCDNHits int
+	baseClient := srv.ClientOptions().HTTPClient
+	transferClient := &http.Client{Transport: roundTripFunc(func(req *http.Request) (*http.Response, error) {
+		switch {
+		case strings.HasPrefix(req.URL.Path, "/api.json/"):
+			transferAPIHits++
+		case strings.HasPrefix(req.URL.Path, "/cdn/"):
+			transferCDNHits++
+		}
+		return baseClient.Do(req.Clone(req.Context()))
+	})}
+	o2 := o
+	o2.Directory = t.TempDir()
+	o2.Quality = 5
+	o2.DownloadsDB = nil
+	o2.HTTPClient = transferClient
+	o2.Client = first.Client()
+	third, err := qobuzdl.New(o2)
+	if err != nil {
+		t.Fatal(err)
+	}
+	res, err = third.DownloadFromID(t.Context(), qobuzdl.DownloadRequest{ID: qobuzdltest.TrackSingle})
+	if err != nil || len(res.Releases) != 1 || res.Releases[0].Status != qobuzdl.StatusDone {
+		t.Fatalf("two-transport res=%+v err=%v", res, err)
+	}
+	if transferAPIHits != 0 || transferCDNHits == 0 {
+		t.Errorf("transferAPIHits=%d transferCDNHits=%d, want 0 and >0", transferAPIHits, transferCDNHits)
+	}
+}
+
 func TestPlaylistM3U8(t *testing.T) {
 	d, srv, o := newDL(t, nil)
 	ev := &events{}
